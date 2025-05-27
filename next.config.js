@@ -10,7 +10,7 @@ const nextConfig = {
     ],
     unoptimized: true
   },
-  basePath: '/economist',
+  trailingSlash: true,
 }
 
 module.exports = nextConfig 
