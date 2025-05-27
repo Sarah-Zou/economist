@@ -11,7 +11,7 @@ const ServiceCard = ({ title, description }: ServiceCardProps) => {
     <div className="bg-white p-6 rounded-lg border shadow-sm">
       <h3 className="text-xl font-bold mb-4">{title}</h3>
       <p className="text-gray-600 mb-6">{description}</p>
-      <ContactCTA variant="button" />
+      <ContactCTA variant="inline" />
     </div>
   )
 }
