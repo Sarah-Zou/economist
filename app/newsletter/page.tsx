@@ -57,27 +57,19 @@ export default function Newsletter() {
             <li>Real-world SaaS growth strategies</li>
             <li>Clear, actionable advice</li>
             <li>Fresh insights from the AI-SaaS Market Index</li>
-            </ul>
+          </ul>
           <p className="text-center text-[#222] font-semibold mb-6">Don't miss out.</p>
-            <form
-              action="https://buttondown.email/api/emails/embed-subscribe/bd-sub-form"
-              method="post"
-              target="popupwindow"
-            className="w-full"
-            >
-                <input
-                  type="email"
-                  name="email"
-                  id="bd-email"
-              placeholder="Your email address"
-              className="w-full px-4 py-3 border border-[#eee] bg-[#f9f6f7] rounded mb-4 focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#222]"
-                  required
-                />
-              <input type="hidden" value="1" name="embed" />
-            <Button type="submit" className="w-full bg-[#ff5722] hover:bg-[#e64a19] text-white rounded-full px-6 py-3 focus:ring-2 focus:ring-[#ff5722] font-bold text-lg">
-                Subscribe
-              </Button>
-            </form>
+          <div className="w-full">
+            <iframe 
+              src="https://embeds.beehiiv.com/0d286f02-6dd7-43ae-ace7-e00771e5df79?slim=true" 
+              data-test-id="beehiiv-embed" 
+              height="52" 
+              frameBorder="0" 
+              scrolling="no" 
+              style={{ margin: 0, borderRadius: '0px !important', backgroundColor: 'transparent' }}
+              className="w-full"
+            />
+          </div>
         </aside>
       </div>
     </section>

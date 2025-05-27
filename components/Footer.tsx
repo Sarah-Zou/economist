@@ -31,27 +31,17 @@ const Footer = () => {
         <div className="flex-1 flex flex-col items-center md:items-end w-full">
           <div className="max-w-md w-full">
             <div className="font-bold text-lg mb-3 text-[#111]">Subscribe to my newsletter</div>
-            <form
-              action="https://buttondown.email/api/emails/embed-subscribe/bd-sub-form"
-              method="post"
-              target="popupwindow"
-              className="flex w-full gap-2"
-            >
-              <input
-                type="email"
-                name="email"
-                placeholder="email address"
-                className="flex-1 px-4 py-3 rounded-full border border-[#eee] bg-white text-[#111] focus:outline-none focus:ring-2 focus:ring-[#06b6d4]"
-                required
+            <div className="w-full">
+              <iframe 
+                src="https://embeds.beehiiv.com/0d286f02-6dd7-43ae-ace7-e00771e5df79?slim=true" 
+                data-test-id="beehiiv-embed" 
+                height="52" 
+                frameBorder="0" 
+                scrolling="no" 
+                style={{ margin: 0, borderRadius: '0px !important', backgroundColor: 'transparent' }}
+                className="w-full"
               />
-              <button
-                type="submit"
-                className="bg-[#ff5722] text-white font-bold px-6 py-3 rounded-full hover:bg-[#06b6d4] transition-colors"
-              >
-                submit
-              </button>
-              <input type="hidden" value="1" name="embed" />
-            </form>
+            </div>
           </div>
         </div>
       </div>

@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
   images: {
     remotePatterns: [
       {
@@ -10,8 +9,6 @@ const nextConfig = {
     ],
     unoptimized: true
   },
-  basePath: '/economist',
-  assetPrefix: '/economist/',
 }
 
 module.exports = nextConfig 
