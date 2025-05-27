@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 249 33% 98%; /* #f9f6f7 */
+    --foreground: 222.2 84% 4.9%; /* #222 */
+    --border: 214.3 31.8% 91.4%;
+    --accent: 14 100% 63%; /* #ff5722 */
+    --muted: 0 0% 53%; /* #888 */
+  }
+  html {
+    font-family: var(--font-inter), Inter, Arial, sans-serif;
+    color: #222;
+    background: #f9f6f7;
+  }
+  h1, h2, .logo-serif {
+    font-family: var(--font-playfair), Playfair Display, serif;
+    font-weight: 700;
+  }
+  h1 {
+    font-size: 3.2rem;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+  h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #ff5722;
+    margin-top: 0.5rem;
+    border-radius: 2px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-content mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .font-serif-playfair {
+    font-family: var(--font-playfair), Playfair Display, serif;
+  }
+  .font-sans-inter {
+    font-family: var(--font-inter), Inter, Arial, sans-serif;
+  }
+  .section-divider {
+    width: 100%;
+    height: 4px;
+    background: #ff5722;
+    border-radius: 2px;
+    margin: 2rem 0;
+  }
+} 
