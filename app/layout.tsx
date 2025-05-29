@@ -39,6 +39,22 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
         {/* Cookie Consent JS */}
         <script defer src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+        {/* Cookie Consent Init */}
+        <script defer dangerouslySetInnerHTML={{
+          __html: `
+            window.addEventListener('load',function(){
+              if(window.cookieconsent) {
+                window.cookieconsent.initialise({
+                  palette:{popup:{background:'#222'},button:{background:'#6344ff'}},
+                  content:{message:'This site uses cookies for analytics.',dismiss:'Got it',link:'Learn more'},
+                  onInitialise: function(status){
+                    if(status==='allow'){gtag('consent','update',{ad_storage:'granted',analytics_storage:'granted'});}
+                  }
+                });
+              }
+            });
+          `,
+        }} />
       </head>
       <body className="font-sans">
         <Navbar />
@@ -46,20 +62,6 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        {/* Cookie Consent Init */}
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            window.addEventListener('load',function(){
-              window.cookieconsent.initialise({
-                palette:{popup:{background:'#222'},button:{background:'#6344ff'}},
-                content:{message:'This site uses cookies for analytics.',dismiss:'Got it',link:'Learn more'},
-                onInitialise: function(status){
-                  if(status==='allow'){gtag('consent','update',{ad_storage:'granted',analytics_storage:'granted'});}
-                }
-              });
-            });
-          `,
-        }} />
       </body>
     </html>
   )
