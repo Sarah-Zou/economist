@@ -25,6 +25,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <head>
+        {/* Favicon */}
+        <link rel="icon" href="/images/logo.png" type="image/png" />
         {/* Google Analytics 4 */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-BX0JPBNQ5K"></script>
         <script dangerouslySetInnerHTML={{
