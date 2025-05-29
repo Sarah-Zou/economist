@@ -7,19 +7,19 @@ const latestPosts = [
     title: "The Economics of AI in SaaS",
     date: "2024-02-15",
     summary: "How AI is reshaping SaaS business models and what it means for your growth strategy.",
-    image: "/images/newsletter1.png"
+    image: "/images/newsletter1.jpg"
   },
   {
     title: "Pricing Strategies for B2B SaaS",
     date: "2024-02-01",
     summary: "A practical guide to value-based pricing and avoiding common pitfalls.",
-    image: "/images/newsletter2.png"
+    image: "/images/newsletter2.jpg"
   },
   {
     title: "Growth Metrics That Matter",
     date: "2024-01-15",
     summary: "The KPIs every SaaS founder should track (and which to ignore).",
-    image: "/images/newsletter3.png"
+    image: "/images/newsletter3.jpg"
   }
 ]
 
@@ -38,7 +38,10 @@ export default function Newsletter() {
             {latestPosts.map((post, idx) => (
               <div key={idx} className="flex flex-col md:flex-row gap-6 bg-white rounded-lg p-6 shadow-sm border border-[#f0f0f0]">
                 <div className="flex-shrink-0 w-full md:w-40 h-32 md:h-32 relative rounded overflow-hidden bg-[#f9f6f7]">
-                  <Image src={post.image} alt={post.title} fill className="object-cover" />
+                  <picture>
+                    <source srcSet={post.image.replace('.jpg', '.webp')} type="image/webp" />
+                    <Image src={post.image} alt={post.title} fill className="object-cover" />
+                  </picture>
                 </div>
                 <div className="flex-1 flex flex-col justify-between">
                   <div>

@@ -13,7 +13,7 @@ const services = [
       "Behavioral pricing tactics"
     ],
     duration: "4 weeks",
-    image: "/images/service1.png"
+    image: "/images/service1.jpg"
   },
   {
     title: "Pricing Experiment Sprint",
@@ -24,7 +24,7 @@ const services = [
       "Launch playbook"
     ],
     duration: "2 weeks",
-    image: "/images/service2.png"
+    image: "/images/service2.jpg"
   },
   {
     title: "Metrics Analytics & Dashboards",
@@ -34,7 +34,7 @@ const services = [
       "BI dashboard (Looker/Mode/Fivetran)"
     ],
     duration: "3 weeks",
-    image: "/images/service3.png"
+    image: "/images/service3.jpg"
   },
   {
     title: "Investor-Grade KPI Pack",
@@ -45,7 +45,7 @@ const services = [
       "3-slide insert for deck"
     ],
     duration: "1 week",
-    image: "/images/service4.png"
+    image: "/images/service4.jpg"
   },
   {
     title: "Fractional Economist Retainer",
@@ -56,7 +56,7 @@ const services = [
       "Quarterly pricing refresh"
     ],
     duration: "Ongoing (≥6 mo)",
-    image: "/images/service5.png"
+    image: "/images/service5.jpg"
   },
   {
     title: "Economic Impact Study",
@@ -66,7 +66,7 @@ const services = [
       "Designed report & PR toolkit"
     ],
     duration: "6–8 weeks",
-    image: "/images/service6.png"
+    image: "/images/service6.jpg"
   }
 ]
 
@@ -109,7 +109,10 @@ export default function Consulting() {
             {services.map((service, index) => (
               <div key={index} className="flex flex-col items-center px-4 text-center">
                 <div className="relative w-64 h-40 mb-4 rounded-2xl overflow-hidden border border-[#e5e7eb] bg-[#f5f5f5] flex items-center justify-center">
-                  <Image src={service.image} alt={service.title} width={256} height={160} className="object-cover w-full h-full" />
+                  <picture>
+                    <source srcSet={service.image.replace('.jpg', '.webp')} type="image/webp" />
+                    <Image src={service.image} alt={service.title} width={256} height={160} className="object-cover w-full h-full" />
+                  </picture>
                   <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white rounded-b-2xl">
                     <div className="font-serif-playfair text-lg font-bold mb-1">{service.title}</div>
                     <div className="text-sm italic">{service.question}</div>
