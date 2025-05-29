@@ -22,6 +22,13 @@ module.exports = {
         foreground: "#222",
         accent: "#ff5722",
         muted: "#888",
+        gray: {
+          700: '#222',
+          600: '#444',
+        },
+        orange: {
+          500: '#ff5722',
+        },
       },
       maxWidth: {
         "content": "900px",

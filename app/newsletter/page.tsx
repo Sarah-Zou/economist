@@ -71,6 +71,7 @@ export default function Newsletter() {
                 height="52" 
                 frameBorder="0" 
                 scrolling="no" 
+                title="Newsletter signup form"
                 style={{ margin: 0, borderRadius: '0px !important', backgroundColor: 'transparent' }}
                 className="w-full"
               />
