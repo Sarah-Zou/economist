@@ -1,3 +1,4 @@
+import Seo from '@/components/Seo'
 import ContactCTA from '@/components/ContactCTA'
 import TestimonialCard from '@/components/TestimonialCard'
 import Image from 'next/image'
@@ -89,56 +90,63 @@ const testimonials = [
 
 export default function Consulting() {
   return (
-    <section className="py-20 bg-[#f5f5f5] min-h-screen">
-      <div className="container max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="font-serif-playfair text-4xl font-bold mb-6 text-[#111]">Consulting Services</h1>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            Expert guidance to help your SaaS business thrive in today's competitive landscape.
-          </p>
-        </div>
+    <>
+      <Seo
+        title="SaaS & AI Consulting Services | Pricing, Metrics, and Growth | Sarah Zou"
+        description="Explore consulting services from Sarah Zou, PhD: pricing strategy, SaaS metrics, investor communications, and AI-driven growth. Tailored solutions for SaaS founders and tech leaders."
+        path="/consulting"
+      />
+      <section className="py-20 bg-[#f5f5f5] min-h-screen">
+        <div className="container max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h1 className="font-serif-playfair text-4xl font-bold mb-6 text-[#111]">Consulting Services</h1>
+            <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+              Expert guidance to help your SaaS business thrive in today's competitive landscape.
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-3 gap-10 mb-24 border-t border-b border-[#e5e7eb] bg-white py-12">
-          {services.map((service, index) => (
-            <div key={index} className="flex flex-col items-center px-4 text-center">
-              <div className="relative w-64 h-40 mb-4 rounded-2xl overflow-hidden border border-[#e5e7eb] bg-[#f5f5f5] flex items-center justify-center">
-                <Image src={service.image} alt={service.title} width={256} height={160} className="object-cover w-full h-full" />
-                <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white rounded-b-2xl">
-                  <div className="font-serif-playfair text-lg font-bold mb-1">{service.title}</div>
-                  <div className="text-sm italic">{service.question}</div>
+          <div className="grid md:grid-cols-3 gap-10 mb-24 border-t border-b border-[#e5e7eb] bg-white py-12">
+            {services.map((service, index) => (
+              <div key={index} className="flex flex-col items-center px-4 text-center">
+                <div className="relative w-64 h-40 mb-4 rounded-2xl overflow-hidden border border-[#e5e7eb] bg-[#f5f5f5] flex items-center justify-center">
+                  <Image src={service.image} alt={service.title} width={256} height={160} className="object-cover w-full h-full" />
+                  <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white rounded-b-2xl">
+                    <div className="font-serif-playfair text-lg font-bold mb-1">{service.title}</div>
+                    <div className="text-sm italic">{service.question}</div>
+                  </div>
                 </div>
+                <ul className="text-gray-700 mb-2 text-sm list-disc list-inside text-left mx-auto mt-2" style={{maxWidth:'220px'}}>
+                  {service.deliverables.map((d, i) => (
+                    <li key={i}>{d}</li>
+                  ))}
+                </ul>
+                <div className="text-xs text-gray-500 mb-3 w-full text-left pl-2">Duration: {service.duration}</div>
+                <a
+                  href="https://calendly.com/sarahz-saas-economist"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#ff5722] font-medium hover:underline flex items-center gap-1 text-sm"
+                >
+                  Learn more <span aria-hidden="true">→</span>
+                </a>
               </div>
-              <ul className="text-gray-700 mb-2 text-sm list-disc list-inside text-left mx-auto mt-2" style={{maxWidth:'220px'}}>
-                {service.deliverables.map((d, i) => (
-                  <li key={i}>{d}</li>
-                ))}
-              </ul>
-              <div className="text-xs text-gray-500 mb-3 w-full text-left pl-2">Duration: {service.duration}</div>
-              <a
-                href="https://calendly.com/sarahz-saas-economist"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#ff5722] font-medium hover:underline flex items-center gap-1 text-sm"
-              >
-                Learn more <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          ))}
-        </div>
-
-        <div className="max-w-4xl mx-auto mb-24">
-          <h2 className="font-serif-playfair text-2xl font-bold mb-8 text-center text-[#ff5722]">Testimonials</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
-              <TestimonialCard key={i} name={t.name} title={t.title} quote={t.quote} />
             ))}
           </div>
-        </div>
 
-        <div className="max-w-2xl mx-auto">
-          <ContactCTA variant="section" />
+          <div className="max-w-4xl mx-auto mb-24">
+            <h2 className="font-serif-playfair text-2xl font-bold mb-8 text-center text-[#ff5722]">Testimonials</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {testimonials.map((t, i) => (
+                <TestimonialCard key={i} name={t.name} title={t.title} quote={t.quote} />
+              ))}
+            </div>
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+            <ContactCTA variant="section" />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 } 
