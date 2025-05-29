@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="container max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-12">
         {/* Left: Logo, nav, copyright */}
         <div className="flex-1 flex flex-col items-center md:items-start mb-8 md:mb-0">
-          <Link href="/" className="font-serif-playfair text-2xl font-bold mb-6 text-[#111]">Sarah Zou</Link>
+          <Link href="/" className="font-serif-playfair text-2xl font-bold mb-6 text-[#111]">Sarah Zou, PhD</Link>
           <div className="flex flex-wrap gap-3 mb-8">
             {navLinks.map((link) => (
               <Link
@@ -25,7 +25,7 @@ const Footer = () => {
               </Link>
             ))}
           </div>
-          <div className="text-sm text-gray-500 mt-4">© 2025 WeKong Solutions  · Princeton, NJ</div>
+          <div className="text-sm text-gray-500 mt-4">© 2025 WeKong Solutions · All rights reserved · Princeton, NJ</div>
         </div>
         {/* Right: Newsletter subscription */}
         <div className="flex-1 flex flex-col items-center md:items-end w-full">
