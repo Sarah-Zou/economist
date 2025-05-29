@@ -41,13 +41,17 @@ export default function About() {
             {/* Right: Image */}
             <div className="flex items-stretch justify-center bg-[#f5f5f5] py-0 md:py-0 border-l border-[#f5f5f5] h-full">
               <div className="relative w-full max-w-[400px] h-full min-h-[320px] rounded-lg overflow-hidden border-2 border-[#eee] shadow-sm flex-1">
-                <Image
-                  src="/images/headshot.jpg"
-                  alt="Professional headshot"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 320px, 400px"
-                />
+                <picture>
+                  <source srcSet="/images/about_headshot.webp" type="image/webp" />
+                  <Image
+                    src="/images/about_headshot.jpg"
+                    alt="Professional headshot of Sarah Zou"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 320px, 400px"
+                    priority
+                  />
+                </picture>
               </div>
             </div>
           </div>
