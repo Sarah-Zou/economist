@@ -7,8 +7,7 @@ const Navbar = () => {
       <div className="container">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex flex-col">
-            <span className="font-serif-playfair text-2xl font-bold">Sarah Zou</span>
-            <span className="text-xs uppercase tracking-wider text-gray-600">Founder, WeKong Solutions</span>
+            <span className="font-serif-playfair text-2xl font-bold">Sarah Zou, PhD</span>
           </Link>
           
           <div className="hidden md:flex items-center space-x-6">
