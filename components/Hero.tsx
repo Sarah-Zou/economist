@@ -24,14 +24,17 @@ const Hero = () => {
           </div>
           {/* Right: Image */}
           <div className="flex-1 flex items-stretch">
-            <Image
-              src="/images/headshot.jpg"
-              alt="Sarah Zou headshot"
-              width={600}
-              height={600}
-              className="object-cover w-full h-full"
-              priority
-            />
+            <picture>
+              <source srcSet="/images/headshot_v2.webp" type="image/webp" />
+              <Image
+                src="/images/headshot_v2.jpg"
+                alt="Sarah Zou headshot"
+                width={600}
+                height={600}
+                className="object-cover w-full h-full"
+                priority
+              />
+            </picture>
           </div>
         </div>
       </div>
