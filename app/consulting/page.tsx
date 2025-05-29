@@ -120,6 +120,8 @@ export default function Consulting() {
                     {service.title}
                   </div>
                 </div>
+                <div className="font-serif-playfair text-lg font-bold mb-1 text-[#111]">{service.title}</div>
+                <div className="text-sm italic text-gray-600 mb-2">{service.question}</div>
                 <ul className="text-gray-700 mb-2 text-sm list-disc list-inside text-left mx-auto mt-2" style={{maxWidth:'220px'}}>
                   {service.deliverables.map((d, i) => (
                     <li key={i}>{d}</li>
