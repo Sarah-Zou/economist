@@ -8,11 +8,11 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
 
 export const metadata: Metadata = {
-  title: 'Fractional Economist & SaaS/AI Strategist',
-  description: 'Clear economics that accelerates SaaS growth.',
+  title: 'Sarah Zou | Economist for AI-SaaS',
+  description: 'Pricing & metrics strategy for AI-SaaS founders—data-driven insights from PhD economist Sarah Zou.',
   openGraph: {
-    title: 'Fractional Economist & SaaS/AI Strategist',
-    description: 'Clear economics that accelerates SaaS growth.',
+    title: 'Sarah Zou | Economist for AI-SaaS',
+    description: 'Pricing & metrics strategy for AI-SaaS founders—data-driven insights from PhD economist Sarah Zou.',
     type: 'website',
   },
 }
