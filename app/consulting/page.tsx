@@ -109,13 +109,15 @@ export default function Consulting() {
             {services.map((service, index) => (
               <div key={index} className="flex flex-col items-center px-4 text-center">
                 <div className="relative w-64 h-40 mb-4 rounded-2xl overflow-hidden border border-[#e5e7eb] bg-[#f5f5f5] flex items-center justify-center">
-                  <picture>
-                    <source srcSet={service.image.replace('.jpg', '.webp')} type="image/webp" />
-                    <Image src={service.image} alt={service.title} width={256} height={160} className="object-cover w-full h-full" />
-                  </picture>
-                  <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white rounded-b-2xl">
-                    <div className="font-serif-playfair text-lg font-bold mb-1">{service.title}</div>
-                    <div className="text-sm italic">{service.question}</div>
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    width={256}
+                    height={160}
+                    className="object-cover w-full h-full"
+                  />
+                  <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/60 to-transparent p-2 text-white text-xs text-left">
+                    {service.title}
                   </div>
                 </div>
                 <ul className="text-gray-700 mb-2 text-sm list-disc list-inside text-left mx-auto mt-2" style={{maxWidth:'220px'}}>

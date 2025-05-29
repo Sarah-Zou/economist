@@ -36,23 +36,18 @@ export default function Newsletter() {
           {/* Left: Recent Issues */}
           <div className="space-y-10">
             {latestPosts.map((post, idx) => (
-              <div key={idx} className="flex flex-col md:flex-row gap-6 bg-white rounded-lg p-6 shadow-sm border border-[#f0f0f0]">
-                <div className="flex-shrink-0 w-full md:w-40 h-32 md:h-32 relative rounded overflow-hidden bg-[#f9f6f7]">
-                  <picture>
-                    <source srcSet={post.image.replace('.jpg', '.webp')} type="image/webp" />
-                    <Image src={post.image} alt={post.title} fill className="object-cover" />
-                  </picture>
-                </div>
-                <div className="flex-1 flex flex-col justify-between">
-                  <div>
-                    <h3 className="font-serif-playfair text-xl font-bold text-[#222] mb-1">{post.title}</h3>
-                    <p className="text-[#222] mb-2 text-base">{post.summary}</p>
-                  </div>
-                  <div className="text-xs text-[#888] mt-2">
-                    {new Date(post.date).toLocaleDateString('en-US', {
-                      year: 'numeric', month: 'short', day: 'numeric'
-                    })}
-                  </div>
+              <div key={idx} className="flex flex-col md:flex-row gap-4 md:gap-8 items-center bg-white rounded-2xl shadow-md p-6 mb-8 border border-[#e5e7eb]">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  width={160}
+                  height={120}
+                  className="rounded-lg object-cover w-40 h-28"
+                />
+                <div className="flex-1">
+                  <h3 className="font-serif-playfair text-xl font-bold mb-2 text-[#111]">{post.title}</h3>
+                  <p className="text-gray-600 mb-2 text-sm">{post.date}</p>
+                  <p className="text-gray-700 mb-2">{post.summary}</p>
                 </div>
               </div>
             ))}
