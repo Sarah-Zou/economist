@@ -19,28 +19,11 @@ export default function About() {
         path="/about"
       />
       <section className="min-h-[70vh] flex items-center justify-center py-16 md:py-32">
-        <div className="container">
-          <div className="grid md:grid-cols-2 gap-0 md:gap-12 items-stretch bg-white rounded-lg overflow-hidden shadow-none border border-[#f5f5f5]">
-            {/* Left: Text */}
-            <div className="flex flex-col justify-center px-6 md:px-12 py-12 md:py-24">
-              <span className="text-xs uppercase tracking-wider text-gray-400 mb-4"></span>
-              <h1 className="font-serif-playfair text-4xl font-bold mb-2 text-gray-900">PhD Economist & AI Strategist</h1>
-              <h2 className="text-lg font-semibold mb-6 text-gray-700"></h2>
-              <p className="mb-6 text-gray-700 max-w-xl">
-              I'm an economist turned SaaS & AI growth strategist. My expertise blends deep economic rigor with practical, data-driven strategies, enabling founders and executives to scale confidently.
-              Previously Chief Subscription Economist at Capgemini and credit researcher at Citigroup, I've spent years advising leading SaaS companies and building robust analytics frameworks—including my proprietary AI-SaaS Index. 
-              I hold a PhD in Economics from Rutgers University, and MScs in Finance and Statistics from University of Illinois at Urbana-Champaign.
-              </p>
-              <h3 className="font-serif-playfair text-xl font-bold mt-2 mb-2">Why Clients Love Working With Me:</h3>
-              <ul className="mb-8 list-disc pl-5 text-gray-700">
-                <li>No-nonsense advice</li>
-                <li>Clear, actionable strategies</li>
-                <li>Commitment to results</li>
-              </ul>
-            </div>
-            {/* Right: Image */}
-            <div className="flex items-stretch justify-center bg-[#f5f5f5] py-0 md:py-0 border-l border-[#f5f5f5] h-full">
-              <div className="relative w-full max-w-[400px] h-full min-h-[320px] rounded-lg overflow-hidden border-2 border-[#eee] shadow-sm flex-1">
+        <div className="container max-w-7xl mx-auto">
+          <div className="bg-white rounded-[2.5rem] flex flex-col lg:flex-row items-stretch p-0 overflow-hidden min-h-[420px] border border-[#f0f0f0]">
+            {/* Left: Image */}
+            <div className="flex-1 flex items-stretch justify-center bg-[#f5f8f7] p-0 md:p-0">
+              <div className="relative w-[370px] h-auto min-h-[420px] rounded-l-[160px] overflow-hidden border-2 border-[#eee] shadow-sm flex-1 flex items-stretch">
                 <picture>
                   <source srcSet="/images/about_headshot.webp" type="image/webp" />
                   <Image
@@ -52,6 +35,30 @@ export default function About() {
                     priority
                   />
                 </picture>
+              </div>
+            </div>
+            {/* Right: Text */}
+            <div className="flex-1 flex flex-col justify-center items-start px-10 py-12 md:px-16 md:py-0 text-[#223] bg-white">
+              <div className="flex flex-col w-full">
+                <h1 className="font-serif-playfair text-5xl font-bold mb-4 text-[#223] mt-8">Sarah Zou, PhD</h1>
+                <p className="mb-4 text-lg text-[#4b636e] max-w-2xl">
+                  I'm Sarah Zou, your Fractional Economist. With a PhD in Economics and deep expertise in SaaS financial modeling, subscription economics, and investor communications, I bridge the gap between raw data and powerful fundraising narratives.
+                </p>
+                <p className="mb-4 text-lg text-[#4b636e] max-w-2xl">
+                  Unlike traditional fractional CFO services or DIY software, my approach blends rigorous econometrics, precise SaaS benchmarks, and investor-grade storytelling.
+                </p>
+                <p className="mb-4 text-lg text-[#4b636e] max-w-2xl">
+                  Previously Chief Subscription Economist at Capgemini and credit researcher at Citigroup, I've spent years advising tech startups and leading companies, and building robust analytics frameworks—including my proprietary AI-SaaS Index.
+                </p>
+                <p className="mb-6 text-lg text-[#4b636e] max-w-2xl">
+                  I hold a PhD in Economics from Rutgers University, and MScs in Finance and Statistics from University of Illinois at Urbana-Champaign.
+                </p>
+                <h3 className="font-serif-playfair text-xl font-bold mt-2 mb-2 text-[#223]">Why Clients Love Working With Me:</h3>
+                <ul className="mb-8 list-disc pl-5 text-[#4b636e]">
+                  <li>No-nonsense advice</li>
+                  <li>Clear, actionable strategies</li>
+                  <li>Commitment to results</li>
+                </ul>
               </div>
             </div>
           </div>

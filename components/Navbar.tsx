@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 
 const Navbar = () => {
   return (
-    <nav className="sticky top-0 z-50 bg-transparent transition-all duration-300 hover:bg-white hover:shadow-md">
+    <nav className="sticky top-0 z-50 bg-white shadow transition-all duration-300">
       <div className="container">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex flex-col">

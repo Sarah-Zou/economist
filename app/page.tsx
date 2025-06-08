@@ -26,7 +26,7 @@ export default function Home() {
     <>
       <Seo
         title="Fractional Economist for AI-SaaS | Sarah Zou"
-        description="Pricing & metrics strategy for AI-SaaS founders—data-driven insights from PhD economist Sarah Zou."
+        description="Pricing & metrics strategy for SaaS founders—data-driven insights from PhD economist Sarah Zou."
         path="/"
       />
       <div>
@@ -36,10 +36,10 @@ export default function Home() {
               {/* Left: Text */}
               <div className="flex-1 flex flex-col justify-center items-start px-10 py-12 md:px-16 md:py-0 text-[#222] bg-white">
                 <h1 className="font-serif-playfair text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                  Data-Driven SaaS Growth, Made Simple.
+                Fractional Economist for SaaS Founders
                 </h1>
                 <p className="text-lg md:text-xl mb-8 text-[#222] max-w-xl">
-                  I'm Sarah Zou, PhD Economist, specialized in pricing strategies, metrics analytics, and investor-ready storytelling for AI-driven SaaS startups.
+                  I'm Sarah Zou, PhD Economist, specialized in pricing strategies, metrics analytics, and investor-ready storytelling for SaaS startups.
                 </p>
                 <a href="/contact" className="inline-block border-2 border-[#ff5722] text-[#ff5722] font-bold px-6 py-3 rounded-full text-lg tracking-widest hover:bg-[#ff5722] hover:text-white transition-colors mt-4">
                   Get in touch <span className="ml-2" aria-hidden>→</span>
@@ -66,21 +66,30 @@ export default function Home() {
           <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold mb-2 text-[#ff5722] relative inline-block">
             How I Can Help
           </h2>
-          <p className="max-w-2xl mx-auto text-lg text-[#222] mb-8">
-            Whether you're optimizing pricing, benchmarking against industry metrics, or crafting powerful investor communications—I help transform complex data into clear, actionable strategies.
+          <p className="max-w-2xl mx-auto text-lg text-[#222] mb-12">
+            I embed as your Fractional Chief Economist—translating data, external signals, and internal KPIs into decisions that raise valuation, pricing power, and capital efficiency.
           </p>
-          <div className="max-w-3xl mx-auto space-y-8 mt-10 mb-12">
-            <div>
-              <h3 className="text-xl font-bold mb-2 text-[#222]">Pricing Strategy</h3>
-              <p className="text-[#222]">Discover value-based pricing &amp; packaging that lifts ARR and slashes churn.</p>
+          <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-3 gap-10 mt-4 mb-10">
+            {/* Pricing Strategy */}
+            <div className="bg-[#fafbfc] rounded-3xl shadow-md border border-[#f0f0f0] flex flex-col items-center p-8 transition hover:shadow-lg">
+              <Image src="/images/pricing.webp" alt="Pricing Strategy" width={180} height={120} className="rounded-xl mb-6 object-cover w-[180px] h-[120px]" />
+              <h3 className="font-serif-playfair text-2xl font-bold mb-2 text-[#222]">Pricing Strategy</h3>
+              <p className="text-[#4b636e] text-base mb-6">Discover value-based pricing & packaging that lifts ARR and slashes churn.</p>
+              <a href="/consulting?filter=Pricing" className="text-[#ff5722] font-semibold text-base hover:underline transition">Learn more →</a>
             </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2 text-[#222]">AI-SaaS Metrics &amp; Dashboards</h3>
-              <p className="text-[#222]">Benchmark against my proprietary <span className="font-semibold">AI-SaaS Index</span> and get automated, investor-ready reporting.</p>
+            {/* SaaS Metrics & Dashboards */}
+            <div className="bg-[#fafbfc] rounded-3xl shadow-md border border-[#f0f0f0] flex flex-col items-center p-8 transition hover:shadow-lg">
+              <Image src="/images/metrics.webp" alt="SaaS Metrics & Dashboards" width={180} height={120} className="rounded-xl mb-6 object-cover w-[180px] h-[120px]" />
+              <h3 className="font-serif-playfair text-2xl font-bold mb-2 text-[#222]">SaaS Metrics & Dashboards</h3>
+              <p className="text-[#4b636e] text-base mb-6">Benchmark against my proprietary AI-SaaS Index and get automated, investor-ready reporting.</p>
+              <a href="/consulting?filter=Metrics" className="text-[#ff5722] font-semibold text-base hover:underline transition">Learn more →</a>
             </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2 text-[#222]">Investor Communications</h3>
-              <p className="text-[#222]">Translate dense metrics into crisp stories that close rounds faster and at higher valuations.</p>
+            {/* Investor Communications */}
+            <div className="bg-[#fafbfc] rounded-3xl shadow-md border border-[#f0f0f0] flex flex-col items-center p-8 transition hover:shadow-lg">
+              <Image src="/images/investor.webp" alt="Investor Communications" width={180} height={120} className="rounded-xl mb-6 object-cover w-[180px] h-[120px]" />
+              <h3 className="font-serif-playfair text-2xl font-bold mb-2 text-[#222]">Investor Communications</h3>
+              <p className="text-[#4b636e] text-base mb-6">Translate dense metrics into crisp stories that close rounds faster and at higher valuations.</p>
+              <a href="/consulting?filter=Investor" className="text-[#ff5722] font-semibold text-base hover:underline transition">Learn more →</a>
             </div>
           </div>
           <a

@@ -1,73 +1,112 @@
+"use client";
+
 import Seo from '@/components/Seo'
 import ContactCTA from '@/components/ContactCTA'
 import TestimonialCard from '@/components/TestimonialCard'
 import Image from 'next/image'
+import Link from 'next/link'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 
 const services = [
   {
-    title: "Pricing & Monetization Blueprint",
-    question: "What price model maximises NRR & ARPU?",
-    deliverables: [
-      "Willingness-to-Pay study",
-      "Pricing & packaging design",
-      "Behavioral pricing tactics"
-    ],
-    duration: "4 weeks",
-    image: "/images/service1.jpg"
+    slug: 'investor-deck-accelerator',
+    title: 'Investor Deck Accelerator',
+    hero: 'Close the credibility gap—walk into your next investor call with a board-worthy deck, built in 48 hours.',
+    summary: 'Board-worthy deck in 48 hours. Proven template, narrative checklist, and red-flag review.',
+    image: '/images/S-1.webp',
   },
   {
-    title: "Pricing Experiment Sprint",
-    question: "How fast can we validate a new tier?",
-    deliverables: [
-      "Experiment design",
-      "Revenue-impact forecast",
-      "Launch playbook"
-    ],
-    duration: "2 weeks",
-    image: "/images/service2.jpg"
+    slug: 'saas-metrics-clarity-pack',
+    title: 'SaaS Metrics Clarity Pack',
+    hero: 'Turn messy spreadsheets into a single source of metric truth in one week.',
+    summary: 'Unified KPI workbook, field-mapping, and push-button reporting.',
+    image: '/images/S-2.webp',
   },
   {
-    title: "Metrics Analytics & Dashboards",
-    question: "Can leadership see the right KPIs instantly?",
-    deliverables: [
-      "Metric inventory & definitions",
-      "BI dashboard (Looker/Mode/Fivetran)"
-    ],
-    duration: "3 weeks",
-    image: "/images/service3.jpg"
+    slug: 'competitive-benchmark-insights',
+    title: 'Competitive Benchmark Insights',
+    hero: 'Instantly see how your growth rates, burn, and payback compare to peers at your stage.',
+    summary: 'Custom PDF, CSV lookup, and access to benchmark DB.',
+    image: '/images/S-3.webp',
   },
   {
-    title: "Investor-Grade KPI Pack",
-    question: "Do our numbers withstand diligence scrutiny?",
-    deliverables: [
-      "Clean KPI workbook",
-      "Benchmark commentary",
-      "3-slide insert for deck"
-    ],
-    duration: "1 week",
-    image: "/images/service4.jpg"
+    slug: 'runway-scenario-model',
+    title: 'Runway & Scenario Model',
+    hero: 'Know exactly how many months of runway you have under best, base, and worst cases—without wrestling Excel.',
+    summary: '3-statement model, Monte-Carlo, and auto-updating dashboard.',
+    image: '/images/S-4.webp',
   },
   {
-    title: "Fractional Economist Retainer",
-    question: "We need board-level economic firepower each month.",
-    deliverables: [
-      "Monthly KPI review call",
-      "Scenario models on demand",
-      "Quarterly pricing refresh"
-    ],
-    duration: "Ongoing (≥6 mo)",
-    image: "/images/service5.jpg"
+    slug: 'investor-updates-automation-kit',
+    title: 'Investor Updates Automation Kit',
+    hero: 'Spend minutes—not hours—creating monthly investor updates.',
+    summary: 'Notion/Visible templates, Zapier scripts, and prompt library.',
+    image: '/images/S-5.webp',
   },
   {
-    title: "Economic Impact Study",
-    question: "How do we prove ROI to prospects & press?",
-    deliverables: [
-      "Original data study (100-hr desk + survey)",
-      "Designed report & PR toolkit"
-    ],
-    duration: "6–8 weeks",
-    image: "/images/service6.jpg"
-  }
+    slug: 'on-call-economist-retainer',
+    title: 'On-Call Economist Retainer',
+    hero: 'Your fractional economist in Slack—answers in hours, not weeks.',
+    summary: 'Slack channel, quarterly benchmarks, and mini-models.',
+    image: '/images/S-6.webp',
+  },
+  {
+    slug: 'pricing-diagnostic-revenue-boost',
+    title: 'Pricing Diagnostic & Revenue Boost',
+    hero: 'Find hidden ARR in 14 days.',
+    summary: 'Health scorecard, uplift roadmap, and strategy call.',
+    image: '/images/P-1.webp',
+  },
+  {
+    slug: 'customer-value-research-pack',
+    title: 'Customer Value Research Pack',
+    hero: 'Know exactly what prospects will pay—and why.',
+    summary: 'Survey design, analysis, and findings deck.',
+    image: '/images/P-2.webp',
+  },
+  {
+    slug: 'value-based-monetization-design',
+    title: 'Value-Based Monetization Design',
+    hero: 'Align revenue with the metric customers truly value.',
+    summary: 'Workshop, financial modeling, and migration playbook.',
+    image: '/images/P-3.webp',
+  },
+  {
+    slug: 'rapid-pricing-experiment-toolkit',
+    title: 'Rapid Pricing Experiment Toolkit',
+    hero: 'A/B test pricing like a product feature—no engineering bottlenecks.',
+    summary: 'Experiment sheets, dashboard, and coaching.',
+    image: '/images/P-4.webp',
+  },
+  {
+    slug: 'price-change-comms-playbook',
+    title: 'Price Change Comms Playbook',
+    hero: 'Raise prices, keep goodwill.',
+    summary: 'Templates, FAQ, and rollout checklist.',
+    image: '/images/P-5.webp',
+  },
+  {
+    slug: 'profitability-simulator',
+    title: 'Profitability Simulator',
+    hero: 'Stress-test unit economics before you hire or discount.',
+    summary: 'Interactive simulator, scenario library, and tutorial.',
+    image: '/images/P-6.webp',
+  },
+  {
+    slug: 'investor-monetization-pitch-kit',
+    title: 'Investor Monetization Pitch Kit',
+    hero: 'Tell a monetization story that commands premium valuation.',
+    summary: 'Slide templates, talking points, and rehearsal.',
+    image: '/images/P-7.webp',
+  },
+  {
+    slug: 'pricing-optimization-retainer',
+    title: 'Pricing Optimization Retainer',
+    hero: 'Continuous pricing edge without hiring a full team.',
+    summary: 'Quarterly review, experiment feedback, and hotline.',
+    image: '/images/P-8.webp',
+  },
 ]
 
 const testimonials = [
@@ -88,7 +127,48 @@ const testimonials = [
   }
 ]
 
+const FILTERS = [
+  { label: 'All', value: 'all' },
+  { label: 'Metrics', value: 'metrics' },
+  { label: 'Pricing', value: 'pricing' },
+  { label: 'Investor', value: 'investor' },
+];
+
+// Service classification
+const serviceCategories = {
+  'investor-deck-accelerator': ['investor', 'metrics'],
+  'saas-metrics-clarity-pack': ['metrics'],
+  'competitive-benchmark-insights': ['investor', 'metrics'],
+  'runway-scenario-model': ['investor', 'metrics'],
+  'investor-updates-automation-kit': ['investor', 'metrics'],
+  'on-call-economist-retainer': ['investor', 'metrics', 'pricing'],
+  'pricing-diagnostic-revenue-boost': ['pricing'],
+  'customer-value-research-pack': ['pricing'],
+  'value-based-monetization-design': ['pricing'],
+  'rapid-pricing-experiment-toolkit': ['metrics', 'pricing'],
+  'price-change-comms-playbook': ['investor', 'pricing'],
+  'profitability-simulator': ['investor', 'metrics', 'pricing'],
+  'investor-monetization-pitch-kit': ['investor', 'metrics', 'pricing'],
+  'pricing-optimization-retainer': ['investor', 'metrics', 'pricing'],
+};
+
 export default function Consulting() {
+  const searchParams = useSearchParams();
+  const urlFilter = searchParams.get('filter');
+  const [filter, setFilter] = useState('all');
+
+  useEffect(() => {
+    if (urlFilter && ['metrics', 'pricing', 'investor'].includes(urlFilter.toLowerCase())) {
+      setFilter(urlFilter.toLowerCase());
+    } else {
+      setFilter('all');
+    }
+  }, [urlFilter]);
+
+  const filteredServices = filter === 'all'
+    ? services
+    : services.filter(s => (serviceCategories as Record<string, string[]>)[s.slug]?.includes(filter));
+
   return (
     <>
       <Seo
@@ -105,8 +185,25 @@ export default function Consulting() {
             </p>
           </div>
 
+          {/* Filter Buttons */}
+          <div className="flex justify-center mb-10 gap-4">
+            {FILTERS.map(f => (
+              <button
+                key={f.value}
+                onClick={() => setFilter(f.value)}
+                className={`px-5 py-2 rounded-full border font-semibold transition-colors text-sm
+                  ${filter === f.value
+                    ? 'bg-[#223] text-white border-[#223] shadow'
+                    : 'bg-white text-[#223] border-[#bcd0c7] hover:bg-[#f5f8f7]'}
+                `}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
+
           <div className="grid md:grid-cols-3 gap-10 mb-24 border-t border-b border-[#e5e7eb] bg-white py-12">
-            {services.map((service, index) => (
+            {filteredServices.map((service, index) => (
               <div key={index} className="flex flex-col items-center px-4 text-center">
                 <div className="relative w-64 h-40 mb-4 rounded-2xl overflow-hidden border border-[#e5e7eb] bg-[#f5f5f5] flex items-center justify-center">
                   <Image
@@ -116,25 +213,15 @@ export default function Consulting() {
                     height={160}
                     className="object-cover w-full h-full"
                   />
-                  <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white rounded-b-2xl">
-                    <div className="font-serif-playfair text-lg font-bold mb-1">{service.title}</div>
-                    <div className="text-sm italic">{service.question}</div>
-                  </div>
                 </div>
-                <ul className="text-gray-700 mb-2 text-sm list-disc list-inside text-left mx-auto mt-2" style={{maxWidth:'220px'}}>
-                  {service.deliverables.map((d, i) => (
-                    <li key={i}>{d}</li>
-                  ))}
-                </ul>
-                <div className="text-xs text-gray-500 mb-3 w-full text-left pl-2">Duration: {service.duration}</div>
-                <a
-                  href="https://calendly.com/sarahz-saas-economist"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#ff5722] font-medium hover:underline flex items-center gap-1 text-sm"
+                <div className="font-serif-playfair text-lg font-bold mb-1">{service.title}</div>
+                <div className="text-sm italic mb-2">{service.hero}</div>
+                <Link
+                  href={`/consulting/services/${service.slug}`}
+                  className="text-[#ff5722] font-medium hover:underline flex items-center gap-1 text-sm mt-2"
                 >
                   Learn more <span aria-hidden="true">→</span>
-                </a>
+                </Link>
               </div>
             ))}
           </div>
