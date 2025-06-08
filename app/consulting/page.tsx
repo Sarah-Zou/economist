@@ -5,7 +5,7 @@ import ContactCTA from '@/components/ContactCTA'
 import TestimonialCard from '@/components/TestimonialCard'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 
 const services = [
@@ -152,7 +152,7 @@ const serviceCategories = {
   'pricing-optimization-retainer': ['investor', 'metrics', 'pricing'],
 };
 
-export default function Consulting() {
+function ConsultingContent() {
   const searchParams = useSearchParams();
   const urlFilter = searchParams.get('filter');
   const [filter, setFilter] = useState('all');
@@ -242,4 +242,12 @@ export default function Consulting() {
       </section>
     </>
   )
+}
+
+export default function Consulting() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ConsultingContent />
+    </Suspense>
+  );
 } 
