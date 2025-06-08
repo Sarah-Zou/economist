@@ -1,13 +1,14 @@
 import Head from 'next/head';
 
-type Props = {
+interface Props {
   title: string;
   description: string;
   path?: string;           // e.g. "/consulting"
   image?: string;          // fallback to og-default
-};
+  canonical?: string;
+}
 
-export default function Seo({ title, description, path = '', image = '/og-default.jpg' }: Props) {
+export default function Seo({ title, description, path = '', image = '/og-default.jpg', canonical }: Props) {
   const url = `https://sarahzou.com${path}`;
   return (
     <Head>
@@ -15,7 +16,7 @@ export default function Seo({ title, description, path = '', image = '/og-defaul
       <meta name="description" content={description} />
 
       {/* Canonical */}
-      <link rel="canonical" href={url} />
+      {canonical && <link rel="canonical" href={canonical} />}
 
       {/* Open Graph */}
       <meta property="og:type" content="website" />
