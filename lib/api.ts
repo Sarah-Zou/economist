@@ -15,14 +15,19 @@ export interface Post {
   tags: string[]
 }
 
-function getFileDate(filePath: string, fallback: string) {
+function getFileDate(filePath: string, frontmatterDate: string) {
+  // If frontmatter has a date, use it
+  if (frontmatterDate) {
+    return frontmatterDate
+  }
+  
+  // Otherwise fall back to file creation date
   try {
     const stats = fs.statSync(filePath)
-    // Format as YYYY-MM-DD
     const d = stats.birthtime
     return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
   } catch {
-    return fallback
+    return frontmatterDate
   }
 }
 
