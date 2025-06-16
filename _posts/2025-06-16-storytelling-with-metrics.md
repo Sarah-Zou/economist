@@ -3,7 +3,7 @@ title: "Storytelling With Metrics: A Founder's Guide to Investor-Ready KPIs"
 date: "2025-06-16"
 author: "Dr. Sarah Zou"
 description: "A comprehensive guide to crafting compelling narratives around your startup's metrics at each funding stage, from pre-seed to pre-IPO. Learn how to present your KPIs to maximize investor confidence and valuation."
-image: "/images/newsletter/storytelling.webp"
+image: "/assets/images/newsletter/storytelling.webp"
 canonical: "https://sarahzou.com/newsletter/storytelling-with-metrics"
 tags:
   - SaaS
