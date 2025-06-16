@@ -1,6 +1,7 @@
 ---
 title: "Storytelling With Metrics"
 date: "2025-06-16"
+author: "Dr. Sarah Zou"
 description: "A comprehensive guide for SaaS founders on how to effectively communicate metrics to investors at different stages of growth."
 image: /assets/images/newsletter/storytelling.webp
 ---
