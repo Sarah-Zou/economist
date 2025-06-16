@@ -1,12 +1,32 @@
 ---
-title: "Storytelling With Metrics"
+title: "Storytelling With Metrics: A Founder's Guide to Investor-Ready KPIs"
 date: "2025-06-16"
 author: "Dr. Sarah Zou"
-description: "A comprehensive guide for SaaS founders on how to effectively communicate metrics to investors at different stages of growth."
-image: /assets/images/newsletter/storytelling.webp
+description: "A comprehensive guide to crafting compelling narratives around your startup's metrics at each funding stage, from pre-seed to pre-IPO. Learn how to present your KPIs to maximize investor confidence and valuation."
+image: "/images/newsletter/storytelling.webp"
+canonical: "https://sarahzou.com/newsletter/storytelling-with-metrics"
+tags:
+  - SaaS
+  - Startup Metrics
+  - Fundraising
+  - Investor Relations
+  - Growth Strategy
+  - KPIs
+  - ARR
+  - NRR
+  - CAC
+  - Burn Rate
+  - Rule of 40
+  - Series A
+  - Series B
+  - Series C
+  - Pre-IPO
+  - Venture Capital
+  - Startup Growth
+  - Capital Efficiency
+  - Investor Pitch
+  - Startup Valuation
 ---
-
-# Storytelling With Metrics
 
 **For SaaS founders, metrics are not just numbers—they're the language investors speak**. The way you present and contextualize your metrics directly shapes how investors perceive your traction, team, and potential.
 
@@ -18,8 +38,7 @@ image: /assets/images/newsletter/storytelling.webp
 
 Before revenue, pre-seed startups have minimal quantitative metrics, and investors' core question is: 
 
-> *"Is there **credible** evidence that this team can solve a **significant** problem?"*
-> 
+> *Is there **credible** evidence that this team can solve a **significant** problem?*
 
 Since traditional revenue metrics are absent, founders must demonstrate traction through proxies such as **early usage**, **strong engagement**, and **clear signals of market demand**. Key metrics include:
 
@@ -32,11 +51,18 @@ Since traditional revenue metrics are absent, founders must demonstrate traction
 
 **Summary of Metrics Focus**: Beta users / LoIs (>0), PMF score (> 40%), DAU/MAU ratio (>20%), Retention (>20%), ARR (>0).
 
-> **Narrative Angle:** 
-> 
-> **Vision and early traction**. At Pre-seed, **qualitative storytelling often outweighs hard numbers**. Pre-seed valuations rely on **an exceptional team**, **a compelling vision** or **strong narratives**. But demonstrating tangible traction (users or ARR) can meaningfully boost valuation, and therefore savvy founders should highlight any promising metrics: e.g. 
-> 
-> "*Our beta has a 25% DAU/MAU stickiness and 35% Day-1 retention, indicating strong engagement*,"
+**Narrative Angle:** 
+
+**Vision and early traction**. At Pre-seed, **qualitative storytelling often outweighs hard numbers**. Pre-seed valuations rely on **an exceptional team**, **a compelling vision** or **strong narratives**. But demonstrating tangible traction (users or ARR) can meaningfully boost valuation, and therefore savvy founders should highlight any promising metrics: e.g. 
+
+> *Our beta has a 25% DAU/MAU stickiness and 35% Day-1 retention, indicating strong engagement.*
+
+In short, early customer proof "moves the needle," as [one investor](https://www.forumvc.com/research/state-of-the-vc-market-pre-seed-and-seed-2024) said, it's 
+
+> *harder for early stage founders to raise, [but] easier for companies who are moving the needle.*
+
+This means founders who go beyond storytelling — by showing engagement or retention — stand out meaningfully in a crowded early-stage market.
+
 
 ### **2. Seed Stage: Proving Traction**
 
@@ -45,16 +71,18 @@ Due to the dual pressures of a slower fundraising market and higher investor exp
 At Seed, it's not enough to have initial traction—investors want to see that product-market fit is driving **scalable, efficient growth**. Seed-stage startups must demonstrate that they can **grow both rapidly and efficiently**. Key metrics include:
 
 - **ARR**: In 2025, seed startups are expected to show meaningful ARR traction. The median seed round in 2024 already saw **$0.3–0.5M** ARR as [the new standard](https://www.forumvc.com/research/state-of-the-vc-market-pre-seed-and-seed-2024), up from ~$0.2M several years ago. Those with early ARR [can justify higher valuations](https://www.forumvc.com/research/state-of-the-vc-market-pre-seed-and-seed-2024)—for example, seed companies with >$250K ARR are often valued at >$20M. This suggests that even modest recurring revenue can meaningfully improve pricing leverage in seed rounds.
-- **ARR Growth**: Rapid user or revenue growth indicates product–market fit. Although the median growth rate for startups in this stage varies from 30% to 100% across different surveys, the 2024 top-quantile benchmark is generally **ARR YoY growth >2.5x** (265% by [SaaS Capital](https://www.saas-capital.com/research/private-saas-company-growth-rate-benchmarks/); 445% by [Emergence](https://www.emcap.com/thoughts/beyond-benchmarks); 250% by [Open View / High Alpha](https://www.highalpha.com/2024-saas-benchmarks-report)). Consistent double-digit monthly growth (i.e. MoM growth ≥ 10%, or YoY growth ~3×) is a strong seed‐stage signal.
-- **Capital Efficiency & Runway**: Proving capital efficiency is critical in the 2025 fundraising market. Investors expect founders to be capital-efficient and plan for [**18](https://www.emcap.com/thoughts/beyond-benchmarks) to [24](https://www.forumvc.com/research/state-of-the-vc-market-pre-seed-and-seed-2024) months of runway** to allow for pivots and to achieve higher benchmarks before the next funding round, reducing fundraising pressure.
+- **ARR Growth**: Rapid user or revenue growth indicates product–market fit. Although the median growth rate for startups in this stage varies from 30% to 100% across different surveys, the 2024 top-quantile benchmark is generally **ARR YoY growth >250%** (265% by [SaaS Capital](https://www.saas-capital.com/research/private-saas-company-growth-rate-benchmarks/); 445% by [Emergence](https://www.emcap.com/thoughts/beyond-benchmarks); 250% by [Open View / High Alpha](https://www.highalpha.com/2024-saas-benchmarks-report)). Consistent double-digit monthly growth (i.e. MoM growth ≥ 10%, or YoY growth ~3×) is a strong seed‐stage signal.
+- **Capital Efficiency & Runway**: Proving capital efficiency is critical in the 2025 fundraising market. Investors expect founders to be capital-efficient and plan for **[18](https://www.emcap.com/thoughts/beyond-benchmarks) to [24](https://www.forumvc.com/research/state-of-the-vc-market-pre-seed-and-seed-2024) months of runway** to allow for pivots and to achieve higher benchmarks before the next funding round, reducing fundraising pressure.
 
-**Summary of Metrics Focus:** ARR (~$0.3–0.5M), ARR YoY growth (>2.5x), Runway (~18-24 mo).
+**Summary of Metrics Focus:** ARR (~$0.3–0.5M), ARR YoY growth (>250%), Runway (~18-24 mo).
 
-> **Narrative Angle:** 
-> 
-> **"Land-and-expand" efficiently**. Seed founders should frame a story of **fast and efficient growth**. For example: 
-> 
-> "*We're achieving 3x growth in our first year post-launch. We've kept our burn multiple around 2×, balancing growth with a lean operation. This capital-efficient growth gives us 2+ years runway, so your Seed investment will fuel product improvements and an expanding customer base – not just patch a leaky bucket.*"
+**Narrative Angle:** 
+
+**"Land-and-expand" efficiently**. Seed founders should frame a story of **fast and efficient growth**. For example: 
+
+> *We're achieving 3x growth in our first year post-launch. We've kept our burn multiple around 2×, balancing growth with a lean operation. This capital-efficient growth gives us 2+ years runway, so your Seed investment will fuel product improvements and an expanding customer base – not just patch a leaky bucket.*
+
+By emphasizing growth and efficient use of funds, the founder builds investor confidence that the business won't burn out or churn out early on. This is the kind of narrative that signals **both discipline and ambition**—exactly what investors look for in today's cautious but competitive seed market.
 
 ### **3. Series A: Scaling Efficiently**
 
@@ -70,15 +98,21 @@ Series A investors in 2025 are looking for evidence of a **scalable go-to-market
 
 **Summary of Metrics Focus:** ARR (~$3-5M), ARR YoY Growth (> 100%), NRR (>100-110%), CAC Payback (<12 months), ARR/FTE (>$120K), Burn Multiple (~1-2x).
 
-> **Narrative Angle:** 
-> 
-> **Efficient growth engine**. Series A investors want to hear that the startup can **scale revenue without reckless burn**. Founders should highlight metrics that showcase **capital-efficient growth**. For example: 
-> 
-> "*Our NRR is 105%—customers expand usage, a testament to our product value. We've achieved this while keeping CAC payback to ~12 months and operating with high productivity – about $180K ARR per employee, which reaches top-tier for our ARR band. In short, every $1 invested in sales is translating to >$1 of ARR within a year, and our existing customers are growing their spend with us. This efficient growth engine is why we only need a modest Series A to reach the next milestones.*"
+**Narrative Angle:** 
+
+**Efficient growth engine**. Series A investors want to hear that the startup can **scale revenue without reckless burn**. Founders should highlight metrics that showcase **capital-efficient growth**. For example: 
+
+> *Our NRR is 105%—customers expand usage, a testament to our product value. We've achieved this while keeping CAC payback to ~12 months and operating with high productivity – about $180K ARR per employee, which reaches top-tier for our ARR band. In short, every $1 invested in sales is translating to >$1 of ARR within a year, and our existing customers are growing their spend with us. This efficient growth engine is why we only need a modest Series A to reach the next milestones.*
+
+This paints a picture of a company not just ready to scale, but ready to **scale responsibly**—exactly what Series A investors are demanding in 2025.
 
 ### **4. Series B/C: Proving Scalable Economics**
 
-By Series B/C, investors' core question shifts from "*can this grow"* to "*can this scale **predictably, profitably, and become dominant** in its category?*" Companies ($5–50M+ ARR) must demonstrate both **significant scale** and **a proven business model**. Key metrics that growth-equity investors prioritize:
+By Series B/C, investors' core question shifts from "*can this grow"* to 
+
+>*can this scale **predictably, profitably, and become dominant** in its category?* 
+
+Companies ($5–50M+ ARR) must demonstrate both **significant scale** and **a proven business model**. Key metrics that growth-equity investors prioritize:
 
 - **ARR & Scale**: ARR size is a gating item for later rounds. The median B2B SaaS company raising Series B in 2024 has about [$10 M](https://www.vccafe.com/2024/06/06/2023-2024-b2b-saas-benchmarks/) ARR. Top-quartile Series B companies might have on the order of **$15–20 M+** ARR. By Series C, many companies are in the **$20–40 M** ARR range. These numbers have increased from a few years ago – e.g., ~$5M ARR was enough for Series B back in 2019, but expectations are higher now as companies stay private longer and raise later. Hitting these ARR levels demonstrates substantial market adoption.
 - **ARR Growth**: Although growth will naturally decelerate from the triple-digit rates of earlier stages, Series B/C companies are still expected to deliver strong growth. Yet, given the macro slowdown, 2024 median YoY ARR growth ****for $5–20M ARR SaaS companies fell to ~20–30%(from ~50% prior), though top quartile still grows ~**50–60%+**. The ability to sustain high growth on a larger revenue base is crucial for maintaining venture-level returns.
@@ -91,11 +125,13 @@ By Series B/C, investors' core question shifts from "*can this grow"* to "*can t
 
 **Summary of Metrics Focus:** ARR ($15M+ for series B; $20M+ for series C), YoY ARR growth (>50%), NRR (>110%), Gross Margin (>80%), CAC Payback (<18 months), Burn Multiple (≤2×), ARR per FTE (>$200K).
 
-> **Narrative Angle:** 
-> 
-> **Prove the business model works at scale**. Unlike earlier rounds that reward speed, Series B/C investors reward **sustainable scale**—with a clear emphasis on retention, margins, and capital efficiency. The founder's story should pivot from pure growth to **quality of growth**. For example: 
-> 
-> "*We're now at $20M ARR growing ~50% YoY, which is top-quartile for our size. More importantly, our NRR is 110% – expansion revenue is fueling growth with little incremental CAC. Our Burn Multiple is down to ~1.3× this year, versus 2.5× a year ago, reflecting much higher capital efficiency in scaling. Gross margins are a healthy 80%. This means we're growing fast and nearing profitability, a combination that commands premium valuations. In short, we've built a scalable model: we can continue 30–40% growth without burning heaps of cash.*"
+**Narrative Angle:** 
+
+**Prove the business model works at scale**. Unlike earlier rounds that reward speed, Series B/C investors reward **sustainable scale**—with a clear emphasis on retention, margins, and capital efficiency. The founder's story should pivot from pure growth to **quality of growth**. For example: 
+
+> *We're now at $20M ARR growing ~50% YoY, which is top-quartile for our size. More importantly, our NRR is 110% – expansion revenue is fueling growth with little incremental CAC. Our Burn Multiple is down to ~1.3× this year, versus 2.5× a year ago, reflecting much higher capital efficiency in scaling. Gross margins are a healthy 80%. This means we're growing fast and nearing profitability, a combination that commands premium valuations. In short, we've built a scalable model: we can continue 30–40% growth without burning heaps of cash.*
+
+That's the narrative growth investors want: disciplined scaling, rising efficiency, and a business that could be IPO-ready within a few years.
 
 ### **5. Expansion & Pre-IPO: Durable Economics**
 
@@ -111,11 +147,13 @@ As a company approaches an IPO, the focus is on achieving **public-company bench
 
 **Summary of Metrics Focus:** ARR Growth (>30%), Rule-of-40 (>30%), Operating margin (>0%), NRR (>115%), CAC Payback (< 20 mo).
 
-> **Narrative Angle:** 
+**Narrative Angle:** 
+
+**IPO-ready: durable growth with profitability**. At this stage, the company's story to investors should radiate confidence that it can go public successfully. Founders will emphasize metrics like, 
 > 
-> "**IPO-ready: durable growth with profitability**." At this stage, the company's story to investors should radiate confidence that it can go public successfully. Founders will emphasize metrics like, 
-> 
-> "*We consistently run at a Rule of 40 score ~40 now, e.g. 25% growth with 15% free cash flow margin – a balance only a handful of cloud companies achieve. We've also maintained ~80% gross margins and improved operating margin to +10%. This puts us in the top decile of SaaS companies at scale.*"
+> *We consistently run at a Rule of 40 score ~40 now, e.g. 25% growth with 15% free cash flow margin – a balance only a handful of cloud companies achieve. We've also maintained ~80% gross margins and improved operating margin to +10%. This puts us in the top decile of SaaS companies at scale.*
+
+Essentially, the narrative is: we have proven our model – we can grow steadily, make money, and justify a strong public-market multiple. By framing the story around balanced, durable metrics, the company appears as a compelling IPO candidate rather than a last-round "unicorn" in search of an exit.
 
 ## Conclusion
 
