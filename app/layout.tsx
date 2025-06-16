@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://sarahzou.com'),
   title: 'Sarah Zou | Economist for AI-SaaS',
   description: 'Pricing & metrics strategy for AI-SaaS founders—data-driven insights from PhD economist Sarah Zou.',
   openGraph: {
