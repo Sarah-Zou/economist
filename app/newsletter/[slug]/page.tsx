@@ -22,6 +22,9 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
     notFound()
   }
 
+  // Remove any top-level heading from the content
+  const content = post.content.replace(/^# .*$/m, '').trim()
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -81,7 +84,7 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
 
         {/* Article Content */}
         <div className="prose prose-lg max-w-none mb-12">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
         </div>
 
         {/* CTA Button */}
