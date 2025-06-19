@@ -35,9 +35,7 @@ const Footer = () => {
               <iframe 
                 src="https://sarahzou.substack.com/embed" 
                 height="52" 
-                frameBorder="0" 
-                scrolling="no" 
-                style={{ margin: 0, borderRadius: '0px !important', backgroundColor: 'transparent', width: '100%' }}
+                style={{ width: '100%', border: 'none', overflow: 'hidden', background: 'transparent', margin: 0, borderRadius: 0 }}
                 className="w-full"
               />
             </div>
