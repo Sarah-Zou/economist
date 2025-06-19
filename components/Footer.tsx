@@ -33,12 +33,12 @@ const Footer = () => {
             <div className="font-bold text-lg mb-3 text-[#111]">Subscribe to my newsletter</div>
             <div className="w-full">
               <iframe 
-                src="https://embeds.beehiiv.com/0d286f02-6dd7-43ae-ace7-e00771e5df79?slim=true" 
-                data-test-id="beehiiv-embed" 
-                height="52" 
+                src="https://sarahzou.substack.com/embed" 
+                width="480" 
+                height="320" 
+                style={{border: '1px solid #EEE', background: 'white'}} 
                 frameBorder="0" 
-                scrolling="no" 
-                style={{ margin: 0, borderRadius: '0px !important', backgroundColor: 'transparent' }}
+                scrolling="no"
                 className="w-full"
               />
             </div>
