@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react'
-import { Mail, Linkedin } from 'lucide-react'
+import { Mail, Linkedin, Twitter } from 'lucide-react'
 import Seo from '@/components/Seo'
 
 export default function ContactPage() {
@@ -25,6 +25,9 @@ export default function ContactPage() {
               </a>
               <a href="https://www.linkedin.com/in/drsarah-saas-economist" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e64a19] font-medium text-lg" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="w-6 h-6" /> LinkedIn
+              </a>
+              <a href="https://twitter.com/SaaS_Econ" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e64a19] font-medium text-lg" target="_blank" rel="noopener noreferrer">
+                <Twitter className="w-6 h-6" /> X / Twitter
               </a>
             </div>
           </div>
