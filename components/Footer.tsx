@@ -29,15 +29,15 @@ const Footer = () => {
         </div>
         {/* Right: Newsletter subscription */}
         <div className="flex-1 flex flex-col items-center md:items-end w-full">
-          <div className="max-w-md w-full">
-            <div className="font-bold text-lg mb-3 text-[#111]">Subscribe to my newsletter</div>
-            <div className="w-full">
-              <iframe 
-                src="https://sarahzou.substack.com/embed" 
-                height="52" 
-                style={{ width: '100%', border: 'none', overflow: 'hidden', background: 'transparent', margin: 0, borderRadius: 0 }}
-                className="w-full"
-              />
+          <div className="max-w-md w-full flex flex-col items-center md:items-end">
+            <div className="font-bold text-lg mb-3 text-[#111]">Connect with me</div>
+            <div className="flex gap-4">
+              <a href="mailto:sarahz@rooba.tech" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e64a19] font-medium text-lg" target="_blank" rel="noopener noreferrer">
+                <Mail className="w-6 h-6" />
+              </a>
+              <a href="https://www.linkedin.com/in/drsarah-saas-economist" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e64a19] font-medium text-lg" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="w-6 h-6" />
+              </a>
             </div>
           </div>
         </div>
