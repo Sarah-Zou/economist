@@ -33,11 +33,11 @@ const Footer = () => {
             <div className="font-bold text-lg mb-3 text-[#111]">Subscribe to my newsletter</div>
             <div className="w-full">
               <iframe 
-                src="https://sarahzou.substack.com/embed"
-                height="52"
-                frameBorder="0"
-                scrolling="no"
-                style={{ margin: 0, borderRadius: '0px !important', backgroundColor: 'transparent' }}
+                src="https://sarahzou.substack.com/embed" 
+                height="52" 
+                frameBorder="0" 
+                scrolling="no" 
+                style={{ margin: 0, borderRadius: '0px !important', backgroundColor: 'transparent', width: '100%' }}
                 className="w-full"
               />
             </div>
