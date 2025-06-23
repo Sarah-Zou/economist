@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const imageDir = 'assets/images/newsletter';
+const imageDir = 'public/assets/images/newsletter';
 const postDir = '_posts';
 
 fs.readdirSync(imageDir).forEach(file => {
