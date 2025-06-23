@@ -20,9 +20,9 @@ As SaaS founders, have you faced that moment before a board meeting or investor 
 
 Most benchmarks out there are either outdated, too generic, or skewed by public giants. This guide helps you cut through the noise with only the highest-signal data sources—used by top-tier VCs, growth investors, and scaled SaaS operators.
 
-![SaaS benchmark data sources cheat sheet for 2024-25, showing top VC and public SaaS metrics sources](/assets/images/newsletter/benchmark-data-sources.webp){:loading="lazy" width="720"}
+![SaaS Startup Benchmark Sources 2024–25 comparison cheat sheet, showing top VC and public SaaS metrics sources](/assets/images/newsletter/SaaS_Benchmark_Data_Sources_June_2025.jpg)
 
-*Want the hi-res, print-ready PDF version of this SaaS Benchmark Cheat Sheet? [Download it free here](https://sarah-zou-the-saas-economist-newsletter.kit.com/e18d41752f){:target="_blank" rel="noopener noreferrer"} and get the full, investor-ready version for your next board or pitch deck.*
+*Want the hi-res, print-ready PDF version of this SaaS Benchmark Cheat Sheet? [Download it free here](https://sarah-zou-the-saas-economist-newsletter.kit.com/e18d41752f) and get the full, investor-ready version for your next board or pitch deck.*
 
 ## The SaaS Benchmark Problem
 
