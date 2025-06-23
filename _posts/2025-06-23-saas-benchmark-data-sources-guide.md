@@ -22,7 +22,7 @@ Most benchmarks out there are either outdated, too generic, or skewed by public 
 
 ![SaaS Startup Benchmark Sources 2024–25 comparison cheat sheet, showing top VC and public SaaS metrics sources](/assets/images/newsletter/SaaS_Benchmark_Data_Sources_June_2025.jpg)
 
-*Want the hi-res, print-ready PDF version of this SaaS Benchmark Cheat Sheet? [Download it free here](https://sarah-zou-the-saas-economist-newsletter.kit.com/e18d41752f) and get the full, investor-ready version for your next board or pitch deck.*
+*Want the hi-res, print-ready PDF version of this SaaS Benchmark Source Cheat Sheet? [Download it free here](https://sarah-zou-the-saas-economist-newsletter.kit.com/e18d41752f) and get the full, investor-ready version for your next board or pitch deck.*
 
 ## The SaaS Benchmark Problem
 

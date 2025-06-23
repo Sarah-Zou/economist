@@ -34,7 +34,8 @@ function getFileDate(filePath: string, frontmatterDate: string) {
 export function getAllPosts(): Post[] {
   const fileNames = fs.readdirSync(postsDirectory)
   const allPostsData = fileNames.map((fileName) => {
-    const slug = fileName.replace(/\.md$/, '')
+    // Extract slug after the date (YYYY-MM-DD-)
+    const slug = fileName.replace(/^[0-9]{4}-[0-9]{2}-[0-9]{2}-/, '').replace(/\.md$/, '')
     const fullPath = path.join(postsDirectory, fileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const { data, content } = matter(fileContents)
@@ -57,7 +58,11 @@ export function getAllPosts(): Post[] {
 
 export function getPostBySlug(slug: string): Post | null {
   try {
-    const fullPath = path.join(postsDirectory, `${slug}.md`)
+    // Find the file that matches the slug after the date
+    const fileNames = fs.readdirSync(postsDirectory)
+    const fileName = fileNames.find((name) => name.replace(/^[0-9]{4}-[0-9]{2}-[0-9]{2}-/, '').replace(/\.md$/, '') === slug)
+    if (!fileName) return null
+    const fullPath = path.join(postsDirectory, fileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const { data, content } = matter(fileContents)
     const date = getFileDate(fullPath, data.date)
