@@ -104,9 +104,9 @@ export default function Home() {
         <section className="py-20 bg-white flex flex-col items-center">
           <div className="max-w-5xl w-full">
             <div className="grid md:grid-cols-2 gap-12">
-              {homepageTestimonials.map((t, i) => (
+              {/* {homepageTestimonials.map((t, i) => (
                 <TestimonialCard key={i} name={t.name} title={t.title} quote={t.quote} />
-              ))}
+              ))} */}
             </div>
           </div>
         </section>

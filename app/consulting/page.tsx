@@ -229,9 +229,9 @@ function ConsultingContent() {
           <div className="max-w-4xl mx-auto mb-24">
             <h2 className="font-serif-playfair text-2xl font-bold mb-8 text-center text-[#ff5722]">Testimonials</h2>
             <div className="grid md:grid-cols-3 gap-8">
-              {testimonials.map((t, i) => (
+              {/* {testimonials.map((t, i) => (
                 <TestimonialCard key={i} name={t.name} title={t.title} quote={t.quote} />
-              ))}
+              ))} */}
             </div>
           </div>
 
