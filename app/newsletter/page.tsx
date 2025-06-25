@@ -22,7 +22,7 @@ function SubstackFeed() {
       .then(res => res.json())
       .then(data => {
         if (!data.items) throw new Error('No posts found');
-        const posts: Post[] = data.items.slice(0, 6).map((item: any) => ({
+        const posts: Post[] = data.items.slice(0, 5).map((item: any) => ({
           title: item.title,
           link: item.link,
           pubDate: item.pubDate,
@@ -43,22 +43,33 @@ function SubstackFeed() {
   if (error) return <div className="text-red-500 mt-8">{error}</div>;
 
   return (
-    <section id="substack-feed" className="flex flex-col gap-6">
+    <section id="substack-feed" className="flex flex-col gap-6 w-full max-w-xl mx-auto">
       {posts.map((post, i) => (
-        <article key={i} className="flex items-center bg-white rounded-lg shadow p-4 border border-gray-100">
-          <div className="flex-1 pr-4">
-            <a href={post.link} target="_blank" rel="noopener noreferrer" className="text-lg md:text-xl font-bold text-gray-900 hover:text-orange-600 leading-tight block mb-1">
+        <article
+          key={i}
+          className="flex items-center justify-between bg-white rounded-lg shadow-sm border border-gray-200 px-6 py-4 hover:shadow-md transition w-full"
+        >
+          <div className="flex-1 pr-4 min-w-0">
+            <a
+              href={post.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block font-semibold text-lg text-gray-900 hover:text-orange-600 mb-1 leading-snug truncate"
+            >
               {post.title}
             </a>
-            <div className="text-gray-500 text-xs mb-2 flex items-center gap-2">
-              <span>{new Date(post.pubDate).toLocaleDateString()}</span>
-              <span>•</span>
-              <span>{post.author}</span>
+            <div className="text-xs text-gray-500 mb-1 whitespace-nowrap overflow-hidden text-ellipsis">
+              {new Date(post.pubDate).toLocaleDateString()} • {post.author}
             </div>
-            <p className="text-gray-700 text-sm line-clamp-2" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+            <p className="text-gray-700 text-sm line-clamp-2 max-w-full" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
           </div>
           {post.thumbnail && (
-            <img src={post.thumbnail} alt={post.title} className="w-24 h-16 object-cover rounded ml-2 border border-gray-200" loading="lazy" />
+            <img
+              src={post.thumbnail}
+              alt={post.title}
+              className="w-20 h-16 object-cover rounded ml-4 border border-gray-100 flex-shrink-0"
+              loading="lazy"
+            />
           )}
         </article>
       ))}
@@ -68,7 +79,7 @@ function SubstackFeed() {
 
 export default function NewsletterPage() {
   return (
-    <div className="min-h-screen bg-[#faf9f6]">
+    <div className="min-h-screen bg-[#f7f7f7]">
       <Seo
         title="Newsletter | Sarah Zou"
         description="Insights and analysis on economics, SaaS, and startup metrics"
@@ -77,23 +88,23 @@ export default function NewsletterPage() {
       <div className="max-w-7xl mx-auto px-4 py-16">
         {/* Headings */}
         <h1 className="text-3xl md:text-4xl font-extrabold mb-2 text-gray-900 font-serif">Subscribe for actionable insights on SaaS & AI strategy</h1>
-        <h3 className="text-lg md:text-xl text-gray-700 mb-10 font-sans">Get original research, pricing breakdowns, and frameworks every week-ish.</h3>
-        {/* Main grid layout */}
+        <h3 className="text-lg md:text-xl text-gray-700 mb-8 font-sans">Get original research, pricing breakdowns, and frameworks every week-ish.</h3>
         <div
-          className="grid gap-12"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'minmax(0,1fr) 400px',
-          }}
+          className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_400px] gap-12 items-start"
         >
-          {/* Left: Substack Feed */}
-          <div className="flex flex-col gap-6">
+          {/* Left: Post List with Intro */}
+          <div className="flex flex-col gap-8 w-full max-w-xl mx-auto">
+            <p className="text-base text-gray-700 mb-2">
+              <span className="font-semibold text-orange-600">The SaaS Economist</span> is where founders, operators, and investors get practical, PhD-level breakdowns on SaaS pricing, metrics, and growth levers. Every post is written for busy people who want to make smarter decisions—fast.
+            </p>
             <SubstackFeed />
           </div>
           {/* Right: Substack Signup */}
-          <aside className="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center border border-[#f0f0f0] w-full max-w-sm mx-auto lg:mx-0 sticky top-12 h-fit">
-            <h2 className="text-2xl font-bold text-center text-orange-600 mb-2">Subscribe to my weekly-ish newsletter</h2>
-            <p className="text-center text-gray-700 mb-4 text-base">Actionable SaaS & AI strategy, pricing, and metrics in your inbox.</p>
+          <aside className="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center border border-[#f0f0f0] w-full max-w-sm mx-auto md:sticky md:top-12 h-fit">
+            <h2 className="text-2xl font-extrabold text-center text-orange-600 mb-2">Subscribe to my weekly-ish newsletter</h2>
+            <p className="text-center text-gray-700 mb-4 text-base">
+              Join 2,000+ SaaS founders, execs, and investors who get my best frameworks, pricing teardowns, and market insights—straight to your inbox. No spam, ever.
+            </p>
             <iframe
               src="https://sarahzou.substack.com/embed?showPubLogo=false"
               width="100%"
