@@ -94,21 +94,25 @@ export default function NewsletterPage() {
             <SubstackFeed />
           </div>
           {/* Right: Substack Signup */}
-          <aside className="bg-white rounded-lg shadow-lg p-12 flex flex-col items-center border border-[#f0f0f0] w-full max-w-lg mx-auto md:sticky md:top-12 h-fit">
-            <h2 className="text-2xl font-extrabold text-center text-orange-600 mb-4">Subscribe to my weekly newsletter where we deep dive into everything about growth metrics, pricing science, and investor strategy.</h2>
-            <div className="w-full flex justify-center">
-              <iframe
-                src="https://sarahzou.substack.com/embed"
-                width="520"
-                height="380"
-                style={{ border: '1px solid #EEE', background: 'white' }}
-                frameBorder="0"
-                scrolling="no"
-                title="Substack signup"
-                className="max-w-full"
-              />
-            </div>
-          </aside>
+          <div className="flex flex-col items-center w-full max-w-lg mx-auto md:sticky md:top-12 h-fit">
+            <p className="text-lg font-semibold text-center text-orange-600 mb-4">
+              Subscribe to my weekly newsletter where we deep dive into everything about SaaS strategies.
+            </p>
+            <aside className="bg-white rounded-lg shadow-lg p-12 flex flex-col items-center border border-[#f0f0f0] w-full">
+              <div className="w-full flex justify-center">
+                <iframe
+                  src="https://sarahzou.substack.com/embed"
+                  width="520"
+                  height="380"
+                  style={{ border: '1px solid #EEE', background: 'white' }}
+                  frameBorder="0"
+                  scrolling="no"
+                  title="Substack signup"
+                  className="max-w-full"
+                />
+              </div>
+            </aside>
+          </div>
         </div>
       </div>
       {/* Responsive grid fallback */}
