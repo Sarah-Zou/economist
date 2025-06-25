@@ -58,11 +58,8 @@ function SubstackFeed() {
             >
               {post.title}
             </a>
-            <div className="text-xs text-gray-500 mb-1 whitespace-nowrap overflow-hidden text-ellipsis flex items-center gap-3">
+            <div className="text-xs text-gray-500 mb-1 whitespace-nowrap overflow-hidden text-ellipsis">
               {new Date(post.pubDate).toLocaleDateString()} • {post.author}
-              {/* Placeholder icons for likes and comments */}
-              <span className="flex items-center gap-1 ml-2"><span role="img" aria-label="likes">👍</span> 0</span>
-              <span className="flex items-center gap-1"><span role="img" aria-label="comments">💬</span> 0</span>
             </div>
             <p className="text-gray-700 text-sm line-clamp-2 max-w-full" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
           </div>
@@ -89,24 +86,21 @@ export default function NewsletterPage() {
         canonical="https://sarahzou.com/newsletter"
       />
       <div className="max-w-7xl mx-auto px-4 py-16">
-        {/* Headings */}
-        <h1 className="text-3xl md:text-4xl font-extrabold mb-2 text-gray-900 font-serif">Subscribe for actionable insights on SaaS & AI strategy</h1>
-        <h3 className="text-lg md:text-xl text-gray-700 mb-8 font-sans">Get original research, pricing breakdowns, and frameworks every week-ish.</h3>
         <div
-          className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_400px] gap-12 items-start"
+          className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_540px] gap-12 items-start"
         >
           {/* Left: Post List Only */}
           <div className="flex flex-col gap-8 w-full max-w-xl mx-auto">
             <SubstackFeed />
           </div>
           {/* Right: Substack Signup */}
-          <aside className="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center border border-[#f0f0f0] w-full max-w-sm mx-auto md:sticky md:top-12 h-fit">
-            <h2 className="text-2xl font-extrabold text-center text-orange-600 mb-2">Subscribe to my weekly-ish newsletter</h2>
+          <aside className="bg-white rounded-lg shadow-lg p-12 flex flex-col items-center border border-[#f0f0f0] w-full max-w-lg mx-auto md:sticky md:top-12 h-fit">
+            <h2 className="text-2xl font-extrabold text-center text-orange-600 mb-4">Subscribe to my weekly newsletter where we deep dive into everything about growth metrics, pricing science, and investor strategy.</h2>
             <div className="w-full flex justify-center">
               <iframe
                 src="https://sarahzou.substack.com/embed"
-                width="480"
-                height="320"
+                width="520"
+                height="380"
                 style={{ border: '1px solid #EEE', background: 'white' }}
                 frameBorder="0"
                 scrolling="no"
