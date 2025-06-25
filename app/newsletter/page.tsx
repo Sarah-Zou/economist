@@ -58,8 +58,11 @@ function SubstackFeed() {
             >
               {post.title}
             </a>
-            <div className="text-xs text-gray-500 mb-1 whitespace-nowrap overflow-hidden text-ellipsis">
+            <div className="text-xs text-gray-500 mb-1 whitespace-nowrap overflow-hidden text-ellipsis flex items-center gap-3">
               {new Date(post.pubDate).toLocaleDateString()} • {post.author}
+              {/* Placeholder icons for likes and comments */}
+              <span className="flex items-center gap-1 ml-2"><span role="img" aria-label="likes">👍</span> 0</span>
+              <span className="flex items-center gap-1"><span role="img" aria-label="comments">💬</span> 0</span>
             </div>
             <p className="text-gray-700 text-sm line-clamp-2 max-w-full" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
           </div>
@@ -92,29 +95,25 @@ export default function NewsletterPage() {
         <div
           className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_400px] gap-12 items-start"
         >
-          {/* Left: Post List with Intro */}
+          {/* Left: Post List Only */}
           <div className="flex flex-col gap-8 w-full max-w-xl mx-auto">
-            <p className="text-base text-gray-700 mb-2">
-              <span className="font-semibold text-orange-600">The SaaS Economist</span> is where founders, operators, and investors get practical, PhD-level breakdowns on SaaS pricing, metrics, and growth levers. Every post is written for busy people who want to make smarter decisions—fast.
-            </p>
             <SubstackFeed />
           </div>
           {/* Right: Substack Signup */}
           <aside className="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center border border-[#f0f0f0] w-full max-w-sm mx-auto md:sticky md:top-12 h-fit">
             <h2 className="text-2xl font-extrabold text-center text-orange-600 mb-2">Subscribe to my weekly-ish newsletter</h2>
-            <p className="text-center text-gray-700 mb-4 text-base">
-              Join 2,000+ SaaS founders, execs, and investors who get my best frameworks, pricing teardowns, and market insights—straight to your inbox. No spam, ever.
-            </p>
-            <iframe
-              src="https://sarahzou.substack.com/embed?showPubLogo=false"
-              width="100%"
-              height="180"
-              style={{ border: '1px solid #EEE', background: '#FFF' }}
-              frameBorder="0"
-              scrolling="no"
-              title="Substack signup"
-              className="w-full"
-            />
+            <div className="w-full flex justify-center">
+              <iframe
+                src="https://sarahzou.substack.com/embed"
+                width="480"
+                height="320"
+                style={{ border: '1px solid #EEE', background: 'white' }}
+                frameBorder="0"
+                scrolling="no"
+                title="Substack signup"
+                className="max-w-full"
+              />
+            </div>
           </aside>
         </div>
       </div>
