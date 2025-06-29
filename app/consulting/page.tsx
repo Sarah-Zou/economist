@@ -226,6 +226,8 @@ function ConsultingContent() {
             ))}
           </div>
 
+          {/* Testimonials section commented out */}
+          {false && (
           <div className="max-w-4xl mx-auto mb-24">
             <h2 className="font-serif-playfair text-2xl font-bold mb-8 text-center text-[#ff5722]">Testimonials</h2>
             <div className="grid md:grid-cols-3 gap-8">
@@ -234,6 +236,7 @@ function ConsultingContent() {
               ))} */}
             </div>
           </div>
+          )}
 
           <div className="max-w-2xl mx-auto">
             <ContactCTA variant="section" />

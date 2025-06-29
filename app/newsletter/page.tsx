@@ -88,26 +88,21 @@ export default function NewsletterPage() {
         <div className="flex-1 flex flex-col gap-8 w-full max-w-2xl">
           <SubstackFeed />
         </div>
-        {/* Right: Signup Box + Image */}
-        <div className="flex flex-col items-center w-full max-w-lg mx-auto md:sticky md:top-12 h-fit">
-          <div className="flex flex-col items-center w-full">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-center text-orange-600 mb-4 leading-tight">Subscribe to my weekly newsletter where we deep dive into all things SaaS strategies.</h2>
-            <div className="flex flex-row items-center w-full gap-6">
-              <aside className="bg-white rounded-lg shadow p-8 flex flex-col items-center border border-[#f0f0f0] w-full max-w-md">
-                <div className="w-full flex justify-center">
-                  <iframe
-                    src="https://sarahzou.substack.com/embed"
-                    width="420"
-                    height="320"
-                    style={{ border: '1px solid #EEE', background: 'white' }}
-                    frameBorder="0"
-                    scrolling="no"
-                    title="Substack signup"
-                    className="max-w-full"
-                  />
-                </div>
-              </aside>
-            </div>
+        {/* Right: Signup Box (copied from Cheat Sheets) */}
+        <div className="flex flex-col items-center md:items-start w-full max-w-lg mx-auto md:sticky md:top-12 h-fit">
+          <h3 className="text-2xl font-bold mb-2 text-[#ff5722] text-left w-full">Get the bundle now</h3>
+          <p className="text-lg mb-4 text-[#222] text-left w-full">Enter your email to join The SaaS Economist. You'll instantly receive the Metrics-Storytelling, Benchmark Navigator, and Stage-Smart cheat sheets. No spam—just weekly 5-minute insights on SaaS pricing, AI economics, and growth benchmarks.</p>
+          <div className="w-full flex justify-center md:justify-start">
+            <iframe
+              src="https://sarahzou.substack.com/embed"
+              width="520"
+              height="380"
+              style={{ border: '1px solid #EEE', background: 'white' }}
+              frameBorder="0"
+              scrolling="no"
+              title="Substack signup"
+              className="max-w-full"
+            />
           </div>
         </div>
       </div>
