@@ -92,9 +92,6 @@ export default function NewsletterPage() {
         <div className="flex flex-col items-center w-full max-w-lg mx-auto md:sticky md:top-12 h-fit">
           <div className="flex flex-col items-center w-full">
             <h2 className="text-3xl md:text-4xl font-extrabold text-center text-orange-600 mb-4 leading-tight">Subscribe to my weekly newsletter where we deep dive into all things SaaS strategies.</h2>
-            <p className="text-lg text-center text-gray-700 mb-6 max-w-md">
-              Get original research, pricing breakdowns, and frameworks for SaaS founders, operators, and investors. No spam—just actionable insights and the occasional meme.
-            </p>
             <div className="flex flex-row items-center w-full gap-6">
               <aside className="bg-white rounded-lg shadow p-8 flex flex-col items-center border border-[#f0f0f0] w-full max-w-md">
                 <div className="w-full flex justify-center">
@@ -110,9 +107,6 @@ export default function NewsletterPage() {
                   />
                 </div>
               </aside>
-              <div className="hidden md:flex flex-col items-center justify-center">
-                <Image src="/assets/images/newsletter/fractional-economist-saas-startups.webp" alt="Sarah Zou headshot" width={96} height={96} className="rounded-full object-cover" />
-              </div>
             </div>
           </div>
         </div>

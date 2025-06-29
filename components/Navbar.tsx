@@ -8,12 +8,13 @@ const Navbar = () => {
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex flex-col">
             <span className="font-serif-playfair text-2xl font-bold">Sarah Zou, PhD</span>
+            <span className="text-xs text-gray-500 tracking-wide mt-0.5">The SaaS Economist</span>
           </Link>
           
           <div className="hidden md:flex items-center space-x-6">
             <Link href="/consulting" className="text-gray-600 hover:text-gray-900">Consulting</Link>
             <Link href="/about" className="text-gray-600 hover:text-gray-900">About</Link>
-            <Link href="/cheat-sheets" className="text-gray-600 hover:text-gray-900">Cheat-sheets</Link>
+            <Link href="/cheat-sheets" className="text-gray-600 hover:text-gray-900">Cheat Sheets</Link>
             <Link href="/newsletter" className="text-gray-600 hover:text-gray-900">Newsletter</Link>
             <Link href="/contact">
               <Button className="bg-accent hover:bg-accent/90 text-white rounded-full px-6 py-3">Contact</Button>
