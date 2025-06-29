@@ -88,10 +88,9 @@ export default function NewsletterPage() {
         <div className="flex-1 flex flex-col gap-8 w-full max-w-2xl">
           <SubstackFeed />
         </div>
-        {/* Right: Signup Box (copied from Cheat Sheets) */}
+        {/* Right: Signup Box */}
         <div className="flex flex-col items-center md:items-start w-full max-w-lg mx-auto md:sticky md:top-12 h-fit">
-          <h3 className="text-2xl font-bold mb-2 text-[#ff5722] text-left w-full">Get the bundle now</h3>
-          <p className="text-lg mb-4 text-[#222] text-left w-full">Enter your email to join The SaaS Economist. You'll instantly receive the Metrics-Storytelling, Benchmark Navigator, and Stage-Smart cheat sheets. No spam—just weekly 5-minute insights on SaaS pricing, AI economics, and growth benchmarks.</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center text-orange-600 mb-4 leading-tight w-full">Subscribe to my weekly newsletter where we deep dive into all things SaaS strategies.</h2>
           <div className="w-full flex justify-center md:justify-start">
             <iframe
               src="https://sarahzou.substack.com/embed"
