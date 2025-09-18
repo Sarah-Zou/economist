@@ -14,7 +14,6 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-6">
             <Link href="/consulting" className="text-gray-600 hover:text-gray-900">Consulting</Link>
             <Link href="/about" className="text-gray-600 hover:text-gray-900">About</Link>
-            <Link href="/cheat-sheets" className="text-gray-600 hover:text-gray-900">Cheat Sheets</Link>
             <Link href="/newsletter" className="text-gray-600 hover:text-gray-900">Newsletter</Link>
             <Link href="/contact">
               <Button className="bg-accent hover:bg-accent/90 text-white rounded-full px-6 py-3">Contact</Button>

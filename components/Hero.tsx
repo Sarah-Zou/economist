@@ -12,8 +12,11 @@ const Hero = () => {
             <h1 className="font-serif-playfair text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Data-Driven SaaS Growth, Made Simple.
           </h1>
-            <p className="text-lg md:text-xl mb-8 text-[#222] max-w-xl">
+            <p className="text-lg md:text-xl mb-4 text-[#222] max-w-xl">
               I'm Sarah Zou, PhD Economist, specialized in pricing strategies, metrics analytics, and investor-ready storytelling for SaaS startups.
+            </p>
+            <p className="text-sm text-gray-600 mb-8">
+              Princeton, NJ · NYC · Philadelphia · Remote (US/EU)
             </p>
             <Link href="/contact">
               <Button className="bg-[#ff5722] text-white font-bold rounded-full px-6 py-3 hover:bg-[#e64a19] focus:ring-2 focus:ring-[#ff5722]">

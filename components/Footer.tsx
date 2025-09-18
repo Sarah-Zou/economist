@@ -4,7 +4,6 @@ import { Linkedin, Mail, Twitter } from 'lucide-react'
 const navLinks = [
   { href: '/consulting', label: 'Consulting' },
   { href: '/newsletter', label: 'Newsletter' },
-  { href: '/cheat-sheets', label: 'Cheat Sheets' },
   { href: '/about', label: 'About' },
 ]
 
@@ -27,14 +26,15 @@ const Footer = () => {
               </Link>
             ))}
           </div>
-          <div className="text-sm text-gray-500 mt-4">© 2025 The SaaS Economist · All rights reserved · Princeton, NJ</div>
+          <div className="text-sm text-gray-500 mt-4">© 2025 The SaaS Economist · All rights reserved</div>
+          <div className="text-sm text-gray-500 mt-1">Princeton, NJ · NYC · Philadelphia · Remote (US/EU)</div>
         </div>
         {/* Right: Newsletter subscription */}
         <div className="flex-1 flex flex-col items-center md:items-end w-full">
           <div className="max-w-md w-full flex flex-col items-center md:items-end">
             <div className="font-bold text-lg mb-3 text-[#111]">Connect with me</div>
             <div className="flex gap-4">
-              <a href="mailto:sarahz@rooba.tech" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e64a19] font-medium text-lg" target="_blank" rel="noopener noreferrer">
+              <a href="mailto:sarah@sarahzou.com" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e64a19] font-medium text-lg" target="_blank" rel="noopener noreferrer">
                 <Mail className="w-6 h-6" />
               </a>
               <a href="https://www.linkedin.com/in/drsarah-saas-economist" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e64a19] font-medium text-lg" target="_blank" rel="noopener noreferrer">

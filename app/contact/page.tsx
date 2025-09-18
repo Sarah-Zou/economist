@@ -20,7 +20,7 @@ export default function ContactPage() {
           </p>
           <div className="flex flex-col items-center gap-4 mb-8">
             <div className="flex gap-4">
-              <a href="mailto:sarahz@rooba.tech" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e64a19] font-medium text-lg" target="_blank" rel="noopener noreferrer">
+              <a href="mailto:sarah@sarahzou.com" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e64a19] font-medium text-lg" target="_blank" rel="noopener noreferrer">
                 <Mail className="w-6 h-6" /> Email
               </a>
               <a href="https://www.linkedin.com/in/drsarah-saas-economist" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e64a19] font-medium text-lg" target="_blank" rel="noopener noreferrer">
