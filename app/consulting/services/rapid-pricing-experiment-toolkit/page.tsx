@@ -1,5 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Rapid Pricing Experiment Toolkit | 4-6 Week Pricing Tests | Sarah Zou',
+  description: 'Build A/B pricing tests like product features with our 4-6 week experiment toolkit. Get instrumentation, WTP research, cohorts, and rollout guardrails from PhD economist Sarah Zou.',
+  openGraph: {
+    title: 'Rapid Pricing Experiment Toolkit | Sarah Zou',
+    description: 'Build A/B pricing tests like product features with our 4-6 week experiment toolkit. Get instrumentation, WTP research, cohorts, and rollout guardrails.',
+    type: 'website',
+  },
+};
 
 const services = [
   { slug: 'investor-deck-accelerator', title: 'Investor Deck Accelerator' },

@@ -6,13 +6,34 @@ import remarkGfm from 'remark-gfm'
 import Image from 'next/image'
 import Seo from '@/components/Seo'
 import Link from 'next/link'
-import Head from 'next/head'
+import { Metadata } from 'next'
 
 export async function generateStaticParams() {
   const posts = getAllPosts()
   return posts.map((post) => ({
     slug: post.slug,
   }))
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const post = getPostBySlug(params.slug)
+  
+  if (!post) {
+    return {
+      title: 'Post Not Found',
+    }
+  }
+
+  return {
+    title: post.title,
+    description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      images: [post.image],
+      type: 'article',
+    },
+  }
 }
 
 export default function NewsletterPost({ params }: { params: { slug: string } }) {
@@ -50,12 +71,10 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
         description={post.description}
         canonical={`https://sarahzou.com/newsletter/${post.slug}`}
       />
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <article className="max-w-4xl mx-auto px-4 py-16">
         {/* Hero Image */}
         <div className="relative w-full h-[400px] mb-12 rounded-lg overflow-hidden">

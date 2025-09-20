@@ -1,5 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Pricing Diagnostic & Revenue Boost | 2-Week Pricing Strategy | Sarah Zou',
+  description: 'Unlock hidden revenue with our 2-week pricing diagnostic. Get comprehensive pricing audit, competitive benchmarks, and actionable optimization recommendations from PhD economist Sarah Zou.',
+  openGraph: {
+    title: 'Pricing Diagnostic & Revenue Boost | Sarah Zou',
+    description: 'Unlock hidden revenue with our 2-week pricing diagnostic. Get comprehensive pricing audit, competitive benchmarks, and actionable optimization recommendations.',
+    type: 'website',
+  },
+};
 
 const services = [
   { slug: 'investor-deck-accelerator', title: 'Investor Deck Accelerator' },

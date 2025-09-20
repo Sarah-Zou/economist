@@ -22,10 +22,13 @@ module.exports = {
       '/consulting': 0.9,
       '/about': 0.8,
       '/newsletter': 0.8,
-      '/contact': 0.7
+      '/contact': 0.7,
+      '/consulting/services/pricing-diagnostic-revenue-boost': 0.9,
+      '/consulting/services/rapid-pricing-experiment-toolkit': 0.9,
+      '/consulting/services/pricing-optimization-retainer': 0.9,
     }
     
-    const priority = priorities[path] || 0.5
+    const priority = priorities[path] || (path.startsWith('/consulting/services/') ? 0.8 : 0.5)
     
     return {
       loc: path,

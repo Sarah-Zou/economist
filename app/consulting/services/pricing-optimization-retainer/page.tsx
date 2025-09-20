@@ -1,5 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Pricing Optimization Retainer | Monthly Pricing Strategy | Sarah Zou',
+  description: 'Get continuous pricing edge with our monthly retainer. Includes 2 tests/month, deal desk help, and policy tuning from PhD economist Sarah Zou.',
+  openGraph: {
+    title: 'Pricing Optimization Retainer | Sarah Zou',
+    description: 'Get continuous pricing edge with our monthly retainer. Includes 2 tests/month, deal desk help, and policy tuning.',
+    type: 'website',
+  },
+};
 
 const services = [
   { slug: 'investor-deck-accelerator', title: 'Investor Deck Accelerator' },
