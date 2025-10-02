@@ -69,28 +69,105 @@ export default function Home() {
           <p className="max-w-2xl mx-auto text-lg text-[#222] mb-12">
             I embed as your Fractional Chief Economist—translating data, external signals, and internal KPIs into decisions that raise valuation, pricing power, and capital efficiency.
           </p>
-          <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-3 gap-10 mt-4 mb-10">
+          <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-3 gap-6 mt-4 mb-10">
             {/* Pricing Quickstart */}
-            <div className="bg-[#fafbfc] rounded-3xl shadow-md border border-[#f0f0f0] flex flex-col items-center p-8 transition hover:shadow-lg">
-              <Image src="/images/pricing.webp" alt="Pricing Quickstart" width={180} height={120} className="rounded-xl mb-6 object-cover w-[180px] h-[120px]" />
-              <h3 className="font-serif-playfair text-2xl font-bold mb-2 text-[#222]">Pricing Quickstart (2 weeks)</h3>
-              <p className="text-[#4b636e] text-base mb-6">Your packaging, price points, and a safe test plan—ready in 14 days.</p>
-              <a href="/consulting/services/pricing-diagnostic-revenue-boost" className="text-[#ff5722] font-semibold text-base hover:underline transition">Learn more →</a>
-            </div>
+            <a href="/consulting/services/pricing-diagnostic-revenue-boost" className="block group">
+              <div 
+                className="relative h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
+                style={{
+                  backgroundImage: 'url(/images/pricing.webp)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
+              >
+                {/* Dark overlay for better text readability */}
+                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                
+                {/* Content */}
+                <div className="relative h-full flex flex-col justify-end p-6">
+                  {/* Title - positioned at mid-bottom, moves up on hover */}
+                  <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
+                    <h3 className="text-xl font-bold text-white drop-shadow-lg">
+                      Pricing Quickstart
+                    </h3>
+                  </div>
+                  
+                  {/* Description - appears on hover */}
+                  <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    <p className="text-white text-sm leading-relaxed mt-2 drop-shadow-md">
+                      Your packaging, price points, and a safe test plan—ready in 14 days.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+
             {/* Experiment Build */}
-            <div className="bg-[#fafbfc] rounded-3xl shadow-md border border-[#f0f0f0] flex flex-col items-center p-8 transition hover:shadow-lg">
-              <Image src="/images/metrics.webp" alt="Experiment Build" width={180} height={120} className="rounded-xl mb-6 object-cover w-[180px] h-[120px]" />
-              <h3 className="font-serif-playfair text-2xl font-bold mb-2 text-[#222]">Experiment Build (4–6 weeks)</h3>
-              <p className="text-[#4b636e] text-base mb-6">Instrumentation, WTP research, cohorts, and rollout guardrails.</p>
-              <a href="/consulting/services/rapid-pricing-experiment-toolkit" className="text-[#ff5722] font-semibold text-base hover:underline transition">Learn more →</a>
-            </div>
+            <a href="/consulting/services/rapid-pricing-experiment-toolkit" className="block group">
+              <div 
+                className="relative h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
+                style={{
+                  backgroundImage: 'url(/images/metrics.webp)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
+              >
+                {/* Dark overlay for better text readability */}
+                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                
+                {/* Content */}
+                <div className="relative h-full flex flex-col justify-end p-6">
+                  {/* Title - positioned at mid-bottom, moves up on hover */}
+                  <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
+                    <h3 className="text-xl font-bold text-white drop-shadow-lg">
+                      Experiment Build
+                    </h3>
+                  </div>
+                  
+                  {/* Description - appears on hover */}
+                  <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    <p className="text-white text-sm leading-relaxed mt-2 drop-shadow-md">
+                      Instrumentation, WTP research, cohorts, and rollout guardrails.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+
             {/* Pricing Ops Retainer */}
-            <div className="bg-[#fafbfc] rounded-3xl shadow-md border border-[#f0f0f0] flex flex-col items-center p-8 transition hover:shadow-lg">
-              <Image src="/images/investor.webp" alt="Pricing Ops Retainer" width={180} height={120} className="rounded-xl mb-6 object-cover w-[180px] h-[120px]" />
-              <h3 className="font-serif-playfair text-2xl font-bold mb-2 text-[#222]">Pricing Ops Retainer (monthly)</h3>
-              <p className="text-[#4b636e] text-base mb-6">Two tests/month + deal desk help + policy tuning.</p>
-              <a href="/consulting/services/pricing-optimization-retainer" className="text-[#ff5722] font-semibold text-base hover:underline transition">Learn more →</a>
-            </div>
+            <a href="/consulting/services/pricing-optimization-retainer" className="block group">
+              <div 
+                className="relative h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
+                style={{
+                  backgroundImage: 'url(/images/investor.webp)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
+              >
+                {/* Dark overlay for better text readability */}
+                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                
+                {/* Content */}
+                <div className="relative h-full flex flex-col justify-end p-6">
+                  {/* Title - positioned at mid-bottom, moves up on hover */}
+                  <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
+                    <h3 className="text-xl font-bold text-white drop-shadow-lg">
+                      Pricing Ops Retainer
+                    </h3>
+                  </div>
+                  
+                  {/* Description - appears on hover */}
+                  <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    <p className="text-white text-sm leading-relaxed mt-2 drop-shadow-md">
+                      Two tests/month + deal desk help + policy tuning.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
           <a
             href="https://calendly.com/sarahz-saas-economist"

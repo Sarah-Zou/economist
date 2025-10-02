@@ -69,47 +69,83 @@ function ConsultingContent() {
           </div>
 
 
-          <div className="grid md:grid-cols-3 gap-6 mb-24">
-            {services.map((service, index) => (
-              <Link
-                key={index}
-                href={`/consulting/services/${service.slug}`}
-                className="block group"
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-24">
+            {/* Large card on the left - takes up 40% of the width (2/5) */}
+            <Link
+              href={`/consulting/services/${services[0].slug}`}
+              className="block group lg:col-span-2"
+            >
+              <div 
+                className="relative h-[640px] w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
+                style={{
+                  backgroundImage: `url(${services[0].image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
               >
-                <div 
-                  className="relative h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
-                  style={{
-                    backgroundImage: `url(${service.image})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat'
-                  }}
-                >
-                  {/* Dark overlay for better text readability */}
-                  <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                {/* Dark overlay for better text readability */}
+                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                
+                {/* Content */}
+                <div className="relative h-full flex flex-col justify-end p-8">
+                  {/* Title - positioned at mid-bottom, moves up on hover */}
+                  <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
+                    <h3 className="text-2xl font-bold text-white drop-shadow-lg">
+                      {services[0].title}
+                    </h3>
+                  </div>
                   
-                  {/* Content */}
-                  <div className="relative h-full flex flex-col justify-end p-6">
-                    {/* Title - positioned at mid-bottom, moves up on hover */}
-                    <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
-                      <h3 className="text-xl font-bold text-white drop-shadow-lg mb-2">
-                        {service.title}
-                      </h3>
-                      <p className="text-white text-sm font-medium drop-shadow-md">
-                        {service.hero}
-                      </p>
-                    </div>
-                    
-                    {/* Summary - appears on hover */}
-                    <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                      <p className="text-white text-sm leading-relaxed mt-2 drop-shadow-md">
-                        {service.summary}
-                      </p>
-                    </div>
+                  {/* Hero text - appears on hover */}
+                  <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    <p className="text-white text-lg leading-relaxed mt-3 drop-shadow-md">
+                      {services[0].hero}
+                    </p>
                   </div>
                 </div>
-              </Link>
-            ))}
+              </div>
+            </Link>
+
+            {/* Two smaller cards on the right - takes up 60% of the width (3/5) */}
+            <div className="lg:col-span-3 space-y-6">
+              {services.slice(1).map((service, index) => (
+                <Link
+                  key={index}
+                  href={`/consulting/services/${service.slug}`}
+                  className="block group"
+                >
+                  <div 
+                    className="relative h-[308px] w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
+                    style={{
+                      backgroundImage: `url(${service.image})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      backgroundRepeat: 'no-repeat'
+                    }}
+                  >
+                    {/* Dark overlay for better text readability */}
+                    <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                    
+                    {/* Content */}
+                    <div className="relative h-full flex flex-col justify-end p-6">
+                      {/* Title - positioned at mid-bottom, moves up on hover */}
+                      <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
+                        <h3 className="text-xl font-bold text-white drop-shadow-lg">
+                          {service.title}
+                        </h3>
+                      </div>
+                      
+                      {/* Hero text - appears on hover */}
+                      <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                        <p className="text-white text-base leading-relaxed mt-2 drop-shadow-md">
+                          {service.hero}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Testimonials section commented out */}

@@ -1,22 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const services = [
-  { slug: 'investor-deck-accelerator', title: 'Investor Deck Accelerator' },
-  { slug: 'saas-metrics-clarity-pack', title: 'SaaS Metrics Clarity Pack' },
-  { slug: 'competitive-benchmark-insights', title: 'Competitive Benchmark Insights' },
-  { slug: 'runway-scenario-model', title: 'Runway & Scenario Model' },
-  { slug: 'investor-updates-automation-kit', title: 'Investor Updates Automation Kit' },
-  { slug: 'on-call-economist-retainer', title: 'On-Call Economist Retainer' },
-  { slug: 'pricing-diagnostic-revenue-boost', title: 'Pricing Diagnostic & Revenue Boost' },
-  { slug: 'customer-value-research-pack', title: 'Customer Value Research Pack' },
-  { slug: 'value-based-monetization-design', title: 'Value-Based Monetization Design' },
-  { slug: 'rapid-pricing-experiment-toolkit', title: 'Rapid Pricing Experiment Toolkit' },
-  { slug: 'price-change-comms-playbook', title: 'Price Change Comms Playbook' },
-  { slug: 'profitability-simulator', title: 'Profitability Simulator' },
-  { slug: 'investor-monetization-pitch-kit', title: 'Investor Monetization Pitch Kit' },
-  { slug: 'pricing-optimization-retainer', title: 'Pricing Optimization Retainer' },
-];
 
 export default function ProfitabilitySimulator() {
   return (
@@ -27,18 +11,6 @@ export default function ProfitabilitySimulator() {
           <div className="relative w-[260px] h-[320px] md:w-[280px] md:h-[340px] rounded-tl-[90px] rounded-br-[90px] overflow-hidden shadow-lg border border-[#e5e7eb] bg-white mb-8 md:mb-0">
             <Image src="/images/P-6.webp" alt="Profitability Simulator" fill className="object-cover" />
           </div>
-          <nav className="hidden md:block mt-10 w-full max-w-[180px]">
-            <h3 className="uppercase tracking-widest text-[11px] text-[#7a8a99] font-semibold mb-3 pl-1">Other Services</h3>
-            <ul className="space-y-1">
-              {services.map((service) => (
-                <li key={service.slug}>
-                  <Link href={`/consulting/services/${service.slug}`} className="block px-2 py-1 rounded text-[#7a8a99] hover:text-[#ff5722] text-sm transition-colors">
-                    {service.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
         </div>
         {/* Main Content */}
         <main className="md:col-span-9 bg-white rounded-tl-[60px] rounded-br-[60px] shadow-lg border border-[#e5e7eb] px-8 md:px-16 py-12 flex flex-col justify-center">
