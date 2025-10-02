@@ -26,6 +26,10 @@ export interface CategoryData extends CategoryFrontmatter {
 
 export function getAllCategorySlugs(): string[] {
   try {
+    if (!fs.existsSync(contentDirectory)) {
+      console.warn('Content directory does not exist:', contentDirectory);
+      return [];
+    }
     const fileNames = fs.readdirSync(contentDirectory);
     return fileNames
       .filter(name => name.endsWith('.md'))
@@ -39,6 +43,10 @@ export function getAllCategorySlugs(): string[] {
 export function getCategoryBySlug(slug: string): CategoryData | null {
   try {
     const fullPath = path.join(contentDirectory, `${slug}.md`);
+    if (!fs.existsSync(fullPath)) {
+      console.warn('Category file does not exist:', fullPath);
+      return null;
+    }
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
     

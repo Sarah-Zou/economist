@@ -30,7 +30,7 @@ module.exports = {
       '/consulting/services/pricing-optimization-retainer': 0.9,
     }
     
-    const priority = priorities[path] || (path.startsWith('/consulting/services/') ? 0.8 : (path.startsWith('/wiki/pricing/') ? 0.8 : 0.5)
+    const priority = priorities[path] || (path.startsWith('/consulting/services/') ? 0.8 : (path.startsWith('/wiki/pricing/') ? 0.8 : 0.5))
     
     return {
       loc: path,

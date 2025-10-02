@@ -43,7 +43,7 @@ export default function WikiPricingPage() {
   const categories = categoryOrder.map(orderItem => {
     const category = allCategories.find(cat => cat.slug === orderItem.slug);
     return category ? { ...category, image: orderItem.image } : null;
-  }).filter(Boolean);
+  }).filter((cat): cat is NonNullable<typeof cat> => cat !== null);
   
   const itemListJsonLd = generateItemListJsonLd(categories.map(cat => ({
     name: cat.title,
