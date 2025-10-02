@@ -69,27 +69,46 @@ function ConsultingContent() {
           </div>
 
 
-          <div className="grid md:grid-cols-3 gap-10 mb-24 border-t border-b border-[#e5e7eb] bg-white py-12">
+          <div className="grid md:grid-cols-3 gap-6 mb-24">
             {services.map((service, index) => (
-              <div key={index} className="flex flex-col items-center px-4 text-center">
-                <div className="relative w-64 h-40 mb-4 rounded-2xl overflow-hidden border border-[#e5e7eb] bg-[#f5f5f5] flex items-center justify-center">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    width={256}
-                    height={160}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <div className="font-serif-playfair text-lg font-bold mb-1">{service.title}</div>
-                <div className="text-sm italic mb-2">{service.hero}</div>
-                <Link
-                  href={`/consulting/services/${service.slug}`}
-                  className="text-[#ff5722] font-medium hover:underline flex items-center gap-1 text-sm mt-2"
+              <Link
+                key={index}
+                href={`/consulting/services/${service.slug}`}
+                className="block group"
+              >
+                <div 
+                  className="relative h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
+                  style={{
+                    backgroundImage: `url(${service.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
+                  }}
                 >
-                  Learn more <span aria-hidden="true">→</span>
-                </Link>
-              </div>
+                  {/* Dark overlay for better text readability */}
+                  <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                  
+                  {/* Content */}
+                  <div className="relative h-full flex flex-col justify-end p-6">
+                    {/* Title - positioned at mid-bottom, moves up on hover */}
+                    <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
+                      <h3 className="text-xl font-bold text-white drop-shadow-lg mb-2">
+                        {service.title}
+                      </h3>
+                      <p className="text-white text-sm font-medium drop-shadow-md">
+                        {service.hero}
+                      </p>
+                    </div>
+                    
+                    {/* Summary - appears on hover */}
+                    <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                      <p className="text-white text-sm leading-relaxed mt-2 drop-shadow-md">
+                        {service.summary}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
 
