@@ -1,5 +1,5 @@
-import Seo from '@/components/Seo';
 import Image from 'next/image';
+import { Metadata } from 'next';
 
 const cheatSheets = [
   {
@@ -16,14 +16,28 @@ const cheatSheets = [
   },
 ];
 
+export const metadata: Metadata = {
+  title: "SaaS Cheat-Sheets Bundle | Free Download | Sarah Zou",
+  description: "Sign up for my newsletter and get 3 SaaS cheat-sheets for free. Instantly access metrics storytelling, benchmark navigator, and 2025-Q2 benchmarks.",
+  openGraph: {
+    title: "SaaS Cheat-Sheets Bundle | Free Download | Sarah Zou",
+    description: "Sign up for my newsletter and get 3 SaaS cheat-sheets for free. Instantly access metrics storytelling, benchmark navigator, and 2025-Q2 benchmarks.",
+    type: "website",
+    url: "https://sarahzou.com/cheat-sheets",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SaaS Cheat-Sheets Bundle | Free Download | Sarah Zou",
+    description: "Sign up for my newsletter and get 3 SaaS cheat-sheets for free. Instantly access metrics storytelling, benchmark navigator, and 2025-Q2 benchmarks.",
+  },
+  alternates: {
+    canonical: "https://sarahzou.com/cheat-sheets",
+  },
+};
+
 export default function CheatSheetsPage() {
   return (
     <>
-      <Seo
-        title="SaaS Cheat-Sheets Bundle | Free Download | Sarah Zou"
-        description="Sign up for my newsletter and get 3 SaaS cheat-sheets for free. Instantly access metrics storytelling, benchmark navigator, and 2025-Q2 benchmarks."
-        path="/cheat-sheets"
-      />
       <div className="min-h-screen bg-[#fff8f2]">
         <div className="max-w-8xl mx-auto px-4 py-16 flex flex-col items-center">
           {/* Hero and Subheadline */}

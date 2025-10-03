@@ -1,5 +1,5 @@
-"use client";
-import Seo from '@/components/Seo'
+'use client';
+
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
@@ -40,8 +40,8 @@ function SubstackFeed() {
       });
   }, []);
 
-  if (loading) return <div className="text-gray-500 mt-8">Loading latest posts…</div>;
-  if (error) return <div className="text-red-500 mt-8">{error}</div>;
+  if (loading) return null;
+  if (error) return null;
 
   return (
     <section id="substack-feed" className="flex flex-col gap-8 w-full max-w-2xl mx-auto">
@@ -78,11 +78,6 @@ function SubstackFeed() {
 export default function NewsletterPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Seo
-        title="Newsletter | Sarah Zou"
-        description="Insights and analysis on economics, SaaS, and startup metrics"
-        canonical="https://sarahzou.com/newsletter"
-      />
       <div className="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row gap-12 items-start">
         {/* Left: Post List Only */}
         <div className="flex-1 flex flex-col gap-8 w-full max-w-2xl">
@@ -91,6 +86,12 @@ export default function NewsletterPage() {
         {/* Right: Signup Box */}
         <div className="flex flex-col items-center md:items-start w-full max-w-lg mx-auto md:sticky md:top-12 h-fit">
           <h2 className="text-3xl md:text-4xl font-extrabold text-center text-orange-600 mb-4 leading-tight w-full">Subscribe to my weekly newsletter where we deep dive into all things SaaS strategies.</h2>
+          <div className="bg-gray-50 rounded-lg p-6 mb-6 w-full">
+            <h3 className="font-bold text-lg mb-3 text-[#111]">What you'll get:</h3>
+            <p className="text-gray-700 mb-2">• Pricing research, experiments, and benchmarks—1×/week</p>
+            <p className="text-gray-700 mb-2">• Real case studies from SaaS companies</p>
+            <p className="text-gray-700">• Actionable frameworks you can implement immediately</p>
+          </div>
           <div className="w-full flex justify-center md:justify-start">
             <iframe
               src="https://sarahzou.substack.com/embed"

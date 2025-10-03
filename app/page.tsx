@@ -1,7 +1,6 @@
-import Seo from '@/components/Seo'
-import Hero from '@/components/Hero'
 import TestimonialCard from '@/components/TestimonialCard'
 import Image from 'next/image'
+import { Metadata } from 'next'
 
 const homepageTestimonials = [
   {
@@ -21,13 +20,60 @@ const homepageTestimonials = [
   }
 ]
 
+export const metadata: Metadata = {
+  title: "Pricing & Monetization for AI-SaaS | Fractional Economist Sarah Zou",
+  description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in AI-SaaS growth strategies.",
+  openGraph: {
+    title: "Pricing & Monetization for AI-SaaS | Fractional Economist Sarah Zou",
+    description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in AI-SaaS growth strategies.",
+    type: "website",
+    url: "https://sarahzou.com",
+    images: ["https://sarahzou.com/images/headshot_v2.webp"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pricing & Monetization for AI-SaaS | Fractional Economist Sarah Zou",
+    description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in AI-SaaS growth strategies.",
+    images: ["https://sarahzou.com/images/headshot_v2.webp"],
+  },
+  alternates: {
+    canonical: "https://sarahzou.com",
+  },
+};
+
 export default function Home() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dr. Sarah Zou",
+    "jobTitle": "Fractional Economist",
+    "description": "PhD Economist specializing in pricing strategies, metrics analytics, and investor-ready storytelling for AI-SaaS startups.",
+    "url": "https://sarahzou.com",
+    "image": "https://sarahzou.com/images/headshot_v2.webp",
+    "sameAs": [
+      "https://www.linkedin.com/in/drsarah-saas-economist",
+      "https://twitter.com/SaaS_Econ"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Princeton",
+      "addressRegion": "NJ",
+      "addressCountry": "US"
+    },
+    "knowsAbout": [
+      "SaaS Pricing Strategy",
+      "AI-SaaS Monetization",
+      "Value-Based Pricing",
+      "Revenue Optimization",
+      "Fractional Economics"
+    ]
+  };
+
   return (
     <>
-      <Seo
-        title="Fractional Economist for AI-SaaS | Sarah Zou"
-        description="Pricing & metrics strategy for SaaS founders—data-driven insights from PhD economist Sarah Zou."
-        path="/"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <div>
         <section className="py-8 md:py-12">
@@ -36,13 +82,18 @@ export default function Home() {
               {/* Left: Text */}
               <div className="flex-1 flex flex-col justify-center items-start px-10 py-12 md:px-16 md:py-0 text-[#222] bg-white">
                 <h1 className="font-serif-playfair text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                Fractional Economist for SaaS Founders
+                Pricing & Monetization for AI-SaaS
                 </h1>
                 <p className="text-lg md:text-xl mb-8 text-[#222] max-w-xl">
-                  I'm Sarah Zou, PhD Economist, specialized in pricing strategies, metrics analytics, and investor-ready storytelling for SaaS startups.
+                  Value-based pricing, packaging, and revenue experiments that lift ARR and retention.
                 </p>
-                <a href="/contact" className="inline-block border-2 border-[#ff5722] text-[#ff5722] font-bold px-6 py-3 rounded-full text-lg tracking-widest hover:bg-[#ff5722] hover:text-white transition-colors mt-4">
-                  Get in touch <span className="ml-2" aria-hidden>→</span>
+                <a 
+                  href="https://calendly.com/sarahz-saas-economist" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-block border-2 border-[#ff5722] text-[#ff5722] font-bold px-6 py-3 rounded-full text-lg tracking-widest hover:bg-[#ff5722] hover:text-white transition-colors mt-4"
+                >
+                  Book Free Consult <span className="ml-2" aria-hidden>→</span>
                 </a>
               </div>
               {/* Right: Image */}
@@ -67,11 +118,14 @@ export default function Home() {
             How I Can Help
           </h2>
           <p className="max-w-2xl mx-auto text-lg text-[#222] mb-12">
-            I embed as your Fractional Chief Economist—translating data, external signals, and internal KPIs into decisions that raise valuation, pricing power, and capital efficiency.
+            Fractional Economist focused on pricing power. I turn WTP research + experiment design into ARR, faster payback, and lower churn.
           </p>
           <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-3 gap-6 mt-4 mb-10">
             {/* Pricing Quickstart */}
-            <a href="/consulting/services/pricing-diagnostic-revenue-boost" className="block group">
+            <a 
+              href="/consulting/services/pricing-diagnostic-revenue-boost" 
+              className="block group"
+            >
               <div 
                 className="relative h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
                 style={{
@@ -98,13 +152,19 @@ export default function Home() {
                     <p className="text-white text-sm leading-relaxed mt-2 drop-shadow-md">
                       Your packaging, price points, and a safe test plan—ready in 14 days.
                     </p>
+                    <a href="/consulting" className="inline-block text-white text-xs font-medium mt-2 hover:underline">
+                      See scope & deliverables →
+                    </a>
                   </div>
                 </div>
               </div>
             </a>
 
             {/* Experiment Build */}
-            <a href="/consulting/services/rapid-pricing-experiment-toolkit" className="block group">
+            <a 
+              href="/consulting/services/rapid-pricing-experiment-toolkit" 
+              className="block group"
+            >
               <div 
                 className="relative h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
                 style={{
@@ -131,13 +191,19 @@ export default function Home() {
                     <p className="text-white text-sm leading-relaxed mt-2 drop-shadow-md">
                       Instrumentation, WTP research, cohorts, and rollout guardrails.
                     </p>
+                    <a href="/consulting" className="inline-block text-white text-xs font-medium mt-2 hover:underline">
+                      See scope & deliverables →
+                    </a>
                   </div>
                 </div>
               </div>
             </a>
 
             {/* Pricing Ops Retainer */}
-            <a href="/consulting/services/pricing-optimization-retainer" className="block group">
+            <a 
+              href="/consulting/services/pricing-optimization-retainer" 
+              className="block group"
+            >
               <div 
                 className="relative h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
                 style={{
@@ -164,6 +230,9 @@ export default function Home() {
                     <p className="text-white text-sm leading-relaxed mt-2 drop-shadow-md">
                       Two tests/month + deal desk help + policy tuning.
                     </p>
+                    <a href="/consulting" className="inline-block text-white text-xs font-medium mt-2 hover:underline">
+                      See scope & deliverables →
+                    </a>
                   </div>
                 </div>
               </div>
@@ -179,11 +248,38 @@ export default function Home() {
           </a>
         </section>
         <section className="py-20 bg-white flex flex-col items-center">
-          <div className="max-w-5xl w-full">
-            <div className="grid md:grid-cols-2 gap-12">
-              {/* {homepageTestimonials.map((t, i) => (
-                <TestimonialCard key={i} name={t.name} title={t.title} quote={t.quote} />
-              ))} */}
+          <div className="max-w-4xl w-full">
+            <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold mb-8 text-center text-[#ff5722]">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-6">
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="font-bold text-lg mb-3 text-[#111]">What is a fractional economist?</h3>
+                <p className="text-gray-700 mb-3">
+                  A fractional economist is a part-time economic advisor who brings PhD-level expertise to your pricing, metrics, and growth strategy without the cost of a full-time hire.
+                </p>
+                <a href="/consulting#faq" className="text-[#ff5722] font-medium hover:underline">
+                  Learn more about fractional economics →
+                </a>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="font-bold text-lg mb-3 text-[#111]">How quickly can you impact our pricing?</h3>
+                <p className="text-gray-700 mb-3">
+                  Most clients see initial pricing improvements within 2-4 weeks. Our Pricing Quickstart delivers a complete strategy and test plan in just 14 days.
+                </p>
+                <a href="/consulting#faq" className="text-[#ff5722] font-medium hover:underline">
+                  See our pricing services →
+                </a>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3 className="font-bold text-lg mb-3 text-[#111]">What makes your approach different?</h3>
+                <p className="text-gray-700 mb-3">
+                  I combine academic rigor with startup speed. Every recommendation is backed by data, tested with experiments, and designed for your specific market dynamics.
+                </p>
+                <a href="/consulting#faq" className="text-[#ff5722] font-medium hover:underline">
+                  Explore our methodology →
+                </a>
+              </div>
             </div>
           </div>
         </section>

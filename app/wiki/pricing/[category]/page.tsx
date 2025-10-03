@@ -206,6 +206,20 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               ))}
             </div>
           </div>
+
+          {/* CTA Section */}
+          <div className="mt-12 bg-[#ff5722] rounded-lg p-8 text-white text-center">
+            <h2 className="text-2xl font-bold mb-4">Use this in your pricing sprint</h2>
+            <p className="mb-6">
+              Ready to apply these concepts to your business? Get expert guidance to implement these strategies effectively.
+            </p>
+            <Link 
+              href="/consulting"
+              className="inline-block bg-white text-[#ff5722] font-bold px-8 py-3 rounded-full hover:bg-gray-100 transition-colors"
+            >
+              Book Free Consult
+            </Link>
+          </div>
         </div>
       </WikiLayout>
     </>

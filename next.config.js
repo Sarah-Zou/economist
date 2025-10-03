@@ -30,6 +30,22 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
 
+  // Redirects for legacy URLs
+  async redirects() {
+    return [
+      {
+        source: '/cheatsheets',
+        destination: '/wiki/pricing',
+        permanent: true,
+      },
+      {
+        source: '/templates',
+        destination: '/wiki/pricing#quick-reference',
+        permanent: true,
+      },
+    ]
+  },
+
   // Webpack optimizations for static export
   webpack: (config, { isServer }) => {
     if (!isServer) {

@@ -4,7 +4,6 @@ import { format } from 'date-fns'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import Image from 'next/image'
-import Seo from '@/components/Seo'
 import Link from 'next/link'
 import { Metadata } from 'next'
 
@@ -66,11 +65,6 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
 
   return (
     <div className="min-h-screen bg-white">
-      <Seo
-        title={post.title}
-        description={post.description}
-        canonical={`https://sarahzou.com/newsletter/${post.slug}`}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
