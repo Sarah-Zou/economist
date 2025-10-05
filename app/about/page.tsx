@@ -79,7 +79,7 @@ export default function About() {
                   <li>Commitment to results</li>
                 </ul>
                 <a 
-                  href="https://calendly.com/sarahz-saas-economist" 
+                  href="https://calendly.com/d/cspp-v8x-qpj/free-pricing-consult-25-min" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-block bg-[#ff5722] hover:bg-[#e64a19] text-white font-bold px-8 py-4 rounded-full text-lg transition-colors"

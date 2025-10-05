@@ -88,7 +88,7 @@ export default function Home() {
                   Value-based pricing, packaging, and revenue experiments that lift ARR and retention.
                 </p>
                 <a 
-                  href="https://calendly.com/sarahz-saas-economist" 
+                  href="https://calendly.com/d/cspp-v8x-qpj/free-pricing-consult-25-min" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="inline-block border-2 border-[#ff5722] text-[#ff5722] font-bold px-6 py-3 rounded-full text-lg tracking-widest hover:bg-[#ff5722] hover:text-white transition-colors mt-4"
@@ -239,7 +239,7 @@ export default function Home() {
             </a>
           </div>
           <a
-            href="https://calendly.com/sarahz-saas-economist"
+            href="https://calendly.com/d/cspp-v8x-qpj/free-pricing-consult-25-min"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block border-2 border-[#ff5722] text-[#ff5722] font-bold px-10 py-4 rounded-lg text-lg tracking-widest hover:bg-[#ff5722] hover:text-white transition-colors mt-4"

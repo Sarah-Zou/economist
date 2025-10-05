@@ -64,7 +64,7 @@ export default function SaaSMetricsClarityPack() {
               <div className="font-serif-playfair text-lg font-bold mb-1">Ready to begin your journey?</div>
               <div className="text-[#4b636e] mb-2">Book a free intake call or send a message to discuss your goals.</div>
               <a
-                href="https://calendly.com/sarahz-saas-economist"
+                href="https://calendly.com/d/cspp-v8x-qpj/free-pricing-consult-25-min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-[#ff5722] text-white px-4 py-2 rounded font-semibold hover:bg-[#e64a19] transition"

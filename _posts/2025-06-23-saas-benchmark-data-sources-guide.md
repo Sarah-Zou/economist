@@ -105,6 +105,6 @@ The right benchmarks help you:
 
 **Need help tailoring these benchmarks to your specific situation?** 
 
-I help SaaS founders craft stage-smart, investor-aligned metrics narratives that close the gap between data and valuation. [Book a free consultation](https://calendly.com/sarahz-saas-economist) to discuss your benchmark strategy.
+I help SaaS founders craft stage-smart, investor-aligned metrics narratives that close the gap between data and valuation. [Book a free consultation](https://calendly.com/d/cspp-v8x-qpj/free-pricing-consult-25-min) to discuss your benchmark strategy.
 
 *Want more insights on SaaS metrics and investor communications? [Subscribe to my newsletter](/newsletter) for weekly strategic advice.* 
