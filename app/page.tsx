@@ -1,4 +1,5 @@
 import TestimonialCard from '@/components/TestimonialCard'
+import HeroStackedImages from '@/components/HeroStackedImages'
 import Image from 'next/image'
 import { Metadata } from 'next'
 
@@ -76,43 +77,14 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <div>
-        <section className="py-8 md:py-12">
-          <div className="container max-w-7xl mx-auto">
-            <div className="bg-white rounded-[2.5rem] flex flex-col lg:flex-row items-stretch p-0 overflow-hidden min-h-[420px] border border-[#f0f0f0]">
-              {/* Left: Text */}
-              <div className="flex-1 flex flex-col justify-center items-start px-10 py-12 md:px-16 md:py-0 text-[#222] bg-white">
-                <h1 className="font-serif-playfair text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                Pricing & Monetization for AI-SaaS
-                </h1>
-                <p className="text-lg md:text-xl mb-8 text-[#222] max-w-xl">
-                  Value-based pricing, packaging, and revenue experiments that lift ARR and retention.
-                </p>
-                <a 
-                  href="https://calendly.com/d/cspp-v8x-qpj/free-pricing-consult-25-min" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="inline-block border-2 border-[#ff5722] text-[#ff5722] font-bold px-6 py-3 rounded-full text-lg tracking-widest hover:bg-[#ff5722] hover:text-white transition-colors mt-4"
-                >
-                  Book Free Consult <span className="ml-2" aria-hidden>→</span>
-                </a>
-              </div>
-              {/* Right: Image */}
-              <div className="flex-1 flex items-stretch">
-                <picture>
-                  <source srcSet="/images/headshot_v2.webp" type="image/webp" />
-                  <Image
-                    src="/images/headshot_v2.jpg"
-                    alt="Sarah Zou headshot"
-                    width={600}
-                    height={600}
-                    className="object-cover w-full h-full"
-                    priority
-                  />
-                </picture>
-              </div>
-            </div>
-          </div>
-        </section>
+        <HeroStackedImages
+          photoSrc="/images/headshot_v2.webp"
+          bgSrc="/images/background.webp"
+          title="Pricing & Monetization for AI-SaaS"
+          kicker="Fractional Economist"
+          lede="Value-based pricing, packaging, and revenue experiments that lift ARR and retention."
+          photoAlt="Dr. Sarah Zou, Fractional Economist specializing in AI-SaaS pricing strategies"
+        />
         <section className="py-20 bg-white flex flex-col items-center text-center">
           <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold mb-2 text-[#ff5722] relative inline-block">
             How I Can Help
