@@ -132,7 +132,7 @@ const jsonLd = {
   "url": "https://sarahzou.com/about",
   "image": "https://sarahzou.com/images/about_headshot.webp",
   "sameAs": [
-    "https://linkedin.com/in/sarahzou",
+    "https://www.linkedin.com/in/drsarahzou",
     "https://twitter.com/sarahzou"
   ],
   "areaServed": [
