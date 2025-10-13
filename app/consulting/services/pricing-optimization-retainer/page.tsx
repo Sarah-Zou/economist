@@ -65,7 +65,7 @@ export default function PricingOptimizationRetainer() {
               </ul>
             </section>
             <section>
-              <div className="text-base mb-2"><span className="font-bold">Timeline & Price:</span> Monthly | $3k/month</div>
+              <div className="text-base mb-2"><span className="font-bold">Timeline & Price:</span> Monthly | $3k Core / $5k Plus</div>
             </section>
           </div>
           {/* CTA Box */}

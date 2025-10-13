@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Pricing Diagnostic & Revenue Boost | 2-Week Pricing Strategy | Sarah Zou',
+  title: 'Pricing Diagnostic & Revenue Boost | 2-Week Pricing Strategy | Dr. Sarah Zou',
   description: 'Unlock hidden revenue with our 2-week pricing diagnostic. Get comprehensive pricing audit, competitive benchmarks, and actionable optimization recommendations from PhD economist Sarah Zou.',
   openGraph: {
     title: 'Pricing Diagnostic & Revenue Boost | Sarah Zou',
@@ -27,45 +27,70 @@ export default function PricingDiagnosticRevenueBoost() {
         <main className="md:col-span-9 bg-white rounded-tl-[60px] rounded-br-[60px] shadow-lg border border-[#e5e7eb] px-8 md:px-16 py-12 flex flex-col justify-center">
           <div className="flex flex-col gap-2 mb-6">
             <span className="uppercase tracking-widest text-xs text-[#4b636e] font-semibold mb-2">Consulting Service</span>
-            <h1 className="font-serif-playfair text-5xl font-bold text-[#223] mb-2 leading-tight">Pricing Diagnostic & Revenue Boost</h1>
-            <span className="text-[#ff5722] text-lg font-medium">Unlock hidden revenue by optimizing your pricing strategy.</span>
+            <h1 className="font-serif-playfair text-5xl font-bold text-[#223] mb-2 leading-tight">Pricing Quickstart</h1>
+            <span className="text-[#ff5722] text-lg font-medium">Diagnostic & Blueprint to align price & packaging in 14 days. Choose Lite (desk analysis) or Pro (includes Customer Value Research Pack).</span>
           </div>
           <div className="my-8" />
           <div className="space-y-10">
             <section>
               <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-2">Why It Matters</h2>
               <ul className="list-disc ml-6 text-base text-[#4b636e] font-light space-y-1">
-                <li>Pricing is often the biggest lever for revenue growth</li>
-                <li>Many companies leave money on the table with suboptimal pricing</li>
-                <li>Data-driven pricing decisions lead to better margins and growth</li>
+                <li>Turn messy inputs into a clear price ladder and launch plan—fast.</li>
+                <li>Reduce risk with floors/ceilings, guardrails, and a 30/60/90 test roadmap.</li>
+                <li>Give Product/Sales one source of truth for packaging, price points, and messaging.</li>
               </ul>
             </section>
             <section>
               <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-2">What You Get</h2>
-              <ul className="list-disc ml-6 text-base text-[#4b636e] font-light space-y-1">
-                <li>Comprehensive pricing audit and analysis</li>
-                <li>Competitive pricing benchmark report</li>
-                <li>Actionable recommendations for price optimization</li>
-              </ul>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-bold text-lg text-[#223] mb-2">Lite — Diagnostic (Desk Analysis only)</h3>
+                  <ul className="list-disc ml-6 text-base text-[#4b636e] font-light space-y-1">
+                    <li>ICP & value map (jobs/outcomes, price fences)</li>
+                    <li>Tier & price table (seats/usage/features/geo), with unit-econ floors/ceilings</li>
+                    <li>Pricing page copy (hero, plan blurbs, FAQs, comparison table)</li>
+                    <li>Experiment plan (hypotheses, metrics, guardrails, success thresholds)</li>
+                    <li>Health scorecard template (conv %, ARPU, churn/NRR, CAC payback)</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg text-[#223] mb-2">Pro — Diagnostic + Evidence (Customer Value Research Pack included)</h3>
+                  <p className="text-base text-[#4b636e] font-light mb-2">Everything in Lite, plus the full Customer Value Research Pack:</p>
+                  <ul className="list-disc ml-6 text-base text-[#4b636e] font-light space-y-1">
+                    <li>8–10 interviews (clips + notes) targeting your first ICPs</li>
+                    <li>Pulse WTP survey (PSM/van Westendorp) to set confidence bands</li>
+                    <li>Value driver matrix & price fence recommendations by segment/use case</li>
+                    <li>Calibration of tiers, claims, and page copy with real customer signals</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <p className="text-sm text-[#4b636e] font-light">
+                    <strong>Prefer research-only first?</strong> See <a href="/consulting/services/customer-value-research-pack" className="text-[#ff5722] hover:underline">Customer Value Research Pack (standalone)</a>.<br/>
+                    <strong>Started on Lite and need evidence?</strong> Upgrade to Pro by Day 3 with no delay to timeline.
+                  </p>
+                </div>
+              </div>
             </section>
             <section>
               <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-2">Process</h2>
               <ul className="list-disc ml-6 text-base text-[#4b636e] font-light space-y-1">
-                <li>Data collection and analysis</li>
-                <li>Competitive research and benchmarking</li>
-                <li>Strategy development and implementation plan</li>
+                <li><strong>Day 0–1 — Kickoff & Intake:</strong> goals, ICPs, constraints, data pull</li>
+                <li><strong>Day 2–5 — Signals & Modeling:</strong> comps, floors/ceilings, scenarios (Pro: launch interviews & survey)</li>
+                <li><strong>Day 6–9 — Design:</strong> packaging, fences, first pass page copy (Pro: integrate early evidence)</li>
+                <li><strong>Day 10–12 — Review:</strong> exec alignment, risk & guardrails</li>
+                <li><strong>Day 13–14 — Handoff:</strong> final kit + 30/60/90 experiment plan</li>
               </ul>
             </section>
             <section>
               <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-2">Outcomes</h2>
               <ul className="list-disc ml-6 text-base text-[#4b636e] font-light space-y-1">
-                <li>Clear pricing strategy aligned with market and value</li>
-                <li>Increased revenue and improved margins</li>
-                <li>Better competitive positioning</li>
+                <li>A tested price ladder you can ship now (with guardrails)</li>
+                <li>Clear go/no-go criteria and success thresholds for experiments</li>
+                <li>Shared language & artifacts for Exec/Product/Sales enablement</li>
               </ul>
             </section>
             <section>
-              <div className="text-base mb-2"><span className="font-bold">Timeline & Price:</span> 2 weeks | $3.5k</div>
+              <div className="text-base mb-2"><span className="font-bold">Timeline & Price:</span> 14 days | $3.5k Lite (Diagnostic) / $6k Pro (with Research Pack)</div>
             </section>
           </div>
           {/* CTA Box */}

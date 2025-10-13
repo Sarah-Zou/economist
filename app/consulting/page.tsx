@@ -29,25 +29,37 @@ const services = [
   {
     slug: 'pricing-diagnostic-revenue-boost',
     title: 'Pricing Quickstart',
-    hero: 'Validated price points + packages; experiment-ready plan.',
-    summary: 'Health scorecard, WTP ranges (lite), tier/pricing table, 30/60/90 test roadmap.',
+    hero: 'Find hidden ARR fast.',
+    summary: 'WTP bands (lite), packaging & price points, pricing page copy, experiment plan, 30/60/90 roadmap, health scorecard.',
     duration: '14 days',
+    price: '$3.5k Lite / $6k Pro',
     image: '/images/P-1.webp',
   },
   {
     slug: 'rapid-pricing-experiment-toolkit',
-    title: 'Price Experiment Build',
-    hero: 'Ship tests safely; learn fast.',
-    summary: 'Experiment design sheets, guardrails, cohort dashboard, readout template, AE/CS enablement.',
-    duration: '4–6 weeks',
+    title: 'Rapid Experiment Build',
+    hero: 'Ship pricing tests safely; learn fast.',
+    summary: 'Design sheets, guardrails, cohort dashboard, readout templates; then 1–2 live tests.',
+    duration: '3–5 weeks',
+    price: '$4k setup + $2k/test',
     image: '/images/P-4.webp',
   },
   {
+    slug: 'customer-value-research-pack',
+    title: 'Customer Value Research Pack',
+    hero: 'Hear customers → price with confidence.',
+    summary: 'Interviews + survey, value map, price fences & messaging.',
+    duration: '2 weeks',
+    price: '$3.5k',
+    image: '/images/P-2.webp',
+  },
+  {
     slug: 'pricing-optimization-retainer',
-    title: 'Pricing Optimization Retainer',
+    title: 'Pricing Ops Retainer',
     hero: 'Continuous edge without new hires.',
-    summary: '2 tests/month, deal-desk policy tuning, renewal playbooks, quarterly pricing review.',
+    summary: 'Core: 2 tests/mo, deal-desk, quarterly review. Plus: adds VoC pulse, exec memo, enablement.',
     duration: 'monthly',
+    price: '$3k Core / $5k Plus',
     image: '/images/P-8.webp',
   },
 ]
@@ -56,7 +68,7 @@ const testimonials = [
   {
     name: "Maya Levin",
     title: "CFO, CloudLoop",
-    quote: "Sarah reframed our pricing in one two-week sprint. We unlocked a 19 % ARR lift and cut churn by a third—without touching the product roadmap."
+    quote: "Sarah reframed our pricing in one two-week sprint. We unlocked a 19% ARR lift and cut churn by a third—without touching the product roadmap."
   },
   {
     name: "James O'Brien",
@@ -66,7 +78,7 @@ const testimonials = [
   {
     name: "Priya Shah",
     title: "Partner, Vertex Ventures",
-    quote: "Sarah turned dense metrics into a compelling deck. Our portfolio company closed a $12 M Series A in just six weeks."
+    quote: "Sarah turned dense metrics into a compelling deck. Our portfolio company closed a $12M Series A in just six weeks."
   }
 ]
 
@@ -110,23 +122,31 @@ function ConsultingContent() {
                     "itemOffered": {
                       "@type": "Service",
                       "name": "Pricing Quickstart",
-                      "description": "Find hidden ARR in 14 days with health scorecard, uplift roadmap, and strategy call."
+                      "description": "Find hidden ARR fast with WTP bands, packaging & price points, pricing page copy, and experiment plan."
                     }
                   },
                   {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "Price Experiment Build",
-                      "description": "A/B test pricing like a product feature with experiment sheets, dashboard, and coaching."
+                      "name": "Rapid Experiment Build",
+                      "description": "Ship pricing tests safely with design sheets, guardrails, cohort dashboard, and readout templates."
                     }
                   },
                   {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "Pricing Optimization Retainer",
-                      "description": "Continuous pricing edge with quarterly review, experiment feedback, and hotline."
+                      "name": "Customer Value Research Pack",
+                      "description": "Hear customers and price with confidence through interviews, surveys, value mapping, and messaging frameworks."
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Pricing Ops Retainer",
+                      "description": "Continuous pricing edge with 2 tests/month, deal-desk optimization, and quarterly reviews."
                     }
                   }
                 ]
@@ -175,95 +195,55 @@ function ConsultingContent() {
           </div>
 
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-24">
-            {/* Large card on the left - takes up 40% of the width (2/5) */}
-            <Link
-              href={`/consulting/services/${services[0].slug}`}
-              className="block group lg:col-span-2"
-            >
-              <div 
-                className="relative h-[640px] w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
-                style={{
-                  backgroundImage: `url(${services[0].image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat'
-                }}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+            {services.map((service, index) => (
+              <Link
+                key={index}
+                href={`/consulting/services/${service.slug}`}
+                className="block group"
               >
-                {/* Dark overlay for better text readability */}
-                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
-                
-                {/* Content */}
-                <div className="relative h-full flex flex-col justify-end p-8">
-                  {/* Title - positioned at mid-bottom, moves up on hover */}
-                  <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
-                    <h3 className="text-2xl font-bold text-white drop-shadow-lg">
-                      {services[0].title}
-                    </h3>
-                    <p className="text-white text-sm font-medium mt-1 drop-shadow-md">
-                      {services[0].duration}
-                    </p>
-                  </div>
-                  
-                  {/* Hero text - appears on hover */}
-                  <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                    <p className="text-white text-lg leading-relaxed mt-3 drop-shadow-md">
-                      {services[0].hero}
-                    </p>
-                    <p className="text-white text-sm leading-relaxed mt-2 drop-shadow-md">
-                      {services[0].summary}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-
-            {/* Two smaller cards on the right - takes up 60% of the width (3/5) */}
-            <div className="lg:col-span-3 space-y-6">
-              {services.slice(1).map((service, index) => (
-                <Link
-                  key={index}
-                  href={`/consulting/services/${service.slug}`}
-                  className="block group"
+                <div 
+                  className="relative h-[400px] w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
+                  style={{
+                    backgroundImage: `url(${service.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
+                  }}
                 >
-                  <div 
-                    className="relative h-[308px] w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
-                    style={{
-                      backgroundImage: `url(${service.image})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      backgroundRepeat: 'no-repeat'
-                    }}
-                  >
-                    {/* Dark overlay for better text readability */}
-                    <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
-                    
-                    {/* Content */}
-                    <div className="relative h-full flex flex-col justify-end p-6">
-                      {/* Title - positioned at mid-bottom, moves up on hover */}
-                      <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
-                        <h3 className="text-xl font-bold text-white drop-shadow-lg">
-                          {service.title}
-                        </h3>
-                        <p className="text-white text-xs font-medium mt-1 drop-shadow-md">
+                  {/* Dark overlay for better text readability */}
+                  <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                  
+                  {/* Content */}
+                  <div className="relative h-full flex flex-col justify-end p-8">
+                    {/* Title - positioned at mid-bottom, moves up on hover */}
+                    <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
+                      <h3 className="text-2xl font-bold text-white drop-shadow-lg">
+                        {service.title}
+                      </h3>
+                      <div className="flex items-center gap-4 mt-2">
+                        <p className="text-white text-sm font-medium drop-shadow-md">
                           {service.duration}
                         </p>
-                      </div>
-                      
-                      {/* Hero text - appears on hover */}
-                      <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                        <p className="text-white text-base leading-relaxed mt-2 drop-shadow-md">
-                          {service.hero}
-                        </p>
-                        <p className="text-white text-sm leading-relaxed mt-1 drop-shadow-md">
-                          {service.summary}
+                        <p className="text-white text-sm font-bold drop-shadow-md">
+                          {service.price}
                         </p>
                       </div>
                     </div>
+                    
+                    {/* Hero text - appears on hover */}
+                    <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                      <p className="text-white text-lg leading-relaxed mt-3 drop-shadow-md">
+                        {service.hero}
+                      </p>
+                      <p className="text-white text-sm leading-relaxed mt-2 drop-shadow-md">
+                        {service.summary}
+                      </p>
+                    </div>
                   </div>
-                </Link>
-              ))}
-            </div>
+                </div>
+              </Link>
+            ))}
           </div>
 
           {/* Testimonials section commented out */}

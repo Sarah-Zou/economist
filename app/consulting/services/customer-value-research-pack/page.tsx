@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-
 export default function CustomerValueResearchPack() {
   return (
     <section className="bg-[#f5f8f7] min-h-screen py-0">
@@ -17,44 +16,45 @@ export default function CustomerValueResearchPack() {
           <div className="flex flex-col gap-2 mb-6">
             <span className="uppercase tracking-widest text-xs text-[#4b636e] font-semibold mb-2">Consulting Service</span>
             <h1 className="font-serif-playfair text-5xl font-bold text-[#223] mb-2 leading-tight">Customer Value Research Pack</h1>
-            <span className="text-[#ff5722] text-lg font-medium">Understand your customers' value perception to drive growth.</span>
+            <span className="text-[#ff5722] text-lg font-medium">Hear customers → price with confidence.</span>
           </div>
           <div className="my-8" />
           <div className="space-y-10">
             <section>
-              <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-2">Why It Matters</h2>
+              <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-2">Problem Solved</h2>
               <ul className="list-disc ml-6 text-base text-[#4b636e] font-light space-y-1">
-                <li>Understanding customer value is key to pricing and growth</li>
-                <li>Data-driven insights help align product with market needs</li>
-                <li>Better customer understanding leads to stronger retention</li>
+                <li>Founders price based on gut feel or competitor copying, missing the value customers actually see.</li>
               </ul>
             </section>
             <section>
               <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-2">What You Get</h2>
               <ul className="list-disc ml-6 text-base text-[#4b636e] font-light space-y-1">
-                <li>Customer value research report</li>
-                <li>Value perception analysis</li>
-                <li>Actionable recommendations for product and pricing</li>
+                <li>8–10 rapid interviews </li>
+                <li>Pulse survey with WTP bands (PSM/van Westendorp)</li>
+                <li>Value drivers matrix by segment/use case</li>
+                <li>Price fence recommendations (role, usage, feature, geo)</li>
+                <li>Landing page narrative inputs (claims, proof, FAQs)</li>
               </ul>
             </section>
             <section>
-              <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-2">Process</h2>
+              <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-2">Workflow</h2>
               <ul className="list-disc ml-6 text-base text-[#4b636e] font-light space-y-1">
-                <li>Customer interviews and surveys</li>
-                <li>Data analysis and insights generation</li>
-                <li>Strategy development and implementation plan</li>
+                <li>Week 1: Interview 8-10 customers, design & launch survey</li>
+                <li>Week 2: Analyze data, build value map, create pricing framework</li>
+                <li>Deliverable: 30-min presentation + implementation guide</li>
               </ul>
             </section>
             <section>
               <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-2">Outcomes</h2>
               <ul className="list-disc ml-6 text-base text-[#4b636e] font-light space-y-1">
-                <li>Clear understanding of customer value perception</li>
-                <li>Improved product-market fit</li>
-                <li>Enhanced customer retention and growth</li>
+                <li>Clear understanding of customer value drivers</li>
+                <li>Data-backed pricing strategy with confidence</li>
+                <li>Messaging that resonates with customer needs</li>
+                <li>Foundation for future pricing experiments</li>
               </ul>
             </section>
             <section>
-              <div className="text-base mb-2"><span className="font-bold">Timeline & Price:</span> 3 weeks | $4k</div>
+              <div className="text-base mb-2"><span className="font-bold">Timeline & Price:</span> 2 weeks | $3.5k </div>
             </section>
           </div>
           {/* CTA Box */}
@@ -64,9 +64,7 @@ export default function CustomerValueResearchPack() {
               <div className="font-serif-playfair text-lg font-bold mb-1">Ready to begin your journey?</div>
               <div className="text-[#4b636e] mb-2">Book a free intake call or send a message to discuss your goals.</div>
               <a
-                href="https://calendly.com/d/cspp-v8x-qpj/free-pricing-consult-25-min"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
                 className="inline-block bg-[#ff5722] text-white px-4 py-2 rounded font-semibold hover:bg-[#e64a19] transition"
               >
                 Book Intake Call
@@ -119,4 +117,4 @@ export default function CustomerValueResearchPack() {
       </div>
     </section>
   );
-} 
+}

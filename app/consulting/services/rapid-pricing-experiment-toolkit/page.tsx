@@ -59,13 +59,13 @@ export default function RapidPricingExperimentToolkit() {
             <section>
               <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-2">Outcomes</h2>
               <ul className="list-disc ml-6 text-base text-[#4b636e] font-light space-y-1">
-                <li>Validated pricing strategy</li>
-                <li>Improved revenue performance</li>
-                <li>Ongoing optimization framework</li>
+                <li>Confidence to roll out, iterate, or revert</li>
+                <li>A reusable pricing test toolkit for future changes</li>
+                <li>Documented learning library for leadership</li>
               </ul>
             </section>
             <section>
-              <div className="text-base mb-2"><span className="font-bold">Timeline & Price:</span> 3 weeks | $4k</div>
+              <div className="text-base mb-2"><span className="font-bold">Timeline & Price:</span> 3-5 weeks | $4k setup + $2k per live test</div>
             </section>
           </div>
           {/* CTA Box */}
