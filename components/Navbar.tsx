@@ -17,7 +17,7 @@ const Navbar = () => {
             <Link href="/about" className="text-gray-600 hover:text-gray-900">About</Link>
             <Link href="/newsletter" className="text-gray-600 hover:text-gray-900">Newsletter</Link>
             <a 
-              href="https://calendly.com/d/cspp-v8x-qpj/free-pricing-consult-25-min" 
+              href="https://calendly.com/sarahxzou/free-pricing-consult-25-min" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-[#ff5722] hover:bg-[#e64a19] text-white font-bold rounded-full px-6 py-3 transition-colors"

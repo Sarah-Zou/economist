@@ -5,7 +5,7 @@ export default function AreasFooter() {
         <p>
           Need help with your SaaS pricing strategy? 
           <a 
-            href="https://calendly.com/d/cspp-v8x-qpj/free-pricing-consult-25-min" 
+            href="https://calendly.com/sarahxzou/free-pricing-consult-25-min" 
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 hover:text-blue-700 ml-1 font-medium"
