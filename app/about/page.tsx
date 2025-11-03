@@ -130,7 +130,7 @@ const ctaData = {
   title: "Ready to turn pricing into your growth system?",
   description: "Let's discuss how I can help you optimize your pricing strategy and create compelling investor narratives.",
   buttonText: "Book a free consult",
-  buttonHref: "https://calendly.com/sarahxzou/free-pricing-consult-25-min"
+  buttonHref: "https://calendly.com/sarahxzou/free-consult-30-min"
 }
 
 // JSON-LD Schema for SEO

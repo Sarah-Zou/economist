@@ -95,7 +95,7 @@ export default function RapidPricingExperimentToolkit() {
               <div className="font-serif-playfair text-lg font-bold mb-1">Ready to begin your journey?</div>
               <div className="text-[#4b636e] mb-2">Book a free intake call or send a message to discuss your goals.</div>
               <a
-                href="https://calendly.com/sarahxzou/free-pricing-consult-25-min"
+                href="https://calendly.com/sarahxzou/free-consult-30-min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-[#ff5722] text-white px-4 py-2 rounded font-semibold hover:bg-[#e64a19] transition"

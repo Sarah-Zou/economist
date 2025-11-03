@@ -96,7 +96,7 @@ export default function Home() {
           photoAlt="Dr. Sarah Zou, Fractional Chief Economist for Early-Stage Tech"
           primaryCta={{
             text: "Book a 30-min Free Consult",
-            href: "https://calendly.com/sarahxzou/free-pricing-consult-25-min"
+            href: "https://calendly.com/sarahxzou/free-consult-30-min"
           }}
           secondaryCta={{
             text: "Download the Monetization Roadmap",
@@ -280,7 +280,7 @@ export default function Home() {
             </a>
           </div>
           <a
-            href="https://calendly.com/sarahxzou/free-pricing-consult-25-min"
+            href="https://calendly.com/sarahxzou/free-consult-30-min"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block border-2 border-[#ff5722] text-[#ff5722] font-bold px-10 py-4 rounded-lg text-lg tracking-widest hover:bg-[#ff5722] hover:text-white transition-colors mt-4"
