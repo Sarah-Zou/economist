@@ -5,10 +5,30 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Rapid Pricing Experiment Toolkit | 4-6 Week Pricing Tests | Sarah Zou',
   description: 'Build A/B pricing tests like product features with our 4-6 week experiment toolkit. Get instrumentation, WTP research, cohorts, and rollout guardrails from PhD economist Sarah Zou.',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://sarahzou.com/consulting/services/rapid-pricing-experiment-toolkit',
+  },
   openGraph: {
     title: 'Rapid Pricing Experiment Toolkit | Sarah Zou',
     description: 'Build A/B pricing tests like product features with our 4-6 week experiment toolkit. Get instrumentation, WTP research, cohorts, and rollout guardrails.',
     type: 'website',
+    url: 'https://sarahzou.com/consulting/services/rapid-pricing-experiment-toolkit',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Rapid Pricing Experiment Toolkit | Sarah Zou',
+    description: 'Build A/B pricing tests like product features with our 4-6 week experiment toolkit. Get instrumentation, WTP research, cohorts, and rollout guardrails.',
   },
 };
 

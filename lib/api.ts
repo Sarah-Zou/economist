@@ -13,6 +13,7 @@ export interface Post {
   image: string
   content: string
   tags: string[]
+  canonical?: string
 }
 
 function getFileDate(filePath: string, frontmatterDate: string) {
@@ -50,6 +51,7 @@ export function getAllPosts(): Post[] {
       image: data.image,
       content,
       tags: data.tags || [],
+      canonical: data.canonical,
     }
   })
 
@@ -76,6 +78,7 @@ export function getPostBySlug(slug: string): Post | null {
       image: data.image,
       content,
       tags: data.tags || [],
+      canonical: data.canonical,
     }
   } catch (error) {
     return null

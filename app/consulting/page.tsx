@@ -7,6 +7,20 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: "SaaS Pricing Consulting | Fractional Economist Sarah Zou",
   description: "Expert pricing strategy consulting for SaaS companies. Get validated price points, experiment-ready plans, and revenue optimization from PhD economist Sarah Zou.",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: "https://sarahzou.com/consulting",
+  },
   openGraph: {
     title: "SaaS Pricing Consulting | Fractional Economist Sarah Zou",
     description: "Expert pricing strategy consulting for SaaS companies. Get validated price points, experiment-ready plans, and revenue optimization from PhD economist Sarah Zou.",
@@ -19,9 +33,6 @@ export const metadata: Metadata = {
     title: "SaaS Pricing Consulting | Fractional Economist Sarah Zou",
     description: "Expert pricing strategy consulting for SaaS companies. Get validated price points, experiment-ready plans, and revenue optimization from PhD economist Sarah Zou.",
     images: ["https://sarahzou.com/images/P-1.webp"],
-  },
-  alternates: {
-    canonical: "https://sarahzou.com/consulting",
   },
 };
 

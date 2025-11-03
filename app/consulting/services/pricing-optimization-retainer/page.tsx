@@ -5,10 +5,30 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Pricing Optimization Retainer | Monthly Pricing Strategy | Sarah Zou',
   description: 'Get continuous pricing edge with our monthly retainer. Includes 2 tests/month, deal desk help, and policy tuning from PhD economist Sarah Zou.',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://sarahzou.com/consulting/services/pricing-optimization-retainer',
+  },
   openGraph: {
     title: 'Pricing Optimization Retainer | Sarah Zou',
     description: 'Get continuous pricing edge with our monthly retainer. Includes 2 tests/month, deal desk help, and policy tuning.',
     type: 'website',
+    url: 'https://sarahzou.com/consulting/services/pricing-optimization-retainer',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pricing Optimization Retainer | Sarah Zou',
+    description: 'Get continuous pricing edge with our monthly retainer. Includes 2 tests/month, deal desk help, and policy tuning.',
   },
 };
 

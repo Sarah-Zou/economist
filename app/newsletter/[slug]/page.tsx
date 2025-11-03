@@ -23,14 +23,36 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     }
   }
 
+  const canonicalUrl = post.canonical || `https://sarahzou.com/newsletter/${post.slug}`
+  
   return {
     title: post.title,
     description: post.description,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: post.title,
       description: post.description,
       images: [post.image],
       type: 'article',
+      url: canonicalUrl,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
     },
   }
 }

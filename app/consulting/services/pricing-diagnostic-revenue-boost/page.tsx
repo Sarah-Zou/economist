@@ -5,10 +5,30 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Pricing Diagnostic & Revenue Boost | 2-Week Pricing Strategy | Dr. Sarah Zou',
   description: 'Unlock hidden revenue with our 2-week pricing diagnostic. Get comprehensive pricing audit, competitive benchmarks, and actionable optimization recommendations from PhD economist Sarah Zou.',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://sarahzou.com/consulting/services/pricing-diagnostic-revenue-boost',
+  },
   openGraph: {
     title: 'Pricing Diagnostic & Revenue Boost | Sarah Zou',
     description: 'Unlock hidden revenue with our 2-week pricing diagnostic. Get comprehensive pricing audit, competitive benchmarks, and actionable optimization recommendations.',
     type: 'website',
+    url: 'https://sarahzou.com/consulting/services/pricing-diagnostic-revenue-boost',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pricing Diagnostic & Revenue Boost | Sarah Zou',
+    description: 'Unlock hidden revenue with our 2-week pricing diagnostic. Get comprehensive pricing audit, competitive benchmarks, and actionable optimization recommendations.',
   },
 };
 

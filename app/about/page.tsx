@@ -7,6 +7,20 @@ import Cta from '@/components/about/Cta'
 export const metadata: Metadata = {
   title: "About — Sarah Zou",
   description: "SaaS Economist & Pricing Strategist for B2B software teams.",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: "https://sarahzou.com/about",
+  },
   openGraph: {
     title: "About — Sarah Zou",
     description: "SaaS Economist & Pricing Strategist for B2B software teams.",
@@ -19,9 +33,6 @@ export const metadata: Metadata = {
     title: "About — Sarah Zou",
     description: "SaaS Economist & Pricing Strategist for B2B software teams.",
     images: ["https://sarahzou.com/images/about_headshot.webp"],
-  },
-  alternates: {
-    canonical: "https://sarahzou.com/about",
   },
 };
 

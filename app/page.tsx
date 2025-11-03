@@ -24,6 +24,20 @@ const homepageTestimonials = [
 export const metadata: Metadata = {
   title: "Pricing & Monetization for AI-SaaS | Fractional Economist Sarah Zou",
   description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in AI-SaaS growth strategies.",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: "https://sarahzou.com",
+  },
   openGraph: {
     title: "Pricing & Monetization for AI-SaaS | Fractional Economist Sarah Zou",
     description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in AI-SaaS growth strategies.",
@@ -36,9 +50,6 @@ export const metadata: Metadata = {
     title: "Pricing & Monetization for AI-SaaS | Fractional Economist Sarah Zou",
     description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in AI-SaaS growth strategies.",
     images: ["https://sarahzou.com/images/headshot_v2.webp"],
-  },
-  alternates: {
-    canonical: "https://sarahzou.com",
   },
 };
 
