@@ -14,7 +14,7 @@ const Footer = () => {
         {/* Left: Logo, nav, copyright */}
         <div className="flex-1 flex flex-col items-center md:items-start mb-8 md:mb-0">
           <Link href="/" className="font-serif-playfair text-2xl font-bold mb-1 text-[#111]">Sarah Zou, PhD</Link>
-          <span className="text-xs text-gray-500 tracking-wide mb-6">The SaaS Economist</span>
+          <span className="text-xs text-gray-500 tracking-wide mb-6">EconNova Consulting</span>
           <div className="flex flex-wrap gap-3 mb-8">
             {navLinks.map((link) => (
               <Link
@@ -26,7 +26,7 @@ const Footer = () => {
               </Link>
             ))}
           </div>
-          <div className="text-sm text-gray-500 mt-4">© 2025 The SaaS Economist · All rights reserved</div>
+          <div className="text-sm text-gray-500 mt-4">© 2025 EconNova Consulting · All rights reserved</div>
           <div className="text-sm text-gray-500 mt-1">Princeton, NJ · NYC · Philadelphia · Remote (US/EU)</div>
         </div>
         {/* Right: Newsletter subscription */}

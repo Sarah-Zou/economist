@@ -8,7 +8,7 @@ const Navbar = () => {
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex flex-col">
             <span className="font-serif-playfair text-2xl font-bold">Sarah Zou, PhD</span>
-            <span className="text-xs text-gray-500 tracking-wide mt-0.5">The SaaS Economist</span>
+            <span className="text-xs text-gray-500 tracking-wide mt-0.5">EconNova Consulting</span>
           </Link>
           
           <div className="hidden md:flex items-center space-x-6">

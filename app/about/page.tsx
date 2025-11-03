@@ -68,7 +68,7 @@ const credentials = [
     items: [
       "Citigroup (risk models)",
       "Capgemini (pricing/GenAI projects)",
-      "Founder, The SaaS Economist"
+      "Founder, EconNova Consulting"
     ]
   }
 ]
@@ -85,7 +85,7 @@ const narrativeSections = [
     title: "My path into pricing & metrics",
     content: `
       <p>My journey from economics PhD to SaaS pricing expert started with building risk models at Citigroup, then leading pricing and GenAI projects at Capgemini. I've spent years advising tech startups and building robust analytics frameworks.</p>
-      <p>This experience taught me that most SaaS metrics are vanity metrics. The real value comes from understanding which KPIs actually predict growth, and how to communicate that story to investors. That's why I founded The SaaS Economist—to bridge the gap between raw data and powerful fundraising narratives.</p>
+      <p>This experience taught me that most SaaS metrics are vanity metrics. The real value comes from understanding which KPIs actually predict growth, and how to communicate that story to investors. That's why I founded EconNova Consulting—to bridge the gap between raw data and powerful fundraising narratives.</p>
     `
   },
   {
@@ -156,7 +156,7 @@ const jsonLd = {
   ],
   "worksFor": {
     "@type": "Organization",
-    "name": "The SaaS Economist"
+    "name": "EconNova Consulting"
   },
   "knowsAbout": [
     "SaaS Pricing Strategy",

@@ -91,10 +91,17 @@ export default function Home() {
         <HeroStackedImages
           photoSrc="/images/headshot_v2.webp"
           bgSrc="/images/background.webp"
-          title="Pricing & Monetization for AI-SaaS"
-          kicker="Fractional Economist"
-          lede="Value-based pricing, packaging, and revenue experiments that lift ARR and retention."
-          photoAlt="Dr. Sarah Zou, Fractional Economist specializing in AI-SaaS pricing strategies"
+          title="Fractional Chief Economist for Early-Stage Tech"
+          lede="Monetization, metrics, and forecasting—designed for capital-efficient growth."
+          photoAlt="Dr. Sarah Zou, Fractional Chief Economist for Early-Stage Tech"
+          primaryCta={{
+            text: "Book a 30-min Free Consult",
+            href: "https://calendly.com/sarahxzou/free-pricing-consult-25-min"
+          }}
+          secondaryCta={{
+            text: "Download the Monetization Roadmap",
+            href: "/downloads/monetization-roadmap"
+          }}
         />
         <section className="py-20 bg-white flex flex-col items-center text-center">
           <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold mb-2 text-[#ff5722] relative inline-block">

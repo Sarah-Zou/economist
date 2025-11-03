@@ -51,7 +51,7 @@ export default function CheatSheetsPage() {
               {/* Signup box */}
               <div className="flex flex-col items-center md:items-start w-full">
                 <h3 className="text-2xl font-bold mb-2 text-[#ff5722] text-left w-full">Get the bundle now</h3>
-                <p className="text-lg mb-4 text-[#222] text-left w-full">Enter your email to join The SaaS Economist. You'll instantly receive the Metrics-Storytelling, Benchmark Navigator, and Stage-Smart cheat sheets. No spam—just weekly 5-minute insights on SaaS pricing, AI economics, and growth benchmarks.</p>
+                <p className="text-lg mb-4 text-[#222] text-left w-full">Enter your email to join EconNova Consulting. You'll instantly receive the Metrics-Storytelling, Benchmark Navigator, and Stage-Smart cheat sheets. No spam—just weekly 5-minute insights on SaaS pricing, AI economics, and growth benchmarks.</p>
                 <div className="w-full flex justify-center md:justify-start">
                   <iframe
                     src="https://sarahzou.substack.com/embed"

@@ -11,6 +11,14 @@ interface HeroStackedImagesProps {
   lede: string
   photoAlt?: string
   className?: string
+  primaryCta?: {
+    text: string
+    href: string
+  }
+  secondaryCta?: {
+    text: string
+    href: string
+  }
 }
 
 export default function HeroStackedImages({
@@ -20,7 +28,9 @@ export default function HeroStackedImages({
   kicker,
   lede,
   photoAlt = "Professional portrait",
-  className = ""
+  className = "",
+  primaryCta,
+  secondaryCta
 }: HeroStackedImagesProps) {
   return (
     <section className={`py-16 md:py-24 ${className}`}>
@@ -110,6 +120,35 @@ export default function HeroStackedImages({
               transition={{ duration: 0.5, delay: 0.7 }}
               className="w-20 h-0.5 bg-orange-500"
             />
+
+            {/* CTAs */}
+            {(primaryCta || secondaryCta) && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="flex flex-col sm:flex-row gap-4 pt-4"
+              >
+                {primaryCta && (
+                  <a
+                    href={primaryCta.href}
+                    target={primaryCta.href.startsWith('http') ? '_blank' : undefined}
+                    rel={primaryCta.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className="inline-block bg-[#ff5722] text-white font-bold px-8 py-4 rounded-lg text-lg hover:bg-[#e64a19] transition-colors text-center"
+                  >
+                    {primaryCta.text}
+                  </a>
+                )}
+                {secondaryCta && (
+                  <a
+                    href={secondaryCta.href}
+                    className="inline-block border-2 border-[#ff5722] text-[#ff5722] font-bold px-8 py-4 rounded-lg text-lg hover:bg-[#ff5722] hover:text-white transition-colors text-center"
+                  >
+                    {secondaryCta.text}
+                  </a>
+                )}
+              </motion.div>
+            )}
           </motion.div>
         </div>
       </div>
@@ -123,7 +162,7 @@ export default function HeroStackedImages({
   photoSrc="/images/about_headshot.webp"
   bgSrc="/images/background.webp"
   title="Dr. Sarah Zou"
-  kicker="The SaaS Economist"
+  kicker="EconNova Consulting"
   lede="I help B2B SaaS teams turn pricing into a growth system—so NRR compounds, CAC payback shortens, and the investor story is clear."
   photoAlt="Dr. Sarah Zou, SaaS Economist and Pricing Strategist"
 />

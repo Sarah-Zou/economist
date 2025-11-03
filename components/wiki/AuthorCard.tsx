@@ -8,7 +8,7 @@ export default function AuthorCard() {
           Dr. Sarah Zou
         </h3>
         <p className="text-sm text-gray-600 mb-3">
-          The SaaS Economist
+          EconNova Consulting
         </p>
         <p className="text-sm text-gray-700 mb-4">
           PhD economist specializing in SaaS pricing and monetization strategy. 
