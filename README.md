@@ -1,6 +1,6 @@
 # Personal Website
 
-A modern personal website for a Fractional Economist & SaaS/AI Strategist, built with Next.js 14, TypeScript, Tailwind CSS, and shadcn/ui.
+A modern personal website for a Fractional Chief Economist & SaaS/AI Strategist, built with Next.js 14, TypeScript, Tailwind CSS, and shadcn/ui.
 
 ## Features
 

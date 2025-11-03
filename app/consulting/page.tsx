@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "SaaS Pricing Consulting | Fractional Economist Sarah Zou",
+  title: "SaaS Pricing Consulting | Fractional Chief Economist Sarah Zou",
   description: "Expert pricing strategy consulting for SaaS companies. Get validated price points, experiment-ready plans, and revenue optimization from PhD economist Sarah Zou.",
   robots: {
     index: true,
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     canonical: "https://sarahzou.com/consulting",
   },
   openGraph: {
-    title: "SaaS Pricing Consulting | Fractional Economist Sarah Zou",
+    title: "SaaS Pricing Consulting | Fractional Chief Economist Sarah Zou",
     description: "Expert pricing strategy consulting for SaaS companies. Get validated price points, experiment-ready plans, and revenue optimization from PhD economist Sarah Zou.",
     type: "website",
     url: "https://sarahzou.com/consulting",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SaaS Pricing Consulting | Fractional Economist Sarah Zou",
+    title: "SaaS Pricing Consulting | Fractional Chief Economist Sarah Zou",
     description: "Expert pricing strategy consulting for SaaS companies. Get validated price points, experiment-ready plans, and revenue optimization from PhD economist Sarah Zou.",
     images: ["https://sarahzou.com/images/P-1.webp"],
   },
@@ -110,7 +110,7 @@ function ConsultingContent() {
               "provider": {
                 "@type": "Person",
                 "name": "Dr. Sarah Zou",
-                "jobTitle": "Fractional Economist",
+                "jobTitle": "Fractional Chief Economist",
                 "url": "https://sarahzou.com"
               },
               "url": "https://sarahzou.com/consulting",

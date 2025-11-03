@@ -98,7 +98,7 @@ export default function HeroStackedImages({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-serif text-gray-900 leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-gray-900 leading-[1.1] tracking-tight"
             >
               {title}
             </motion.h1>
@@ -108,7 +108,7 @@ export default function HeroStackedImages({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-lg text-gray-600 leading-relaxed max-w-2xl"
+              className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl font-light"
             >
               {lede}
             </motion.p>
@@ -127,14 +127,14 @@ export default function HeroStackedImages({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="flex flex-col sm:flex-row gap-4 pt-4"
+                className="flex flex-col sm:flex-row gap-3 pt-4"
               >
                 {primaryCta && (
                   <a
                     href={primaryCta.href}
                     target={primaryCta.href.startsWith('http') ? '_blank' : undefined}
                     rel={primaryCta.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="inline-block bg-[#ff5722] text-white font-bold px-8 py-4 rounded-lg text-lg hover:bg-[#e64a19] transition-colors text-center"
+                    className="inline-block bg-[#ff5722] text-white font-semibold px-6 py-3 rounded-md text-base hover:bg-[#e64a19] transition-colors text-center"
                   >
                     {primaryCta.text}
                   </a>
@@ -142,7 +142,7 @@ export default function HeroStackedImages({
                 {secondaryCta && (
                   <a
                     href={secondaryCta.href}
-                    className="inline-block border-2 border-[#ff5722] text-[#ff5722] font-bold px-8 py-4 rounded-lg text-lg hover:bg-[#ff5722] hover:text-white transition-colors text-center"
+                    className="inline-block border border-[#ff5722] text-[#ff5722] font-semibold px-6 py-3 rounded-md text-base hover:bg-[#ff5722] hover:text-white transition-colors text-center"
                   >
                     {secondaryCta.text}
                   </a>

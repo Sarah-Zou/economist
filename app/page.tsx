@@ -22,7 +22,7 @@ const homepageTestimonials = [
 ]
 
 export const metadata: Metadata = {
-  title: "Pricing & Monetization for AI-SaaS | Fractional Economist Sarah Zou",
+  title: "Pricing & Monetization for AI-SaaS | Fractional Chief Economist Sarah Zou",
   description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in AI-SaaS growth strategies.",
   robots: {
     index: true,
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     canonical: "https://sarahzou.com",
   },
   openGraph: {
-    title: "Pricing & Monetization for AI-SaaS | Fractional Economist Sarah Zou",
+    title: "Pricing & Monetization for AI-SaaS | Fractional Chief Economist Sarah Zou",
     description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in AI-SaaS growth strategies.",
     type: "website",
     url: "https://sarahzou.com",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pricing & Monetization for AI-SaaS | Fractional Economist Sarah Zou",
+    title: "Pricing & Monetization for AI-SaaS | Fractional Chief Economist Sarah Zou",
     description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in AI-SaaS growth strategies.",
     images: ["https://sarahzou.com/images/headshot_v2.webp"],
   },
@@ -58,7 +58,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Dr. Sarah Zou",
-    "jobTitle": "Fractional Economist",
+    "jobTitle": "Fractional Chief Economist",
     "description": "PhD Economist specializing in pricing strategies, metrics analytics, and investor-ready storytelling for AI-SaaS startups.",
     "url": "https://sarahzou.com",
     "image": "https://sarahzou.com/images/headshot_v2.webp",
@@ -91,9 +91,10 @@ export default function Home() {
         <HeroStackedImages
           photoSrc="/images/headshot_v2.webp"
           bgSrc="/images/background.webp"
-          title="Fractional Chief Economist for Early-Stage Tech"
-          lede="Monetization, metrics, and forecasting—designed for capital-efficient growth."
-          photoAlt="Dr. Sarah Zou, Fractional Chief Economist for Early-Stage Tech"
+          kicker="FRACTIONAL CHIEF ECONOMIST"
+          title="PhD economist for early-stage tech"
+          lede="With 10+ years in quantitative modeling, applied research, and strategy & operations, I help founders design monetization, prove unit economics, instrument the right metrics, and extend runway. Get evidence-based decisions fast—without hiring a full-time team."
+          photoAlt="Dr. Sarah Zou, PhD economist for early-stage tech"
           primaryCta={{
             text: "Book a 30-min Free Consult",
             href: "https://calendly.com/sarahxzou/free-consult-30-min"
@@ -103,12 +104,58 @@ export default function Home() {
             href: "/downloads/monetization-roadmap"
           }}
         />
+
+        {/* What Makes Me Different Section */}
+        <section className="py-20 bg-white">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            {/* Section Heading */}
+            <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold mb-12 text-center text-[#ff5722]">
+              What Makes Me Different
+            </h2>
+
+            {/* Feature Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Card 1: Rare blend */}
+              <div className="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:border-[#ff5722] transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Rare blend</h3>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  Pricing + unit economics + econometrics in one person. Most firms split this across CFO/RevOps/DS; I design the whole economic system end-to-end.
+                </p>
+              </div>
+
+              {/* Card 2: Research-grade rigor */}
+              <div className="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:border-[#ff5722] transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Research-grade rigor</h3>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  I treat each engagement like an academic study: hypotheses → models → experiments → decisions. Methods are documented; assumptions are explicit.
+                </p>
+              </div>
+
+              {/* Card 3: Funder-friendly outputs */}
+              <div className="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:border-[#ff5722] transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Funder-friendly outputs</h3>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  Board-ready artifacts (GM waterfall, NRR/LTV bridges, payback guardrails, elasticity write-ups) that withstand diligence—not just pretty decks.
+                </p>
+              </div>
+
+              {/* Card 4: Fast, testable decisions */}
+              <div className="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:border-[#ff5722] transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Fast, testable decisions</h3>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  Sprints ship answers in 1–2 weeks with a 90-day experiment plan. No "more analysis" stall; every recommendation is testable.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-20 bg-white flex flex-col items-center text-center">
           <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold mb-2 text-[#ff5722] relative inline-block">
             How I Can Help
           </h2>
           <p className="max-w-2xl mx-auto text-lg text-[#222] mb-12">
-            Fractional Economist focused on pricing power. I turn WTP research + experiment design into ARR, faster payback, and lower churn.
+            Fractional Chief Economist focused on pricing power. I turn WTP research + experiment design into ARR, faster payback, and lower churn.
           </p>
           <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4 mb-10">
             {/* Pricing Quickstart */}
@@ -295,9 +342,9 @@ export default function Home() {
             </h2>
             <div className="space-y-6">
               <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="font-bold text-lg mb-3 text-[#111]">What is a fractional economist?</h3>
+                <h3 className="font-bold text-lg mb-3 text-[#111]">What is a fractional chief economist?</h3>
                 <p className="text-gray-700 mb-3">
-                  A fractional economist is a part-time economic advisor who brings PhD-level expertise to your pricing, metrics, and growth strategy without the cost of a full-time hire.
+                  A fractional chief economist is a part-time economic advisor who brings PhD-level expertise to your pricing, metrics, and growth strategy without the cost of a full-time hire.
                 </p>
                 <a href="/consulting#faq" className="text-[#ff5722] font-medium hover:underline">
                   Learn more about fractional economics →
