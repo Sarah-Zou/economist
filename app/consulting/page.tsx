@@ -1,7 +1,6 @@
 import ContactCTA from '@/components/ContactCTA'
 import TestimonialCard from '@/components/TestimonialCard'
 import Image from 'next/image'
-import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -38,39 +37,33 @@ export const metadata: Metadata = {
 
 const services = [
   {
+    id: 'monetization-sprint',
     slug: 'pricing-diagnostic-revenue-boost',
-    title: 'Pricing Quickstart',
-    hero: 'Find hidden ARR fast.',
-    summary: 'WTP bands (lite), packaging & price points, pricing page copy, experiment plan, 30/60/90 roadmap, health scorecard.',
-    duration: '14 days',
-    price: '$3.5k Lite / $6k Pro',
+    title: 'Monetization & Unit-Economics Sprint',
+    hero: 'Outcome: pricing metric, 3-tier package + fences, list/discount curves, GM/payback scenarios, 90-day experiments.',
+    summary: 'Best for: Pre-seed to A; design product around price or pricing reset; investor pressure for efficient growth.',
+    duration: '1–2 weeks',
+    price: '$5–12k',
     image: '/images/P-1.webp',
   },
   {
+    id: 'economics-os',
     slug: 'rapid-pricing-experiment-toolkit',
-    title: 'Rapid Experiment Build',
-    hero: 'Ship pricing tests safely; learn fast.',
-    summary: 'Design sheets, guardrails, cohort dashboard, readout templates; then 1–2 live tests.',
-    duration: '3–5 weeks',
-    price: '$4k setup + $2k/test',
+    title: 'Economics OS Build',
+    hero: 'Outcome: KPI taxonomy & event schema, dashboards, cohort/LTV and NRR bridges, 12–18 mo forecast, Elasticity Lab, board pack.',
+    summary: 'Best for: Seed–A with messy metrics; first GTM hires; need repeatable decisions.',
+    duration: '4–6 weeks',
+    price: '$15–30k',
     image: '/images/P-4.webp',
   },
   {
-    slug: 'customer-value-research-pack',
-    title: 'Customer Value Research Pack',
-    hero: 'Hear customers → price with confidence.',
-    summary: 'Interviews + survey, value map, price fences & messaging.',
-    duration: '2 weeks',
-    price: '$3.5k',
-    image: '/images/P-2.webp',
-  },
-  {
+    id: 'fractional-retainer',
     slug: 'pricing-optimization-retainer',
-    title: 'Pricing Ops Retainer',
-    hero: 'Continuous edge without new hires.',
-    summary: 'Core: 2 tests/mo, deal-desk, quarterly review. Plus: adds VoC pulse, exec memo, enablement.',
-    duration: 'monthly',
-    price: '$3k Core / $5k Plus',
+    title: 'Fractional Chief Economist (Retainer)',
+    hero: 'Outcome: own monetization roadmap; experiment analysis; discount guardrails; rolling forecast; investor updates; quarterly pricing refresh.',
+    summary: 'Best for: Ongoing pricing/tests, usage-based or marketplace models, upcoming raise.',
+    duration: 'Monthly',
+    price: '$4k / $8k / $15k',
     image: '/images/P-8.webp',
   },
 ]
@@ -132,32 +125,24 @@ function ConsultingContent() {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "Pricing Quickstart",
-                      "description": "Find hidden ARR fast with WTP bands, packaging & price points, pricing page copy, and experiment plan."
+                      "name": "Monetization & Unit-Economics Sprint",
+                      "description": "Pricing metric, 3-tier package + fences, list/discount curves, GM/payback scenarios, 90-day experiments. Best for Pre-seed to A companies."
                     }
                   },
                   {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "Rapid Experiment Build",
-                      "description": "Ship pricing tests safely with design sheets, guardrails, cohort dashboard, and readout templates."
+                      "name": "Economics OS Build",
+                      "description": "KPI taxonomy & event schema, dashboards, cohort/LTV and NRR bridges, 12–18 mo forecast, Elasticity Lab, board pack. Best for Seed–A companies with messy metrics."
                     }
                   },
                   {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "Customer Value Research Pack",
-                      "description": "Hear customers and price with confidence through interviews, surveys, value mapping, and messaging frameworks."
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Pricing Ops Retainer",
-                      "description": "Continuous pricing edge with 2 tests/month, deal-desk optimization, and quarterly reviews."
+                      "name": "Fractional Chief Economist (Retainer)",
+                      "description": "Own monetization roadmap; experiment analysis; discount guardrails; rolling forecast; investor updates; quarterly pricing refresh. Best for ongoing pricing/tests and marketplace models."
                     }
                   }
                 ]
@@ -201,17 +186,17 @@ function ConsultingContent() {
           <div className="text-center mb-16">
             <h1 className="font-serif-playfair text-4xl font-bold mb-6 text-[#111]">Consulting Services</h1>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              Expert guidance to help your SaaS business thrive in today's competitive landscape.
+              Expert help to build your startup's economics layer—pricing, metrics, and forecasting.
             </p>
           </div>
 
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
             {services.map((service, index) => (
-              <Link
+              <div
                 key={index}
-                href={`/consulting/services/${service.slug}`}
-                className="block group"
+                id={service.id}
+                className="block group scroll-mt-24"
               >
                 <div 
                   className="relative h-[400px] w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
@@ -253,7 +238,7 @@ function ConsultingContent() {
                     </div>
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
 

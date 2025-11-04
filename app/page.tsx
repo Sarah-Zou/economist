@@ -155,14 +155,11 @@ export default function Home() {
             How I Can Help
           </h2>
           <p className="max-w-2xl mx-auto text-lg text-[#222] mb-12">
-            Fractional Chief Economist focused on pricing power. I turn WTP research + experiment design into ARR, faster payback, and lower churn.
+            Fractional Chief Economist for early-stage tech startups. I turn pricing + unit economics + rigorous modeling into investor-grade decisions.
           </p>
-          <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4 mb-10">
-            {/* Pricing Quickstart */}
-            <a 
-              href="/consulting/services/pricing-diagnostic-revenue-boost" 
-              className="block group"
-            >
+          <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 mb-10">
+            {/* Card 1: Monetization & Unit-Economics Sprint */}
+            <a href="/consulting#monetization-sprint" className="block group">
               <div 
                 className="relative h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
                 style={{
@@ -180,31 +177,25 @@ export default function Home() {
                   {/* Title - positioned at mid-bottom, moves up on hover */}
                   <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
                     <h3 className="text-xl font-bold text-white drop-shadow-lg">
-                      Pricing Quickstart
+                      Monetization & Unit-Economics Sprint
                     </h3>
                     <p className="text-white text-xs font-medium mt-1 drop-shadow-md">
-                      14 days
+                      1–2 weeks • $5–12k
                     </p>
                   </div>
                   
                   {/* Description - appears on hover */}
                   <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                     <p className="text-white text-sm leading-relaxed mt-2 drop-shadow-md">
-                      Find hidden ARR fast. WTP bands, packaging & price points, experiment plan.
+                      Decide your pricing metric, 3-tier packaging & fences, GM floors/ceilings, monetization narratives, and a 90-day test plan.
                     </p>
-                    <a href="/consulting" className="inline-block text-white text-xs font-medium mt-2 hover:underline">
-                      See scope & deliverables →
-                    </a>
                   </div>
                 </div>
               </div>
             </a>
 
-            {/* Rapid Experiment Build */}
-            <a 
-              href="/consulting/services/rapid-pricing-experiment-toolkit" 
-              className="block group"
-            >
+            {/* Card 2: Economics OS Build */}
+            <a href="/consulting#economics-os" className="block group">
               <div 
                 className="relative h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
                 style={{
@@ -222,73 +213,25 @@ export default function Home() {
                   {/* Title - positioned at mid-bottom, moves up on hover */}
                   <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
                     <h3 className="text-xl font-bold text-white drop-shadow-lg">
-                      Rapid Experiment Build
+                      Economics OS Build
                     </h3>
                     <p className="text-white text-xs font-medium mt-1 drop-shadow-md">
-                      3–5 weeks
+                      4–6 weeks • $15–30k
                     </p>
                   </div>
                   
                   {/* Description - appears on hover */}
                   <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                     <p className="text-white text-sm leading-relaxed mt-2 drop-shadow-md">
-                      Ship pricing tests safely; learn fast. Design sheets, guardrails, live tests.
+                      KPI/event schema, dashboards, cohort/LTV model, forecasting workbook, Elasticity Lab, and a board-ready pack.
                     </p>
-                    <a href="/consulting" className="inline-block text-white text-xs font-medium mt-2 hover:underline">
-                      See scope & deliverables →
-                    </a>
                   </div>
                 </div>
               </div>
             </a>
 
-            {/* Customer Value Research Pack */}
-            <a 
-              href="/consulting/services/customer-value-research-pack" 
-              className="block group"
-            >
-              <div 
-                className="relative h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
-                style={{
-                  backgroundImage: 'url(/images/P-2.webp)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat'
-                }}
-              >
-                {/* Dark overlay for better text readability */}
-                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
-                
-                {/* Content */}
-                <div className="relative h-full flex flex-col justify-end p-6">
-                  {/* Title - positioned at mid-bottom, moves up on hover */}
-                  <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
-                    <h3 className="text-xl font-bold text-white drop-shadow-lg">
-                      Customer Value Research Pack
-                    </h3>
-                    <p className="text-white text-xs font-medium mt-1 drop-shadow-md">
-                      2 weeks
-                    </p>
-                  </div>
-                  
-                  {/* Description - appears on hover */}
-                  <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                    <p className="text-white text-sm leading-relaxed mt-2 drop-shadow-md">
-                      Hear customers → price with confidence. Interviews + survey, value map.
-                    </p>
-                    <a href="/consulting" className="inline-block text-white text-xs font-medium mt-2 hover:underline">
-                      See scope & deliverables →
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            {/* Pricing Ops Retainer */}
-            <a 
-              href="/consulting/services/pricing-optimization-retainer" 
-              className="block group"
-            >
+            {/* Card 3: Fractional Chief Economist */}
+            <a href="/consulting#fractional-retainer" className="block group">
               <div 
                 className="relative h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
                 style={{
@@ -306,21 +249,18 @@ export default function Home() {
                   {/* Title - positioned at mid-bottom, moves up on hover */}
                   <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
                     <h3 className="text-xl font-bold text-white drop-shadow-lg">
-                      Pricing Ops Retainer
+                      Fractional Chief Economist
                     </h3>
                     <p className="text-white text-xs font-medium mt-1 drop-shadow-md">
-                      monthly
+                      Monthly • $4k Lite / $8k Core / $15k Growth
                     </p>
                   </div>
                   
                   {/* Description - appears on hover */}
                   <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                     <p className="text-white text-sm leading-relaxed mt-2 drop-shadow-md">
-                      Continuous edge without new hires. 2 tests/mo, deal-desk, quarterly review.
+                      Own pricing roadmap, experiment cadence, rolling forecast, and investor narrative. Quarterly price/pack refresh.
                     </p>
-                    <a href="/consulting" className="inline-block text-white text-xs font-medium mt-2 hover:underline">
-                      See scope & deliverables →
-                    </a>
                   </div>
                 </div>
               </div>
