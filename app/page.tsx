@@ -180,7 +180,7 @@ export default function Home() {
                       Monetization & Unit-Economics Sprint
                     </h3>
                     <p className="text-white text-xs font-medium mt-1 drop-shadow-md">
-                      1–2 weeks • $5–12k
+                      1–2 weeks
                     </p>
                   </div>
                   
@@ -216,7 +216,7 @@ export default function Home() {
                       Economics OS Build
                     </h3>
                     <p className="text-white text-xs font-medium mt-1 drop-shadow-md">
-                      4–6 weeks • $15–30k
+                      4–6 weeks
                     </p>
                   </div>
                   
@@ -252,7 +252,7 @@ export default function Home() {
                       Fractional Chief Economist
                     </h3>
                     <p className="text-white text-xs font-medium mt-1 drop-shadow-md">
-                      Monthly • $4k Lite / $8k Core / $15k Growth
+                      Monthly
                     </p>
                   </div>
                   

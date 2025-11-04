@@ -214,9 +214,11 @@ function ConsultingContent() {
                   <div className="relative h-full flex flex-col justify-end p-8">
                     {/* Title - positioned at mid-bottom, moves up on hover */}
                     <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
-                      <h3 className="text-2xl font-bold text-white drop-shadow-lg">
-                        {service.title}
-                      </h3>
+                      <div className="min-h-[3.5rem] flex items-end">
+                        <h3 className="text-2xl font-bold text-white drop-shadow-lg">
+                          {service.title}
+                        </h3>
+                      </div>
                       <div className="flex items-center gap-4 mt-2">
                         <p className="text-white text-sm font-medium drop-shadow-md">
                           {service.duration}
