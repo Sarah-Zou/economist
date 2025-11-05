@@ -158,11 +158,29 @@ export default function CategoryPage({ params }: CategoryPageProps) {
           <div className="prose prose-lg max-w-none">
             <h2 id="whats-in-this-category">What's in this category</h2>
             <ul className="space-y-2">
-              {category.concepts.map((concept, index) => (
-                <li key={index} className="text-gray-700" id={concept.id}>
-                  {concept.text}
-                </li>
-              ))}
+              {category.concepts.map((concept, index) => {
+                const conceptName = concept.text.split(':')[0].trim();
+                const conceptDesc = concept.text.includes(':') 
+                  ? concept.text.split(':').slice(1).join(':').trim()
+                  : '';
+                return (
+                  <li key={index} className="text-gray-700" id={concept.id}>
+                    {concept.id ? (
+                      <Link
+                        href={`/wiki/pricing/${params.category}/${concept.id}`}
+                        className="text-[#ff5722] hover:underline font-medium"
+                      >
+                        {conceptName}
+                      </Link>
+                    ) : (
+                      <span className="font-medium">{conceptName}</span>
+                    )}
+                    {conceptDesc && (
+                      <span className="text-gray-600">: {conceptDesc}</span>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
 
             <h2 id="how-to-use-this">How to use this</h2>
