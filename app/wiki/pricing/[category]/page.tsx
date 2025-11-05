@@ -159,8 +159,8 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             <h2 id="whats-in-this-category">What's in this category</h2>
             <ul className="space-y-2">
               {category.concepts.map((concept, index) => (
-                <li key={index} className="text-gray-700">
-                  {concept}
+                <li key={index} className="text-gray-700" id={concept.id}>
+                  {concept.text}
                 </li>
               ))}
             </ul>

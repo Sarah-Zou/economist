@@ -2,7 +2,7 @@
 title: "Price Architecture & Levels"
 slug: "price-architecture"
 summary: "Strategic price setting, positioning, geographic variations, and architectural decisions that maximize revenue while maintaining simplicity."
-updated: "2025-01-02"
+updated: "2025-01-15"
 level: "101"
 tags: ["pricing","saas","monetization","architecture","tiers","structure"]
 canonical: "https://sarahzou.com/wiki/pricing/price-architecture"
@@ -24,7 +24,7 @@ This category covers the structural elements of your pricing that determine how 
 
 ## Related categories
 
-- [Packaging and Bundling](/wiki/pricing/packaging-and-bundling) - Designing the features and benefits for each tier
-- [Models and Metering](/wiki/pricing/models-and-metering) - Choosing the right pricing model for your architecture
-- [Comms and Deals](/wiki/pricing/comms-and-deals) - Communicating your pricing structure effectively
-- [Governance and Process](/wiki/pricing/governance-and-process) - Managing changes to your pricing architecture
+- [Packaging and Bundling](https://sarahzou.com/wiki/pricing/packaging-and-bundling) - Designing the features and benefits for each tier
+- [Models and Metering](https://sarahzou.com/wiki/pricing/models-and-metering) - Choosing the right pricing model for your architecture
+- [Comms and Deals](https://sarahzou.com/wiki/pricing/comms-and-deals) - Communicating your pricing structure effectively
+- [Governance and Process](https://sarahzou.com/wiki/pricing/governance-and-process) - Managing changes to your pricing architecture

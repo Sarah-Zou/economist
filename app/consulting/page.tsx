@@ -47,8 +47,18 @@ const services = [
     image: '/images/P-1.webp',
   },
   {
+    id: 'customer-value-research',
+    slug: 'customer-value-research-pack',
+    title: 'Customer Value Research Pack',
+    hero: 'Outcome: 8–10 interviews, WTP survey, value drivers matrix, price fence recommendations, landing page narrative inputs.',
+    summary: 'Best for: Understanding customer value drivers, data-backed pricing strategy, messaging that resonates.',
+    duration: '2 weeks',
+    price: '$3.5k',
+    image: '/images/P-2.webp',
+  },
+  {
     id: 'economics-os',
-    slug: 'rapid-pricing-experiment-toolkit',
+    slug: 'saas-metrics-clarity-pack',
     title: 'Economics OS Build',
     hero: 'Outcome: KPI taxonomy & event schema, dashboards, cohort/LTV and NRR bridges, 12–18 mo forecast, Elasticity Lab, board pack.',
     summary: 'Best for: Seed–A with messy metrics; first GTM hires; need repeatable decisions.',
@@ -58,7 +68,7 @@ const services = [
   },
   {
     id: 'fractional-retainer',
-    slug: 'pricing-optimization-retainer',
+    slug: 'on-call-economist-retainer',
     title: 'Fractional Chief Economist (Retainer)',
     hero: 'Outcome: own monetization roadmap; experiment analysis; discount guardrails; rolling forecast; investor updates; quarterly pricing refresh.',
     summary: 'Best for: Ongoing pricing/tests, usage-based or marketplace models, upcoming raise.',
@@ -193,9 +203,10 @@ function ConsultingContent() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
             {services.map((service, index) => (
-              <div
+              <a
                 key={index}
                 id={service.id}
+                href={`/consulting/services/${service.slug}`}
                 className="block group scroll-mt-24"
               >
                 <div 
@@ -240,7 +251,7 @@ function ConsultingContent() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
 

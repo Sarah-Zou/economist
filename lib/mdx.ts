@@ -16,7 +16,10 @@ export interface CategoryFrontmatter {
 
 export interface CategoryData extends CategoryFrontmatter {
   content: string;
-  concepts: string[];
+  concepts: Array<{
+    text: string;
+    id?: string;
+  }>;
   relatedCategories: Array<{
     title: string;
     slug: string;
@@ -51,7 +54,7 @@ export function getCategoryBySlug(slug: string): CategoryData | null {
     const { data, content } = matter(fileContents);
     
     // Parse the content to extract concepts and related categories
-    const concepts: string[] = [];
+    const concepts: Array<{ text: string; id?: string }> = [];
     const relatedCategories: Array<{ title: string; slug: string; summary: string }> = [];
     
     // Simple parsing - in a real implementation, you might want to use a proper markdown parser
@@ -77,7 +80,22 @@ export function getCategoryBySlug(slug: string): CategoryData | null {
       }
       
       if (inConceptsSection && line.trim().startsWith('- **')) {
-        concepts.push(line.trim().replace(/^- \*\*/, '').replace(/\*\*: /, ': '));
+        const lineContent = line.trim();
+        // Extract ID from span tag if present: - **<span id="concept-id">Concept Name</span>**: Description
+        const spanMatch = lineContent.match(/<span id="([^"]+)">([^<]+)<\/span>/);
+        if (spanMatch) {
+          const [, id, conceptName] = spanMatch;
+          // Extract description after the colon
+          const descMatch = lineContent.match(/:\s*(.+)$/);
+          const fullText = descMatch 
+            ? `${conceptName}: ${descMatch[1]}`
+            : conceptName;
+          concepts.push({ text: fullText, id });
+        } else {
+          // Fallback: extract text without HTML tags
+          const textOnly = lineContent.replace(/^- \*\*/, '').replace(/\*\*: /, ': ').replace(/<[^>]+>/g, '');
+          concepts.push({ text: textOnly });
+        }
       }
       
       if (inRelatedSection && line.includes('[')) {

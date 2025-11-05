@@ -2,7 +2,7 @@
 title: "Core Philosophies & Strategy"
 slug: "foundations"
 summary: "Strategic pricing approaches and foundational philosophies that determine how pricing aligns with business objectives and market positioning."
-updated: "2025-01-02"
+updated: "2025-01-15"
 level: "101"
 tags: ["pricing","saas","monetization","strategy","foundations"]
 canonical: "https://sarahzou.com/wiki/pricing/foundations"
@@ -10,15 +10,16 @@ canonical: "https://sarahzou.com/wiki/pricing/foundations"
 
 ## What's in this category
 
-- **Strategic pricing (profit-led, proactive)**: Building pricing strategies that drive profitability and growth
-- **Value-based pricing**: Aligning price with customer value and willingness to pay
-- **Price-led product design**: Designing products around customer willingness to pay
-- **Customer-centric profitability**: Understanding customer P&L and lifetime value
-- **Cost-plus pricing**: Using cost-plus as a benchmark, not the default approach
-- **Competition-based pricing**: When and how to use competitive pricing (with caution)
-- **Skimming strategy**: High initial prices with planned reductions
-- **Penetration strategy**: Low initial prices to gain market share
-- **Market posture & timing**: Neutral pricing, create-value-tomorrow vs capture-today, share-driven pricing traps
+- **<span id="strategic-pricing">Strategic pricing (profit-led, proactive)</span>**: Building pricing strategies that drive profitability and growth
+- **<span id="value-based-pricing">Value-based pricing</span>**: Aligning price with customer value and willingness to pay
+- **<span id="price-led-product-design">Price-led product design</span>**: Designing products around customer willingness to pay
+- **<span id="customer-centric-profitability">Customer-centric profitability</span>**: Understanding customer P&L and lifetime value
+- **<span id="cost-plus-pricing">Cost-plus pricing</span>**: Using cost-plus as a benchmark, not the default approach
+- **<span id="competition-based-pricing">Competition-based pricing</span>**: When and how to use competitive pricing (with caution)
+- **<span id="skimming-strategy">Skimming strategy</span>**: High initial prices with planned reductions
+- **<span id="penetration-strategy">Penetration strategy</span>**: Low initial prices to gain market share
+- **<span id="maximization">Maximization</span>**: Price at or near the value you deliver to capture revenue/profit now
+- **<span id="market-posture-timing">Market posture & timing</span>**: Neutral pricing, create-value-tomorrow vs capture-today, share-driven pricing traps
 
 ## How to use this
 
@@ -26,7 +27,7 @@ This category covers the fundamental strategic approaches to pricing that should
 
 ## Related categories
 
-- [Value and Customers](/wiki/pricing/value-and-customers) - Understanding customer value and willingness to pay
-- [Models and Metering](/wiki/pricing/models-and-metering) - Choosing the right pricing model for your business
-- [Price Architecture](/wiki/pricing/price-architecture) - Structuring your pricing tiers and rules
-- [Governance and Process](/wiki/pricing/governance-and-process) - Managing pricing decisions and changes
+- [Value and Customers](https://sarahzou.com/wiki/pricing/value-and-customers) - Understanding customer value and willingness to pay
+- [Models and Metering](https://sarahzou.com/wiki/pricing/models-and-metering) - Choosing the right pricing model for your business
+- [Price Architecture](https://sarahzou.com/wiki/pricing/price-architecture) - Structuring your pricing tiers and rules
+- [Governance and Process](https://sarahzou.com/wiki/pricing/governance-and-process) - Managing pricing decisions and changes
