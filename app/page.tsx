@@ -101,7 +101,7 @@ export default function Home() {
           }}
           secondaryCta={{
             text: "Download the Monetization Roadmap",
-            href: "/downloads/monetization-roadmap"
+            href: "/cheat-sheets"
           }}
         />
 
@@ -109,40 +109,40 @@ export default function Home() {
         <section className="py-20 bg-white">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             {/* Section Heading */}
-            <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold mb-12 text-center text-[#ff5722]">
+            <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold mb-12 text-center text-[#1f2933]">
               What Makes Me Different
             </h2>
 
             {/* Feature Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* Card 1: Rare blend */}
-              <div className="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:border-[#ff5722] transition-colors">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Rare blend</h3>
-                <p className="text-sm text-gray-700 leading-relaxed">
+              <div className="bg-[#f6f7f9] rounded-lg p-6 border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
+                <h3 className="text-xl font-bold text-[#1f2933] mb-3">Rare blend</h3>
+                <p className="text-sm text-[#3b4652] leading-relaxed">
                   Pricing + unit economics + econometrics in one person. Most firms split this across CFO/RevOps/DS; I design the whole economic system end-to-end.
                 </p>
               </div>
 
               {/* Card 2: Research-grade rigor */}
-              <div className="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:border-[#ff5722] transition-colors">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Research-grade rigor</h3>
-                <p className="text-sm text-gray-700 leading-relaxed">
+              <div className="bg-[#f6f7f9] rounded-lg p-6 border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
+                <h3 className="text-xl font-bold text-[#1f2933] mb-3">Research-grade rigor</h3>
+                <p className="text-sm text-[#3b4652] leading-relaxed">
                   I treat each engagement like an academic study: hypotheses → models → experiments → decisions. Methods are documented; assumptions are explicit.
                 </p>
               </div>
 
               {/* Card 3: Funder-friendly outputs */}
-              <div className="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:border-[#ff5722] transition-colors">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Funder-friendly outputs</h3>
-                <p className="text-sm text-gray-700 leading-relaxed">
+              <div className="bg-[#f6f7f9] rounded-lg p-6 border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
+                <h3 className="text-xl font-bold text-[#1f2933] mb-3">Funder-friendly outputs</h3>
+                <p className="text-sm text-[#3b4652] leading-relaxed">
                   Board-ready artifacts (GM waterfall, NRR/LTV bridges, payback guardrails, elasticity write-ups) that withstand diligence—not just pretty decks.
                 </p>
               </div>
 
               {/* Card 4: Fast, testable decisions */}
-              <div className="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:border-[#ff5722] transition-colors">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Fast, testable decisions</h3>
-                <p className="text-sm text-gray-700 leading-relaxed">
+              <div className="bg-[#f6f7f9] rounded-lg p-6 border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
+                <h3 className="text-xl font-bold text-[#1f2933] mb-3">Fast, testable decisions</h3>
+                <p className="text-sm text-[#3b4652] leading-relaxed">
                   Sprints ship answers in 1–2 weeks with a 90-day experiment plan. No "more analysis" stall; every recommendation is testable.
                 </p>
               </div>
@@ -151,10 +151,10 @@ export default function Home() {
         </section>
 
         <section className="py-20 bg-white flex flex-col items-center text-center">
-          <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold mb-2 text-[#ff5722] relative inline-block">
+          <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold mb-2 text-[#1f2933] relative inline-block">
             How I Can Help
           </h2>
-          <p className="max-w-2xl mx-auto text-lg text-[#222] mb-12">
+          <p className="max-w-2xl mx-auto text-lg text-[#1f2933] mb-12">
             Fractional Chief Economist for early-stage tech startups. I turn pricing + unit economics + rigorous modeling into investor-grade decisions.
           </p>
           <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 mb-10">
@@ -270,41 +270,41 @@ export default function Home() {
             href="https://calendly.com/sarahxzou/free-consult-30-min"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block border-2 border-[#ff5722] text-[#ff5722] font-bold px-10 py-4 rounded-lg text-lg tracking-widest hover:bg-[#ff5722] hover:text-white transition-colors mt-4"
+            className="inline-block border-2 border-[#ff5722] text-[#ff5722] font-bold px-10 py-4 rounded-lg text-lg tracking-widest hover:bg-[#e44e1f] hover:border-[#e44e1f] hover:text-white transition-colors mt-4"
           >
             LET'S WORK TOGETHER
           </a>
         </section>
         <section className="py-20 bg-white flex flex-col items-center">
           <div className="max-w-4xl w-full">
-            <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold mb-8 text-center text-[#ff5722]">
+            <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold mb-8 text-center text-[#1f2933]">
               Frequently Asked Questions
             </h2>
             <div className="space-y-6">
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="font-bold text-lg mb-3 text-[#111]">What is a fractional chief economist?</h3>
-                <p className="text-gray-700 mb-3">
+              <div className="bg-[#f6f7f9] rounded-lg p-6 border border-[#e2e6ea]">
+                <h3 className="font-bold text-lg mb-3 text-[#1f2933]">What is a fractional chief economist?</h3>
+                <p className="text-[#3b4652] mb-3">
                   A fractional chief economist is a part-time economic advisor who brings PhD-level expertise to your pricing, metrics, and growth strategy without the cost of a full-time hire.
                 </p>
-                <a href="/consulting#faq" className="text-[#ff5722] font-medium hover:underline">
+                <a href="/consulting#faq" className="text-[#ff5722] font-medium hover:text-[#e44e1f] hover:underline transition-colors">
                   Learn more about fractional economics →
                 </a>
               </div>
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="font-bold text-lg mb-3 text-[#111]">How quickly can you impact our pricing?</h3>
-                <p className="text-gray-700 mb-3">
+              <div className="bg-[#f6f7f9] rounded-lg p-6 border border-[#e2e6ea]">
+                <h3 className="font-bold text-lg mb-3 text-[#1f2933]">How quickly can you impact our pricing?</h3>
+                <p className="text-[#3b4652] mb-3">
                   Most clients see initial pricing improvements within 2-4 weeks. Our Pricing Quickstart delivers a complete strategy and test plan in just 14 days.
                 </p>
-                <a href="/consulting#faq" className="text-[#ff5722] font-medium hover:underline">
+                <a href="/consulting#faq" className="text-[#ff5722] font-medium hover:text-[#e44e1f] hover:underline transition-colors">
                   See our pricing services →
                 </a>
               </div>
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="font-bold text-lg mb-3 text-[#111]">What makes your approach different?</h3>
-                <p className="text-gray-700 mb-3">
+              <div className="bg-[#f6f7f9] rounded-lg p-6 border border-[#e2e6ea]">
+                <h3 className="font-bold text-lg mb-3 text-[#1f2933]">What makes your approach different?</h3>
+                <p className="text-[#3b4652] mb-3">
                   I combine academic rigor with startup speed. Every recommendation is backed by data, tested with experiments, and designed for your specific market dynamics.
                 </p>
-                <a href="/consulting#faq" className="text-[#ff5722] font-medium hover:underline">
+                <a href="/consulting#faq" className="text-[#ff5722] font-medium hover:text-[#e44e1f] hover:underline transition-colors">
                   Explore our methodology →
                 </a>
               </div>

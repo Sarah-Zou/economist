@@ -16,7 +16,7 @@ export const downloads = {
     description: 'Instantly compare median and top-quartile ARR growth, GRR, NRR, CAC payback, burn multiple, ARR/FTE, and more—from Seed to Pre-IPO.'
   },
   'monetization-roadmap': {
-    filename: 'Monetization_Roadmap.pdf',
+    filename: 'Monetization_Roadmap_Nov2025.pdf',
     title: 'Monetization Roadmap',
     description: 'A strategic guide to monetization, metrics, and forecasting designed for capital-efficient growth.'
   }

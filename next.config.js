@@ -35,7 +35,7 @@ const nextConfig = {
     return [
       {
         source: '/cheatsheets',
-        destination: '/wiki/pricing',
+        destination: '/cheat-sheets',
         permanent: true,
       },
       {

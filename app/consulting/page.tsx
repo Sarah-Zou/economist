@@ -192,7 +192,7 @@ function ConsultingContent() {
         }}
       />
       <section className="py-20 bg-[#f5f5f5] min-h-screen">
-        <div className="container max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="font-serif-playfair text-4xl font-bold mb-6 text-[#111]">Consulting Services</h1>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto">
