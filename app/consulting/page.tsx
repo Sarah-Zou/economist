@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 const services = [
   {
     id: 'monetization-sprint',
-    slug: 'pricing-diagnostic-revenue-boost',
+    slug: 'pricing-monetization-sprint',
     title: 'Pricing & Monetization Sprint',
     hero: 'Outcome: pricing metric, 3-tier package + fences, list/discount curves, GM/payback scenarios, 90-day experiments.',
     summary: 'Best for: Pre-seed to A; design product around price or pricing reset; investor pressure for efficient growth.',

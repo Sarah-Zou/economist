@@ -37,7 +37,7 @@ module.exports = {
       '/newsletter': 0.8,
       '/contact': 0.7,
       '/wiki/pricing': 0.9,
-      '/consulting/services/pricing-diagnostic-revenue-boost': 0.9,
+      '/consulting/services/pricing-monetization-sprint': 0.9,
       '/consulting/services/customer-value-research-pack': 0.9,
       '/consulting/services/saas-metrics-clarity-pack': 0.9,
       '/consulting/services/on-call-economist-retainer': 0.9,

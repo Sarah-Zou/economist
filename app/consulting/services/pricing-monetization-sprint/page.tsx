@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://sarahzou.com/consulting/services/pricing-diagnostic-revenue-boost',
+    canonical: 'https://sarahzou.com/consulting/services/pricing-monetization-sprint',
   },
   openGraph: {
     title: 'Pricing & Monetization Strategy Sprint | Sarah Zou',
     description: 'Land your value metric, 3-tier pricing, discount guardrails, and rollout plan in 5 business days—or get one extra week at no fee.',
     type: 'website',
-    url: 'https://sarahzou.com/consulting/services/pricing-diagnostic-revenue-boost',
+    url: 'https://sarahzou.com/consulting/services/pricing-monetization-sprint',
   },
   twitter: {
     card: 'summary_large_image',
@@ -66,7 +66,7 @@ export default function PricingDiagnosticRevenueBoost() {
         </div>
 
         {/* Main Content */}
-        <div className="max-w-7xl mx-auto space-y-16">
+        <div className="max-w-7xl mx-auto space-y-24">
           {/* Who it's for Section */}
           <section className="text-center">
             <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-4">Who This Sprint is For</h2>
@@ -117,7 +117,7 @@ export default function PricingDiagnosticRevenueBoost() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Tangible Outcomes */}
               <div>
-                <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-3">Tangible Outcomes</h2>
+                <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-3">Tangible Outcomes</h2>
                 <p className="text-sm text-[#4b636e] font-light mb-6">By the end of the sprint, you will have:</p>
                 <ol className="space-y-4">
                   {[
@@ -141,7 +141,7 @@ export default function PricingDiagnosticRevenueBoost() {
 
               {/* What You Get */}
               <div>
-                <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-3">What You Get</h2>
+                <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-3">What You Get</h2>
                 <p className="text-sm text-[#4b636e] font-light mb-6">A comprehensive set of deliverables:</p>
                 <ul className="space-y-4">
                   {[
@@ -429,7 +429,7 @@ export default function PricingDiagnosticRevenueBoost() {
           {/* Add-ons Section */}
             <section>
             <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-6 text-center">Add-ons</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {[
                 { 
                   title: 'Customer Value Research Pack', 

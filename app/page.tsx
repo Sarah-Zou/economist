@@ -159,7 +159,7 @@ export default function Home() {
           </p>
           <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 mb-10">
             {/* Card 1: Monetization & Unit-Economics Sprint */}
-            <a href="/consulting/services/pricing-diagnostic-revenue-boost" className="block group">
+            <a href="/consulting/services/pricing-monetization-sprint" className="block group">
               <div 
                 className="relative h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
                 style={{
