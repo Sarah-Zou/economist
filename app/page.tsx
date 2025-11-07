@@ -177,7 +177,7 @@ export default function Home() {
                   {/* Title - positioned at mid-bottom, moves up on hover */}
                   <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
                     <h3 className="text-xl font-bold text-white drop-shadow-lg">
-                      Monetization & Unit-Economics Sprint
+                      Pricing & Monetization Sprint
                     </h3>
                     <p className="text-white text-xs font-medium mt-1 drop-shadow-md">
                       1–2 weeks

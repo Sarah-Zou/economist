@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import FAQSection from './FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Pricing Diagnostic & Revenue Boost | 2-Week Pricing Strategy | Dr. Sarah Zou',
-  description: 'Unlock hidden revenue with our 2-week pricing diagnostic. Get comprehensive pricing audit, competitive benchmarks, and actionable optimization recommendations from PhD economist Sarah Zou.',
+  title: 'Pricing & Monetization Strategy Sprint | 5-Day Pricing Strategy | Dr. Sarah Zou',
+  description: 'Land your value metric, 3-tier pricing, discount guardrails, and rollout plan in 5 business days—or get one extra week at no fee. For early-stage tech founders (Pre-Seed → Series A).',
   robots: {
     index: true,
     follow: true,
@@ -20,118 +21,484 @@ export const metadata: Metadata = {
     canonical: 'https://sarahzou.com/consulting/services/pricing-diagnostic-revenue-boost',
   },
   openGraph: {
-    title: 'Pricing Diagnostic & Revenue Boost | Sarah Zou',
-    description: 'Unlock hidden revenue with our 2-week pricing diagnostic. Get comprehensive pricing audit, competitive benchmarks, and actionable optimization recommendations.',
+    title: 'Pricing & Monetization Strategy Sprint | Sarah Zou',
+    description: 'Land your value metric, 3-tier pricing, discount guardrails, and rollout plan in 5 business days—or get one extra week at no fee.',
     type: 'website',
     url: 'https://sarahzou.com/consulting/services/pricing-diagnostic-revenue-boost',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing Diagnostic & Revenue Boost | Sarah Zou',
-    description: 'Unlock hidden revenue with our 2-week pricing diagnostic. Get comprehensive pricing audit, competitive benchmarks, and actionable optimization recommendations.',
+    title: 'Pricing & Monetization Strategy Sprint | Sarah Zou',
+    description: 'Land your value metric, 3-tier pricing, discount guardrails, and rollout plan in 5 business days—or get one extra week at no fee.',
   },
 };
-
 
 export default function PricingDiagnosticRevenueBoost() {
   return (
     <section className="bg-[#f5f8f7] min-h-screen py-0">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-8 pt-12">
-        {/* Hero Image & Sidebar */}
-        <div className="md:col-span-3 flex flex-col items-center md:items-end pr-0 md:pr-8">
-          <div className="relative w-[260px] h-[320px] md:w-[280px] md:h-[340px] rounded-tl-[90px] rounded-br-[90px] overflow-hidden shadow-lg border border-[#e5e7eb] bg-white mb-8 md:mb-0">
-            <Image src="/images/P-1.webp" alt="Pricing Diagnostic & Revenue Boost" fill className="object-cover" />
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
+        {/* Hero Section */}
+        <div className="text-center mb-16">
+          <span className="uppercase tracking-widest text-xs text-[#4b636e] font-semibold mb-4 block">Consulting Service</span>
+          <h1 className="font-serif-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-[#223] mb-4 leading-tight max-w-4xl mx-auto">
+            Master Your Monetization. Go from Guesswork to Growth.
+          </h1>
+          <p className="text-lg md:text-xl text-[#4b636e] font-light mb-8 max-w-3xl mx-auto">
+            A one-week intensive sprint designed for early-stage tech founders to build a pricing and monetization strategy that converts.
+          </p>
+        </div>
+
+        {/* Guarantee Card */}
+        <div className="max-w-2xl mx-auto mb-16">
+          <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm text-center">
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h2 className="font-serif-playfair text-xl font-bold text-[#223]">Our Guarantee</h2>
+            </div>
+            <p className="text-sm text-[#4b636e] font-light">
+              We guarantee you'll walk away with a clear, actionable monetization strategy. If you're not satisfied with the outcome, we'll work with you until you are.
+            </p>
           </div>
         </div>
+
         {/* Main Content */}
-        <main className="md:col-span-9 bg-white rounded-tl-[60px] rounded-br-[60px] shadow-lg border border-[#e5e7eb] px-8 md:px-16 py-12 flex flex-col justify-center">
-          <div className="flex flex-col gap-2 mb-6">
-            <span className="uppercase tracking-widest text-xs text-[#4b636e] font-semibold mb-2">Consulting Service</span>
-            <h1 className="font-serif-playfair text-5xl font-bold text-[#223] mb-2 leading-tight">Pricing Quickstart</h1>
-            <span className="text-[#ff5722] text-lg font-medium">Diagnostic & Blueprint to align price & packaging in 14 days. </span>
-          </div>
-          <div className="my-8" />
-          <div className="space-y-10">
-            <section>
-              <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-2">Why It Matters</h2>
-              <ul className="list-disc ml-6 text-base text-[#4b636e] font-light space-y-2">
-                <li>Pricing is often the biggest lever for revenue growth</li>
-                <li>Many companies leave money on the table with suboptimal pricing</li>
-                <li>Data-driven pricing decisions lead to better margins and growth</li>
-              </ul>
-            </section>
-            <section>
-              <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-2">What You Get</h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-serif-playfair text-xl font-bold text-[#223] mb-3">Lite — Diagnostic (Desk Analysis only)</h3>
-                  <ul className="list-disc ml-6 text-base text-[#4b636e] font-light space-y-2">
-                    <li>ICP & value map (jobs/outcomes, price fences)</li>
-                    <li>Tier & price table (seats/usage/features/geo), with unit-econ floors/ceilings</li>
-                    <li>Pricing page copy (hero, plan blurbs, FAQs, comparison table)</li>
-                    <li>Experiment plan (hypotheses, metrics, guardrails, success thresholds)</li>
-                    <li>Health scorecard template (conv %, ARPU, churn/NRR, CAC payback)</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-serif-playfair text-xl font-bold text-[#223] mb-3">Pro — Diagnostic + Evidence (Customer Value Research Pack included)</h3>
-                  <p className="text-base text-[#4b636e] font-light mb-3">Everything in Lite, plus the full Customer Value Research Pack:</p>
-                  <ul className="list-disc ml-6 text-base text-[#4b636e] font-light space-y-2">
-                    <li>8–10 interviews (clips + notes) targeting your first ICPs</li>
-                    <li>Pulse WTP survey (PSM/van Westendorp) to set confidence bands</li>
-                    <li>Value driver matrix & price fence recommendations by segment/use case</li>
-                    <li>Calibration of tiers, claims, and page copy with real customer signals</li>
-                  </ul>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-base text-[#4b636e] font-light leading-relaxed">
-                    <strong>Prefer research-only first?</strong> See <a href="/consulting/services/customer-value-research-pack" className="text-[#ff5722] hover:underline">Customer Value Research Pack (standalone)</a>.<br/>
-                    <strong>Started on Lite and need evidence?</strong> Upgrade to Pro by Day 3 with no delay to timeline.
-                  </p>
-                </div>
+        <div className="max-w-7xl mx-auto space-y-16">
+          {/* Who it's for Section */}
+          <section className="text-center">
+            <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-4">Who This Sprint is For</h2>
+            <p className="text-base md:text-lg text-[#4b636e] font-light mb-8 max-w-3xl mx-auto">
+              Early-stage tech founders (Pre-Seed → Series A; pre-revenue to &lt;$3M ARR) who need investor-credible monetization, a first price for launch, or a reset after weak revenue yield.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-8">
+              <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm text-left">
+                <div className="text-3xl mb-3">🚀</div>
+                <h3 className="font-bold text-lg text-[#223] mb-2">Pre-Seed Founders</h3>
+                <p className="text-base text-[#4b636e] font-light">
+                  Building your first pricing model and need investor-credible monetization strategy before launch.
+                </p>
               </div>
-            </section>
-            <section>
-              <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-2">Process</h2>
-              <ul className="list-disc ml-6 text-base text-[#4b636e] font-light space-y-2">
-                <li><strong>Day 0–1 — Kickoff & Intake:</strong> goals, ICPs, constraints, data pull</li>
-                <li><strong>Day 2–5 — Signals & Modeling:</strong> comps, floors/ceilings, scenarios (Pro: launch interviews & survey)</li>
-                <li><strong>Day 6–9 — Design:</strong> packaging, fences, first pass page copy (Pro: integrate early evidence)</li>
-                <li><strong>Day 10–12 — Review:</strong> exec alignment, risk & guardrails</li>
-                <li><strong>Day 13–14 — Handoff:</strong> final kit + 30/60/90 experiment plan</li>
-              </ul>
-            </section>
-            <section>
-              <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-2">Outcomes</h2>
-              <ul className="list-disc ml-6 text-base text-[#4b636e] font-light space-y-2">
-                <li>A tested price ladder you can ship now (with guardrails)</li>
-                <li>Clear go/no-go criteria and success thresholds for experiments</li>
-                <li>Shared language & artifacts for Exec/Product/Sales enablement</li>
-              </ul>
-            </section>
-            <section>
-              <div className="text-base text-[#4b636e] font-light mb-2"><span className="font-bold text-[#223]">Timeline & Price:</span> 14 days | $3.5k Lite (Diagnostic) / $6k Pro (with Research Pack)</div>
-            </section>
+              <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm text-left">
+                <div className="text-3xl mb-3">💼</div>
+                <h3 className="font-bold text-lg text-[#223] mb-2">Seed or Series-A Startups</h3>
+                <p className="text-base text-[#4b636e] font-light">
+                  Need to reset pricing after weak revenue yield or optimize monetization for growth and fundraising.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Common Triggers Section */}
+          <section className="text-center">
+            <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-4">Common triggers</h2>
+            <p className="text-base text-[#4b636e] font-light mb-8">If any of these sound familiar, this sprint is designed for you.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {[
+                { icon: '❓', text: 'Unsure how to price new product or new features' },
+                { icon: '📉', text: 'Low conversion/ARPU' },
+                { icon: '💼', text: 'Pressure to show a credible plan for fundraising/board' },
+                { icon: '🔄', text: 'Confusion over subscription vs. usage' },
+                { icon: '⚠️', text: 'Fear of churn from price changes' },
+                { icon: '🎲', text: 'Pricing feels "plucked from thin air"' }
+              ].map((trigger, idx) => (
+                <div key={idx} className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm hover:shadow-md transition-shadow">
+                  <div className="text-4xl mb-3">{trigger.icon}</div>
+                  <p className="text-base text-[#4b636e] font-light">{trigger.text}</p>
+                </div>
+              ))}
           </div>
-          {/* CTA Box */}
-          <div className="bg-[#f5f5f5] rounded-lg p-6 mt-12 flex flex-col md:flex-row items-center gap-6 border border-[#e5e7eb] shadow-sm">
-            <Image src="/images/headshot_v2.jpg" alt="Sarah Zou headshot" width={80} height={80} className="rounded-full object-cover" />
-            <div>
-              <div className="font-serif-playfair text-lg font-bold mb-1">Ready to begin your journey?</div>
-              <div className="text-[#4b636e] mb-2">Book a free intake call or send a message to discuss your goals.</div>
+            </section>
+
+          {/* Outcomes & What You Get - Two Column Layout */}
+            <section>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Tangible Outcomes */}
+              <div>
+                <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-3">Tangible Outcomes</h2>
+                <p className="text-sm text-[#4b636e] font-light mb-6">By the end of the sprint, you will have:</p>
+                <ol className="space-y-4">
+                  {[
+                    <><strong>A value-based pricing model that aligns with your customer segments</strong>, with value metric chosen</>,
+                    <><strong>Clear, data-backed pricing structure</strong> with 3-tier packaging + price fences + list price points </>,
+                    <><strong>Unit-economics snapshot</strong> at recommended prices</>,
+                    <><strong>30-day rollout plan</strong> </>,
+                    <><strong>Confidence and clarity to communicate your pricing to customers and investors</strong> </>
+                  ].map((outcome, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-base text-[#4b636e] font-light">{outcome}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              {/* What You Get */}
+              <div>
+                <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-3">What You Get</h2>
+                <p className="text-sm text-[#4b636e] font-light mb-6">A comprehensive set of deliverables:</p>
+                <ul className="space-y-4">
+                  {[
+                    { 
+                      icon: (
+                        <svg className="w-5 h-5 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                      ),
+                      text: <><strong>Pricing Strategy Report</strong> (hypotheses, competitive analysis, value metrics, pricing structure, final recommendations)</>
+                    },
+                    { 
+                      icon: (
+                        <svg className="w-5 h-5 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                      ),
+                      text: <><strong>Unit Economics model</strong> (GM, LTV/CAC, scenarios, sensitivity analysis)</>
+                    },
+                    { 
+                      icon: (
+                        <svg className="w-5 h-5 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                        </svg>
+                      ),
+                      text: <><strong>Pricing Implementation Roadmap</strong> (pricing page, policy, comms)</>
+                    },
+                    { 
+                      icon: (
+                        <svg className="w-5 h-5 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                        </svg>
+                      ),
+                      text: <><strong>Readout</strong> with decisions, risks, next actions</>
+                    },
+                    { 
+                      icon: (
+                        <svg className="w-5 h-5 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        </svg>
+                      ),
+                      text: <><strong>Experiment design</strong> (test brief[s], metrics, segments, runbook) — per tier</>
+                    },
+                    { 
+                      icon: (
+                        <svg className="w-5 h-5 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      ),
+                      text: <><strong>Investor mini-pack</strong> on monetization — per tier</>
+                    }
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <div className="flex-shrink-0 mt-0.5">{item.icon}</div>
+                      <span className="text-base text-[#4b636e] font-light">{item.text}</span>
+                    </li>
+                  ))}
+                  </ul>
+                </div>
+            </div>
+          </section>
+
+          {/* Cadence Section */}
+          <section className="text-center">
+            <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-3">The 1-Week Sprint Cadence</h2>
+            <p className="text-base text-[#4b636e] font-light mb-12 max-w-2xl mx-auto">
+              A structured, collaborative process designed for maximum impact in minimum time.
+            </p>
+            <div className="max-w-6xl mx-auto px-4">
+              <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-2 relative">
+                {/* Connecting line for desktop */}
+                <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-[#e5e7eb] z-0" style={{ left: '2rem', right: '2rem' }}></div>
+                {[
+                  { num: 0, title: 'Discovery', desc: 'Inputs/data room; current-state scan' },
+                  { num: 1, title: 'Workshop #1', desc: 'Goals, ICPs, value drivers' },
+                  { num: 2, title: 'Research', desc: 'Draft architecture + first price bands' },
+                  { num: 3, title: 'Workshop #2', desc: 'Lock value metric, tiers, guardrails' },
+                  { num: 4, title: 'Validation', desc: 'Refine Unit econ + rollout plan' },
+                  { num: 5, title: 'Handoff', desc: 'Final presentation + delivery of all assets' }
+                ].map((step, idx) => (
+                  <div key={idx} className="relative z-10 flex flex-col items-center text-center">
+                    <div className="bg-[#06b6d4] rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center shadow-lg">
+                      <span className="text-xl font-bold text-white">{step.num}</span>
+                    </div>
+                    <h3 className="font-bold text-base text-[#223] mb-2">{step.title}</h3>
+                    <p className="text-sm text-[#4b636e] font-light">{step.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Pricing Section */}
+          <section className="text-center">
+            <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-3">A Clear Investment in Your Growth</h2>
+            <p className="text-base text-[#4b636e] font-light mb-8 max-w-2xl mx-auto">
+              Get an expert monetization strategy for a fraction of the cost and time of hiring full-time.
+            </p>
+            
+            {/* Comparison Table */}
+            <div className="bg-white rounded-lg p-8 border border-[#e5e7eb] shadow-sm overflow-x-auto mb-8 max-w-5xl mx-auto">
+              <table className="w-full border-collapse text-base text-[#4b636e] font-light">
+                <thead>
+                  <tr className="border-b-2 border-[#223]">
+                    <th className="text-left py-4 px-4 font-semibold text-[#223]">Feature</th>
+                    <th className="text-center py-4 px-4 font-semibold text-[#223]">Doing Nothing</th>
+                    <th className="text-center py-4 px-4 font-semibold text-[#223]">Hire Full-Time</th>
+                    <th className="text-center py-4 px-4 font-semibold text-[#223] bg-[#eef2ff] rounded-t-lg">Monetization Sprint</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-[#e5e7eb]">
+                    <td className="py-4 px-4 font-medium text-[#223] text-left">Cost</td>
+                    <td className="py-4 px-4 text-center">$0 (Lost Revenue)</td>
+                    <td className="py-4 px-4 text-center">$150k+/yr</td>
+                    <td className="py-4 px-4 bg-[#eef2ff] text-[#06b6d4] font-semibold text-center">$5k-$18k</td>
+                  </tr>
+                  <tr className="border-b border-[#e5e7eb]">
+                    <td className="py-4 px-4 font-medium text-[#223] text-left">Time to Value</td>
+                    <td className="py-4 px-4 text-center">Never</td>
+                    <td className="py-4 px-4 text-center">3-6+ Months</td>
+                    <td className="py-4 px-4 bg-[#eef2ff] text-[#06b6d4] font-semibold text-center">1-2 Weeks</td>
+                  </tr>
+                  <tr className="border-b border-[#e5e7eb]">
+                    <td className="py-4 px-4 font-medium text-[#223] text-left">Expertise</td>
+                    <td className="py-4 px-4 text-center">
+                      <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mx-auto">
+                        <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+                        </svg>
+                      </div>
+                    </td>
+                    <td className="py-4 px-4 text-center">
+                      <div className="w-6 h-6 rounded-full border-2 border-[#ff5722] flex items-center justify-center mx-auto">
+                      </div>
+                    </td>
+                    <td className="py-4 px-4 bg-[#eef2ff] text-center">
+                      <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mx-auto">
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr className="border-b border-[#e5e7eb]">
+                    <td className="py-4 px-4 font-medium text-[#223] text-left">Actionable Strategy</td>
+                    <td className="py-4 px-4 text-center">
+                      <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mx-auto">
+                        <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+                        </svg>
+                      </div>
+                    </td>
+                    <td className="py-4 px-4 text-center">
+                      <div className="w-6 h-6 rounded-full border-2 border-[#ff5722] flex items-center justify-center mx-auto">
+                      </div>
+                    </td>
+                    <td className="py-4 px-4 bg-[#eef2ff] text-center">
+                      <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mx-auto">
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr className="border-b border-[#e5e7eb]">
+                    <td className="py-4 px-4 font-medium text-[#223] text-left">Risk</td>
+                    <td className="py-4 px-4 text-center">High</td>
+                    <td className="py-4 px-4 text-center">High</td>
+                    <td className="py-4 px-4 bg-[#eef2ff] text-[#06b6d4] font-semibold rounded-b-lg text-center">Zero (Guaranteed)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="max-w-6xl mx-auto mt-20">
+              <h3 className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-3 text-center">Choose the Right Strategy Sprint for Your Business</h3>
+              <p className="text-base text-[#4b636e] font-light mb-12 text-center max-w-2xl mx-auto">
+                Find the perfect plan to unlock your product's pricing and monetization potential.
+              </p>
+              
+              {/* Pricing Cards Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                {[
+                  { 
+                    name: 'Lite', 
+                    price: '$5K',
+                    duration: '/ 1 wk',
+                    description: 'Pre-launch or just-post-MVP teams needing a defendable first price, simple G/B/B package, and discount guardrails.',
+                    buttonText: 'Choose Plan',
+                    buttonStyle: 'bg-gray-100 text-[#223] hover:bg-gray-200',
+                    features: [
+                      { text: <>1x60 min <strong>Workshops</strong></>, included: true },
+                      { text: <>6-10 pp <strong>Strategy Report</strong></>, included: true },
+                      { text: <>1 segment · 1 scenario <strong>Unit Econ Model</strong></>, included: true },
+                      { text: <><strong>Experiment design</strong></>, included: false },
+                      { text: <><strong>Customer value research</strong></>, included: false },
+                      { text: <><strong>Investor slides</strong></>, included: false },
+                      { text: <>Async Q&A (1 wk) <strong>Follow-up support</strong></>, included: true }
+                    ]
+                  },
+                  { 
+                    name: 'Core', 
+                    price: '$9K',
+                    duration: '/ 1 wk',
+                    description: 'Early-revenue startups (pilots to ~$1M ARR) with weak yield needing value metric validation, tier refinement, and first pricing experiment.',
+                    buttonText: 'Get Started',
+                    buttonStyle: 'bg-[#06b6d4] text-white hover:bg-[#0891b2]',
+                    features: [
+                      { text: <>2x60 min <strong>Workshops</strong></>, included: true },
+                      { text: <>12-18 pp <strong>Strategy Report</strong></>, included: true },
+                      { text: <>2-3 segments · 3 scenarios <strong>Unit Econ Model</strong></>, included: true },
+                      { text: <>1 test brief <strong>Experiment design</strong></>, included: true },
+                      { text: <><strong>Customer value research</strong></>, included: false },
+                      { text: <>2-3 <strong>Investor slides</strong></>, included: true },
+                      { text: <>1 x 45-min at 30 days <strong>Follow-up support</strong></>, included: true }
+                    ]
+                  },
+                  { 
+                    name: 'Pro', 
+                    price: '$18K',
+                    duration: '/ 2 wks',
+                    description: 'Investor-critical resets or complex cases (multiple segments/SKUs, usage-based shift) requiring customer research, deeper modeling, and multi-test design.',
+                    buttonText: 'Choose Plan',
+                    buttonStyle: 'bg-gray-100 text-[#223] hover:bg-gray-200',
+                    features: [
+                      { text: <>3x60 min <strong>Workshops</strong></>, included: true },
+                      { text: <>18-25 pp + comms copy blocks <strong>Strategy Report</strong></>, included: true },
+                      { text: <>3+ segments · 3-5 scenarios + sensitivity <strong>Unit Econ Model</strong></>, included: true },
+                      { text: <>2-3 briefs + power check <strong>Experiment design</strong></>, included: true },
+                      { text: <>8-10 interviews or survey</>, included: true },
+                      { text: <>5-8 <strong>Investor slides</strong></>, included: true },
+                      { text: <>2 x 45-min at 30 & 60 days <strong>Follow-up support</strong></>, included: true }
+                    ]
+                  }
+                ].map((tier, tierIdx) => (
+                  <div 
+                    key={tierIdx} 
+                    className="bg-white rounded-lg border-2 border-[#e5e7eb] shadow-sm p-6 flex flex-col"
+                  >
+                    <div className="mb-6">
+                      <h4 className="font-serif-playfair text-2xl font-bold text-[#06b6d4] mb-3 text-left">{tier.name}</h4>
+                      <div className="mb-2 text-left">
+                        <span className="text-3xl font-bold text-[#223]">{tier.price}</span>
+                        <span className="text-sm text-[#4b636e] font-light ml-1">{tier.duration}</span>
+                      </div>
+                      <p className="text-sm text-[#4b636e] font-light text-left leading-relaxed mt-2">{tier.description}</p>
+                    </div>
+                    <ul className="space-y-3 flex-grow mb-6">
+                      {tier.features.map((feature, featIdx) => (
+                        <li key={featIdx} className="flex items-start gap-3 text-left">
+                          {feature.included ? (
+                            <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                            </div>
+                          ) : (
+                            <div className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                            </div>
+                          )}
+                          <span className={`text-sm ${feature.included ? 'text-[#4b636e]' : 'text-gray-400'} font-light`}>
+                            {feature.text}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                    <a
+                      href="https://calendly.com/sarahxzou/free-consult-30-min"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`${tier.buttonStyle} text-center py-3 px-6 rounded-lg font-semibold transition-colors mt-auto`}
+                    >
+                      {tier.buttonText}
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+            </section>
+
+          {/* Add-ons Section */}
+            <section>
+            <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-6 text-center">Add-ons</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {[
+                { 
+                  title: 'Customer Value Research Pack', 
+                  desc: 'Interviews/survey to de-risk pricing assumptions',
+                  icon: (
+                    <svg className="w-6 h-6 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                  )
+                },
+                { 
+                  title: 'Pricing Page Wireframe + Comms Pack', 
+                  desc: 'Web copy, emails, in-app modals',
+                  icon: (
+                    <svg className="w-6 h-6 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  )
+                },
+                { 
+                  title: 'Experiment Run Support (4 weeks)', 
+                  desc: 'Stand-up tests, analyze, iterate',
+                  icon: (
+                    <svg className="w-6 h-6 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  )
+                }
+              ].map((addon, idx) => (
+                <div key={idx} className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
+                  <div className="mb-4">
+                    {addon.icon}
+                  </div>
+                  <h3 className="font-bold text-lg text-[#223] mb-2">{addon.title}</h3>
+                  <p className="text-base text-[#4b636e] font-light">{addon.desc}</p>
+                </div>
+              ))}
+            </div>
+            </section>
+
+          {/* FAQs Section */}
+            <FAQSection />
+          </div>
+
+        {/* CTA Section */}
+        <div className="max-w-4xl mx-auto mt-16">
+          <div className="bg-white rounded-lg p-8 md:p-12 border border-[#e5e7eb] shadow-lg text-center">
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <Image src="/images/headshot_v2.jpg" alt="Sarah Zou headshot" width={80} height={80} className="rounded-full object-cover flex-shrink-0" />
+              <h2 className="font-serif-playfair text-2xl md:text-3xl font-bold text-[#223]">Ready to build a powerful revenue engine?</h2>
+            </div>
+            <p className="text-base text-[#4b636e] font-light mb-6 max-w-2xl mx-auto">
+              Stop guessing and start growing. Let's build a monetization strategy that unlocks your startup's true potential.
+            </p>
               <a
                 href="https://calendly.com/sarahxzou/free-consult-30-min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-[#ff5722] text-white px-4 py-2 rounded font-semibold hover:bg-[#e64a19] transition"
+              className="inline-block bg-[#ff5722] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#e64a19] transition shadow-lg hover:shadow-xl mb-8"
               >
-                Book Intake Call
+              Book Your Sprint
               </a>
             </div>
           </div>
+
           {/* Contact Form */}
-          <div className="mt-16">
-            <h2 className="font-serif-playfair text-2xl font-bold mb-4 text-[#223]">Let's get in touch</h2>
+        <div className="max-w-2xl mx-auto mt-16 mb-16">
+          <div className="bg-white rounded-lg p-8 border border-[#e5e7eb] shadow-sm">
+            <h2 className="font-serif-playfair text-2xl font-bold mb-6 text-[#223] text-center">Let's get in touch</h2>
             <form action="https://formspree.io/f/mdkgqeye" method="POST" className="space-y-6">
               <div className="flex flex-col md:flex-row gap-6">
                 <input
@@ -165,13 +532,13 @@ export default function PricingDiagnosticRevenueBoost() {
               />
               <button
                 type="submit"
-                className="w-full bg-[#ff5722] text-white font-bold py-3 rounded transition-colors hover:bg-[#e64a19] focus:outline-none focus:ring-2 focus:ring-[#ff5722] tracking-wider text-lg mt-2 shadow"
+                className="w-full bg-[#ff5722] text-white font-bold py-3 rounded-lg transition-colors hover:bg-[#e64a19] focus:outline-none focus:ring-2 focus:ring-[#ff5722] tracking-wider text-lg mt-2 shadow"
               >
                 SEND MESSAGE
               </button>
             </form>
           </div>
-        </main>
+        </div>
       </div>
     </section>
   );

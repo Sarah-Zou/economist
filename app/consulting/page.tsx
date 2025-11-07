@@ -39,11 +39,11 @@ const services = [
   {
     id: 'monetization-sprint',
     slug: 'pricing-diagnostic-revenue-boost',
-    title: 'Monetization & Unit-Economics Sprint',
+    title: 'Pricing & Monetization Sprint',
     hero: 'Outcome: pricing metric, 3-tier package + fences, list/discount curves, GM/payback scenarios, 90-day experiments.',
     summary: 'Best for: Pre-seed to A; design product around price or pricing reset; investor pressure for efficient growth.',
     duration: '1–2 weeks',
-    price: '$5–12k',
+    price: '$5-18k',
     image: '/images/P-1.webp',
   },
   {
