@@ -196,10 +196,10 @@ function ConsultingContent() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-32">
             {/* Left Section - Text Content */}
             <div>
-              <h1 className="font-serif-playfair text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#111] leading-tight">
+              <h1 className="font-serif-playfair text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#223] leading-tight">
               Economics for Early-Stage Teams: Price. Test. Scale.
               </h1>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-[#4b636e] font-light leading-relaxed">
               From first price to forward model—everything you need to learn fast.
               </p>
             </div>
@@ -242,10 +242,10 @@ function ConsultingContent() {
                   {/* Text Content Section */}
                   <div className={`p-8 lg:p-10 flex flex-col justify-between ${isMetricsSprint ? 'order-1' : 'order-2'}`}>
                     <div>
-                      <h3 className="text-3xl font-bold text-[#111] mb-4">
+                      <h3 className="font-serif-playfair text-3xl font-bold text-[#223] mb-4">
                         {service.title}
                       </h3>
-                      <p className="text-base text-gray-700 mb-6 leading-relaxed">
+                      <p className="text-base text-[#4b636e] font-light mb-6 leading-relaxed">
                         {service.description}
                       </p>
                       <ul className="space-y-3 mb-8">
@@ -256,7 +256,7 @@ function ConsultingContent() {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                               </svg>
                             </div>
-                            <span className="text-base text-gray-700">{bullet}</span>
+                            <span className="text-base text-[#4b636e] font-light">{bullet}</span>
                           </li>
                         ))}
                       </ul>
@@ -288,25 +288,25 @@ function ConsultingContent() {
 
           {/* FAQ Section */}
           <div className="max-w-4xl mx-auto mb-16" id="faq">
-            <h2 className="font-serif-playfair text-3xl font-bold mb-8 text-center text-[#ff5722]">
+            <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold mb-8 text-center text-[#223]">
               Frequently Asked Questions
             </h2>
             <div className="space-y-6">
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h3 className="font-bold text-lg mb-3 text-[#111]">When not to change prices?</h3>
-                <p className="text-gray-700">
+              <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
+                <h3 className="font-bold text-lg mb-3 text-[#223]">When not to change prices?</h3>
+                <p className="text-[#4b636e] font-light">
                   Avoid price changes during major product launches, customer renewals, or market volatility. We'll identify the optimal timing based on your customer lifecycle, competitive landscape, and internal capacity to handle the transition smoothly.
                 </p>
               </div>
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h3 className="font-bold text-lg mb-3 text-[#111]">Will usage pricing spike bills?</h3>
-                <p className="text-gray-700">
+              <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
+                <h3 className="font-bold text-lg mb-3 text-[#223]">Will usage pricing spike bills?</h3>
+                <p className="text-[#4b636e] font-light">
                   Not with proper design. We implement usage caps, tiered pricing, and clear communication to prevent bill shock. Our approach includes customer education, gradual rollouts, and safety nets to maintain satisfaction while optimizing revenue.
                 </p>
               </div>
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h3 className="font-bold text-lg mb-3 text-[#111]">How do we test without harming revenue?</h3>
-                <p className="text-gray-700">
+              <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
+                <h3 className="font-bold text-lg mb-3 text-[#223]">How do we test without harming revenue?</h3>
+                <p className="text-[#4b636e] font-light">
                   Through controlled experiments with guardrails: A/B tests on new customers, grandfathering existing clients, and gradual rollouts. We monitor key metrics and have rollback plans to ensure revenue protection while gathering valuable pricing insights.
                 </p>
               </div>
