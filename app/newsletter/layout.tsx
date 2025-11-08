@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "SaaS Economics Newsletter | Pricing & Growth Insights | Sarah Zou",
-  description: "Weekly insights on SaaS pricing strategies, metrics analysis, and growth optimization. Join 2,000+ founders getting actionable economic insights for their SaaS business.",
+  title: "Tech Startup Economics Newsletter | Pricing & Growth Insights | Sarah Zou",
+  description: "Weekly insights on pricing strategies, metrics analysis, and growth optimization for early-stage tech startups. Join 2,000+ founders getting actionable economic insights for their business.",
   robots: {
     index: true,
     follow: true,
@@ -18,15 +18,15 @@ export const metadata: Metadata = {
     canonical: "https://sarahzou.com/newsletter",
   },
   openGraph: {
-    title: "SaaS Economics Newsletter | Pricing & Growth Insights | Sarah Zou",
-    description: "Weekly insights on SaaS pricing strategies, metrics analysis, and growth optimization. Join 2,000+ founders getting actionable economic insights for their SaaS business.",
+    title: "Tech Startup Economics Newsletter | Pricing & Growth Insights | Sarah Zou",
+    description: "Weekly insights on pricing strategies, metrics analysis, and growth optimization for early-stage tech startups. Join 2,000+ founders getting actionable economic insights for their business.",
     type: "website",
     url: "https://sarahzou.com/newsletter",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SaaS Economics Newsletter | Pricing & Growth Insights | Sarah Zou",
-    description: "Weekly insights on SaaS pricing strategies, metrics analysis, and growth optimization. Join 2,000+ founders getting actionable economic insights for their SaaS business.",
+    title: "Tech Startup Economics Newsletter | Pricing & Growth Insights | Sarah Zou",
+    description: "Weekly insights on pricing strategies, metrics analysis, and growth optimization for early-stage tech startups. Join 2,000+ founders getting actionable economic insights for their business.",
   },
 };
 

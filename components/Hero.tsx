@@ -10,10 +10,10 @@ const Hero = () => {
           {/* Left: Text */}
           <div className="flex-1 flex flex-col justify-center items-start px-10 py-12 md:px-16 md:py-0 text-[#222] bg-white">
             <h1 className="font-serif-playfair text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Data-Driven SaaS Growth, Made Simple.
+              Data-Driven Tech Growth, Made Simple.
           </h1>
             <p className="text-lg md:text-xl mb-4 text-[#222] max-w-xl">
-              I'm Sarah Zou, PhD Economist, specialized in pricing strategies, metrics analytics, and investor-ready storytelling for SaaS startups.
+              I'm Sarah Zou, PhD Economist, specialized in pricing strategies, metrics analytics, and investor-ready storytelling for early-stage tech startups.
             </p>
             <p className="text-sm text-gray-600 mb-8">
               Princeton, NJ · NYC · Philadelphia · Remote (US/EU)

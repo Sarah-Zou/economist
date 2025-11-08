@@ -4,8 +4,8 @@ import Image from 'next/image'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "SaaS Pricing Consulting | Fractional Chief Economist Sarah Zou",
-  description: "Expert pricing strategy consulting for SaaS companies. Get validated price points, experiment-ready plans, and revenue optimization from PhD economist Sarah Zou.",
+  title: "Pricing Consulting for Early-Stage Tech | Fractional Chief Economist Sarah Zou",
+  description: "Expert pricing strategy consulting for early-stage tech startups. Get validated price points, experiment-ready plans, and revenue optimization from PhD economist Sarah Zou.",
   robots: {
     index: true,
     follow: true,
@@ -21,16 +21,16 @@ export const metadata: Metadata = {
     canonical: "https://sarahzou.com/consulting",
   },
   openGraph: {
-    title: "SaaS Pricing Consulting | Fractional Chief Economist Sarah Zou",
-    description: "Expert pricing strategy consulting for SaaS companies. Get validated price points, experiment-ready plans, and revenue optimization from PhD economist Sarah Zou.",
+    title: "Pricing Consulting for Early-Stage Tech | Fractional Chief Economist Sarah Zou",
+    description: "Expert pricing strategy consulting for early-stage tech startups. Get validated price points, experiment-ready plans, and revenue optimization from PhD economist Sarah Zou.",
     type: "website",
     url: "https://sarahzou.com/consulting",
     images: ["https://sarahzou.com/images/P-1.webp"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SaaS Pricing Consulting | Fractional Chief Economist Sarah Zou",
-    description: "Expert pricing strategy consulting for SaaS companies. Get validated price points, experiment-ready plans, and revenue optimization from PhD economist Sarah Zou.",
+    title: "Pricing Consulting for Early-Stage Tech | Fractional Chief Economist Sarah Zou",
+    description: "Expert pricing strategy consulting for early-stage tech startups. Get validated price points, experiment-ready plans, and revenue optimization from PhD economist Sarah Zou.",
     images: ["https://sarahzou.com/images/P-1.webp"],
   },
 };
@@ -86,7 +86,7 @@ const testimonials = [
   {
     name: "James O'Brien",
     title: "Founder & CEO, Datamatic AI",
-    quote: "Her AI-SaaS Index pinpointed where we lagged peers. With the new dashboards, revenue beat plan by Q2."
+    quote: "Her tech startup index pinpointed where we lagged peers. With the new dashboards, revenue beat plan by Q2."
   },
   {
     name: "Priya Shah",
@@ -107,8 +107,8 @@ function ConsultingContent() {
             {
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
-              "name": "SaaS & AI Consulting Services",
-              "description": "Expert guidance to help your SaaS business thrive in today's competitive landscape through pricing strategy, metrics analysis, and growth optimization.",
+              "name": "Tech Startup Consulting Services",
+              "description": "Expert guidance to help your early-stage tech startup thrive in today's competitive landscape through pricing strategy, metrics analysis, and growth optimization.",
               "provider": {
                 "@type": "Person",
                 "name": "Dr. Sarah Zou",
@@ -118,9 +118,9 @@ function ConsultingContent() {
               "url": "https://sarahzou.com/consulting",
               "serviceType": [
                 "Pricing Strategy Consulting",
-                "SaaS Metrics Analysis",
+                "Tech Startup Metrics Analysis",
                 "Revenue Optimization",
-                "AI-SaaS Growth Strategy"
+                "Early-Stage Growth Strategy"
               ],
               "areaServed": {
                 "@type": "Country",

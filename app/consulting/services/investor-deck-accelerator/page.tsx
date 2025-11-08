@@ -32,7 +32,7 @@ export default function InvestorDeckAccelerator() {
             <section>
               <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-2">What You Get</h2>
               <ul className="list-disc ml-6 text-base text-[#4b636e] font-light space-y-1">
-                <li>Proven 15-slide SaaS deck template (Pre-seed to Series B)</li>
+                <li>Proven 15-slide tech startup deck template (Pre-seed to Series B)</li>
                 <li>Narrative checklist that signals traction, TAM, and moat</li>
                 <li>48-hour Red-Flag Review—line-by-line feedback on clarity, data integrity, and story arc</li>
               </ul>

@@ -3,7 +3,7 @@ import { Mail, Linkedin, Twitter } from 'lucide-react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Contact Sarah Zou, PhD | SaaS & AI Strategy Consultation",
+  title: "Contact Sarah Zou, PhD | Early-Stage Tech Strategy Consultation",
   description: "Get in touch with Sarah Zou, PhD for consulting, speaking engagements, or collaboration. Fill out the contact form or connect via email or LinkedIn.",
   robots: {
     index: true,
@@ -20,14 +20,14 @@ export const metadata: Metadata = {
     canonical: "https://sarahzou.com/contact",
   },
   openGraph: {
-    title: "Contact Sarah Zou, PhD | SaaS & AI Strategy Consultation",
+    title: "Contact Sarah Zou, PhD | Early-Stage Tech Strategy Consultation",
     description: "Get in touch with Sarah Zou, PhD for consulting, speaking engagements, or collaboration. Fill out the contact form or connect via email or LinkedIn.",
     type: "website",
     url: "https://sarahzou.com/contact",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Sarah Zou, PhD | SaaS & AI Strategy Consultation",
+    title: "Contact Sarah Zou, PhD | Early-Stage Tech Strategy Consultation",
     description: "Get in touch with Sarah Zou, PhD for consulting, speaking engagements, or collaboration. Fill out the contact form or connect via email or LinkedIn.",
   },
 };

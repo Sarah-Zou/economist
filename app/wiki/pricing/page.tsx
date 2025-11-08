@@ -5,14 +5,14 @@ import WikiLayout from '@/components/wiki/WikiLayout';
 import CategoryCard from '@/components/wiki/CategoryCard';
 
 export const metadata: Metadata = {
-  title: 'SaaS Pricing & Monetization Wiki | Sarah Zou',
-  description: 'An evidence-based encyclopedia of SaaS pricing & monetization concepts—definitions, applications, pitfalls, and metrics.',
+  title: 'Pricing & Monetization Wiki | Sarah Zou',
+  description: 'An evidence-based encyclopedia of pricing & monetization concepts for tech startups—definitions, applications, pitfalls, and metrics.',
   alternates: {
     canonical: 'https://sarahzou.com/wiki/pricing'
   },
   openGraph: {
-    title: 'SaaS Pricing & Monetization Wiki',
-    description: 'An evidence-based encyclopedia of SaaS pricing & monetization concepts—definitions, applications, pitfalls, and metrics.',
+    title: 'Pricing & Monetization Wiki',
+    description: 'An evidence-based encyclopedia of pricing & monetization concepts for tech startups—definitions, applications, pitfalls, and metrics.',
     url: 'https://sarahzou.com/wiki/pricing',
     siteName: 'Sarah Zou',
     type: 'website'
@@ -52,8 +52,8 @@ export default function WikiPricingPage() {
   })));
 
   const webPageJsonLd = generateWebPageJsonLd({
-    title: 'SaaS Pricing & Monetization Wiki',
-    description: 'An evidence-based encyclopedia of SaaS pricing & monetization concepts—definitions, applications, pitfalls, and metrics.',
+    title: 'Pricing & Monetization Wiki',
+    description: 'An evidence-based encyclopedia of pricing & monetization concepts for tech startups—definitions, applications, pitfalls, and metrics.',
     url: 'https://sarahzou.com/wiki/pricing',
     dateModified: '2025-01-02'
   });
@@ -72,12 +72,12 @@ export default function WikiPricingPage() {
       <WikiLayout breadcrumbs={[]}>
         <div className="max-w-4xl">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">
-            SaaS Pricing & Monetization Wiki
+            Pricing & Monetization Wiki
           </h1>
           
           <div className="prose prose-lg text-gray-600 mb-8">
             <p>
-              A comprehensive, evidence-based guide to SaaS pricing and monetization strategies. 
+              A comprehensive, evidence-based guide to pricing and monetization strategies for tech startups. 
               From foundational concepts to advanced tactics, learn how to optimize your pricing for maximum growth.
             </p>
           </div>

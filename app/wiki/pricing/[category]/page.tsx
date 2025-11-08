@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   }
 
   return {
-    title: `${category.title} | SaaS Pricing Wiki`,
+    title: `${category.title} | Pricing Wiki`,
     description: category.summary,
     alternates: {
       canonical: category.canonical
@@ -186,7 +186,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             <h2 id="how-to-use-this">How to use this</h2>
             <p className="text-gray-700">
               This category covers the fundamental principles that should guide all pricing decisions. 
-              Start here if you're new to SaaS pricing or need to establish a solid foundation before 
+              Start here if you're new to pricing strategy or need to establish a solid foundation before 
               diving into specific tactics. These concepts apply whether you're a startup finding 
               product-market fit or an enterprise optimizing complex pricing structures.
             </p>

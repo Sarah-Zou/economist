@@ -163,7 +163,7 @@ export default function HeroStackedImages({
   bgSrc="/images/background.webp"
   title="Dr. Sarah Zou"
   kicker="EconNova Consulting"
-  lede="I help B2B SaaS teams turn pricing into a growth system—so NRR compounds, CAC payback shortens, and the investor story is clear."
-  photoAlt="Dr. Sarah Zou, SaaS Economist and Pricing Strategist"
+  lede="I help early-stage tech teams turn pricing into a growth system—so NRR compounds, CAC payback shortens, and the investor story is clear."
+  photoAlt="Dr. Sarah Zou, Economist and Pricing Strategist"
 />
 */

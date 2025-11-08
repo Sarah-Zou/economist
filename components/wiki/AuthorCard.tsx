@@ -11,7 +11,7 @@ export default function AuthorCard() {
           EconNova Consulting
         </p>
         <p className="text-sm text-gray-700 mb-4">
-          PhD economist specializing in SaaS pricing and monetization strategy. 
+          PhD economist specializing in pricing and monetization strategy for tech startups. 
           Helping startups and scale-ups optimize their pricing for maximum growth.
         </p>
         <Link

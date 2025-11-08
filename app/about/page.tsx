@@ -6,7 +6,7 @@ import Cta from '@/components/about/Cta'
 
 export const metadata: Metadata = {
   title: "About — Sarah Zou",
-  description: "SaaS Economist & Pricing Strategist for B2B software teams.",
+  description: "Economist & Pricing Strategist for early-stage tech startups.",
   robots: {
     index: true,
     follow: true,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "About — Sarah Zou",
-    description: "SaaS Economist & Pricing Strategist for B2B software teams.",
+    description: "Economist & Pricing Strategist for early-stage tech startups.",
     type: "website",
     url: "https://sarahzou.com/about",
     images: ["https://sarahzou.com/images/about_headshot.webp"],
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "About — Sarah Zou",
-    description: "SaaS Economist & Pricing Strategist for B2B software teams.",
+    description: "Economist & Pricing Strategist for early-stage tech startups.",
     images: ["https://sarahzou.com/images/about_headshot.webp"],
   },
 };
@@ -42,8 +42,8 @@ const heroData = {
   bgSrc: "/images/background.webp",
   title: "Dr. Sarah Zou",
   kicker: "--- About ---",
-  lede: "I help B2B SaaS teams turn pricing into a growth system.",
-  photoAlt: "Dr. Sarah Zou, SaaS Economist and Pricing Strategist"
+  lede: "I help early-stage tech teams turn pricing into a growth system.",
+  photoAlt: "Dr. Sarah Zou, Economist and Pricing Strategist"
 }
 
 const credentials = [
@@ -75,24 +75,24 @@ const credentials = [
 
 const narrativeSections = [
   {
-    title: "Your dedicated SaaS Economist",
+    title: "Your dedicated Economist",
     content: `
-      <p>I bring economist's rigor with operator's speed to your pricing challenges. Every value metric becomes a product decision—tested, not debated. My approach blends rigorous econometrics with practical SaaS benchmarks, turning your pricing into a growth system that investors understand.</p>
+      <p>I bring economist's rigor with operator's speed to your pricing challenges. Every value metric becomes a product decision—tested, not debated. My approach blends rigorous econometrics with practical tech startup benchmarks, turning your pricing into a growth system that investors understand.</p>
       <p>Unlike traditional fractional CFO services, I focus exclusively on pricing strategy, monetization research, and investor communications. The result? Clear trade-offs, fast cycles, and documentation you can hand to Sales/RevOps tomorrow.</p>
     `
   },
   {
     title: "My path into pricing & metrics",
     content: `
-      <p>My journey from economics PhD to SaaS pricing expert started with building risk models at Citigroup, then leading pricing and GenAI projects at Capgemini. I've spent years advising tech startups and building robust analytics frameworks.</p>
-      <p>This experience taught me that most SaaS metrics are vanity metrics. The real value comes from understanding which KPIs actually predict growth, and how to communicate that story to investors. That's why I founded EconNova Consulting—to bridge the gap between raw data and powerful fundraising narratives.</p>
+      <p>My journey from economics PhD to tech startup pricing expert started with building risk models at Citigroup, then leading pricing and GenAI projects at Capgemini. I've spent years advising tech startups and building robust analytics frameworks.</p>
+      <p>This experience taught me that most metrics are vanity metrics. The real value comes from understanding which KPIs actually predict growth, and how to communicate that story to investors. That's why I founded EconNova Consulting—to bridge the gap between raw data and powerful fundraising narratives.</p>
     `
   },
   {
     title: "Highlights",
     content: `
       <ul>
-        <li>Redesigned pricing tiers and discount policies for 15+ SaaS companies</li>
+        <li>Redesigned pricing tiers and discount policies for 15+ tech startups</li>
         <li>Accelerated CAC payback by 40% through value-based pricing models</li>
         <li>Lifted NRR by 25% average through retention optimization strategies</li>
         <li>Built investor-grade models that secured $50M+ in funding rounds</li>
@@ -138,8 +138,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Sarah Zou",
-  "jobTitle": "SaaS Economist & Pricing Strategist",
-  "description": "I help B2B SaaS teams turn pricing into a growth system—so NRR compounds, CAC payback shortens, and the investor story is clear.",
+  "jobTitle": "Economist & Pricing Strategist",
+  "description": "I help early-stage tech teams turn pricing into a growth system—so NRR compounds, CAC payback shortens, and the investor story is clear.",
   "url": "https://sarahzou.com/about",
   "image": "https://sarahzou.com/images/about_headshot.webp",
   "sameAs": [
@@ -159,7 +159,7 @@ const jsonLd = {
     "name": "EconNova Consulting"
   },
   "knowsAbout": [
-    "SaaS Pricing Strategy",
+    "Tech Startup Pricing Strategy",
     "Monetization Research",
     "Investor Communications",
     "Value-Based Pricing",

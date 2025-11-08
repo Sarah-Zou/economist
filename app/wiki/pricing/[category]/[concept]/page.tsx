@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: ConceptPageProps): Promise<Me
     : `Learn about ${conceptName} in the context of ${category.title}`;
 
   return {
-    title: `${conceptName} | ${category.title} | SaaS Pricing Wiki`,
+    title: `${conceptName} | ${category.title} | Pricing Wiki`,
     description,
     alternates: {
       canonical: `https://sarahzou.com/wiki/pricing/${params.category}/${params.concept}`

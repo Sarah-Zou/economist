@@ -3,7 +3,7 @@ export default function AreasFooter() {
     <div className="mt-8 pt-6 border-t border-gray-200">
       <div className="text-sm text-gray-600">
         <p>
-          Need help with your SaaS pricing strategy? 
+          Need help with your pricing strategy? 
           <a 
             href="https://calendly.com/sarahxzou/free-consult-30-min" 
             target="_blank"

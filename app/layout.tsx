@@ -9,11 +9,11 @@ const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfa
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sarahzou.com'),
-  title: 'Sarah Zou | Economist for AI-SaaS',
-  description: 'Pricing & metrics strategy for AI-SaaS founders—data-driven insights from PhD economist Sarah Zou.',
+  title: 'Sarah Zou | Economist for Early-Stage Tech',
+  description: 'Pricing & metrics strategy for early-stage tech founders—data-driven insights from PhD economist Sarah Zou.',
   openGraph: {
-    title: 'Sarah Zou | Economist for AI-SaaS',
-    description: 'Pricing & metrics strategy for AI-SaaS founders—data-driven insights from PhD economist Sarah Zou.',
+    title: 'Sarah Zou | Economist for Early-Stage Tech',
+    description: 'Pricing & metrics strategy for early-stage tech founders—data-driven insights from PhD economist Sarah Zou.',
     type: 'website',
   },
 }

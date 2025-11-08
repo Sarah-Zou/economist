@@ -23,7 +23,7 @@ const ContactCTA = ({ variant = 'section' }: ContactCTAProps) => {
       <div className="container">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold mb-6">
-            Ready to accelerate your SaaS growth?
+            Ready to accelerate your tech startup growth?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
             Let's work together to optimize your pricing, improve your metrics, and scale your business with confidence.

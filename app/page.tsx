@@ -12,7 +12,7 @@ const homepageTestimonials = [
   {
     name: "James O'Brien",
     title: "Founder & CEO, Datamatic AI",
-    quote: "Her AI-SaaS Index pinpointed where we lagged peers. With the new dashboards, revenue beat plan by Q2."
+    quote: "Her tech startup index pinpointed where we lagged peers. With the new dashboards, revenue beat plan by Q2."
   },
   {
     name: "Priya Shah",
@@ -22,8 +22,8 @@ const homepageTestimonials = [
 ]
 
 export const metadata: Metadata = {
-  title: "Pricing & Monetization for AI-SaaS | Fractional Chief Economist Sarah Zou",
-  description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in AI-SaaS growth strategies.",
+  title: "Pricing & Monetization for Early-Stage Tech | Fractional Chief Economist Sarah Zou",
+  description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in growth strategies for early-stage tech startups.",
   robots: {
     index: true,
     follow: true,
@@ -39,16 +39,16 @@ export const metadata: Metadata = {
     canonical: "https://sarahzou.com",
   },
   openGraph: {
-    title: "Pricing & Monetization for AI-SaaS | Fractional Chief Economist Sarah Zou",
-    description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in AI-SaaS growth strategies.",
+    title: "Pricing & Monetization for Early-Stage Tech | Fractional Chief Economist Sarah Zou",
+    description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in growth strategies for early-stage tech startups.",
     type: "website",
     url: "https://sarahzou.com",
     images: ["https://sarahzou.com/images/headshot_v2.webp"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pricing & Monetization for AI-SaaS | Fractional Chief Economist Sarah Zou",
-    description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in AI-SaaS growth strategies.",
+    title: "Pricing & Monetization for Early-Stage Tech | Fractional Chief Economist Sarah Zou",
+    description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in growth strategies for early-stage tech startups.",
     images: ["https://sarahzou.com/images/headshot_v2.webp"],
   },
 };
@@ -59,7 +59,7 @@ export default function Home() {
     "@type": "Person",
     "name": "Dr. Sarah Zou",
     "jobTitle": "Fractional Chief Economist",
-    "description": "PhD Economist specializing in pricing strategies, metrics analytics, and investor-ready storytelling for AI-SaaS startups.",
+    "description": "PhD Economist specializing in pricing strategies, metrics analytics, and investor-ready storytelling for early-stage tech startups.",
     "url": "https://sarahzou.com",
     "image": "https://sarahzou.com/images/headshot_v2.webp",
     "sameAs": [
@@ -73,8 +73,8 @@ export default function Home() {
       "addressCountry": "US"
     },
     "knowsAbout": [
-      "SaaS Pricing Strategy",
-      "AI-SaaS Monetization",
+      "Tech Startup Pricing Strategy",
+      "Early-Stage Monetization",
       "Value-Based Pricing",
       "Revenue Optimization",
       "Fractional Economics"
