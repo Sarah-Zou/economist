@@ -7,32 +7,28 @@ export default function FAQSection() {
 
   const faqs = [
     { 
-      q: 'What\'s the difference between Lite, Core, and Growth?', 
-      a: 'Lite is guidance-focused (reviews, test design, investor prep). Core adds ownership of pricing roadmap, experiment backlog, and monthly Board Packs with models. Growth includes full monetization + forecasting + capital plan ownership, quarterly pricing resets, and co-leading fundraise economics.' 
+      q: 'We have almost no data. Will this still work?', 
+      a: 'Yes—Lite/Core focus on a minimal KPI loop and scrappy exports while creating the event patch list.' 
     },
     { 
-      q: 'Can I upgrade or downgrade plans?', 
-      a: 'Yes, with 30 days notice. We\'ll adjust deliverables and billing accordingly. The 3-month minimum applies to your initial plan selection.' 
+      q: 'Which tools do you use?', 
+      a: 'I work with your current stack (Amplitude, Mixpanel, GA4, HubSpot/CRM, spreadsheets/BI). No new warehouse is required for the sprint.' 
     },
     { 
-      q: 'What if I need more time in a given month?', 
-      a: 'Growth tier includes priority async support. For Lite/Core, we can add project hours or move to a higher tier. Same-day response is standard for Growth; 1–2 business days for Lite/Core.' 
+      q: 'What if our data is messy?', 
+      a: 'We document gaps and create a "track-now vs. track-later" patch list; optional instrumentation support is available.' 
     },
     { 
-      q: 'Do you work with our existing tools?', 
-      a: 'Yes—I work with your current stack (Amplitude, Mixpanel, GA4, HubSpot/CRM, spreadsheets/BI, forecasting tools). No new infrastructure required.' 
+      q: 'How do you ensure tests are ethical and customer-positive?', 
+      a: 'We define guardrails, exposure limits, and pass/fail thresholds up front; customer comms are included where needed.' 
     },
     { 
-      q: 'What happens during onboarding?', 
-      a: 'Week 0–2: We align on scope & access, establish baseline metrics, identify quick-win pricing/test opportunities, and deliver your first Board Pack. This sets the foundation for ongoing cadence.' 
+      q: 'What do you need from us?', 
+      a: 'A data/PM owner, exports or view access, and attendance from Founder + PM + GTM in the two workshops.' 
     },
     { 
-      q: 'How does this work with your sprints?', 
-      a: 'Sprints set the foundation (pricing decisions, KPI loop). The retainer keeps it running: iterate pricing, run tests, maintain forward models, and stay investor-ready month-to-month.' 
-    },
-    { 
-      q: 'What if we need to pause?', 
-      a: '30 days notice required. We\'ll complete any in-flight deliverables and provide a handoff summary. You can resume anytime.' 
+      q: 'How are payments handled?', 
+      a: '70% at kickoff, 30% at readout. Guarantee applies if listed outcomes aren\'t achieved in Week 1.' 
     }
   ];
 
