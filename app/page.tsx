@@ -117,6 +117,11 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* Card 1: Rare blend */}
               <div className="bg-[#f6f7f9] rounded-lg p-6 border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
+                <div className="mb-4">
+                  <svg className="w-8 h-8 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                </div>
                 <h3 className="text-xl font-bold text-[#1f2933] mb-3">Rare blend</h3>
                 <p className="text-sm text-[#3b4652] leading-relaxed">
                   Pricing + unit economics + econometrics in one person. Most firms split this across CFO/RevOps/DS; I design the whole economic system end-to-end.
@@ -125,6 +130,11 @@ export default function Home() {
 
               {/* Card 2: Research-grade rigor */}
               <div className="bg-[#f6f7f9] rounded-lg p-6 border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
+                <div className="mb-4">
+                  <svg className="w-8 h-8 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
                 <h3 className="text-xl font-bold text-[#1f2933] mb-3">Research-grade rigor</h3>
                 <p className="text-sm text-[#3b4652] leading-relaxed">
                   I treat each engagement like an academic study: hypotheses → models → experiments → decisions. Methods are documented; assumptions are explicit.
@@ -133,6 +143,11 @@ export default function Home() {
 
               {/* Card 3: Funder-friendly outputs */}
               <div className="bg-[#f6f7f9] rounded-lg p-6 border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
+                <div className="mb-4">
+                  <svg className="w-8 h-8 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
                 <h3 className="text-xl font-bold text-[#1f2933] mb-3">Funder-friendly outputs</h3>
                 <p className="text-sm text-[#3b4652] leading-relaxed">
                   Board-ready artifacts (GM waterfall, NRR/LTV bridges, payback guardrails, elasticity write-ups) that withstand diligence—not just pretty decks.
@@ -141,6 +156,11 @@ export default function Home() {
 
               {/* Card 4: Fast, testable decisions */}
               <div className="bg-[#f6f7f9] rounded-lg p-6 border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
+                <div className="mb-4">
+                  <svg className="w-8 h-8 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
                 <h3 className="text-xl font-bold text-[#1f2933] mb-3">Fast, testable decisions</h3>
                 <p className="text-sm text-[#3b4652] leading-relaxed">
                   Sprints ship answers in 1–2 weeks with a 90-day experiment plan. No "more analysis" stall; every recommendation is testable.
@@ -163,7 +183,7 @@ export default function Home() {
               <div 
                 className="relative h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
                 style={{
-                  backgroundImage: 'url(/images/pricing.webp)',
+                  backgroundImage: 'url(/images/S-4.webp)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat'
@@ -235,7 +255,7 @@ export default function Home() {
               <div 
                 className="relative h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
                 style={{
-                  backgroundImage: 'url(/images/investor.webp)',
+                  backgroundImage: 'url(/images/P-2.webp)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat'
@@ -259,7 +279,7 @@ export default function Home() {
                   {/* Description - appears on hover */}
                   <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                     <p className="text-white text-sm leading-relaxed mt-2 drop-shadow-md">
-                      Own pricing roadmap, experiment cadence, rolling forecast, and investor narrative. Quarterly price/pack refresh.
+                      Ongoing ownership of pricing, forward models, and the experiment cadence—so you ship decisions, not dashboards.
                     </p>
                   </div>
                 </div>

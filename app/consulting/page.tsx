@@ -40,31 +40,40 @@ const services = [
     id: 'monetization-sprint',
     slug: 'pricing-monetization-sprint',
     title: 'Pricing & Monetization Sprint',
-    hero: 'Outcome: pricing metric, 3-tier package + fences, list/discount curves, GM/payback scenarios, 90-day experiments.',
-    summary: 'Best for: Pre-seed to A; design product around price or pricing reset; investor pressure for efficient growth.',
-    duration: '1–2 weeks',
-    price: '$5-18k',
-    image: '/images/P-1.webp',
+    description: 'A focused, high-impact engagement to design price, package, and policy for sustainable growth. In 5 days, we land your value metric, 3-tier pricing, discount guardrails, and a rollout plan.',
+    bullets: [
+      'Good/Better/Best packaging with price fences and upgrade paths.',
+      'List prices with discount/trial guardrails and value messaging.',
+      'Unit-economics snapshot (GM%, CAC payback) + 30-day rollout plan.'
+    ],
+    cta: 'Explore Pricing Sprint',
+    image: '/images/S-4.webp',
   },
   {
     id: 'economics-os',
     slug: 'metrics-experimentation-sprint',
     title: 'Metrics & Experimentation Sprint',
-    hero: 'Outcome: North Star + metric tree, 2 live dashboards, 2 fully-specced experiments, 30-day cadence plan.',
-    summary: 'Best for: Early-stage founders, PMs, and growth teams who need clean metrics, faster test cycles, and investor-ready visibility into payback and NRR.',
-    duration: '1–2 weeks',
-    price: '$6–12k',
-    image: '/images/P-4.webp',
+    description: 'A one-week build to install a working KPI loop and a repeatable testing cadence that turns noise into decisions and lifts conversion/ARPU.',
+    bullets: [
+      'North Star + metric tree with green/amber/red thresholds and owners.',
+      'Live dashboards (Founder, GTM, Product) + lean event patch list.',
+      'Experiment backlog (8–12) with 2 ready-to-run test briefs and SOP.'
+    ],
+    cta: 'Explore Metrics Sprint',
+    image: '/images/metrics.webp',
   },
   {
     id: 'fractional-retainer',
     slug: 'on-call-economist-retainer',
     title: 'Fractional Chief Economist (Retainer)',
-    hero: 'Outcome: own monetization roadmap; experiment analysis; discount guardrails; rolling forecast; investor updates; quarterly pricing refresh.',
-    summary: 'Best for: Ongoing pricing/tests, usage-based or marketplace models, upcoming raise.',
-    duration: 'Monthly',
-    price: '$4k / $8k / $15k',
-    image: '/images/P-8.webp',
+    description: 'Ongoing ownership of monetization, forward models, and experiment cadence. You get decisions, not dashboards—kept board-ready every month.',
+    bullets: [
+      'Shipped decisions (pricing moves/tests) with guardrails and readouts.',
+      'Economist\'s Board Pack: NRR & GM bridges + 12–18-month forecast.',
+      'Quarterly pricing refresh and investor/fundraise support.'
+    ],
+    cta: 'Explore Retainer',
+    image: '/images/P-2.webp',
   },
 ]
 
@@ -142,7 +151,7 @@ function ConsultingContent() {
                     "itemOffered": {
                       "@type": "Service",
                       "name": "Fractional Chief Economist (Retainer)",
-                      "description": "Own monetization roadmap; experiment analysis; discount guardrails; rolling forecast; investor updates; quarterly pricing refresh. Best for ongoing pricing/tests and marketplace models."
+                      "description": "Monthly shipped pricing/test moves, board-ready pack, rolling 12–18-mo forecast with scenarios, and a clear next-30-day action plan. Best for Seed → Series A teams with active experiments, upcoming fundraise, or complex monetization (usage-based, marketplace, hybrid) needing an accountable economics owner."
                     }
                   }
                 ]
@@ -181,68 +190,88 @@ function ConsultingContent() {
           ])
         }}
       />
-      <section className="py-20 bg-[#f5f5f5] min-h-screen">
+      <section className="py-20 bg-white min-h-screen">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="font-serif-playfair text-4xl font-bold mb-6 text-[#111]">Consulting Services</h1>
-            <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              Expert help to build your startup's economics layer—pricing, metrics, and forecasting.
-            </p>
+          {/* Hero Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-32">
+            {/* Left Section - Text Content */}
+            <div>
+              <h1 className="font-serif-playfair text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#111] leading-tight">
+              Economics for Early-Stage Teams: Price. Test. Scale.
+              </h1>
+              <p className="text-lg text-gray-700 leading-relaxed">
+              From first price to forward model—everything you need to learn fast.
+              </p>
+            </div>
+            
+            {/* Right Section - Image */}
+            <div className="hidden lg:block">
+              <div className="relative h-[400px] w-full rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/S-3.webp"
+                  alt="Economic consulting services"
+                  fill
+                  className="object-cover rounded-2xl"
+                />
+              </div>
+            </div>
           </div>
 
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-            {services.map((service, index) => (
-              <a
+          <div className="space-y-32 mb-32">
+            {services.map((service, index) => {
+              // Metrics & Experimentation Sprint should have image on the right
+              const isMetricsSprint = service.slug === 'metrics-experimentation-sprint';
+              return (
+              <div
                 key={index}
                 id={service.id}
-                href={`/consulting/services/${service.slug}`}
-                className="block group scroll-mt-24"
+                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow scroll-mt-24"
               >
-                <div 
-                  className="relative h-[400px] w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
-                  style={{
-                    backgroundImage: `url(${service.image})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat'
-                  }}
-                >
-                  {/* Dark overlay for better text readability */}
-                  <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  {/* Image Section */}
+                  <div className={`relative h-[300px] lg:h-auto lg:min-h-[400px] ${isMetricsSprint ? 'order-2' : 'order-1'}`}>
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                   
-                  {/* Content */}
-                  <div className="relative h-full flex flex-col justify-end p-8">
-                    {/* Title - positioned at mid-bottom, moves up on hover */}
-                    <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
-                      <div className="min-h-[3.5rem] flex items-end">
-                        <h3 className="text-2xl font-bold text-white drop-shadow-lg">
-                          {service.title}
-                        </h3>
-                      </div>
-                      <div className="flex items-center gap-4 mt-2">
-                        <p className="text-white text-sm font-medium drop-shadow-md">
-                          {service.duration}
-                        </p>
-                        <p className="text-white text-sm font-bold drop-shadow-md">
-                          {service.price}
-                        </p>
-                      </div>
-                    </div>
-                    
-                    {/* Hero text - appears on hover */}
-                    <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                      <p className="text-white text-lg leading-relaxed mt-3 drop-shadow-md">
-                        {service.hero}
+                  {/* Text Content Section */}
+                  <div className={`p-8 lg:p-10 flex flex-col justify-between ${isMetricsSprint ? 'order-1' : 'order-2'}`}>
+                    <div>
+                      <h3 className="text-3xl font-bold text-[#111] mb-4">
+                        {service.title}
+                      </h3>
+                      <p className="text-base text-gray-700 mb-6 leading-relaxed">
+                        {service.description}
                       </p>
-                      <p className="text-white text-sm leading-relaxed mt-2 drop-shadow-md">
-                        {service.summary}
-                      </p>
+                      <ul className="space-y-3 mb-8">
+                        {service.bullets.map((bullet, idx) => (
+                          <li key={idx} className="flex items-start gap-3">
+                            <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                            </div>
+                            <span className="text-base text-gray-700">{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
+                    <a
+                      href={`/consulting/services/${service.slug}`}
+                      className="inline-block bg-[#06b6d4] text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-[#0891b2] transition-colors text-center"
+                    >
+                      {service.cta}
+                    </a>
                   </div>
                 </div>
-              </a>
-            ))}
+              </div>
+              );
+            })}
           </div>
 
           {/* Testimonials section commented out */}
@@ -256,45 +285,6 @@ function ConsultingContent() {
             </div>
           </div>
           )}
-
-          {/* How Engagements Run Section */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <h2 className="font-serif-playfair text-3xl font-bold mb-8 text-center text-[#ff5722]">
-              How Engagements Run
-            </h2>
-            <div className="bg-white rounded-lg p-8 shadow-sm">
-              <div className="grid md:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <div className="bg-[#ff5722] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg mx-auto mb-3">
-                    0
-                  </div>
-                  <h3 className="font-bold text-lg mb-2 text-[#111]">Week 0</h3>
-                  <p className="text-gray-700 text-sm">Intake</p>
-                </div>
-                <div className="text-center">
-                  <div className="bg-[#ff5722] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg mx-auto mb-3">
-                    2
-                  </div>
-                  <h3 className="font-bold text-lg mb-2 text-[#111]">Week 2</h3>
-                  <p className="text-gray-700 text-sm">Recommendations</p>
-                </div>
-                <div className="text-center">
-                  <div className="bg-[#ff5722] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg mx-auto mb-3">
-                    3-8
-                  </div>
-                  <h3 className="font-bold text-lg mb-2 text-[#111]">Weeks 3–8</h3>
-                  <p className="text-gray-700 text-sm">Experiments</p>
-                </div>
-                <div className="text-center">
-                  <div className="bg-[#ff5722] text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg mx-auto mb-3">
-                    90
-                  </div>
-                  <h3 className="font-bold text-lg mb-2 text-[#111]">90-day</h3>
-                  <p className="text-gray-700 text-sm">Check</p>
-                </div>
-              </div>
-            </div>
-          </div>
 
           {/* FAQ Section */}
           <div className="max-w-4xl mx-auto mb-16" id="faq">
