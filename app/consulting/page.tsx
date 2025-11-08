@@ -47,16 +47,6 @@ const services = [
     image: '/images/P-1.webp',
   },
   {
-    id: 'customer-value-research',
-    slug: 'customer-value-research-pack',
-    title: 'Customer Value Research Pack',
-    hero: 'Outcome: 8–10 interviews, WTP survey, value drivers matrix, price fence recommendations, landing page narrative inputs.',
-    summary: 'Best for: Understanding customer value drivers, data-backed pricing strategy, messaging that resonates.',
-    duration: '2 weeks',
-    price: '$3.5k',
-    image: '/images/P-2.webp',
-  },
-  {
     id: 'economics-os',
     slug: 'saas-metrics-clarity-pack',
     title: 'Economics OS Build',
