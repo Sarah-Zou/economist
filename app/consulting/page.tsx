@@ -48,12 +48,12 @@ const services = [
   },
   {
     id: 'economics-os',
-    slug: 'saas-metrics-clarity-pack',
-    title: 'Economics OS Build',
-    hero: 'Outcome: KPI taxonomy & event schema, dashboards, cohort/LTV and NRR bridges, 12–18 mo forecast, Elasticity Lab, board pack.',
-    summary: 'Best for: Seed–A with messy metrics; first GTM hires; need repeatable decisions.',
-    duration: '4–6 weeks',
-    price: '$15–30k',
+    slug: 'metrics-experimentation-sprint',
+    title: 'Metrics & Experimentation Sprint',
+    hero: 'Outcome: North Star + metric tree, 2 live dashboards, 2 fully-specced experiments, 30-day cadence plan.',
+    summary: 'Best for: Early-stage founders, PMs, and growth teams who need clean metrics, faster test cycles, and investor-ready visibility into payback and NRR.',
+    duration: '1–2 weeks',
+    price: '$6–12k',
     image: '/images/P-4.webp',
   },
   {
@@ -133,8 +133,8 @@ function ConsultingContent() {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "Economics OS Build",
-                      "description": "KPI taxonomy & event schema, dashboards, cohort/LTV and NRR bridges, 12–18 mo forecast, Elasticity Lab, board pack. Best for Seed–A companies with messy metrics."
+                      "name": "Metrics & Experimentation Sprint",
+                      "description": "A live North Star + metric tree with thresholds, 2 dashboards, 2 fully-specced experiments, and a 30-day cadence plan—your startup's first working measurement system. Best for early-stage founders, PMs, and growth teams who need clean metrics, faster test cycles, and investor-ready visibility into payback and NRR."
                     }
                   },
                   {

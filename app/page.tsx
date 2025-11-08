@@ -194,8 +194,8 @@ export default function Home() {
               </div>
             </a>
 
-            {/* Card 2: Economics OS Build */}
-            <a href="/consulting/services/saas-metrics-clarity-pack" className="block group">
+            {/* Card 2: Metrics & Experimentation Sprint */}
+            <a href="/consulting/services/metrics-experimentation-sprint" className="block group">
               <div 
                 className="relative h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
                 style={{
@@ -213,17 +213,17 @@ export default function Home() {
                   {/* Title - positioned at mid-bottom, moves up on hover */}
                   <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
                     <h3 className="text-xl font-bold text-white drop-shadow-lg">
-                      Economics OS Build
+                      Metrics & Experimentation Sprint
                     </h3>
                     <p className="text-white text-xs font-medium mt-1 drop-shadow-md">
-                      4–6 weeks
+                      1–2 weeks
                     </p>
                   </div>
                   
                   {/* Description - appears on hover */}
                   <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                     <p className="text-white text-sm leading-relaxed mt-2 drop-shadow-md">
-                      KPI/event schema, dashboards, cohort/LTV model, forecasting workbook, Elasticity Lab, and a board-ready pack.
+                      In 5 days, install your KPI loop, live dashboards, and ready-to-run experiments—so decisions finally move at product speed.
                     </p>
                   </div>
                 </div>
