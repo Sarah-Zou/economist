@@ -1,8 +1,22 @@
+# robots.txt for sarahzou.com
+
+# Allow all search engines to crawl the entire site
 User-agent: *
 Allow: /
 
-# Host
-Host: https://sarahzou.com
+# Disallow API routes and admin areas
+Disallow: /api/
+Disallow: /_next/
 
-# Sitemaps
-Sitemap: https://sarahzou.com/sitemap.xml 
+# Allow specific important paths
+Allow: /wiki/pricing/
+Allow: /consulting/
+Allow: /about/
+Allow: /newsletter/
+Allow: /cheat-sheets/
+
+# Sitemap location
+Sitemap: https://sarahzou.com/sitemap.xml
+
+# Host (optional, some crawlers use this)
+Host: https://sarahzou.com

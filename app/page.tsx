@@ -54,10 +54,59 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const schema = {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "EconNova Consulting",
+    "url": "https://sarahzou.com",
+    "logo": "https://sarahzou.com/images/EconNova_logo.png",
+    "description": "Fractional Chief Economist services for early-stage tech startups. Expert pricing strategy, metrics analysis, and economic storytelling to help startups optimize revenue and growth.",
+    "foundingDate": "2020",
+    "founder": {
+      "@type": "Person",
+      "name": "Dr. Sarah Zou",
+      "jobTitle": "Fractional Chief Economist"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Princeton",
+      "addressRegion": "NJ",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Business Inquiries",
+      "email": "sarah@sarahzou.com",
+      "availableLanguage": ["English"]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/drsarah-saas-economist",
+      "https://twitter.com/SaaS_Econ"
+    ],
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "United States"
+      },
+      {
+        "@type": "Country",
+        "name": "European Union"
+      }
+    ],
+    "serviceType": [
+      "Pricing Strategy Consulting",
+      "Tech Startup Metrics Analysis",
+      "Revenue Optimization",
+      "Fractional Chief Economist Services",
+      "Early-Stage Growth Strategy"
+    ]
+  };
+
+  const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Dr. Sarah Zou",
+    "alternateName": "Sarah Zou",
     "jobTitle": "Fractional Chief Economist",
     "description": "PhD Economist specializing in pricing strategies, metrics analytics, and investor-ready storytelling for early-stage tech startups.",
     "url": "https://sarahzou.com",
@@ -72,12 +121,43 @@ export default function Home() {
       "addressRegion": "NJ",
       "addressCountry": "US"
     },
+    "alumniOf": [
+      {
+        "@type": "EducationalOrganization",
+        "name": "Rutgers University",
+        "degree": "PhD in Economics"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "University of Illinois at Urbana-Champaign",
+        "degree": "MS in Finance & Statistics"
+      }
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "EconNova Consulting",
+      "url": "https://sarahzou.com"
+    },
     "knowsAbout": [
       "Tech Startup Pricing Strategy",
       "Early-Stage Monetization",
       "Value-Based Pricing",
       "Revenue Optimization",
-      "Fractional Chief Economist"
+      "Fractional Chief Economist",
+      "Unit Economics",
+      "Investor Communications",
+      "Monetization Research"
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Degree",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Rutgers University"
+        },
+        "about": "PhD in Economics"
+      }
     ]
   };
 
@@ -85,7 +165,44 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is a fractional chief economist?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A fractional chief economist is a part-time economic advisor who brings PhD-level expertise to your pricing, metrics, and growth strategy without the cost of a full-time hire."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How quickly can you impact our pricing?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most clients see initial pricing improvements within 2-4 weeks. Our Pricing Quickstart delivers a complete strategy and test plan in just 14 days."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What makes your approach different?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "I combine academic rigor with startup speed. Every recommendation is backed by data, tested with experiments, and designed for your specific market dynamics."
+              }
+            }
+          ]
+        }) }}
       />
       <div>
         <HeroStackedImages

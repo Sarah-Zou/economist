@@ -34,8 +34,60 @@ export const metadata: Metadata = {
 };
 
 export default function PricingDiagnosticRevenueBoost() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Will this \"work\" if we're pre-revenue?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes—benchmarks + value hypotheses + cost floors give a defendable first price and test plan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will customers churn if we raise prices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We design fences, upgrade paths, and comms to protect retention while lifting yield."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can we switch to usage-based?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If the value metric supports it and ops allow, you'll get a migration playbook."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do you need from me to get started?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Founder + PM (and Sales/CS if post-launch) in workshops • Access to pricing page drafts, cost inputs, and recent usage/sales notes • A single decision owner"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How are payments handled?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "70% at kickoff, 30% at readout."
+        }
+      }
+    ]
+  };
+
   return (
-    <section className="bg-[#f5f8f7] min-h-screen py-0">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <section className="bg-[#f5f8f7] min-h-screen py-0">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -541,5 +593,6 @@ export default function PricingDiagnosticRevenueBoost() {
         </div>
       </div>
     </section>
+    </>
   );
 } 

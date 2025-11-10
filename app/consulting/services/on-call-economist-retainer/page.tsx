@@ -34,8 +34,76 @@ export const metadata: Metadata = {
 };
 
 export default function FractionalChiefEconomistRetainer() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What's the difference between Lite, Core, and Growth?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lite is guidance-focused (reviews, test design, investor prep). Core adds ownership of pricing roadmap, experiment backlog, and monthly Board Packs with models. Growth includes full monetization + forecasting + capital plan ownership, quarterly pricing resets, and co-leading fundraise economics."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I upgrade or downgrade plans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, with 30 days notice. We'll adjust deliverables and billing accordingly. The 3-month minimum applies to your initial plan selection."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I need more time in a given month?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Growth tier includes priority async support. For Lite/Core, we can add project hours or move to a higher tier. Same-day response is standard for Growth; 1–2 business days for Lite/Core."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you work with our existing tools?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes—I work with your current stack (Amplitude, Mixpanel, GA4, HubSpot/CRM, spreadsheets/BI, forecasting tools). No new infrastructure required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens during onboarding?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Week 0–2: We align on scope & access, establish baseline metrics, identify quick-win pricing/test opportunities, and deliver your first Board Pack. This sets the foundation for ongoing cadence."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does this work with your sprints?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sprints set the foundation (pricing decisions, KPI loop). The retainer keeps it running: iterate pricing, run tests, maintain forward models, and stay investor-ready month-to-month."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if we need to pause?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "30 days notice required. We'll complete any in-flight deliverables and provide a handoff summary. You can resume anytime."
+        }
+      }
+    ]
+  };
+
   return (
-    <section className="bg-[#f5f8f7] min-h-screen py-0">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <section className="bg-[#f5f8f7] min-h-screen py-0">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -540,5 +608,6 @@ export default function FractionalChiefEconomistRetainer() {
         </div>
       </div>
     </section>
+    </>
   );
 } 

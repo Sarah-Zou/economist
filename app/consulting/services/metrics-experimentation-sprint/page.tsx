@@ -34,8 +34,68 @@ export const metadata: Metadata = {
 };
 
 export default function MetricsExperimentationSprint() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "We have almost no data. Will this still work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes—Lite/Core focus on a minimal KPI loop and scrappy exports while creating the event patch list."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which tools do you use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "I work with your current stack (Amplitude, Mixpanel, GA4, HubSpot/CRM, spreadsheets/BI). No new warehouse is required for the sprint."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if our data is messy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We document gaps and create a \"track-now vs. track-later\" patch list; optional instrumentation support is available."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you ensure tests are ethical and customer-positive?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We define guardrails, exposure limits, and pass/fail thresholds up front; customer comms are included where needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do you need from us?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A data/PM owner, exports or view access, and attendance from Founder + PM + GTM in the two workshops."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How are payments handled?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "70% at kickoff, 30% at readout. Guarantee applies if listed outcomes aren't achieved in Week 1."
+        }
+      }
+    ]
+  };
+
   return (
-    <section className="bg-[#f5f8f7] min-h-screen py-0">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <section className="bg-[#f5f8f7] min-h-screen py-0">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -506,6 +566,7 @@ export default function MetricsExperimentationSprint() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

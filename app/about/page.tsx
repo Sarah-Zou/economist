@@ -294,36 +294,157 @@ const ctaData = {
 }
 
 // JSON-LD Schema for SEO
-const jsonLd = {
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "EconNova Consulting",
+  "url": "https://sarahzou.com",
+  "logo": "https://sarahzou.com/images/EconNova_logo.png",
+  "description": "Fractional Chief Economist services for early-stage tech startups. Expert pricing strategy, metrics analysis, and economic storytelling to help startups optimize revenue and growth.",
+  "foundingDate": "2020",
+  "founder": {
+    "@type": "Person",
+    "name": "Dr. Sarah Zou",
+    "jobTitle": "Fractional Chief Economist",
+    "url": "https://sarahzou.com/about"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Princeton",
+    "addressRegion": "NJ",
+    "addressCountry": "US"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Business Inquiries",
+    "email": "sarah@sarahzou.com",
+    "availableLanguage": ["English"]
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/drsarah-saas-economist",
+    "https://twitter.com/SaaS_Econ"
+  ],
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "United States"
+    },
+    {
+      "@type": "Country",
+      "name": "European Union"
+    }
+  ],
+  "serviceType": [
+    "Pricing Strategy Consulting",
+    "Tech Startup Metrics Analysis",
+    "Revenue Optimization",
+    "Fractional Chief Economist Services",
+    "Early-Stage Growth Strategy",
+    "Monetization Research",
+    "Investor Communications"
+  ]
+}
+
+const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Sarah Zou",
+  "name": "Dr. Sarah Zou",
+  "alternateName": "Sarah Zou",
   "jobTitle": "Fractional Chief Economist",
   "description": "I turn pricing into a growth system—linking value metrics to experiments (not debates) so your team ships decisions next week and your board sees a defensible economic narrative next month.",
   "url": "https://sarahzou.com/about",
   "image": "https://sarahzou.com/images/about_headshot.webp",
   "sameAs": [
-    "https://www.linkedin.com/in/drsarahzou",
-    "https://twitter.com/sarahzou"
+    "https://www.linkedin.com/in/drsarah-saas-economist",
+    "https://twitter.com/SaaS_Econ"
   ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Princeton",
+    "addressRegion": "NJ",
+    "addressCountry": "US"
+  },
   "areaServed": [
-    "United States",
-    "European Union"
+    {
+      "@type": "Country",
+      "name": "United States"
+    },
+    {
+      "@type": "Country",
+      "name": "European Union"
+    }
   ],
   "alumniOf": [
-    "Rutgers University",
-    "University of Illinois at Urbana-Champaign"
+    {
+      "@type": "EducationalOrganization",
+      "name": "Rutgers University",
+      "degree": "PhD in Economics"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "University of Illinois at Urbana-Champaign",
+      "degree": "MS in Finance & Statistics"
+    }
   ],
   "worksFor": {
     "@type": "Organization",
-    "name": "EconNova Consulting"
+    "name": "EconNova Consulting",
+    "url": "https://sarahzou.com"
+  },
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Fractional Chief Economist",
+    "occupationLocation": {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "skills": [
+      "Pricing Strategy",
+      "Monetization Research",
+      "Investor Communications",
+      "Value-Based Pricing",
+      "Unit Economics",
+      "Metrics Analysis",
+      "Economic Forecasting"
+    ]
   },
   "knowsAbout": [
     "Tech Startup Pricing Strategy",
     "Monetization Research",
     "Investor Communications",
     "Value-Based Pricing",
-    "Unit Economics"
+    "Unit Economics",
+    "Early-Stage Monetization",
+    "Revenue Optimization",
+    "Economic Forecasting",
+    "Metrics Analytics"
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Degree",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Rutgers University"
+      },
+      "about": "PhD in Economics"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Degree",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "University of Illinois at Urbana-Champaign"
+      },
+      "about": "MS in Finance & Statistics"
+    }
+  ],
+  "memberOf": [
+    {
+      "@type": "Organization",
+      "name": "NBER",
+      "description": "National Bureau of Economic Research"
+    }
   ]
 }
 
@@ -332,7 +453,11 @@ export default function About() {
     <>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
       <HeroStackedImages {...heroData} />
       
