@@ -190,23 +190,23 @@ function ConsultingContent() {
           ])
         }}
       />
-      <section className="py-20 bg-white min-h-screen">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white min-h-screen">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16 sm:mb-24 lg:mb-32">
             {/* Left Section - Text Content */}
             <div>
-              <h1 className="font-serif-playfair text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#223] leading-tight">
+              <h1 className="font-serif-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-[#223] leading-tight">
               Economics for Early-Stage Teams: Price. Test. Scale.
               </h1>
-              <p className="text-lg text-[#4b636e] font-light leading-relaxed">
+              <p className="text-base sm:text-lg text-[#4b636e] font-light leading-relaxed">
               From first price to forward model—everything you need to learn fast.
               </p>
             </div>
             
             {/* Right Section - Image */}
-            <div className="hidden lg:block">
-              <div className="relative h-[400px] w-full rounded-2xl overflow-hidden">
+            <div className="lg:block">
+              <div className="relative h-[250px] sm:h-[350px] lg:h-[400px] w-full rounded-2xl overflow-hidden">
                 <Image
                   src="/images/S-3.webp"
                   alt="Economic consulting services"
@@ -218,7 +218,7 @@ function ConsultingContent() {
           </div>
 
 
-          <div className="space-y-32 mb-32">
+          <div className="space-y-16 sm:space-y-24 lg:space-y-32 mb-16 sm:mb-24 lg:mb-32">
             {services.map((service, index) => {
               // Metrics & Experimentation Sprint should have image on the right
               const isMetricsSprint = service.slug === 'metrics-experimentation-sprint';
@@ -230,7 +230,7 @@ function ConsultingContent() {
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                   {/* Image Section */}
-                  <div className={`relative h-[300px] lg:h-auto lg:min-h-[400px] ${isMetricsSprint ? 'order-2' : 'order-1'}`}>
+                  <div className={`relative h-[250px] sm:h-[300px] lg:h-auto lg:min-h-[400px] ${isMetricsSprint ? 'order-2' : 'order-1'}`}>
                     <Image
                       src={service.image}
                       alt={service.title}
@@ -240,12 +240,12 @@ function ConsultingContent() {
                   </div>
                   
                   {/* Text Content Section */}
-                  <div className={`p-8 lg:p-10 flex flex-col justify-between ${isMetricsSprint ? 'order-1' : 'order-2'}`}>
+                  <div className={`p-6 sm:p-8 lg:p-10 flex flex-col justify-between ${isMetricsSprint ? 'order-1' : 'order-2'}`}>
                     <div>
-                      <h3 className="font-serif-playfair text-3xl font-bold text-[#223] mb-4">
+                      <h3 className="font-serif-playfair text-2xl sm:text-3xl font-bold text-[#223] mb-3 sm:mb-4">
                           {service.title}
                         </h3>
-                      <p className="text-base text-[#4b636e] font-light mb-6 leading-relaxed">
+                      <p className="text-sm sm:text-base text-[#4b636e] font-light mb-4 sm:mb-6 leading-relaxed">
                         {service.description}
                       </p>
                       <ul className="space-y-3 mb-8">
@@ -288,11 +288,12 @@ function ConsultingContent() {
 
           {/* Comparison Table */}
           <div className="max-w-6xl mx-auto mb-16">
-            <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold mb-8 text-center text-[#223]">
+            <h2 className="font-serif-playfair text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center text-[#223] px-4">
               Compare Services
             </h2>
-            <div className="bg-white rounded-2xl border border-[#e5e7eb] shadow-sm overflow-hidden overflow-x-auto">
-              <table className="w-full min-w-[700px]">
+            <div className="bg-white rounded-2xl border border-[#e5e7eb] shadow-sm overflow-hidden overflow-x-auto -mx-4 sm:mx-0">
+              <div className="min-w-[700px]">
+              <table className="w-full">
                 <thead>
                   <tr className="bg-[#f6f7f9] border-b-2 border-[#e5e7eb]">
                     <th className="text-left py-4 px-4 font-semibold text-[#223]">Service</th>
@@ -395,30 +396,34 @@ function ConsultingContent() {
                   </tr>
                 </tbody>
               </table>
+              </div>
             </div>
+            <p className="text-sm text-gray-500 mt-4 text-center px-4 sm:hidden">
+              Scroll horizontally to view full table
+            </p>
           </div>
 
           {/* FAQ Section */}
           <div className="max-w-4xl mx-auto mb-16" id="faq">
-            <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold mb-8 text-center text-[#223]">
+            <h2 className="font-serif-playfair text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 text-center text-[#223] px-4">
               Frequently Asked Questions
             </h2>
-            <div className="space-y-6">
-              <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-bold text-lg mb-3 text-[#223]">When not to change prices?</h3>
-                <p className="text-[#4b636e] font-light">
+            <div className="space-y-4 sm:space-y-6 px-4 sm:px-0">
+              <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+                <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3 text-[#223]">When not to change prices?</h3>
+                <p className="text-sm sm:text-base text-[#4b636e] font-light">
                   Avoid price changes during major product launches, customer renewals, or market volatility. We'll identify the optimal timing based on your customer lifecycle, competitive landscape, and internal capacity to handle the transition smoothly.
                 </p>
               </div>
-              <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-bold text-lg mb-3 text-[#223]">Will usage pricing spike bills?</h3>
-                <p className="text-[#4b636e] font-light">
+              <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+                <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3 text-[#223]">Will usage pricing spike bills?</h3>
+                <p className="text-sm sm:text-base text-[#4b636e] font-light">
                   Not with proper design. We implement usage caps, tiered pricing, and clear communication to prevent bill shock. Our approach includes customer education, gradual rollouts, and safety nets to maintain satisfaction while optimizing revenue.
                 </p>
               </div>
-              <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-bold text-lg mb-3 text-[#223]">How do we test without harming revenue?</h3>
-                <p className="text-[#4b636e] font-light">
+              <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+                <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3 text-[#223]">How do we test without harming revenue?</h3>
+                <p className="text-sm sm:text-base text-[#4b636e] font-light">
                   Through controlled experiments with guardrails: A/B tests on new customers, grandfathering existing clients, and gradual rollouts. We monitor key metrics and have rollback plans to ensure revenue protection while gathering valuable pricing insights.
                 </p>
               </div>

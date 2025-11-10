@@ -337,20 +337,20 @@ export default function About() {
       <HeroStackedImages {...heroData} />
       
       {/* Who I work with & Common triggers */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-12 sm:py-16 md:py-24 bg-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-              <div className="space-y-8">
+              <div className="space-y-6 sm:space-y-8">
             <div>
-              <h2 className="text-2xl md:text-3xl font-serif-playfair font-bold text-[#223] mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-3xl font-serif-playfair font-bold text-[#223] mb-4 sm:mb-6">
                 {whoIWorkWith.title}
               </h2>
-              <div className="mb-8">
-                <p className="text-lg text-[#4b636e] font-light leading-relaxed mb-8">
+              <div className="mb-6 sm:mb-8">
+                <p className="text-base sm:text-lg text-[#4b636e] font-light leading-relaxed mb-6 sm:mb-8">
                   {whoIWorkWith.content} <strong className="font-semibold text-[#223]">{whoIWorkWith.contentBold}</strong> {whoIWorkWith.contentAfter}
                 </p>
                 
                 {/* Tech Types as inline badges */}
-                <div className="flex flex-wrap items-center justify-center gap-3 my-8">
+                <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 my-6 sm:my-8">
                   {whoIWorkWith.techTypes.map((tech, index) => (
                     <div key={index} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-50 border border-[#e5e7eb]">
                       <div className="flex-shrink-0 w-5 h-5 flex items-center justify-center">
@@ -367,14 +367,14 @@ export default function About() {
             </div>
 
               <div>
-                <h3 className="text-lg font-semibold text-[#223] mb-6">Common triggers</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <h3 className="text-base sm:text-lg font-semibold text-[#223] mb-4 sm:mb-6">Common triggers</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                   {whoIWorkWith.triggers.map((trigger, index) => (
-                    <div key={index} className="bg-gray-50 rounded-lg p-6 border border-[#e5e7eb] shadow-sm text-center flex flex-col items-center space-y-4 hover:shadow-md transition-shadow">
+                    <div key={index} className="bg-gray-50 rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm text-center flex flex-col items-center space-y-3 sm:space-y-4 hover:shadow-md transition-shadow">
                       <div className="flex items-center justify-center">
                         {trigger.icon}
                       </div>
-                      <p className="text-base text-[#4b636e] font-light leading-relaxed">
+                      <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
                         {trigger.text}
                       </p>
                   </div>
@@ -387,25 +387,25 @@ export default function About() {
       </section>
 
       {/* What I focus on */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-24 bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-serif-playfair font-bold text-[#223] mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-3xl font-serif-playfair font-bold text-[#223] mb-8 sm:mb-12 text-center">
             What I focus on
                     </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {whatIFocusOn.map((focus, index) => (
               <Link 
                 key={index} 
                 href={focus.link}
-                className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm space-y-4 hover:shadow-md hover:border-[#06b6d4] transition-all duration-200 block"
+                className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm space-y-3 sm:space-y-4 hover:shadow-md hover:border-[#06b6d4] transition-all duration-200 block"
               >
-                <div className="w-12 h-12 flex items-center justify-center mb-2">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mb-2">
                   {focus.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-[#223]">
+                <h3 className="text-lg sm:text-xl font-semibold text-[#223]">
                   {focus.title}
                 </h3>
-                <p className="text-base text-[#4b636e] font-light leading-relaxed">
+                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
                   {focus.description}
                 </p>
               </Link>
@@ -415,24 +415,24 @@ export default function About() {
       </section>
 
       {/* Selected outcomes */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-12 sm:py-16 md:py-24 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-serif-playfair font-bold text-[#223] mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-3xl font-serif-playfair font-bold text-[#223] mb-8 sm:mb-12 text-center">
             Selected outcomes
           </h2>
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {selectedOutcomes.map((outcome, index) => (
-              <div key={index} className="bg-gray-50 rounded-lg p-6 border border-[#e5e7eb] space-y-2">
-                <h3 className="text-lg font-semibold text-[#223]">
+              <div key={index} className="bg-gray-50 rounded-lg p-5 sm:p-6 border border-[#e5e7eb] space-y-2">
+                <h3 className="text-base sm:text-lg font-semibold text-[#223]">
                   {outcome.title}
                 </h3>
                 <p 
-                  className="text-base text-[#4b636e] font-light leading-relaxed"
+                  className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed"
                   dangerouslySetInnerHTML={{ __html: outcome.description }}
                 />
               </div>
             ))}
-            <p className="text-sm text-[#4b636e] font-light italic mt-6 text-center">
+            <p className="text-xs sm:text-sm text-[#4b636e] font-light italic mt-4 sm:mt-6 text-center">
               {outcomeNote}
             </p>
           </div>
@@ -440,49 +440,49 @@ export default function About() {
       </section>
 
       {/* How we'll work */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-24 bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Column - Process Content */}
-            <div className="space-y-8">
-              <h2 className="text-2xl md:text-3xl font-serif-playfair font-bold text-[#223] leading-tight">
+            <div className="space-y-6 sm:space-y-8">
+              <h2 className="text-2xl sm:text-3xl md:text-3xl font-serif-playfair font-bold text-[#223] leading-tight">
                 How we'll work
               </h2>
-              <p className="text-lg text-[#4b636e] font-light leading-relaxed">
+              <p className="text-base sm:text-lg text-[#4b636e] font-light leading-relaxed">
                 {howWeWork.intro}
               </p>
               
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {howWeWork.principles.map((principle, index) => (
                   <div key={principle.number} className="space-y-2">
-                    <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-[#06b6d4] text-white rounded-full flex items-center justify-center text-sm font-semibold">
+                    <div className="flex items-start space-x-3 sm:space-x-4">
+                      <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-[#06b6d4] text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-semibold">
                         {principle.number}
                       </div>
                       <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-[#223] mb-1">
+                        <h4 className="text-base sm:text-lg font-semibold text-[#223] mb-1">
                           {principle.title}
                         </h4>
-                        <p className="text-base text-[#4b636e] font-light leading-relaxed">
+                        <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
                           {principle.description}
                         </p>
                       </div>
                     </div>
                     {index < howWeWork.principles.length - 1 && (
-                      <div className="ml-4 w-px h-6 bg-gray-200"></div>
+                      <div className="ml-3.5 sm:ml-4 w-px h-4 sm:h-6 bg-gray-200"></div>
                     )}
                   </div>
                 ))}
               </div>
               
-              <p className="text-lg text-[#4b636e] font-light leading-relaxed pt-4 border-t border-gray-200">
+              <p className="text-base sm:text-lg text-[#4b636e] font-light leading-relaxed pt-4 border-t border-gray-200">
                 {howWeWork.outcome}
               </p>
             </div>
 
             {/* Right Column - Process Image */}
-            <div className="relative">
-              <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative order-first lg:order-last">
+              <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src="/images/processSteps.webp"
                   alt="Strategic pricing process and business meeting"
@@ -497,16 +497,16 @@ export default function About() {
       </section>
 
       {/* My path here */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-12 sm:py-16 md:py-24 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-serif-playfair font-bold text-[#223] mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-3xl font-serif-playfair font-bold text-[#223] mb-6 sm:mb-8">
             {myPathHere.title}
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {myPathHere.content.map((paragraph, index) => (
               <p 
                 key={index} 
-                className="text-base text-[#4b636e] font-light leading-relaxed"
+                className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed"
                 dangerouslySetInnerHTML={{ __html: paragraph }}
               />
             ))}
@@ -515,16 +515,16 @@ export default function About() {
       </section>
 
       {/* Where I work */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-24 bg-gray-50">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-serif-playfair font-bold text-[#223] mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-3xl font-serif-playfair font-bold text-[#223] mb-4 sm:mb-6">
             {whereIWork.title}
           </h2>
-          <div className="space-y-3">
+          <div className="space-y-2 sm:space-y-3">
             {whereIWork.content.map((item, index) => (
               <p 
                 key={index} 
-                className="text-base text-[#4b636e] font-light leading-relaxed"
+                className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed"
                 dangerouslySetInnerHTML={{ __html: item }}
               />
             ))}
