@@ -5,6 +5,20 @@ import { BookOpen, Users, Network, Tag, Calendar } from 'lucide-react';
 export const metadata: Metadata = {
   title: "The Startup Monetization Roadmap | Free Download | Sarah Zou",
   description: "A step-by-step playbook to go from zero to first dollar—value-based, investor-grade. Get the 4-phase system, interview scripts, pricing architecture, and 30-60-90 action plan.",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: "https://sarahzou.com/cheat-sheets",
+  },
   openGraph: {
     title: "The Startup Monetization Roadmap | Free Download | Sarah Zou",
     description: "A step-by-step playbook to go from zero to first dollar—value-based, investor-grade. Get the 4-phase system, interview scripts, pricing architecture, and 30-60-90 action plan.",
@@ -15,9 +29,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Startup Monetization Roadmap | Free Download | Sarah Zou",
     description: "A step-by-step playbook to go from zero to first dollar—value-based, investor-grade. Get the 4-phase system, interview scripts, pricing architecture, and 30-60-90 action plan.",
-  },
-  alternates: {
-    canonical: "https://sarahzou.com/cheat-sheets",
   },
 };
 

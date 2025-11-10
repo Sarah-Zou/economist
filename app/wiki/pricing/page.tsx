@@ -7,6 +7,17 @@ import CategoryCard from '@/components/wiki/CategoryCard';
 export const metadata: Metadata = {
   title: 'Pricing & Monetization Wiki | Sarah Zou',
   description: 'An evidence-based encyclopedia of pricing & monetization concepts for tech startups—definitions, applications, pitfalls, and metrics.',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   alternates: {
     canonical: 'https://sarahzou.com/wiki/pricing'
   },
@@ -16,7 +27,12 @@ export const metadata: Metadata = {
     url: 'https://sarahzou.com/wiki/pricing',
     siteName: 'Sarah Zou',
     type: 'website'
-  }
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pricing & Monetization Wiki',
+    description: 'An evidence-based encyclopedia of pricing & monetization concepts for tech startups—definitions, applications, pitfalls, and metrics.',
+  },
 };
 
 

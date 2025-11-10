@@ -12,7 +12,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "export": "next export",
-    "postbuild": "next-sitemap",
+    "postbuild": "node scripts/generate-sitemap-index.js",
+    "validate-sitemap": "node scripts/validate-sitemap-urls.js",
     "analyze": "ANALYZE=true npm run build"
   },
   "dependencies": {

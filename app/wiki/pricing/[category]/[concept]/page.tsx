@@ -55,6 +55,17 @@ export async function generateMetadata({ params }: ConceptPageProps): Promise<Me
   return {
     title: `${conceptName} | ${category.title} | Pricing Wiki`,
     description,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
     alternates: {
       canonical: `https://sarahzou.com/wiki/pricing/${params.category}/${params.concept}`
     },
@@ -64,7 +75,12 @@ export async function generateMetadata({ params }: ConceptPageProps): Promise<Me
       url: `https://sarahzou.com/wiki/pricing/${params.category}/${params.concept}`,
       siteName: 'Sarah Zou',
       type: 'article'
-    }
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${conceptName} | ${category.title}`,
+      description,
+    },
   };
 }
 

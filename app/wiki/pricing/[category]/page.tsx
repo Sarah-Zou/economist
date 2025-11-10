@@ -31,6 +31,17 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   return {
     title: `${category.title} | Pricing Wiki`,
     description: category.summary,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
     alternates: {
       canonical: category.canonical
     },
@@ -40,7 +51,12 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
       url: category.canonical,
       siteName: 'Sarah Zou',
       type: 'article'
-    }
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: category.title,
+      description: category.summary,
+    },
   };
 }
 
