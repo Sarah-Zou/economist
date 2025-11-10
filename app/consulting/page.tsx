@@ -243,8 +243,8 @@ function ConsultingContent() {
                   <div className={`p-8 lg:p-10 flex flex-col justify-between ${isMetricsSprint ? 'order-1' : 'order-2'}`}>
                     <div>
                       <h3 className="font-serif-playfair text-3xl font-bold text-[#223] mb-4">
-                        {service.title}
-                      </h3>
+                          {service.title}
+                        </h3>
                       <p className="text-base text-[#4b636e] font-light mb-6 leading-relaxed">
                         {service.description}
                       </p>

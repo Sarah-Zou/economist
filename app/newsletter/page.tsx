@@ -18,8 +18,11 @@ function SubstackFeed() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
-  useEffect(() => {
-    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://sarahzou.substack.com/feed')
+  const fetchPosts = () => {
+    setLoading(true);
+    setError(null);
+    // Add cache-busting parameter to ensure fresh data
+    fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://sarahzou.substack.com/feed&_=${Date.now()}`)
       .then(res => res.json())
       .then(data => {
         if (!data.items) throw new Error('No posts found');
@@ -38,10 +41,33 @@ function SubstackFeed() {
         setError('Could not load posts.');
         setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    fetchPosts();
   }, []);
 
-  if (loading) return null;
-  if (error) return null;
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-8">
+        <p className="text-gray-500">Loading newsletter posts...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex flex-col items-center justify-center py-8 gap-4">
+        <p className="text-gray-500">{error}</p>
+        <button
+          onClick={fetchPosts}
+          className="px-4 py-2 bg-[#ff5722] text-white rounded-full hover:bg-[#e64a19] transition-colors"
+        >
+          Retry
+        </button>
+      </div>
+    );
+  }
 
   return (
     <section id="substack-feed" className="flex flex-col gap-8 w-full max-w-2xl mx-auto">
