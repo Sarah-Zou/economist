@@ -451,7 +451,7 @@ export default function FractionalChiefEconomistRetainer() {
                 <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-6">How This Fits With My Sprints</h2>
                 <ul className="space-y-4">
                   {[
-                    <><strong>Monetization Sprint</strong> → sets price/pack/policy decisions.</>,
+                    <><strong>Pricing & Monetization Sprint</strong> → sets price/pack/policy decisions.</>,
                     <><strong>Metrics & Experimentation Sprint</strong> → installs the KPI loop.</>,
                     <><strong>Retainer</strong> → keeps the machine honest: iterate pricing, run tests, maintain forward models, and stay investor-ready.</>
                   ].map((item, idx) => (

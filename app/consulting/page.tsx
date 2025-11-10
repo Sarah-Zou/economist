@@ -134,7 +134,7 @@ function ConsultingContent() {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "Monetization & Unit-Economics Sprint",
+                      "name": "Pricing & Monetization Sprint",
                       "description": "Pricing metric, 3-tier package + fences, list/discount curves, GM/payback scenarios, 90-day experiments. Best for Pre-seed to A companies."
                     }
                   },
@@ -285,6 +285,118 @@ function ConsultingContent() {
             </div>
           </div>
           )}
+
+          {/* Comparison Table */}
+          <div className="max-w-6xl mx-auto mb-16">
+            <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold mb-8 text-center text-[#223]">
+              Compare Services
+            </h2>
+            <div className="bg-white rounded-2xl border border-[#e5e7eb] shadow-sm overflow-hidden overflow-x-auto">
+              <table className="w-full min-w-[700px]">
+                <thead>
+                  <tr className="bg-[#f6f7f9] border-b-2 border-[#e5e7eb]">
+                    <th className="text-left py-4 px-4 font-semibold text-[#223]">Service</th>
+                    <th className="text-left py-4 px-4 font-semibold text-[#223]">Who it's for</th>
+                    <th className="text-left py-4 px-4 font-semibold text-[#223]">Time</th>
+                    <th className="text-left py-4 px-4 font-semibold text-[#223]">Outcomes</th>
+                    <th className="text-left py-4 px-4 font-semibold text-[#223]">Key deliverables</th>
+                    <th className="text-left py-4 px-4 font-semibold text-[#223]">Price</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[#e5e7eb]">
+                  {/* Pricing & Monetization Sprint */}
+                  <tr className="hover:bg-gray-50 transition-colors">
+                    <td className="py-5 px-4">
+                      <a href="/consulting/services/pricing-monetization-sprint" className="font-bold text-base text-[#06b6d4] hover:text-[#0891b2] transition-colors">
+                        Pricing & Monetization Sprint
+                      </a>
+                    </td>
+                    <td className="py-5 px-4">
+                      <p className="text-sm text-[#4b636e] font-light">
+                        Founders needing first price or pricing reset.
+                      </p>
+                    </td>
+                    <td className="py-5 px-4">
+                      <p className="text-sm text-[#4b636e] font-light">1–2 weeks</p>
+                    </td>
+                    <td className="py-5 px-4">
+                      <p className="text-sm text-[#4b636e] font-light">
+                        Value-based pricing model, unit-economics snapshot, 30-day rollout plan.
+                      </p>
+                    </td>
+                    <td className="py-5 px-4">
+                      <p className="text-sm text-[#4b636e] font-light">
+                        Strategy report, unit economics model, discount guardrails.
+                      </p>
+                    </td>
+                    <td className="py-5 px-4">
+                      <p className="text-sm font-semibold text-[#223]">$5K–$18K</p>
+                    </td>
+                  </tr>
+
+                  {/* Metrics & Experimentation Sprint */}
+                  <tr className="hover:bg-gray-50 transition-colors">
+                    <td className="py-5 px-4">
+                      <a href="/consulting/services/metrics-experimentation-sprint" className="font-bold text-base text-[#06b6d4] hover:text-[#0891b2] transition-colors">
+                        Metrics & Experimentation Sprint
+                      </a>
+                    </td>
+                    <td className="py-5 px-4">
+                      <p className="text-sm text-[#4b636e] font-light">
+                        Early-stage teams needing KPI system and experimentation loop.
+                      </p>
+                    </td>
+                    <td className="py-5 px-4">
+                      <p className="text-sm text-[#4b636e] font-light">1-2 weeks</p>
+                    </td>
+                    <td className="py-5 px-4">
+                      <p className="text-sm text-[#4b636e] font-light">
+                        Live metrics dashboard, experimentation playbook, clear decision cadence.
+                      </p>
+                    </td>
+                    <td className="py-5 px-4">
+                      <p className="text-sm text-[#4b636e] font-light">
+                        North Star + metric tree, live dashboards, experiment backlog, test briefs.
+                      </p>
+                    </td>
+                    <td className="py-5 px-4">
+                      <p className="text-sm font-semibold text-[#223]">$6K–$12K</p>
+                    </td>
+                  </tr>
+
+                  {/* Fractional Chief Economist (Retainer) */}
+                  <tr className="hover:bg-gray-50 transition-colors">
+                    <td className="py-5 px-4">
+                      <a href="/consulting/services/on-call-economist-retainer" className="font-bold text-base text-[#06b6d4] hover:text-[#0891b2] transition-colors">
+                        Fractional Chief Economist (Retainer)
+                      </a>
+                    </td>
+                    <td className="py-5 px-4">
+                      <p className="text-sm text-[#4b636e] font-light">
+                        Seed → Series A teams with active experiments or upcoming fundraise.
+                      </p>
+                    </td>
+                    <td className="py-5 px-4">
+                      <p className="text-sm text-[#4b636e] font-light">Monthly (3-month min)</p>
+                    </td>
+                    <td className="py-5 px-4">
+                      <p className="text-sm text-[#4b636e] font-light">
+                        Monthly decisions shipped, forward view, investor-grade narrative.
+                      </p>
+                    </td>
+                    <td className="py-5 px-4">
+                      <p className="text-sm text-[#4b636e] font-light">
+                        Board Pack, pricing updates, experiment docket, forecast workbook.
+                      </p>
+                    </td>
+                    <td className="py-5 px-4">
+                      <p className="text-sm font-semibold text-[#223]">$4K–$15K/mo</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
 
           {/* FAQ Section */}
           <div className="max-w-4xl mx-auto mb-16" id="faq">

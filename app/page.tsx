@@ -77,7 +77,7 @@ export default function Home() {
       "Early-Stage Monetization",
       "Value-Based Pricing",
       "Revenue Optimization",
-      "Fractional Economics"
+      "Fractional Chief Economist"
     ]
   };
 
@@ -91,9 +91,9 @@ export default function Home() {
         <HeroStackedImages
           photoSrc="/images/headshot_v2.webp"
           bgSrc="/images/background.webp"
-          kicker="FRACTIONAL CHIEF ECONOMIST"
-          title="PhD economist for early-stage tech"
-          lede="With 10+ years in quantitative modeling, applied research, and strategy & operations, I help founders design monetization, prove unit economics, instrument the right metrics, and extend runway. Get evidence-based decisions fast—without hiring a full-time team."
+          kicker="PHD ECONOMIST"
+          title="Fractional Chief Economist for Tech"
+          lede="Pricing, metrics, and economic storytelling for founders who need investor-grade decisions fast."
           photoAlt="Dr. Sarah Zou, PhD economist for early-stage tech"
           primaryCta={{
             text: "Book a 30-min Free Consult",
@@ -178,7 +178,7 @@ export default function Home() {
             Fractional Chief Economist for early-stage tech startups. I turn pricing + unit economics + rigorous modeling into investor-grade decisions.
           </p>
           <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 mb-10">
-            {/* Card 1: Monetization & Unit-Economics Sprint */}
+            {/* Card 1: Pricing & Monetization Sprint */}
             <a href="/consulting/services/pricing-monetization-sprint" className="block group">
               <div 
                 className="relative h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"

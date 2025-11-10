@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 import FAQSection from './FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Pricing & Monetization Strategy Sprint | 5-Day Pricing Strategy | Dr. Sarah Zou',
+  title: 'Pricing & Monetization Sprint | 5-Day Pricing Strategy | Dr. Sarah Zou',
   description: 'Land your value metric, 3-tier pricing, discount guardrails, and rollout plan in 5 business days—or get one extra week at no fee. For early-stage tech founders (Pre-Seed → Series A).',
   robots: {
     index: true,
@@ -21,14 +21,14 @@ export const metadata: Metadata = {
     canonical: 'https://sarahzou.com/consulting/services/pricing-monetization-sprint',
   },
   openGraph: {
-    title: 'Pricing & Monetization Strategy Sprint | Sarah Zou',
+    title: 'Pricing & Monetization Sprint | Sarah Zou',
     description: 'Land your value metric, 3-tier pricing, discount guardrails, and rollout plan in 5 business days—or get one extra week at no fee.',
     type: 'website',
     url: 'https://sarahzou.com/consulting/services/pricing-monetization-sprint',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing & Monetization Strategy Sprint | Sarah Zou',
+    title: 'Pricing & Monetization Sprint | Sarah Zou',
     description: 'Land your value metric, 3-tier pricing, discount guardrails, and rollout plan in 5 business days—or get one extra week at no fee.',
   },
 };
@@ -249,7 +249,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     <th className="text-left py-4 px-4 font-semibold text-[#223]">Feature</th>
                     <th className="text-center py-4 px-4 font-semibold text-[#223]">Doing Nothing</th>
                     <th className="text-center py-4 px-4 font-semibold text-[#223]">Hire Full-Time</th>
-                    <th className="text-center py-4 px-4 font-semibold text-[#223] bg-[#eef2ff] rounded-t-lg">Monetization Sprint</th>
+                    <th className="text-center py-4 px-4 font-semibold text-[#223] bg-[#eef2ff] rounded-t-lg">Pricing & Monetization Sprint</th>
                   </tr>
                 </thead>
                 <tbody>

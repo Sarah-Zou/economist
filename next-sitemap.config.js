@@ -5,16 +5,6 @@ module.exports = {
   generateIndexSitemap: false,
   exclude: [
     '/api/*',
-    '/consulting/services/price-change-comms-playbook',
-    '/consulting/services/pricing-optimization-retainer',
-    '/consulting/services/investor-updates-automation-kit',
-    '/consulting/services/investor-monetization-pitch-kit',
-    '/consulting/services/investor-deck-accelerator',
-    '/consulting/services/runway-scenario-model',
-    '/consulting/services/profitability-simulator',
-    '/consulting/services/competitive-benchmark-insights',
-    '/consulting/services/rapid-pricing-experiment-toolkit',
-    '/consulting/services/value-based-monetization-design',
   ],
   robotsTxtOptions: {
     policies: [

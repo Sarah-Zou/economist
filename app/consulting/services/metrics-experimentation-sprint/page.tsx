@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 import FAQSection from './FAQSection';
 
 export const metadata: Metadata = {
-  title: 'Unlock Growth with Metrics & Experimentation Sprint | Dr. Sarah Zou',
+  title: 'Metrics & Experimentation Sprint | Dr. Sarah Zou',
   description: 'A one-week intensive sprint for early-stage teams to stand up a working KPI system and a repeatable experimentation loop that lifts conversion and ARPU.',
   robots: {
     index: true,
@@ -21,14 +21,14 @@ export const metadata: Metadata = {
     canonical: 'https://sarahzou.com/consulting/services/metrics-experimentation-sprint',
   },
   openGraph: {
-    title: 'Unlock Growth with Metrics & Experimentation Sprint | Sarah Zou',
+    title: 'Metrics & Experimentation Sprint | Sarah Zou',
     description: 'A one-week intensive sprint for early-stage teams to stand up a working KPI system and a repeatable experimentation loop that lifts conversion and ARPU.',
     type: 'website',
     url: 'https://sarahzou.com/consulting/services/metrics-experimentation-sprint',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Unlock Growth with Metrics & Experimentation Sprint | Sarah Zou',
+    title: 'Metrics & Experimentation Sprint | Sarah Zou',
     description: 'A one-week intensive sprint for early-stage teams to stand up a working KPI system and a repeatable experimentation loop that lifts conversion and ARPU.',
   },
 };
@@ -416,7 +416,7 @@ export default function MetricsExperimentationSprint() {
                 },
                 { 
                   title: 'Pricing Variant Pack', 
-                  desc: 'Price/pack/plan A/Bs aligned with Monetization Sprint',
+                  desc: 'Price/pack/plan A/Bs aligned with Pricing & Monetization Sprint',
                   icon: (
                     <svg className="w-6 h-6 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
