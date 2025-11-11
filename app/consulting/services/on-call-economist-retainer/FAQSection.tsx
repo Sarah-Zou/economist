@@ -1,82 +1,40 @@
-'use client';
-
-import { useState } from 'react';
+import Link from 'next/link';
 
 export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const faqs = [
-    { 
-      q: 'What\'s the difference between Lite, Core, and Growth?', 
-      a: 'Lite is guidance-focused (reviews, test design, investor prep). Core adds ownership of pricing roadmap, experiment backlog, and monthly Board Packs with models. Growth includes full monetization + forecasting + capital plan ownership, quarterly pricing resets, and co-leading fundraise economics.' 
-    },
-    { 
-      q: 'Can I upgrade or downgrade plans?', 
-      a: 'Yes, with 30 days notice. We\'ll adjust deliverables and billing accordingly. The 3-month minimum applies to your initial plan selection.' 
-    },
-    { 
-      q: 'What if I need more time in a given month?', 
-      a: 'Growth tier includes priority async support. For Lite/Core, we can add project hours or move to a higher tier. Same-day response is standard for Growth; 1–2 business days for Lite/Core.' 
-    },
-    { 
-      q: 'Do you work with our existing tools?', 
-      a: 'Yes—I work with your current stack (Amplitude, Mixpanel, GA4, HubSpot/CRM, spreadsheets/BI, forecasting tools). No new infrastructure required.' 
-    },
-    { 
-      q: 'What happens during onboarding?', 
-      a: 'Week 0–2: We align on scope & access, establish baseline metrics, identify quick-win pricing/test opportunities, and deliver your first Board Pack. This sets the foundation for ongoing cadence.' 
-    },
-    { 
-      q: 'How does this work with your sprints?', 
-      a: 'Sprints set the foundation (pricing decisions, KPI loop). The retainer keeps it running: iterate pricing, run tests, maintain forward models, and stay investor-ready month-to-month.' 
-    },
-    { 
-      q: 'What if we need to pause?', 
-      a: '30 days notice required. We\'ll complete any in-flight deliverables and provide a handoff summary. You can resume anytime.' 
-    }
-  ];
-
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   return (
     <section>
       <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-8 text-center">Frequently Asked Questions</h2>
       <div className="space-y-4 max-w-3xl mx-auto">
-        {faqs.map((faq, idx) => {
-          const isOpen = openIndex === idx;
-          return (
-            <div key={idx} className="bg-white rounded-lg border border-[#e5e7eb] shadow-sm overflow-hidden">
-              <button
-                type="button"
-                onClick={() => toggleFAQ(idx)}
-                className="w-full p-6 flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer text-left"
-                aria-expanded={isOpen}
-                aria-controls={`faq-answer-${idx}`}
-              >
-                <h3 className="font-semibold text-base text-[#223] pr-4 flex-1">{faq.q}</h3>
-                <svg 
-                  className={`w-5 h-5 text-[#4b636e] flex-shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {isOpen && (
-                <div 
-                  id={`faq-answer-${idx}`}
-                  className="px-6 pb-6 animate-in fade-in duration-200"
-                >
-                  <p className="text-base text-[#4b636e] font-light">{faq.a}</p>
-                </div>
-              )}
-            </div>
-          );
-        })}
+        <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+          <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">What's the difference between Starter, Growth, and Scale?</h3>
+          <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+            Time/attention and depth. Starter (~0.5 d/wk, $4k/mo) focuses on guidance; Growth (~1 d/wk, $8k/mo) runs active experiments; Scale (~2 d/wk, $15k/mo) handles complex monetization and fundraise prep. See <Link href="/consulting/services/on-call-economist-retainer" className="text-[#ff5722] hover:underline">pricing tiers</Link>.
+          </p>
+        </div>
+        <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+          <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">Can we upgrade/downgrade or pause?</h3>
+          <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+            Yes—plans are flexible as needs change (e.g., ramp up pre-fundraise, step down post-launch).
+          </p>
+        </div>
+        <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+          <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">What happens during onboarding?</h3>
+          <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+            Week 0–2: scope + access → baseline metrics → first pricing/test move → first Economist's Board Pack.
+          </p>
+        </div>
+        <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+          <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">What do you own each month?</h3>
+          <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+            Pricing moves/tests, forward models (NRR/LTV/GM bridges, runway), an <strong>Economist's Board Pack</strong>, and a learning loop with readouts → next bets.
+          </p>
+        </div>
+        <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+          <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">Do you work with our existing tools and teams?</h3>
+          <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+            Yes—Marketing/Sales, Product/Data, and Finance/Planning are included in your operating cadence.
+          </p>
+        </div>
       </div>
     </section>
   );

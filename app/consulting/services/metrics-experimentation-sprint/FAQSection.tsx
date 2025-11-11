@@ -1,78 +1,34 @@
-'use client';
-
-import { useState } from 'react';
+import Link from 'next/link';
 
 export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const faqs = [
-    { 
-      q: 'We have almost no data. Will this still work?', 
-      a: 'Yes—Lite/Core focus on a minimal KPI loop and scrappy exports while creating the event patch list.' 
-    },
-    { 
-      q: 'Which tools do you use?', 
-      a: 'I work with your current stack (Amplitude, Mixpanel, GA4, HubSpot/CRM, spreadsheets/BI). No new warehouse is required for the sprint.' 
-    },
-    { 
-      q: 'What if our data is messy?', 
-      a: 'We document gaps and create a "track-now vs. track-later" patch list; optional instrumentation support is available.' 
-    },
-    { 
-      q: 'How do you ensure tests are ethical and customer-positive?', 
-      a: 'We define guardrails, exposure limits, and pass/fail thresholds up front; customer comms are included where needed.' 
-    },
-    { 
-      q: 'What do you need from us?', 
-      a: 'A data/PM owner, exports or view access, and attendance from Founder + PM + GTM in the two workshops.' 
-    },
-    { 
-      q: 'How are payments handled?', 
-      a: '70% at kickoff, 30% at readout. Guarantee applies if listed outcomes aren\'t achieved in Week 1.' 
-    }
-  ];
-
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   return (
     <section>
       <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-8 text-center">Frequently Asked Questions</h2>
       <div className="space-y-4 max-w-3xl mx-auto">
-        {faqs.map((faq, idx) => {
-          const isOpen = openIndex === idx;
-          return (
-            <div key={idx} className="bg-white rounded-lg border border-[#e5e7eb] shadow-sm overflow-hidden">
-              <button
-                type="button"
-                onClick={() => toggleFAQ(idx)}
-                className="w-full p-6 flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer text-left"
-                aria-expanded={isOpen}
-                aria-controls={`faq-answer-${idx}`}
-              >
-                <h3 className="font-semibold text-base text-[#223] pr-4 flex-1">{faq.q}</h3>
-                <svg 
-                  className={`w-5 h-5 text-[#4b636e] flex-shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {isOpen && (
-                <div 
-                  id={`faq-answer-${idx}`}
-                  className="px-6 pb-6 animate-in fade-in duration-200"
-                >
-                  <p className="text-base text-[#4b636e] font-light">{faq.a}</p>
-                </div>
-              )}
-            </div>
-          );
-        })}
+        <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+          <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">We have almost no data. Will this still work?</h3>
+          <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+            Yes. I install a minimal KPI loop, define your metric tree, and set thresholds so you can make decisions immediately.
+          </p>
+        </div>
+        <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+          <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">Which tools do you use?</h3>
+          <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+            I integrate with your stack; common setups include GTM/GA/Amplitude/Mixpanel, plus a light instrumentation add-on if needed.
+          </p>
+        </div>
+        <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+          <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">What if our data is messy?</h3>
+          <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+            I deliver an event patch list and governance basics so dashboards stay trustworthy and actionable.
+          </p>
+        </div>
+        <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+          <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">What exactly do we get?</h3>
+          <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+            Founders + GTM/Product <strong>dashboards</strong>, <strong>KPI glossary + thresholds</strong>, <strong>experiment backlog</strong> and <strong>test briefs</strong>, and a 30-day plan with check-in. See <Link href="/consulting/services/metrics-experimentation-sprint" className="text-[#ff5722] hover:underline">deliverables</Link>.
+          </p>
+        </div>
       </div>
     </section>
   );

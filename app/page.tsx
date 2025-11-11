@@ -171,39 +171,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What is a fractional chief economist?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "A fractional chief economist is a part-time economic advisor who brings PhD-level expertise to your pricing, metrics, and growth strategy without the cost of a full-time hire."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How quickly can you impact our pricing?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Most clients see initial pricing improvements within 2-4 weeks. Our Pricing Quickstart delivers a complete strategy and test plan in just 14 days."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What makes your approach different?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "I combine academic rigor with startup speed. Every recommendation is backed by data, tested with experiments, and designed for your specific market dynamics."
-              }
-            }
-          ]
-        }) }}
-      />
       <div>
         <HeroStackedImages
           photoSrc="/images/headshot_v2.webp"
@@ -419,36 +386,159 @@ export default function Home() {
             </h2>
             <div className="space-y-4 sm:space-y-6">
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3 text-[#223]">What is a fractional chief economist?</h3>
-                <p className="text-sm sm:text-base text-[#4b636e] font-light mb-2 sm:mb-3">
-                  A fractional chief economist is a part-time economic advisor who brings PhD-level expertise to your pricing, metrics, and growth strategy without the cost of a full-time hire.
+                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">What is a fractional chief economist?</h3>
+                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                  A fractional chief economist is a part-time executive who designs your pricing system, unit economics, and decision cadence—bringing PhD-level rigor without a full-time hire. Learn more about <a href="/about" className="text-[#ff5722] hover:underline">fractional economics services</a>.
                 </p>
-                <a href="/consulting#faq" className="text-sm sm:text-base text-[#ff5722] font-medium hover:text-[#e44e1f] hover:underline transition-colors">
-                  Learn more about fractional economics →
-                </a>
               </div>
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3 text-[#223]">How quickly can you impact our pricing?</h3>
-                <p className="text-sm sm:text-base text-[#4b636e] font-light mb-2 sm:mb-3">
-                  Most clients see initial pricing improvements within 2-4 weeks. Our Pricing Quickstart delivers a complete strategy and test plan in just 14 days.
+                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">How is a Fractional Chief Economist different from a Fractional CFO?</h3>
+                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                  A fractional CFO manages cash, reporting, controls, and fundraising mechanics. A fractional chief economist designs the engines that create cash—pricing, packaging, and the economic system that drives NRR, payback, and gross margin.
                 </p>
-                <a href="/consulting#faq" className="text-sm sm:text-base text-[#ff5722] font-medium hover:text-[#e44e1f] hover:underline transition-colors">
-                  See our pricing services →
-                </a>
               </div>
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3 text-[#223]">What makes your approach different?</h3>
-                <p className="text-sm sm:text-base text-[#4b636e] font-light mb-2 sm:mb-3">
-                  I combine academic rigor with startup speed. Every recommendation is backed by data, tested with experiments, and designed for your specific market dynamics.
+                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">How is a Fractional Chief Economist different from RevOps?</h3>
+                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                  RevOps optimizes the GTM machine (CRM hygiene, pipeline stages, handoffs, comp plans). A fractional chief economist defines what you sell and why it's worth the price (value metric, fences, monetization playbook) and then sets the economic guardrails RevOps executes against.
                 </p>
-                <a href="/consulting#faq" className="text-sm sm:text-base text-[#ff5722] font-medium hover:text-[#e44e1f] hover:underline transition-colors">
-                  Explore our methodology →
-                </a>
+              </div>
+              <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">Who do you work with?</h3>
+                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                  Pre-seed to Series A teams across SaaS, APIs, AI, OSS-commercial, operator-led marketplaces, and hardware-as-a-service that want rigor without enterprise bloat. See <a href="/about" className="text-[#ff5722] hover:underline">who I work with</a>.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">How fast do we see impact?</h3>
+                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                  Decisions ship in 1–2 weeks via focused <a href="/consulting/services/pricing-monetization-sprint" className="text-[#ff5722] hover:underline">Monetization Sprints</a> or <a href="/consulting/services/metrics-experimentation-sprint" className="text-[#ff5722] hover:underline">Metrics Sprints</a>, with measurable effects typically within 2–4 weeks and a 90-day experiment plan to learn fast.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">What makes your approach different?</h3>
+                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                  Combine pricing + unit economics + econometrics in one person; every recommendation is hypothesis-driven, documented, and testable, producing board-ready artifacts like pricing strategy reports and unit-economics models.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">What do engagements look like?</h3>
+                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                  Start with a 30-min consult → choose a <a href="/consulting/services/pricing-monetization-sprint" className="text-[#ff5722] hover:underline">Monetization Sprint</a> or <a href="/consulting/services/metrics-experimentation-sprint" className="text-[#ff5722] hover:underline">Metrics Sprint</a> → optional <a href="/consulting/services/on-call-economist-retainer" className="text-[#ff5722] hover:underline">retainer</a> for ongoing pricing, forward models, and the experiment cadence.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">What does it cost?</h3>
+                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                  Sprints are fixed-fee ($5k–$18k for <a href="/consulting/services/pricing-monetization-sprint" className="text-[#ff5722] hover:underline">Monetization</a>; $6k–$12k for <a href="/consulting/services/metrics-experimentation-sprint" className="text-[#ff5722] hover:underline">Metrics</a>) with defined deliverables and timelines. <a href="/consulting/services/on-call-economist-retainer" className="text-[#ff5722] hover:underline">Retainers</a> start at $4k/mo with tiered time commitments.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">Do you work with our existing analytics stack?</h3>
+                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                  Yes—common tools include GTM, GA, Amplitude, and Mixpanel. I integrate with your stack and keep instrumentation "light but correct" so dashboards stay trustworthy.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">Where do you work from?</h3>
+                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                  Remote first; based in Princeton/NJ with on-site availability in the NYC and Philadelphia metros; US/EU coverage. See <a href="/about" className="text-[#ff5722] hover:underline">where I work</a>.
+                </p>
               </div>
             </div>
           </div>
         </section>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "url": "https://sarahzou.com",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is a fractional chief economist?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A fractional chief economist is a part-time executive who designs your pricing system, unit economics, and decision cadence—bringing PhD-level rigor without a full-time hire."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How is a Fractional Chief Economist different from a Fractional CFO?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A fractional CFO manages cash, reporting, controls, and fundraising mechanics. A fractional chief economist designs the engines that create cash—pricing, packaging, and the economic system that drives NRR, payback, and gross margin."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How is a Fractional Chief Economist different from RevOps?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "RevOps optimizes the GTM machine (CRM hygiene, pipeline stages, handoffs, comp plans). A fractional chief economist defines what you sell and why it's worth the price (value metric, fences, monetization playbook) and then sets the economic guardrails RevOps executes against."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Who do you work with?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Pre-seed to Series A teams across SaaS, APIs, AI, OSS-commercial, operator-led marketplaces, and hardware-as-a-service that want rigor without enterprise bloat."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How fast do we see impact?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Decisions ship in 1–2 weeks via focused sprints, with measurable effects typically within 2–4 weeks and a 90-day experiment plan to learn fast."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What makes your approach different?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Combine pricing + unit economics + econometrics in one person; every recommendation is hypothesis-driven, documented, and testable, producing board-ready artifacts like pricing strategy reports and unit-economics models."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What do engagements look like?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Start with a 30-min consult → choose a Sprint (Monetization or Metrics) → optional retainer for ongoing pricing, forward models, and the experiment cadence."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What does it cost?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sprints are fixed-fee ($5k–$18k Monetization; $6k–$12k Metrics) with defined deliverables and timelines. Retainers start at $4k/mo with tiered time commitments."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you work with our existing analytics stack?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes—common tools include GTM, GA, Amplitude, and Mixpanel. I integrate with your stack and keep instrumentation \"light but correct\" so dashboards stay trustworthy."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where do you work from?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Remote first; based in Princeton/NJ with on-site availability in the NYC and Philadelphia metros; US/EU coverage."
+              }
+            }
+          ]
+        }) }}
+      />
     </>
   )
 } 

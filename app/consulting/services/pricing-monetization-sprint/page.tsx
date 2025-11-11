@@ -34,59 +34,8 @@ export const metadata: Metadata = {
 };
 
 export default function PricingDiagnosticRevenueBoost() {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Will this \"work\" if we're pre-revenue?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes—benchmarks + value hypotheses + cost floors give a defendable first price and test plan."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Will customers churn if we raise prices?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We design fences, upgrade paths, and comms to protect retention while lifting yield."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can we switch to usage-based?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "If the value metric supports it and ops allow, you'll get a migration playbook."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What do you need from me to get started?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Founder + PM (and Sales/CS if post-launch) in workshops • Access to pricing page drafts, cost inputs, and recent usage/sales notes • A single decision owner"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How are payments handled?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "70% at kickoff, 30% at readout."
-        }
-      }
-    ]
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <section className="bg-[#f5f8f7] min-h-screen py-0">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         {/* Hero Section */}
@@ -525,6 +474,56 @@ export default function PricingDiagnosticRevenueBoost() {
           {/* FAQs Section */}
             <FAQSection />
           </div>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "url": "https://sarahzou.com/consulting/services/pricing-monetization-sprint",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Will this work if we're pre-revenue?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Pre-revenue or pre-MVP is the perfect timing to start designing your first pricing strategy. The sprint is designed for pre-launch through <$3M ARR to make your first price investor-credible and testable."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Will customers churn if we raise prices?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We pair guardrails with plan fences, run low-risk experiments, and read impact via unit-economics snapshots—minimizing exposure while learning."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can we switch to usage-based?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "If a usage metric truly tracks value, we'll validate the metric, design hybrid fences, and ship a 30-day rollout plan with comms."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What do you need from us to start?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Discovery inputs/data room and a current-state scan, followed by two focused workshops to lock positioning, customer segmentations, value metric, tiers, guardrails, and etc."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What exactly do we get?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A pricing strategy report, unit-economics model, pricing implementation roadmap, experiment briefs, and investor mini-pack—delivered in one to two weeks."
+                  }
+                }
+              ]
+            }) }}
+          />
 
         {/* CTA Section */}
         <div className="max-w-4xl mx-auto mt-16">

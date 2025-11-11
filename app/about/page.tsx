@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import HeroStackedImages from '@/components/HeroStackedImages'
 import Cta from '@/components/about/Cta'
+import FAQSection from '@/components/about/FAQSection'
 
 export const metadata: Metadata = {
   title: "About — Sarah Zou",
@@ -448,6 +449,125 @@ const personSchema = {
   ]
 }
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What problems do you solve most often?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "First price and packaging, price increases with minimal churn, usage vs. tiered model decisions, \"why us/why now\" economics for fundraising, and putting metrics into a weekly decision cadence."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who do you work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pre-seed to Series A SaaS/API/AI and operator-led marketplaces. I'm effective when a founder wants research-grade rigor without big-company bloat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are you different from a fractional CFO, data scientist, or RevOps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CFO manages cash and reporting; I design how you create cash (pricing, margins, NRR). Data science predicts/optimizes; I decide what economic questions matter and set guardrails. RevOps runs GTM processes; I define what you sell, to whom, and at what economics."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's your working style?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Short, high-intensity sprints that ship decisions in 1–2 weeks, followed by a light operating cadence to learn and iterate. Everything is hypothesis-driven, documented, and testable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do engagements look like?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with a 30-min consult → pick a Monetization or Metrics Sprint → optional retainer for ongoing pricing moves, forward models, and experiment cadence. Fixed deliverables, clear timelines."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What deliverables should we expect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A pricing/packaging strategy, unit-economics model, discount/fence policy, experiment briefs, KPI glossary and dashboards, and an Economist's Board Pack for narrative and tracking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work pre-product or pre-revenue?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. I'll define the value metric, design testable tiers, and set decision thresholds so you can launch with confidence and adjust with data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will you integrate with our stack?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes—common tools include GA/GTM, Amplitude/Mixpanel, spreadsheets, and your data warehouse. I keep instrumentation \"light but correct\" so dashboards stay trustworthy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you handle confidentiality and IP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I sign MNDA/MSA; client data stays in your systems; work product is yours. I maintain a conflict log and never cross-pollinate proprietary details."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you train our team?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. I upskill founders and leads on pricing, experimentation, and metric reading, and I can coach a junior analyst to maintain the cadence after the sprint."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where are you based and when are you available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NYC/Princeton area, remote-first with on-site options. I cover US/EU time zones and typically start new sprints within 1–2 weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's your background?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PhD economist with MS in Finance & Statistics; experience across research, enterprise transformation, and high-growth startups. My edge is combining academic rigor with operator pragmatism."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you take equity or flexible comp?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cash is standard for sprints; retainers can mix cash/equity when aligned with scope and stage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do we start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Share context, book a consult, and we'll scope a sprint with clear questions, inputs, and a day-by-day plan."
+      }
+    }
+  ]
+}
+
 export default function About() {
   return (
     <>
@@ -656,6 +776,17 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* FAQs Section */}
+      <FAQSection />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          ...faqSchema,
+          "url": "https://sarahzou.com/about"
+        }) }}
+      />
+
       <Cta {...ctaData} />
     </>
   )

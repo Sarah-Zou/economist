@@ -34,75 +34,8 @@ export const metadata: Metadata = {
 };
 
 export default function FractionalChiefEconomistRetainer() {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What's the difference between Lite, Core, and Growth?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Lite is guidance-focused (reviews, test design, investor prep). Core adds ownership of pricing roadmap, experiment backlog, and monthly Board Packs with models. Growth includes full monetization + forecasting + capital plan ownership, quarterly pricing resets, and co-leading fundraise economics."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I upgrade or downgrade plans?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, with 30 days notice. We'll adjust deliverables and billing accordingly. The 3-month minimum applies to your initial plan selection."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What if I need more time in a given month?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Growth tier includes priority async support. For Lite/Core, we can add project hours or move to a higher tier. Same-day response is standard for Growth; 1–2 business days for Lite/Core."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you work with our existing tools?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes—I work with your current stack (Amplitude, Mixpanel, GA4, HubSpot/CRM, spreadsheets/BI, forecasting tools). No new infrastructure required."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What happens during onboarding?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Week 0–2: We align on scope & access, establish baseline metrics, identify quick-win pricing/test opportunities, and deliver your first Board Pack. This sets the foundation for ongoing cadence."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does this work with your sprints?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sprints set the foundation (pricing decisions, KPI loop). The retainer keeps it running: iterate pricing, run tests, maintain forward models, and stay investor-ready month-to-month."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What if we need to pause?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "30 days notice required. We'll complete any in-flight deliverables and provide a handoff summary. You can resume anytime."
-        }
-      }
-    ]
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <section className="bg-[#f5f8f7] min-h-screen py-0">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         {/* Hero Section */}
@@ -540,6 +473,56 @@ export default function FractionalChiefEconomistRetainer() {
           {/* FAQs Section */}
           <FAQSection />
         </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "url": "https://sarahzou.com/consulting/services/on-call-economist-retainer",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What's the difference between Starter, Growth, and Scale?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Time/attention and depth. Starter (~0.5 d/wk, $4k/mo) focuses on guidance; Growth (~1 d/wk, $8k/mo) runs active experiments; Scale (~2 d/wk, $15k/mo) handles complex monetization and fundraise prep."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can we upgrade/downgrade or pause?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes—plans are flexible as needs change (e.g., ramp up pre-fundraise, step down post-launch)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What happens during onboarding?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Week 0–2: scope + access → baseline metrics → first pricing/test move → first Economist's Board Pack."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What do you own each month?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Pricing moves/tests, forward models (NRR/LTV/GM bridges, runway), an Economist's Board Pack, and a learning loop with readouts → next bets."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you work with our existing tools and teams?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes—Marketing/Sales, Product/Data, and Finance/Planning are included in your operating cadence."
+                }
+              }
+            ]
+          }) }}
+        />
 
         {/* CTA Section */}
         <div className="max-w-4xl mx-auto mt-16">

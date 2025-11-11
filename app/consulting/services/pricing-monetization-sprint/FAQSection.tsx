@@ -1,59 +1,40 @@
-'use client';
-
-import { useState } from 'react';
+import Link from 'next/link';
 
 export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const faqs = [
-    { q: 'Will this "work" if we\'re pre-revenue?', a: 'Yes—benchmarks + value hypotheses + cost floors give a defendable first price and test plan.' },
-    { q: 'Will customers churn if we raise prices?', a: 'We design fences, upgrade paths, and comms to protect retention while lifting yield.' },
-    { q: 'Can we switch to usage-based?', a: 'If the value metric supports it and ops allow, you\'ll get a migration playbook.' },
-    { q: 'What do you need from me to get started?', a: 'Founder + PM (and Sales/CS if post-launch) in workshops • Access to pricing page drafts, cost inputs, and recent usage/sales notes • A single decision owner' },
-    { q: 'How are payments handled?', a: '70% at kickoff, 30% at readout.' }
-  ];
-
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   return (
     <section>
       <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-8 text-center">Frequently Asked Questions</h2>
       <div className="space-y-4 max-w-3xl mx-auto">
-        {faqs.map((faq, idx) => {
-          const isOpen = openIndex === idx;
-          return (
-            <div key={idx} className="bg-white rounded-lg border border-[#e5e7eb] shadow-sm overflow-hidden">
-              <button
-                type="button"
-                onClick={() => toggleFAQ(idx)}
-                className="w-full p-6 flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer text-left"
-                aria-expanded={isOpen}
-                aria-controls={`faq-answer-${idx}`}
-              >
-                <h3 className="font-semibold text-base text-[#223] pr-4 flex-1">{faq.q}</h3>
-                <svg 
-                  className={`w-5 h-5 text-[#4b636e] flex-shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {isOpen && (
-                <div 
-                  id={`faq-answer-${idx}`}
-                  className="px-6 pb-6 animate-in fade-in duration-200"
-                >
-                  <p className="text-base text-[#4b636e] font-light">{faq.a}</p>
-                </div>
-              )}
-            </div>
-          );
-        })}
+        <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+          <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">Will this work if we're pre-revenue?</h3>
+          <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+            Yes. Pre-revenue or pre-MVP is the perfect timing to start designing your first pricing strategy. The sprint is designed for pre-launch through &lt;$3M ARR to make your first price investor-credible and testable.
+          </p>
+        </div>
+        <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+          <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">Will customers churn if we raise prices?</h3>
+          <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+            We pair guardrails with plan fences, run low-risk experiments, and read impact via unit-economics snapshots—minimizing exposure while learning.
+          </p>
+        </div>
+        <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+          <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">Can we switch to usage-based?</h3>
+          <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+            If a usage metric truly tracks value, we'll validate the metric, design hybrid fences, and ship a 30-day rollout plan with comms.
+          </p>
+        </div>
+        <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+          <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">What do you need from us to start?</h3>
+          <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+            Discovery inputs/data room and a current-state scan, followed by two focused workshops to lock positioning, customer segmentations, value metric, tiers, guardrails, and etc.
+          </p>
+        </div>
+        <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+          <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">What exactly do we get?</h3>
+          <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+            A <strong>pricing strategy report</strong>, <strong>unit-economics model</strong>, <strong>pricing implementation roadmap</strong>, <strong>experiment briefs</strong>, and <strong>investor mini-pack</strong>—delivered in one to two weeks. See <Link href="/consulting/services/pricing-monetization-sprint" className="text-[#ff5722] hover:underline">deliverables</Link>.
+          </p>
+        </div>
       </div>
     </section>
   );
