@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 
 const contentDirectory = path.join(process.cwd(), 'content/wiki/categories');
+const conceptsDirectory = path.join(process.cwd(), 'content/wiki/concepts');
 
 export interface CategoryFrontmatter {
   title: string;
@@ -130,4 +131,38 @@ export function getAllCategories(): CategoryData[] {
   return slugs
     .map(slug => getCategoryBySlug(slug))
     .filter((category): category is CategoryData => category !== null);
+}
+
+export interface ConceptFrontmatter {
+  title: string;
+  metaTitle?: string;
+  oneLiner?: string;
+  prereqs?: string[];
+  tags?: string[];
+  readingTime?: number;
+  lastUpdated?: string;
+  owner?: string;
+}
+
+export interface ConceptData extends ConceptFrontmatter {
+  content: string;
+}
+
+export function getConceptBySlug(category: string, concept: string): ConceptData | null {
+  try {
+    const fullPath = path.join(conceptsDirectory, category, `${concept}.md`);
+    if (!fs.existsSync(fullPath)) {
+      return null;
+    }
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const { data, content } = matter(fileContents);
+    
+    return {
+      ...data as ConceptFrontmatter,
+      content
+    };
+  } catch (error) {
+    console.error(`Error reading concept ${category}/${concept}:`, error);
+    return null;
+  }
 }

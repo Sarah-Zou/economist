@@ -1,9 +1,14 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { generateArticleJsonLd, generateBreadcrumbJsonLd } from '@/lib/generateJsonLd';
-import { getCategoryBySlug, getAllCategories } from '@/lib/mdx';
+import { getCategoryBySlug, getAllCategories, getConceptBySlug } from '@/lib/mdx';
 import WikiLayout from '@/components/wiki/WikiLayout';
+import TableOfContents from '@/components/wiki/TableOfContents';
 import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { Zap, Info, TrendingUp, Clock, CheckCircle, DollarSign, Users, AlertCircle } from 'lucide-react';
+import Image from 'next/image';
 
 interface ConceptPageProps {
   params: {
@@ -47,13 +52,16 @@ export async function generateMetadata({ params }: ConceptPageProps): Promise<Me
     };
   }
 
-  const conceptName = concept.text.split(':')[0].trim();
-  const description = concept.text.includes(':') 
+  // Try to get concept content for better metadata
+  const conceptData = getConceptBySlug(params.category, params.concept);
+  const conceptName = conceptData?.title || concept.text.split(':')[0].trim();
+  const description = conceptData?.oneLiner || conceptData?.metaTitle || (concept.text.includes(':') 
     ? concept.text.split(':').slice(1).join(':').trim()
-    : `Learn about ${conceptName} in the context of ${category.title}`;
+    : `Learn about ${conceptName} in the context of ${category.title}`);
+  const metaTitle = conceptData?.metaTitle || `${conceptName} | ${category.title} | Pricing Wiki`;
 
   return {
-    title: `${conceptName} | ${category.title} | Pricing Wiki`,
+    title: metaTitle.length > 60 ? `${conceptName} | ${category.title} | Pricing Wiki` : metaTitle,
     description,
     robots: {
       index: true,
@@ -84,6 +92,194 @@ export async function generateMetadata({ params }: ConceptPageProps): Promise<Me
   };
 }
 
+// Helper function to extract headings from markdown content
+function extractHeadings(content: string): Array<{ id: string; text: string; level: number }> {
+  const headingRegex = /^(#{2,3})\s+(.+)$/gm;
+  const headings: Array<{ id: string; text: string; level: number }> = [];
+  let match;
+
+  while ((match = headingRegex.exec(content)) !== null) {
+    const level = match[1].length;
+    const text = match[2].trim();
+    // Create ID from text (lowercase, replace spaces with hyphens, remove special chars)
+    const id = text
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .trim();
+    
+    headings.push({ id, text, level });
+  }
+
+  return headings;
+}
+
+// Helper function to parse Snapshot section from markdown content
+function parseSnapshot(content: string): { 
+  beforeSnapshot: string; 
+  snapshot: { 
+    whatItIs?: string; 
+    whyItMatters?: string; 
+    whenToUse?: string; 
+    keyTakeaways?: string[] 
+  } | null; 
+  afterSnapshot: string 
+} {
+  const snapshotRegex = /##\s+Snapshot\s*\(TL;DR\)\s*\n([\s\S]*?)(?=\n##|$)/;
+  const match = content.match(snapshotRegex);
+  
+  if (!match) {
+    return { beforeSnapshot: content, snapshot: null, afterSnapshot: '' };
+  }
+
+  const snapshotStartIndex = match.index!;
+  const snapshotContent = match[1];
+  const beforeSnapshot = content.substring(0, snapshotStartIndex).trim();
+  const afterSnapshot = content.substring(snapshotStartIndex + match[0].length).trim();
+
+  // Parse snapshot fields
+  const snapshot: { whatItIs?: string; whyItMatters?: string; whenToUse?: string; keyTakeaways?: string[] } = {};
+  
+  // Extract "What it is:"
+  const whatItIsMatch = snapshotContent.match(/\*\*What it is:\*\*\s*([\s\S]*?)(?=\n\n\*\*|$)/);
+  if (whatItIsMatch) {
+    snapshot.whatItIs = whatItIsMatch[1].trim();
+  }
+
+  // Extract "Why it matters:"
+  const whyItMattersMatch = snapshotContent.match(/\*\*Why it matters:\*\*\s*([\s\S]*?)(?=\n\n\*\*|$)/);
+  if (whyItMattersMatch) {
+    snapshot.whyItMatters = whyItMattersMatch[1].trim();
+  }
+
+  // Extract "When to use:"
+  const whenToUseMatch = snapshotContent.match(/\*\*When to use:\*\*\s*([\s\S]*?)(?=\n\n\*\*|$)/);
+  if (whenToUseMatch) {
+    snapshot.whenToUse = whenToUseMatch[1].trim();
+  }
+
+  // Extract "Key Takeaways:"
+  const keyTakeawaysMatch = snapshotContent.match(/\*\*Key Takeaways:\*\*\s*([\s\S]*?)(?=\n##|$)/);
+  if (keyTakeawaysMatch) {
+    const takeawaysText = keyTakeawaysMatch[1].trim();
+    // Extract bullet points (lines starting with -)
+    const takeaways = takeawaysText
+      .split('\n')
+      .filter(line => line.trim().startsWith('-'))
+      .map(line => line.replace(/^-\s*/, '').trim());
+    if (takeaways.length > 0) {
+      snapshot.keyTakeaways = takeaways;
+    }
+  }
+
+  return { beforeSnapshot, snapshot, afterSnapshot };
+}
+
+// Helper function to parse Key Facts section from markdown content
+function parseKeyFacts(content: string): { 
+  beforeKeyFacts: string; 
+  keyFacts: Array<{ title: string; description: string }> | null; 
+  afterKeyFacts: string 
+} {
+  const keyFactsRegex = /##\s+Key Facts\s*\n([\s\S]*?)(?=\n##|$)/;
+  const match = content.match(keyFactsRegex);
+  
+  if (!match) {
+    return { beforeKeyFacts: content, keyFacts: null, afterKeyFacts: '' };
+  }
+
+  const keyFactsStartIndex = match.index!;
+  const keyFactsContent = match[1];
+  const beforeKeyFacts = content.substring(0, keyFactsStartIndex).trim();
+  const afterKeyFacts = content.substring(keyFactsStartIndex + match[0].length).trim();
+
+  // Parse bullet points (lines starting with -)
+  const factLines = keyFactsContent
+    .split('\n')
+    .filter(line => line.trim().startsWith('-'))
+    .map(line => line.replace(/^-\s*/, '').trim());
+
+  const keyFacts: Array<{ title: string; description: string }> = [];
+  
+  for (const line of factLines) {
+    // Split by colon - first part is title, rest is description
+    const colonIndex = line.indexOf(':');
+    if (colonIndex > 0) {
+      const title = line.substring(0, colonIndex).trim();
+      const description = line.substring(colonIndex + 1).trim();
+      if (title && description) {
+        keyFacts.push({ title, description });
+      }
+    }
+  }
+
+  return { beforeKeyFacts, keyFacts: keyFacts.length > 0 ? keyFacts : null, afterKeyFacts };
+}
+
+// Helper function to parse Step-by-step section from markdown content
+function parseStepByStep(content: string): { 
+  beforeStepByStep: string; 
+  steps: Array<{ number: number; title: string; description: string }> | null; 
+  afterStepByStep: string 
+} {
+  const stepByStepRegex = /###\s+Step-by-step\s*\n([\s\S]*?)(?=\n##|$)/;
+  const match = content.match(stepByStepRegex);
+  
+  if (!match) {
+    return { beforeStepByStep: content, steps: null, afterStepByStep: '' };
+  }
+
+  const stepByStepStartIndex = match.index!;
+  const stepByStepContent = match[1];
+  const beforeStepByStep = content.substring(0, stepByStepStartIndex).trim();
+  const afterStepByStep = content.substring(stepByStepStartIndex + match[0].length).trim();
+
+  // Parse numbered list items (1. **title:** description)
+  const stepRegex = /(\d+)\.\s+\*\*([^*]+?):\*\*\s*([\s\S]+?)(?=\n\d+\.|$)/g;
+  const steps: Array<{ number: number; title: string; description: string }> = [];
+  let stepMatch;
+
+  while ((stepMatch = stepRegex.exec(stepByStepContent)) !== null) {
+    steps.push({
+      number: parseInt(stepMatch[1], 10),
+      title: stepMatch[2].trim(),
+      description: stepMatch[3].trim()
+    });
+  }
+
+  return { beforeStepByStep, steps: steps.length > 0 ? steps : null, afterStepByStep };
+}
+
+// Helper function to parse FAQ section from markdown content
+function parseFAQ(content: string): { beforeFAQ: string; faqItems: Array<{ question: string; answer: string }>; afterFAQ: string } {
+  const faqRegex = /##\s+FAQ\s*\n([\s\S]*?)(?=\n##|$)/;
+  const match = content.match(faqRegex);
+  
+  if (!match) {
+    return { beforeFAQ: content, faqItems: [], afterFAQ: '' };
+  }
+
+  const faqStartIndex = match.index!;
+  const faqContent = match[1];
+  const beforeFAQ = content.substring(0, faqStartIndex).trim();
+  const afterFAQ = content.substring(faqStartIndex + match[0].length).trim();
+
+  // Parse Q/A pairs
+  const qaRegex = /\*\*Q:\*\*\s*([\s\S]+?)\n\n\*\*A:\*\*\s*([\s\S]+?)(?=\n\n\*\*Q:|$)/g;
+  const faqItems: Array<{ question: string; answer: string }> = [];
+  let qaMatch;
+
+  while ((qaMatch = qaRegex.exec(faqContent)) !== null) {
+    faqItems.push({
+      question: qaMatch[1].trim(),
+      answer: qaMatch[2].trim()
+    });
+  }
+
+  return { beforeFAQ, faqItems, afterFAQ };
+}
+
 export default function ConceptPage({ params }: ConceptPageProps) {
   const category = getCategoryBySlug(params.category);
   
@@ -97,10 +293,47 @@ export default function ConceptPage({ params }: ConceptPageProps) {
     notFound();
   }
 
-  const conceptName = concept.text.split(':')[0].trim();
-  const description = concept.text.includes(':') 
+  // Try to get concept content
+  const conceptData = getConceptBySlug(params.category, params.concept);
+  const conceptName = conceptData?.title || concept.text.split(':')[0].trim();
+  const description = conceptData?.oneLiner || (concept.text.includes(':') 
     ? concept.text.split(':').slice(1).join(':').trim()
+    : '');
+  const hasContent = conceptData !== null;
+  
+  // Extract headings for table of contents
+  const tocItems = hasContent && conceptData 
+    ? extractHeadings(conceptData.content)
+    : [];
+
+  // Parse Snapshot section if content exists
+  const { beforeSnapshot, snapshot, afterSnapshot: afterSnapshotContent } = hasContent && conceptData
+    ? parseSnapshot(conceptData.content)
+    : { beforeSnapshot: '', snapshot: null, afterSnapshot: '' };
+
+  // Parse Key Facts section - parse from content after snapshot
+  const contentToParseForKeyFacts = hasContent && conceptData 
+    ? (afterSnapshotContent || conceptData.content)
     : '';
+  const { beforeKeyFacts, keyFacts, afterKeyFacts: afterKeyFactsContent } = contentToParseForKeyFacts
+    ? parseKeyFacts(contentToParseForKeyFacts)
+    : { beforeKeyFacts: '', keyFacts: null, afterKeyFacts: '' };
+
+  // Parse Step-by-step section - parse from content after key facts
+  const contentToParseForStepByStep = hasContent && conceptData 
+    ? (afterKeyFactsContent || afterSnapshotContent || conceptData.content)
+    : '';
+  const { beforeStepByStep, steps, afterStepByStep: afterStepByStepContent } = contentToParseForStepByStep
+    ? parseStepByStep(contentToParseForStepByStep)
+    : { beforeStepByStep: '', steps: null, afterStepByStep: '' };
+
+  // Parse FAQ section - parse from content after step-by-step
+  const contentToParseForFAQ = hasContent && conceptData 
+    ? (afterStepByStepContent || afterKeyFactsContent || afterSnapshotContent || conceptData.content)
+    : '';
+  const { beforeFAQ, faqItems, afterFAQ } = contentToParseForFAQ
+    ? parseFAQ(contentToParseForFAQ)
+    : { beforeFAQ: '', faqItems: [], afterFAQ: '' };
 
   const breadcrumbs = [
     { name: 'Pricing', url: '/wiki/pricing' },
@@ -112,9 +345,9 @@ export default function ConceptPage({ params }: ConceptPageProps) {
     title: conceptName,
     description: description || `Learn about ${conceptName} in the context of ${category.title}`,
     url: `https://sarahzou.com/wiki/pricing/${params.category}/${params.concept}`,
-    datePublished: category.updated,
-    dateModified: category.updated,
-    author: 'Dr. Sarah Zou'
+    datePublished: conceptData?.lastUpdated || category.updated,
+    dateModified: conceptData?.lastUpdated || category.updated,
+    author: conceptData?.owner || 'Dr. Sarah Zou'
   });
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
@@ -130,46 +363,589 @@ export default function ConceptPage({ params }: ConceptPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       
-      <WikiLayout breadcrumbs={breadcrumbs}>
-        <div className="max-w-4xl">
+      <div className="min-h-screen bg-[#f9f6f7]">
+        <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          {breadcrumbs.length > 0 && (
+            <div className="mb-6">
+              <nav className="flex items-center space-x-2 text-sm text-[#4b636e]">
+                {breadcrumbs.map((crumb, index) => (
+                  <span key={index} className="flex items-center">
+                    {index > 0 && <span className="mx-2">/</span>}
+                    <Link 
+                      href={crumb.url}
+                      className="hover:text-[#ff5722] hover:underline"
+                    >
+                      {crumb.name}
+                    </Link>
+                  </span>
+                ))}
+              </nav>
+            </div>
+          )}
+
+          <div className="flex gap-8">
+            {/* Table of Contents Sidebar - Left side, outside content box */}
+            {tocItems.length > 0 && (
+              <aside className="hidden xl:block w-72 flex-shrink-0">
+                <div className="sticky top-24">
+                  <TableOfContents items={tocItems} title={conceptName} />
+                </div>
+              </aside>
+            )}
+
+            {/* Main content area with WikiLayout */}
+            <div className="flex-1 min-w-0">
+              <WikiLayout 
+                breadcrumbs={[]}
+                customGridRatio="9:3"
+                noOuterWrapper={true}
+                rightSidebarContent={
+                  <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
+                    <div className="space-y-4">
+                      <div>
+                        <p className="text-xs font-semibold text-[#4b636e] uppercase tracking-wide mb-2">Category</p>
+                        <Link 
+                          href={`/wiki/pricing/${category.slug}`}
+                          className="text-sm text-[#ff5722] hover:underline font-medium"
+                        >
+                          {category.title}
+                        </Link>
+                      </div>
+                      {conceptData?.lastUpdated && (
+                        <div>
+                          <p className="text-xs font-semibold text-[#4b636e] uppercase tracking-wide mb-2">Last Updated</p>
+                          <p className="text-sm text-[#223]">
+                            {new Date(conceptData.lastUpdated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                          </p>
+                        </div>
+                      )}
+                      {conceptData?.readingTime && (
+                        <div>
+                          <p className="text-xs font-semibold text-[#4b636e] uppercase tracking-wide mb-2">Reading Time</p>
+                          <p className="text-sm text-[#223]">{conceptData.readingTime} minutes</p>
+                        </div>
+                      )}
+                      {conceptData?.tags && conceptData.tags.length > 0 && (
+                        <div>
+                          <p className="text-xs font-semibold text-[#4b636e] uppercase tracking-wide mb-2">Tags</p>
+                          <div className="flex flex-wrap gap-2">
+                            {conceptData.tags.map((tag, index) => (
+                              <span
+                                key={index}
+                                className="text-xs text-[#4b636e] bg-[#f6f7f9] px-2 py-1 rounded-full border border-[#e5e7eb]"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                }
+              >
           {/* Header */}
           <div className="mb-8">
-            <div className="mb-4">
-              <Link 
-                href={`/wiki/pricing/${category.slug}`}
-                className="text-[#ff5722] hover:underline text-sm font-medium"
-              >
-                ← Back to {category.title}
-              </Link>
-            </div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl font-serif-playfair font-bold text-[#223] mb-4">
               {conceptName}
             </h1>
             {description && (
-              <p className="text-xl text-gray-700 leading-relaxed">
+              <p className="text-xl text-[#4b636e] font-light leading-relaxed italic">
                 {description}
               </p>
             )}
           </div>
 
-          {/* Category Info */}
-          <div className="bg-gray-50 rounded-lg p-6 mb-8">
-            <p className="text-sm text-gray-600 mb-2">
-              <span className="font-medium">Category:</span>{' '}
-              <Link 
-                href={`/wiki/pricing/${category.slug}`}
-                className="text-[#ff5722] hover:underline"
-              >
-                {category.title}
-              </Link>
-            </p>
-            <p className="text-sm text-gray-600">
-              {category.summary}
-            </p>
-          </div>
+                {/* Content */}
+                <div className="prose prose-lg max-w-none">
+                  {hasContent && conceptData ? (
+                    <>
+                      {/* Content before Snapshot */}
+                      {beforeSnapshot && (
+                        <ReactMarkdown
+                          remarkPlugins={[remarkGfm]}
+                          components={{
+                            h2: ({ node, ...props }) => {
+                              const text = String(props.children)
+                              const id = text
+                                .toLowerCase()
+                                .replace(/[^\w\s-]/g, '')
+                                .replace(/\s+/g, '-')
+                                .replace(/-+/g, '-')
+                                .trim()
+                              return <h2 id={id} className="font-serif-playfair text-2xl sm:text-3xl font-bold text-[#223] mb-4 mt-8 scroll-mt-24" {...props} />
+                            },
+                            h3: ({ node, ...props }) => {
+                              const text = String(props.children)
+                              const id = text
+                                .toLowerCase()
+                                .replace(/[^\w\s-]/g, '')
+                                .replace(/\s+/g, '-')
+                                .replace(/-+/g, '-')
+                                .trim()
+                              return <h3 id={id} className="font-bold text-lg text-[#223] mb-2 mt-6 scroll-mt-24" {...props} />
+                            },
+                            a: ({ node, href, ...props }) => {
+                              const isInternalLink = href?.startsWith('/wiki/pricing/');
+                              if (isInternalLink && href) {
+                                return (
+                                  <Link 
+                                    href={href}
+                                    className="text-[#ff5722] hover:underline font-medium"
+                                    {...props}
+                                  />
+                                );
+                              }
+                              return (
+                                <a
+                                  href={href}
+                                  className="text-blue-600 hover:underline"
+                                  target={href?.startsWith('http') ? '_blank' : undefined}
+                                  rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                  {...props}
+                                />
+                              );
+                            },
+                          }}
+                        >
+                          {beforeSnapshot}
+                        </ReactMarkdown>
+                      )}
 
-          {/* Content Placeholder */}
-          <div className="prose prose-lg max-w-none">
+                      {/* Snapshot Section */}
+                      {snapshot && (
+                        <>
+                          <h2 id="snapshot" className="text-2xl sm:text-3xl font-serif-playfair font-bold text-[#223] scroll-mt-24 mb-4">
+                            Snapshot (TL;DR)
+                          </h2>
+                          <div className="bg-white rounded-lg pt-4 pb-6 px-6 sm:pt-4 sm:pb-8 sm:px-8 border border-[#e5e7eb] shadow-sm mb-8">
+                            <div className="space-y-3">
+                              {snapshot.whatItIs && (
+                                <div>
+                                  <h3 className="font-bold text-lg text-[#223] mb-1">What it is</h3>
+                                  <p className="text-base text-[#4b636e] font-light leading-relaxed">
+                                    {snapshot.whatItIs}
+                                  </p>
+                                </div>
+                              )}
+                              {snapshot.whyItMatters && (
+                                <div>
+                                  <h3 className="font-bold text-lg text-[#223] mb-1">Why it matters</h3>
+                                  <p className="text-base text-[#4b636e] font-light leading-relaxed">
+                                    {snapshot.whyItMatters}
+                                  </p>
+                                </div>
+                              )}
+                              {snapshot.whenToUse && (
+                                <div>
+                                  <h3 className="font-bold text-lg text-[#223] mb-1">When to use</h3>
+                                  <p className="text-base text-[#4b636e] font-light leading-relaxed">
+                                    {snapshot.whenToUse}
+                                  </p>
+                                </div>
+                              )}
+                              {snapshot.keyTakeaways && snapshot.keyTakeaways.length > 0 && (
+                                <div>
+                                  <h3 className="font-bold text-lg text-[#223] mb-1.5">Key Takeaways</h3>
+                                  <ul className="space-y-0.5">
+                                    {snapshot.keyTakeaways.map((takeaway, index) => (
+                                      <li key={index} className="text-base text-[#4b636e] font-light leading-relaxed flex items-start gap-2">
+                                        <CheckCircle className="w-4 h-4 text-[#ff5722] mt-1.5 flex-shrink-0" />
+                                        <span>
+                                          <ReactMarkdown
+                                            remarkPlugins={[remarkGfm]}
+                                            components={{
+                                              strong: ({ node, ...props }) => (
+                                                <strong className="font-bold text-[#223]" {...props} />
+                                              ),
+                                            }}
+                                          >
+                                            {takeaway}
+                                          </ReactMarkdown>
+                                        </span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </>
+                      )}
+
+                      {/* Key Facts Section */}
+                      {keyFacts && keyFacts.length > 0 && (
+                        <div className="mb-8">
+                          <h2 id="key-facts" className="text-2xl sm:text-3xl font-serif-playfair font-bold text-[#223] mb-6 scroll-mt-24">
+                            Key Facts
+                          </h2>
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            {keyFacts.map((fact, index) => {
+                              // Choose icon based on content
+                              let Icon = DollarSign;
+                              if (fact.title.toLowerCase().includes('hour') || fact.title.toLowerCase().includes('time')) {
+                                Icon = Clock;
+                              } else if (fact.title.toLowerCase().includes('compan') || fact.title.toLowerCase().includes('%')) {
+                                Icon = Users;
+                              } else if (fact.title.toLowerCase().includes('profit') || fact.title.toLowerCase().includes('%')) {
+                                Icon = DollarSign;
+                              }
+
+                              return (
+                                <div key={index} className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
+                                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#f6f7f9] mb-4">
+                                    <Icon className="w-6 h-6 text-[#ff5722]" />
+                                  </div>
+                                  <h3 className="text-xl font-bold text-[#223] mb-2">
+                                    {fact.title}
+                                  </h3>
+                                  <p className="text-sm text-[#4b636e] font-light leading-relaxed">
+                                    {fact.description}
+                                  </p>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Content after Key Facts but before Step-by-step */}
+                      {beforeStepByStep && beforeStepByStep.trim() && beforeStepByStep !== (afterKeyFactsContent || afterSnapshotContent || '') && (
+                        <ReactMarkdown
+                          remarkPlugins={[remarkGfm]}
+                          components={{
+                            h2: ({ node, ...props }) => {
+                              const text = String(props.children)
+                              const id = text
+                                .toLowerCase()
+                                .replace(/[^\w\s-]/g, '')
+                                .replace(/\s+/g, '-')
+                                .replace(/-+/g, '-')
+                                .trim()
+                              return <h2 id={id} className="font-serif-playfair text-2xl sm:text-3xl font-bold text-[#223] mb-4 mt-8 scroll-mt-24" {...props} />
+                            },
+                            h3: ({ node, ...props }) => {
+                              const text = String(props.children)
+                              const id = text
+                                .toLowerCase()
+                                .replace(/[^\w\s-]/g, '')
+                                .replace(/\s+/g, '-')
+                                .replace(/-+/g, '-')
+                                .trim()
+                              return <h3 id={id} className="font-bold text-lg text-[#223] mb-2 mt-6 scroll-mt-24" {...props} />
+                            },
+                            a: ({ node, href, ...props }) => {
+                              const isInternalLink = href?.startsWith('/wiki/pricing/');
+                              if (isInternalLink && href) {
+                                return (
+                                  <Link 
+                                    href={href}
+                                    className="text-[#ff5722] hover:underline font-medium"
+                                    {...props}
+                                  />
+                                );
+                              }
+                              return (
+                                <a
+                                  href={href}
+                                  className="text-blue-600 hover:underline"
+                                  target={href?.startsWith('http') ? '_blank' : undefined}
+                                  rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                  {...props}
+                                />
+                              );
+                            },
+                          }}
+                        >
+                          {beforeStepByStep}
+                        </ReactMarkdown>
+                      )}
+
+                      {/* Step-by-step Section */}
+                      {steps && steps.length > 0 && (
+                        <div className="mb-8">
+                          <h2 id="step-by-step" className="text-2xl sm:text-3xl font-serif-playfair font-bold text-[#223] mb-2 scroll-mt-24">
+                            Step-by-step
+                          </h2>
+                          <p className="text-base text-[#4b636e] font-light mb-6">
+                            A structured, collaborative process designed for maximum impact in minimum time.
+                          </p>
+                          <div className="relative pl-2">
+                            {/* Vertical connecting line */}
+                            {steps.length > 1 && (
+                              <div className="absolute left-6 top-6 bottom-0 w-0.5 bg-[#e5e7eb]"></div>
+                            )}
+                            
+                            {/* Steps */}
+                            <div className="space-y-4">
+                              {steps.map((step, index) => (
+                                <div key={index} className="relative flex gap-6">
+                                  {/* Numbered circle */}
+                                  <div className="flex-shrink-0 relative z-10">
+                                    <div className="w-12 h-12 rounded-full bg-[#ff5722] flex items-center justify-center">
+                                      <span className="text-white font-bold text-lg">{step.number}</span>
+                                    </div>
+                                  </div>
+                                  
+                                  {/* Content */}
+                                  <div className="flex-1">
+                                    <h3 className="font-bold text-lg text-[#223] mb-1.5">
+                                      {step.title}
+                                    </h3>
+                                    <p className="text-sm text-[#4b636e] font-light leading-relaxed">
+                                      {step.description}
+                                    </p>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Content after Step-by-step but before FAQ */}
+                      {/* Only render afterStepByStepContent if FAQ doesn't exist (to avoid duplication with beforeFAQ) */}
+                      {faqItems.length === 0 && afterStepByStepContent && afterStepByStepContent.trim() && (
+                        <ReactMarkdown
+                          remarkPlugins={[remarkGfm]}
+                          components={{
+                            h2: ({ node, ...props }) => {
+                              const text = String(props.children)
+                              const id = text
+                                .toLowerCase()
+                                .replace(/[^\w\s-]/g, '')
+                                .replace(/\s+/g, '-')
+                                .replace(/-+/g, '-')
+                                .trim()
+                              return <h2 id={id} className="font-serif-playfair text-2xl sm:text-3xl font-bold text-[#223] mb-4 mt-8 scroll-mt-24" {...props} />
+                            },
+                            h3: ({ node, ...props }) => {
+                              const text = String(props.children)
+                              const id = text
+                                .toLowerCase()
+                                .replace(/[^\w\s-]/g, '')
+                                .replace(/\s+/g, '-')
+                                .replace(/-+/g, '-')
+                                .trim()
+                              return <h3 id={id} className="font-bold text-lg text-[#223] mb-2 mt-6 scroll-mt-24" {...props} />
+                            },
+                            a: ({ node, href, ...props }) => {
+                              const isInternalLink = href?.startsWith('/wiki/pricing/');
+                              if (isInternalLink && href) {
+                                return (
+                                  <Link 
+                                    href={href}
+                                    className="text-[#ff5722] hover:underline font-medium"
+                                    {...props}
+                                  />
+                                );
+                              }
+                              return (
+                                <a
+                                  href={href}
+                                  className="text-blue-600 hover:underline"
+                                  target={href?.startsWith('http') ? '_blank' : undefined}
+                                  rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                  {...props}
+                                />
+                              );
+                            },
+                          }}
+                        >
+                          {afterStepByStepContent}
+                        </ReactMarkdown>
+                      )}
+                      
+                      {/* Content before FAQ (only if FAQ exists) */}
+                      {faqItems.length > 0 && beforeFAQ && beforeFAQ.trim() && (
+                        <ReactMarkdown
+                          remarkPlugins={[remarkGfm]}
+                          components={{
+                            h2: ({ node, ...props }) => {
+                              const text = String(props.children)
+                              const id = text
+                                .toLowerCase()
+                                .replace(/[^\w\s-]/g, '')
+                                .replace(/\s+/g, '-')
+                                .replace(/-+/g, '-')
+                                .trim()
+                              return <h2 id={id} className="font-serif-playfair text-2xl sm:text-3xl font-bold text-[#223] mb-4 mt-8 scroll-mt-24" {...props} />
+                            },
+                            h3: ({ node, ...props }) => {
+                              const text = String(props.children)
+                              const id = text
+                                .toLowerCase()
+                                .replace(/[^\w\s-]/g, '')
+                                .replace(/\s+/g, '-')
+                                .replace(/-+/g, '-')
+                                .trim()
+                              return <h3 id={id} className="font-bold text-lg text-[#223] mb-2 mt-6 scroll-mt-24" {...props} />
+                            },
+                            a: ({ node, href, ...props }) => {
+                              const isInternalLink = href?.startsWith('/wiki/pricing/');
+                              if (isInternalLink && href) {
+                                return (
+                                  <Link 
+                                    href={href}
+                                    className="text-[#ff5722] hover:underline font-medium"
+                                    {...props}
+                                  />
+                                );
+                              }
+                              return (
+                                <a
+                                  href={href}
+                                  className="text-blue-600 hover:underline"
+                                  target={href?.startsWith('http') ? '_blank' : undefined}
+                                  rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                  {...props}
+                                />
+                              );
+                            },
+                          }}
+                        >
+                          {beforeFAQ}
+                        </ReactMarkdown>
+                      )}
+
+                      {/* FAQ Section */}
+                      {faqItems.length > 0 && (
+                        <section className="mt-12 mb-12">
+                          <h2 id="faq" className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-8 text-center scroll-mt-24">
+                            Frequently Asked Questions
+                          </h2>
+                          <div className="space-y-4 sm:space-y-6 max-w-3xl mx-auto">
+                            {faqItems.map((item, index) => (
+                              <div key={index} className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
+                                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">
+                                  {item.question}
+                                </h3>
+                                <div className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                                  <ReactMarkdown
+                                    remarkPlugins={[remarkGfm]}
+                                    components={{
+                                      p: ({ node, ...props }) => (
+                                        <p className="mb-3 last:mb-0" {...props} />
+                                      ),
+                                      strong: ({ node, ...props }) => (
+                                        <strong className="font-bold text-[#223]" {...props} />
+                                      ),
+                                      a: ({ node, href, ...props }) => {
+                                        const isInternalLink = href?.startsWith('/wiki/pricing/');
+                                        if (isInternalLink && href) {
+                                          return (
+              <Link 
+                                              href={href}
+                                              className="text-[#ff5722] hover:underline font-medium"
+                                              {...props}
+                                            />
+                                          );
+                                        }
+                                        return (
+                                          <a
+                                            href={href}
+                                            className="text-blue-600 hover:underline"
+                                            target={href?.startsWith('http') ? '_blank' : undefined}
+                                            rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                            {...props}
+                                          />
+                                        );
+                                      },
+                                    }}
+                                  >
+                                    {item.answer}
+                                  </ReactMarkdown>
+                                </div>
+                              </div>
+                            ))}
+          </div>
+                        </section>
+                      )}
+
+                      {/* Content after FAQ */}
+                      {afterFAQ && (
+                        <ReactMarkdown
+                          remarkPlugins={[remarkGfm]}
+                          components={{
+                            h2: ({ node, ...props }) => {
+                              const text = String(props.children)
+                              const id = text
+                                .toLowerCase()
+                                .replace(/[^\w\s-]/g, '')
+                                .replace(/\s+/g, '-')
+                                .replace(/-+/g, '-')
+                                .trim()
+                              return <h2 id={id} className="font-serif-playfair text-2xl sm:text-3xl font-bold text-[#223] mb-4 mt-8 scroll-mt-24" {...props} />
+                            },
+                            h3: ({ node, ...props }) => {
+                              const text = String(props.children)
+                              const id = text
+                                .toLowerCase()
+                                .replace(/[^\w\s-]/g, '')
+                                .replace(/\s+/g, '-')
+                                .replace(/-+/g, '-')
+                                .trim()
+                              return <h3 id={id} className="font-bold text-lg text-[#223] mb-2 mt-6 scroll-mt-24" {...props} />
+                            },
+                            a: ({ node, href, ...props }) => {
+                              // Use Next.js Link for internal links
+                              const isInternalLink = href?.startsWith('/wiki/pricing/');
+                              if (isInternalLink && href) {
+                                return (
+                                  <Link 
+                                    href={href}
+                                    className="text-[#ff5722] hover:underline font-medium"
+                                    {...props}
+                                  />
+                                );
+                              }
+                              return (
+                                <a
+                                  href={href}
+                                  className="text-blue-600 hover:underline"
+                                  target={href?.startsWith('http') ? '_blank' : undefined}
+                                  rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                  {...props}
+                                />
+                              );
+                            },
+                          }}
+                        >
+                          {afterFAQ}
+                        </ReactMarkdown>
+                      )}
+
+                      {/* CTA Section */}
+                      <div className="max-w-4xl mx-auto mt-16 mb-8">
+                        <div className="bg-white rounded-lg p-8 md:p-12 border border-[#e5e7eb] shadow-lg text-center">
+                          <div className="flex items-center justify-center gap-4 mb-6">
+                            <Image 
+                              src="/images/headshot_v2.jpg" 
+                              alt="Sarah Zou headshot" 
+                              width={80} 
+                              height={80} 
+                              className="rounded-full object-cover flex-shrink-0" 
+                            />
+                            <h2 className="font-serif-playfair text-2xl md:text-3xl font-bold text-[#223]">
+                              Ready to build a powerful revenue engine?
+                            </h2>
+                          </div>
+                          <p className="text-base text-[#4b636e] font-light mb-6 max-w-2xl mx-auto">
+                            Stop guessing and start growing. Let's build a monetization strategy that unlocks your startup's true potential.
+                          </p>
+                          <a
+                            href="https://calendly.com/sarahxzou/free-consult-30-min"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block bg-[#ff5722] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#e64a19] transition shadow-lg hover:shadow-xl"
+                          >
+                            Book Your Sprint
+                          </a>
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mb-8">
               <h3 className="text-lg font-semibold text-yellow-900 mb-2">
                 Content Coming Soon
@@ -209,9 +985,14 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                   );
                 })}
             </ul>
+                    </>
+                  )}
+                </div>
+              </WikiLayout>
+            </div>
           </div>
         </div>
-      </WikiLayout>
+      </div>
     </>
   );
 }
