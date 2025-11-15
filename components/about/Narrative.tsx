@@ -19,7 +19,7 @@ export default function Narrative({ title, content, className = '' }: NarrativeP
           viewport={{ once: true }}
           className="max-w-3xl"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
+          <h2 className="text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-8 leading-tight">
             {title}
           </h2>
           <div 

@@ -163,7 +163,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 .map((tag) => (
                 <span
                   key={tag}
-                  className="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full"
+                  className="text-sm text-[#3b4652] bg-[#f6f7f9] px-3 py-1 rounded-full"
                 >
                   {tag}
                 </span>
@@ -180,7 +180,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                   ? concept.text.split(':').slice(1).join(':').trim()
                   : '';
                 return (
-                  <li key={index} className="text-gray-700" id={concept.id}>
+                  <li key={index} className="text-[#1f2933]" id={concept.id}>
                     {concept.id ? (
                       <Link
                         href={`/wiki/pricing/${params.category}/${concept.id}`}
@@ -192,7 +192,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                       <span className="font-medium">{conceptName}</span>
                     )}
                     {conceptDesc && (
-                      <span className="text-gray-600">: {conceptDesc}</span>
+                      <span className="text-[#1f2933]">: {conceptDesc}</span>
                     )}
                   </li>
                 );
@@ -200,7 +200,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             </ul>
 
             <h2 id="how-to-use-this">How to use this</h2>
-            <p className="text-gray-700">
+            <p className="text-[#1f2933]">
               This category covers the fundamental principles that should guide all pricing decisions. 
               Start here if you're new to pricing strategy or need to establish a solid foundation before 
               diving into specific tactics. These concepts apply whether you're a startup finding 
@@ -208,12 +208,12 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             </p>
 
             <h2 id="coming-next">Coming Next</h2>
-            <div className="bg-gray-50 rounded-lg p-6">
-              <p className="text-gray-600 mb-4">
+            <div className="bg-[#f6f7f9] rounded-lg p-6">
+              <p className="text-[#1f2933] mb-4">
                 Detailed guides and frameworks for each concept are in development. 
                 This section will include:
               </p>
-              <ul className="space-y-2 text-gray-600">
+              <ul className="space-y-2 text-[#1f2933]">
                 <li>• Step-by-step implementation guides</li>
                 <li>• Real-world case studies and examples</li>
                 <li>• Templates and frameworks</li>
@@ -228,12 +228,12 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 <Link
                   key={related.slug}
                   href={`/wiki/pricing/${related.slug}`}
-                  className="block p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:shadow-md transition-all"
+                  className="block p-4 border border-[#e2e6ea] rounded-lg hover:border-[#ff5722] hover:shadow-md transition-all"
                 >
-                  <h3 className="font-semibold text-gray-900 mb-2">
+                  <h3 className="font-semibold text-[#1f2933] mb-2">
                     {related.title}
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                     {related.summary}
                   </p>
                 </Link>
@@ -249,7 +249,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             </p>
             <Link 
               href="/consulting"
-              className="inline-block bg-white text-[#ff5722] font-bold px-8 py-3 rounded-full hover:bg-gray-100 transition-colors"
+              className="inline-block bg-white text-[#ff5722] font-bold px-8 py-3 rounded-full hover:bg-[#f6f7f9] transition-colors"
             >
               Book Free Consult
             </Link>

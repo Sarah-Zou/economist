@@ -98,7 +98,7 @@ export default function HeroStackedImages({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-gray-900 leading-[1.1] tracking-tight"
+              className="text-[32px] sm:text-[36px] font-serif font-bold text-[#1f2933] leading-[1.1] tracking-tight"
             >
               {title}
             </motion.h1>
@@ -108,7 +108,7 @@ export default function HeroStackedImages({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl font-light"
+              className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] max-w-2xl"
             >
               {lede}
             </motion.p>

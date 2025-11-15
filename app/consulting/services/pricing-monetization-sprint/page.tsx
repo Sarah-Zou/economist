@@ -40,11 +40,11 @@ export default function PricingDiagnosticRevenueBoost() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <span className="uppercase tracking-widest text-xs text-[#4b636e] font-semibold mb-4 block">Consulting Service</span>
-          <h1 className="font-serif-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-[#223] mb-4 leading-tight max-w-4xl mx-auto">
+          <span className="uppercase tracking-widest text-xs text-[#3b4652] font-semibold mb-4 block">Consulting Service</span>
+          <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold text-[#1f2933] mb-4 leading-tight max-w-4xl mx-auto">
             Master Your Monetization. Go from Guesswork to Growth.
           </h1>
-          <p className="text-lg md:text-xl text-[#4b636e] font-light mb-8 max-w-3xl mx-auto">
+          <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-8 max-w-3xl mx-auto">
             A one-week intensive sprint designed for early-stage tech founders to build a pricing and monetization strategy that converts.
           </p>
         </div>
@@ -58,9 +58,9 @@ export default function PricingDiagnosticRevenueBoost() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h2 className="font-serif-playfair text-xl font-bold text-[#223]">Our Guarantee</h2>
+              <h2 className="font-serif-playfair text-xl font-semibold text-[#1f2933]">Our Guarantee</h2>
             </div>
-            <p className="text-sm text-[#4b636e] font-light">
+            <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
               We guarantee you'll walk away with a clear, actionable monetization strategy. If you're not satisfied with the outcome, we'll work with you until you are.
             </p>
           </div>
@@ -70,22 +70,22 @@ export default function PricingDiagnosticRevenueBoost() {
         <div className="max-w-7xl mx-auto space-y-24">
           {/* Who it's for Section */}
           <section className="text-center">
-            <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-4">Who This Sprint is For</h2>
-            <p className="text-base md:text-lg text-[#4b636e] font-light mb-8 max-w-3xl mx-auto">
+            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4">Who This Sprint is For</h2>
+            <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-8 max-w-3xl mx-auto">
               Early-stage tech founders (Pre-Seed → Series A; pre-revenue to &lt;$3M ARR) who need investor-credible monetization, a first price for launch, or a reset after weak revenue yield.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-8">
               <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm text-left">
                 <div className="text-3xl mb-3">🚀</div>
-                <h3 className="font-bold text-lg text-[#223] mb-2">Pre-Seed Founders</h3>
-                <p className="text-base text-[#4b636e] font-light">
+                <h3 className="font-semibold text-[20px] text-[#1f2933] mb-2">Pre-Seed Founders</h3>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                   Building your first pricing model and need investor-credible monetization strategy before launch.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm text-left">
                 <div className="text-3xl mb-3">💼</div>
-                <h3 className="font-bold text-lg text-[#223] mb-2">Seed or Series-A Startups</h3>
-                <p className="text-base text-[#4b636e] font-light">
+                <h3 className="font-semibold text-[20px] text-[#1f2933] mb-2">Seed or Series-A Startups</h3>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                   Need to reset pricing after weak revenue yield or optimize monetization for growth and fundraising.
                 </p>
               </div>
@@ -94,8 +94,8 @@ export default function PricingDiagnosticRevenueBoost() {
 
           {/* Common Triggers Section */}
           <section className="text-center">
-            <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-4">Common triggers</h2>
-            <p className="text-base text-[#4b636e] font-light mb-8">If any of these sound familiar, this sprint is designed for you.</p>
+            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4">Common triggers</h2>
+            <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-8">If any of these sound familiar, this sprint is designed for you.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {[
                 { icon: '❓', text: 'Unsure how to price new product or new features' },
@@ -107,7 +107,7 @@ export default function PricingDiagnosticRevenueBoost() {
               ].map((trigger, idx) => (
                 <div key={idx} className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm hover:shadow-md transition-shadow">
                   <div className="text-4xl mb-3">{trigger.icon}</div>
-                  <p className="text-base text-[#4b636e] font-light">{trigger.text}</p>
+                  <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">{trigger.text}</p>
                 </div>
               ))}
           </div>
@@ -118,8 +118,8 @@ export default function PricingDiagnosticRevenueBoost() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Tangible Outcomes */}
               <div>
-                <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-3">Tangible Outcomes</h2>
-                <p className="text-sm text-[#4b636e] font-light mb-6">By the end of the sprint, you will have:</p>
+                <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-3">Tangible Outcomes</h2>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-6">By the end of the sprint, you will have:</p>
                 <ol className="space-y-4">
                   {[
                     <><strong>A value-based pricing model that aligns with your customer segments</strong>, with value metric chosen</>,
@@ -134,7 +134,7 @@ export default function PricingDiagnosticRevenueBoost() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-base text-[#4b636e] font-light">{outcome}</span>
+                      <span className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">{outcome}</span>
                     </li>
                   ))}
                 </ol>
@@ -142,13 +142,13 @@ export default function PricingDiagnosticRevenueBoost() {
 
               {/* What You Get */}
               <div>
-                <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-3">What You Get</h2>
-                <p className="text-sm text-[#4b636e] font-light mb-6">A comprehensive set of deliverables:</p>
+                <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-3">What You Get</h2>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-6">A comprehensive set of deliverables:</p>
                 <ul className="space-y-4">
                   {[
                     { 
                       icon: (
-                        <svg className="w-5 h-5 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>
                       ),
@@ -156,7 +156,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     },
                     { 
                       icon: (
-                        <svg className="w-5 h-5 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                         </svg>
                       ),
@@ -164,7 +164,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     },
                     { 
                       icon: (
-                        <svg className="w-5 h-5 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
                         </svg>
                       ),
@@ -172,7 +172,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     },
                     { 
                       icon: (
-                        <svg className="w-5 h-5 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                         </svg>
                       ),
@@ -180,7 +180,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     },
                     { 
                       icon: (
-                        <svg className="w-5 h-5 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                         </svg>
                       ),
@@ -188,7 +188,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     },
                     { 
                       icon: (
-                        <svg className="w-5 h-5 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                       ),
@@ -197,7 +197,7 @@ export default function PricingDiagnosticRevenueBoost() {
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3">
                       <div className="flex-shrink-0 mt-0.5">{item.icon}</div>
-                      <span className="text-base text-[#4b636e] font-light">{item.text}</span>
+                      <span className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">{item.text}</span>
                     </li>
                   ))}
                   </ul>
@@ -207,8 +207,8 @@ export default function PricingDiagnosticRevenueBoost() {
 
           {/* Cadence Section */}
           <section className="text-center">
-            <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-3">The 1-Week Sprint Cadence</h2>
-            <p className="text-base text-[#4b636e] font-light mb-12 max-w-2xl mx-auto">
+            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-3">The 1-Week Sprint Cadence</h2>
+            <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-12 max-w-2xl mx-auto">
               A structured, collaborative process designed for maximum impact in minimum time.
             </p>
             <div className="max-w-6xl mx-auto px-4">
@@ -224,11 +224,11 @@ export default function PricingDiagnosticRevenueBoost() {
                   { num: 5, title: 'Handoff', desc: 'Final presentation + delivery of all assets' }
                 ].map((step, idx) => (
                   <div key={idx} className="relative z-10 flex flex-col items-center text-center">
-                    <div className="bg-[#06b6d4] rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center shadow-lg">
+                    <div className="bg-[#ff5722] rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center shadow-lg">
                       <span className="text-xl font-bold text-white">{step.num}</span>
                     </div>
-                    <h3 className="font-bold text-base text-[#223] mb-2">{step.title}</h3>
-                    <p className="text-sm text-[#4b636e] font-light">{step.desc}</p>
+                    <h3 className="font-semibold text-[20px] text-[#1f2933] mb-2">{step.title}</h3>
+                    <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">{step.desc}</p>
                   </div>
                 ))}
               </div>
@@ -237,37 +237,37 @@ export default function PricingDiagnosticRevenueBoost() {
 
           {/* Pricing Section */}
           <section className="text-center">
-            <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-3">A Clear Investment in Your Growth</h2>
-            <p className="text-base text-[#4b636e] font-light mb-8 max-w-2xl mx-auto">
+            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-3">A Clear Investment in Your Growth</h2>
+            <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-8 max-w-2xl mx-auto">
               Get an expert monetization strategy for a fraction of the cost and time of hiring full-time.
             </p>
             
             {/* Comparison Table */}
             <div className="bg-white rounded-lg p-8 border border-[#e5e7eb] shadow-sm overflow-x-auto mb-8 max-w-5xl mx-auto">
-              <table className="w-full border-collapse text-base text-[#4b636e] font-light">
+              <table className="w-full border-collapse text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                 <thead>
-                  <tr className="border-b-2 border-[#223]">
-                    <th className="text-left py-4 px-4 font-semibold text-[#223]">Feature</th>
-                    <th className="text-center py-4 px-4 font-semibold text-[#223]">Doing Nothing</th>
-                    <th className="text-center py-4 px-4 font-semibold text-[#223]">Hire Full-Time</th>
-                    <th className="text-center py-4 px-4 font-semibold text-[#223] bg-[#eef2ff] rounded-t-lg">Pricing & Monetization Sprint</th>
+                  <tr className="border-b-2 border-[#1f2933]">
+                    <th className="text-left py-4 px-4 font-semibold text-[#1f2933]">Feature</th>
+                    <th className="text-center py-4 px-4 font-semibold text-[#1f2933]">Doing Nothing</th>
+                    <th className="text-center py-4 px-4 font-semibold text-[#1f2933]">Hire Full-Time</th>
+                    <th className="text-center py-4 px-4 font-semibold text-[#1f2933] bg-[#fff5f2] rounded-t-lg">Pricing & Monetization Sprint</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="border-b border-[#e5e7eb]">
-                    <td className="py-4 px-4 font-medium text-[#223] text-left">Cost</td>
+                    <td className="py-4 px-4 font-medium text-[#1f2933] text-left">Cost</td>
                     <td className="py-4 px-4 text-center">$0 (Lost Revenue)</td>
                     <td className="py-4 px-4 text-center">$150k+/yr</td>
-                    <td className="py-4 px-4 bg-[#eef2ff] text-[#06b6d4] font-semibold text-center">$5k-$18k</td>
+                    <td className="py-4 px-4 bg-[#fff5f2] text-[#ff5722] font-semibold text-center">$5k-$18k</td>
                   </tr>
                   <tr className="border-b border-[#e5e7eb]">
-                    <td className="py-4 px-4 font-medium text-[#223] text-left">Time to Value</td>
+                    <td className="py-4 px-4 font-medium text-[#1f2933] text-left">Time to Value</td>
                     <td className="py-4 px-4 text-center">Never</td>
                     <td className="py-4 px-4 text-center">3-6+ Months</td>
-                    <td className="py-4 px-4 bg-[#eef2ff] text-[#06b6d4] font-semibold text-center">1-2 Weeks</td>
+                    <td className="py-4 px-4 bg-[#fff5f2] text-[#ff5722] font-semibold text-center">1-2 Weeks</td>
                   </tr>
                   <tr className="border-b border-[#e5e7eb]">
-                    <td className="py-4 px-4 font-medium text-[#223] text-left">Expertise</td>
+                    <td className="py-4 px-4 font-medium text-[#1f2933] text-left">Expertise</td>
                     <td className="py-4 px-4 text-center">
                       <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mx-auto">
                         <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -279,7 +279,7 @@ export default function PricingDiagnosticRevenueBoost() {
                       <div className="w-6 h-6 rounded-full border-2 border-[#ff5722] flex items-center justify-center mx-auto">
                       </div>
                     </td>
-                    <td className="py-4 px-4 bg-[#eef2ff] text-center">
+                    <td className="py-4 px-4 bg-[#fff5f2] text-center">
                       <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mx-auto">
                         <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -288,7 +288,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     </td>
                   </tr>
                   <tr className="border-b border-[#e5e7eb]">
-                    <td className="py-4 px-4 font-medium text-[#223] text-left">Actionable Strategy</td>
+                    <td className="py-4 px-4 font-medium text-[#1f2933] text-left">Actionable Strategy</td>
                     <td className="py-4 px-4 text-center">
                       <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mx-auto">
                         <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -300,7 +300,7 @@ export default function PricingDiagnosticRevenueBoost() {
                       <div className="w-6 h-6 rounded-full border-2 border-[#ff5722] flex items-center justify-center mx-auto">
                       </div>
                     </td>
-                    <td className="py-4 px-4 bg-[#eef2ff] text-center">
+                    <td className="py-4 px-4 bg-[#fff5f2] text-center">
                       <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mx-auto">
                         <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -309,18 +309,18 @@ export default function PricingDiagnosticRevenueBoost() {
                     </td>
                   </tr>
                   <tr className="border-b border-[#e5e7eb]">
-                    <td className="py-4 px-4 font-medium text-[#223] text-left">Risk</td>
+                    <td className="py-4 px-4 font-medium text-[#1f2933] text-left">Risk</td>
                     <td className="py-4 px-4 text-center">High</td>
                     <td className="py-4 px-4 text-center">High</td>
-                    <td className="py-4 px-4 bg-[#eef2ff] text-[#06b6d4] font-semibold rounded-b-lg text-center">Zero (Guaranteed)</td>
+                    <td className="py-4 px-4 bg-[#fff5f2] text-[#ff5722] font-semibold rounded-b-lg text-center">Zero (Guaranteed)</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
             <div className="max-w-6xl mx-auto mt-20">
-              <h3 className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-3 text-center">Choose the Right Strategy Sprint for Your Business</h3>
-              <p className="text-base text-[#4b636e] font-light mb-12 text-center max-w-2xl mx-auto">
+              <h3 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-3 text-center">Choose the Right Strategy Sprint for Your Business</h3>
+              <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-12 text-center max-w-2xl mx-auto">
                 Find the perfect plan to unlock your product's pricing and monetization potential.
               </p>
               
@@ -333,7 +333,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     duration: '/ 1 wk',
                     description: 'Pre-launch or just-post-MVP teams needing a defendable first price, simple G/B/B package, and discount guardrails.',
                     buttonText: 'Choose Plan',
-                    buttonStyle: 'bg-gray-100 text-[#223] hover:bg-gray-200',
+                    buttonStyle: 'bg-[#f6f7f9] text-[#1f2933] hover:bg-[#e2e6ea]',
                     features: [
                       { text: <>1x60 min <strong>Workshops</strong></>, included: true },
                       { text: <>6-10 pp <strong>Strategy Report</strong></>, included: true },
@@ -350,7 +350,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     duration: '/ 1 wk',
                     description: 'Early-revenue startups (pilots to ~$1M ARR) with weak yield needing value metric validation, tier refinement, and first pricing experiment.',
                     buttonText: 'Get Started',
-                    buttonStyle: 'bg-[#06b6d4] text-white hover:bg-[#0891b2]',
+                    buttonStyle: 'bg-[#ff5722] text-white hover:bg-[#e44e1f]',
                     features: [
                       { text: <>2x60 min <strong>Workshops</strong></>, included: true },
                       { text: <>12-18 pp <strong>Strategy Report</strong></>, included: true },
@@ -367,7 +367,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     duration: '/ 2 wks',
                     description: 'Investor-critical resets or complex cases (multiple segments/SKUs, usage-based shift) requiring customer research, deeper modeling, and multi-test design.',
                     buttonText: 'Choose Plan',
-                    buttonStyle: 'bg-gray-100 text-[#223] hover:bg-gray-200',
+                    buttonStyle: 'bg-[#f6f7f9] text-[#1f2933] hover:bg-[#e2e6ea]',
                     features: [
                       { text: <>3x60 min <strong>Workshops</strong></>, included: true },
                       { text: <>18-25 pp + comms copy blocks <strong>Strategy Report</strong></>, included: true },
@@ -384,12 +384,12 @@ export default function PricingDiagnosticRevenueBoost() {
                     className="bg-white rounded-lg border-2 border-[#e5e7eb] shadow-sm p-6 flex flex-col"
                   >
                     <div className="mb-6">
-                      <h4 className="font-serif-playfair text-2xl font-bold text-[#06b6d4] mb-3 text-left">{tier.name}</h4>
+                      <h4 className="font-serif-playfair text-2xl font-bold text-[#ff5722] mb-3 text-left">{tier.name}</h4>
                       <div className="mb-2 text-left">
-                        <span className="text-3xl font-bold text-[#223]">{tier.price}</span>
-                        <span className="text-sm text-[#4b636e] font-light ml-1">{tier.duration}</span>
+                        <span className="text-3xl font-bold text-[#1f2933]">{tier.price}</span>
+                        <span className="text-sm text-[#3b4652] ml-1">{tier.duration}</span>
                       </div>
-                      <p className="text-sm text-[#4b636e] font-light text-left leading-relaxed mt-2">{tier.description}</p>
+                      <p className="text-base sm:text-[17px] text-[#1f2933] text-left leading-[1.65] mt-2">{tier.description}</p>
                     </div>
                     <ul className="space-y-3 flex-grow mb-6">
                       {tier.features.map((feature, featIdx) => (
@@ -401,13 +401,13 @@ export default function PricingDiagnosticRevenueBoost() {
                               </svg>
                             </div>
                           ) : (
-                            <div className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                              <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="w-5 h-5 rounded-full bg-[#f6f7f9] flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <svg className="w-3 h-3 text-[#3b4652]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                               </svg>
                             </div>
                           )}
-                          <span className={`text-sm ${feature.included ? 'text-[#4b636e]' : 'text-gray-400'} font-light`}>
+                          <span className={`text-sm ${feature.included ? 'text-[#1f2933]' : 'text-[#3b4652]'}`}>
                             {feature.text}
                           </span>
                         </li>
@@ -429,14 +429,14 @@ export default function PricingDiagnosticRevenueBoost() {
 
           {/* Add-ons Section */}
             <section>
-            <h2 className="font-serif-playfair text-2xl font-bold text-[#223] mb-6 text-center">Add-ons</h2>
+            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-6 text-center">Add-ons</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {[
                 { 
                   title: 'Customer Value Research Pack', 
                   desc: 'Interviews/survey to de-risk pricing assumptions',
                   icon: (
-                    <svg className="w-6 h-6 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                   )
@@ -445,7 +445,7 @@ export default function PricingDiagnosticRevenueBoost() {
                   title: 'Pricing Page Wireframe + Comms Pack', 
                   desc: 'Web copy, emails, in-app modals',
                   icon: (
-                    <svg className="w-6 h-6 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                   )
@@ -454,7 +454,7 @@ export default function PricingDiagnosticRevenueBoost() {
                   title: 'Experiment Run Support (4 weeks)', 
                   desc: 'Stand-up tests, analyze, iterate',
                   icon: (
-                    <svg className="w-6 h-6 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                     </svg>
                   )
@@ -464,8 +464,8 @@ export default function PricingDiagnosticRevenueBoost() {
                   <div className="mb-4">
                     {addon.icon}
                   </div>
-                  <h3 className="font-bold text-lg text-[#223] mb-2">{addon.title}</h3>
-                  <p className="text-base text-[#4b636e] font-light">{addon.desc}</p>
+                  <h3 className="font-semibold text-[20px] text-[#1f2933] mb-2">{addon.title}</h3>
+                  <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">{addon.desc}</p>
                 </div>
               ))}
             </div>
@@ -530,9 +530,9 @@ export default function PricingDiagnosticRevenueBoost() {
           <div className="bg-white rounded-lg p-8 md:p-12 border border-[#e5e7eb] shadow-lg text-center">
             <div className="flex items-center justify-center gap-4 mb-6">
               <Image src="/images/headshot_v2.jpg" alt="Sarah Zou headshot" width={80} height={80} className="rounded-full object-cover flex-shrink-0" />
-              <h2 className="font-serif-playfair text-2xl md:text-3xl font-bold text-[#223]">Ready to build a powerful revenue engine?</h2>
+              <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933]">Ready to build a powerful revenue engine?</h2>
             </div>
-            <p className="text-base text-[#4b636e] font-light mb-6 max-w-2xl mx-auto">
+            <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-6 max-w-2xl mx-auto">
               Stop guessing and start growing. Let's build a monetization strategy that unlocks your startup's true potential.
             </p>
               <a
@@ -549,21 +549,21 @@ export default function PricingDiagnosticRevenueBoost() {
           {/* Contact Form */}
         <div className="max-w-2xl mx-auto mt-16 mb-16">
           <div className="bg-white rounded-lg p-8 border border-[#e5e7eb] shadow-sm">
-            <h2 className="font-serif-playfair text-2xl font-bold mb-6 text-[#223] text-center">Let's get in touch</h2>
+            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-6 text-[#1f2933] text-center">Let's get in touch</h2>
             <form action="https://formspree.io/f/mdkgqeye" method="POST" className="space-y-6">
               <div className="flex flex-col md:flex-row gap-6">
                 <input
                   type="text"
                   name="firstName"
                   placeholder="First Name"
-                  className="flex-1 px-4 py-3 border border-[#e5e7eb] bg-[#f8fafb] rounded focus:outline-none focus:ring-2 focus:ring-[#06b6d4] text-[#223]"
+                  className="flex-1 px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
                   required
                 />
                 <input
                   type="text"
                   name="lastName"
                   placeholder="Last Name"
-                  className="flex-1 px-4 py-3 border border-[#e5e7eb] bg-[#f8fafb] rounded focus:outline-none focus:ring-2 focus:ring-[#06b6d4] text-[#223]"
+                  className="flex-1 px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
                   required
                 />
               </div>
@@ -571,14 +571,14 @@ export default function PricingDiagnosticRevenueBoost() {
                 type="email"
                 name="email"
                 placeholder="Email Address"
-                className="w-full px-4 py-3 border border-[#e5e7eb] bg-[#f8fafb] rounded focus:outline-none focus:ring-2 focus:ring-[#06b6d4] text-[#223]"
+                className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
                 required
               />
               <textarea
                 name="message"
                 placeholder="Say Hello"
                 rows={5}
-                className="w-full px-4 py-3 border border-[#e5e7eb] bg-[#f8fafb] rounded focus:outline-none focus:ring-2 focus:ring-[#06b6d4] text-[#223]"
+                className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
                 required
               />
               <button

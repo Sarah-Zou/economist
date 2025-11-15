@@ -87,11 +87,11 @@ export default function WikiPricingPage() {
       
       <WikiLayout breadcrumbs={[]}>
         <div className="max-w-4xl">
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <h1 className="text-[32px] sm:text-[36px] font-bold text-[#1f2933] mb-6">
             Pricing & Monetization Wiki
           </h1>
           
-          <div className="prose prose-lg text-gray-600 mb-8">
+          <div className="prose prose-lg text-[#1f2933] text-base sm:text-[17px] leading-[1.65] mb-8">
             <p>
               A comprehensive, evidence-based guide to pricing and monetization strategies for tech startups. 
               From foundational concepts to advanced tactics, learn how to optimize your pricing for maximum growth.
@@ -104,16 +104,16 @@ export default function WikiPricingPage() {
               <input
                 type="text"
                 placeholder="Search pricing concepts..."
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-[#e2e6ea] rounded-lg focus:ring-2 focus:ring-[#ff5722] focus:border-transparent"
                 disabled
               />
               <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-                <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-[#3b4652]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
             </div>
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="text-sm text-[#3b4652] mt-2">
               Search functionality coming soon
             </p>
           </div>
@@ -134,17 +134,17 @@ export default function WikiPricingPage() {
           </div>
 
           {/* A-Z Quick Filter placeholder */}
-          <div className="border-t border-gray-200 pt-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+          <div className="border-t border-[#e2e6ea] pt-8">
+            <h2 className="text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4">
               Quick Reference
             </h2>
-            <div className="text-gray-600">
+            <div className="text-[#1f2933]">
               <p className="mb-4">
                 Browse concepts alphabetically or by topic area. 
                 This section will be expanded as we add more detailed content to each category.
               </p>
-              <div className="bg-gray-50 rounded-lg p-4">
-                <p className="text-sm text-gray-500">
+              <div className="bg-[#f6f7f9] rounded-lg p-4">
+                <p className="text-sm text-[#3b4652]">
                   A-Z index and advanced filtering coming soon
                 </p>
               </div>

@@ -35,14 +35,14 @@ export const metadata: Metadata = {
 export default function CheatSheetsPage() {
   return (
     <>
-      <div className="min-h-screen bg-[#fff8f2]">
+      <div className="min-h-screen bg-white">
         <div className="max-w-8xl mx-auto px-4 py-16 flex flex-col items-center">
           {/* Hero and Subheadline */}
           <section className="w-full max-w-4xl mx-auto mb-12">
-            <h1 className="font-serif-playfair text-4xl md:text-5xl font-bold mb-6 text-[#ff5722] text-center">
+            <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold mb-6 text-[#ff5722] text-center">
               Sign up for my newsletter and get The Startup Monetization Roadmap for free.
             </h1>
-            <h2 className="text-xl md:text-2xl font-medium mb-8 text-[#222] text-center leading-relaxed">
+            <h2 className="text-lg sm:text-xl font-medium mb-8 text-[#1f2933] text-center leading-[1.65]">
               A step-by-step playbook to go from zero to first dollar—value-based, investor-grade. You'll get the 4-phase system, interview scripts, pricing architecture, and a 30-60-90 action plan. Subscribe below; the download link arrives in your welcome email. Unsubscribe anytime.
             </h2>
           </section>
@@ -52,7 +52,7 @@ export default function CheatSheetsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               {/* Signup box */}
               <div className="flex flex-col items-center md:items-start w-full">
-                <h3 className="text-2xl font-bold mb-4 text-[#ff5722] text-left w-full">Get the Free Roadmap</h3>
+                <h3 className="text-2xl sm:text-[28px] font-semibold mb-4 text-[#ff5722] text-left w-full">Get the Free Roadmap</h3>
                 <div className="w-full flex justify-center md:justify-start mb-8">
                   <iframe
                     src="https://sarahzou.substack.com/embed"
@@ -82,14 +82,14 @@ export default function CheatSheetsPage() {
 
           {/* What's inside section */}
           <section className="w-full max-w-5xl mx-auto mb-16 px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold mb-4 text-center text-[#ff5722]">
+            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-4 text-center text-[#ff5722]">
               What's inside
             </h2>
-            <p className="text-lg text-gray-700 mb-12 text-center max-w-3xl mx-auto">
+            <p className="text-base sm:text-[17px] text-[#1f2933] mb-12 text-center max-w-3xl mx-auto leading-[1.65]">
               Everything you need to build a value-based, investor-grade pricing strategy from the ground up.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:border-[#ff5722] transition-colors">
+              <div className="bg-white rounded-lg p-6 shadow-sm border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 rounded-lg bg-[#ff5722]/10 flex items-center justify-center">
@@ -97,14 +97,14 @@ export default function CheatSheetsPage() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">4 Phases, zero fluff</h3>
-                    <p className="text-sm text-gray-700 leading-relaxed">
+                    <h3 className="text-[20px] font-semibold text-[#1f2933] mb-2">4 Phases, zero fluff</h3>
+                    <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                       Foundations → Packaging/Value Metric → Price Points → Rollout & Policies.
                     </p>
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:border-[#ff5722] transition-colors">
+              <div className="bg-white rounded-lg p-6 shadow-sm border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 rounded-lg bg-[#ff5722]/10 flex items-center justify-center">
@@ -112,14 +112,14 @@ export default function CheatSheetsPage() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Interview kit</h3>
-                    <p className="text-sm text-gray-700 leading-relaxed">
+                    <h3 className="text-[20px] font-semibold text-[#1f2933] mb-2">Interview kit</h3>
+                    <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                       10-customer discovery sprint, WTP prompts, and synthesis checklist.
                     </p>
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:border-[#ff5722] transition-colors">
+              <div className="bg-white rounded-lg p-6 shadow-sm border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 rounded-lg bg-[#ff5722]/10 flex items-center justify-center">
@@ -127,14 +127,14 @@ export default function CheatSheetsPage() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Architecture decisions</h3>
-                    <p className="text-sm text-gray-700 leading-relaxed">
+                    <h3 className="text-[20px] sm:text-[22px] font-semibold text-[#1f2933] mb-2">Architecture decisions</h3>
+                    <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                       G/B/B tiers, Leaders/Fillers/Killers, value-metric and model selection.
                     </p>
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:border-[#ff5722] transition-colors">
+              <div className="bg-white rounded-lg p-6 shadow-sm border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 rounded-lg bg-[#ff5722]/10 flex items-center justify-center">
@@ -142,8 +142,8 @@ export default function CheatSheetsPage() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Price setting, practically</h3>
-                    <p className="text-sm text-gray-700 leading-relaxed">
+                    <h3 className="text-[20px] sm:text-[22px] font-semibold text-[#1f2933] mb-2">Price setting, practically</h3>
+                    <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                       Value Decoder worksheet, fences, and simple pricing psychology.
                     </p>
                   </div>
@@ -157,8 +157,8 @@ export default function CheatSheetsPage() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">30-60-90 plan</h3>
-                    <p className="text-sm text-gray-700 leading-relaxed">
+                    <h3 className="text-[20px] sm:text-[22px] font-semibold text-[#1f2933] mb-2">30-60-90 plan</h3>
+                    <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                       Field-tested tasks to launch pricing and track early signals.
                     </p>
                   </div>
@@ -169,21 +169,21 @@ export default function CheatSheetsPage() {
 
           {/* Who it's for section */}
           <section className="w-full max-w-4xl mx-auto mb-8 px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold mb-8 text-center text-[#ff5722]">
+            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-8 text-center text-[#1f2933]">
               Who it's for
             </h2>
             <div className="flex flex-wrap justify-center gap-4 mb-6">
-              <span className="bg-gray-100 text-gray-800 px-6 py-3 rounded-full text-base font-medium shadow-sm hover:bg-gray-200 transition-colors">
+              <span className="bg-[#f6f7f9] text-[#1f2933] px-6 py-3 rounded-full text-base font-medium shadow-sm hover:bg-[#e2e6ea] transition-colors">
                 Seed–Series B Founders
               </span>
-              <span className="bg-gray-100 text-gray-800 px-6 py-3 rounded-full text-base font-medium shadow-sm hover:bg-gray-200 transition-colors">
+              <span className="bg-[#f6f7f9] text-[#1f2933] px-6 py-3 rounded-full text-base font-medium shadow-sm hover:bg-[#e2e6ea] transition-colors">
                 Product & GTM Leads
               </span>
-              <span className="bg-gray-100 text-gray-800 px-6 py-3 rounded-full text-base font-medium shadow-sm hover:bg-gray-200 transition-colors">
+              <span className="bg-[#f6f7f9] text-[#1f2933] px-6 py-3 rounded-full text-base font-medium shadow-sm hover:bg-[#e2e6ea] transition-colors">
                 Fractional Execs
               </span>
             </div>
-            <p className="text-lg text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
+            <p className="text-base sm:text-[17px] text-[#1f2933] text-center leading-[1.65] max-w-2xl mx-auto">
               who need a defensible, funder-friendly monetization plan in weeks, not months.
             </p>
           </section>

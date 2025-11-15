@@ -43,16 +43,16 @@ export default function Cta({ title, description, buttonText, buttonHref }: CtaP
             viewport={{ once: true }}
             className="space-y-4 sm:space-y-6"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-gray-900 leading-tight">
+            <h2 className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] leading-tight">
               {title}
             </h2>
-            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+            <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
               {description}
             </p>
             
             <Link
               href={buttonHref}
-              className="inline-flex items-center px-5 sm:px-6 py-2.5 sm:py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg text-sm sm:text-base transition-all duration-200 hover:shadow-lg"
+              className="inline-flex items-center px-5 sm:px-6 py-2.5 sm:py-3 bg-[#ff5722] hover:bg-[#e44e1f] text-white font-semibold rounded-lg text-sm sm:text-base transition-all duration-200 hover:shadow-lg"
             >
               {buttonText}
               <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

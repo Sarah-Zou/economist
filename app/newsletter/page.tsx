@@ -13,14 +13,14 @@ function ArticleList() {
           <div className="flex-1 min-w-0">
             <Link
               href={`/newsletter/${post.slug}`}
-              className="block font-bold text-lg text-gray-900 hover:text-orange-600 mb-1 leading-snug truncate"
+              className="block font-bold text-lg text-[#1f2933] hover:text-[#ff5722] mb-1 leading-snug truncate"
             >
               {post.title}
             </Link>
-            <div className="text-xs text-gray-500 mb-1">
+            <div className="text-xs text-[#3b4652] mb-1">
               {post.author.toUpperCase()} &nbsp; {format(new Date(post.date), 'MMM d')}
             </div>
-            <p className="text-gray-700 text-base leading-snug max-w-full line-clamp-2">
+            <p className="text-[#1f2933] text-base sm:text-[17px] leading-[1.65] max-w-full line-clamp-2">
               {post.description}
             </p>
           </div>
@@ -51,12 +51,12 @@ export default function NewsletterPage() {
         </div>
         {/* Right: Signup Box */}
         <div className="flex flex-col items-center md:items-start w-full max-w-lg mx-auto md:sticky md:top-12 h-fit">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-center text-orange-600 mb-4 leading-tight w-full">Subscribe to my weekly newsletter where we deep dive into all things pricing and growth strategies.</h2>
-          <div className="bg-gray-50 rounded-lg p-6 mb-6 w-full">
-            <h3 className="font-bold text-lg mb-3 text-[#111]">What you'll get:</h3>
-            <p className="text-gray-700 mb-2">• Pricing research, experiments, and benchmarks—1×/week</p>
-            <p className="text-gray-700 mb-2">• Real case studies from tech startups</p>
-            <p className="text-gray-700">• Actionable frameworks you can implement immediately</p>
+          <h2 className="text-2xl sm:text-[28px] font-semibold text-center text-[#ff5722] mb-4 leading-tight w-full">Subscribe to my weekly newsletter where we deep dive into all things pricing and growth strategies.</h2>
+          <div className="bg-[#f6f7f9] rounded-lg p-6 mb-6 w-full">
+            <h3 className="font-semibold text-[20px] mb-3 text-[#1f2933]">What you'll get:</h3>
+            <p className="text-[#1f2933] mb-2 text-base sm:text-[17px] leading-[1.65]">• Pricing research, experiments, and benchmarks—1×/week</p>
+            <p className="text-[#1f2933] mb-2 text-base sm:text-[17px] leading-[1.65]">• Real case studies from tech startups</p>
+            <p className="text-[#1f2933] text-base sm:text-[17px] leading-[1.65]">• Actionable frameworks you can implement immediately</p>
           </div>
           <div className="w-full flex justify-center md:justify-start">
             <iframe

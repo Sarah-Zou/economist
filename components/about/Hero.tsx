@@ -31,7 +31,7 @@ export default function Hero({ name, title, intro, badge, images }: HeroProps) {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-sm font-medium text-orange-600 uppercase tracking-wide"
+              className="text-sm font-medium text-[#ff5722] uppercase tracking-wide"
             >
               {badge}
             </motion.div>
@@ -43,10 +43,10 @@ export default function Hero({ name, title, intro, badge, images }: HeroProps) {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="space-y-6"
             >
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-gray-900 leading-tight">
+              <h1 className="text-[32px] md:text-[36px] lg:text-[42px] font-serif-playfair font-bold text-[#1f2933] leading-tight">
                 {name}
               </h1>
-              <p className="text-xl text-gray-600 font-medium">
+              <p className="text-base md:text-[17px] text-[#1f2933] font-medium">
                 {title}
               </p>
             </motion.div>
@@ -56,7 +56,7 @@ export default function Hero({ name, title, intro, badge, images }: HeroProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-lg text-gray-600 leading-relaxed max-w-2xl"
+              className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] max-w-2xl"
             >
               {intro}
             </motion.p>
@@ -66,7 +66,7 @@ export default function Hero({ name, title, intro, badge, images }: HeroProps) {
               initial={{ opacity: 0, scaleX: 0 }}
               animate={{ opacity: 1, scaleX: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="w-20 h-0.5 bg-orange-500"
+              className="w-20 h-0.5 bg-[#ff5722]"
             />
           </motion.div>
 

@@ -26,16 +26,16 @@ const Navbar = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            <Link href="/consulting" className="text-base text-gray-600 hover:text-gray-900 transition-colors">Consulting</Link>
-            <Link href="/wiki/pricing" className="text-base text-gray-600 hover:text-gray-900 transition-colors">Wiki</Link>
-            <Link href="/cheat-sheets" className="text-base text-gray-600 hover:text-gray-900 transition-colors">Cheat Sheets</Link>
-            <Link href="/about" className="text-base text-gray-600 hover:text-gray-900 transition-colors">About</Link>
-            <Link href="/newsletter" className="text-base text-gray-600 hover:text-gray-900 transition-colors">Newsletter</Link>
+            <Link href="/consulting" className="text-base text-[#3b4652] hover:text-[#1f2933] transition-colors">Consulting</Link>
+            <Link href="/wiki/pricing" className="text-base text-[#3b4652] hover:text-[#1f2933] transition-colors">Wiki</Link>
+            <Link href="/cheat-sheets" className="text-base text-[#3b4652] hover:text-[#1f2933] transition-colors">Cheat Sheets</Link>
+            <Link href="/about" className="text-base text-[#3b4652] hover:text-[#1f2933] transition-colors">About</Link>
+            <Link href="/newsletter" className="text-base text-[#3b4652] hover:text-[#1f2933] transition-colors">Newsletter</Link>
             <a 
               href="https://calendly.com/sarahxzou/free-consult-30-min" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-[#ff5722] hover:bg-[#e64a19] text-white font-bold rounded-full px-6 py-3 transition-colors whitespace-nowrap"
+              className="bg-[#ff5722] hover:bg-[#e44e1f] text-white font-bold rounded-full px-6 py-3 transition-colors whitespace-nowrap"
             >
               Book Free Consult
             </a>
@@ -44,7 +44,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-gray-600 hover:text-gray-900 transition-colors"
+            className="md:hidden p-2 text-[#3b4652] hover:text-[#1f2933] transition-colors"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -53,38 +53,38 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 py-4 space-y-3">
+          <div className="md:hidden border-t border-[#e2e6ea] py-4 space-y-3">
             <Link 
               href="/consulting" 
-              className="block px-4 py-2 text-base text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors rounded-md"
+              className="block px-4 py-2 text-base text-[#3b4652] hover:text-[#1f2933] hover:bg-[#f6f7f9] transition-colors rounded-md"
               onClick={() => setMobileMenuOpen(false)}
             >
               Consulting
             </Link>
             <Link 
               href="/wiki/pricing" 
-              className="block px-4 py-2 text-base text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors rounded-md"
+              className="block px-4 py-2 text-base text-[#3b4652] hover:text-[#1f2933] hover:bg-[#f6f7f9] transition-colors rounded-md"
               onClick={() => setMobileMenuOpen(false)}
             >
               Wiki
             </Link>
             <Link 
               href="/cheat-sheets" 
-              className="block px-4 py-2 text-base text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors rounded-md"
+              className="block px-4 py-2 text-base text-[#3b4652] hover:text-[#1f2933] hover:bg-[#f6f7f9] transition-colors rounded-md"
               onClick={() => setMobileMenuOpen(false)}
             >
               Cheat Sheets
             </Link>
             <Link 
               href="/about" 
-              className="block px-4 py-2 text-base text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors rounded-md"
+              className="block px-4 py-2 text-base text-[#3b4652] hover:text-[#1f2933] hover:bg-[#f6f7f9] transition-colors rounded-md"
               onClick={() => setMobileMenuOpen(false)}
             >
               About
             </Link>
             <Link 
               href="/newsletter" 
-              className="block px-4 py-2 text-base text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors rounded-md"
+              className="block px-4 py-2 text-base text-[#3b4652] hover:text-[#1f2933] hover:bg-[#f6f7f9] transition-colors rounded-md"
               onClick={() => setMobileMenuOpen(false)}
             >
               Newsletter
@@ -93,7 +93,7 @@ const Navbar = () => {
               href="https://calendly.com/sarahxzou/free-consult-30-min" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="block mx-4 mt-4 bg-[#ff5722] hover:bg-[#e64a19] text-white font-bold rounded-full px-6 py-3 transition-colors text-center"
+              className="block mx-4 mt-4 bg-[#ff5722] hover:bg-[#e44e1f] text-white font-bold rounded-full px-6 py-3 transition-colors text-center"
               onClick={() => setMobileMenuOpen(false)}
             >
               Book Free Consult

@@ -19,13 +19,13 @@ const ContactCTA = ({ variant = 'section' }: ContactCTAProps) => {
   }
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-[#f6f7f9]">
       <div className="container">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-serif-playfair text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-6">
             Ready to accelerate your tech startup growth?
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-8">
             Let's work together to optimize your pricing, improve your metrics, and scale your business with confidence.
           </p>
           <Link href="/contact">

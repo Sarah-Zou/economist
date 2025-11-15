@@ -367,7 +367,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {breadcrumbs.length > 0 && (
             <div className="mb-6">
-              <nav className="flex items-center space-x-2 text-sm text-[#4b636e]">
+              <nav className="flex items-center space-x-2 text-sm text-[#3b4652]">
                 {breadcrumbs.map((crumb, index) => (
                   <span key={index} className="flex items-center">
                     {index > 0 && <span className="mx-2">/</span>}
@@ -403,7 +403,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                   <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
                     <div className="space-y-4">
                       <div>
-                        <p className="text-xs font-semibold text-[#4b636e] uppercase tracking-wide mb-2">Category</p>
+                        <p className="text-xs font-semibold text-[#3b4652] uppercase tracking-wide mb-2">Category</p>
                         <Link 
                           href={`/wiki/pricing/${category.slug}`}
                           className="text-sm text-[#ff5722] hover:underline font-medium"
@@ -413,26 +413,26 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       </div>
                       {conceptData?.lastUpdated && (
                         <div>
-                          <p className="text-xs font-semibold text-[#4b636e] uppercase tracking-wide mb-2">Last Updated</p>
-                          <p className="text-sm text-[#223]">
+                          <p className="text-xs font-semibold text-[#3b4652] uppercase tracking-wide mb-2">Last Updated</p>
+                          <p className="text-sm text-[#1f2933]">
                             {new Date(conceptData.lastUpdated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                           </p>
                         </div>
                       )}
                       {conceptData?.readingTime && (
                         <div>
-                          <p className="text-xs font-semibold text-[#4b636e] uppercase tracking-wide mb-2">Reading Time</p>
-                          <p className="text-sm text-[#223]">{conceptData.readingTime} minutes</p>
+                          <p className="text-xs font-semibold text-[#3b4652] uppercase tracking-wide mb-2">Reading Time</p>
+                          <p className="text-sm text-[#1f2933]">{conceptData.readingTime} minutes</p>
                         </div>
                       )}
                       {conceptData?.tags && conceptData.tags.length > 0 && (
                         <div>
-                          <p className="text-xs font-semibold text-[#4b636e] uppercase tracking-wide mb-2">Tags</p>
+                          <p className="text-xs font-semibold text-[#3b4652] uppercase tracking-wide mb-2">Tags</p>
                           <div className="flex flex-wrap gap-2">
                             {conceptData.tags.map((tag, index) => (
                               <span
                                 key={index}
-                                className="text-xs text-[#4b636e] bg-[#f6f7f9] px-2 py-1 rounded-full border border-[#e5e7eb]"
+                                className="text-xs text-[#3b4652] bg-[#f6f7f9] px-2 py-1 rounded-full border border-[#e5e7eb]"
                               >
                                 {tag}
                               </span>
@@ -446,18 +446,18 @@ export default function ConceptPage({ params }: ConceptPageProps) {
               >
           {/* Header */}
           <div className="mb-8">
-            <h1 className="text-4xl font-serif-playfair font-bold text-[#223] mb-4">
+            <h1 className="text-[32px] sm:text-[36px] font-serif-playfair font-bold text-[#1f2933] mb-4">
               {conceptName}
             </h1>
             {description && (
-              <p className="text-xl text-[#4b636e] font-light leading-relaxed italic">
+              <p className="text-lg sm:text-xl text-[#1f2933] leading-relaxed italic">
                 {description}
               </p>
             )}
           </div>
 
                 {/* Content */}
-                <div className="prose prose-lg max-w-none">
+                <div className="prose prose-lg max-w-none text-[#1f2933] text-base sm:text-[17px] leading-[1.65]">
                   {hasContent && conceptData ? (
                     <>
                       {/* Content before Snapshot */}
@@ -473,7 +473,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                 .replace(/\s+/g, '-')
                                 .replace(/-+/g, '-')
                                 .trim()
-                              return <h2 id={id} className="font-serif-playfair text-2xl sm:text-3xl font-bold text-[#223] mb-4 mt-8 scroll-mt-24" {...props} />
+                              return <h2 id={id} className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-8 scroll-mt-24" {...props} />
                             },
                             h3: ({ node, ...props }) => {
                               const text = String(props.children)
@@ -483,7 +483,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                 .replace(/\s+/g, '-')
                                 .replace(/-+/g, '-')
                                 .trim()
-                              return <h3 id={id} className="font-bold text-lg text-[#223] mb-2 mt-6 scroll-mt-24" {...props} />
+                              return <h3 id={id} className="font-semibold text-[20px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
                             },
                             a: ({ node, href, ...props }) => {
                               const isInternalLink = href?.startsWith('/wiki/pricing/');
@@ -499,7 +499,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                               return (
                                 <a
                                   href={href}
-                                  className="text-blue-600 hover:underline"
+                                  className="text-[#ff5722] hover:underline"
                                   target={href?.startsWith('http') ? '_blank' : undefined}
                                   rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                                   {...props}
@@ -515,48 +515,48 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {/* Snapshot Section */}
                       {snapshot && (
                         <>
-                          <h2 id="snapshot" className="text-2xl sm:text-3xl font-serif-playfair font-bold text-[#223] scroll-mt-24 mb-4">
+                          <h2 id="snapshot" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] scroll-mt-24 mb-4">
                             Snapshot (TL;DR)
                           </h2>
                           <div className="bg-white rounded-lg pt-4 pb-6 px-6 sm:pt-4 sm:pb-8 sm:px-8 border border-[#e5e7eb] shadow-sm mb-8">
                             <div className="space-y-3">
                               {snapshot.whatItIs && (
                                 <div>
-                                  <h3 className="font-bold text-lg text-[#223] mb-1">What it is</h3>
-                                  <p className="text-base text-[#4b636e] font-light leading-relaxed">
+                                  <h3 className="font-semibold text-[20px] text-[#1f2933] mb-1">What it is</h3>
+                                  <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                                     {snapshot.whatItIs}
                                   </p>
                                 </div>
                               )}
                               {snapshot.whyItMatters && (
                                 <div>
-                                  <h3 className="font-bold text-lg text-[#223] mb-1">Why it matters</h3>
-                                  <p className="text-base text-[#4b636e] font-light leading-relaxed">
+                                  <h3 className="font-semibold text-[20px] text-[#1f2933] mb-1">Why it matters</h3>
+                                  <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                                     {snapshot.whyItMatters}
                                   </p>
                                 </div>
                               )}
                               {snapshot.whenToUse && (
                                 <div>
-                                  <h3 className="font-bold text-lg text-[#223] mb-1">When to use</h3>
-                                  <p className="text-base text-[#4b636e] font-light leading-relaxed">
+                                  <h3 className="font-semibold text-[20px] text-[#1f2933] mb-1">When to use</h3>
+                                  <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                                     {snapshot.whenToUse}
                                   </p>
                                 </div>
                               )}
                               {snapshot.keyTakeaways && snapshot.keyTakeaways.length > 0 && (
                                 <div>
-                                  <h3 className="font-bold text-lg text-[#223] mb-1.5">Key Takeaways</h3>
+                                  <h3 className="font-semibold text-[20px] text-[#1f2933] mb-1.5">Key Takeaways</h3>
                                   <ul className="space-y-0.5">
                                     {snapshot.keyTakeaways.map((takeaway, index) => (
-                                      <li key={index} className="text-base text-[#4b636e] font-light leading-relaxed flex items-start gap-2">
+                                      <li key={index} className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] flex items-start gap-2">
                                         <CheckCircle className="w-4 h-4 text-[#ff5722] mt-1.5 flex-shrink-0" />
                                         <span>
                                           <ReactMarkdown
                                             remarkPlugins={[remarkGfm]}
                                             components={{
                                               strong: ({ node, ...props }) => (
-                                                <strong className="font-bold text-[#223]" {...props} />
+                                                <strong className="font-bold text-[#1f2933]" {...props} />
                                               ),
                                             }}
                                           >
@@ -576,7 +576,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {/* Key Facts Section */}
                       {keyFacts && keyFacts.length > 0 && (
                         <div className="mb-8">
-                          <h2 id="key-facts" className="text-2xl sm:text-3xl font-serif-playfair font-bold text-[#223] mb-6 scroll-mt-24">
+                          <h2 id="key-facts" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-6 scroll-mt-24">
                             Key Facts
                           </h2>
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -596,10 +596,10 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#f6f7f9] mb-4">
                                     <Icon className="w-6 h-6 text-[#ff5722]" />
                                   </div>
-                                  <h3 className="text-xl font-bold text-[#223] mb-2">
+                                  <h3 className="text-xl font-bold text-[#1f2933] mb-2">
                                     {fact.title}
                                   </h3>
-                                  <p className="text-sm text-[#4b636e] font-light leading-relaxed">
+                                  <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                                     {fact.description}
                                   </p>
                                 </div>
@@ -622,7 +622,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                 .replace(/\s+/g, '-')
                                 .replace(/-+/g, '-')
                                 .trim()
-                              return <h2 id={id} className="font-serif-playfair text-2xl sm:text-3xl font-bold text-[#223] mb-4 mt-8 scroll-mt-24" {...props} />
+                              return <h2 id={id} className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-8 scroll-mt-24" {...props} />
                             },
                             h3: ({ node, ...props }) => {
                               const text = String(props.children)
@@ -632,7 +632,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                 .replace(/\s+/g, '-')
                                 .replace(/-+/g, '-')
                                 .trim()
-                              return <h3 id={id} className="font-bold text-lg text-[#223] mb-2 mt-6 scroll-mt-24" {...props} />
+                              return <h3 id={id} className="font-semibold text-[20px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
                             },
                             a: ({ node, href, ...props }) => {
                               const isInternalLink = href?.startsWith('/wiki/pricing/');
@@ -648,7 +648,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                               return (
                                 <a
                                   href={href}
-                                  className="text-blue-600 hover:underline"
+                                  className="text-[#ff5722] hover:underline"
                                   target={href?.startsWith('http') ? '_blank' : undefined}
                                   rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                                   {...props}
@@ -664,10 +664,10 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {/* Step-by-step Section */}
                       {steps && steps.length > 0 && (
                         <div className="mb-8">
-                          <h2 id="step-by-step" className="text-2xl sm:text-3xl font-serif-playfair font-bold text-[#223] mb-2 scroll-mt-24">
+                          <h2 id="step-by-step" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-2 scroll-mt-24">
                             Step-by-step
                           </h2>
-                          <p className="text-base text-[#4b636e] font-light mb-6">
+                          <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-6">
                             A structured, collaborative process designed for maximum impact in minimum time.
                           </p>
                           <div className="relative pl-2">
@@ -689,10 +689,10 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                   
                                   {/* Content */}
                                   <div className="flex-1">
-                                    <h3 className="font-bold text-lg text-[#223] mb-1.5">
+                                    <h3 className="font-semibold text-[20px] text-[#1f2933] mb-1.5">
                                       {step.title}
                                     </h3>
-                                    <p className="text-sm text-[#4b636e] font-light leading-relaxed">
+                                    <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                                       {step.description}
                                     </p>
                                   </div>
@@ -717,7 +717,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                 .replace(/\s+/g, '-')
                                 .replace(/-+/g, '-')
                                 .trim()
-                              return <h2 id={id} className="font-serif-playfair text-2xl sm:text-3xl font-bold text-[#223] mb-4 mt-8 scroll-mt-24" {...props} />
+                              return <h2 id={id} className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-8 scroll-mt-24" {...props} />
                             },
                             h3: ({ node, ...props }) => {
                               const text = String(props.children)
@@ -727,7 +727,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                 .replace(/\s+/g, '-')
                                 .replace(/-+/g, '-')
                                 .trim()
-                              return <h3 id={id} className="font-bold text-lg text-[#223] mb-2 mt-6 scroll-mt-24" {...props} />
+                              return <h3 id={id} className="font-semibold text-[20px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
                             },
                             a: ({ node, href, ...props }) => {
                               const isInternalLink = href?.startsWith('/wiki/pricing/');
@@ -743,7 +743,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                               return (
                                 <a
                                   href={href}
-                                  className="text-blue-600 hover:underline"
+                                  className="text-[#ff5722] hover:underline"
                                   target={href?.startsWith('http') ? '_blank' : undefined}
                                   rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                                   {...props}
@@ -769,7 +769,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                 .replace(/\s+/g, '-')
                                 .replace(/-+/g, '-')
                                 .trim()
-                              return <h2 id={id} className="font-serif-playfair text-2xl sm:text-3xl font-bold text-[#223] mb-4 mt-8 scroll-mt-24" {...props} />
+                              return <h2 id={id} className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-8 scroll-mt-24" {...props} />
                             },
                             h3: ({ node, ...props }) => {
                               const text = String(props.children)
@@ -779,7 +779,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                 .replace(/\s+/g, '-')
                                 .replace(/-+/g, '-')
                                 .trim()
-                              return <h3 id={id} className="font-bold text-lg text-[#223] mb-2 mt-6 scroll-mt-24" {...props} />
+                              return <h3 id={id} className="font-semibold text-[20px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
                             },
                             a: ({ node, href, ...props }) => {
                               const isInternalLink = href?.startsWith('/wiki/pricing/');
@@ -795,7 +795,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                               return (
                                 <a
                                   href={href}
-                                  className="text-blue-600 hover:underline"
+                                  className="text-[#ff5722] hover:underline"
                                   target={href?.startsWith('http') ? '_blank' : undefined}
                                   rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                                   {...props}
@@ -811,16 +811,16 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {/* FAQ Section */}
                       {faqItems.length > 0 && (
                         <section className="mt-12 mb-12">
-                          <h2 id="faq" className="font-serif-playfair text-3xl md:text-4xl font-bold text-[#223] mb-8 text-center scroll-mt-24">
+                          <h2 id="faq" className="font-serif-playfair text-3xl md:text-[36px] font-semibold text-[#1f2933] mb-8 text-center scroll-mt-24">
                             Frequently Asked Questions
                           </h2>
                           <div className="space-y-4 sm:space-y-6 max-w-3xl mx-auto">
                             {faqItems.map((item, index) => (
                               <div key={index} className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">
+                                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">
                                   {item.question}
                                 </h3>
-                                <div className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                                <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                                   <ReactMarkdown
                                     remarkPlugins={[remarkGfm]}
                                     components={{
@@ -828,7 +828,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                         <p className="mb-3 last:mb-0" {...props} />
                                       ),
                                       strong: ({ node, ...props }) => (
-                                        <strong className="font-bold text-[#223]" {...props} />
+                                        <strong className="font-bold text-[#1f2933]" {...props} />
                                       ),
                                       a: ({ node, href, ...props }) => {
                                         const isInternalLink = href?.startsWith('/wiki/pricing/');
@@ -844,7 +844,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                         return (
                                           <a
                                             href={href}
-                                            className="text-blue-600 hover:underline"
+                                            className="text-[#ff5722] hover:underline"
                                             target={href?.startsWith('http') ? '_blank' : undefined}
                                             rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                                             {...props}
@@ -875,7 +875,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                 .replace(/\s+/g, '-')
                                 .replace(/-+/g, '-')
                                 .trim()
-                              return <h2 id={id} className="font-serif-playfair text-2xl sm:text-3xl font-bold text-[#223] mb-4 mt-8 scroll-mt-24" {...props} />
+                              return <h2 id={id} className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-8 scroll-mt-24" {...props} />
                             },
                             h3: ({ node, ...props }) => {
                               const text = String(props.children)
@@ -885,7 +885,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                 .replace(/\s+/g, '-')
                                 .replace(/-+/g, '-')
                                 .trim()
-                              return <h3 id={id} className="font-bold text-lg text-[#223] mb-2 mt-6 scroll-mt-24" {...props} />
+                              return <h3 id={id} className="font-semibold text-[20px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
                             },
                             a: ({ node, href, ...props }) => {
                               // Use Next.js Link for internal links
@@ -902,7 +902,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                               return (
                                 <a
                                   href={href}
-                                  className="text-blue-600 hover:underline"
+                                  className="text-[#ff5722] hover:underline"
                                   target={href?.startsWith('http') ? '_blank' : undefined}
                                   rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                                   {...props}
@@ -926,11 +926,11 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                               height={80} 
                               className="rounded-full object-cover flex-shrink-0" 
                             />
-                            <h2 className="font-serif-playfair text-2xl md:text-3xl font-bold text-[#223]">
+                            <h2 className="font-serif-playfair text-2xl md:text-[28px] font-semibold text-[#1f2933]">
                               Ready to build a powerful revenue engine?
                             </h2>
                           </div>
-                          <p className="text-base text-[#4b636e] font-light mb-6 max-w-2xl mx-auto">
+                          <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-6 max-w-2xl mx-auto">
                             Stop guessing and start growing. Let's build a monetization strategy that unlocks your startup's true potential.
                           </p>
                           <a

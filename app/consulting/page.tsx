@@ -196,10 +196,10 @@ function ConsultingContent() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16 sm:mb-24 lg:mb-32">
             {/* Left Section - Text Content */}
             <div>
-              <h1 className="font-serif-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-[#223] leading-tight">
+              <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold mb-4 sm:mb-6 text-[#1f2933] leading-tight">
               Economics for Early-Stage Teams: Price. Test. Scale.
               </h1>
-              <p className="text-base sm:text-lg text-[#4b636e] font-light leading-relaxed">
+              <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
               From first price to forward model—everything you need to learn fast.
               </p>
             </div>
@@ -242,10 +242,10 @@ function ConsultingContent() {
                   {/* Text Content Section */}
                   <div className={`p-6 sm:p-8 lg:p-10 flex flex-col justify-between ${isMetricsSprint ? 'order-1' : 'order-2'}`}>
                     <div>
-                      <h3 className="font-serif-playfair text-2xl sm:text-3xl font-bold text-[#223] mb-3 sm:mb-4">
+                      <h3 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-3 sm:mb-4">
                           {service.title}
                         </h3>
-                      <p className="text-sm sm:text-base text-[#4b636e] font-light mb-4 sm:mb-6 leading-relaxed">
+                      <p className="text-base sm:text-[17px] text-[#1f2933] mb-4 sm:mb-6 leading-[1.65]">
                         {service.description}
                       </p>
                       <ul className="space-y-3 mb-8">
@@ -256,14 +256,14 @@ function ConsultingContent() {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                               </svg>
                             </div>
-                            <span className="text-base text-[#4b636e] font-light">{bullet}</span>
+                            <span className="text-base text-[#1f2933] leading-[1.65]">{bullet}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
                     <a
                       href={`/consulting/services/${service.slug}`}
-                      className="inline-block bg-[#06b6d4] text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-[#0891b2] transition-colors text-center"
+                      className="inline-block bg-[#ff5722] text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-[#e44e1f] transition-colors text-center"
                     >
                       {service.cta}
                     </a>
@@ -288,7 +288,7 @@ function ConsultingContent() {
 
           {/* Comparison Table */}
           <div className="max-w-6xl mx-auto mb-16">
-            <h2 className="font-serif-playfair text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center text-[#223] px-4">
+            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-8 text-center text-[#1f2933] px-4">
               Compare Services
             </h2>
             <div className="bg-white rounded-2xl border border-[#e5e7eb] shadow-sm overflow-hidden overflow-x-auto -mx-4 sm:mx-0">
@@ -296,134 +296,134 @@ function ConsultingContent() {
               <table className="w-full">
                 <thead>
                   <tr className="bg-[#f6f7f9] border-b-2 border-[#e5e7eb]">
-                    <th className="text-left py-4 px-4 font-semibold text-[#223]">Service</th>
-                    <th className="text-left py-4 px-4 font-semibold text-[#223]">Who it's for</th>
-                    <th className="text-left py-4 px-4 font-semibold text-[#223]">Time</th>
-                    <th className="text-left py-4 px-4 font-semibold text-[#223]">Outcomes</th>
-                    <th className="text-left py-4 px-4 font-semibold text-[#223]">Key deliverables</th>
-                    <th className="text-left py-4 px-4 font-semibold text-[#223]">Price</th>
+                    <th className="text-left py-4 px-4 font-semibold text-[#1f2933]">Service</th>
+                    <th className="text-left py-4 px-4 font-semibold text-[#1f2933]">Who it's for</th>
+                    <th className="text-left py-4 px-4 font-semibold text-[#1f2933]">Time</th>
+                    <th className="text-left py-4 px-4 font-semibold text-[#1f2933]">Outcomes</th>
+                    <th className="text-left py-4 px-4 font-semibold text-[#1f2933]">Key deliverables</th>
+                    <th className="text-left py-4 px-4 font-semibold text-[#1f2933]">Price</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#e5e7eb]">
                   {/* Pricing & Monetization Sprint */}
-                  <tr className="hover:bg-gray-50 transition-colors">
+                  <tr className="hover:bg-[#f6f7f9] transition-colors">
                     <td className="py-5 px-4">
-                      <a href="/consulting/services/pricing-monetization-sprint" className="font-bold text-base text-[#06b6d4] hover:text-[#0891b2] transition-colors">
+                      <a href="/consulting/services/pricing-monetization-sprint" className="font-bold text-base text-[#ff5722] hover:text-[#e44e1f] transition-colors">
                         Pricing & Monetization Sprint
                       </a>
                     </td>
                     <td className="py-5 px-4">
-                      <p className="text-sm text-[#4b636e] font-light">
+                      <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                         Founders needing first price or pricing reset.
                       </p>
                     </td>
                     <td className="py-5 px-4">
-                      <p className="text-sm text-[#4b636e] font-light">1–2 weeks</p>
+                      <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">1–2 weeks</p>
                     </td>
                     <td className="py-5 px-4">
-                      <p className="text-sm text-[#4b636e] font-light">
+                      <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                         Value-based pricing model, unit-economics snapshot, 30-day rollout plan.
                       </p>
                     </td>
                     <td className="py-5 px-4">
-                      <p className="text-sm text-[#4b636e] font-light">
+                      <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                         Strategy report, unit economics model, discount guardrails.
                       </p>
                     </td>
                     <td className="py-5 px-4">
-                      <p className="text-sm font-semibold text-[#223]">$5K–$18K</p>
+                      <p className="text-base font-semibold text-[#1f2933]">$5K–$18K</p>
                     </td>
                   </tr>
 
                   {/* Metrics & Experimentation Sprint */}
-                  <tr className="hover:bg-gray-50 transition-colors">
+                  <tr className="hover:bg-[#f6f7f9] transition-colors">
                     <td className="py-5 px-4">
-                      <a href="/consulting/services/metrics-experimentation-sprint" className="font-bold text-base text-[#06b6d4] hover:text-[#0891b2] transition-colors">
+                      <a href="/consulting/services/metrics-experimentation-sprint" className="font-bold text-base text-[#ff5722] hover:text-[#e44e1f] transition-colors">
                         Metrics & Experimentation Sprint
                       </a>
                     </td>
                     <td className="py-5 px-4">
-                      <p className="text-sm text-[#4b636e] font-light">
+                      <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                         Early-stage teams needing KPI system and experimentation loop.
                       </p>
                     </td>
                     <td className="py-5 px-4">
-                      <p className="text-sm text-[#4b636e] font-light">1-2 weeks</p>
+                      <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">1-2 weeks</p>
                     </td>
                     <td className="py-5 px-4">
-                      <p className="text-sm text-[#4b636e] font-light">
+                      <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                         Live metrics dashboard, experimentation playbook, clear decision cadence.
                       </p>
                     </td>
                     <td className="py-5 px-4">
-                      <p className="text-sm text-[#4b636e] font-light">
+                      <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                         North Star + metric tree, live dashboards, experiment backlog, test briefs.
                       </p>
                     </td>
                     <td className="py-5 px-4">
-                      <p className="text-sm font-semibold text-[#223]">$6K–$12K</p>
+                      <p className="text-sm font-semibold text-[#1f2933]">$6K–$12K</p>
                     </td>
                   </tr>
 
                   {/* Fractional Chief Economist (Retainer) */}
-                  <tr className="hover:bg-gray-50 transition-colors">
+                  <tr className="hover:bg-[#f6f7f9] transition-colors">
                     <td className="py-5 px-4">
-                      <a href="/consulting/services/on-call-economist-retainer" className="font-bold text-base text-[#06b6d4] hover:text-[#0891b2] transition-colors">
+                      <a href="/consulting/services/on-call-economist-retainer" className="font-bold text-base text-[#ff5722] hover:text-[#e44e1f] transition-colors">
                         Fractional Chief Economist (Retainer)
                       </a>
                     </td>
                     <td className="py-5 px-4">
-                      <p className="text-sm text-[#4b636e] font-light">
+                      <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                         Seed → Series A teams with active experiments or upcoming fundraise.
                       </p>
                     </td>
                     <td className="py-5 px-4">
-                      <p className="text-sm text-[#4b636e] font-light">Monthly (3-month min)</p>
+                      <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">Monthly (3-month min)</p>
                     </td>
                     <td className="py-5 px-4">
-                      <p className="text-sm text-[#4b636e] font-light">
+                      <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                         Monthly decisions shipped, forward view, investor-grade narrative.
                       </p>
                     </td>
                     <td className="py-5 px-4">
-                      <p className="text-sm text-[#4b636e] font-light">
+                      <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                         Board Pack, pricing updates, experiment docket, forecast workbook.
                       </p>
                     </td>
                     <td className="py-5 px-4">
-                      <p className="text-sm font-semibold text-[#223]">$4K–$15K/mo</p>
+                      <p className="text-sm font-semibold text-[#1f2933]">$4K–$15K/mo</p>
                     </td>
                   </tr>
                 </tbody>
               </table>
               </div>
             </div>
-            <p className="text-sm text-gray-500 mt-4 text-center px-4 sm:hidden">
+            <p className="text-sm text-[#3b4652] mt-4 text-center px-4 sm:hidden">
               Scroll horizontally to view full table
             </p>
           </div>
 
           {/* FAQ Section */}
           <div className="max-w-4xl mx-auto mb-16" id="faq">
-            <h2 className="font-serif-playfair text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 text-center text-[#223] px-4">
+            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-6 sm:mb-8 text-center text-[#1f2933] px-4">
               Frequently Asked Questions
             </h2>
             <div className="space-y-4 sm:space-y-6 px-4 sm:px-0">
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3 text-[#223]">When not to change prices?</h3>
-                <p className="text-sm sm:text-base text-[#4b636e] font-light">
+                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-2 sm:mb-3 text-[#1f2933]">When not to change prices?</h3>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                   Avoid price changes during major product launches, customer renewals, or market volatility. We'll identify the optimal timing based on your customer lifecycle, competitive landscape, and internal capacity to handle the transition smoothly.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3 text-[#223]">Will usage pricing spike bills?</h3>
-                <p className="text-sm sm:text-base text-[#4b636e] font-light">
+                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-2 sm:mb-3 text-[#1f2933]">Will usage pricing spike bills?</h3>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                   Not with proper design. We implement usage caps, tiered pricing, and clear communication to prevent bill shock. Our approach includes customer education, gradual rollouts, and safety nets to maintain satisfaction while optimizing revenue.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-bold text-base sm:text-lg mb-2 sm:mb-3 text-[#223]">How do we test without harming revenue?</h3>
-                <p className="text-sm sm:text-base text-[#4b636e] font-light">
+                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-2 sm:mb-3 text-[#1f2933]">How do we test without harming revenue?</h3>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                   Through controlled experiments with guardrails: A/B tests on new customers, grandfathering existing clients, and gradual rollouts. We monitor key metrics and have rollback plans to ensure revenue protection while gathering valuable pricing insights.
                 </p>
               </div>

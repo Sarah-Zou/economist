@@ -8,14 +8,14 @@ const Hero = () => {
       <div className="container max-w-7xl mx-auto">
         <div className="bg-white rounded-[2.5rem] flex flex-col lg:flex-row items-stretch p-0 overflow-hidden min-h-[420px] border border-[#f0f0f0]">
           {/* Left: Text */}
-          <div className="flex-1 flex flex-col justify-center items-start px-10 py-12 md:px-16 md:py-0 text-[#222] bg-white">
-            <h1 className="font-serif-playfair text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          <div className="flex-1 flex flex-col justify-center items-start px-10 py-12 md:px-16 md:py-0 text-[#1f2933] bg-white">
+            <h1 className="font-serif-playfair text-[32px] md:text-[36px] font-bold mb-6 leading-tight">
               Data-Driven Tech Growth, Made Simple.
           </h1>
-            <p className="text-lg md:text-xl mb-4 text-[#222] max-w-xl">
+            <p className="text-base md:text-[17px] mb-4 text-[#1f2933] max-w-xl leading-[1.65]">
               I'm Sarah Zou, PhD Economist, specialized in pricing strategies, metrics analytics, and investor-ready storytelling for early-stage tech startups.
             </p>
-            <p className="text-sm text-gray-600 mb-8">
+            <p className="text-sm text-[#3b4652] mb-8">
               Princeton, NJ · NYC · Philadelphia · Remote (US/EU)
             </p>
             <Link href="/contact">

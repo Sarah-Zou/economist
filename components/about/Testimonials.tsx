@@ -40,7 +40,7 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
   }
 
   return (
-    <section className="py-16 md:py-20 bg-gray-50">
+    <section className="py-16 md:py-20 bg-[#f6f7f9]">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-12 text-center">
             What Clients Say
           </h2>
           
@@ -66,17 +66,17 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
                     className="snap-start shrink-0 basis-[85%] md:basis-[45%] lg:basis-[30%]"
                   >
                     <div className="bg-white rounded-2xl p-8 shadow-lg h-full">
-                      <blockquote className="text-lg text-gray-700 mb-6 leading-relaxed">
+                      <blockquote className="text-base sm:text-[17px] text-[#1f2933] mb-6 leading-[1.65]">
                         "{testimonial.quote}"
                       </blockquote>
-                      <div className="border-t pt-4">
-                        <div className="font-semibold text-gray-900">
+                      <div className="border-t border-[#e2e6ea] pt-4">
+                        <div className="font-semibold text-[#1f2933]">
                           {testimonial.name}
                         </div>
-                        <div className="text-sm text-gray-600">
+                        <div className="text-sm text-[#3b4652]">
                           {testimonial.title}
                         </div>
-                        <div className="text-sm text-orange-600 font-medium">
+                        <div className="text-sm text-[#ff5722] font-medium">
                           {testimonial.company}
                         </div>
                       </div>
@@ -92,7 +92,7 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
               aria-label="Previous testimonial"
               className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-200"
             >
-              <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-[#3b4652]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
@@ -102,7 +102,7 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
               aria-label="Next testimonial"
               className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-200"
             >
-              <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-[#3b4652]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
@@ -116,8 +116,8 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
                 onClick={() => scrollToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-200 ${
                   index === currentIndex 
-                    ? 'bg-orange-500' 
-                    : 'bg-gray-300 hover:bg-gray-400'
+                    ? 'bg-[#ff5722]' 
+                    : 'bg-[#e2e6ea] hover:bg-[#d1d5db]'
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />

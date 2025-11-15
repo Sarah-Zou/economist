@@ -57,8 +57,8 @@ const whoIWorkWith = {
       name: "SaaS",
       icon: (
         <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="6" y="6" width="12" height="12" rx="2" stroke="#06b6d4" strokeWidth="2" fill="none"/>
-          <path d="M9 12 L12 9 L15 12 M9 12 L12 15 L15 12" stroke="#06b6d4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <rect x="6" y="6" width="12" height="12" rx="2" stroke="#ff5722" strokeWidth="2" fill="none"/>
+          <path d="M9 12 L12 9 L15 12 M9 12 L12 15 L15 12" stroke="#ff5722" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       )
     },
@@ -66,9 +66,9 @@ const whoIWorkWith = {
       name: "API platforms",
       icon: (
         <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="6" stroke="#06b6d4" strokeWidth="2" fill="none"/>
-          <path d="M12 6 L12 18 M6 12 L18 12" stroke="#06b6d4" strokeWidth="2" strokeLinecap="round"/>
-          <circle cx="12" cy="12" r="2" fill="#06b6d4"/>
+          <circle cx="12" cy="12" r="6" stroke="#ff5722" strokeWidth="2" fill="none"/>
+          <path d="M12 6 L12 18 M6 12 L18 12" stroke="#ff5722" strokeWidth="2" strokeLinecap="round"/>
+          <circle cx="12" cy="12" r="2" fill="#ff5722"/>
         </svg>
       )
     },
@@ -76,11 +76,11 @@ const whoIWorkWith = {
       name: "AI products",
       icon: (
         <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 4 L8 8 L12 12 L16 8 Z" stroke="#06b6d4" strokeWidth="2" fill="none"/>
-          <path d="M4 12 L8 16 L12 12 L8 8 Z" stroke="#06b6d4" strokeWidth="2" fill="none"/>
-          <path d="M20 12 L16 16 L12 12 L16 8 Z" stroke="#06b6d4" strokeWidth="2" fill="none"/>
-          <path d="M12 20 L8 16 L12 12 L16 16 Z" stroke="#06b6d4" strokeWidth="2" fill="none"/>
-          <circle cx="12" cy="12" r="3" stroke="#06b6d4" strokeWidth="2" fill="none"/>
+          <path d="M12 4 L8 8 L12 12 L16 8 Z" stroke="#ff5722" strokeWidth="2" fill="none"/>
+          <path d="M4 12 L8 16 L12 12 L8 8 Z" stroke="#ff5722" strokeWidth="2" fill="none"/>
+          <path d="M20 12 L16 16 L12 12 L16 8 Z" stroke="#ff5722" strokeWidth="2" fill="none"/>
+          <path d="M12 20 L8 16 L12 12 L16 16 Z" stroke="#ff5722" strokeWidth="2" fill="none"/>
+          <circle cx="12" cy="12" r="3" stroke="#ff5722" strokeWidth="2" fill="none"/>
         </svg>
       )
     },
@@ -88,7 +88,7 @@ const whoIWorkWith = {
       name: "OSS-commercial",
       icon: (
         <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2 L15 9 L22 9 L16 14 L18 21 L12 17 L6 21 L8 14 L2 9 L9 9 Z" stroke="#06b6d4" strokeWidth="2" fill="none" strokeLinejoin="round"/>
+          <path d="M12 2 L15 9 L22 9 L16 14 L18 21 L12 17 L6 21 L8 14 L2 9 L9 9 Z" stroke="#ff5722" strokeWidth="2" fill="none" strokeLinejoin="round"/>
         </svg>
       )
     },
@@ -96,10 +96,10 @@ const whoIWorkWith = {
       name: "Operator-led marketplaces",
       icon: (
         <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="4" y="6" width="6" height="6" rx="1" stroke="#06b6d4" strokeWidth="2" fill="none"/>
-          <rect x="14" y="6" width="6" height="6" rx="1" stroke="#06b6d4" strokeWidth="2" fill="none"/>
-          <rect x="4" y="14" width="6" height="6" rx="1" stroke="#06b6d4" strokeWidth="2" fill="none"/>
-          <rect x="14" y="14" width="6" height="6" rx="1" stroke="#06b6d4" strokeWidth="2" fill="none"/>
+          <rect x="4" y="6" width="6" height="6" rx="1" stroke="#ff5722" strokeWidth="2" fill="none"/>
+          <rect x="14" y="6" width="6" height="6" rx="1" stroke="#ff5722" strokeWidth="2" fill="none"/>
+          <rect x="4" y="14" width="6" height="6" rx="1" stroke="#ff5722" strokeWidth="2" fill="none"/>
+          <rect x="14" y="14" width="6" height="6" rx="1" stroke="#ff5722" strokeWidth="2" fill="none"/>
         </svg>
       )
     },
@@ -107,10 +107,10 @@ const whoIWorkWith = {
       name: "Hardware-as-a-service",
       icon: (
         <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="6" y="5" width="12" height="14" rx="2" stroke="#06b6d4" strokeWidth="2" fill="none"/>
-          <rect x="9" y="8" width="6" height="4" rx="1" stroke="#06b6d4" strokeWidth="1.5" fill="none"/>
-          <circle cx="10" cy="15" r="1" fill="#06b6d4"/>
-          <circle cx="14" cy="15" r="1" fill="#06b6d4"/>
+          <rect x="6" y="5" width="12" height="14" rx="2" stroke="#ff5722" strokeWidth="2" fill="none"/>
+          <rect x="9" y="8" width="6" height="4" rx="1" stroke="#ff5722" strokeWidth="1.5" fill="none"/>
+          <circle cx="10" cy="15" r="1" fill="#ff5722"/>
+          <circle cx="14" cy="15" r="1" fill="#ff5722"/>
         </svg>
       )
     }
@@ -191,9 +191,9 @@ const whatIFocusOn = [
     link: "/consulting/services/pricing-monetization-sprint",
     icon: (
       <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="24" height="24" rx="4" fill="#3b82f6" opacity="0.1"/>
-        <path d="M12 2 L15 9 L22 9 L16 14 L18 21 L12 17 L6 21 L8 14 L2 9 L9 9 Z" fill="#3b82f6" opacity="0.3" stroke="#3b82f6" strokeWidth="1.5"/>
-        <circle cx="12" cy="12" r="3" fill="#3b82f6" opacity="0.5"/>
+        <rect width="24" height="24" rx="4" fill="#ff5722" opacity="0.1"/>
+        <path d="M12 2 L15 9 L22 9 L16 14 L18 21 L12 17 L6 21 L8 14 L2 9 L9 9 Z" fill="#ff5722" opacity="0.3" stroke="#ff5722" strokeWidth="1.5"/>
+        <circle cx="12" cy="12" r="3" fill="#ff5722" opacity="0.5"/>
       </svg>
     )
   },
@@ -203,14 +203,14 @@ const whatIFocusOn = [
     link: "/consulting/services/metrics-experimentation-sprint",
     icon: (
       <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="24" height="24" rx="4" fill="#10b981" opacity="0.1"/>
-        <rect x="4" y="16" width="4" height="4" rx="1" fill="#10b981" opacity="0.3"/>
-        <rect x="10" y="12" width="4" height="8" rx="1" fill="#10b981" opacity="0.3"/>
-        <rect x="16" y="8" width="4" height="12" rx="1" fill="#10b981" opacity="0.3"/>
-        <path d="M6 18 L10 14 L14 10 L18 6" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <circle cx="6" cy="18" r="1.5" fill="#10b981"/>
-        <circle cx="12" cy="12" r="1.5" fill="#10b981"/>
-        <circle cx="18" cy="6" r="1.5" fill="#10b981"/>
+        <rect width="24" height="24" rx="4" fill="#ff5722" opacity="0.1"/>
+        <rect x="4" y="16" width="4" height="4" rx="1" fill="#ff5722" opacity="0.3"/>
+        <rect x="10" y="12" width="4" height="8" rx="1" fill="#ff5722" opacity="0.3"/>
+        <rect x="16" y="8" width="4" height="12" rx="1" fill="#ff5722" opacity="0.3"/>
+        <path d="M6 18 L10 14 L14 10 L18 6" stroke="#ff5722" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="6" cy="18" r="1.5" fill="#ff5722"/>
+        <circle cx="12" cy="12" r="1.5" fill="#ff5722"/>
+        <circle cx="18" cy="6" r="1.5" fill="#ff5722"/>
       </svg>
     )
   },
@@ -220,13 +220,13 @@ const whatIFocusOn = [
     link: "/consulting/services/on-call-economist-retainer",
     icon: (
       <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="24" height="24" rx="4" fill="#8b5cf6" opacity="0.1"/>
-        <path d="M4 20 L8 16 L12 18 L16 12 L20 14" stroke="#8b5cf6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-        <path d="M4 20 L8 16 L12 18 L16 12 L20 14" stroke="#8b5cf6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.3"/>
-        <circle cx="4" cy="20" r="2" fill="#8b5cf6" opacity="0.3"/>
-        <circle cx="12" cy="18" r="2" fill="#8b5cf6" opacity="0.3"/>
-        <circle cx="20" cy="14" r="2" fill="#8b5cf6" opacity="0.3"/>
-        <path d="M4 4 L20 4 M4 8 L20 8 M4 12 L20 12" stroke="#8b5cf6" strokeWidth="1.5" strokeLinecap="round" opacity="0.4"/>
+        <rect width="24" height="24" rx="4" fill="#ff5722" opacity="0.1"/>
+        <path d="M4 20 L8 16 L12 18 L16 12 L20 14" stroke="#ff5722" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+        <path d="M4 20 L8 16 L12 18 L16 12 L20 14" stroke="#ff5722" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.3"/>
+        <circle cx="4" cy="20" r="2" fill="#ff5722" opacity="0.3"/>
+        <circle cx="12" cy="18" r="2" fill="#ff5722" opacity="0.3"/>
+        <circle cx="20" cy="14" r="2" fill="#ff5722" opacity="0.3"/>
+        <path d="M4 4 L20 4 M4 8 L20 8 M4 12 L20 12" stroke="#ff5722" strokeWidth="1.5" strokeLinecap="round" opacity="0.4"/>
       </svg>
     )
   }
@@ -586,24 +586,24 @@ export default function About() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
               <div className="space-y-6 sm:space-y-8">
             <div>
-              <h2 className="text-2xl sm:text-3xl md:text-3xl font-serif-playfair font-bold text-[#223] mb-4 sm:mb-6">
+              <h2 className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-4 sm:mb-6">
                 {whoIWorkWith.title}
               </h2>
               <div className="mb-6 sm:mb-8">
-                <p className="text-base sm:text-lg text-[#4b636e] font-light leading-relaxed mb-6 sm:mb-8">
-                  {whoIWorkWith.content} <strong className="font-semibold text-[#223]">{whoIWorkWith.contentBold}</strong> {whoIWorkWith.contentAfter}
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-6 sm:mb-8">
+                  {whoIWorkWith.content} <strong className="font-semibold text-[#1f2933]">{whoIWorkWith.contentBold}</strong> {whoIWorkWith.contentAfter}
                 </p>
                 
                 {/* Tech Types as inline badges */}
                 <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 my-6 sm:my-8">
                   {whoIWorkWith.techTypes.map((tech, index) => (
-                    <div key={index} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-50 border border-[#e5e7eb]">
+                    <div key={index} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#f6f7f9] border border-[#e2e6ea]">
                       <div className="flex-shrink-0 w-5 h-5 flex items-center justify-center">
                         <div className="w-4 h-4">
                           {tech.icon}
                         </div>
                       </div>
-                      <span className="text-sm text-[#4b636e] font-light whitespace-nowrap">
+                      <span className="text-sm text-[#1f2933] whitespace-nowrap">
                         {tech.name}
                       </span>
                   </div>
@@ -612,14 +612,14 @@ export default function About() {
             </div>
 
               <div>
-                <h3 className="text-base sm:text-lg font-semibold text-[#223] mb-4 sm:mb-6">Common triggers</h3>
+                <h3 className="text-[20px] font-semibold text-[#1f2933] mb-4 sm:mb-6">Common triggers</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                   {whoIWorkWith.triggers.map((trigger, index) => (
-                    <div key={index} className="bg-gray-50 rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm text-center flex flex-col items-center space-y-3 sm:space-y-4 hover:shadow-md transition-shadow">
+                    <div key={index} className="bg-[#f6f7f9] rounded-lg p-5 sm:p-6 border border-[#e2e6ea] shadow-sm text-center flex flex-col items-center space-y-3 sm:space-y-4 hover:shadow-md transition-shadow">
                       <div className="flex items-center justify-center">
                         {trigger.icon}
                       </div>
-                      <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                      <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                         {trigger.text}
                       </p>
                   </div>
@@ -632,9 +632,9 @@ export default function About() {
       </section>
 
       {/* What I focus on */}
-      <section className="py-12 sm:py-16 md:py-24 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-24 bg-[#f6f7f9]">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl md:text-3xl font-serif-playfair font-bold text-[#223] mb-8 sm:mb-12 text-center">
+          <h2 className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-8 sm:mb-12 text-center">
             What I focus on
                     </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -642,15 +642,15 @@ export default function About() {
               <Link 
                 key={index} 
                 href={focus.link}
-                className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm space-y-3 sm:space-y-4 hover:shadow-md hover:border-[#06b6d4] transition-all duration-200 block"
+                className="bg-white rounded-lg p-5 sm:p-6 border border-[#e2e6ea] shadow-sm space-y-3 sm:space-y-4 hover:shadow-md hover:border-[#ff5722] transition-all duration-200 block"
               >
                 <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mb-2">
                   {focus.icon}
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-[#223]">
+                <h3 className="text-[20px] sm:text-[22px] font-semibold text-[#1f2933]">
                   {focus.title}
                 </h3>
-                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                   {focus.description}
                 </p>
               </Link>
@@ -662,22 +662,22 @@ export default function About() {
       {/* Selected outcomes */}
       <section className="py-12 sm:py-16 md:py-24 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl md:text-3xl font-serif-playfair font-bold text-[#223] mb-8 sm:mb-12 text-center">
+          <h2 className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-8 sm:mb-12 text-center">
             Selected outcomes
           </h2>
           <div className="space-y-6 sm:space-y-8">
             {selectedOutcomes.map((outcome, index) => (
-              <div key={index} className="bg-gray-50 rounded-lg p-5 sm:p-6 border border-[#e5e7eb] space-y-2">
-                <h3 className="text-base sm:text-lg font-semibold text-[#223]">
+              <div key={index} className="bg-[#f6f7f9] rounded-lg p-5 sm:p-6 border border-[#e2e6ea] space-y-2">
+                <h3 className="text-[20px] font-semibold text-[#1f2933]">
                   {outcome.title}
                 </h3>
                 <p 
-                  className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed"
+                  className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]"
                   dangerouslySetInnerHTML={{ __html: outcome.description }}
                 />
               </div>
             ))}
-            <p className="text-xs sm:text-sm text-[#4b636e] font-light italic mt-4 sm:mt-6 text-center">
+            <p className="text-xs sm:text-sm text-[#3b4652] italic mt-4 sm:mt-6 text-center">
               {outcomeNote}
             </p>
           </div>
@@ -685,15 +685,15 @@ export default function About() {
       </section>
 
       {/* How we'll work */}
-      <section className="py-12 sm:py-16 md:py-24 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-24 bg-[#f6f7f9]">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Column - Process Content */}
             <div className="space-y-6 sm:space-y-8">
-              <h2 className="text-2xl sm:text-3xl md:text-3xl font-serif-playfair font-bold text-[#223] leading-tight">
+              <h2 className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] leading-tight">
                 How we'll work
               </h2>
-              <p className="text-base sm:text-lg text-[#4b636e] font-light leading-relaxed">
+              <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                 {howWeWork.intro}
               </p>
               
@@ -701,26 +701,26 @@ export default function About() {
                 {howWeWork.principles.map((principle, index) => (
                   <div key={principle.number} className="space-y-2">
                     <div className="flex items-start space-x-3 sm:space-x-4">
-                      <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-[#06b6d4] text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-semibold">
+                      <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-[#ff5722] text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-semibold">
                         {principle.number}
                       </div>
                       <div className="flex-1">
-                        <h4 className="text-base sm:text-lg font-semibold text-[#223] mb-1">
+                        <h4 className="text-[18px] sm:text-[20px] font-medium text-[#1f2933] mb-1">
                           {principle.title}
                         </h4>
-                        <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                        <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                           {principle.description}
                         </p>
                       </div>
                     </div>
                     {index < howWeWork.principles.length - 1 && (
-                      <div className="ml-3.5 sm:ml-4 w-px h-4 sm:h-6 bg-gray-200"></div>
+                      <div className="ml-3.5 sm:ml-4 w-px h-4 sm:h-6 bg-[#e2e6ea]"></div>
                     )}
                   </div>
                 ))}
               </div>
               
-              <p className="text-base sm:text-lg text-[#4b636e] font-light leading-relaxed pt-4 border-t border-gray-200">
+              <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] pt-4 border-t border-[#e2e6ea]">
                 {howWeWork.outcome}
               </p>
             </div>
@@ -744,14 +744,14 @@ export default function About() {
       {/* My path here */}
       <section className="py-12 sm:py-16 md:py-24 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl md:text-3xl font-serif-playfair font-bold text-[#223] mb-6 sm:mb-8">
+          <h2 className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-6 sm:mb-8">
             {myPathHere.title}
           </h2>
           <div className="space-y-4 sm:space-y-6">
             {myPathHere.content.map((paragraph, index) => (
               <p 
                 key={index} 
-                className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed"
+                className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]"
                 dangerouslySetInnerHTML={{ __html: paragraph }}
               />
             ))}
@@ -760,16 +760,16 @@ export default function About() {
       </section>
 
       {/* Where I work */}
-      <section className="py-12 sm:py-16 md:py-24 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-24 bg-[#f6f7f9]">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl md:text-3xl font-serif-playfair font-bold text-[#223] mb-4 sm:mb-6">
+          <h2 className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-4 sm:mb-6">
             {whereIWork.title}
           </h2>
           <div className="space-y-2 sm:space-y-3">
             {whereIWork.content.map((item, index) => (
               <p 
                 key={index} 
-                className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed"
+                className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]"
                 dangerouslySetInnerHTML={{ __html: item }}
               />
             ))}

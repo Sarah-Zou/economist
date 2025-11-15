@@ -29,16 +29,16 @@ export default function CredsGrid({ credentials }: CredsGridProps) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-gray-200 bg-white/50 backdrop-blur-sm p-6 hover:shadow-lg transition-all duration-300"
+              className="rounded-2xl border border-[#e2e6ea] bg-white/50 backdrop-blur-sm p-6 hover:shadow-lg transition-all duration-300"
             >
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <h3 className="text-[18px] sm:text-[20px] font-semibold text-[#1f2933] mb-4">
                 {cred.title}
               </h3>
               <ul className="space-y-2">
                 {cred.items.map((item, itemIndex) => (
                   <li
                     key={itemIndex}
-                    className="text-sm text-gray-600 leading-relaxed"
+                    className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]"
                   >
                     {item}
                   </li>

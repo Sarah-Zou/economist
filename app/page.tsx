@@ -193,7 +193,7 @@ export default function Home() {
         <section className="py-12 sm:py-16 lg:py-20 bg-white">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             {/* Section Heading */}
-            <h2 className="font-serif-playfair text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-center text-[#223]">
+            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-8 sm:mb-12 text-center text-[#1f2933]">
               What Makes Me Different
             </h2>
 
@@ -202,12 +202,12 @@ export default function Home() {
               {/* Card 1: Rare blend */}
               <div className="bg-[#f6f7f9] rounded-lg p-5 sm:p-6 border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
                 <div className="mb-3 sm:mb-4">
-                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                   </svg>
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-[#223] mb-2 sm:mb-3">Rare blend</h3>
-                <p className="text-xs sm:text-sm text-[#4b636e] font-light leading-relaxed">
+                <h3 className="text-lg sm:text-[20px] font-semibold text-[#1f2933] mb-2 sm:mb-3">Rare blend</h3>
+                <p className="text-sm sm:text-base text-[#1f2933] leading-[1.65]">
                   Pricing + unit economics + econometrics in one person. Most firms split this across CFO/RevOps/DS; I design the whole economic system end-to-end.
                 </p>
               </div>
@@ -215,12 +215,12 @@ export default function Home() {
               {/* Card 2: Research-grade rigor */}
               <div className="bg-[#f6f7f9] rounded-lg p-5 sm:p-6 border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
                 <div className="mb-3 sm:mb-4">
-                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-[#223] mb-2 sm:mb-3">Research-grade rigor</h3>
-                <p className="text-xs sm:text-sm text-[#4b636e] font-light leading-relaxed">
+                <h3 className="text-lg sm:text-[20px] font-semibold text-[#1f2933] mb-2 sm:mb-3">Research-grade rigor</h3>
+                <p className="text-sm sm:text-base text-[#1f2933] leading-[1.65]">
                   I treat each engagement like an academic study: hypotheses → models → experiments → decisions. Methods are documented; assumptions are explicit.
                 </p>
               </div>
@@ -228,12 +228,12 @@ export default function Home() {
               {/* Card 3: Funder-friendly outputs */}
               <div className="bg-[#f6f7f9] rounded-lg p-5 sm:p-6 border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
                 <div className="mb-3 sm:mb-4">
-                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-[#223] mb-2 sm:mb-3">Funder-friendly outputs</h3>
-                <p className="text-xs sm:text-sm text-[#4b636e] font-light leading-relaxed">
+                <h3 className="text-lg sm:text-[20px] font-semibold text-[#1f2933] mb-2 sm:mb-3">Funder-friendly outputs</h3>
+                <p className="text-sm sm:text-base text-[#1f2933] leading-[1.65]">
                   Board-ready artifacts (GM waterfall, NRR/LTV bridges, payback guardrails, elasticity write-ups) that withstand diligence—not just pretty decks.
                 </p>
               </div>
@@ -241,12 +241,12 @@ export default function Home() {
               {/* Card 4: Fast, testable decisions */}
               <div className="bg-[#f6f7f9] rounded-lg p-5 sm:p-6 border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
                 <div className="mb-3 sm:mb-4">
-                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#06b6d4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-[#223] mb-2 sm:mb-3">Fast, testable decisions</h3>
-                <p className="text-xs sm:text-sm text-[#4b636e] font-light leading-relaxed">
+                <h3 className="text-lg sm:text-[20px] font-semibold text-[#1f2933] mb-2 sm:mb-3">Fast, testable decisions</h3>
+                <p className="text-sm sm:text-base text-[#1f2933] leading-[1.65]">
                   Sprints ship answers in 1–2 weeks with a 90-day experiment plan. No "more analysis" stall; every recommendation is testable.
                 </p>
               </div>
@@ -255,10 +255,10 @@ export default function Home() {
         </section>
 
         <section className="py-12 sm:py-16 lg:py-20 bg-white flex flex-col items-center text-center px-4">
-          <h2 className="font-serif-playfair text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-[#223] relative inline-block">
+          <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-2 text-[#1f2933] relative inline-block">
             How I Can Help
           </h2>
-          <p className="max-w-2xl mx-auto text-base sm:text-lg text-[#4b636e] font-light mb-8 sm:mb-12">
+          <p className="max-w-2xl mx-auto text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-8 sm:mb-12">
             Fractional Chief Economist for early-stage tech startups. I turn pricing + unit economics + rigorous modeling into investor-grade decisions.
           </p>
           <div className="max-w-6xl w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-4 mb-8 sm:mb-10">
@@ -381,67 +381,67 @@ export default function Home() {
         </section>
         <section className="py-12 sm:py-16 lg:py-20 bg-white flex flex-col items-center px-4">
           <div className="max-w-4xl w-full">
-            <h2 className="font-serif-playfair text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 text-center text-[#223]">
+            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-6 sm:mb-8 text-center text-[#1f2933]">
               Frequently Asked Questions
             </h2>
             <div className="space-y-4 sm:space-y-6">
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">What is a fractional chief economist?</h3>
-                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">What is a fractional chief economist?</h3>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                   A fractional chief economist is a part-time executive who designs your pricing system, unit economics, and decision cadence—bringing PhD-level rigor without a full-time hire. Learn more about <a href="/about" className="text-[#ff5722] hover:underline">fractional economics services</a>.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">How is a Fractional Chief Economist different from a Fractional CFO?</h3>
-                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">How is a Fractional Chief Economist different from a Fractional CFO?</h3>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                   A fractional CFO manages cash, reporting, controls, and fundraising mechanics. A fractional chief economist designs the engines that create cash—pricing, packaging, and the economic system that drives NRR, payback, and gross margin.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">How is a Fractional Chief Economist different from RevOps?</h3>
-                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">How is a Fractional Chief Economist different from RevOps?</h3>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                   RevOps optimizes the GTM machine (CRM hygiene, pipeline stages, handoffs, comp plans). A fractional chief economist defines what you sell and why it's worth the price (value metric, fences, monetization playbook) and then sets the economic guardrails RevOps executes against.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">Who do you work with?</h3>
-                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">Who do you work with?</h3>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                   Pre-seed to Series A teams across SaaS, APIs, AI, OSS-commercial, operator-led marketplaces, and hardware-as-a-service that want rigor without enterprise bloat. See <a href="/about" className="text-[#ff5722] hover:underline">who I work with</a>.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">How fast do we see impact?</h3>
-                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">How fast do we see impact?</h3>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                   Decisions ship in 1–2 weeks via focused <a href="/consulting/services/pricing-monetization-sprint" className="text-[#ff5722] hover:underline">Monetization Sprints</a> or <a href="/consulting/services/metrics-experimentation-sprint" className="text-[#ff5722] hover:underline">Metrics Sprints</a>, with measurable effects typically within 2–4 weeks and a 90-day experiment plan to learn fast.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">What makes your approach different?</h3>
-                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">What makes your approach different?</h3>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                   Combine pricing + unit economics + econometrics in one person; every recommendation is hypothesis-driven, documented, and testable, producing board-ready artifacts like pricing strategy reports and unit-economics models.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">What do engagements look like?</h3>
-                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">What do engagements look like?</h3>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                   Start with a 30-min consult → choose a <a href="/consulting/services/pricing-monetization-sprint" className="text-[#ff5722] hover:underline">Monetization Sprint</a> or <a href="/consulting/services/metrics-experimentation-sprint" className="text-[#ff5722] hover:underline">Metrics Sprint</a> → optional <a href="/consulting/services/on-call-economist-retainer" className="text-[#ff5722] hover:underline">retainer</a> for ongoing pricing, forward models, and the experiment cadence.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">What does it cost?</h3>
-                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">What does it cost?</h3>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                   Sprints are fixed-fee ($5k–$18k for <a href="/consulting/services/pricing-monetization-sprint" className="text-[#ff5722] hover:underline">Monetization</a>; $6k–$12k for <a href="/consulting/services/metrics-experimentation-sprint" className="text-[#ff5722] hover:underline">Metrics</a>) with defined deliverables and timelines. <a href="/consulting/services/on-call-economist-retainer" className="text-[#ff5722] hover:underline">Retainers</a> start at $4k/mo with tiered time commitments.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">Do you work with our existing analytics stack?</h3>
-                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">Do you work with our existing analytics stack?</h3>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                   Yes—common tools include GTM, GA, Amplitude, and Mixpanel. I integrate with your stack and keep instrumentation "light but correct" so dashboards stay trustworthy.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-bold text-lg sm:text-xl mb-3 text-[#223]">Where do you work from?</h3>
-                <p className="text-sm sm:text-base text-[#4b636e] font-light leading-relaxed">
+                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">Where do you work from?</h3>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                   Remote first; based in Princeton/NJ with on-site availability in the NYC and Philadelphia metros; US/EU coverage. See <a href="/about" className="text-[#ff5722] hover:underline">where I work</a>.
                 </p>
               </div>

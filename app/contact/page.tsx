@@ -35,21 +35,21 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="min-h-screen flex flex-col items-center justify-center bg-[#f5f5f5] py-20">
+      <section className="min-h-screen flex flex-col items-center justify-center bg-[#f6f7f9] py-20">
         <div className="w-full max-w-2xl bg-white rounded-lg shadow-lg mx-auto p-8 md:p-16">
-          <h1 className="font-serif-playfair text-4xl font-bold mb-8 text-[#111] text-center">Let's Connect</h1>
-          <p className="mb-6 text-gray-700 text-lg text-center">
+          <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold mb-8 text-[#1f2933] text-center">Let's Connect</h1>
+          <p className="mb-6 text-[#1f2933] text-base sm:text-[17px] leading-[1.65] text-center">
             Interested in working together, booking me for a speaking event, or just saying hello?
           </p>
           <div className="flex flex-col items-center gap-4 mb-8">
             <div className="flex gap-4">
-              <a href="mailto:sarah@sarahzou.com" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e64a19] font-medium text-lg" target="_blank" rel="noopener noreferrer">
+              <a href="mailto:sarah@sarahzou.com" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e44e1f] font-medium text-lg" target="_blank" rel="noopener noreferrer">
                 <Mail className="w-6 h-6" /> Email
               </a>
-              <a href="https://www.linkedin.com/in/drsarah-saas-economist" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e64a19] font-medium text-lg" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/drsarah-saas-economist" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e44e1f] font-medium text-lg" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="w-6 h-6" /> LinkedIn
               </a>
-              <a href="https://twitter.com/SaaS_Econ" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e64a19] font-medium text-lg" target="_blank" rel="noopener noreferrer">
+              <a href="https://twitter.com/SaaS_Econ" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e44e1f] font-medium text-lg" target="_blank" rel="noopener noreferrer">
                 <Twitter className="w-6 h-6" /> X / Twitter
               </a>
             </div>
@@ -59,11 +59,11 @@ export default function ContactPage() {
               href="https://calendly.com/sarahxzou/free-consult-30-min" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-block bg-[#ff5722] hover:bg-[#e64a19] text-white font-bold px-8 py-4 rounded-full text-lg transition-colors mb-4"
+              className="inline-block bg-[#ff5722] hover:bg-[#e44e1f] text-white font-bold px-8 py-4 rounded-full text-lg transition-colors mb-4"
             >
               Book Free Consult
             </a>
-            <p className="text-gray-700 text-center text-base">Or fill out the form below:</p>
+            <p className="text-[#1f2933] text-center text-base sm:text-[17px]">Or fill out the form below:</p>
           </div>
           <form action="https://formspree.io/f/mdkgqeye" method="POST" className="space-y-6">
             <div className="flex flex-col md:flex-row gap-6">
@@ -71,14 +71,14 @@ export default function ContactPage() {
                 type="text"
                 name="firstName"
                 placeholder="First Name"
-                className="flex-1 px-4 py-3 border border-[#f5f5f5] bg-[#fafafa] rounded focus:outline-none focus:ring-2 focus:ring-[#06b6d4] text-[#111]"
+                className="flex-1 px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
                 required
               />
               <input
                 type="text"
                 name="lastName"
                 placeholder="Last Name"
-                className="flex-1 px-4 py-3 border border-[#f5f5f5] bg-[#fafafa] rounded focus:outline-none focus:ring-2 focus:ring-[#06b6d4] text-[#111]"
+                className="flex-1 px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
                 required
               />
             </div>
@@ -86,14 +86,14 @@ export default function ContactPage() {
               type="email"
               name="email"
               placeholder="Email Address"
-              className="w-full px-4 py-3 border border-[#f5f5f5] bg-[#fafafa] rounded focus:outline-none focus:ring-2 focus:ring-[#06b6d4] text-[#111]"
+              className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
               required
             />
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Stage & ARR band</label>
+              <label className="block text-sm font-medium text-[#3b4652] mb-2">Stage & ARR band</label>
               <select
                 name="stage"
-                className="w-full px-4 py-3 border border-[#f5f5f5] bg-[#fafafa] rounded focus:outline-none focus:ring-2 focus:ring-[#06b6d4] text-[#111]"
+                className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
                 required
               >
                 <option value="">Select your stage</option>
@@ -105,10 +105,10 @@ export default function ContactPage() {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Current pricing model</label>
+              <label className="block text-sm font-medium text-[#3b4652] mb-2">Current pricing model</label>
               <select
                 name="pricingModel"
-                className="w-full px-4 py-3 border border-[#f5f5f5] bg-[#fafafa] rounded focus:outline-none focus:ring-2 focus:ring-[#06b6d4] text-[#111]"
+                className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
                 required
               >
                 <option value="">Select your model</option>
@@ -119,10 +119,10 @@ export default function ContactPage() {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Goal</label>
+              <label className="block text-sm font-medium text-[#3b4652] mb-2">Goal</label>
               <select
                 name="goal"
-                className="w-full px-4 py-3 border border-[#f5f5f5] bg-[#fafafa] rounded focus:outline-none focus:ring-2 focus:ring-[#06b6d4] text-[#111]"
+                className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
                 required
               >
                 <option value="">Select your goal</option>
@@ -137,12 +137,12 @@ export default function ContactPage() {
               name="message"
               placeholder="Tell me more about your pricing challenges..."
               rows={5}
-              className="w-full px-4 py-3 border border-[#f5f5f5] bg-[#fafafa] rounded focus:outline-none focus:ring-2 focus:ring-[#06b6d4] text-[#111]"
+              className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
               required
             />
             <button
               type="submit"
-              className="w-full bg-[#ff5722] text-white font-bold py-3 rounded transition-colors hover:bg-[#e64a19] focus:outline-none focus:ring-2 focus:ring-[#ff5722] tracking-wider text-lg mt-2"
+              className="w-full bg-[#ff5722] text-white font-bold py-3 rounded transition-colors hover:bg-[#e44e1f] focus:outline-none focus:ring-2 focus:ring-[#ff5722] tracking-wider text-lg mt-2"
             >
               SUBMIT
             </button>

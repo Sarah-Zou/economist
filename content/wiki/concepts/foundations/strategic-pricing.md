@@ -13,14 +13,14 @@ owner: "Dr. Sarah Zou"
 
 **What it is:** A coordinated, value-based system for deciding how you charge (structure), what you charge (levels), and how you manage prices (policies) to maximize sustainable profit.
 
-**Why it matters:** Pricing moves profit fastest; small price gains can drive outsized operating profit, reduce bad trade-offs, and improve decisions across product, sales, and finance.
+**Why it matters:** A 1% average price lift → ~8–10% operating profit improvement (typical large company); most teams spend <10 hours/year on pricing.
 
-**When to use:** Early in product planning and before any major launch or price change; essential post–problem/solution fit and throughout scale.
+**When to use:** Early in product planning; before major launches; post–problem/solution fit through scale.
 
 **Key Takeaways:** 
-- Strategic pricing is **not about finding a "perfect price,"** but creating **a system (value × structure × policy)** with clear goals and timing.
-- Strategic Pricing Involves **Designing the Product Around the Price**, Not Vice Versa.
-- Pricing is the **Single Most Critical Lever** for profitability.
+- **Design your product around price**, not vice versa
+- Treat pricing as **a system** (value × structure × policy), not a one-time number.
+- **Single most critical lever** for profitability
 
 ## Key Facts
 - +8.7% profit: A 1% increase in average price can translate into an 8.7% to 10.29% increase in operating profit for a typical large company. (McKinsey analysis.)
@@ -90,7 +90,7 @@ owner: "Dr. Sarah Zou"
 
 ## References & Links
 
-### Canonical sources:
+### Sources:
 
 - Nagle, T., Müller, G., & Hogan, J. *The Strategy and Tactics of Pricing*. (Routledge, latest edition).
 - Ramanujam, M., & Tacke, G. *Monetizing Innovation*. (Wiley).
