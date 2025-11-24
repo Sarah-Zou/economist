@@ -23,9 +23,9 @@ owner: "Dr. Sarah Zou"
 - **Single most critical lever** for profitability
 
 ## Key Facts
-- +8.7% profit: A 1% increase in average price can translate into an 8.7% to 10.29% increase in operating profit for a typical large company. (McKinsey analysis.)
-- <10 hours/year: Companies spend <10 hours/year on pricing. (ProfitWell/Paddle analysis of SaaS operators.)
-- 85% of companies: 85% of companies say their pricing needs significant improvement, signaling widespread capability gaps. (Bain global survey.)
+- +8.7% profit: A 1% increase in average price can translate into an 8.7% to 10.29% increase in operating profit for a typical large company. (McKinsey analysis)
+- <10 hours/year: Companies spend <10 hours/year on pricing. (ProfitWell/Paddle)
+- 85% of companies: 85% of companies say their pricing needs significant improvement, signaling widespread capability gaps. (Bain)
 
 ## What is strategic pricing?
 
@@ -66,27 +66,6 @@ owner: "Dr. Sarah Zou"
 | **Pricing as an Afterthought:** Product is finalized before assessing customer WTP, leading to poor revenue accuracy. | **Design Around the Price:** Market and price first; use WTP to guide product design. |
 | **Inside-Out Business Case:** Cost-plus pricing ignores customer value and elasticity. | **Outside-In Business Case:** Update with real WTP data and model value-volume-cost linkages. |
 | **Organizational Silos:** Teams operate with conflicting incentives (e.g., Sales discounts too much). | **Centralized Alignment:** Create a Pricing & Monetization team with executive sponsorship. |
-
-## Who owns pricing?
-
-### Owner & cadence
-
-- **Owner:** Cross-functional Pricing & Monetization led by PMM/Pricing with Finance, RevOps, and Sales.
-- **Cadence:** Monthly health review; quarterly minor level adjustments; semiannual structural revisions; annual WTP refresh.
-
-### Interlocks
-
-- **Product:** Define value metric; instrument usage; set upgrade paths.
-- **Packaging:** Maintain tiers, bundles, add-ons; prevent cannibalization with fences.
-- **Segmentation:** Hold ICPs and WTP bands; inform targeting and quotas.
-- **Marketing:** Positioning, pricing-page tests, change comms.
-- **Sales & Deal Desk:** Enforce floors and approvals; ensure quote accuracy; track realization.
-- **RevOps:** Configure CPQ/billing; automate renewals and uplifts; own pricing data quality.
-- **Finance:** Set margin floors and payback guardrails; run sensitivity and scenario models.
-- **Customer Success:** Renewal/expansion plays; value communication during increases.
-- **Legal & Compliance:** Terms; MAP and antitrust review.
-- **Data/Analytics:** WTP research, win/loss, experiment design and readouts.
-- **Leadership:** Strategy, talent, and cadence; resolve cross-functional trade-offs.
 
 ## References & Links
 

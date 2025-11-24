@@ -69,35 +69,79 @@ export default function TableOfContents({ items, title }: TableOfContentsProps) 
   const [activeId, setActiveId] = useState<string>('')
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id)
-          }
-        })
-      },
-      {
-        rootMargin: '-20% 0% -35% 0%',
-        threshold: 0
-      }
-    )
+    // Function to determine which section is in the top third of the viewport
+    const updateActiveSection = () => {
+      const viewportTopThird = window.innerHeight / 3
+      let currentActiveId = ''
+      let closestTop = Infinity
 
-    // Observe all heading elements
-    items.forEach((item) => {
-      const element = document.getElementById(item.id)
-      if (element) {
-        observer.observe(element)
-      }
-    })
-
-    return () => {
+      // Check each section to see if its top edge is within the top third of the viewport
       items.forEach((item) => {
         const element = document.getElementById(item.id)
         if (element) {
-          observer.unobserve(element)
+          const rect = element.getBoundingClientRect()
+          const elementTop = rect.top
+          
+          // Check if the section's top edge is within the top third (0 to viewportTopThird)
+          if (elementTop >= 0 && elementTop <= viewportTopThird) {
+            // If multiple sections are in the top third, prioritize the one closest to the top
+            if (elementTop < closestTop) {
+              closestTop = elementTop
+              currentActiveId = item.id
+            }
+          }
         }
       })
+
+      // If no section is currently in the top third, find the most recently passed section
+      if (!currentActiveId) {
+        let bestMatchId: string | null = null
+        let bestMatchDistance: number = Infinity
+
+        items.forEach((item) => {
+          const element = document.getElementById(item.id)
+          if (element) {
+            const rect = element.getBoundingClientRect()
+            // If section has passed the top third line (is above it) but is still visible
+            if (rect.top < viewportTopThird && rect.bottom > 0) {
+              const distance = viewportTopThird - rect.top
+              if (distance < bestMatchDistance) {
+                bestMatchDistance = distance
+                bestMatchId = item.id
+              }
+            }
+          }
+        })
+
+        if (bestMatchId) {
+          currentActiveId = bestMatchId
+        }
+      }
+
+      setActiveId(currentActiveId)
+    }
+
+    // Initial check
+    updateActiveSection()
+
+    // Update on scroll with throttling for better performance
+    let ticking = false
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateActiveSection()
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('resize', handleScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleScroll)
     }
   }, [items])
 

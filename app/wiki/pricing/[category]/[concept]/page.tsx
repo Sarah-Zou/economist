@@ -301,9 +301,9 @@ export default function ConceptPage({ params }: ConceptPageProps) {
     : '');
   const hasContent = conceptData !== null;
   
-  // Extract headings for table of contents
+  // Extract headings for table of contents (only first level - h2)
   const tocItems = hasContent && conceptData 
-    ? extractHeadings(conceptData.content)
+    ? extractHeadings(conceptData.content).filter(item => item.level === 2)
     : [];
 
   // Parse Snapshot section if content exists
@@ -483,7 +483,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                 .replace(/\s+/g, '-')
                                 .replace(/-+/g, '-')
                                 .trim()
-                              return <h3 id={id} className="font-semibold text-[20px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
+                              return <h3 id={id} className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
                             },
                             a: ({ node, href, ...props }) => {
                               const isInternalLink = href?.startsWith('/wiki/pricing/');
@@ -522,7 +522,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                             <div className="space-y-3">
                               {snapshot.whatItIs && (
                                 <div>
-                                  <h3 className="font-semibold text-[20px] text-[#1f2933] mb-1">What it is</h3>
+                                  <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-1">What it is</h3>
                                   <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                                     {snapshot.whatItIs}
                                   </p>
@@ -530,7 +530,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                               )}
                               {snapshot.whyItMatters && (
                                 <div>
-                                  <h3 className="font-semibold text-[20px] text-[#1f2933] mb-1">Why it matters</h3>
+                                  <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-1">Why it matters</h3>
                                   <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                                     {snapshot.whyItMatters}
                                   </p>
@@ -632,7 +632,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                 .replace(/\s+/g, '-')
                                 .replace(/-+/g, '-')
                                 .trim()
-                              return <h3 id={id} className="font-semibold text-[20px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
+                              return <h3 id={id} className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
                             },
                             a: ({ node, href, ...props }) => {
                               const isInternalLink = href?.startsWith('/wiki/pricing/');
@@ -727,7 +727,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                 .replace(/\s+/g, '-')
                                 .replace(/-+/g, '-')
                                 .trim()
-                              return <h3 id={id} className="font-semibold text-[20px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
+                              return <h3 id={id} className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
                             },
                             a: ({ node, href, ...props }) => {
                               const isInternalLink = href?.startsWith('/wiki/pricing/');
@@ -779,7 +779,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                 .replace(/\s+/g, '-')
                                 .replace(/-+/g, '-')
                                 .trim()
-                              return <h3 id={id} className="font-semibold text-[20px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
+                              return <h3 id={id} className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
                             },
                             a: ({ node, href, ...props }) => {
                               const isInternalLink = href?.startsWith('/wiki/pricing/');
@@ -811,7 +811,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {/* FAQ Section */}
                       {faqItems.length > 0 && (
                         <section className="mt-12 mb-12">
-                          <h2 id="faq" className="font-serif-playfair text-3xl md:text-[36px] font-semibold text-[#1f2933] mb-8 text-center scroll-mt-24">
+                          <h2 id="faq" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-8 text-center scroll-mt-24">
                             Frequently Asked Questions
                           </h2>
                           <div className="space-y-4 sm:space-y-6 max-w-3xl mx-auto">
@@ -885,7 +885,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                 .replace(/\s+/g, '-')
                                 .replace(/-+/g, '-')
                                 .trim()
-                              return <h3 id={id} className="font-semibold text-[20px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
+                              return <h3 id={id} className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
                             },
                             a: ({ node, href, ...props }) => {
                               // Use Next.js Link for internal links
