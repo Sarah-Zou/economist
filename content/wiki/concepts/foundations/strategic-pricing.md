@@ -18,14 +18,14 @@ owner: "Dr. Sarah Zou"
 **When to use:** Early in product planning; before major launches; post–problem/solution fit through scale.
 
 **Key Takeaways:** 
-- **Design your product around price**, not vice versa
-- Treat pricing as **a system** (value × structure × policy), not a one-time number.
-- **Single most critical lever** for profitability
+- **Design your product around price**, not vice versa – _avoid shipping something that can never reach viable unit economics._
+- Treat pricing as **a system** (value × structure × policy), not a one-time number – _this is how you keep prices aligned as the product and market evolve._
+- Pricing is your **Single most critical lever** for profitability – _a 1% lift in average price typically drives 8–10% operating profit gains in large companies._
 
 ## Key Facts
-- +8.7% profit: A 1% increase in average price can translate into an 8.7% to 10.29% increase in operating profit for a typical large company. (McKinsey analysis)
-- <10 hours/year: Companies spend <10 hours/year on pricing. (ProfitWell/Paddle)
-- 85% of companies: 85% of companies say their pricing needs significant improvement, signaling widespread capability gaps. (Bain)
+- +8.7% profit: A 1% increase in average price can translate into an 8.7% to 10.29% increase in operating profit for a typical large company. ([McKinsey analysis](https://www.mckinsey.com/~/media/mckinsey/business%20functions/marketing%20and%20sales/our%20insights/ebook%20the%20hidden%20power%20of%20pricing%20how%20b2b%20companies%20can%20unlock%20profit/the-hidden-power-of-pricing.pdf))
+- <10 hours/year: Companies spend <10 hours/year on pricing. ([ProfitWell/Paddle](https://www.paddle.com/studios/shows/profitwell-report/pricing-for-bottom-line))
+- 85% of companies: 85% of companies say their pricing needs significant improvement, signaling widespread capability gaps. ([Bain](https://www.bain.com/insights/a-survey-of-1700-companies-reveals-common-b2b-pricing-mistakes-hbr/))
 
 ## What is strategic pricing?
 
@@ -34,6 +34,10 @@ owner: "Dr. Sarah Zou"
 - **Value-based:** Price should align with the value customers place on the product, grounded in the economic value to customer (EVC) and willingness-to-pay (WTP).
 - **Proactive:** Anticipate price levels early—before product development—to ensure the business can capture sufficient value and adapt to market shifts.
 - **Profit-driven:** Focus on maximizing long-term, sustainable profit—not just short-term revenue or market share.
+
+> **Strategic pricing vs. value-based pricing**
+> 
+> Value-based pricing is the philosophy (anchor prices on customer value). Strategic pricing is the operating system that turns that philosophy into structure, policies, and ongoing decisions.
 
 ## Why does strategic pricing matter?
 
@@ -45,19 +49,23 @@ owner: "Dr. Sarah Zou"
 
 ### Inputs you need
 
-- **Positioning:** ICPs, target segments, jobs-to-be-done, and buyer roles.
-- **Customer WTP/Value Data:** Absolute/relative WTP, feature value perceived, and price sensitivity by segment.
-- **Internal Financial Data:** Variable/fixed costs, elasticity estimates, transaction and usage data.
-- **Market & Competitive Benchmarks:** Competitor pricing, alternatives' costs, and key market drivers (supply, demand, regulations, costs).
+- **Positioning & Segmentation (Product / PMM):** ICPs, target segments, jobs-to-be-done, and buyer roles.
+- **Customer WTP/Value Data (Research / Analytics):** Absolute and relative WTP, feature value perceived, and price sensitivity by segment.
+- **Internal Financials & Unit Economics (Finance):** Variable and fixed costs, margin targets, elasticity estimates, transaction and usage data.
+- **Market & Competitive Benchmarks (Product / Strategy):** Competitor pricing, alternatives' costs, and macro drivers (supply, demand, regulations, input costs).
 
 ### Step-by-step
+
+> **This is a 2–4 week collaborative sprint for a new or existing product, not a one-hour exercise.**
 
 1. **Understand value:** Define what customers gain and ensure features justify costs by delivering measurable value.
 2. **Design price structure:** Choose a monetization model (tiers, usage, bundles) to reflect customer value and budget anchors.
 3. **Set pricing policies:** Establish competitive positioning, discount rules, clear escalation and approval processes, and other rules.
-4. **Determine price levels:** Select price points within feasible ranges that balance customer value, competition, and margin goals.
+4. **Choose price levels:** Select price points within feasible ranges that balance customer value, competition, and margin goals.
 5. **Communicate value:** Create clear ROI stories and pricing page; draft pricing explanations for customers and internal teams.
 6. **Build pricing infrastructure:** Establish processes, ownership, tools, metrics, and dashboards to sustain pricing discipline.
+
+> **Re-run levels and policies at least annually or after major product / market shifts; structure changes less frequently but should be revisited every 12–24 months.**
 
 ## Risks & anti-patterns
 

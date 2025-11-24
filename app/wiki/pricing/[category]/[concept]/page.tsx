@@ -221,13 +221,15 @@ function parseKeyFacts(content: string): {
 function parseStepByStep(content: string): { 
   beforeStepByStep: string; 
   steps: Array<{ number: number; title: string; description: string }> | null; 
+  beforeStepsContent: string;
+  afterStepsContent: string;
   afterStepByStep: string 
 } {
   const stepByStepRegex = /###\s+Step-by-step\s*\n([\s\S]*?)(?=\n##|$)/;
   const match = content.match(stepByStepRegex);
   
   if (!match) {
-    return { beforeStepByStep: content, steps: null, afterStepByStep: '' };
+    return { beforeStepByStep: content, steps: null, beforeStepsContent: '', afterStepsContent: '', afterStepByStep: '' };
   }
 
   const stepByStepStartIndex = match.index!;
@@ -235,10 +237,18 @@ function parseStepByStep(content: string): {
   const beforeStepByStep = content.substring(0, stepByStepStartIndex).trim();
   const afterStepByStep = content.substring(stepByStepStartIndex + match[0].length).trim();
 
+  // Find the first numbered step to extract content before it
+  const firstStepMatch = stepByStepContent.match(/(\d+)\.\s+\*\*/);
+  const beforeStepsContent = firstStepMatch 
+    ? stepByStepContent.substring(0, firstStepMatch.index).trim()
+    : '';
+
   // Parse numbered list items (1. **title:** description)
-  const stepRegex = /(\d+)\.\s+\*\*([^*]+?):\*\*\s*([\s\S]+?)(?=\n\d+\.|$)/g;
+  // Stop at next step, blockquote (callout after blank line), or end of string
+  const stepRegex = /(\d+)\.\s+\*\*([^*]+?):\*\*\s*([\s\S]+?)(?=\n\d+\.\s+\*\*|\n\n\s*>|$)/g;
   const steps: Array<{ number: number; title: string; description: string }> = [];
   let stepMatch;
+  let lastStepEndIndex = 0;
 
   while ((stepMatch = stepRegex.exec(stepByStepContent)) !== null) {
     steps.push({
@@ -246,9 +256,15 @@ function parseStepByStep(content: string): {
       title: stepMatch[2].trim(),
       description: stepMatch[3].trim()
     });
+    lastStepEndIndex = stepMatch.index + stepMatch[0].length;
   }
 
-  return { beforeStepByStep, steps: steps.length > 0 ? steps : null, afterStepByStep };
+  // Extract content after the last step but still within the Step-by-step section
+  const afterStepsContent = lastStepEndIndex > 0
+    ? stepByStepContent.substring(lastStepEndIndex).trim()
+    : '';
+
+  return { beforeStepByStep, steps: steps.length > 0 ? steps : null, beforeStepsContent, afterStepsContent, afterStepByStep };
 }
 
 // Helper function to parse FAQ section from markdown content
@@ -279,6 +295,76 @@ function parseFAQ(content: string): { beforeFAQ: string; faqItems: Array<{ quest
 
   return { beforeFAQ, faqItems, afterFAQ };
 }
+
+// Shared ReactMarkdown components for consistent styling
+const markdownComponents = {
+  h2: ({ node, ...props }: any) => {
+    const text = String(props.children)
+    const id = text
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .trim()
+    return <h2 id={id} className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-8 scroll-mt-24" {...props} />
+  },
+  h3: ({ node, ...props }: any) => {
+    const text = String(props.children)
+    const id = text
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .trim()
+    return <h3 id={id} className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
+  },
+  a: ({ node, href, ...props }: any) => {
+    const isInternalLink = href?.startsWith('/wiki/pricing/');
+    if (isInternalLink && href) {
+      return (
+        <Link 
+          href={href}
+          className="text-[#ff5722] hover:underline font-medium"
+          {...props}
+        />
+      );
+    }
+    return (
+      <a
+        href={href}
+        className="text-[#ff5722] hover:underline"
+        target={href?.startsWith('http') ? '_blank' : undefined}
+        rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+        {...props}
+      />
+    );
+  },
+  blockquote: ({ node, ...props }: any) => (
+    <blockquote className="bg-white border-l-4 border-[#ff5722] pl-6 pr-4 py-4 my-6 rounded-r-lg shadow-sm" {...props} />
+  ),
+  table: ({ node, ...props }: any) => (
+    <div className="overflow-x-auto my-8">
+      <div className="bg-white rounded-lg border border-[#e5e7eb] shadow-sm overflow-hidden min-w-full">
+        <table className="w-full border-collapse" {...props} />
+      </div>
+    </div>
+  ),
+  thead: ({ node, ...props }: any) => (
+    <thead className="bg-[#f6f7f9]" {...props} />
+  ),
+  th: ({ node, ...props }: any) => (
+    <th className="text-left py-4 px-6 font-semibold text-sm text-[#1f2933] border-b-2 border-[#e5e7eb] uppercase tracking-wide first:pl-6 last:pr-6" {...props} />
+  ),
+  td: ({ node, ...props }: any) => (
+    <td className="py-5 px-6 text-base sm:text-[17px] text-[#1f2933] leading-[1.65] border-b border-[#e5e7eb] align-top first:pl-6 last:pr-6" {...props} />
+  ),
+  tbody: ({ node, ...props }: any) => (
+    <tbody className="divide-y divide-[#e5e7eb]" {...props} />
+  ),
+  tr: ({ node, ...props }: any) => (
+    <tr className="hover:bg-[#f6f7f9] transition-colors duration-150 last:border-b-0" {...props} />
+  ),
+};
 
 export default function ConceptPage({ params }: ConceptPageProps) {
   const category = getCategoryBySlug(params.category);
@@ -323,9 +409,9 @@ export default function ConceptPage({ params }: ConceptPageProps) {
   const contentToParseForStepByStep = hasContent && conceptData 
     ? (afterKeyFactsContent || afterSnapshotContent || conceptData.content)
     : '';
-  const { beforeStepByStep, steps, afterStepByStep: afterStepByStepContent } = contentToParseForStepByStep
+  const { beforeStepByStep, steps, beforeStepsContent, afterStepsContent, afterStepByStep: afterStepByStepContent } = contentToParseForStepByStep
     ? parseStepByStep(contentToParseForStepByStep)
-    : { beforeStepByStep: '', steps: null, afterStepByStep: '' };
+    : { beforeStepByStep: '', steps: null, beforeStepsContent: '', afterStepsContent: '', afterStepByStep: '' };
 
   // Parse FAQ section - parse from content after step-by-step
   const contentToParseForFAQ = hasContent && conceptData 
@@ -464,49 +550,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {beforeSnapshot && (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
-                          components={{
-                            h2: ({ node, ...props }) => {
-                              const text = String(props.children)
-                              const id = text
-                                .toLowerCase()
-                                .replace(/[^\w\s-]/g, '')
-                                .replace(/\s+/g, '-')
-                                .replace(/-+/g, '-')
-                                .trim()
-                              return <h2 id={id} className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-8 scroll-mt-24" {...props} />
-                            },
-                            h3: ({ node, ...props }) => {
-                              const text = String(props.children)
-                              const id = text
-                                .toLowerCase()
-                                .replace(/[^\w\s-]/g, '')
-                                .replace(/\s+/g, '-')
-                                .replace(/-+/g, '-')
-                                .trim()
-                              return <h3 id={id} className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
-                            },
-                            a: ({ node, href, ...props }) => {
-                              const isInternalLink = href?.startsWith('/wiki/pricing/');
-                              if (isInternalLink && href) {
-                                return (
-                                  <Link 
-                                    href={href}
-                                    className="text-[#ff5722] hover:underline font-medium"
-                                    {...props}
-                                  />
-                                );
-                              }
-                              return (
-                                <a
-                                  href={href}
-                                  className="text-[#ff5722] hover:underline"
-                                  target={href?.startsWith('http') ? '_blank' : undefined}
-                                  rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                  {...props}
-                                />
-                              );
-                            },
-                          }}
+                          components={markdownComponents}
                         >
                           {beforeSnapshot}
                         </ReactMarkdown>
@@ -599,9 +643,27 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                   <h3 className="text-xl font-bold text-[#1f2933] mb-2">
                                     {fact.title}
                                   </h3>
-                                  <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                                    {fact.description}
-                                  </p>
+                                  <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+                                    <ReactMarkdown
+                                      remarkPlugins={[remarkGfm]}
+                                      components={{
+                                        p: ({ node, ...props }) => (
+                                          <p className="mb-0" {...props} />
+                                        ),
+                                        a: ({ node, href, ...props }) => (
+                                          <a
+                                            href={href}
+                                            className="text-[#ff5722] hover:underline font-medium"
+                                            target={href?.startsWith('http') ? '_blank' : undefined}
+                                            rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                            {...props}
+                                          />
+                                        ),
+                                      }}
+                                    >
+                                      {fact.description}
+                                    </ReactMarkdown>
+                                  </div>
                                 </div>
                               );
                             })}
@@ -613,49 +675,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {beforeStepByStep && beforeStepByStep.trim() && beforeStepByStep !== (afterKeyFactsContent || afterSnapshotContent || '') && (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
-                          components={{
-                            h2: ({ node, ...props }) => {
-                              const text = String(props.children)
-                              const id = text
-                                .toLowerCase()
-                                .replace(/[^\w\s-]/g, '')
-                                .replace(/\s+/g, '-')
-                                .replace(/-+/g, '-')
-                                .trim()
-                              return <h2 id={id} className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-8 scroll-mt-24" {...props} />
-                            },
-                            h3: ({ node, ...props }) => {
-                              const text = String(props.children)
-                              const id = text
-                                .toLowerCase()
-                                .replace(/[^\w\s-]/g, '')
-                                .replace(/\s+/g, '-')
-                                .replace(/-+/g, '-')
-                                .trim()
-                              return <h3 id={id} className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
-                            },
-                            a: ({ node, href, ...props }) => {
-                              const isInternalLink = href?.startsWith('/wiki/pricing/');
-                              if (isInternalLink && href) {
-                                return (
-                                  <Link 
-                                    href={href}
-                                    className="text-[#ff5722] hover:underline font-medium"
-                                    {...props}
-                                  />
-                                );
-                              }
-                              return (
-                                <a
-                                  href={href}
-                                  className="text-[#ff5722] hover:underline"
-                                  target={href?.startsWith('http') ? '_blank' : undefined}
-                                  rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                  {...props}
-                                />
-                              );
-                            },
-                          }}
+                          components={markdownComponents}
                         >
                           {beforeStepByStep}
                         </ReactMarkdown>
@@ -670,6 +690,21 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                           <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-6">
                             A structured, collaborative process designed for maximum impact in minimum time.
                           </p>
+                          {/* Callout above steps */}
+                          {beforeStepsContent && (
+                            <div className="mb-6">
+                              <ReactMarkdown
+                                remarkPlugins={[remarkGfm]}
+                                components={{
+                                  blockquote: ({ node, ...props }) => (
+                                    <blockquote className="bg-white border-l-4 border-[#ff5722] pl-6 pr-4 py-4 my-6 rounded-r-lg shadow-sm" {...props} />
+                                  ),
+                                }}
+                              >
+                                {beforeStepsContent}
+                              </ReactMarkdown>
+                            </div>
+                          )}
                           <div className="relative pl-2">
                             {/* Vertical connecting line */}
                             {steps.length > 1 && (
@@ -700,6 +735,21 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                               ))}
                             </div>
                           </div>
+                          {/* Callout below steps */}
+                          {afterStepsContent && afterStepsContent.trim() && (
+                            <div className="mt-6">
+                              <ReactMarkdown
+                                remarkPlugins={[remarkGfm]}
+                                components={{
+                                  blockquote: ({ node, ...props }) => (
+                                    <blockquote className="bg-white border-l-4 border-[#ff5722] pl-6 pr-4 py-4 my-6 rounded-r-lg shadow-sm" {...props} />
+                                  ),
+                                }}
+                              >
+                                {afterStepsContent}
+                              </ReactMarkdown>
+                            </div>
+                          )}
                         </div>
                       )}
 
@@ -708,49 +758,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {faqItems.length === 0 && afterStepByStepContent && afterStepByStepContent.trim() && (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
-                          components={{
-                            h2: ({ node, ...props }) => {
-                              const text = String(props.children)
-                              const id = text
-                                .toLowerCase()
-                                .replace(/[^\w\s-]/g, '')
-                                .replace(/\s+/g, '-')
-                                .replace(/-+/g, '-')
-                                .trim()
-                              return <h2 id={id} className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-8 scroll-mt-24" {...props} />
-                            },
-                            h3: ({ node, ...props }) => {
-                              const text = String(props.children)
-                              const id = text
-                                .toLowerCase()
-                                .replace(/[^\w\s-]/g, '')
-                                .replace(/\s+/g, '-')
-                                .replace(/-+/g, '-')
-                                .trim()
-                              return <h3 id={id} className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
-                            },
-                            a: ({ node, href, ...props }) => {
-                              const isInternalLink = href?.startsWith('/wiki/pricing/');
-                              if (isInternalLink && href) {
-                                return (
-                                  <Link 
-                                    href={href}
-                                    className="text-[#ff5722] hover:underline font-medium"
-                                    {...props}
-                                  />
-                                );
-                              }
-                              return (
-                                <a
-                                  href={href}
-                                  className="text-[#ff5722] hover:underline"
-                                  target={href?.startsWith('http') ? '_blank' : undefined}
-                                  rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                  {...props}
-                                />
-                              );
-                            },
-                          }}
+                          components={markdownComponents}
                         >
                           {afterStepByStepContent}
                         </ReactMarkdown>
@@ -760,49 +768,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {faqItems.length > 0 && beforeFAQ && beforeFAQ.trim() && (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
-                          components={{
-                            h2: ({ node, ...props }) => {
-                              const text = String(props.children)
-                              const id = text
-                                .toLowerCase()
-                                .replace(/[^\w\s-]/g, '')
-                                .replace(/\s+/g, '-')
-                                .replace(/-+/g, '-')
-                                .trim()
-                              return <h2 id={id} className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-8 scroll-mt-24" {...props} />
-                            },
-                            h3: ({ node, ...props }) => {
-                              const text = String(props.children)
-                              const id = text
-                                .toLowerCase()
-                                .replace(/[^\w\s-]/g, '')
-                                .replace(/\s+/g, '-')
-                                .replace(/-+/g, '-')
-                                .trim()
-                              return <h3 id={id} className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
-                            },
-                            a: ({ node, href, ...props }) => {
-                              const isInternalLink = href?.startsWith('/wiki/pricing/');
-                              if (isInternalLink && href) {
-                                return (
-                                  <Link 
-                                    href={href}
-                                    className="text-[#ff5722] hover:underline font-medium"
-                                    {...props}
-                                  />
-                                );
-                              }
-                              return (
-                                <a
-                                  href={href}
-                                  className="text-[#ff5722] hover:underline"
-                                  target={href?.startsWith('http') ? '_blank' : undefined}
-                                  rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                  {...props}
-                                />
-                              );
-                            },
-                          }}
+                          components={markdownComponents}
                         >
                           {beforeFAQ}
                         </ReactMarkdown>
@@ -866,50 +832,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {afterFAQ && (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
-                          components={{
-                            h2: ({ node, ...props }) => {
-                              const text = String(props.children)
-                              const id = text
-                                .toLowerCase()
-                                .replace(/[^\w\s-]/g, '')
-                                .replace(/\s+/g, '-')
-                                .replace(/-+/g, '-')
-                                .trim()
-                              return <h2 id={id} className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-8 scroll-mt-24" {...props} />
-                            },
-                            h3: ({ node, ...props }) => {
-                              const text = String(props.children)
-                              const id = text
-                                .toLowerCase()
-                                .replace(/[^\w\s-]/g, '')
-                                .replace(/\s+/g, '-')
-                                .replace(/-+/g, '-')
-                                .trim()
-                              return <h3 id={id} className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
-                            },
-                            a: ({ node, href, ...props }) => {
-                              // Use Next.js Link for internal links
-                              const isInternalLink = href?.startsWith('/wiki/pricing/');
-                              if (isInternalLink && href) {
-                                return (
-                                  <Link 
-                                    href={href}
-                                    className="text-[#ff5722] hover:underline font-medium"
-                                    {...props}
-                                  />
-                                );
-                              }
-                              return (
-                                <a
-                                  href={href}
-                                  className="text-[#ff5722] hover:underline"
-                                  target={href?.startsWith('http') ? '_blank' : undefined}
-                                  rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                  {...props}
-                                />
-                              );
-                            },
-                          }}
+                          components={markdownComponents}
                         >
                           {afterFAQ}
                         </ReactMarkdown>
