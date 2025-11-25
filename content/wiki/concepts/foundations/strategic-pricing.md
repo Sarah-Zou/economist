@@ -79,10 +79,10 @@ owner: "Dr. Sarah Zou"
 
 ### Sources:
 
-- Nagle, T., Müller, G., & Hogan, J. *The Strategy and Tactics of Pricing*. (Routledge, latest edition).
-- Ramanujam, M., & Tacke, G. *Monetizing Innovation*. (Wiley).
-- Baker, W., Marn, M., & Zawada, C. *The Price Advantage*. (Wiley).
-- McKinsey—Pricing (price realization, growth transformations).
+- Baker, W. L., Marn, M. V., & Zawada, C. C. (2010). *The price advantage* (2nd ed.). Wiley.
+- McKinsey & Company. (n.d.). Pricing: Price realization, growth transformations. https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/pricing
+- Nagle, T. T., Müller, G., & Hogan, J. E. (2022). *The strategy and tactics of pricing: A guide to growing more profitably* (6th ed.). Routledge.
+- Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. Wiley.
 
 **Related pages:** [Value-based pricing](/wiki/pricing/foundations/value-based-pricing) | [Cost-plus pricing](/wiki/pricing/foundations/cost-plus-pricing) | [Penetration strategy](/wiki/pricing/foundations/penetration-strategy) | [Price-led product design](/wiki/pricing/foundations/price-led-product-design) | [Packaging & Bundling](/wiki/pricing/packaging-and-bundling) | [Price Fences](/wiki/pricing/price-architecture) | [Price Elasticity](/wiki/pricing/research-and-metrics/price-elasticity) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Usage-Based Pricing](/wiki/pricing/models-and-metering/usage-based-pricing)
 

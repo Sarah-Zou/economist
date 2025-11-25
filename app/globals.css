@@ -157,4 +157,65 @@
     color: var(--color-text-muted);
     font-size: 0.875rem;
   }
+  
+  /* Prose heading styles to match design system */
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4 {
+    font-family: var(--font-playfair), Playfair Display, serif;
+    color: #1f2933;
+    letter-spacing: -0.01em;
+  }
+  
+  .prose h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  @media (min-width: 640px) {
+    .prose h1 {
+      font-size: 36px;
+    }
+  }
+  
+  .prose h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  @media (min-width: 640px) {
+    .prose h2 {
+      font-size: 28px;
+    }
+  }
+  
+  .prose h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  @media (min-width: 640px) {
+    .prose h3 {
+      font-size: 22px;
+    }
+  }
+  
+  .prose h4 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  @media (min-width: 640px) {
+    .prose h4 {
+      font-size: 20px;
+    }
+  }
 } 

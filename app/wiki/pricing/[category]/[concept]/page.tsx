@@ -141,20 +141,20 @@ function parseSnapshot(content: string): {
   // Parse snapshot fields
   const snapshot: { whatItIs?: string; whyItMatters?: string; whenToUse?: string; keyTakeaways?: string[] } = {};
   
-  // Extract "What it is:"
-  const whatItIsMatch = snapshotContent.match(/\*\*What it is:\*\*\s*([\s\S]*?)(?=\n\n\*\*|$)/);
+  // Extract "What it is:" - stop at newline followed by **Why it matters: or **When to use: or **Key Takeaways:
+  const whatItIsMatch = snapshotContent.match(/\*\*What it is:\*\*\s*([\s\S]*?)(?=\n\*\*(?:Why it matters|When to use|Key Takeaways):|$)/);
   if (whatItIsMatch) {
     snapshot.whatItIs = whatItIsMatch[1].trim();
   }
 
-  // Extract "Why it matters:"
-  const whyItMattersMatch = snapshotContent.match(/\*\*Why it matters:\*\*\s*([\s\S]*?)(?=\n\n\*\*|$)/);
+  // Extract "Why it matters:" - stop at newline followed by **When to use: or **Key Takeaways:
+  const whyItMattersMatch = snapshotContent.match(/\*\*Why it matters:\*\*\s*([\s\S]*?)(?=\n\*\*(?:When to use|Key Takeaways):|$)/);
   if (whyItMattersMatch) {
     snapshot.whyItMatters = whyItMattersMatch[1].trim();
   }
 
-  // Extract "When to use:"
-  const whenToUseMatch = snapshotContent.match(/\*\*When to use:\*\*\s*([\s\S]*?)(?=\n\n\*\*|$)/);
+  // Extract "When to use:" - stop at newline followed by **Key Takeaways:
+  const whenToUseMatch = snapshotContent.match(/\*\*When to use:\*\*\s*([\s\S]*?)(?=\n\*\*Key Takeaways:|$)/);
   if (whenToUseMatch) {
     snapshot.whenToUse = whenToUseMatch[1].trim();
   }
@@ -215,6 +215,47 @@ function parseKeyFacts(content: string): {
   }
 
   return { beforeKeyFacts, keyFacts: keyFacts.length > 0 ? keyFacts : null, afterKeyFacts };
+}
+
+// Helper function to parse Metrics to monitor section from markdown content
+function parseMetricsToMonitor(content: string): { 
+  beforeMetrics: string; 
+  metrics: Array<{ title: string; description: string }> | null; 
+  afterMetrics: string 
+} {
+  const metricsRegex = /##\s+Metrics to monitor\s*\n([\s\S]*?)(?=\n##|$)/;
+  const match = content.match(metricsRegex);
+  
+  if (!match) {
+    return { beforeMetrics: content, metrics: null, afterMetrics: '' };
+  }
+
+  const metricsStartIndex = match.index!;
+  const metricsContent = match[1];
+  const beforeMetrics = content.substring(0, metricsStartIndex).trim();
+  const afterMetrics = content.substring(metricsStartIndex + match[0].length).trim();
+
+  // Parse bullet points (lines starting with -)
+  const metricLines = metricsContent
+    .split('\n')
+    .filter(line => line.trim().startsWith('-'))
+    .map(line => line.replace(/^-\s*/, '').trim());
+
+  const metrics: Array<{ title: string; description: string }> = [];
+  
+  for (const line of metricLines) {
+    // Extract title from **Title:** and description after colon
+    const boldMatch = line.match(/\*\*([^*]+?):\*\*\s*(.+)/);
+    if (boldMatch) {
+      const title = boldMatch[1].trim();
+      const description = boldMatch[2].trim();
+      if (title && description) {
+        metrics.push({ title, description });
+      }
+    }
+  }
+
+  return { beforeMetrics, metrics: metrics.length > 0 ? metrics : null, afterMetrics };
 }
 
 // Helper function to parse Step-by-step section from markdown content
@@ -413,9 +454,17 @@ export default function ConceptPage({ params }: ConceptPageProps) {
     ? parseStepByStep(contentToParseForStepByStep)
     : { beforeStepByStep: '', steps: null, beforeStepsContent: '', afterStepsContent: '', afterStepByStep: '' };
 
-  // Parse FAQ section - parse from content after step-by-step
-  const contentToParseForFAQ = hasContent && conceptData 
+  // Parse Metrics to monitor section - parse from content after step-by-step
+  const contentToParseForMetrics = hasContent && conceptData 
     ? (afterStepByStepContent || afterKeyFactsContent || afterSnapshotContent || conceptData.content)
+    : '';
+  const { beforeMetrics, metrics, afterMetrics: afterMetricsContent } = contentToParseForMetrics
+    ? parseMetricsToMonitor(contentToParseForMetrics)
+    : { beforeMetrics: '', metrics: null, afterMetrics: '' };
+
+  // Parse FAQ section - parse from content after metrics
+  const contentToParseForFAQ = hasContent && conceptData 
+    ? (afterMetricsContent || afterStepByStepContent || afterKeyFactsContent || afterSnapshotContent || conceptData.content)
     : '';
   const { beforeFAQ, faqItems, afterFAQ } = contentToParseForFAQ
     ? parseFAQ(contentToParseForFAQ)
@@ -687,17 +736,41 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                           <h2 id="step-by-step" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-2 scroll-mt-24">
                             Step-by-step
                           </h2>
-                          <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-6">
-                            A structured, collaborative process designed for maximum impact in minimum time.
-                          </p>
-                          {/* Callout above steps */}
+                          {/* Content above steps */}
                           {beforeStepsContent && (
                             <div className="mb-6">
                               <ReactMarkdown
                                 remarkPlugins={[remarkGfm]}
                                 components={{
+                                  p: ({ node, ...props }) => (
+                                    <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-6" {...props} />
+                                  ),
                                   blockquote: ({ node, ...props }) => (
                                     <blockquote className="bg-white border-l-4 border-[#ff5722] pl-6 pr-4 py-4 my-6 rounded-r-lg shadow-sm" {...props} />
+                                  ),
+                                  a: ({ node, href, ...props }: any) => {
+                                    const isInternalLink = href?.startsWith('/wiki/pricing/');
+                                    if (isInternalLink && href) {
+                                      return (
+                                        <Link 
+                                          href={href}
+                                          className="text-[#ff5722] hover:underline font-medium"
+                                          {...props}
+                                        />
+                                      );
+                                    }
+                                    return (
+                                      <a
+                                        href={href}
+                                        className="text-[#ff5722] hover:underline"
+                                        target={href?.startsWith('http') ? '_blank' : undefined}
+                                        rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                        {...props}
+                                      />
+                                    );
+                                  },
+                                  strong: ({ node, ...props }) => (
+                                    <strong className="font-bold text-[#1f2933]" {...props} />
                                   ),
                                 }}
                               >
@@ -741,8 +814,35 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                               <ReactMarkdown
                                 remarkPlugins={[remarkGfm]}
                                 components={{
+                                  p: ({ node, ...props }) => (
+                                    <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />
+                                  ),
                                   blockquote: ({ node, ...props }) => (
                                     <blockquote className="bg-white border-l-4 border-[#ff5722] pl-6 pr-4 py-4 my-6 rounded-r-lg shadow-sm" {...props} />
+                                  ),
+                                  a: ({ node, href, ...props }: any) => {
+                                    const isInternalLink = href?.startsWith('/wiki/pricing/');
+                                    if (isInternalLink && href) {
+                                      return (
+                                        <Link 
+                                          href={href}
+                                          className="text-[#ff5722] hover:underline font-medium"
+                                          {...props}
+                                        />
+                                      );
+                                    }
+                                    return (
+                                      <a
+                                        href={href}
+                                        className="text-[#ff5722] hover:underline"
+                                        target={href?.startsWith('http') ? '_blank' : undefined}
+                                        rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                        {...props}
+                                      />
+                                    );
+                                  },
+                                  strong: ({ node, ...props }) => (
+                                    <strong className="font-bold text-[#1f2933]" {...props} />
                                   ),
                                 }}
                               >
@@ -753,14 +853,78 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                         </div>
                       )}
 
-                      {/* Content after Step-by-step but before FAQ */}
-                      {/* Only render afterStepByStepContent if FAQ doesn't exist (to avoid duplication with beforeFAQ) */}
-                      {faqItems.length === 0 && afterStepByStepContent && afterStepByStepContent.trim() && (
+                      {/* Content after Step-by-step but before Metrics */}
+                      {beforeMetrics && beforeMetrics.trim() && beforeMetrics !== (afterStepByStepContent || afterKeyFactsContent || afterSnapshotContent || '') && (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
                           components={markdownComponents}
                         >
-                          {afterStepByStepContent}
+                          {beforeMetrics}
+                        </ReactMarkdown>
+                      )}
+
+                      {/* Metrics to monitor Section */}
+                      {metrics && metrics.length > 0 && (
+                        <div className="mb-8">
+                          <h2 id="metrics-to-monitor" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-6 scroll-mt-24">
+                            Metrics to monitor
+                          </h2>
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            {metrics.map((metric, index) => {
+                              // Choose icon based on content
+                              let Icon = TrendingUp;
+                              if (metric.title.toLowerCase().includes('price') || metric.title.toLowerCase().includes('asp') || metric.title.toLowerCase().includes('arpa')) {
+                                Icon = DollarSign;
+                              } else if (metric.title.toLowerCase().includes('elasticity')) {
+                                Icon = TrendingUp;
+                              } else if (metric.title.toLowerCase().includes('discount') || metric.title.toLowerCase().includes('realization')) {
+                                Icon = AlertCircle;
+                              }
+
+                              return (
+                                <div key={index} className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
+                                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#f6f7f9] mb-4">
+                                    <Icon className="w-6 h-6 text-[#ff5722]" />
+                                  </div>
+                                  <h3 className="text-xl font-bold text-[#1f2933] mb-2">
+                                    {metric.title}
+                                  </h3>
+                                  <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+                                    <ReactMarkdown
+                                      remarkPlugins={[remarkGfm]}
+                                      components={{
+                                        p: ({ node, ...props }) => (
+                                          <p className="mb-0" {...props} />
+                                        ),
+                                        a: ({ node, href, ...props }) => (
+                                          <a
+                                            href={href}
+                                            className="text-[#ff5722] hover:underline font-medium"
+                                            target={href?.startsWith('http') ? '_blank' : undefined}
+                                            rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                            {...props}
+                                          />
+                                        ),
+                                      }}
+                                    >
+                                      {metric.description}
+                                    </ReactMarkdown>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Content after Metrics but before FAQ */}
+                      {/* Only render afterMetricsContent if FAQ doesn't exist (to avoid duplication with beforeFAQ) */}
+                      {faqItems.length === 0 && afterMetricsContent && afterMetricsContent.trim() && (
+                        <ReactMarkdown
+                          remarkPlugins={[remarkGfm]}
+                          components={markdownComponents}
+                        >
+                          {afterMetricsContent}
                         </ReactMarkdown>
                       )}
                       

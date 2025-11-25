@@ -87,7 +87,7 @@ export default function WikiPricingPage() {
       
       <WikiLayout breadcrumbs={[]}>
         <div className="max-w-4xl">
-          <h1 className="text-[32px] sm:text-[36px] font-bold text-[#1f2933] mb-6">
+          <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold text-[#1f2933] mb-6">
             Pricing & Monetization Wiki
           </h1>
           
@@ -135,7 +135,7 @@ export default function WikiPricingPage() {
 
           {/* A-Z Quick Filter placeholder */}
           <div className="border-t border-[#e2e6ea] pt-8">
-            <h2 className="text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4">
+            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4">
               Quick Reference
             </h2>
             <div className="text-[#1f2933]">

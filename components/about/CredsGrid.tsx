@@ -31,7 +31,7 @@ export default function CredsGrid({ credentials }: CredsGridProps) {
               viewport={{ once: true }}
               className="rounded-2xl border border-[#e2e6ea] bg-white/50 backdrop-blur-sm p-6 hover:shadow-lg transition-all duration-300"
             >
-              <h3 className="text-[18px] sm:text-[20px] font-semibold text-[#1f2933] mb-4">
+              <h3 className="font-serif-playfair text-[20px] sm:text-[22px] font-semibold text-[#1f2933] mb-4">
                 {cred.title}
               </h3>
               <ul className="space-y-2">

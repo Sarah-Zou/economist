@@ -43,7 +43,7 @@ export default function Hero({ name, title, intro, badge, images }: HeroProps) {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="space-y-6"
             >
-              <h1 className="text-[32px] md:text-[36px] lg:text-[42px] font-serif-playfair font-bold text-[#1f2933] leading-tight">
+              <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold text-[#1f2933] leading-tight">
                 {name}
               </h1>
               <p className="text-base md:text-[17px] text-[#1f2933] font-medium">

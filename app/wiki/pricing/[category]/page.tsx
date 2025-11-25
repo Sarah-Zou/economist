@@ -146,7 +146,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               
               {/* Content positioned at mid-bottom */}
               <div className="relative h-full flex flex-col justify-end p-8">
-                <h1 className="text-4xl font-bold text-white drop-shadow-lg mb-4">
+                <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold text-white drop-shadow-lg mb-4">
                   {category.title}
                 </h1>
                 <p className="text-xl text-white leading-relaxed drop-shadow-md">
@@ -243,7 +243,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
           {/* CTA Section */}
           <div className="mt-12 bg-[#ff5722] rounded-lg p-8 text-white text-center">
-            <h2 className="text-2xl font-bold mb-4">Use this in your pricing sprint</h2>
+            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-white mb-4">Use this in your pricing sprint</h2>
             <p className="mb-6">
               Ready to apply these concepts to your business? Get expert guidance to implement these strategies effectively.
             </p>

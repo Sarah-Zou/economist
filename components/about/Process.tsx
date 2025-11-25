@@ -49,7 +49,7 @@ export default function Process({ steps }: ProcessProps) {
                 </div>
                 
                 {/* Step Content */}
-                <h3 className="text-[20px] sm:text-[22px] font-semibold text-[#1f2933] mb-3">
+                <h3 className="font-serif-playfair text-[20px] sm:text-[22px] font-semibold text-[#1f2933] mb-3">
                   {step.title}
                 </h3>
                 <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">

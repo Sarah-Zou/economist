@@ -105,7 +105,7 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
 
         {/* Article Header */}
         <header className="mb-12">
-          <h1 className="text-[32px] sm:text-[36px] font-bold text-[#1f2933] mb-4">
+          <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold text-[#1f2933] mb-4">
             {post.title}
           </h1>
           <div className="flex items-center text-[#3b4652]">

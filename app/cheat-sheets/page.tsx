@@ -39,7 +39,7 @@ export default function CheatSheetsPage() {
         <div className="max-w-8xl mx-auto px-4 py-16 flex flex-col items-center">
           {/* Hero and Subheadline */}
           <section className="w-full max-w-4xl mx-auto mb-12">
-            <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold mb-6 text-[#ff5722] text-center">
+            <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold mb-6 text-[#1f2933] text-center">
               Sign up for my newsletter and get The Startup Monetization Roadmap for free.
             </h1>
             <h2 className="text-lg sm:text-xl font-medium mb-8 text-[#1f2933] text-center leading-[1.65]">
@@ -82,7 +82,7 @@ export default function CheatSheetsPage() {
 
           {/* What's inside section */}
           <section className="w-full max-w-5xl mx-auto mb-16 px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-4 text-center text-[#ff5722]">
+            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-4 text-center text-[#1f2933]">
               What's inside
             </h2>
             <p className="text-base sm:text-[17px] text-[#1f2933] mb-12 text-center max-w-3xl mx-auto leading-[1.65]">
@@ -97,7 +97,7 @@ export default function CheatSheetsPage() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-[20px] font-semibold text-[#1f2933] mb-2">4 Phases, zero fluff</h3>
+                    <h3 className="font-serif-playfair text-[20px] sm:text-[22px] font-semibold text-[#1f2933] mb-2">4 Phases, zero fluff</h3>
                     <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                       Foundations → Packaging/Value Metric → Price Points → Rollout & Policies.
                     </p>
@@ -112,7 +112,7 @@ export default function CheatSheetsPage() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-[20px] font-semibold text-[#1f2933] mb-2">Interview kit</h3>
+                    <h3 className="font-serif-playfair text-[20px] sm:text-[22px] font-semibold text-[#1f2933] mb-2">Interview kit</h3>
                     <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                       10-customer discovery sprint, WTP prompts, and synthesis checklist.
                     </p>
@@ -127,7 +127,7 @@ export default function CheatSheetsPage() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-[20px] sm:text-[22px] font-semibold text-[#1f2933] mb-2">Architecture decisions</h3>
+                    <h3 className="font-serif-playfair text-[20px] sm:text-[22px] font-semibold text-[#1f2933] mb-2">Architecture decisions</h3>
                     <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                       G/B/B tiers, Leaders/Fillers/Killers, value-metric and model selection.
                     </p>
@@ -142,7 +142,7 @@ export default function CheatSheetsPage() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-[20px] sm:text-[22px] font-semibold text-[#1f2933] mb-2">Price setting, practically</h3>
+                    <h3 className="font-serif-playfair text-[20px] sm:text-[22px] font-semibold text-[#1f2933] mb-2">Price setting, practically</h3>
                     <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                       Value Decoder worksheet, fences, and simple pricing psychology.
                     </p>
@@ -157,7 +157,7 @@ export default function CheatSheetsPage() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-[20px] sm:text-[22px] font-semibold text-[#1f2933] mb-2">30-60-90 plan</h3>
+                    <h3 className="font-serif-playfair text-[20px] sm:text-[22px] font-semibold text-[#1f2933] mb-2">30-60-90 plan</h3>
                     <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                       Field-tested tasks to launch pricing and track early signals.
                     </p>

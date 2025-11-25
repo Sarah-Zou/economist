@@ -612,7 +612,7 @@ export default function About() {
             </div>
 
               <div>
-                <h3 className="text-[20px] font-semibold text-[#1f2933] mb-4 sm:mb-6">Common triggers</h3>
+                <h3 className="font-serif-playfair text-[20px] sm:text-[22px] font-semibold text-[#1f2933] mb-4 sm:mb-6">Common triggers</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                   {whoIWorkWith.triggers.map((trigger, index) => (
                     <div key={index} className="bg-[#f6f7f9] rounded-lg p-5 sm:p-6 border border-[#e2e6ea] shadow-sm text-center flex flex-col items-center space-y-3 sm:space-y-4 hover:shadow-md transition-shadow">
@@ -647,7 +647,7 @@ export default function About() {
                 <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mb-2">
                   {focus.icon}
                 </div>
-                <h3 className="text-[20px] sm:text-[22px] font-semibold text-[#1f2933]">
+                <h3 className="font-serif-playfair text-[20px] sm:text-[22px] font-semibold text-[#1f2933]">
                   {focus.title}
                 </h3>
                 <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
@@ -668,7 +668,7 @@ export default function About() {
           <div className="space-y-6 sm:space-y-8">
             {selectedOutcomes.map((outcome, index) => (
               <div key={index} className="bg-[#f6f7f9] rounded-lg p-5 sm:p-6 border border-[#e2e6ea] space-y-2">
-                <h3 className="text-[20px] font-semibold text-[#1f2933]">
+                <h3 className="font-serif-playfair text-[20px] sm:text-[22px] font-semibold text-[#1f2933]">
                   {outcome.title}
                 </h3>
                 <p 
