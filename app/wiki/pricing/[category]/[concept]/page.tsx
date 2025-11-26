@@ -7,7 +7,7 @@ import TableOfContents from '@/components/wiki/TableOfContents';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Zap, Info, TrendingUp, Clock, CheckCircle, DollarSign, Users, AlertCircle } from 'lucide-react';
+import { Zap, Info, TrendingUp, Clock, CheckCircle, DollarSign, Users, AlertCircle, TrendingDown, XCircle, ArrowLeftRight, Target } from 'lucide-react';
 import Image from 'next/image';
 
 interface ConceptPageProps {
@@ -121,6 +121,8 @@ function parseSnapshot(content: string): {
   snapshot: { 
     whatItIs?: string; 
     whyItMatters?: string; 
+    whyItsTempting?: string;
+    whereItFails?: string;
     whenToUse?: string; 
     keyTakeaways?: string[] 
   } | null; 
@@ -139,18 +141,30 @@ function parseSnapshot(content: string): {
   const afterSnapshot = content.substring(snapshotStartIndex + match[0].length).trim();
 
   // Parse snapshot fields
-  const snapshot: { whatItIs?: string; whyItMatters?: string; whenToUse?: string; keyTakeaways?: string[] } = {};
+  const snapshot: { whatItIs?: string; whyItMatters?: string; whyItsTempting?: string; whereItFails?: string; whenToUse?: string; keyTakeaways?: string[] } = {};
   
-  // Extract "What it is:" - stop at newline followed by **Why it matters: or **When to use: or **Key Takeaways:
-  const whatItIsMatch = snapshotContent.match(/\*\*What it is:\*\*\s*([\s\S]*?)(?=\n\*\*(?:Why it matters|When to use|Key Takeaways):|$)/);
+  // Extract "What it is:" - stop at newline followed by next field
+  const whatItIsMatch = snapshotContent.match(/\*\*What it is:\*\*\s*([\s\S]*?)(?=\n\*\*(?:Why it matters|Why it's tempting|Where it fails|When to use|Key Takeaways):|$)/);
   if (whatItIsMatch) {
     snapshot.whatItIs = whatItIsMatch[1].trim();
   }
 
-  // Extract "Why it matters:" - stop at newline followed by **When to use: or **Key Takeaways:
-  const whyItMattersMatch = snapshotContent.match(/\*\*Why it matters:\*\*\s*([\s\S]*?)(?=\n\*\*(?:When to use|Key Takeaways):|$)/);
+  // Extract "Why it matters:" - stop at newline followed by next field
+  const whyItMattersMatch = snapshotContent.match(/\*\*Why it matters:\*\*\s*([\s\S]*?)(?=\n\*\*(?:Why it's tempting|Where it fails|When to use|Key Takeaways):|$)/);
   if (whyItMattersMatch) {
     snapshot.whyItMatters = whyItMattersMatch[1].trim();
+  }
+
+  // Extract "Why it's tempting:" - stop at newline followed by next field
+  const whyItsTemptingMatch = snapshotContent.match(/\*\*Why it's tempting:\*\*\s*([\s\S]*?)(?=\n\*\*(?:Where it fails|When to use|Key Takeaways):|$)/);
+  if (whyItsTemptingMatch) {
+    snapshot.whyItsTempting = whyItsTemptingMatch[1].trim();
+  }
+
+  // Extract "Where it fails:" - stop at newline followed by next field
+  const whereItFailsMatch = snapshotContent.match(/\*\*Where it fails:\*\*\s*([\s\S]*?)(?=\n\*\*(?:When to use|Key Takeaways):|$)/);
+  if (whereItFailsMatch) {
+    snapshot.whereItFails = whereItFailsMatch[1].trim();
   }
 
   // Extract "When to use:" - stop at newline followed by **Key Takeaways:
@@ -357,7 +371,26 @@ const markdownComponents = {
       .replace(/\s+/g, '-')
       .replace(/-+/g, '-')
       .trim()
-    return <h3 id={id} className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2 mt-6 scroll-mt-24" {...props} />
+    
+    // Add icons for "Where cost-plus pricing fails" subsections
+    let Icon = null;
+    const headingText = text.toLowerCase();
+    if (headingText.includes('ignores customer value')) {
+      Icon = Users;
+    } else if (headingText.includes('focuses inward')) {
+      Icon = ArrowLeftRight;
+    } else if (headingText.includes('circular logic')) {
+      Icon = XCircle;
+    } else if (headingText.includes('sub-optimal pricing') || headingText.includes('suboptimal pricing')) {
+      Icon = TrendingDown;
+    }
+    
+    return (
+      <h3 id={id} className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2 mt-6 scroll-mt-24 flex items-center gap-2">
+        {Icon && <Icon className="w-5 h-5 text-[#ff5722] flex-shrink-0" />}
+        <span>{props.children}</span>
+      </h3>
+    );
   },
   a: ({ node, href, ...props }: any) => {
     const isInternalLink = href?.startsWith('/wiki/pricing/');
@@ -616,25 +649,81 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                               {snapshot.whatItIs && (
                                 <div>
                                   <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-1">What it is</h3>
-                                  <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                                    {snapshot.whatItIs}
-                                  </p>
+                                  <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+                                    <ReactMarkdown
+                                      remarkPlugins={[remarkGfm]}
+                                      components={{
+                                        p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />,
+                                        strong: ({ node, ...props }) => <strong className="font-bold text-[#1f2933]" {...props} />,
+                                      }}
+                                    >
+                                      {snapshot.whatItIs}
+                                    </ReactMarkdown>
+                                  </div>
                                 </div>
                               )}
                               {snapshot.whyItMatters && (
                                 <div>
                                   <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-1">Why it matters</h3>
-                                  <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                                    {snapshot.whyItMatters}
-                                  </p>
+                                  <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+                                    <ReactMarkdown
+                                      remarkPlugins={[remarkGfm]}
+                                      components={{
+                                        p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />,
+                                        strong: ({ node, ...props }) => <strong className="font-bold text-[#1f2933]" {...props} />,
+                                      }}
+                                    >
+                                      {snapshot.whyItMatters}
+                                    </ReactMarkdown>
+                                  </div>
+                                </div>
+                              )}
+                              {snapshot.whyItsTempting && (
+                                <div>
+                                  <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-1">Why it's tempting</h3>
+                                  <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+                                    <ReactMarkdown
+                                      remarkPlugins={[remarkGfm]}
+                                      components={{
+                                        p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />,
+                                        strong: ({ node, ...props }) => <strong className="font-bold text-[#1f2933]" {...props} />,
+                                      }}
+                                    >
+                                      {snapshot.whyItsTempting}
+                                    </ReactMarkdown>
+                                  </div>
+                                </div>
+                              )}
+                              {snapshot.whereItFails && (
+                                <div>
+                                  <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-1">Where it fails</h3>
+                                  <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+                                    <ReactMarkdown
+                                      remarkPlugins={[remarkGfm]}
+                                      components={{
+                                        p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />,
+                                        strong: ({ node, ...props }) => <strong className="font-bold text-[#1f2933]" {...props} />,
+                                      }}
+                                    >
+                                      {snapshot.whereItFails}
+                                    </ReactMarkdown>
+                                  </div>
                                 </div>
                               )}
                               {snapshot.whenToUse && (
                                 <div>
                                   <h3 className="font-semibold text-[20px] text-[#1f2933] mb-1">When to use</h3>
-                                  <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                                    {snapshot.whenToUse}
-                                  </p>
+                                  <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+                                    <ReactMarkdown
+                                      remarkPlugins={[remarkGfm]}
+                                      components={{
+                                        p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />,
+                                        strong: ({ node, ...props }) => <strong className="font-bold text-[#1f2933]" {...props} />,
+                                      }}
+                                    >
+                                      {snapshot.whenToUse}
+                                    </ReactMarkdown>
+                                  </div>
                                 </div>
                               )}
                               {snapshot.keyTakeaways && snapshot.keyTakeaways.length > 0 && (
