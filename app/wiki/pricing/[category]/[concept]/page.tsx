@@ -338,7 +338,7 @@ function parseFAQ(content: string): { beforeFAQ: string; faqItems: Array<{ quest
   const afterFAQ = content.substring(faqStartIndex + match[0].length).trim();
 
   // Parse Q/A pairs
-  const qaRegex = /\*\*Q:\*\*\s*([\s\S]+?)\n\n\*\*A:\*\*\s*([\s\S]+?)(?=\n\n\*\*Q:|$)/g;
+  const qaRegex = /\*\*Q:\*\*\s*([\s\S]+?)\n+\*\*A:\*\*\s*([\s\S]+?)(?=\n+\*\*Q:|$)/g;
   const faqItems: Array<{ question: string; answer: string }> = [];
   let qaMatch;
 
@@ -362,7 +362,7 @@ const markdownComponents = {
       .replace(/\s+/g, '-')
       .replace(/-+/g, '-')
       .trim()
-    return <h2 id={id} className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-8 scroll-mt-24" {...props} />
+    return <h2 id={id} className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-[4.5rem] scroll-mt-24" {...props} />
   },
   h3: ({ node, ...props }: any) => {
     const text = String(props.children)
@@ -399,7 +399,7 @@ const markdownComponents = {
     }
     
     return (
-      <h3 id={id} className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2 mt-6 scroll-mt-24 flex items-center gap-2">
+      <h3 id={id} className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-4 mt-8 scroll-mt-24 flex items-center gap-2">
         {Icon && <Icon className="w-5 h-5 text-[#ff5722] flex-shrink-0" />}
         <span>{props.children}</span>
       </h3>
@@ -659,14 +659,14 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {/* Snapshot Section */}
                       {snapshot && (
                         <>
-                          <h2 id="snapshot" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] scroll-mt-24 mb-4">
+                          <h2 id="snapshot" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] scroll-mt-24 mb-4 mt-[2.25rem]">
                             Snapshot (TL;DR)
                           </h2>
                           <div className="bg-white rounded-lg pt-4 pb-6 px-6 sm:pt-4 sm:pb-8 sm:px-8 border border-[#e5e7eb] shadow-sm mb-8">
-                            <div className="space-y-3">
+                            <div className="space-y-1.5">
                               {snapshot.whatItIs && (
                                 <div>
-                                  <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-1">What it is</h3>
+                                  <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-[1px]">What it is</h3>
                                   <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                                     <ReactMarkdown
                                       remarkPlugins={[remarkGfm]}
@@ -682,7 +682,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                               )}
                               {snapshot.whyItMatters && (
                                 <div>
-                                  <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-1">Why it matters</h3>
+                                  <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-[1px]">Why it matters</h3>
                                   <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                                     <ReactMarkdown
                                       remarkPlugins={[remarkGfm]}
@@ -698,7 +698,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                               )}
                               {snapshot.whyItsTempting && (
                                 <div>
-                                  <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-1">Why it's tempting</h3>
+                                  <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-[1px]">Why it's tempting</h3>
                                   <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                                     <ReactMarkdown
                                       remarkPlugins={[remarkGfm]}
@@ -714,7 +714,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                               )}
                               {snapshot.whereItFails && (
                                 <div>
-                                  <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-1">Where it fails</h3>
+                                  <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-[1px]">Where it fails</h3>
                                   <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                                     <ReactMarkdown
                                       remarkPlugins={[remarkGfm]}
@@ -730,7 +730,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                               )}
                               {snapshot.whenToUse && (
                                 <div>
-                                  <h3 className="font-semibold text-[20px] text-[#1f2933] mb-1">When to use</h3>
+                                  <h3 className="font-semibold text-[20px] text-[#1f2933] mb-[1px]">When to use</h3>
                                   <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                                     <ReactMarkdown
                                       remarkPlugins={[remarkGfm]}
@@ -746,7 +746,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                               )}
                               {snapshot.keyTakeaways && snapshot.keyTakeaways.length > 0 && (
                                 <div>
-                                  <h3 className="font-semibold text-[20px] text-[#1f2933] mb-1.5">Key Takeaways</h3>
+                                  <h3 className="font-semibold text-[20px] text-[#1f2933] mb-[1.5px]">Key Takeaways</h3>
                                   <ul className="space-y-0.5">
                                     {snapshot.keyTakeaways.map((takeaway, index) => (
                                       <li key={index} className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] flex items-start gap-2">
@@ -787,7 +787,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {/* Key Facts Section */}
                       {keyFacts && keyFacts.length > 0 && (
                         <div className="mb-8">
-                          <h2 id="key-facts" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-6 scroll-mt-24">
+                          <h2 id="key-facts" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-4 mt-[4.5rem] scroll-mt-24">
                             Key Facts
                           </h2>
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -852,7 +852,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {/* Step-by-step Section */}
                       {steps && steps.length > 0 && (
                         <div className="mb-8">
-                          <h2 id="step-by-step" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-2 scroll-mt-24">
+                          <h2 id="step-by-step" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-4 mt-[4.5rem] scroll-mt-24">
                             Step-by-step
                           </h2>
                           {/* Content above steps */}
@@ -1006,7 +1006,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {/* Metrics to monitor Section */}
                       {metrics && metrics.length > 0 && (
                         <div className="mb-8">
-                          <h2 id="metrics-to-monitor" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-6 scroll-mt-24">
+                          <h2 id="metrics-to-monitor" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-4 mt-[4.5rem] scroll-mt-24">
                             Metrics to monitor
                           </h2>
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -1091,13 +1091,13 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {/* FAQ Section */}
                       {faqItems.length > 0 && (
                         <section className="mt-12 mb-12">
-                          <h2 id="faq" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-8 text-center scroll-mt-24">
+                          <h2 id="faq" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-[4.5rem] text-center scroll-mt-24">
                             Frequently Asked Questions
                           </h2>
                           <div className="space-y-4 sm:space-y-6 max-w-3xl mx-auto">
                             {faqItems.map((item, index) => (
-                              <div key={index} className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">
+                              <div key={index} className="bg-white rounded-lg px-5 pt-[10px] pb-5 sm:px-6 sm:pt-3 sm:pb-6 border border-[#e5e7eb] shadow-sm">
+                                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-1.5 text-[#1f2933]">
                                   {item.question}
                                 </h3>
                                 <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
