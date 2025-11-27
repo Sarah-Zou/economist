@@ -7,7 +7,8 @@ import TableOfContents from '@/components/wiki/TableOfContents';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Zap, Info, TrendingUp, Clock, CheckCircle, DollarSign, Users, AlertCircle, TrendingDown, XCircle, ArrowLeftRight, Target } from 'lucide-react';
+import rehypeRaw from 'rehype-raw';
+import { Zap, Info, TrendingUp, Clock, CheckCircle, DollarSign, Users, AlertCircle, TrendingDown, XCircle, ArrowLeftRight, Target, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 
 interface ConceptPageProps {
@@ -384,6 +385,18 @@ const markdownComponents = {
     } else if (headingText.includes('sub-optimal pricing') || headingText.includes('suboptimal pricing')) {
       Icon = TrendingDown;
     }
+    // Add icons for "Where customer-driven pricing fails" subsections
+    else if (headingText.includes('trains bad behavior')) {
+      Icon = AlertCircle;
+    } else if (headingText.includes('damages relationships')) {
+      Icon = XCircle;
+    } else if (headingText.includes('focuses on transaction')) {
+      Icon = DollarSign;
+    } else if (headingText.includes('leads to price cuts')) {
+      Icon = TrendingDown;
+    } else if (headingText.includes('commoditization risk')) {
+      Icon = TrendingDown;
+    }
     
     return (
       <h3 id={id} className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2 mt-6 scroll-mt-24 flex items-center gap-2">
@@ -438,6 +451,10 @@ const markdownComponents = {
   tr: ({ node, ...props }: any) => (
     <tr className="hover:bg-[#f6f7f9] transition-colors duration-150 last:border-b-0" {...props} />
   ),
+  div: ({ node, ...props }: any) => {
+    // Preserve all props including className for nested divs
+    return <div {...props} />;
+  },
 };
 
 export default function ConceptPage({ params }: ConceptPageProps) {
@@ -632,6 +649,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {beforeSnapshot && (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
+                          rehypePlugins={[rehypeRaw]}
                           components={markdownComponents}
                         >
                           {beforeSnapshot}
@@ -755,6 +773,17 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                         </>
                       )}
 
+                      {/* Content after Snapshot but before Key Facts */}
+                      {keyFacts && keyFacts.length > 0 && beforeKeyFacts && beforeKeyFacts.trim() && (
+                        <ReactMarkdown
+                          remarkPlugins={[remarkGfm]}
+                          rehypePlugins={[rehypeRaw]}
+                          components={markdownComponents}
+                        >
+                          {beforeKeyFacts}
+                        </ReactMarkdown>
+                      )}
+
                       {/* Key Facts Section */}
                       {keyFacts && keyFacts.length > 0 && (
                         <div className="mb-8">
@@ -810,9 +839,10 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       )}
 
                       {/* Content after Key Facts but before Step-by-step */}
-                      {beforeStepByStep && beforeStepByStep.trim() && beforeStepByStep !== (afterKeyFactsContent || afterSnapshotContent || '') && (
+                      {beforeStepByStep && beforeStepByStep.trim() && (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
+                          rehypePlugins={[rehypeRaw]}
                           components={markdownComponents}
                         >
                           {beforeStepByStep}
@@ -946,6 +976,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {beforeMetrics && beforeMetrics.trim() && beforeMetrics !== (afterStepByStepContent || afterKeyFactsContent || afterSnapshotContent || '') && (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
+                          rehypePlugins={[rehypeRaw]}
                           components={markdownComponents}
                         >
                           {beforeMetrics}
@@ -1011,6 +1042,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {faqItems.length === 0 && afterMetricsContent && afterMetricsContent.trim() && (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
+                          rehypePlugins={[rehypeRaw]}
                           components={markdownComponents}
                         >
                           {afterMetricsContent}
@@ -1021,6 +1053,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {faqItems.length > 0 && beforeFAQ && beforeFAQ.trim() && (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
+                          rehypePlugins={[rehypeRaw]}
                           components={markdownComponents}
                         >
                           {beforeFAQ}
@@ -1042,6 +1075,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                 <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                                   <ReactMarkdown
                                     remarkPlugins={[remarkGfm]}
+                                    rehypePlugins={[rehypeRaw]}
                                     components={{
                                       p: ({ node, ...props }) => (
                                         <p className="mb-3 last:mb-0" {...props} />
@@ -1085,6 +1119,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {afterFAQ && (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
+                          rehypePlugins={[rehypeRaw]}
                           components={markdownComponents}
                         >
                           {afterFAQ}

@@ -1,7 +1,7 @@
 ---
 title: "Customer-Driven Pricing (Consumer-Based Pricing)"
 metaTitle: "Customer-Driven Pricing: Definition, Framework, When to Use"
-oneLiner: "Charges the highest perceived WTP based on haggling; alienates loyal customers and trains aggressive bargainers."
+oneLiner: "Customer-Driven Pricing is an approach that charges the highest perceived WTP based on haggling; alienates loyal customers and trains aggressive bargainers."
 prereqs: ["Value-Based Pricing", "Price Discrimination", "WTP Research"]
 tags: ["Pricing Flaw", "Negotiation", "Price Discrimination", "Haggling", "WTP"]
 readingTime: 6
@@ -11,27 +11,60 @@ owner: "Dr. Sarah Zou"
 
 ## Snapshot (TL;DR)
 
-**What it is:** An approach where a firm actively determines how much a specific individual customer is willing to pay (WTP) for its product or service, often by gathering information about their circumstances (e.g., job, family, urgency) during a sales interaction, and then charging that maximum bearable price. This approach sometimes views low pricing as a substitute for inadequate marketing effort.
+**What it is:** A pricing approach where the firm actively gathers detailed customer information to assess their price sensitivity and maximum WTP, adjusting the price up or down to match the size of the customer's wallet.
 
-**Why it's tempting:** This method gives the company flexibility to charge different prices to different customers, theoretically allowing the firm to achieve a high volume of sales at the best possible margins. It recognizes the need for pricing to reflect market conditions, unlike cost-plus pricing.
+**Why it's tempting:** This method gives the company **flexibility** to charge different prices to different customers, theoretically allowing the firm to achieve a **high volume of sales** at the **best possible margins**. It recognizes the need for pricing to reflect market conditions, unlike cost-plus pricing.
 
-**Where it fails:**
-- **Trains Bad Behavior:** It trains good customers to become aggressive bargainers who demand concessions, thus undermining the integrity of future pricing.
-- **Damages Relationships:** It inevitably alienates customers who pay more than the successful hagglers, damaging pride and hurting relationships. It channels creative energy into "winning" more or less money rather than building long-term, win-win partnerships.
-- **Focuses on Transaction:** Buyers focus intensely on the transaction price rather than the seller's value propositions, often leading them to withhold information that could help the seller serve them better.
-- **Leads to Price Cuts:** The resulting aggressive negotiation often forces the seller's commissioned salespeople to compromise and bring the price down promptly to close the deal, risking the loss of price integrity.
+**Where it fails:** Trains good customers to become **aggressive bargainers**; **alienates customers** who pay more than successful hagglers; focuses buyers on transaction price rather than value propositions; forces salespeople to compromise pricing integrity to close deals; risks **a decline in product differentiation and service quality** across the industry over time.
 
 **Key Takeaways:**
 - **Relationship damage:** Customer-driven pricing alienates loyal customers who pay more than successful hagglers, damaging long-term relationships and trust.
 - **Behavioral training:** This approach trains customers to become aggressive bargainers, undermining pricing integrity and creating a race to the bottom.
 
+
+
 ## What is customer-driven pricing?
 
-**Customer-Driven Pricing (Consumer-Based Pricing)** is a pricing approach where the firm actively gathers detailed customer information to assess their price sensitivity and maximum WTP, adjusting the price up or down to match the size of the customer's wallet.
+**Customer-Driven Pricing (Consumer-Based Pricing)** is an approach where a firm actively determines how much a specific individual customer is willing to pay (WTP) for its product or service, often by gathering information about their circumstances (e.g., job, family, urgency) during a sales interaction, and then charging that maximum bearable price. This approach sometimes views low pricing as a substitute for inadequate marketing effort.
 
 ### Key definitions
 
-**Display High Sticker Price → Gather Customer Data (WTP/Sensitivity) → Offer Discount Only If Necessary to Close Deal**
+**Typical formula/process:**
+
+<div className="flowchart-container my-6">
+  <div className="space-y-3">
+    <div className="flex items-center gap-3">
+      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#ff5722] flex items-center justify-center">
+        <span className="text-white font-bold text-lg">1</span>
+      </div>
+      <div className="flex-1">
+        <div className="text-base sm:text-[17px] text-[#1f2933]">
+          <strong>Display High Sticker Price</strong>
+        </div>
+      </div>
+    </div>
+    <div className="flex items-center gap-3">
+      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#ff5722] flex items-center justify-center">
+        <span className="text-white font-bold text-lg">2</span>
+      </div>
+      <div className="flex-1">
+        <div className="text-base sm:text-[17px] text-[#1f2933]">
+          <strong>Gather Customer Data</strong> (WTP/Sensitivity)
+        </div>
+      </div>
+    </div>
+    <div className="flex items-center gap-3">
+      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#ff5722] flex items-center justify-center">
+        <span className="text-white font-bold text-lg">3</span>
+      </div>
+      <div className="flex-1">
+        <div className="text-base sm:text-[17px] text-[#1f2933]">
+          <strong>Offer Discount Only If Necessary</strong> (to Close Deal)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 - **WTP assessment:** The process of gathering information about a customer's circumstances (job, family, urgency, financial situation) to estimate their maximum willingness to pay.
 - **Price discrimination:** Charging different prices to different customers based on their assessed WTP rather than uniform value-based pricing.
@@ -52,6 +85,7 @@ Customer-driven pricing offers apparent advantages that make it appealing, but t
 - **Reflects market conditions:** Recognizes that different customers have different WTP, unlike rigid cost-plus pricing that ignores market dynamics.
 - **High volume potential:** Appears to enable high sales volume by adjusting prices to match individual customer price sensitivity.
 - **Sales control:** Gives salespeople flexibility to close deals by adjusting prices based on perceived customer circumstances.
+
 
 ## Where customer-driven pricing fails
 
