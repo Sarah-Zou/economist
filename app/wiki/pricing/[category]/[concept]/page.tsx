@@ -839,7 +839,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       )}
 
                       {/* Content after Key Facts but before Step-by-step */}
-                      {beforeStepByStep && beforeStepByStep.trim() && (
+                      {steps && steps.length > 0 && beforeStepByStep && beforeStepByStep.trim() && (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
                           rehypePlugins={[rehypeRaw]}
@@ -973,13 +973,33 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       )}
 
                       {/* Content after Step-by-step but before Metrics */}
-                      {beforeMetrics && beforeMetrics.trim() && beforeMetrics !== (afterStepByStepContent || afterKeyFactsContent || afterSnapshotContent || '') && (
+                      {metrics && metrics.length > 0 && beforeMetrics && beforeMetrics.trim() && (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
                           rehypePlugins={[rehypeRaw]}
                           components={markdownComponents}
                         >
                           {beforeMetrics}
+                        </ReactMarkdown>
+                      )}
+                      {/* Content after Step-by-step when there are no Metrics or FAQ sections */}
+                      {steps && steps.length > 0 && (!metrics || metrics.length === 0) && faqItems.length === 0 && afterStepByStepContent && afterStepByStepContent.trim() && (
+                        <ReactMarkdown
+                          remarkPlugins={[remarkGfm]}
+                          rehypePlugins={[rehypeRaw]}
+                          components={markdownComponents}
+                        >
+                          {afterStepByStepContent}
+                        </ReactMarkdown>
+                      )}
+                      {/* Content when there are no Step-by-step, Metrics, or FAQ sections - render through beforeFAQ (last parsed) */}
+                      {(!steps || steps.length === 0) && (!metrics || metrics.length === 0) && faqItems.length === 0 && beforeFAQ && beforeFAQ.trim() && (
+                        <ReactMarkdown
+                          remarkPlugins={[remarkGfm]}
+                          rehypePlugins={[rehypeRaw]}
+                          components={markdownComponents}
+                        >
+                          {beforeFAQ}
                         </ReactMarkdown>
                       )}
 
@@ -1038,8 +1058,17 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       )}
 
                       {/* Content after Metrics but before FAQ */}
-                      {/* Only render afterMetricsContent if FAQ doesn't exist (to avoid duplication with beforeFAQ) */}
-                      {faqItems.length === 0 && afterMetricsContent && afterMetricsContent.trim() && (
+                      {metrics && metrics.length > 0 && beforeFAQ && beforeFAQ.trim() && (
+                        <ReactMarkdown
+                          remarkPlugins={[remarkGfm]}
+                          rehypePlugins={[rehypeRaw]}
+                          components={markdownComponents}
+                        >
+                          {beforeFAQ}
+                        </ReactMarkdown>
+                      )}
+                      {/* Content after Metrics when there are no FAQ sections */}
+                      {metrics && metrics.length > 0 && faqItems.length === 0 && afterMetricsContent && afterMetricsContent.trim() && (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
                           rehypePlugins={[rehypeRaw]}
@@ -1048,9 +1077,8 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                           {afterMetricsContent}
                         </ReactMarkdown>
                       )}
-                      
-                      {/* Content before FAQ (only if FAQ exists) */}
-                      {faqItems.length > 0 && beforeFAQ && beforeFAQ.trim() && (
+                      {/* Content before FAQ (only if FAQ exists and no Metrics) */}
+                      {faqItems.length > 0 && (!metrics || metrics.length === 0) && beforeFAQ && beforeFAQ.trim() && (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm]}
                           rehypePlugins={[rehypeRaw]}
