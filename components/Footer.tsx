@@ -6,8 +6,8 @@ const navLinks = [
   { href: '/consulting', label: 'Consulting' },
   { href: '/wiki/pricing', label: 'Wiki' },
   { href: '/cheat-sheets', label: 'Cheat Sheets' },
-  { href: '/newsletter', label: 'Newsletter' },
   { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
 ]
 
 const Footer = () => {

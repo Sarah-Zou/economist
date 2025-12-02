@@ -38,6 +38,16 @@ export default function RootLayout({
             gtag('config', 'G-BX0JPBNQ5K');
           `,
         }} />
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17632716336"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17632716336');
+          `,
+        }} />
         {/* Cookie Consent CSS */}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
         {/* Cookie Consent JS */}

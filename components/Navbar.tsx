@@ -30,7 +30,7 @@ const Navbar = () => {
             <Link href="/wiki/pricing" className="text-base text-[#3b4652] hover:text-[#1f2933] transition-colors">Wiki</Link>
             <Link href="/cheat-sheets" className="text-base text-[#3b4652] hover:text-[#1f2933] transition-colors">Cheat Sheets</Link>
             <Link href="/about" className="text-base text-[#3b4652] hover:text-[#1f2933] transition-colors">About</Link>
-            <Link href="/newsletter" className="text-base text-[#3b4652] hover:text-[#1f2933] transition-colors">Newsletter</Link>
+            <Link href="/contact" className="text-base text-[#3b4652] hover:text-[#1f2933] transition-colors">Contact</Link>
             <a 
               href="https://calendly.com/sarahxzou/free-consult-30-min" 
               target="_blank" 
@@ -83,11 +83,11 @@ const Navbar = () => {
               About
             </Link>
             <Link 
-              href="/newsletter" 
+              href="/contact" 
               className="block px-4 py-2 text-base text-[#3b4652] hover:text-[#1f2933] hover:bg-[#f6f7f9] transition-colors rounded-md"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Newsletter
+              Contact
             </Link>
             <a 
               href="https://calendly.com/sarahxzou/free-consult-30-min" 
