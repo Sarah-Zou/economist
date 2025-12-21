@@ -66,6 +66,7 @@ export default function ContactPage() {
             <p className="text-[#1f2933] text-center text-base sm:text-[17px]">Or fill out the form below:</p>
           </div>
           <form action="https://formspree.io/f/mdkgqeye" method="POST" className="space-y-6">
+            <input type="hidden" name="_next" value="https://sarahzou.com/contact/thanks" />
             <div className="flex flex-col md:flex-row gap-6">
               <input
                 type="text"
