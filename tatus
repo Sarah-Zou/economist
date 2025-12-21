@@ -1,0 +1,20 @@
+warning: in the working copy of 'content/wiki/categories/foundations.md', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/content/wiki/categories/foundations.md b/content/wiki/categories/foundations.md[m
+[1mindex 8d07c15..6751ced 100644[m
+[1m--- a/content/wiki/categories/foundations.md[m
+[1m+++ b/content/wiki/categories/foundations.md[m
+[36m@@ -12,14 +12,11 @@[m [mcanonical: "https://sarahzou.com/wiki/pricing/foundations"[m
+ [m
+ - **<span id="strategic-pricing">Strategic pricing (profit-led, proactive)</span>**: Building pricing strategies that drive profitability and growth[m
+ - **<span id="value-based-pricing">Value-based pricing</span>**: Aligning price with customer value and willingness to pay[m
+[31m-- **<span id="price-led-product-design">Price-led product design</span>**: Designing products around customer willingness to pay[m
+[31m-- **<span id="customer-centric-profitability">Customer-centric profitability</span>**: Understanding customer P&L and lifetime value[m
+ - **<span id="cost-plus-pricing">Cost-plus pricing</span>**: Using cost-plus as a benchmark, not the default approach[m
+ - **<span id="competition-based-pricing">Competition-based pricing</span>**: When and how to use competitive pricing (with caution)[m
+ - **<span id="skimming-strategy">Skimming strategy</span>**: High initial prices with planned reductions[m
+ - **<span id="penetration-strategy">Penetration strategy</span>**: Low initial prices to gain market share[m
+ - **<span id="maximization">Maximization</span>**: Price at or near the value you deliver to capture revenue/profit now[m
+[31m-- **<span id="market-posture-timing">Market posture & timing</span>**: Neutral pricing, create-value-tomorrow vs capture-today, share-driven pricing traps[m
+ [m
+ ## How to use this[m
+ [m

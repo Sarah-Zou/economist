@@ -67,7 +67,7 @@ In some special cases, cost-plus pricing can be used.
 | Situation | Use cost‑plus? | Why / Note |
 |-----------|----------------|------------|
 | Regulated tariffs, cost pass‑through contracts | ✅ Likely | Pricing must track costs; margin caps exist. |
-| Early prototype with poor WTP data | ✅ As floor | Ensure viability; plan to replace within 1–2 cycles. |
+| Early prototype with poor WTP data | ⚠️ As floor | Ensure viability; plan to replace within 1–2 cycles. |
 | Commodities with identical specs | ⚠️ Partial | Combine with market index and competitive parity. |
 | Differentiated SaaS or hardware with moat | ❌ Avoid | Misses value; risks severe underpricing. |
 | Multi‑segment/enterprise deals | ❌ Avoid | Segments have different WTP; fences required. |
