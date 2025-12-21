@@ -125,8 +125,7 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
         {/* CTA Button */}
         <div className="flex justify-center mt-8">
           <Link
-            href="https://calendly.com/sarahxzou/free-consult-30-min"
-            target="_blank"
+            href="/book"
             rel="noopener noreferrer"
             className="inline-block bg-[#ff5722] text-white px-8 py-4 rounded-lg text-lg font-bold shadow hover:bg-[#e64a19] transition"
           >

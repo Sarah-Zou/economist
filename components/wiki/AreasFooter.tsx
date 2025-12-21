@@ -5,9 +5,7 @@ export default function AreasFooter() {
         <p>
           Need help with your pricing strategy? 
           <a 
-            href="https://calendly.com/sarahxzou/free-consult-30-min" 
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/book"
             className="text-[#ff5722] hover:text-[#e44e1f] ml-1 font-medium"
           >
             Book a consultation →

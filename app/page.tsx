@@ -1,6 +1,7 @@
 import TestimonialCard from '@/components/TestimonialCard'
 import HeroStackedImages from '@/components/HeroStackedImages'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Metadata } from 'next'
 
 const homepageTestimonials = [
@@ -181,7 +182,7 @@ export default function Home() {
           photoAlt="Dr. Sarah Zou, PhD economist for early-stage tech"
           primaryCta={{
             text: "Book a 30-min Free Consult",
-            href: "https://calendly.com/sarahxzou/free-consult-30-min"
+            href: "/book"
           }}
           secondaryCta={{
             text: "Download the Monetization Roadmap",
@@ -370,14 +371,12 @@ export default function Home() {
               </div>
             </a>
           </div>
-          <a
-            href="https://calendly.com/sarahxzou/free-consult-30-min"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/book"
             className="inline-block border-2 border-[#ff5722] text-[#ff5722] font-bold px-6 sm:px-10 py-3 sm:py-4 rounded-lg text-sm sm:text-lg tracking-widest hover:bg-[#e44e1f] hover:border-[#e44e1f] hover:text-white transition-colors mt-4"
           >
             LET'S WORK TOGETHER
-          </a>
+          </Link>
         </section>
         <section className="py-12 sm:py-16 lg:py-20 bg-white flex flex-col items-center px-4">
           <div className="max-w-4xl w-full">

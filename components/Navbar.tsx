@@ -31,14 +31,12 @@ const Navbar = () => {
             <Link href="/cheat-sheets" className="text-base text-[#3b4652] hover:text-[#1f2933] transition-colors">Cheat Sheets</Link>
             <Link href="/about" className="text-base text-[#3b4652] hover:text-[#1f2933] transition-colors">About</Link>
             <Link href="/contact" className="text-base text-[#3b4652] hover:text-[#1f2933] transition-colors">Contact</Link>
-            <a 
-              href="https://calendly.com/sarahxzou/free-consult-30-min" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              href="/book"
               className="bg-[#ff5722] hover:bg-[#e44e1f] text-white font-bold rounded-full px-6 py-3 transition-colors whitespace-nowrap"
             >
               Book Free Consult
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -89,15 +87,13 @@ const Navbar = () => {
             >
               Contact
             </Link>
-            <a 
-              href="https://calendly.com/sarahxzou/free-consult-30-min" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              href="/book"
               className="block mx-4 mt-4 bg-[#ff5722] hover:bg-[#e44e1f] text-white font-bold rounded-full px-6 py-3 transition-colors text-center"
               onClick={() => setMobileMenuOpen(false)}
             >
               Book Free Consult
-            </a>
+            </Link>
           </div>
         )}
       </div>

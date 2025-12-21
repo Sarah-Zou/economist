@@ -283,9 +283,7 @@ export default function FractionalChiefEconomistRetainer() {
                       ))}
               </ul>
                     <a
-                      href="https://calendly.com/sarahxzou/free-consult-30-min"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="/book"
                       className={`${tier.buttonStyle} text-center py-3 px-6 rounded-lg font-semibold transition-colors mt-auto`}
                     >
                       {tier.buttonText}
@@ -535,9 +533,7 @@ export default function FractionalChiefEconomistRetainer() {
               Stop juggling pricing, experiments, and forecasts alone. Let's build a steady, investor-grade economics function that keeps you ahead.
             </p>
               <a
-                href="https://calendly.com/sarahxzou/free-consult-30-min"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/book"
               className="inline-block bg-[#ff5722] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#e64a19] transition shadow-lg hover:shadow-xl mb-8"
               >
               Book Your Intake Call

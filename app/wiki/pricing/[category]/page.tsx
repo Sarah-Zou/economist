@@ -248,7 +248,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               Ready to apply these concepts to your business? Get expert guidance to implement these strategies effectively.
             </p>
             <Link 
-              href="/consulting"
+              href="/book"
               className="inline-block bg-white text-[#ff5722] font-bold px-8 py-3 rounded-full hover:bg-[#f6f7f9] transition-colors"
             >
               Book Free Consult

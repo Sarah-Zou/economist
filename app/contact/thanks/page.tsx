@@ -66,14 +66,12 @@ export default function ContactThanksPage() {
               >
                 Return Home
               </Link>
-              <a
-                href="https://calendly.com/sarahxzou/free-consult-30-min"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/book"
                 className="inline-block bg-white hover:bg-[#f6f7f9] text-[#1f2933] font-bold px-8 py-4 rounded-full text-lg transition-colors border-2 border-[#e2e6ea] text-center"
               >
                 Book a Free Consult
-              </a>
+              </Link>
             </div>
           </div>
         </div>

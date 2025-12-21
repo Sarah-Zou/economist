@@ -1,6 +1,7 @@
 import React from 'react'
 import { Mail, Linkedin, Twitter } from 'lucide-react'
 import { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: "Contact Sarah Zou, PhD | Early-Stage Tech Strategy Consultation",
@@ -55,14 +56,12 @@ export default function ContactPage() {
             </div>
           </div>
           <div className="mb-8 text-center">
-            <a 
-              href="https://calendly.com/sarahxzou/free-consult-30-min" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              href="/book"
               className="inline-block bg-[#ff5722] hover:bg-[#e44e1f] text-white font-bold px-8 py-4 rounded-full text-lg transition-colors mb-4"
             >
               Book Free Consult
-            </a>
+            </Link>
             <p className="text-[#1f2933] text-center text-base sm:text-[17px]">Or fill out the form below:</p>
           </div>
           <form action="https://formspree.io/f/mdkgqeye" method="POST" className="space-y-6">
