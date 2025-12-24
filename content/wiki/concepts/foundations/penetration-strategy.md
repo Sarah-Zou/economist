@@ -81,6 +81,8 @@ A simple way to "see" penetration vs. skimming is to compare early and later sta
 
 Penetration pricing works when the scale, network, and lock-in you gain from the right-hand column are worth far more than the margin you give up in the early periods.
 
+> **💡 Related:** See [How Maximization differs from Skimming and Penetration](/wiki/pricing/foundations/maximization#how-maximization-differs-from-skimming-and-penetration) for a detailed comparison of these three primary pricing strategies.
+
 ## Why does penetration pricing matter?
 
 For startup founders, penetration pricing is essential in markets **dominated by network effects**—where a product becomes more valuable as more people use it. It is a **"land-and-expand"** tactic, designed to capture a significant customer footprint early, which can later be leveraged for expansion revenue and increased customer lifetime value.
@@ -169,7 +171,7 @@ Use skimming when:
 - Raju, J., & Zhang, Z. J. (2010). *Smart pricing: How Google, Priceline, and leading businesses use pricing innovation for profitability*. FT Press.
 - Ghuman, A. (2021). *Price to scale: Practical pricing for your high-growth SaaS startup*. Independently published.
 
-**Related pages:** [Skimming Strategy](/wiki/pricing/foundations/skimming-strategy) | [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Strategic Pricing](/wiki/pricing/foundations/strategic-pricing) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Van Westendorp](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger](/wiki/pricing/research-and-metrics/gabor-granger) | [Conjoint Analysis](/wiki/pricing/research-and-metrics/conjoint-analysis)
+**Related pages:** [Maximization Strategy](/wiki/pricing/foundations/maximization) | [Skimming Strategy](/wiki/pricing/foundations/skimming-strategy) | [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Strategic Pricing](/wiki/pricing/foundations/strategic-pricing) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Van Westendorp](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger](/wiki/pricing/research-and-metrics/gabor-granger) | [Conjoint Analysis](/wiki/pricing/research-and-metrics/conjoint-analysis)
 
 ## FAQ
 

@@ -53,6 +53,8 @@ Imagine a **"Value Waterfall"** or **"Step-Down Ladder"**:
 
 **Operating rule:** Descend one tier only after surplus from the current rung is fully extracted (e.g., sell‑through and waitlist conversion thresholds met, secondary‑market premium narrows, marginal revenue falls below expected). This avoids premature cannibalization and preserves the premium anchor.
 
+> **💡 Related:** See [How Maximization differs from Skimming and Penetration](/wiki/pricing/foundations/maximization#how-maximization-differs-from-skimming-and-penetration) for a detailed comparison of these three primary pricing strategies.
+
 ## Why does skimming strategy matter?
 
 Skimming lets you monetize the highest-WTP customers first while protecting your long-run price level and brand.
@@ -150,7 +152,7 @@ Skimming lets you monetize the highest-WTP customers first while protecting your
 - Rao, A. R. (1984). Pricing research in marketing: The state of the art. *Journal of Business*, 57(1), S39–S60.
 - Tirole, J. (1988). *The theory of industrial organization*. MIT Press.
 
-**Related pages:** [Penetration Pricing](/wiki/pricing/foundations/penetration-strategy) | [Versioning/Good‑Better‑Best](/wiki/pricing/packaging-and-bundling) | [Price Fences](/wiki/pricing/price-architecture) | [Van Westendorp](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger](/wiki/pricing/research-and-metrics/gabor-granger) | [Product Lifecycle Pricing](/wiki/pricing/foundations/strategic-pricing) | [MAP/Channel Strategy](/wiki/pricing/intl-channels-billing)
+**Related pages:** [Maximization Strategy](/wiki/pricing/foundations/maximization) | [Penetration Pricing](/wiki/pricing/foundations/penetration-strategy) | [Versioning/Good‑Better‑Best](/wiki/pricing/packaging-and-bundling) | [Price Fences](/wiki/pricing/price-architecture) | [Van Westendorp](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger](/wiki/pricing/research-and-metrics/gabor-granger) | [Product Lifecycle Pricing](/wiki/pricing/foundations/strategic-pricing) | [MAP/Channel Strategy](/wiki/pricing/intl-channels-billing)
 
 ## FAQ
 
