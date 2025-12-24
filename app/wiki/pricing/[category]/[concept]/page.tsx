@@ -798,10 +798,12 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                 Icon = Clock;
                               } else if (fact.title.toLowerCase().includes('cream') || fact.title.toLowerCase().includes('segment')) {
                                 Icon = Target;
-                              } else if (fact.title.toLowerCase().includes('loyal') || fact.title.toLowerCase().includes('brand')) {
+                              } else if (fact.title.toLowerCase().includes('loyal') || fact.title.toLowerCase().includes('brand') || fact.title.toLowerCase().includes('retention')) {
                                 Icon = CheckCircle;
-                              } else if (fact.title.toLowerCase().includes('wtp') || fact.title.toLowerCase().includes('premium') || fact.title.toLowerCase().includes('tier')) {
+                              } else if (fact.title.toLowerCase().includes('wtp') || fact.title.toLowerCase().includes('premium') || fact.title.toLowerCase().includes('tier') || fact.title.toLowerCase().includes('growth')) {
                                 Icon = TrendingUp;
+                              } else if (fact.title.toLowerCase().includes('failure') || fact.title.toLowerCase().includes('risk') || fact.title.toLowerCase().includes('fail')) {
+                                Icon = AlertCircle;
                               } else if (fact.title.toLowerCase().includes('compan') || fact.title.toLowerCase().includes('%')) {
                                 Icon = Users;
                               } else if (fact.title.toLowerCase().includes('profit') || fact.title.toLowerCase().includes('%')) {
