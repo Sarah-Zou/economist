@@ -796,6 +796,12 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                               let Icon = DollarSign;
                               if (fact.title.toLowerCase().includes('hour') || fact.title.toLowerCase().includes('time')) {
                                 Icon = Clock;
+                              } else if (fact.title.toLowerCase().includes('cream') || fact.title.toLowerCase().includes('segment')) {
+                                Icon = Target;
+                              } else if (fact.title.toLowerCase().includes('loyal') || fact.title.toLowerCase().includes('brand')) {
+                                Icon = CheckCircle;
+                              } else if (fact.title.toLowerCase().includes('wtp') || fact.title.toLowerCase().includes('premium') || fact.title.toLowerCase().includes('tier')) {
+                                Icon = TrendingUp;
                               } else if (fact.title.toLowerCase().includes('compan') || fact.title.toLowerCase().includes('%')) {
                                 Icon = Users;
                               } else if (fact.title.toLowerCase().includes('profit') || fact.title.toLowerCase().includes('%')) {
@@ -919,9 +925,42 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                     <h3 className="font-semibold text-[20px] text-[#1f2933] mb-1.5">
                                       {step.title}
                                     </h3>
-                                    <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                                      {step.description}
-                                    </p>
+                                    <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+                                      <ReactMarkdown
+                                        remarkPlugins={[remarkGfm]}
+                                        components={{
+                                          p: ({ node, ...props }) => (
+                                            <p className="mb-0" {...props} />
+                                          ),
+                                          strong: ({ node, ...props }) => (
+                                            <strong className="font-bold text-[#1f2933]" {...props} />
+                                          ),
+                                          a: ({ node, href, ...props }: any) => {
+                                            const isInternalLink = href?.startsWith('/wiki/pricing/');
+                                            if (isInternalLink && href) {
+                                              return (
+                                                <Link 
+                                                  href={href}
+                                                  className="text-[#ff5722] hover:underline font-medium"
+                                                  {...props}
+                                                />
+                                              );
+                                            }
+                                            return (
+                                              <a
+                                                href={href}
+                                                className="text-[#ff5722] hover:underline"
+                                                target={href?.startsWith('http') ? '_blank' : undefined}
+                                                rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                                {...props}
+                                              />
+                                            );
+                                          },
+                                        }}
+                                      >
+                                        {step.description}
+                                      </ReactMarkdown>
+                                    </div>
                                   </div>
                                 </div>
                               ))}
