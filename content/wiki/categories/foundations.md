@@ -21,7 +21,14 @@ canonical: "https://sarahzou.com/wiki/pricing/foundations"
 
 ## How to use this
 
-This category covers the fundamental strategic approaches to pricing that should guide all pricing decisions. These concepts form the foundation for more specific tactics and help establish the right mindset and framework for pricing strategy.
+- New to SaaS pricing? Read this section first to get the big picture before touching discount ladders or feature matrices.
+
+- Working on a live pricing problem?
+    1. Skim the cards above.
+    2. Pick the 1–2 strategies that match your situation.
+    3. Go to the detailed playbook and follow the steps.
+
+- Teaching / studying? Use the strategy cards as a syllabus for a 2–3 session MBA module.
 
 ## Related categories
 
