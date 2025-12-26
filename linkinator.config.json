@@ -1,0 +1,23 @@
+{
+  "recurse": true,
+  "skip": [
+    "https://sarahzou.com",
+    "https://www.sarahzou.com",
+    "https://www.simon-kucher.com",
+    "https://link.springer.com",
+    "https://www.mckinsey.com",
+    "https://www.wiley.com",
+    "https://www.paddle.com",
+    "https://www.bain.com",
+    "https://courses.lumenlearning.com",
+    "https://www.researchgate.net",
+    "https://counterpointresearch.com",
+    "https://www.sciative.com",
+    "https://journalppw.com",
+    "https://www.linkedin.com",
+    "file://",
+    "^out\\\\",
+    "^out/"
+  ],
+  "timeout": 10000
+}

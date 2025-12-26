@@ -15,8 +15,8 @@
     "postbuild": "node scripts/generate-sitemap-index.js",
     "validate-sitemap": "node scripts/validate-sitemap-urls.js",
     "analyze": "ANALYZE=true npm run build",
-    "check-links": "linkinator ./out --recurse --skip https://www.simon-kucher.com --skip https://link.springer.com --skip https://www.mckinsey.com --skip https://www.wiley.com --skip https://www.paddle.com --skip https://www.bain.com --skip https://courses.lumenlearning.com --skip https://www.researchgate.net --skip https://counterpointresearch.com --skip https://www.sciative.com --skip https://journalppw.com",
-    "check-links:local": "npm run build && linkinator ./out --recurse --skip https://www.simon-kucher.com --skip https://link.springer.com --skip https://www.mckinsey.com --skip https://www.wiley.com --skip https://www.paddle.com --skip https://www.bain.com --skip https://courses.lumenlearning.com --skip https://www.researchgate.net --skip https://counterpointresearch.com --skip https://www.sciative.com --skip https://journalppw.com"
+    "check-links": "node scripts/check-links.js",
+    "check-links:local": "npm run build && node scripts/check-links.js"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
