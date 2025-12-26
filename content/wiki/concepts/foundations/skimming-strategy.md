@@ -147,7 +147,7 @@ Skimming lets you monetize the highest-WTP customers first while protecting your
 - Nagle, T. T., Hogan, J., & Zale, J. (2023). *The strategy and tactics of pricing* (6th ed.). Routledge.
 - Kotler, P., & Keller, K. L. (2022). *Marketing management* (16th ed.). Pearson.
 - Mohammed, R. (2017). *The art of pricing: How to find the hidden profits to grow your business*. Harper Business.
-- Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. Wiley.
+- Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. Wiley. ISBN: 978-1-119-24086-0
 - Raju, J. S., & Zhang, Z. J. (2010). *Smart pricing: How Google, Priceline, and leading businesses use pricing innovation for profitability*. Wharton School Publishing.
 - Rao, A. R. (1984). Pricing research in marketing: The state of the art. *Journal of Business*, 57(1), S39–S60.
 - Tirole, J. (1988). *The theory of industrial organization*. MIT Press.

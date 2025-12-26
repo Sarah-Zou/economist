@@ -13,7 +13,7 @@ owner: "Dr. Sarah Zou"
 
 **What it is:** Value‑based pricing sets prices based on the economic value a product delivers to the customer, aligning price with the customer's perceived worth and willingness‑to‑pay (WTP) —not on internal cost or competitor matching.
 
-**Why it matters:** Companies that adopt value-based pricing earn 24% higher profits than peers; only ~5% of new-product business cases include WTP inputs—most teams guess revenue.
+**Why it matters:** Companies that adopt value-based pricing systematically outperform peers on profitability; only ~5% of new-product business cases include WTP inputs—most teams guess revenue.
 
 **When to use:** Early in product development; for new products and innovations; enterprise software with higher ACVs; when selling unique solutions to informed buyers.
 
@@ -23,8 +23,8 @@ owner: "Dr. Sarah Zou"
 - Use a **multi‑price mindset** and segment customers by needs, value, and WTP to tailor offers – _high‑value customers pay more; lower‑value segments access lighter packages._
 
 ## Key Facts
-- +24% profits: Companies that **proactively adopt value‑based pricing** and build the capabilities to execute it earn **24% higher profits** than industry peers. ([Studies](https://link.springer.com/article/10.1057/palgrave.rpm.5160035))
-- 5% of cases: **Only ~5% of new‑product business cases** explicitly include **WTP** inputs—teams often guess revenue. ([Monetizing Innovation](https://www.simon-kucher.com/en/monetizing-innovation))
+- Systematic profit advantage: Companies that **proactively adopt value‑based pricing** and build the capabilities to execute it consistently outperform industry peers on profitability metrics. ([Research on value-based pricing](https://link.springer.com/article/10.1057/palgrave.rpm.5160035))
+- 5% of cases: **Only ~5% of new‑product business cases** explicitly include **WTP** inputs—teams often guess revenue. ([Monetizing Innovation](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119240860))
 - +8.7% operating profit: **+1% average price → ~+8.7% operating profit** for a typical large firm, highlighting price leverage. ([McKinsey](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-power-of-pricing))
 
 ## What is value-based pricing?
@@ -120,7 +120,7 @@ VBP is step one of the entire [**strategic pricing**](/wiki/pricing/foundations/
 - Baker, W. L., Marn, M. V., & Zawada, C. C. (2010). *The price advantage* (2nd ed.). Wiley.
 - Lehrskov-Schmidt, U. (2023). *The pricing roadmap: How to design B2B SaaS pricing models that your customers will love*. Independently published.
 - Nagle, T. T., Müller, G., & Gruyaert, E. (2022). *The strategy and tactics of pricing: A guide to growing more profitably* (6th ed.). Routledge.
-- Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. Wiley.
+- Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. Wiley. ISBN: 978-1-119-24086-0
 
 **Related pages:** [Strategic Pricing](/wiki/pricing/foundations/strategic-pricing) | [Cost-plus pricing](/wiki/pricing/foundations/cost-plus-pricing) | [Price Fences](/wiki/pricing/price-architecture) | [Value Metric](/wiki/pricing/value-and-customers/value-metric) | [Packaging & Bundling](/wiki/pricing/packaging-and-bundling) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Van Westendorp](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger](/wiki/pricing/research-and-metrics/gabor-granger) | [Conjoint Analysis](/wiki/pricing/research-and-metrics/conjoint-analysis) | [Discounting & Realization](/wiki/pricing/policies-and-governance/discounting-and-realization)
 

@@ -31,7 +31,7 @@ owner: "Dr. Sarah Zou"
 
 - +25–30% premium growth: Companies using penetration pricing reported **25–30% market-share growth** in the first year. ([Sciative article summarizing McKinsey survey](https://www.sciative.com))
 - ~70% brand retention: Penetration pricing had a **positive, statistically significant effect on customer retention** (pricing strategies together explained ~70% of the variance in retention). ([Journal of Positive School Psychology, 2022](https://journalppw.com))
-- ~75% startup failure: Approximately **75% of venture capital-funded startups fail**, often because they focus on growth (volume) through penetration without a clear path to eventual profitability. ([Monetizing Innovation](https://www.simon-kucher.com/en/monetizing-innovation))
+- ~75% startup failure: Approximately **75% of venture capital-funded startups fail**, often because they focus on growth (volume) through penetration without a clear path to eventual profitability. ([Monetizing Innovation](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119240860))
 
 ## What is penetration pricing?
 
@@ -167,7 +167,7 @@ Use skimming when:
 ### Sources:
 
 - Nagle, T. T., Müller, G., & Gruyaert, E. (2023). *The strategy and tactics of pricing: A guide to growing more profitably* (7th ed.). Routledge.
-- Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. John Wiley & Sons.
+- Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. John Wiley & Sons. ISBN: 978-1-119-24086-0
 - Raju, J., & Zhang, Z. J. (2010). *Smart pricing: How Google, Priceline, and leading businesses use pricing innovation for profitability*. FT Press.
 - Ghuman, A. (2021). *Price to scale: Practical pricing for your high-growth SaaS startup*. Independently published.
 

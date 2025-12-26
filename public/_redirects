@@ -1,0 +1,7 @@
+# Redirect trailing slash URLs to non-trailing slash (canonical style)
+# This file is for Netlify. For other hosts, configure redirects in their dashboard.
+# Netlify syntax: source  destination  status_code
+
+# Redirect all trailing slash URLs to non-trailing slash (except root)
+/*/  /:splat  301
+
