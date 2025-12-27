@@ -102,6 +102,7 @@ export default function BookPage() {
                 // Option B (recommended): also send a clean "business" conversion event
                 if (calendlyEvent === "calendly.event_scheduled" && typeof gtag === "function") {
                   gtag("event", "book_intro_call", {
+                    debug_mode: true,
                     event_uri: payload.event?.uri || undefined,
                     invitee_uri: payload.invitee?.uri || undefined
                   });
