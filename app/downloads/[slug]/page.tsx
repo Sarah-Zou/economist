@@ -13,9 +13,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
   }
 
+  const downloadTitle = download.title;
+  const downloadDescription = download.description || `Download ${downloadTitle}`;
+
   return {
-    title: `Download: ${download.title} | Sarah Zou`,
-    description: download.description || `Download ${download.title}`,
+    title: `Download: ${downloadTitle} | Sarah Zou`,
+    description: downloadDescription,
     robots: {
       index: false,
       follow: false,
