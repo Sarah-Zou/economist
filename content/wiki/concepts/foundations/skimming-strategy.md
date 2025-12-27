@@ -23,9 +23,9 @@ owner: "Dr. Sarah Zou"
 - **Fences *are* the strategy:** if customers can arbitrage between rungs, skimming collapses into random discounting—use version, time, channel, eligibility, and geo controls.
 
 ## Key Facts
-- 16% "cream": In diffusion theory, innovators (2.5%) + early adopters (13.5%) ≈ 16% of the market are the **“cream” tiers** skimming targets before the Early Majority (34%) arrives. ([Lumen Learning](https://courses.lumenlearning.com/clinton-marketing/chapter/reading-diffusion-of-innovation/))
-- 50–60% brand-loyal: In consumer tech, ~50–60% of early adopters are **brand‑loyal** and are willing to **pay a premium** for early access. ([Gönen, 2024](https://www.researchgate.net/publication/378123456))
-- 25% high-WTP tier: Premium smartphones reached **25% of the global market** in 2024, meaning the high-WTP tier is now **big enough** that "price the top first" can move company-level outcomes. ([Counterpoint Research, 2025](https://counterpointresearch.com/en/insights/post-insight-research-notes-blogs-global-premium-smartphone-share-climbs-to-25-in-2024-as-premiumization-continues))
+- 16% "cream": In diffusion theory, innovators (2.5%) + early adopters (13.5%) ≈ 16% of the market are the **"cream" tiers** skimming targets before the Early Majority (34%) arrives. ([Lumen Learning](https://courses.lumenlearning.com/clinton-marketing/chapter/reading-diffusion-of-innovation/))
+- 50–60% brand-loyal: In consumer tech, ~50–60% of early adopters are **brand‑loyal** and are willing to **pay a premium** for early access. ([Gönen (2024)](https://www.researchgate.net/publication/378123456))
+- 25% high-WTP tier: Premium smartphones reached **25% of the global market** in 2024, meaning the high-WTP tier is now **big enough** that "price the top first" can move company-level outcomes. ([Counterpoint Research (2025)](https://counterpointresearch.com/en/insights/post-insight-research-notes-blogs-global-premium-smartphone-share-climbs-to-25-in-2024-as-premiumization-continues))
 
 ## What is skimming strategy?
 

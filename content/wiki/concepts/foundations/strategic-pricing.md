@@ -23,7 +23,7 @@ owner: "Dr. Sarah Zou"
 - Pricing is your **Single most critical lever** for profitability – _a 1% lift in average price typically drives 8–10% operating profit gains in large companies._
 
 ## Key Facts
-- +8.7% profit: A 1% increase in average price can translate into an 8.7% to 10.29% increase in operating profit for a typical large company. [Source – McKinsey (2014)](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-big-data-to-make-better-pricing-decisions)
+- +8.7% profit: A 1% increase in average price can translate into an 8.7% to 10.29% increase in operating profit for a typical large company. ([McKinsey (2014)](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-big-data-to-make-better-pricing-decisions))
 - <10 hours/year: Companies spend <10 hours/year on pricing. ([ProfitWell/Paddle](https://www.paddle.com/studios/shows/profitwell-report/pricing-for-bottom-line))
 - 85% of companies: 85% of companies say their pricing needs significant improvement, signaling widespread capability gaps. ([Bain](https://www.bain.com/insights/a-survey-of-1700-companies-reveals-common-b2b-pricing-mistakes-hbr/))
 
@@ -80,7 +80,7 @@ owner: "Dr. Sarah Zou"
 ### Sources:
 
 - Baker, W. L., Marn, M. V., & Zawada, C. C. (2010). *The price advantage* (2nd ed.). Wiley.
-- McKinsey & Company. (n.d.). Pricing: Price realization, growth transformations. https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/pricing
+- McKinsey & Company. (n.d.). Pricing: Price realization, growth transformations. [Link](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/pricing)
 - Nagle, T. T., Müller, G., & Hogan, J. E. (2022). *The strategy and tactics of pricing: A guide to growing more profitably* (6th ed.). Routledge.
 - Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. John Wiley & Sons. [Google Books](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ) | [Simon-Kucher publisher page](https://www.simon-kucher.com/en/insights/monetizing-innovation)
 

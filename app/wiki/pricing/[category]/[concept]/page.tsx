@@ -213,7 +213,7 @@ function parseSnapshot(content: string): {
 // Helper function to parse Key Facts section from markdown content
 function parseKeyFacts(content: string): { 
   beforeKeyFacts: string; 
-  keyFacts: Array<{ description: string; sourceUrl?: string }> | null; 
+  keyFacts: Array<{ title: string; description: string; sourceUrl?: string; sourceText?: string }> | null; 
   afterKeyFacts: string 
 } {
   const keyFactsRegex = /##\s+Key Facts\s*\n([\s\S]*?)(?=\n##|$)/;
@@ -234,7 +234,7 @@ function parseKeyFacts(content: string): {
     .filter(line => line.trim().startsWith('-'))
     .map(line => line.replace(/^-\s*/, '').trim());
 
-  const keyFacts: Array<{ description: string; sourceUrl?: string }> = [];
+  const keyFacts: Array<{ title: string; description: string; sourceUrl?: string; sourceText?: string }> = [];
   
   for (const line of factLines) {
     if (!line) continue;
@@ -244,6 +244,7 @@ function parseKeyFacts(content: string): {
     
     let description = line;
     let sourceUrl: string | undefined;
+    let sourceText: string | undefined;
     
     // Find all markdown links in the line
     const links: Array<{ text: string; url: string; fullMatch: string }> = [];
@@ -260,17 +261,10 @@ function parseKeyFacts(content: string): {
     if (links.length > 0) {
       const lastLink = links[links.length - 1];
       sourceUrl = lastLink.url;
+      sourceText = lastLink.text;
       
-      // Remove the markdown link from description, but keep the link text if it's a citation
-      // Check if the link text looks like a citation (contains "Source", "DOI", or is a URL-like text)
-      const isCitation = /source|doi|http/i.test(lastLink.text);
-      if (isCitation) {
-        // Remove the citation link entirely from description
-        description = description.replace(lastLink.fullMatch, '').trim();
-      } else {
-        // Keep the link text in the description
-        description = description.replace(lastLink.fullMatch, lastLink.text).trim();
-      }
+      // Remove the citation link entirely from description (all citations should be removed)
+      description = description.replace(lastLink.fullMatch, '').trim();
       
       // Remove any other markdown links but keep their text
       links.slice(0, -1).forEach(link => {
@@ -278,12 +272,22 @@ function parseKeyFacts(content: string): {
       });
     }
     
-    // Clean up description - remove trailing periods and extra spaces
+    // Clean up description - remove trailing periods, extra spaces, and parentheses that might be left behind
     description = description.replace(/\s*\.\s*$/, '').trim();
+    description = description.replace(/\s*\(\s*\)\s*/g, '').trim(); // Remove empty parentheses
     description = description.replace(/\s+/g, ' ').trim();
     
+    // Extract title (text before colon) and description (text after colon)
+    let title = '';
+    let descriptionText = description;
+    const colonIndex = description.indexOf(':');
+    if (colonIndex > 0) {
+      title = description.substring(0, colonIndex).trim();
+      descriptionText = description.substring(colonIndex + 1).trim();
+    }
+    
     if (description) {
-      keyFacts.push({ description, sourceUrl });
+      keyFacts.push({ title, description: descriptionText, sourceUrl, sourceText });
     }
   }
 
@@ -876,52 +880,61 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                           </h2>
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {keyFacts.map((fact, index) => {
-                              // Choose icon based on content
-                              const descriptionLower = fact.description.toLowerCase();
+                              // Choose icon based on content (check both title and description)
+                              const contentLower = `${fact.title} ${fact.description}`.toLowerCase();
                               let Icon = DollarSign;
-                              if (descriptionLower.includes('hour') || descriptionLower.includes('time')) {
+                              if (contentLower.includes('hour') || contentLower.includes('time')) {
                                 Icon = Clock;
-                              } else if (descriptionLower.includes('cream') || descriptionLower.includes('segment')) {
+                              } else if (contentLower.includes('cream') || contentLower.includes('segment')) {
                                 Icon = Target;
-                              } else if (descriptionLower.includes('loyal') || descriptionLower.includes('brand') || descriptionLower.includes('retention')) {
+                              } else if (contentLower.includes('loyal') || contentLower.includes('brand') || contentLower.includes('retention')) {
                                 Icon = CheckCircle;
-                              } else if (descriptionLower.includes('wtp') || descriptionLower.includes('premium') || descriptionLower.includes('tier') || descriptionLower.includes('growth')) {
+                              } else if (contentLower.includes('wtp') || contentLower.includes('premium') || contentLower.includes('tier') || contentLower.includes('growth')) {
                                 Icon = TrendingUp;
-                              } else if (descriptionLower.includes('failure') || descriptionLower.includes('risk') || descriptionLower.includes('fail')) {
+                              } else if (contentLower.includes('failure') || contentLower.includes('risk') || contentLower.includes('fail')) {
                                 Icon = AlertCircle;
-                              } else if (descriptionLower.includes('compan') || descriptionLower.includes('companies') || descriptionLower.includes('firms')) {
+                              } else if (contentLower.includes('compan') || contentLower.includes('companies') || contentLower.includes('firms')) {
                                 Icon = Users;
-                              } else if (descriptionLower.includes('profit') || descriptionLower.includes('profitability') || descriptionLower.includes('operating profit')) {
+                              } else if (contentLower.includes('profit') || contentLower.includes('profitability') || contentLower.includes('operating profit')) {
                                 Icon = DollarSign;
-                              } else if (descriptionLower.includes('value-based') || descriptionLower.includes('pricing strategy')) {
+                              } else if (contentLower.includes('value-based') || contentLower.includes('pricing strategy')) {
                                 Icon = DollarSign;
                               }
 
                               return (
                                 <div key={index} className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
-                                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#f6f7f9] mb-4">
-                                    <Icon className="w-6 h-6 text-[#ff5722]" />
+                                  <div className="flex items-center gap-3 mb-4">
+                                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#f6f7f9] flex-shrink-0">
+                                      <Icon className="w-6 h-6 text-[#ff5722]" />
+                                    </div>
+                                    {fact.title && (
+                                      <h3 className="text-lg font-semibold text-[#1f2933]">
+                                        {fact.title}
+                                      </h3>
+                                    )}
                                   </div>
-                                  <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                                    <ReactMarkdown
-                                      remarkPlugins={[remarkGfm]}
-                                      components={{
-                                        p: ({ node, ...props }) => (
-                                          <p className="mb-0" {...props} />
-                                        ),
-                                        a: ({ node, href, ...props }) => (
-                                          <a
-                                            href={href}
-                                            className="text-[#ff5722] hover:underline font-medium"
-                                            target={href?.startsWith('http') ? '_blank' : undefined}
-                                            rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                            {...props}
-                                          />
-                                        ),
-                                      }}
-                                    >
-                                      {fact.description}
-                                    </ReactMarkdown>
+                                  <div className="text-sm sm:text-base text-[#1f2933] leading-[1.65] text-left">
+                                    {fact.description && (
+                                      <ReactMarkdown
+                                        remarkPlugins={[remarkGfm]}
+                                        components={{
+                                          p: ({ node, ...props }) => (
+                                            <p className="mb-0 text-left" {...props} />
+                                          ),
+                                          a: ({ node, href, ...props }) => (
+                                            <a
+                                              href={href}
+                                              className="text-[#ff5722] hover:underline font-medium"
+                                              target={href?.startsWith('http') ? '_blank' : undefined}
+                                              rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                              {...props}
+                                            />
+                                          ),
+                                        }}
+                                      >
+                                        {fact.description}
+                                      </ReactMarkdown>
+                                    )}
                                     {fact.sourceUrl && (
                                       <a
                                         href={fact.sourceUrl}
@@ -929,7 +942,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                       >
-                                        {fact.sourceUrl}
+                                        {fact.sourceText || fact.sourceUrl}
                                       </a>
                                     )}
                                   </div>

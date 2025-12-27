@@ -29,9 +29,9 @@ owner: "Dr. Sarah Zou"
 
 ## Key Facts
 
-- +25–30% premium growth: Companies using penetration pricing reported **25–30% market-share growth** in the first year. ([Sciative article summarizing McKinsey survey](https://www.sciative.com))
-- ~70% brand retention: Penetration pricing had a **positive, statistically significant effect on customer retention** (pricing strategies together explained ~70% of the variance in retention). ([Journal of Positive School Psychology, 2022](https://journalppw.com))
-- ~75% startup failure: Approximately **75% of venture capital-funded startups fail**, often because they focus on growth (volume) through penetration without a clear path to eventual profitability. ([Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. John Wiley & Sons.](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ))
+- +25–30% premium growth: Companies using penetration pricing reported **25–30% market-share growth** in the first year. ([McKinsey](https://www.sciative.com))
+- ~70% brand retention: Penetration pricing had a **positive, statistically significant effect on customer retention** (pricing strategies together explained ~70% of the variance in retention). ([Journal of Positive School Psychology (2022)](https://journalppw.com))
+- ~75% startup failure: Approximately **75% of venture capital-funded startups fail**, often because they focus on growth (volume) through penetration without a clear path to eventual profitability. ([Monetizing Innovation (2016)](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ))
 
 ## What is penetration pricing?
 
