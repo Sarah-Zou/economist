@@ -137,7 +137,7 @@ In the landscape of strategic pricing, **maximization** is one of the three prim
 
 - Nagle, T. T., Müller, G., & Hogan, J. (2023). *The strategy and tactics of pricing* (7th ed.). Routledge.
 - Marn, M. V., Roegner, E. V., & Zawada, C. C. (2011). *The price advantage* (2nd ed.). Wiley.
-- Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. Wiley. ISBN: 978-1-119-24086-0
+- Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. John Wiley & Sons. [Google Books](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ) | [Simon-Kucher publisher page](https://www.simon-kucher.com/en/insights/monetizing-innovation)
 - Ghuman, A. (2020). *Price to scale: Practical pricing for your high-growth SaaS startup*. Independently published.
 - Simon, H., & Fassnacht, M. (2019). *Price management: Strategy, analysis, decision, implementation* (2nd ed.). Springer.
 

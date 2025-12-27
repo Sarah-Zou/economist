@@ -96,7 +96,7 @@ It can lead companies to set consistently sub-par prices, often leading to foreg
 ### Sources:
 
 - Nagle, T. T., Müller, G., & Hogan, J. (2023). *The strategy and tactics of pricing*. Pearson.
-- Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. Wiley. ISBN: 978-1-119-24086-0
+- Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. John Wiley & Sons. [Google Books](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ) | [Simon-Kucher publisher page](https://www.simon-kucher.com/en/insights/monetizing-innovation)
 - Hinterhuber, A., & Liozu, S. M. (2017). *Innovation in pricing: Contemporary theories and best practices*. Routledge.
 - Selected articles on cost‑plus pitfalls and value‑based pricing from Harvard Business Review.
 

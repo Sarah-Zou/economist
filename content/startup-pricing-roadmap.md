@@ -6,7 +6,7 @@ For an early-stage startup, pricing is not a single number—it's one of the mos
 
 Our focus is on actionable decisions that will shape your commercial strategy for the next 3 to 6 months, moving you from uncertainty to your first well-earned dollar.
 
-Successful pricing is not about covering costs or blindly copying competitors; it's about **deeply understanding and effectively communicating the value your product delivers**. The leverage here is immense. As a research shows, even **a 1% improvement in price can yield an 8.7% increase in operating profits**, making strategic pricing one of the highest-impact activities any founder can undertake.
+Successful pricing is not about covering costs or blindly copying competitors; it's about **deeply understanding and effectively communicating the value your product delivers**. The leverage here is immense. As research shows, even **a 1% improvement in price can yield an 8.7% increase in operating profits** [Source – McKinsey (2014)](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-big-data-to-make-better-pricing-decisions), making strategic pricing one of the highest-impact activities any founder can undertake.
 
 This roadmap will guide you through a clear, sequential journey, broken down into four distinct phases: foundational strategy and discovery, pricing structure design, setting price points, and finally, operationalizing your new model.
 

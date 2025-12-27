@@ -23,9 +23,14 @@ owner: "Dr. Sarah Zou"
 - Use a **multi‑price mindset** and segment customers by needs, value, and WTP to tailor offers – _high‑value customers pay more; lower‑value segments access lighter packages._
 
 ## Key Facts
-- Systematic profit advantage: Companies that **proactively adopt value‑based pricing** and build the capabilities to execute it consistently outperform industry peers on profitability metrics. ([Research on value-based pricing](https://link.springer.com/article/10.1057/palgrave.rpm.5160035))
-- 5% of cases: **Only ~5% of new‑product business cases** explicitly include **WTP** inputs—teams often guess revenue. ([Monetizing Innovation](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119240860))
-- +8.7% operating profit: **+1% average price → ~+8.7% operating profit** for a typical large firm, highlighting price leverage. ([McKinsey](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-power-of-pricing))
+
+**Systematic profit advantage.** Empirical work shows that value-based pricing and disciplined price management consistently outperform cost-plus or competition-based approaches in profitability:
+
+- Across hundreds of companies, a 1% price increase translates into about an 8.7% lift in operating profit, assuming constant volume (Baker, Kiewell & Winkler, 2014). [Source – McKinsey (2014)](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-big-data-to-make-better-pricing-decisions)
+- Survey evidence finds value-based pricing to be "overall the best approach" for profitability and new-product success, while cost-based pricing leads to substandard returns (Hinterhuber, 2008). [DOI 10.1108/02756660810887079](https://doi.org/10.1108/02756660810887079)
+- In a study of 150 industrial firms, profitability was positively affected by customer-value-based pricing strategies and high price levels (De Toni, Milan, Saciloto & Larentis, 2017). [DOI 10.1016/j.rausp.2016.12.004](https://doi.org/10.1016/j.rausp.2016.12.004)
+
+- 5% of cases: **Only ~5% of new‑product business cases** explicitly include **WTP** inputs—teams often guess revenue. ([Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. John Wiley & Sons.](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ))
 
 ## What is value-based pricing?
 
@@ -115,12 +120,14 @@ VBP is step one of the entire [**strategic pricing**](/wiki/pricing/foundations/
 
 ## References & Links
 
-### Sources:
+### Sources (APA):
 
-- Baker, W. L., Marn, M. V., & Zawada, C. C. (2010). *The price advantage* (2nd ed.). Wiley.
+- Baker, W., Kiewell, D., & Winkler, G. (2014, June 1). *Using big data to make better pricing decisions*. McKinsey & Company. https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-big-data-to-make-better-pricing-decisions
+- De Toni, D., Milan, G. S., Saciloto, E. B., & Larentis, F. (2017). *Pricing strategies and levels and their impact on corporate profitability*. *Revista de Administração, 52*(2), 120–133. https://doi.org/10.1016/j.rausp.2016.12.004
+- Hinterhuber, A. (2008). *Customer value-based pricing strategies: Why companies resist*. *Journal of Business Strategy, 29*(4), 41–50. https://doi.org/10.1108/02756660810887079
 - Lehrskov-Schmidt, U. (2023). *The pricing roadmap: How to design B2B SaaS pricing models that your customers will love*. Independently published.
 - Nagle, T. T., Müller, G., & Gruyaert, E. (2022). *The strategy and tactics of pricing: A guide to growing more profitably* (6th ed.). Routledge.
-- Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. Wiley. ISBN: 978-1-119-24086-0
+- Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. John Wiley & Sons. [Google Books](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ) | [Simon-Kucher publisher page](https://www.simon-kucher.com/en/insights/monetizing-innovation)
 
 **Related pages:** [Strategic Pricing](/wiki/pricing/foundations/strategic-pricing) | [Cost-plus pricing](/wiki/pricing/foundations/cost-plus-pricing) | [Price Fences](/wiki/pricing/price-architecture) | [Value Metric](/wiki/pricing/value-and-customers/value-metric) | [Packaging & Bundling](/wiki/pricing/packaging-and-bundling) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Van Westendorp](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger](/wiki/pricing/research-and-metrics/gabor-granger) | [Conjoint Analysis](/wiki/pricing/research-and-metrics/conjoint-analysis) | [Discounting & Realization](/wiki/pricing/policies-and-governance/discounting-and-realization)
 
