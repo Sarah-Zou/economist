@@ -12,12 +12,11 @@ canonical: "https://sarahzou.com/wiki/pricing/packaging-and-bundling"
 
 - **<span id="packaging">Offer/packaging architecture</span>**: Designing comprehensive product offerings
 - **<span id="good-better-best">Good–Better–Best tiers</span>**: Classic three-tier pricing structure and variations
-- **<span id="modular-packaging">Modular packaging</span>**: Capability modules and flexible product design
-- **<span id="product-configuration">Product configuration & editioning</span>**: Creating different product versions
-- **<span id="leaders-fillers-killers">Leaders / Fillers / Killers</span>**: Understanding feature roles in packaging
+- **<span id="modular-packaging-editioning">Modular packaging & editioning</span>**: Capability modules, flexible product design, and creating different product versions
 - **<span id="bundling">Bundling & mixed bundling</span>**: Creating compelling product combinations
 - **<span id="unbundling-addons">Unbundling & add-ons</span>**: When and how to break apart or add to packages
-- **<span id="tiered-products">Tiered products/services & self-selection</span>**: Designing customer choice architecture
+
+*I'm currently working on developing detailed content for these concepts. Check back soon for comprehensive guides, step-by-step instructions, and real-world examples.*
 
 ## How to use this
 
@@ -25,7 +24,8 @@ This category focuses on the art and science of packaging your product features 
 
 ## Related categories
 
-- [Value and Customers](https://sarahzou.com/wiki/pricing/value-and-customers) - Understanding what customers value most
-- [Models and Metering](https://sarahzou.com/wiki/pricing/models-and-metering) - Choosing the right pricing model for your packages
-- [Price Architecture](https://sarahzou.com/wiki/pricing/price-architecture) - Structuring your pricing tiers and rules
-- [Behavioral Psychology](https://sarahzou.com/wiki/pricing/behavioral-psychology) - Psychological principles in package design
+- [Core Philosophies & Strategy](https://sarahzou.com/wiki/pricing/foundations) - Core pricing philosophy that guides packaging decisions
+- [Understanding Value & Customers](https://sarahzou.com/wiki/pricing/value-and-customers) - Understanding what customers value most
+- [Monetization Models & Metering](https://sarahzou.com/wiki/pricing/models-and-metering) - Choosing the right pricing model for your packages
+- [Sales/Marketing Comms & Deal Structuring](https://sarahzou.com/wiki/pricing/comms-and-deals) - Communicating your packages effectively
+- [Customer Research & Pricing Experiments](https://sarahzou.com/wiki/pricing/research-and-experiments) - Testing package designs and pricing

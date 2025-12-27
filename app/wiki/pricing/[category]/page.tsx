@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { Diamond, Settings, TrendingDown, Grid3x3, AlertTriangle, Lightbulb, BookOpen, Briefcase, GraduationCap } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 
 interface CategoryPageProps {
   params: {
@@ -18,9 +19,19 @@ interface CategoryPageProps {
 
 export async function generateStaticParams() {
   const slugs = getAllCategorySlugs();
-  return slugs.map((slug) => ({
-    category: slug,
-  }));
+  return slugs
+    .filter(slug => {
+      // Validate slug - must be a valid slug, not a URL
+      return slug && 
+             slug.length > 0 && 
+             !slug.includes('http://') && 
+             !slug.includes('https://') &&
+             !slug.includes('://') &&
+             !slug.startsWith('/');
+    })
+    .map((slug) => ({
+      category: slug,
+    }));
 }
 
 export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
@@ -81,7 +92,8 @@ export default function CategoryPage({ params }: CategoryPageProps) {
     'behavioral-psychology': '🧠',
     'competitive-and-positioning': '🎯',
     'comms-and-deals': '💬',
-    'research-and-metrics': '📊',
+    'research-and-experiments': '🔬',
+    'economics-and-metrics': '📊',
     'intl-channels-billing': '🌍',
     'governance-and-process': '⚙️',
     'pitfalls-and-failures': '⚠️'
@@ -96,7 +108,8 @@ export default function CategoryPage({ params }: CategoryPageProps) {
     'behavioral-psychology': '/images/P-4.webp',
     'competitive-and-positioning': '/images/P-5.webp',
     'comms-and-deals': '/images/P-6.webp',
-    'research-and-metrics': '/images/S-1.webp',
+    'research-and-experiments': '/images/S-1.webp',
+    'economics-and-metrics': '/images/S-5.webp',
     'intl-channels-billing': '/images/S-2.webp',
     'governance-and-process': '/images/S-3.webp',
     'pitfalls-and-failures': '/images/S-4.webp'
@@ -142,6 +155,39 @@ export default function CategoryPage({ params }: CategoryPageProps) {
     faqItems
   });
 
+  // Extract the "What's in this category" section from markdown content (without the heading)
+  const extractWhatsInCategorySection = (content: string): { content: string; workingNote: string } => {
+    const lines = content.split('\n');
+    let inWhatsInSection = false;
+    const whatsInLines: string[] = [];
+    let workingNote = '';
+    
+    for (const line of lines) {
+      if (line.includes('## What\'s in this category')) {
+        inWhatsInSection = true;
+        continue; // Skip the heading line
+      }
+      if (line.includes('## How to use this') || line.includes('## Related categories')) {
+        break; // Stop when we hit the next section
+      }
+      if (inWhatsInSection) {
+        // Check if this is the working note (italic text starting with *)
+        const trimmedLine = line.trim();
+        if (trimmedLine.startsWith('*') && (trimmedLine.includes('currently working') || trimmedLine.includes('working on'))) {
+          workingNote = trimmedLine.replace(/^\*+|\*+$/g, '').trim();
+        } else if (trimmedLine.length > 0) {
+          // Only add non-empty lines (skip the note line)
+          whatsInLines.push(line);
+        }
+      }
+    }
+    
+    return {
+      content: whatsInLines.join('\n').trim(),
+      workingNote: workingNote
+    };
+  };
+
   // Extract only the "How to use this" section from markdown content
   // Skip "What's in this category" and "Related categories" as they're rendered manually
   const extractHowToUseSection = (content: string): string => {
@@ -166,6 +212,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
     return howToUseLines.join('\n');
   };
 
+  const { content: whatsInCategoryContent, workingNote } = extractWhatsInCategorySection(category.content);
   const howToUseContent = extractHowToUseSection(category.content);
 
   return (
@@ -453,58 +500,119 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               </div>
             )}
 
+            {/* Render "What's in this category" section for non-foundations categories */}
+            {params.category !== 'foundations' && (whatsInCategoryContent || workingNote) && (
+              <div className="mt-12 mb-12">
+                {/* Working note - appears before the section */}
+                {workingNote && (
+                  <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                    <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] italic">
+                      {workingNote}
+                    </p>
+                  </div>
+                )}
+                
+                <div className="flex items-center mb-6">
+                  <div className="w-1 h-8 bg-[#ff5722] mr-3"></div>
+                  <h2 id="whats-in-this-category" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
+                    What's in this category
+                  </h2>
+                </div>
+                {whatsInCategoryContent && (
+                  <div className="prose prose-lg max-w-none text-[#1f2933]">
+                    <ReactMarkdown 
+                      remarkPlugins={[remarkGfm]}
+                      rehypePlugins={[rehypeRaw]}
+                      components={{
+                        p: ({node, ...props}: any) => <p className="text-base sm:text-[17px] leading-[1.65] mb-4" {...props} />,
+                        ul: ({node, ...props}: any) => <ul className="list-disc list-inside space-y-2 mb-4" {...props} />,
+                        li: ({node, ...props}: any) => <li className="text-base sm:text-[17px] leading-[1.65]" {...props} />,
+                        strong: ({node, ...props}: any) => <strong className="font-semibold" {...props} />,
+                        em: ({node, ...props}: any) => <em className="italic" {...props} />,
+                      }}
+                    >
+                      {whatsInCategoryContent}
+                    </ReactMarkdown>
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Render "How to use this" section */}
             {howToUseContent && (
               <div className="mt-16 mb-12">
                 <div className="flex items-center mb-8">
-                  <div className="w-1 h-8 bg-blue-600 mr-3"></div>
+                  <div className="w-1 h-8 bg-[#ff5722] mr-3"></div>
                   <h2 id="how-to-use-this" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
                     How to use this
                   </h2>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {/* New to SaaS pricing */}
-                  <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm hover:shadow-md transition-all">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                        <BookOpen className="w-6 h-6 text-blue-600" />
+                {/* Custom cards for foundations category */}
+                {params.category === 'foundations' ? (
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {/* New to SaaS pricing */}
+                    <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm hover:shadow-md transition-all">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                          <BookOpen className="w-6 h-6 text-blue-600" />
+                        </div>
+                        <h3 className="font-semibold text-[#1f2933] text-lg">New to SaaS pricing?</h3>
                       </div>
-                      <h3 className="font-semibold text-[#1f2933] text-lg">New to SaaS pricing?</h3>
+                      <p className="text-[#1f2933] leading-relaxed text-base">
+                        Read this section first to get the big picture before touching discount ladders or feature matrices.
+                      </p>
                     </div>
-                    <p className="text-[#1f2933] leading-relaxed text-base">
-                      Read this section first to get the big picture before touching discount ladders or feature matrices.
-                    </p>
-                  </div>
 
-                  {/* Working on a live pricing problem */}
-                  <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm hover:shadow-md transition-all">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                        <Briefcase className="w-6 h-6 text-orange-600" />
+                    {/* Working on a live pricing problem */}
+                    <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm hover:shadow-md transition-all">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                          <Briefcase className="w-6 h-6 text-orange-600" />
+                        </div>
+                        <h3 className="font-semibold text-[#1f2933] text-lg">Working on a live pricing problem?</h3>
                       </div>
-                      <h3 className="font-semibold text-[#1f2933] text-lg">Working on a live pricing problem?</h3>
+                      <ol className="list-decimal list-inside space-y-2 text-[#1f2933] leading-relaxed text-base">
+                        <li>Skim the cards above.</li>
+                        <li>Pick the 1–2 strategies that match your situation.</li>
+                        <li><Link href="/cheat-sheets" className="text-[#ff5722] hover:underline font-medium">Go to the detailed guide and follow the steps.</Link></li>
+                      </ol>
                     </div>
-                    <ol className="list-decimal list-inside space-y-2 text-[#1f2933] leading-relaxed text-base">
-                      <li>Skim the cards above.</li>
-                      <li>Pick the 1–2 strategies that match your situation.</li>
-                      <li><Link href="/cheat-sheets" className="text-[#ff5722] hover:underline font-medium">Go to the detailed guide and follow the steps.</Link></li>
-                    </ol>
-                  </div>
 
-                  {/* Teaching / studying */}
-                  <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm hover:shadow-md transition-all">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                        <GraduationCap className="w-6 h-6 text-green-600" />
+                    {/* Teaching / studying */}
+                    <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm hover:shadow-md transition-all">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                          <GraduationCap className="w-6 h-6 text-green-600" />
+                        </div>
+                        <h3 className="font-semibold text-[#1f2933] text-lg">Teaching / studying?</h3>
                       </div>
-                      <h3 className="font-semibold text-[#1f2933] text-lg">Teaching / studying?</h3>
+                      <p className="text-[#1f2933] leading-relaxed text-base">
+                        Use the strategy cards as a syllabus for a 2–3 session MBA module.
+                      </p>
                     </div>
-                    <p className="text-[#1f2933] leading-relaxed text-base">
-                      Use the strategy cards as a syllabus for a 2–3 session MBA module.
-                    </p>
                   </div>
-                </div>
+                ) : (
+                  /* Render markdown content for all other categories */
+                  <div className="prose prose-lg max-w-none text-[#1f2933]">
+                    <ReactMarkdown 
+                      remarkPlugins={[remarkGfm]}
+                      rehypePlugins={[rehypeRaw]}
+                      components={{
+                        p: ({node, ...props}: any) => <p className="text-base sm:text-[17px] leading-[1.65] mb-4" {...props} />,
+                        ul: ({node, ...props}: any) => <ul className="list-disc list-inside space-y-2 mb-4" {...props} />,
+                        ol: ({node, ...props}: any) => <ol className="list-decimal list-inside space-y-2 mb-4" {...props} />,
+                        li: ({node, ...props}: any) => <li className="text-base sm:text-[17px] leading-[1.65]" {...props} />,
+                        strong: ({node, ...props}: any) => <strong className="font-semibold" {...props} />,
+                        em: ({node, ...props}: any) => <em className="italic" {...props} />,
+                        h3: ({node, ...props}: any) => <h3 className="text-xl font-semibold text-[#1f2933] mb-3 mt-6" {...props} />,
+                        h4: ({node, ...props}: any) => <h4 className="text-lg font-semibold text-[#1f2933] mb-2 mt-4" {...props} />,
+                      }}
+                    >
+                      {howToUseContent.replace(/^## How to use this\s*/i, '')}
+                    </ReactMarkdown>
+                  </div>
+                )}
               </div>
             )}
 

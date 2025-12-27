@@ -37,7 +37,16 @@ export function getAllCategorySlugs(): string[] {
     const fileNames = fs.readdirSync(contentDirectory);
     return fileNames
       .filter(name => name.endsWith('.md'))
-      .map(name => name.replace(/\.md$/, ''));
+      .map(name => name.replace(/\.md$/, ''))
+      .filter(slug => {
+        // Ensure slug is valid - no URLs, no special characters that would break paths
+        return slug && 
+               slug.length > 0 && 
+               !slug.includes('http://') && 
+               !slug.includes('https://') &&
+               !slug.includes('://') &&
+               !slug.startsWith('/');
+      });
   } catch (error) {
     console.error('Error reading category directory:', error);
     return [];
@@ -104,12 +113,31 @@ export function getCategoryBySlug(slug: string): CategoryData | null {
         if (match) {
           const title = match[1];
           const url = match[2];
-          const slug = url.replace('/wiki/pricing/', '');
-          relatedCategories.push({
-            title,
-            slug,
-            summary: '' // Would need to be populated from the actual category data
-          });
+          // Handle both relative paths (/wiki/pricing/...) and full URLs (https://sarahzou.com/wiki/pricing/...)
+          let slug = '';
+          
+          // Extract slug from URL - handle both full URLs and relative paths
+          if (url.includes('/wiki/pricing/')) {
+            // Extract everything after /wiki/pricing/
+            const parts = url.split('/wiki/pricing/');
+            if (parts.length > 1) {
+              slug = parts[1];
+              // Remove trailing slash and any query parameters or fragments
+              slug = slug.split('#')[0].split('?')[0].replace(/\/$/, '');
+            }
+          } else if (url.startsWith('/wiki/pricing/')) {
+            // Handle relative paths
+            slug = url.replace('/wiki/pricing/', '').split('#')[0].split('?')[0].replace(/\/$/, '');
+          }
+          
+          // Only add if we have a valid slug (not empty and doesn't contain http/https)
+          if (slug && slug.length > 0 && !slug.includes('http://') && !slug.includes('https://')) {
+            relatedCategories.push({
+              title,
+              slug,
+              summary: '' // Would need to be populated from the actual category data
+            });
+          }
         }
       }
     }

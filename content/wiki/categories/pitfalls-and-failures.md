@@ -10,14 +10,7 @@ canonical: "https://sarahzou.com/wiki/pricing/pitfalls-and-failures"
 
 ## What's in this category
 
-- **<span id="feature-shock">Feature shock (overbuilt, overpriced)</span>**: Overwhelming customers with too many features
-- **<span id="minivation">Minivation (underpricing innovation)</span>**: Leaving money on the table with new products
-- **<span id="hidden-gem">Hidden gem (poor commercialization)</span>**: Burying valuable features in lower tiers
-- **<span id="undead">Undead (kept alive without demand)</span>**: Maintaining features that don't add value
-- **<span id="cannibalization">Cannibalization (self-damage from new offers)</span>**: New products eating existing revenue
-- **<span id="shelfware">Shelfware (paid-for, unused features)</span>**: Customers buying unused capabilities
-- **<span id="customer-driven-pricing">Customer-driven pricing (direct WTP surveys)</span>**: Asking customers directly what they'd pay, which almost always leads to underpricing
-- **<span id="common-pricing-pitfalls">Common pricing pitfalls</span>**: Overview of mistakes that derail startups
+*I'm currently working on developing detailed content for this category. The concepts in this category are being developed and will be available soon with comprehensive guides, step-by-step instructions, and real-world examples.*
 
 ## How to use this
 
@@ -25,7 +18,10 @@ This category helps you avoid common pricing mistakes that can cost significant 
 
 ## Related categories
 
-- [Foundations](https://sarahzou.com/wiki/pricing/foundations) - Understanding fundamental principles to avoid common mistakes
-- [Packaging and Bundling](https://sarahzou.com/wiki/pricing/packaging-and-bundling) - Avoiding packaging pitfalls
-- [Governance and Process](https://sarahzou.com/wiki/pricing/governance-and-process) - Establishing processes to prevent failures
-- [Research and Metrics](https://sarahzou.com/wiki/pricing/research-and-metrics) - Using data to identify and prevent pricing failures
+- [Core Philosophies & Strategy](https://sarahzou.com/wiki/pricing/foundations) - Common pricing failure patterns
+- [Understanding Value & Customers](https://sarahzou.com/wiki/pricing/value-and-customers) - Understanding value to avoid common mistakes
+- [Product, Packaging & Bundling](https://sarahzou.com/wiki/pricing/packaging-and-bundling) - Avoiding packaging pitfalls
+- [Monetization Models & Metering](https://sarahzou.com/wiki/pricing/models-and-metering) - Avoiding pricing model mistakes
+- [Customer Research & Pricing Experiments](https://sarahzou.com/wiki/pricing/research-and-experiments) - Using data to identify and prevent pricing failures
+- [Unit Economics & Pricing Performance](https://sarahzou.com/wiki/pricing/economics-and-metrics) - Measuring and preventing pricing failures
+- [Governance, Process & Advanced Topics](https://sarahzou.com/wiki/pricing/governance-and-process) - Establishing processes to prevent failures

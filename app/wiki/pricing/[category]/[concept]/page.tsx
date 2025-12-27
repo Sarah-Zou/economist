@@ -24,8 +24,26 @@ export async function generateStaticParams() {
   const params: Array<{ category: string; concept: string }> = [];
   
   categories.forEach(category => {
+    // Validate category slug - must be a valid slug, not a URL
+    if (!category.slug || 
+        category.slug.includes('http://') || 
+        category.slug.includes('https://') ||
+        category.slug.includes('://') ||
+        category.slug.startsWith('/')) {
+      console.warn(`Invalid category slug detected: ${category.slug}, skipping...`);
+      return;
+    }
+    
     category.concepts.forEach(concept => {
       if (concept.id) {
+        // Validate concept ID
+        if (concept.id.includes('http://') || 
+            concept.id.includes('https://') ||
+            concept.id.includes('://')) {
+          console.warn(`Invalid concept ID detected: ${concept.id}, skipping...`);
+          return;
+        }
+        
         params.push({
           category: category.slug,
           concept: concept.id
@@ -195,7 +213,7 @@ function parseSnapshot(content: string): {
 // Helper function to parse Key Facts section from markdown content
 function parseKeyFacts(content: string): { 
   beforeKeyFacts: string; 
-  keyFacts: Array<{ title: string; description: string }> | null; 
+  keyFacts: Array<{ description: string; sourceUrl?: string }> | null; 
   afterKeyFacts: string 
 } {
   const keyFactsRegex = /##\s+Key Facts\s*\n([\s\S]*?)(?=\n##|$)/;
@@ -216,17 +234,56 @@ function parseKeyFacts(content: string): {
     .filter(line => line.trim().startsWith('-'))
     .map(line => line.replace(/^-\s*/, '').trim());
 
-  const keyFacts: Array<{ title: string; description: string }> = [];
+  const keyFacts: Array<{ description: string; sourceUrl?: string }> = [];
   
   for (const line of factLines) {
-    // Split by colon - first part is title, rest is description
-    const colonIndex = line.indexOf(':');
-    if (colonIndex > 0) {
-      const title = line.substring(0, colonIndex).trim();
-      const description = line.substring(colonIndex + 1).trim();
-      if (title && description) {
-        keyFacts.push({ title, description });
+    if (!line) continue;
+    
+    // Extract markdown links: [text](url)
+    const markdownLinkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    
+    let description = line;
+    let sourceUrl: string | undefined;
+    
+    // Find all markdown links in the line
+    const links: Array<{ text: string; url: string; fullMatch: string }> = [];
+    let match;
+    while ((match = markdownLinkRegex.exec(line)) !== null) {
+      links.push({
+        text: match[1],
+        url: match[2],
+        fullMatch: match[0]
+      });
+    }
+    
+    // If we found links, use the last one as the source (usually the citation)
+    if (links.length > 0) {
+      const lastLink = links[links.length - 1];
+      sourceUrl = lastLink.url;
+      
+      // Remove the markdown link from description, but keep the link text if it's a citation
+      // Check if the link text looks like a citation (contains "Source", "DOI", or is a URL-like text)
+      const isCitation = /source|doi|http/i.test(lastLink.text);
+      if (isCitation) {
+        // Remove the citation link entirely from description
+        description = description.replace(lastLink.fullMatch, '').trim();
+      } else {
+        // Keep the link text in the description
+        description = description.replace(lastLink.fullMatch, lastLink.text).trim();
       }
+      
+      // Remove any other markdown links but keep their text
+      links.slice(0, -1).forEach(link => {
+        description = description.replace(link.fullMatch, link.text);
+      });
+    }
+    
+    // Clean up description - remove trailing periods and extra spaces
+    description = description.replace(/\s*\.\s*$/, '').trim();
+    description = description.replace(/\s+/g, ' ').trim();
+    
+    if (description) {
+      keyFacts.push({ description, sourceUrl });
     }
   }
 
@@ -820,20 +877,23 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {keyFacts.map((fact, index) => {
                               // Choose icon based on content
+                              const descriptionLower = fact.description.toLowerCase();
                               let Icon = DollarSign;
-                              if (fact.title.toLowerCase().includes('hour') || fact.title.toLowerCase().includes('time')) {
+                              if (descriptionLower.includes('hour') || descriptionLower.includes('time')) {
                                 Icon = Clock;
-                              } else if (fact.title.toLowerCase().includes('cream') || fact.title.toLowerCase().includes('segment')) {
+                              } else if (descriptionLower.includes('cream') || descriptionLower.includes('segment')) {
                                 Icon = Target;
-                              } else if (fact.title.toLowerCase().includes('loyal') || fact.title.toLowerCase().includes('brand') || fact.title.toLowerCase().includes('retention')) {
+                              } else if (descriptionLower.includes('loyal') || descriptionLower.includes('brand') || descriptionLower.includes('retention')) {
                                 Icon = CheckCircle;
-                              } else if (fact.title.toLowerCase().includes('wtp') || fact.title.toLowerCase().includes('premium') || fact.title.toLowerCase().includes('tier') || fact.title.toLowerCase().includes('growth')) {
+                              } else if (descriptionLower.includes('wtp') || descriptionLower.includes('premium') || descriptionLower.includes('tier') || descriptionLower.includes('growth')) {
                                 Icon = TrendingUp;
-                              } else if (fact.title.toLowerCase().includes('failure') || fact.title.toLowerCase().includes('risk') || fact.title.toLowerCase().includes('fail')) {
+                              } else if (descriptionLower.includes('failure') || descriptionLower.includes('risk') || descriptionLower.includes('fail')) {
                                 Icon = AlertCircle;
-                              } else if (fact.title.toLowerCase().includes('compan') || fact.title.toLowerCase().includes('%')) {
+                              } else if (descriptionLower.includes('compan') || descriptionLower.includes('companies') || descriptionLower.includes('firms')) {
                                 Icon = Users;
-                              } else if (fact.title.toLowerCase().includes('profit') || fact.title.toLowerCase().includes('%')) {
+                              } else if (descriptionLower.includes('profit') || descriptionLower.includes('profitability') || descriptionLower.includes('operating profit')) {
+                                Icon = DollarSign;
+                              } else if (descriptionLower.includes('value-based') || descriptionLower.includes('pricing strategy')) {
                                 Icon = DollarSign;
                               }
 
@@ -842,9 +902,6 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#f6f7f9] mb-4">
                                     <Icon className="w-6 h-6 text-[#ff5722]" />
                                   </div>
-                                  <h3 className="text-xl font-bold text-[#1f2933] mb-2">
-                                    {fact.title}
-                                  </h3>
                                   <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                                     <ReactMarkdown
                                       remarkPlugins={[remarkGfm]}
@@ -865,6 +922,16 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                     >
                                       {fact.description}
                                     </ReactMarkdown>
+                                    {fact.sourceUrl && (
+                                      <a
+                                        href={fact.sourceUrl}
+                                        className="text-[#ff5722] hover:underline font-medium text-sm mt-2 block"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                      >
+                                        {fact.sourceUrl}
+                                      </a>
+                                    )}
                                   </div>
                                 </div>
                               );

@@ -10,12 +10,7 @@ canonical: "https://sarahzou.com/wiki/pricing/intl-channels-billing"
 
 ## What's in this category
 
-- **FX & currency strategy**: Multi-currency pricing and exchange rate management
-- **VAT/GST & tax-inclusive pricing**: International tax compliance and pricing
-- **Channels & marketplaces**: Take-rates, direct-vs-reseller parity
-- **Billing & entitlements**: Subscription management and access control
-- **Dunning, refunds/credits & SLA remedies**: Payment failure and customer service
-- **Regulatory compliance**: Meeting local pricing and billing requirements
+*I'm currently working on developing detailed content for this category. The concepts in this category are being developed and will be available soon with comprehensive guides, step-by-step instructions, and real-world examples.*
 
 ## How to use this
 
@@ -23,7 +18,8 @@ This category covers the complexities of pricing and billing across internationa
 
 ## Related categories
 
-- [Price Architecture](https://sarahzou.com/wiki/pricing/price-architecture) - Structuring pricing for international markets
-- [Governance and Process](https://sarahzou.com/wiki/pricing/governance-and-process) - Managing international pricing processes
-- [Competitive and Positioning](https://sarahzou.com/wiki/pricing/competitive-and-positioning) - Understanding international competitive landscapes
-- [Research and Metrics](https://sarahzou.com/wiki/pricing/research-and-metrics) - Analyzing international market data
+- [Monetization Models & Metering](https://sarahzou.com/wiki/pricing/models-and-metering) - Global pricing & billing ops concepts
+- [Core Philosophies & Strategy](https://sarahzou.com/wiki/pricing/foundations) - Core pricing strategies for international markets
+- [Competitive Dynamics & Positioning](https://sarahzou.com/wiki/pricing/competitive-and-positioning) - Understanding international competitive landscapes
+- [Customer Research & Pricing Experiments](https://sarahzou.com/wiki/pricing/research-and-experiments) - Analyzing international market data
+- [Governance, Process & Advanced Topics](https://sarahzou.com/wiki/pricing/governance-and-process) - Managing international pricing processes

@@ -13,10 +13,10 @@ canonical: "https://sarahzou.com/wiki/pricing/competitive-and-positioning"
 - **<span id="price-wars">Price wars (avoid/contain)</span>**: Strategies to prevent and manage competitive pricing conflicts
 - **<span id="price-positioning">Price positioning & relative value playbooks</span>**: Parity vs differentiation in commoditizing markets
 - **<span id="value-map">Value map & Value Equivalence Line (VEL)</span>**: Visualizing competitive positioning
-- **<span id="conscious-parallelism">Conscious parallelism (legal mirroring)</span>**: Legal competitive pricing strategies
 - **<span id="price-signaling">Price signaling (legal, customer-facing)</span>**: Using pricing to communicate positioning
-- **<span id="positioning">Positioning</span>**: Defining the problem you solve, for whom, and why your approach is superior
 - **<span id="competitive-reference-price">Competitive reference price mapping</span>**: Understanding and responding to competitor pricing
+
+*I'm currently working on developing detailed content for these concepts. Check back soon for comprehensive guides, step-by-step instructions, and real-world examples.*
 
 ## How to use this
 
@@ -24,7 +24,8 @@ This category helps you understand your competitive landscape and position your 
 
 ## Related categories
 
-- [Foundations](https://sarahzou.com/wiki/pricing/foundations) - Strategic alignment of competitive positioning
-- [Value and Customers](https://sarahzou.com/wiki/pricing/value-and-customers) - Understanding your unique value proposition
-- [Research and Metrics](https://sarahzou.com/wiki/pricing/research-and-metrics) - Data-driven competitive analysis
-- [Behavioral Psychology](https://sarahzou.com/wiki/pricing/behavioral-psychology) - Psychological aspects of competitive positioning
+- [Core Philosophies & Strategy](https://sarahzou.com/wiki/pricing/foundations) - Strategic alignment of competitive positioning
+- [Understanding Value & Customers](https://sarahzou.com/wiki/pricing/value-and-customers) - Understanding your unique value proposition
+- [Customer Research & Pricing Experiments](https://sarahzou.com/wiki/pricing/research-and-experiments) - Data-driven competitive analysis
+- [Monetization Models & Metering](https://sarahzou.com/wiki/pricing/models-and-metering) - Pricing models and psychological pricing principles
+- [Sales/Marketing Comms & Deal Structuring](https://sarahzou.com/wiki/pricing/comms-and-deals) - Communicating competitive positioning

@@ -16,11 +16,8 @@ canonical: "https://sarahzou.com/wiki/pricing/governance-and-process"
 - **<span id="cpq-rules">CPQ rules, deal-desk guardrails & approvals</span>**: Pricing system configuration
 - **<span id="pricing-calendar">Pricing calendar, integrity policy</span>**: Change management and consistency
 - **<span id="raising-prices">Raising-prices & grandfathering playbooks</span>**: Price increase strategies
-- **<span id="transformation">Transformation & capability building</span>**: Organizational pricing maturity
-- **<span id="ai-dynamic-pricing">AI & dynamic pricing</span>**: Machine learning and automated pricing
-- **<span id="elasticity-ml">Elasticity ML, personalization vs fairness</span>**: Advanced pricing algorithms
-- **<span id="genai-pricing">GenAI token/cost modeling</span>**: AI service pricing strategies
-- **<span id="compliance-ethics">Compliance/ethics</span>**: Responsible pricing practices
+
+*I'm currently working on developing detailed content for these concepts. Check back soon for comprehensive guides, step-by-step instructions, and real-world examples.*
 
 ## How to use this
 
@@ -28,7 +25,8 @@ This category helps you establish the organizational structures and processes ne
 
 ## Related categories
 
-- [Foundations](https://sarahzou.com/wiki/pricing/foundations) - Strategic alignment of pricing governance
-- [Comms and Deals](https://sarahzou.com/wiki/pricing/comms-and-deals) - Managing pricing communication processes
-- [Research and Metrics](https://sarahzou.com/wiki/pricing/research-and-metrics) - Implementing research findings into governance
-- [Pitfalls and Failures](https://sarahzou.com/wiki/pricing/pitfalls-and-failures) - Learning from common pricing governance mistakes
+- [Core Philosophies & Strategy](https://sarahzou.com/wiki/pricing/foundations) - Strategic alignment of pricing governance and common failure patterns
+- [Monetization Models & Metering](https://sarahzou.com/wiki/pricing/models-and-metering) - Governance of pricing models and structures
+- [Sales/Marketing Comms & Deal Structuring](https://sarahzou.com/wiki/pricing/comms-and-deals) - Managing pricing communication processes
+- [Customer Research & Pricing Experiments](https://sarahzou.com/wiki/pricing/research-and-experiments) - Implementing research findings into governance
+- [Unit Economics & Pricing Performance](https://sarahzou.com/wiki/pricing/economics-and-metrics) - Using metrics to inform pricing governance
