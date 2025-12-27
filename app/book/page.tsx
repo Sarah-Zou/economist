@@ -57,7 +57,7 @@ export default function BookPage() {
             <div className="overflow-hidden">
               <div 
                 className="calendly-inline-widget"
-                data-url="https://calendly.com/sarahxzou/free-consult-30-min"
+                data-url="https://calendly.com/sarahxzou/free-consult-30-min?embed_domain=sarahzou.com&embed_type=Inline"
                 style={{ minWidth: '320px', height: '650px', overflow: 'hidden' }}
               />
               <Script 
@@ -68,6 +68,52 @@ export default function BookPage() {
           </div>
         </div>
       </section>
+      <Script
+        id="calendly-ga4-tracking"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function () {
+              function isCalendlyMessage(e) {
+                return e?.data?.event && typeof e.data.event === "string" && e.data.event.indexOf("calendly.") === 0;
+              }
+
+              window.addEventListener("message", function (e) {
+                // Security: only accept Calendly as sender
+                if (e.origin !== "https://calendly.com") return;
+                if (!isCalendlyMessage(e)) return;
+
+                const calendlyEvent = e.data.event; // e.g. "calendly.event_scheduled"
+                const payload = e.data.payload || {};
+
+                // GA4 event names must use only letters/numbers/underscores (no dots)
+                const ga4EventName = calendlyEvent.replaceAll(".", "_"); // "calendly_event_scheduled"
+
+                // Option A: send the raw calendly event name mapped to underscores
+                if (typeof gtag === "function") {
+                  gtag("event", ga4EventName, {
+                    calendly_event: calendlyEvent,
+                    // keep parameters small/simple (GA4 will drop complex objects)
+                    event_uri: payload.event?.uri || undefined,
+                    invitee_uri: payload.invitee?.uri || undefined
+                  });
+                }
+
+                // Option B (recommended): also send a clean "business" conversion event
+                if (calendlyEvent === "calendly.event_scheduled" && typeof gtag === "function") {
+                  gtag("event", "book_intro_call", {
+                    event_uri: payload.event?.uri || undefined,
+                    invitee_uri: payload.invitee?.uri || undefined
+                  });
+                }
+
+                // Helpful for debugging in browser console
+                // console.log("Calendly message:", calendlyEvent, payload);
+              });
+            })();
+          `,
+        }}
+      />
     </>
   )
 }
