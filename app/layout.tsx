@@ -1,11 +1,22 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
+const inter = Inter({ 
+  subsets: ['latin'], 
+  variable: '--font-inter',
+  display: 'swap',
+  preload: true,
+})
+const playfair = Playfair_Display({ 
+  subsets: ['latin'], 
+  variable: '--font-playfair',
+  display: 'swap',
+  preload: true,
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sarahzou.com'),
@@ -28,33 +39,57 @@ export default function RootLayout({
       <head>
         {/* Favicon */}
         <link rel="icon" href="/images/EconNova_icon.png" type="image/png" />
-        {/* Google Analytics 4 */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BX0JPBNQ5K"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
+        {/* Preconnect to external domains for faster loading */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+        {/* Cookie Consent CSS - loaded asynchronously via script */}
+      </head>
+      <body className="font-sans">
+        {/* Google Analytics 4 - afterInteractive strategy for non-blocking */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-BX0JPBNQ5K"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-BX0JPBNQ5K');
-          `,
-        }} />
-        {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17632716336"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
+          `}
+        </Script>
+        {/* Google tag (gtag.js) - afterInteractive strategy */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17632716336"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-17632716336');
-          `,
-        }} />
-        {/* Cookie Consent CSS */}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
-        {/* Cookie Consent JS */}
-        <script defer src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
-        {/* Cookie Consent Init */}
-        <script defer dangerouslySetInnerHTML={{
-          __html: `
+          `}
+        </Script>
+        {/* Cookie Consent CSS - loaded asynchronously */}
+        <Script id="cookie-consent-css" strategy="lazyOnload">
+          {`
+            (function() {
+              var link = document.createElement('link');
+              link.rel = 'stylesheet';
+              link.href = 'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css';
+              document.head.appendChild(link);
+            })();
+          `}
+        </Script>
+        {/* Cookie Consent JS - lazyOnload for non-critical */}
+        <Script
+          src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
+          strategy="lazyOnload"
+        />
+        {/* Cookie Consent Init - lazyOnload */}
+        <Script id="cookie-consent-init" strategy="lazyOnload">
+          {`
             window.addEventListener('load',function(){
               if(window.cookieconsent) {
                 window.cookieconsent.initialise({
@@ -66,10 +101,8 @@ export default function RootLayout({
                 });
               }
             });
-          `,
-        }} />
-      </head>
-      <body className="font-sans">
+          `}
+        </Script>
         <Navbar />
         <main className="min-h-screen">
           {children}

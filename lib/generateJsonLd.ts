@@ -19,6 +19,30 @@ export interface CategoryItem {
   description: string;
 }
 
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export function generateFAQJsonLd(data: {
+  url: string;
+  faqItems: FAQItem[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "url": data.url,
+    "mainEntity": data.faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
+}
+
 export function generateArticleJsonLd(data: ArticleData) {
   return {
     "@context": "https://schema.org",

@@ -1,8 +1,9 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { generateArticleJsonLd, generateBreadcrumbJsonLd } from '@/lib/generateJsonLd';
+import { generateArticleJsonLd, generateBreadcrumbJsonLd, generateFAQJsonLd } from '@/lib/generateJsonLd';
 import { getCategoryBySlug, getAllCategories, getConceptBySlug } from '@/lib/mdx';
 import WikiLayout from '@/components/wiki/WikiLayout';
+import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter';
 import TableOfContents from '@/components/wiki/TableOfContents';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
@@ -537,6 +538,28 @@ export default function ConceptPage({ params }: ConceptPageProps) {
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
 
+  // Generate FAQ schema from parsed FAQ items, or create default FAQs if none exist
+  const faqItemsForSchema = faqItems.length > 0 
+    ? faqItems.map(item => ({
+        question: item.question,
+        answer: item.answer
+      }))
+    : [
+        {
+          question: `What is ${conceptName}?`,
+          answer: description || `Learn about ${conceptName} in the context of ${category.title}. This concept is part of the ${category.title} category in the Pricing & Monetization Wiki.`
+        },
+        {
+          question: `How does ${conceptName} relate to ${category.title}?`,
+          answer: `${conceptName} is a key concept within ${category.title}, which focuses on ${category.summary.toLowerCase()}. Understanding this concept helps you apply ${category.title.toLowerCase()} strategies effectively.`
+        }
+      ];
+
+  const faqJsonLd = generateFAQJsonLd({
+    url: `https://sarahzou.com/wiki/pricing/${params.category}/${params.concept}`,
+    faqItems: faqItemsForSchema
+  });
+
   return (
     <>
       <script
@@ -546,6 +569,10 @@ export default function ConceptPage({ params }: ConceptPageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       
       <div className="min-h-screen bg-[#f9f6f7]">
@@ -1221,6 +1248,9 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                           </a>
                         </div>
                       </div>
+
+                      {/* License Footer */}
+                      <WikiLicenseFooter />
                     </>
                   ) : (
                     <>

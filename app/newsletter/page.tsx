@@ -1,7 +1,38 @@
+import { Metadata } from 'next'
 import { getAllPosts } from '@/lib/api'
 import Image from 'next/image'
 import Link from 'next/link'
 import { format } from 'date-fns'
+
+export const metadata: Metadata = {
+  title: "Newsletter | Pricing & Monetization Insights | Sarah Zou",
+  description: "Weekly newsletter on pricing research, experiments, benchmarks, and real case studies from tech startups. Actionable frameworks for pricing and growth strategies.",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: "https://sarahzou.com/newsletter",
+  },
+  openGraph: {
+    title: "Newsletter | Pricing & Monetization Insights | Sarah Zou",
+    description: "Weekly newsletter on pricing research, experiments, benchmarks, and real case studies from tech startups. Actionable frameworks for pricing and growth strategies.",
+    type: "website",
+    url: "https://sarahzou.com/newsletter",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Newsletter | Pricing & Monetization Insights | Sarah Zou",
+    description: "Weekly newsletter on pricing research, experiments, benchmarks, and real case studies from tech startups.",
+  },
+};
 
 function ArticleList() {
   const posts = getAllPosts()

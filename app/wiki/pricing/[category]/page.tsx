@@ -1,8 +1,9 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { generateArticleJsonLd, generateBreadcrumbJsonLd } from '@/lib/generateJsonLd';
+import { generateArticleJsonLd, generateBreadcrumbJsonLd, generateFAQJsonLd } from '@/lib/generateJsonLd';
 import { getCategoryBySlug, getAllCategorySlugs } from '@/lib/mdx';
 import WikiLayout from '@/components/wiki/WikiLayout';
+import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter';
 import Link from 'next/link';
 import { Diamond, Settings, TrendingDown, Grid3x3, AlertTriangle, Lightbulb, BookOpen, Briefcase, GraduationCap } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
@@ -120,6 +121,27 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
 
+  // Generate FAQ schema with relevant questions about the category
+  const faqItems = [
+    {
+      question: `What is ${category.title}?`,
+      answer: category.summary
+    },
+    {
+      question: `How do I use the ${category.title} category?`,
+      answer: `The ${category.title} category provides comprehensive guidance on ${category.summary.toLowerCase()}. Browse the concepts in this category to find detailed information, step-by-step guides, and practical applications for your pricing strategy.`
+    },
+    {
+      question: `What concepts are covered in ${category.title}?`,
+      answer: `This category covers ${category.concepts.length} key concepts related to ${category.title.toLowerCase()}. Each concept includes detailed explanations, real-world examples, and actionable strategies you can implement in your business.`
+    }
+  ];
+
+  const faqJsonLd = generateFAQJsonLd({
+    url: category.canonical,
+    faqItems
+  });
+
   // Extract only the "How to use this" section from markdown content
   // Skip "What's in this category" and "Related categories" as they're rendered manually
   const extractHowToUseSection = (content: string): string => {
@@ -155,6 +177,10 @@ export default function CategoryPage({ params }: CategoryPageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       
       <WikiLayout breadcrumbs={breadcrumbs}>
@@ -521,6 +547,9 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               Book Free Consult
             </Link>
           </div>
+
+          {/* License Footer */}
+          <WikiLicenseFooter />
         </div>
       </WikiLayout>
     </>
