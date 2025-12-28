@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* KaTeX styles for math formula rendering */
+@import 'katex/dist/katex.min.css';
+
 @layer base {
   :root {
     --background: 249 33% 98%; /* #f9f6f7 */

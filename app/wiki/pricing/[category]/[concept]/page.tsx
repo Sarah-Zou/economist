@@ -8,7 +8,9 @@ import TableOfContents from '@/components/wiki/TableOfContents';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
 import rehypeRaw from 'rehype-raw';
+import rehypeKatex from 'rehype-katex';
 import { Zap, Info, TrendingUp, Clock, CheckCircle, DollarSign, Users, AlertCircle, TrendingDown, XCircle, ArrowLeftRight, Target, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 
@@ -286,6 +288,13 @@ function parseKeyFacts(content: string): {
       descriptionText = description.substring(colonIndex + 1).trim();
     }
     
+    // Strip markdown bold syntax (**text**) from title only (description will be parsed by ReactMarkdown)
+    title = title.replace(/\*\*/g, '').trim();
+    
+    // Clean up any orphaned ** at the start or end of description (but preserve internal **text** patterns)
+    // Remove leading ** followed by space, or trailing ** preceded by space
+    descriptionText = descriptionText.replace(/^\*\*\s+/, '').replace(/\s+\*\*$/, '').trim();
+    
     if (description) {
       keyFacts.push({ title, description: descriptionText, sourceUrl, sourceText });
     }
@@ -424,7 +433,20 @@ const markdownComponents = {
       .replace(/\s+/g, '-')
       .replace(/-+/g, '-')
       .trim()
-    return <h2 id={id} className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-[4.5rem] scroll-mt-24" {...props} />
+    
+    // Add icons for specific h2 headings
+    let Icon = null;
+    const headingText = text.toLowerCase();
+    if (headingText.includes('decision criteria') || (headingText.includes('when') && headingText.includes('right tool'))) {
+      Icon = Target;
+    }
+    
+    return (
+      <h2 id={id} className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-[4.5rem] scroll-mt-24 flex items-center gap-3">
+        {Icon && <Icon className="w-6 h-6 text-[#ff5722] flex-shrink-0" />}
+        <span>{props.children}</span>
+      </h2>
+    );
   },
   h3: ({ node, ...props }: any) => {
     const text = String(props.children)
@@ -504,9 +526,37 @@ const markdownComponents = {
   th: ({ node, ...props }: any) => (
     <th className="text-left py-4 px-6 font-semibold text-sm text-[#1f2933] border-b-2 border-[#e5e7eb] uppercase tracking-wide first:pl-6 last:pr-6" {...props} />
   ),
-  td: ({ node, ...props }: any) => (
-    <td className="py-5 px-6 text-base sm:text-[17px] text-[#1f2933] leading-[1.65] border-b border-[#e5e7eb] align-top first:pl-6 last:pr-6" {...props} />
-  ),
+  td: ({ node, ...props }: any) => {
+    // Check if this is a "Decision criteria" table cell with fit level
+    const cellText = String(props.children || '').trim();
+    let Icon = null;
+    let iconColor = '';
+    
+    // Check if this cell contains a fit level indicator
+    if (cellText.toLowerCase().includes('very high') || cellText.toLowerCase().includes('critical')) {
+      Icon = CheckCircle;
+      iconColor = 'text-green-600';
+    } else if (cellText.toLowerCase().includes('high')) {
+      Icon = TrendingUp;
+      iconColor = 'text-blue-600';
+    } else if (cellText.toLowerCase().includes('lower') || cellText.toLowerCase().includes('limited')) {
+      Icon = AlertCircle;
+      iconColor = 'text-amber-600';
+    }
+    
+    return (
+      <td className="py-5 px-6 text-base sm:text-[17px] text-[#1f2933] leading-[1.65] border-b border-[#e5e7eb] align-top first:pl-6 last:pr-6" {...props}>
+        {Icon ? (
+          <div className="flex items-center gap-2">
+            <Icon className={`w-5 h-5 ${iconColor} flex-shrink-0`} />
+            <span>{props.children}</span>
+          </div>
+        ) : (
+          props.children
+        )}
+      </td>
+    );
+  },
   tbody: ({ node, ...props }: any) => (
     <tbody className="divide-y divide-[#e5e7eb]" {...props} />
   ),
@@ -516,6 +566,25 @@ const markdownComponents = {
   div: ({ node, ...props }: any) => {
     // Preserve all props including className for nested divs
     return <div {...props} />;
+  },
+  img: ({ node, src, alt, ...props }: any) => {
+    // Handle images with Next.js Image component for optimization
+    if (src?.startsWith('/')) {
+      return (
+        <div className="my-8 flex justify-center">
+          <Image
+            src={src}
+            alt={alt || ''}
+            width={800}
+            height={600}
+            className="rounded-lg shadow-lg max-w-full h-auto"
+            {...props}
+          />
+        </div>
+      );
+    }
+    // Fallback for external images
+    return <img src={src} alt={alt} className="my-8 rounded-lg shadow-lg max-w-full h-auto" {...props} />;
   },
 };
 
@@ -736,8 +805,8 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {/* Content before Snapshot */}
                       {beforeSnapshot && (
                         <ReactMarkdown
-                          remarkPlugins={[remarkGfm]}
-                          rehypePlugins={[rehypeRaw]}
+                          remarkPlugins={[remarkGfm, remarkMath]}
+                          rehypePlugins={[rehypeRaw, rehypeKatex]}
                           components={markdownComponents}
                         >
                           {beforeSnapshot}
@@ -864,8 +933,8 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {/* Content after Snapshot but before Key Facts */}
                       {keyFacts && keyFacts.length > 0 && beforeKeyFacts && beforeKeyFacts.trim() && (
                         <ReactMarkdown
-                          remarkPlugins={[remarkGfm]}
-                          rehypePlugins={[rehypeRaw]}
+                          remarkPlugins={[remarkGfm, remarkMath]}
+                          rehypePlugins={[rehypeRaw, rehypeKatex]}
                           components={markdownComponents}
                         >
                           {beforeKeyFacts}
@@ -909,7 +978,7 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                     </div>
                                     {fact.title && (
                                       <h3 className="text-lg font-semibold text-[#1f2933]">
-                                        {fact.title}
+                                        <strong>{fact.title}</strong>
                                       </h3>
                                     )}
                                   </div>
@@ -917,9 +986,13 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                                     {fact.description && (
                                       <ReactMarkdown
                                         remarkPlugins={[remarkGfm]}
+                                        rehypePlugins={[rehypeRaw]}
                                         components={{
                                           p: ({ node, ...props }) => (
                                             <p className="mb-0 text-left" {...props} />
+                                          ),
+                                          strong: ({ node, ...props }) => (
+                                            <strong className="font-bold text-[#1f2933]" {...props} />
                                           ),
                                           a: ({ node, href, ...props }) => (
                                             <a
@@ -954,10 +1027,10 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       )}
 
                       {/* Content after Key Facts but before Step-by-step */}
-                      {steps && steps.length > 0 && beforeStepByStep && beforeStepByStep.trim() && (
+                      {beforeStepByStep && beforeStepByStep.trim() && (
                         <ReactMarkdown
-                          remarkPlugins={[remarkGfm]}
-                          rehypePlugins={[rehypeRaw]}
+                          remarkPlugins={[remarkGfm, remarkMath]}
+                          rehypePlugins={[rehypeRaw, rehypeKatex]}
                           components={markdownComponents}
                         >
                           {beforeStepByStep}
@@ -974,7 +1047,8 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                           {beforeStepsContent && (
                             <div className="mb-6">
                               <ReactMarkdown
-                                remarkPlugins={[remarkGfm]}
+                                remarkPlugins={[remarkGfm, remarkMath]}
+                                rehypePlugins={[rehypeKatex]}
                                 components={{
                                   p: ({ node, ...props }) => (
                                     <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-6" {...props} />
@@ -1079,7 +1153,8 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                           {afterStepsContent && afterStepsContent.trim() && (
                             <div className="mt-6">
                               <ReactMarkdown
-                                remarkPlugins={[remarkGfm]}
+                                remarkPlugins={[remarkGfm, remarkMath]}
+                                rehypePlugins={[rehypeKatex]}
                                 components={{
                                   p: ({ node, ...props }) => (
                                     <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />
@@ -1123,8 +1198,8 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {/* Content after Step-by-step but before Metrics */}
                       {metrics && metrics.length > 0 && beforeMetrics && beforeMetrics.trim() && (
                         <ReactMarkdown
-                          remarkPlugins={[remarkGfm]}
-                          rehypePlugins={[rehypeRaw]}
+                          remarkPlugins={[remarkGfm, remarkMath]}
+                          rehypePlugins={[rehypeRaw, rehypeKatex]}
                           components={markdownComponents}
                         >
                           {beforeMetrics}
@@ -1133,8 +1208,8 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {/* Content after Step-by-step when there are no Metrics or FAQ sections */}
                       {steps && steps.length > 0 && (!metrics || metrics.length === 0) && faqItems.length === 0 && afterStepByStepContent && afterStepByStepContent.trim() && (
                         <ReactMarkdown
-                          remarkPlugins={[remarkGfm]}
-                          rehypePlugins={[rehypeRaw]}
+                          remarkPlugins={[remarkGfm, remarkMath]}
+                          rehypePlugins={[rehypeRaw, rehypeKatex]}
                           components={markdownComponents}
                         >
                           {afterStepByStepContent}
@@ -1143,8 +1218,8 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {/* Content when there are no Step-by-step, Metrics, or FAQ sections - render through beforeFAQ (last parsed) */}
                       {(!steps || steps.length === 0) && (!metrics || metrics.length === 0) && faqItems.length === 0 && beforeFAQ && beforeFAQ.trim() && (
                         <ReactMarkdown
-                          remarkPlugins={[remarkGfm]}
-                          rehypePlugins={[rehypeRaw]}
+                          remarkPlugins={[remarkGfm, remarkMath]}
+                          rehypePlugins={[rehypeRaw, rehypeKatex]}
                           components={markdownComponents}
                         >
                           {beforeFAQ}
@@ -1208,8 +1283,8 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {/* Content after Metrics but before FAQ */}
                       {metrics && metrics.length > 0 && beforeFAQ && beforeFAQ.trim() && (
                         <ReactMarkdown
-                          remarkPlugins={[remarkGfm]}
-                          rehypePlugins={[rehypeRaw]}
+                          remarkPlugins={[remarkGfm, remarkMath]}
+                          rehypePlugins={[rehypeRaw, rehypeKatex]}
                           components={markdownComponents}
                         >
                           {beforeFAQ}
@@ -1218,8 +1293,8 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {/* Content after Metrics when there are no FAQ sections */}
                       {metrics && metrics.length > 0 && faqItems.length === 0 && afterMetricsContent && afterMetricsContent.trim() && (
                         <ReactMarkdown
-                          remarkPlugins={[remarkGfm]}
-                          rehypePlugins={[rehypeRaw]}
+                          remarkPlugins={[remarkGfm, remarkMath]}
+                          rehypePlugins={[rehypeRaw, rehypeKatex]}
                           components={markdownComponents}
                         >
                           {afterMetricsContent}
@@ -1228,8 +1303,8 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {/* Content before FAQ (only if FAQ exists and no Metrics) */}
                       {faqItems.length > 0 && (!metrics || metrics.length === 0) && beforeFAQ && beforeFAQ.trim() && (
                         <ReactMarkdown
-                          remarkPlugins={[remarkGfm]}
-                          rehypePlugins={[rehypeRaw]}
+                          remarkPlugins={[remarkGfm, remarkMath]}
+                          rehypePlugins={[rehypeRaw, rehypeKatex]}
                           components={markdownComponents}
                         >
                           {beforeFAQ}
@@ -1294,8 +1369,8 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       {/* Content after FAQ */}
                       {afterFAQ && (
                         <ReactMarkdown
-                          remarkPlugins={[remarkGfm]}
-                          rehypePlugins={[rehypeRaw]}
+                          remarkPlugins={[remarkGfm, remarkMath]}
+                          rehypePlugins={[rehypeRaw, rehypeKatex]}
                           components={markdownComponents}
                         >
                           {afterFAQ}

@@ -10,7 +10,7 @@ canonical: "https://sarahzou.com/wiki/pricing/value-and-customers"
 
 ## What's in this category
 
-- **<span id="economic-value-estimation">Economic Value Estimation</span>**: Reference value + differentiation value analysis
+- **[<span id="economic-value-estimation">Economic Value Estimation</span>](/wiki/pricing/value-and-customers/economic-value-estimation)**: Reference value + differentiation value analysis
 - **<span id="value-decoder-framework">Value Decoder framework</span>**: Reference price + positive differentiation value - negative differentiation value calculation
 - **<span id="perceived-value">Perceived value</span>**: How customers perceive and evaluate value
 - **<span id="willingness-to-pay">Willingness-to-pay (WTP)</span>**: Methods for measuring and maximizing customer WTP

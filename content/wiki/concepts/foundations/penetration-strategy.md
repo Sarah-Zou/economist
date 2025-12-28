@@ -167,7 +167,7 @@ Use skimming when:
 ### Sources:
 
 - Nagle, T. T., Müller, G., & Gruyaert, E. (2023). *The strategy and tactics of pricing: A guide to growing more profitably* (7th ed.). Routledge.
-- Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. John Wiley & Sons. [Google Books](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ) | [Simon-Kucher publisher page](https://www.simon-kucher.com/en/insights/monetizing-innovation)
+- Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. John Wiley & Sons. [Google Books](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ)
 - Raju, J., & Zhang, Z. J. (2010). *Smart pricing: How Google, Priceline, and leading businesses use pricing innovation for profitability*. FT Press.
 - Ghuman, A. (2021). *Price to scale: Practical pricing for your high-growth SaaS startup*. Independently published.
 
