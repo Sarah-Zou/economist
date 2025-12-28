@@ -45,64 +45,137 @@ export default function RootLayout({
         {/* Cookie Consent CSS - loaded asynchronously via script */}
       </head>
       <body className="font-sans">
-        {/* Google Analytics 4 - afterInteractive strategy for non-blocking */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-BX0JPBNQ5K"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+        {/* Initialize Google Tag Manager with consent mode denied by default (GDPR compliant) */}
+        <Script id="gtag-init" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-BX0JPBNQ5K');
-          `}
-        </Script>
-        {/* Google tag (gtag.js) - afterInteractive strategy */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17632716336"
-          strategy="afterInteractive"
-        />
-        <Script id="google-ads" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-17632716336');
-          `}
-        </Script>
+            // Set consent mode to denied by default (GDPR compliant)
+            gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'analytics_storage': 'denied',
+              'wait_for_update': 500
+            });
+          `
+        }} />
         {/* Cookie Consent CSS - loaded asynchronously */}
-        <Script id="cookie-consent-css" strategy="lazyOnload">
-          {`
+        <Script id="cookie-consent-css" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          __html: `
             (function() {
               var link = document.createElement('link');
               link.rel = 'stylesheet';
               link.href = 'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css';
               document.head.appendChild(link);
             })();
-          `}
-        </Script>
-        {/* Cookie Consent JS - lazyOnload for non-critical */}
+          `
+        }} />
+        {/* Cookie Consent JS - afterInteractive to ensure it loads before init */}
         <Script
           src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
-        {/* Cookie Consent Init - lazyOnload */}
-        <Script id="cookie-consent-init" strategy="lazyOnload">
-          {`
-            window.addEventListener('load',function(){
-              if(window.cookieconsent) {
+        {/* Cookie Consent Init - fallback if onLoad doesn't work */}
+        <Script id="cookie-consent-init" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          __html: `
+            (function initCookieConsent() {
+              if(typeof window.cookieconsent !== 'undefined') {
                 window.cookieconsent.initialise({
-                  palette:{popup:{background:'#222'},button:{background:'#6344ff'}},
-                  content:{message:'This site uses cookies for analytics.',dismiss:'Got it',link:'Learn more'},
-                  onInitialise: function(status){
-                    if(status==='allow'){gtag('consent','update',{ad_storage:'granted',analytics_storage:'granted'});}
+                  palette: {
+                    popup: { background: '#222', text: '#fff' },
+                    button: { background: '#6344ff', text: '#fff' }
+                  },
+                  theme: 'classic',
+                  position: 'bottom',
+                  type: 'opt-in',
+                  content: {
+                    message: 'This website uses cookies to enhance your browsing experience and analyze site traffic. By clicking "Accept", you consent to our use of cookies.',
+                    dismiss: 'Accept',
+                    deny: 'Decline',
+                    link: 'Learn more',
+                    href: '/privacy'
+                  },
+                  onInitialise: function(status) {
+                    if(status === 'allow') {
+                      if(typeof gtag === 'function') {
+                        gtag('consent', 'update', {
+                          'ad_storage': 'granted',
+                          'analytics_storage': 'granted'
+                        });
+                      }
+                      loadAnalytics();
+                    } else if(status === 'deny') {
+                      if(typeof gtag === 'function') {
+                        gtag('consent', 'update', {
+                          'ad_storage': 'denied',
+                          'analytics_storage': 'denied'
+                        });
+                      }
+                    }
+                  },
+                  onStatusChange: function(status) {
+                    if(status === 'allow') {
+                      if(typeof gtag === 'function') {
+                        gtag('consent', 'update', {
+                          'ad_storage': 'granted',
+                          'analytics_storage': 'granted'
+                        });
+                      }
+                      loadAnalytics();
+                    } else if(status === 'deny') {
+                      if(typeof gtag === 'function') {
+                        gtag('consent', 'update', {
+                          'ad_storage': 'denied',
+                          'analytics_storage': 'denied'
+                        });
+                      }
+                    }
+                  },
+                  onRevokeChoice: function() {
+                    if(typeof gtag === 'function') {
+                      gtag('consent', 'update', {
+                        'ad_storage': 'denied',
+                        'analytics_storage': 'denied'
+                      });
+                    }
                   }
                 });
+              } else {
+                // Retry after a short delay if library isn't loaded yet
+                setTimeout(initCookieConsent, 100);
               }
-            });
-          `}
-        </Script>
+              
+              function loadAnalytics() {
+                // Only load analytics scripts if they haven't been loaded yet
+                if(document.getElementById('google-analytics-script')) return;
+                
+                // Load Google Analytics 4
+                var gaScript = document.createElement('script');
+                gaScript.async = true;
+                gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-BX0JPBNQ5K';
+                gaScript.id = 'google-analytics-script';
+                document.head.appendChild(gaScript);
+                
+                // Initialize Google Analytics
+                if(typeof gtag === 'function') {
+                  gtag('config', 'G-BX0JPBNQ5K');
+                }
+                
+                // Load Google Ads
+                var adsScript = document.createElement('script');
+                adsScript.async = true;
+                adsScript.src = 'https://www.googletagmanager.com/gtag/js?id=AW-17632716336';
+                adsScript.id = 'google-ads-script';
+                document.head.appendChild(adsScript);
+                
+                // Initialize Google Ads
+                if(typeof gtag === 'function') {
+                  gtag('config', 'AW-17632716336');
+                }
+              }
+            })();
+          `
+        }} />
         <Navbar />
         <main className="min-h-screen">
           {children}
