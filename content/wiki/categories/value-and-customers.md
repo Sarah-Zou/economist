@@ -11,8 +11,7 @@ canonical: "https://sarahzou.com/wiki/pricing/value-and-customers"
 ## What's in this category
 
 - **[<span id="economic-value-estimation">Economic Value Estimation</span>](/wiki/pricing/value-and-customers/economic-value-estimation)**: Reference value + differentiation value analysis
-- **<span id="value-decoder-framework">Value Decoder framework</span>**: Reference price + positive differentiation value - negative differentiation value calculation
-- **<span id="perceived-value">Perceived value</span>**: How customers perceive and evaluate value
+- **[<span id="value-decoder-framework">Value Decoder framework</span>](/wiki/pricing/value-and-customers/value-decoder-framework)**: Perceived value framework based on next-best alternative with characteristic, income, complement, and environment adjustments
 - **<span id="willingness-to-pay">Willingness-to-pay (WTP)</span>**: Methods for measuring and maximizing customer WTP
 - **<span id="customer-use-cases">Customer use cases</span>**: Persona, pain points, alternatives, and frequency analysis
 - **<span id="jobs-to-be-done">Jobs To Be Done (JTBD)</span>**: Understanding customer outcomes and success metrics
