@@ -112,6 +112,8 @@ $$
 
 These are guidelines, not laws—realistic shares depend on risk, switching friction, and buyer sophistication.
 
+> **💡 Related:** See [Value Decoder vs. Economic Value Estimation (EVE)](/wiki/pricing/value-and-customers/value-decoder-framework#value-decoder-vs-economic-value-estimation-eve) for a detailed comparison of these two value-based pricing frameworks and when to use each.
+
 ## Decision criteria (When EVE is the right tool?)
 
 | Situation / Question                                                 | Is EVE a good fit? | What to do                                                                                      |

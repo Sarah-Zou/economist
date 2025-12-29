@@ -22,10 +22,11 @@ interface ConceptPageProps {
 }
 
 export async function generateStaticParams() {
-  const categories = getAllCategories();
-  const params: Array<{ category: string; concept: string }> = [];
+  try {
+    const categories = getAllCategories();
+    const params: Array<{ category: string; concept: string }> = [];
   
-  categories.forEach(category => {
+    categories.forEach(category => {
     // Validate category slug - must be a valid slug, not a URL
     if (!category.slug || 
         category.slug.includes('http://') || 
@@ -52,15 +53,20 @@ export async function generateStaticParams() {
         });
       }
     });
-  });
-  
-  return params;
+    });
+    
+    return params;
+  } catch (error) {
+    console.error('Error in generateStaticParams:', error);
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }: ConceptPageProps): Promise<Metadata> {
-  const category = getCategoryBySlug(params.category);
+  try {
+    const category = getCategoryBySlug(params.category);
   
-  if (!category) {
+    if (!category) {
     return {
       title: 'Concept Not Found',
     };
@@ -112,6 +118,13 @@ export async function generateMetadata({ params }: ConceptPageProps): Promise<Me
       description,
     },
   };
+  } catch (error) {
+    console.error('Error in generateMetadata:', error);
+    return {
+      title: 'Error Loading Page',
+      description: 'An error occurred while loading this page.',
+    };
+  }
 }
 
 // Helper function to extract headings from markdown content
@@ -529,17 +542,28 @@ const markdownComponents = {
   td: ({ node, ...props }: any) => {
     // Check if this is a "Decision criteria" table cell with fit level
     const cellText = String(props.children || '').trim();
+    const cellTextLower = cellText.toLowerCase();
     let Icon = null;
     let iconColor = '';
     
-    // Check if this cell contains a fit level indicator
-    if (cellText.toLowerCase().includes('very high') || cellText.toLowerCase().includes('critical')) {
+    // Only add icons for specific fit level indicators (standalone, not part of other phrases)
+    // Match exact fit level patterns, avoiding false matches in comparison tables
+    const isVeryHighOrCritical = cellTextLower === 'very high' || cellTextLower === 'critical' || 
+                                  /^very high\s*[–:]/i.test(cellText) || /^critical\s*[–:]/i.test(cellText);
+    const isHigh = (cellTextLower === 'high' || /^high\s*[–:]/i.test(cellText)) && 
+                   !cellTextLower.includes('stakes') && !cellTextLower.includes('value') && 
+                   !cellTextLower.includes('quality') && !cellTextLower.includes('price') &&
+                   !cellTextLower.includes('b2b') && !cellTextLower.includes('b2c');
+    const isLowerOrLimited = cellTextLower === 'lower' || cellTextLower === 'limited' || 
+                             /^lower\s*[–:]/i.test(cellText) || /^limited\s*[–:]/i.test(cellText);
+    
+    if (isVeryHighOrCritical) {
       Icon = CheckCircle;
       iconColor = 'text-green-600';
-    } else if (cellText.toLowerCase().includes('high')) {
+    } else if (isHigh) {
       Icon = TrendingUp;
       iconColor = 'text-blue-600';
-    } else if (cellText.toLowerCase().includes('lower') || cellText.toLowerCase().includes('limited')) {
+    } else if (isLowerOrLimited) {
       Icon = AlertCircle;
       iconColor = 'text-amber-600';
     }
@@ -589,106 +613,173 @@ const markdownComponents = {
 };
 
 export default function ConceptPage({ params }: ConceptPageProps) {
-  const category = getCategoryBySlug(params.category);
-  
-  if (!category) {
-    notFound();
-  }
+  try {
+    const category = getCategoryBySlug(params.category);
+    
+    if (!category) {
+      notFound();
+    }
 
-  const concept = category.concepts.find(c => c.id === params.concept);
-  
-  if (!concept) {
-    notFound();
-  }
+    const concept = category.concepts.find(c => c.id === params.concept);
+    
+    if (!concept) {
+      notFound();
+    }
 
-  // Try to get concept content
-  const conceptData = getConceptBySlug(params.category, params.concept);
-  const conceptName = conceptData?.title || concept.text.split(':')[0].trim();
-  const description = conceptData?.oneLiner || (concept.text.includes(':') 
-    ? concept.text.split(':').slice(1).join(':').trim()
-    : '');
-  const hasContent = conceptData !== null;
-  
-  // Extract headings for table of contents (only first level - h2)
-  const tocItems = hasContent && conceptData 
-    ? extractHeadings(conceptData.content).filter(item => item.level === 2)
-    : [];
+    // Try to get concept content
+    const conceptData = getConceptBySlug(params.category, params.concept);
+    const conceptName = conceptData?.title || concept.text.split(':')[0].trim();
+    const description = conceptData?.oneLiner || (concept.text.includes(':') 
+      ? concept.text.split(':').slice(1).join(':').trim()
+      : '');
+    const hasContent = conceptData !== null;
+    
+    // Extract headings for table of contents (only first level - h2)
+    let tocItems: Array<{ id: string; text: string; level: number }> = [];
+    try {
+      tocItems = hasContent && conceptData 
+        ? extractHeadings(conceptData.content).filter(item => item.level === 2)
+        : [];
+    } catch (error) {
+      console.error('Error extracting headings:', error);
+    }
 
-  // Parse Snapshot section if content exists
-  const { beforeSnapshot, snapshot, afterSnapshot: afterSnapshotContent } = hasContent && conceptData
-    ? parseSnapshot(conceptData.content)
-    : { beforeSnapshot: '', snapshot: null, afterSnapshot: '' };
+    // Parse Snapshot section if content exists
+    let beforeSnapshot = '';
+    let snapshot: { 
+      whatItIs?: string; 
+      whyItMatters?: string; 
+      whyItsTempting?: string;
+      whereItFails?: string;
+      whenToUse?: string; 
+      keyTakeaways?: string[] 
+    } | null = null;
+    let afterSnapshotContent = '';
+    try {
+      const snapshotResult = hasContent && conceptData
+        ? parseSnapshot(conceptData.content)
+        : { beforeSnapshot: '', snapshot: null, afterSnapshot: '' };
+      beforeSnapshot = snapshotResult.beforeSnapshot;
+      snapshot = snapshotResult.snapshot;
+      afterSnapshotContent = snapshotResult.afterSnapshot;
+    } catch (error) {
+      console.error('Error parsing snapshot:', error);
+    }
 
-  // Parse Key Facts section - parse from content after snapshot
-  const contentToParseForKeyFacts = hasContent && conceptData 
-    ? (afterSnapshotContent || conceptData.content)
-    : '';
-  const { beforeKeyFacts, keyFacts, afterKeyFacts: afterKeyFactsContent } = contentToParseForKeyFacts
-    ? parseKeyFacts(contentToParseForKeyFacts)
-    : { beforeKeyFacts: '', keyFacts: null, afterKeyFacts: '' };
+    // Parse Key Facts section - parse from content after snapshot
+    let beforeKeyFacts = '';
+    let keyFacts: Array<{ title: string; description: string; sourceUrl?: string; sourceText?: string }> | null = null;
+    let afterKeyFactsContent = '';
+    try {
+      const contentToParseForKeyFacts = hasContent && conceptData 
+        ? (afterSnapshotContent || conceptData.content)
+        : '';
+      const keyFactsResult = contentToParseForKeyFacts
+        ? parseKeyFacts(contentToParseForKeyFacts)
+        : { beforeKeyFacts: '', keyFacts: null, afterKeyFacts: '' };
+      beforeKeyFacts = keyFactsResult.beforeKeyFacts;
+      keyFacts = keyFactsResult.keyFacts;
+      afterKeyFactsContent = keyFactsResult.afterKeyFacts;
+    } catch (error) {
+      console.error('Error parsing key facts:', error);
+    }
 
-  // Parse Step-by-step section - parse from content after key facts
-  const contentToParseForStepByStep = hasContent && conceptData 
-    ? (afterKeyFactsContent || afterSnapshotContent || conceptData.content)
-    : '';
-  const { beforeStepByStep, steps, beforeStepsContent, afterStepsContent, afterStepByStep: afterStepByStepContent } = contentToParseForStepByStep
-    ? parseStepByStep(contentToParseForStepByStep)
-    : { beforeStepByStep: '', steps: null, beforeStepsContent: '', afterStepsContent: '', afterStepByStep: '' };
+    // Parse Step-by-step section - parse from content after key facts
+    let beforeStepByStep = '';
+    let steps: Array<{ number: number; title: string; description: string }> | null = null;
+    let beforeStepsContent = '';
+    let afterStepsContent = '';
+    let afterStepByStepContent = '';
+    try {
+      const contentToParseForStepByStep = hasContent && conceptData 
+        ? (afterKeyFactsContent || afterSnapshotContent || conceptData.content)
+        : '';
+      const stepByStepResult = contentToParseForStepByStep
+        ? parseStepByStep(contentToParseForStepByStep)
+        : { beforeStepByStep: '', steps: null, beforeStepsContent: '', afterStepsContent: '', afterStepByStep: '' };
+      beforeStepByStep = stepByStepResult.beforeStepByStep;
+      steps = stepByStepResult.steps;
+      beforeStepsContent = stepByStepResult.beforeStepsContent;
+      afterStepsContent = stepByStepResult.afterStepsContent;
+      afterStepByStepContent = stepByStepResult.afterStepByStep;
+    } catch (error) {
+      console.error('Error parsing step-by-step:', error);
+    }
 
-  // Parse Metrics to monitor section - parse from content after step-by-step
-  const contentToParseForMetrics = hasContent && conceptData 
-    ? (afterStepByStepContent || afterKeyFactsContent || afterSnapshotContent || conceptData.content)
-    : '';
-  const { beforeMetrics, metrics, afterMetrics: afterMetricsContent } = contentToParseForMetrics
-    ? parseMetricsToMonitor(contentToParseForMetrics)
-    : { beforeMetrics: '', metrics: null, afterMetrics: '' };
+    // Parse Metrics to monitor section - parse from content after step-by-step
+    let beforeMetrics = '';
+    let metrics: Array<{ title: string; description: string }> | null = null;
+    let afterMetricsContent = '';
+    try {
+      const contentToParseForMetrics = hasContent && conceptData 
+        ? (afterStepByStepContent || afterKeyFactsContent || afterSnapshotContent || conceptData.content)
+        : '';
+      const metricsResult = contentToParseForMetrics
+        ? parseMetricsToMonitor(contentToParseForMetrics)
+        : { beforeMetrics: '', metrics: null, afterMetrics: '' };
+      beforeMetrics = metricsResult.beforeMetrics;
+      metrics = metricsResult.metrics;
+      afterMetricsContent = metricsResult.afterMetrics;
+    } catch (error) {
+      console.error('Error parsing metrics:', error);
+    }
 
-  // Parse FAQ section - parse from content after metrics
-  const contentToParseForFAQ = hasContent && conceptData 
-    ? (afterMetricsContent || afterStepByStepContent || afterKeyFactsContent || afterSnapshotContent || conceptData.content)
-    : '';
-  const { beforeFAQ, faqItems, afterFAQ } = contentToParseForFAQ
-    ? parseFAQ(contentToParseForFAQ)
-    : { beforeFAQ: '', faqItems: [], afterFAQ: '' };
+    // Parse FAQ section - parse from content after metrics
+    let beforeFAQ = '';
+    let faqItems: Array<{ question: string; answer: string }> = [];
+    let afterFAQ = '';
+    try {
+      const contentToParseForFAQ = hasContent && conceptData 
+        ? (afterMetricsContent || afterStepByStepContent || afterKeyFactsContent || afterSnapshotContent || conceptData.content)
+        : '';
+      const faqResult = contentToParseForFAQ
+        ? parseFAQ(contentToParseForFAQ)
+        : { beforeFAQ: '', faqItems: [], afterFAQ: '' };
+      beforeFAQ = faqResult.beforeFAQ;
+      faqItems = faqResult.faqItems;
+      afterFAQ = faqResult.afterFAQ;
+    } catch (error) {
+      console.error('Error parsing FAQ:', error);
+    }
 
-  const breadcrumbs = [
-    { name: 'Pricing', url: '/wiki/pricing' },
-    { name: category.title, url: `/wiki/pricing/${category.slug}` },
-    { name: conceptName, url: `/wiki/pricing/${params.category}/${params.concept}` }
-  ];
+    const breadcrumbs = [
+      { name: 'Pricing', url: '/wiki/pricing' },
+      { name: category.title, url: `/wiki/pricing/${category.slug}` },
+      { name: conceptName, url: `/wiki/pricing/${params.category}/${params.concept}` }
+    ];
 
-  const articleJsonLd = generateArticleJsonLd({
-    title: conceptName,
-    description: description || `Learn about ${conceptName} in the context of ${category.title}`,
-    url: `https://sarahzou.com/wiki/pricing/${params.category}/${params.concept}`,
-    datePublished: conceptData?.lastUpdated || category.updated,
-    dateModified: conceptData?.lastUpdated || category.updated,
-    author: conceptData?.owner || 'Dr. Sarah Zou'
-  });
+    const articleJsonLd = generateArticleJsonLd({
+      title: conceptName,
+      description: description || `Learn about ${conceptName} in the context of ${category.title}`,
+      url: `https://sarahzou.com/wiki/pricing/${params.category}/${params.concept}`,
+      datePublished: conceptData?.lastUpdated || category.updated,
+      dateModified: conceptData?.lastUpdated || category.updated,
+      author: conceptData?.owner || 'Dr. Sarah Zou'
+    });
 
-  const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
+    const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
 
-  // Generate FAQ schema from parsed FAQ items, or create default FAQs if none exist
-  const faqItemsForSchema = faqItems.length > 0 
-    ? faqItems.map(item => ({
-        question: item.question,
-        answer: item.answer
-      }))
-    : [
-        {
-          question: `What is ${conceptName}?`,
-          answer: description || `Learn about ${conceptName} in the context of ${category.title}. This concept is part of the ${category.title} category in the Pricing & Monetization Wiki.`
-        },
-        {
-          question: `How does ${conceptName} relate to ${category.title}?`,
-          answer: `${conceptName} is a key concept within ${category.title}, which focuses on ${category.summary.toLowerCase()}. Understanding this concept helps you apply ${category.title.toLowerCase()} strategies effectively.`
-        }
-      ];
+    // Generate FAQ schema from parsed FAQ items, or create default FAQs if none exist
+    const faqItemsForSchema = faqItems.length > 0 
+      ? faqItems.map(item => ({
+          question: item.question,
+          answer: item.answer
+        }))
+      : [
+          {
+            question: `What is ${conceptName}?`,
+            answer: description || `Learn about ${conceptName} in the context of ${category.title}. This concept is part of the ${category.title} category in the Pricing & Monetization Wiki.`
+          },
+          {
+            question: `How does ${conceptName} relate to ${category.title}?`,
+            answer: `${conceptName} is a key concept within ${category.title}, which focuses on ${category.summary.toLowerCase()}. Understanding this concept helps you apply ${category.title.toLowerCase()} strategies effectively.`
+          }
+        ];
 
-  const faqJsonLd = generateFAQJsonLd({
-    url: `https://sarahzou.com/wiki/pricing/${params.category}/${params.concept}`,
-    faqItems: faqItemsForSchema
-  });
+    const faqJsonLd = generateFAQJsonLd({
+      url: `https://sarahzou.com/wiki/pricing/${params.category}/${params.concept}`,
+      faqItems: faqItemsForSchema
+    });
 
   return (
     <>
@@ -1458,5 +1549,10 @@ export default function ConceptPage({ params }: ConceptPageProps) {
       </div>
     </>
   );
+  } catch (error) {
+    // Log the error and re-throw it so it can be caught by error boundaries
+    console.error('Error in ConceptPage:', error);
+    throw error;
+  }
 }
 
