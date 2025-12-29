@@ -12,7 +12,7 @@ canonical: "https://sarahzou.com/wiki/pricing/value-and-customers"
 
 - **[<span id="economic-value-estimation">Economic Value Estimation</span>](/wiki/pricing/value-and-customers/economic-value-estimation)**: Reference value + differentiation value analysis
 - **[<span id="value-decoder-framework">Value Decoder framework</span>](/wiki/pricing/value-and-customers/value-decoder-framework)**: Perceived value framework based on next-best alternative with characteristic, income, complement, and environment adjustments
-- **<span id="willingness-to-pay">Willingness-to-pay (WTP)</span>**: Methods for measuring and maximizing customer WTP
+- **[<span id="willingness-to-pay">Willingness-to-pay (WTP)</span>](/wiki/pricing/value-and-customers/willingness-to-pay)**: The maximum price a buyer accepts; use it to set a defensible price range, design tiers, and validate pricing against unit economics. Includes methods like Van Westendorp PSM, Gabor–Granger, and conjoint analysis.
 - **<span id="customer-use-cases">Customer use cases</span>**: Persona, pain points, alternatives, and frequency analysis
 - **<span id="jobs-to-be-done">Jobs To Be Done (JTBD)</span>**: Understanding customer outcomes and success metrics
 - **<span id="customer-segments">Segmentation by WTP/use case</span>**: Value-based customer segmentation strategies
