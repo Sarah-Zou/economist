@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { getAllCategories } from '@/lib/mdx'
+import { getAllCategories, getConceptBySlug } from '@/lib/mdx'
 
 const baseUrl = 'https://sarahzou.com'
 
@@ -22,15 +22,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   // Wiki concept pages (only include concepts with IDs)
+  // Use concept's lastUpdated date if available, otherwise fall back to category.updated
   const conceptPages = categories.flatMap((category) =>
     category.concepts
       .filter((concept) => concept.id)
-      .map((concept) => ({
-        url: normalizeUrl(`/wiki/pricing/${category.slug}/${concept.id}`),
-        lastModified: category.updated || currentDate,
-        changeFrequency: 'monthly' as const,
-        priority: 0.7,
-      }))
+      .map((concept) => {
+        // Try to get concept data to use its lastUpdated date
+        const conceptData = getConceptBySlug(category.slug, concept.id!)
+        const lastModified = conceptData?.lastUpdated || category.updated || currentDate
+        
+        return {
+          url: normalizeUrl(`/wiki/pricing/${category.slug}/${concept.id}`),
+          lastModified,
+          changeFrequency: 'monthly' as const,
+          priority: 0.7,
+        }
+      })
   )
 
   return [...wikiPages, ...conceptPages]

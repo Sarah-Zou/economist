@@ -291,9 +291,9 @@ function ConsultingContent() {
             <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-8 text-center text-[#1f2933] px-4">
               Compare Services
             </h2>
-            <div className="bg-white rounded-2xl border border-[#e5e7eb] shadow-sm overflow-hidden overflow-x-auto -mx-4 sm:mx-0">
+            <div className="bg-white rounded-2xl border border-[#e5e7eb] shadow-sm overflow-hidden overflow-x-auto -mx-4 sm:mx-0" role="region" aria-label="Service comparison table">
               <div className="min-w-[700px]">
-              <table className="w-full">
+              <table className="w-full border-collapse">
                 <thead>
                   <tr className="bg-[#f6f7f9] border-b-2 border-[#e5e7eb]">
                     <th className="text-left py-4 px-4 font-semibold text-[#1f2933]">Service</th>

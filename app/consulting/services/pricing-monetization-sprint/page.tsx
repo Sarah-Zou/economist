@@ -243,7 +243,7 @@ export default function PricingDiagnosticRevenueBoost() {
             </p>
             
             {/* Comparison Table */}
-            <div className="bg-white rounded-lg p-8 border border-[#e5e7eb] shadow-sm overflow-x-auto mb-8 max-w-5xl mx-auto">
+            <div className="bg-white rounded-lg p-8 border border-[#e5e7eb] shadow-sm overflow-x-auto mb-8 max-w-5xl mx-auto" role="region" aria-label="Service comparison table">
               <table className="w-full border-collapse text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                 <thead>
                   <tr className="border-b-2 border-[#1f2933]">

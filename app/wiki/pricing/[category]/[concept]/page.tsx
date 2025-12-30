@@ -527,7 +527,7 @@ const markdownComponents = {
     <blockquote className="bg-white border-l-4 border-[#ff5722] pl-6 pr-4 py-4 my-6 rounded-r-lg shadow-sm" {...props} />
   ),
   table: ({ node, ...props }: any) => (
-    <div className="overflow-x-auto my-8">
+    <div className="overflow-x-auto my-8" role="region" aria-label="Data table" tabIndex={0}>
       <div className="bg-white rounded-lg border border-[#e5e7eb] shadow-sm overflow-hidden min-w-full">
         <table className="w-full border-collapse" {...props} />
       </div>
