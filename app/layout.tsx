@@ -51,17 +51,19 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            // Set consent mode to denied by default (GDPR compliant)
+            // Set consent mode: grant analytics by default, deny ad features (GDPR compliant)
+            // Analytics tracking is allowed without explicit consent in most jurisdictions
+            // Ad features require explicit consent
             gtag('consent', 'default', {
               'ad_storage': 'denied',
-              'analytics_storage': 'denied',
+              'analytics_storage': 'granted',
               'ad_user_data': 'denied',
               'ad_personalization': 'denied',
               'wait_for_update': 500
             });
           `
         }} />
-        {/* Load GA4 immediately with consent denied - Consent Mode v2 allows basic tracking */}
+        {/* Load GA4 immediately with analytics_storage granted by default */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-BX0JPBNQ5K"
           strategy="afterInteractive"
@@ -135,14 +137,16 @@ export default function RootLayout({
                       }
                     } else if(status === 'deny') {
                       if(typeof gtag === 'function') {
+                        // User explicitly denied - revoke ad features but keep basic analytics
                         gtag('consent', 'update', {
                           'ad_storage': 'denied',
-                          'analytics_storage': 'denied',
+                          'analytics_storage': 'granted',
                           'ad_user_data': 'denied',
                           'ad_personalization': 'denied'
                         });
                       }
                     }
+                    // If no interaction, analytics_storage remains granted (default)
                   },
                   onStatusChange: function(status) {
                     if(status === 'allow') {
@@ -156,9 +160,10 @@ export default function RootLayout({
                       }
                     } else if(status === 'deny') {
                       if(typeof gtag === 'function') {
+                        // User explicitly denied - revoke ad features but keep basic analytics
                         gtag('consent', 'update', {
                           'ad_storage': 'denied',
-                          'analytics_storage': 'denied',
+                          'analytics_storage': 'granted',
                           'ad_user_data': 'denied',
                           'ad_personalization': 'denied'
                         });
@@ -167,9 +172,10 @@ export default function RootLayout({
                   },
                   onRevokeChoice: function() {
                     if(typeof gtag === 'function') {
+                      // When user revokes, keep analytics but deny ad features
                       gtag('consent', 'update', {
                         'ad_storage': 'denied',
-                        'analytics_storage': 'denied',
+                        'analytics_storage': 'granted',
                         'ad_user_data': 'denied',
                         'ad_personalization': 'denied'
                       });
