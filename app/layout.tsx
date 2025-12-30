@@ -55,8 +55,36 @@ export default function RootLayout({
             gtag('consent', 'default', {
               'ad_storage': 'denied',
               'analytics_storage': 'denied',
+              'ad_user_data': 'denied',
+              'ad_personalization': 'denied',
               'wait_for_update': 500
             });
+          `
+        }} />
+        {/* Load GA4 immediately with consent denied - Consent Mode v2 allows basic tracking */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-BX0JPBNQ5K"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-config" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          __html: `
+            if(typeof gtag === 'function') {
+              gtag('config', 'G-BX0JPBNQ5K', {
+                'url_passthrough': true
+              });
+            }
+          `
+        }} />
+        {/* Load Google Ads immediately with consent denied */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17632716336"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-config" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          __html: `
+            if(typeof gtag === 'function') {
+              gtag('config', 'AW-17632716336');
+            }
           `
         }} />
         {/* Cookie Consent CSS - loaded asynchronously */}
@@ -100,15 +128,18 @@ export default function RootLayout({
                       if(typeof gtag === 'function') {
                         gtag('consent', 'update', {
                           'ad_storage': 'granted',
-                          'analytics_storage': 'granted'
+                          'analytics_storage': 'granted',
+                          'ad_user_data': 'granted',
+                          'ad_personalization': 'granted'
                         });
                       }
-                      loadAnalytics();
                     } else if(status === 'deny') {
                       if(typeof gtag === 'function') {
                         gtag('consent', 'update', {
                           'ad_storage': 'denied',
-                          'analytics_storage': 'denied'
+                          'analytics_storage': 'denied',
+                          'ad_user_data': 'denied',
+                          'ad_personalization': 'denied'
                         });
                       }
                     }
@@ -118,15 +149,18 @@ export default function RootLayout({
                       if(typeof gtag === 'function') {
                         gtag('consent', 'update', {
                           'ad_storage': 'granted',
-                          'analytics_storage': 'granted'
+                          'analytics_storage': 'granted',
+                          'ad_user_data': 'granted',
+                          'ad_personalization': 'granted'
                         });
                       }
-                      loadAnalytics();
                     } else if(status === 'deny') {
                       if(typeof gtag === 'function') {
                         gtag('consent', 'update', {
                           'ad_storage': 'denied',
-                          'analytics_storage': 'denied'
+                          'analytics_storage': 'denied',
+                          'ad_user_data': 'denied',
+                          'ad_personalization': 'denied'
                         });
                       }
                     }
@@ -135,7 +169,9 @@ export default function RootLayout({
                     if(typeof gtag === 'function') {
                       gtag('consent', 'update', {
                         'ad_storage': 'denied',
-                        'analytics_storage': 'denied'
+                        'analytics_storage': 'denied',
+                        'ad_user_data': 'denied',
+                        'ad_personalization': 'denied'
                       });
                     }
                   }
@@ -143,35 +179,6 @@ export default function RootLayout({
               } else {
                 // Retry after a short delay if library isn't loaded yet
                 setTimeout(initCookieConsent, 100);
-              }
-              
-              function loadAnalytics() {
-                // Only load analytics scripts if they haven't been loaded yet
-                if(document.getElementById('google-analytics-script')) return;
-                
-                // Load Google Analytics 4
-                var gaScript = document.createElement('script');
-                gaScript.async = true;
-                gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-BX0JPBNQ5K';
-                gaScript.id = 'google-analytics-script';
-                document.head.appendChild(gaScript);
-                
-                // Initialize Google Analytics
-                if(typeof gtag === 'function') {
-                  gtag('config', 'G-BX0JPBNQ5K');
-                }
-                
-                // Load Google Ads
-                var adsScript = document.createElement('script');
-                adsScript.async = true;
-                adsScript.src = 'https://www.googletagmanager.com/gtag/js?id=AW-17632716336';
-                adsScript.id = 'google-ads-script';
-                document.head.appendChild(adsScript);
-                
-                // Initialize Google Ads
-                if(typeof gtag === 'function') {
-                  gtag('config', 'AW-17632716336');
-                }
               }
             })();
           `
