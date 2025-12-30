@@ -13,9 +13,9 @@ canonical: "https://sarahzou.com/wiki/pricing/value-and-customers"
 - **[<span id="economic-value-estimation">Economic Value Estimation</span>](/wiki/pricing/value-and-customers/economic-value-estimation)**: Reference value + differentiation value analysis
 - **[<span id="value-decoder-framework">Value Decoder framework</span>](/wiki/pricing/value-and-customers/value-decoder-framework)**: Perceived value framework based on next-best alternative with characteristic, income, complement, and environment adjustments
 - **[<span id="willingness-to-pay">Willingness-to-pay (WTP)</span>](/wiki/pricing/value-and-customers/willingness-to-pay)**: The maximum price a buyer accepts; use it to set a defensible price range, design tiers, and validate pricing against unit economics. Includes methods like Van Westendorp PSM, Gabor–Granger, and conjoint analysis.
-- **<span id="customer-use-cases">Customer use cases</span>**: Persona, pain points, alternatives, and frequency analysis
+- **[<span id="customer-use-cases">Customer use cases</span>](/wiki/pricing/value-and-customers/customer-use-cases)**: Structured descriptions of the problem, persona, context, and outcomes that define how customers get value from your product and how you should price.
 - **<span id="jobs-to-be-done">Jobs To Be Done (JTBD)</span>**: Understanding customer outcomes and success metrics
-- **<span id="customer-segments">Segmentation by WTP/use case</span>**: Value-based customer segmentation strategies
+- **<span id="customer-segments">Segmentation by WTP/[use case](/wiki/pricing/value-and-customers/customer-use-cases)</span>**: Value-based customer segmentation strategies
 - **<span id="ideal-customer-profile">Ideal Customer Profile (ICP)</span>**: Defining and targeting your best customers
 - **<span id="value-drivers">Value drivers</span>**: Monetary and psychological factors that drive value perception
 - **<span id="price-sensitivity">Price sensitivity & demand curves</span>**: Understanding how price changes affect demand

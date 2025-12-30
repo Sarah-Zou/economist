@@ -15,7 +15,7 @@ owner: "Dr. Sarah Zou"
 
 **Why it matters:** Helps recover R&D faster, maximize gross margin early, strengthen premium positioning, and avoid underpricing breakthrough or high‑differentiation products.
 
-**When to use:** Best for new or meaningfully improved products with clear WTP tiers, low early price elasticity, brand or IP differentiation, and manageable arbitrage risk.
+**When to use:** Best for new or meaningfully improved products with clear [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) tiers, low early price elasticity, brand or IP differentiation, and manageable arbitrage risk.
 
 **Key Takeaways:**
 - **Skimming is time-sequenced segmentation:** sell a premium bundle to Tier-1 buyers first, then introduce a version-down (or first markdown) for Tier-2/3.
@@ -57,7 +57,7 @@ Imagine a **"Value Waterfall"** or **"Step-Down Ladder"**:
 
 ## Why does skimming strategy matter?
 
-Skimming lets you monetize the highest-WTP customers first while protecting your long-run price level and brand.
+Skimming lets you monetize the highest-[WTP](/wiki/pricing/value-and-customers/willingness-to-pay) customers first while protecting your long-run price level and brand.
 
 - **Recover R&D faster:** Early high-margin sales shorten payback periods and reduce funding risk for new products.
 - **Lift gross margin and ASP:** Pricing to the top of the WTP distribution early raises average selling price and unit economics.
@@ -71,7 +71,7 @@ Skimming lets you monetize the highest-WTP customers first while protecting your
 
 | Condition | Skimming Fit? | Notes |
 |-----------|---------------|-------|
-| High WTP dispersion (early adopters exist) | ✅ Strong | Use research to size premium segment ≥10–20% of buyers. |
+| High [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) dispersion (early adopters exist) | ✅ Strong | Use research to size premium segment ≥10–20% of buyers. |
 | Low price elasticity at launch | ✅ | Measure via preorders/A‑B tests. |
 | IP/brand novelty, low direct substitutes | ✅ | Premium anchor credible. |
 | Supply constrained / long lead times | ✅ | Monetize scarcity rather than rationing. |
@@ -88,7 +88,7 @@ Skimming lets you monetize the highest-WTP customers first while protecting your
 
 ### Inputs you need
 
-- **Customer willingness to pay by segment:** Clear view of WTP for innovators/early adopters vs. fast followers vs. mass market (surveys, interviews, conjoint, past spend).
+- **Customer [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) by segment:** Clear view of [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) for innovators/early adopters vs. fast followers vs. mass market (surveys, interviews, conjoint, past spend).
 
 - **Elasticity around the launch price (P₀):** Early signals of how sensitive demand is to price near your proposed P₀ (preorders, waitlists, smoke tests, price-ladder tests).
 
@@ -109,9 +109,9 @@ Skimming lets you monetize the highest-WTP customers first while protecting your
 
 1. **Clarify objectives and constraints:** Decide what skimming must achieve: e.g., recover **30–60% of R&D in 6–12 months**, hit a target margin, or fund the next release. Note hard constraints: capacity limits, minimum viable volume, key launch dates, and any contractual channel/partner requirements.
 
-2. **Map your segments into a skimming ladder:** Define who sits in **Tier 1 (innovators/early adopters)**, **Tier 2 (fast followers)**, and **Tier 3+ (mass market)**. Quantify each tier: size, WTP range, and elasticity (from research, preorders, historical data). Decide which tiers you will intentionally serve at launch and which will wait for later rungs.
+2. **Map your segments into a skimming ladder:** Define who sits in **Tier 1 (innovators/early adopters)**, **Tier 2 (fast followers)**, and **Tier 3+ (mass market)**. Quantify each tier: size, [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) range, and elasticity (from research, preorders, historical data). Decide which tiers you will intentionally serve at launch and which will wait for later rungs.
 
-3. **Set P₀ and the Tier 1 offer:** Choose a **launch price P₀** that monetizes the top WTP segment (low elasticity, strong value) and credible given brand, IP, and competitive context. Bundle scarce or high-value elements into Tier 1: e.g., "Founders' Edition," Pro features, priority support, extended warranty, or exclusive access.
+3. **Set P₀ and the Tier 1 offer:** Choose a **launch price P₀** that monetizes the top [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) segment (low elasticity, strong value) and credible given brand, IP, and competitive context. Bundle scarce or high-value elements into Tier 1: e.g., "Founders' Edition," Pro features, priority support, extended warranty, or exclusive access.
 
 4. **Design fences and channel plan:** For each tier, specify **Offer** which features, limits, or services are included and **Fence** for version, time window, channel, geo, or eligibility rules that stop cheap units leaking "up." Stage channels intentionally launch Tier 1 via **direct** or controlled channels and introduce **retail / reseller / marketplace** later at lower tiers to avoid conflict.
 
@@ -174,7 +174,7 @@ Skimming lets you monetize the highest-WTP customers first while protecting your
 
 **Q:** Does skimming work in B2B?
 
-**A:** Yes, especially for software where "Super-users" or "Enterprise" segments require advanced security and admin features for which they have a much higher WTP.
+**A:** Yes, especially for software where "Super-users" or "Enterprise" segments require advanced security and admin features for which they have a much higher [WTP](/wiki/pricing/value-and-customers/willingness-to-pay).
 
 **Q:** Can SaaS skim?
 

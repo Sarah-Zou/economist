@@ -31,7 +31,7 @@ owner: "Dr. Sarah Zou"
 
 **Strategic pricing:** A comprehensive management system coordinating short- and long-term monetization strategies to achieve sustainable profitability. It's not about finding a "perfect price," but creating a disciplined, intentional process with clear goals and timing.
 
-- **Value-based:** Price should align with the value customers place on the product, grounded in the economic value to customer (EVC) and willingness-to-pay (WTP).
+- **Value-based:** Price should align with the value customers place on the product, grounded in the economic value to customer (EVC) and [willingness-to-pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay).
 - **Proactive:** Anticipate price levels early—before product development—to ensure the business can capture sufficient value and adapt to market shifts.
 - **Profit-driven:** Focus on maximizing long-term, sustainable profit—not just short-term revenue or market share.
 
@@ -50,7 +50,7 @@ owner: "Dr. Sarah Zou"
 ### Inputs you need
 
 - **Positioning & Segmentation (Product / PMM):** ICPs, target segments, jobs-to-be-done, and buyer roles.
-- **Customer WTP/Value Data (Research / Analytics):** Absolute and relative WTP, feature value perceived, and price sensitivity by segment.
+- **Customer [WTP](/wiki/pricing/value-and-customers/willingness-to-pay)/Value Data (Research / Analytics):** Absolute and relative [WTP](/wiki/pricing/value-and-customers/willingness-to-pay), feature value perceived, and price sensitivity by segment.
 - **Internal Financials & Unit Economics (Finance):** Variable and fixed costs, margin targets, elasticity estimates, transaction and usage data.
 - **Market & Competitive Benchmarks (Product / Strategy):** Competitor pricing, alternatives' costs, and macro drivers (supply, demand, regulations, input costs).
 
@@ -71,8 +71,8 @@ owner: "Dr. Sarah Zou"
 
 | Pitfall | Fix |
 |---------|-----|
-| **Pricing as an Afterthought:** Product is finalized before assessing customer WTP, leading to poor revenue accuracy. | **Design Around the Price:** Market and price first; use WTP to guide product design. |
-| **Inside-Out Business Case:** Cost-plus pricing ignores customer value and elasticity. | **Outside-In Business Case:** Update with real WTP data and model value-volume-cost linkages. |
+| **Pricing as an Afterthought:** Product is finalized before assessing customer [WTP](/wiki/pricing/value-and-customers/willingness-to-pay), leading to poor revenue accuracy. | **Design Around the Price:** Market and price first; use [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) to guide product design. |
+| **Inside-Out Business Case:** Cost-plus pricing ignores customer value and elasticity. | **Outside-In Business Case:** Update with real [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) data and model value-volume-cost linkages. |
 | **Organizational Silos:** Teams operate with conflicting incentives (e.g., Sales discounts too much). | **Centralized Alignment:** Create a Pricing & Monetization team with executive sponsorship. |
 
 ## References & Links
@@ -94,11 +94,11 @@ owner: "Dr. Sarah Zou"
 
 **Q:** What is the primary failing of traditional cost-plus pricing?
 
-**A:** Cost-plus pricing is an inward-looking approach that ignores customer value and WTP, mistakenly assuming customers base their purchase price on the seller's cost to produce. This leaves ample opportunity for profit on the table.
+**A:** Cost-plus pricing is an inward-looking approach that ignores customer value and [WTP](/wiki/pricing/value-and-customers/willingness-to-pay), mistakenly assuming customers base their purchase price on the seller's cost to produce. This leaves ample opportunity for profit on the table.
 
 **Q:** Why is WTP data essential for a business case?
 
-**A:** WTP data provides an objective, external view of customer demand and value. Without it, revenue estimates are fundamentally guesses, leading to misplaced confidence and potential failure.
+**A:** [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) data provides an objective, external view of customer demand and value. Without it, revenue estimates are fundamentally guesses, leading to misplaced confidence and potential failure.
 
 **Q:** When should a company choose a penetration strategy?
 

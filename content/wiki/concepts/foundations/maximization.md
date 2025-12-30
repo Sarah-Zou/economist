@@ -86,14 +86,14 @@ In the landscape of strategic pricing, **maximization** is one of the three prim
 |---------|--------------|----------|-------------|
 | **Primary Goal** | Maximize short-term profit or revenue | A long-term, sequential strategy to capture high-margin early adopters | A long-term "land-and-expand" strategy for rapid market share/standardization |
 | **Price Level** | The mathematical "Optimal Price Point" | Higher than the Maximization price | Lower than the Maximization price |
-| **Market Condition** | No distinct high-WTP early adopter segment | Wide distribution of WTP between segments | High price elasticity; network effects |
+| **Market Condition** | No distinct high-[WTP](/wiki/pricing/value-and-customers/willingness-to-pay) early adopter segment | Wide distribution of [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) between segments | High price elasticity; network effects |
 | **Key Risk** | Driving "blind" without elasticity data | Attracting competitors due to high margins | "Profitless prosperity"—high volume, no profit |
 
 ## How do you implement maximization pricing strategy?
 
 ### Inputs you need
 
-- **WTP Data:** Qualitative data from one-on-one interviews or quantitative Van Westendorp surveys to define the "Reasonable Price Range".
+- **[WTP](/wiki/pricing/value-and-customers/willingness-to-pay) Data:** Qualitative data from one-on-one interviews or quantitative Van Westendorp surveys to define the "Reasonable Price Range".
 - **Cost of Delivery:** Precise identification of incremental, avoidable costs (variable and semi-fixed) to establish the price floor.
 - **Price Elasticity Curve:** A data-backed model showing how volume changes as price moves up or down.
 

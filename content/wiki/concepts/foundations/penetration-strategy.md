@@ -135,7 +135,7 @@ Use skimming when:
 
 ### Methods
 
-- **Pricing research (surveys & conjoint):** Use tools like Van Westendorp, Gabor-Granger, and conjoint analysis to estimate willingness-to-pay, price elasticity, and feature–price trade-offs by segment.
+- **Pricing research (surveys & conjoint):** Use tools like Van Westendorp, Gabor-Granger, and conjoint analysis to estimate [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay), price elasticity, and feature–price trade-offs by segment.
 - **In-market price experiments:** Run A/B tests on different introductory prices and discount depths across cohorts to observe real conversion, ARPU, and churn responses.
 - **Financial modeling & scenario analysis:** Build scenarios for prices, volumes, churn, and cost curves to understand unit economics, breakeven volumes, and LTV/CAC under penetration versus alternative strategies.
 

@@ -412,6 +412,10 @@ function parseFAQ(content: string): { beforeFAQ: string; faqItems: Array<{ quest
   const faqRegex = /##\s+FAQ\s*\n([\s\S]*?)(?=\n##|$)/;
   const match = content.match(faqRegex);
   
+  // #region agent log
+  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseFAQ:413',message:'parseFAQ entry',data:{contentLength:content.length,hasMatch:!!match,matchIndex:match?.index||-1},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
+  // #endregion
+  
   if (!match) {
     return { beforeFAQ: content, faqItems: [], afterFAQ: '' };
   }
@@ -420,6 +424,10 @@ function parseFAQ(content: string): { beforeFAQ: string; faqItems: Array<{ quest
   const faqContent = match[1];
   const beforeFAQ = content.substring(0, faqStartIndex).trim();
   const afterFAQ = content.substring(faqStartIndex + match[0].length).trim();
+
+  // #region agent log
+  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseFAQ:422',message:'parseFAQ extraction',data:{faqStartIndex,beforeFAQLength:beforeFAQ.length,afterFAQLength:afterFAQ.length,faqContentLength:faqContent.length,beforeFAQFirst200:beforeFAQ.substring(0,200),afterFAQFirst200:afterFAQ.substring(0,200)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
+  // #endregion
 
   // Parse Q/A pairs
   const qaRegex = /\*\*Q:\*\*\s*([\s\S]+?)\n+\*\*A:\*\*\s*([\s\S]+?)(?=\n+\*\*Q:|$)/g;
@@ -493,6 +501,16 @@ const markdownComponents = {
       Icon = TrendingDown;
     } else if (headingText.includes('commoditization risk')) {
       Icon = TrendingDown;
+    }
+    // Add icons for "Rules of thumb" subsections
+    else if (headingText.includes('revenue coverage')) {
+      Icon = Target;
+    } else if (headingText.includes('dedicated plan threshold')) {
+      Icon = DollarSign;
+    } else if (headingText.includes('use case profitability')) {
+      Icon = TrendingUp;
+    } else if (headingText.includes('plan clarity')) {
+      Icon = CheckCircle;
     }
     
     return (
@@ -594,14 +612,20 @@ const markdownComponents = {
   img: ({ node, src, alt, ...props }: any) => {
     // Handle images with Next.js Image component for optimization
     if (src?.startsWith('/')) {
+      // Check if this is the use case mental model image - make it smaller
+      const isUseCaseMental = src.includes('wiki_usecase_mental');
+      const imageWidth = isUseCaseMental ? 600 : 800;
+      const imageHeight = isUseCaseMental ? 450 : 600;
+      const maxWidth = isUseCaseMental ? 'max-w-2xl' : 'max-w-full';
+      
       return (
         <div className="my-8 flex justify-center">
           <Image
             src={src}
             alt={alt || ''}
-            width={800}
-            height={600}
-            className="rounded-lg shadow-lg max-w-full h-auto"
+            width={imageWidth}
+            height={imageHeight}
+            className={`rounded-lg shadow-lg ${maxWidth} h-auto`}
             {...props}
           />
         </div>
@@ -612,7 +636,7 @@ const markdownComponents = {
   },
 };
 
-export default function ConceptPage({ params }: ConceptPageProps) {
+export default async function ConceptPage({ params }: ConceptPageProps) {
   try {
     const category = getCategoryBySlug(params.category);
     
@@ -662,6 +686,9 @@ export default function ConceptPage({ params }: ConceptPageProps) {
       beforeSnapshot = snapshotResult.beforeSnapshot;
       snapshot = snapshotResult.snapshot;
       afterSnapshotContent = snapshotResult.afterSnapshot;
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:680',message:'After snapshot parsing',data:{afterSnapshotLength:afterSnapshotContent.length,afterSnapshotPreview:afterSnapshotContent.substring(0,300),hasFAQ:afterSnapshotContent.includes('## FAQ')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
+      // #endregion
     } catch (error) {
       console.error('Error parsing snapshot:', error);
     }
@@ -732,12 +759,18 @@ export default function ConceptPage({ params }: ConceptPageProps) {
       const contentToParseForFAQ = hasContent && conceptData 
         ? (afterMetricsContent || afterStepByStepContent || afterKeyFactsContent || afterSnapshotContent || conceptData.content)
         : '';
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:751',message:'FAQ parsing input',data:{contentLength:contentToParseForFAQ?.length||0,contentPreview:contentToParseForFAQ?.substring(0,200)||'',hasMetrics:!!metrics,hasSteps:!!steps,hasKeyFacts:!!keyFacts},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+      // #endregion
       const faqResult = contentToParseForFAQ
         ? parseFAQ(contentToParseForFAQ)
         : { beforeFAQ: '', faqItems: [], afterFAQ: '' };
       beforeFAQ = faqResult.beforeFAQ;
       faqItems = faqResult.faqItems;
       afterFAQ = faqResult.afterFAQ;
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:757',message:'FAQ parsing result',data:{beforeFAQLength:beforeFAQ.length,beforeFAQPreview:beforeFAQ.substring(0,300),afterFAQLength:afterFAQ.length,afterFAQPreview:afterFAQ.substring(0,300),faqItemsCount:faqItems.length,beforeFAQHasReferences:beforeFAQ.includes('References'),beforeFAQHasWhatIs:beforeFAQ.includes('What is'),beforeFAQHasWhyTempting:beforeFAQ.includes('Why')&&beforeFAQ.includes('tempting')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+      // #endregion
     } catch (error) {
       console.error('Error parsing FAQ:', error);
     }
@@ -1031,6 +1064,29 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                           {beforeKeyFacts}
                         </ReactMarkdown>
                       )}
+                      {/* Content after Snapshot when there are no Key Facts, Steps, or Metrics but FAQ exists - render main content sections before FAQ */}
+                      {(()=>{
+                        const shouldRender = (!keyFacts || keyFacts.length === 0) && (!steps || steps.length === 0) && (!metrics || metrics.length === 0) && faqItems.length > 0 && afterSnapshotContent && afterSnapshotContent.trim();
+                        if (shouldRender) {
+                          fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1068',message:'Rendering afterSnapshotContent (no intermediate sections)',data:{hasKeyFacts:!!keyFacts,hasSteps:!!steps,hasMetrics:!!metrics,hasFAQ:faqItems.length>0,afterSnapshotLength:afterSnapshotContent.length,condition:true},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'G'})}).catch(()=>{});
+                        }
+                        return shouldRender;
+                      })() && (
+                        <div key="after-snapshot-content-no-intermediate">
+                          <ReactMarkdown
+                            remarkPlugins={[remarkGfm, remarkMath]}
+                            rehypePlugins={[rehypeRaw, rehypeKatex]}
+                            components={markdownComponents}
+                          >
+                            {(()=>{
+                              const contentToRender = afterSnapshotContent.split('## FAQ')[0].trim();
+                              const splitParts = afterSnapshotContent.split('## FAQ');
+                              fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1078',message:'Content being rendered from afterSnapshotContent',data:{contentLength:contentToRender.length,afterSnapshotLength:afterSnapshotContent.length,splitPartsCount:splitParts.length,contentPreview:contentToRender.substring(0,400),last200Chars:contentToRender.substring(contentToRender.length-200),hasWhatIs:contentToRender.includes('## What is'),hasReferences:contentToRender.includes('## References'),hasFAQ:contentToRender.includes('## FAQ')},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'I'})}).catch(()=>{});
+                              return contentToRender;
+                            })()}
+                          </ReactMarkdown>
+                        </div>
+                      )}
 
                       {/* Key Facts Section */}
                       {keyFacts && keyFacts.length > 0 && (
@@ -1308,13 +1364,18 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                       )}
                       {/* Content when there are no Step-by-step, Metrics, or FAQ sections - render through beforeFAQ (last parsed) */}
                       {(!steps || steps.length === 0) && (!metrics || metrics.length === 0) && faqItems.length === 0 && beforeFAQ && beforeFAQ.trim() && (
-                        <ReactMarkdown
-                          remarkPlugins={[remarkGfm, remarkMath]}
-                          rehypePlugins={[rehypeRaw, rehypeKatex]}
-                          components={markdownComponents}
-                        >
-                          {beforeFAQ}
-                        </ReactMarkdown>
+                        <>
+                          {/* #region agent log */}
+                          {(()=>{fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1343',message:'Rendering beforeFAQ (no FAQ path)',data:{hasSteps:!!steps,hasMetrics:!!metrics,hasFAQ:faqItems.length>0,condition:true},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});return null;})()}
+                          {/* #endregion */}
+                          <ReactMarkdown
+                            remarkPlugins={[remarkGfm, remarkMath]}
+                            rehypePlugins={[rehypeRaw, rehypeKatex]}
+                            components={markdownComponents}
+                          >
+                            {beforeFAQ}
+                          </ReactMarkdown>
+                        </>
                       )}
 
                       {/* Metrics to monitor Section */}
@@ -1391,15 +1452,26 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                           {afterMetricsContent}
                         </ReactMarkdown>
                       )}
-                      {/* Content before FAQ (only if FAQ exists and no Metrics) */}
-                      {faqItems.length > 0 && (!metrics || metrics.length === 0) && beforeFAQ && beforeFAQ.trim() && (
-                        <ReactMarkdown
-                          remarkPlugins={[remarkGfm, remarkMath]}
-                          rehypePlugins={[rehypeRaw, rehypeKatex]}
-                          components={markdownComponents}
-                        >
-                          {beforeFAQ}
-                        </ReactMarkdown>
+                      {/* Content before FAQ (only if FAQ exists, no Metrics, and content hasn't been rendered yet via afterSnapshotContent) */}
+                      {(()=>{
+                        // Prevent rendering if content was already rendered via afterSnapshotContent path (no intermediate sections)
+                        const contentAlreadyRendered = (!keyFacts || keyFacts.length === 0) && (!steps || steps.length === 0) && (!metrics || metrics.length === 0) && faqItems.length > 0;
+                        const shouldRender = !contentAlreadyRendered && faqItems.length > 0 && (!metrics || metrics.length === 0) && ((keyFacts && keyFacts.length > 0) || (steps && steps.length > 0)) && beforeFAQ && beforeFAQ.trim();
+                        fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1448',message:'Checking beforeFAQ render condition',data:{shouldRender,contentAlreadyRendered,hasFAQ:faqItems.length>0,hasMetrics:!!metrics,hasKeyFacts:!!keyFacts&&keyFacts.length>0,hasSteps:!!steps&&steps.length>0,beforeFAQLength:beforeFAQ?.length||0},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'J'})}).catch(()=>{});
+                        return shouldRender;
+                      })() && (
+                        <>
+                          {/* #region agent log */}
+                          {(()=>{fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1452',message:'Rendering beforeFAQ (with KeyFacts/Steps)',data:{beforeFAQLength:beforeFAQ.length,condition:true},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'H'})}).catch(()=>{});return null;})()}
+                          {/* #endregion */}
+                          <ReactMarkdown
+                            remarkPlugins={[remarkGfm, remarkMath]}
+                            rehypePlugins={[rehypeRaw, rehypeKatex]}
+                            components={markdownComponents}
+                          >
+                            {beforeFAQ}
+                          </ReactMarkdown>
+                        </>
                       )}
 
                       {/* FAQ Section */}
@@ -1457,15 +1529,24 @@ export default function ConceptPage({ params }: ConceptPageProps) {
                         </section>
                       )}
 
-                      {/* Content after FAQ */}
-                      {afterFAQ && (
-                        <ReactMarkdown
-                          remarkPlugins={[remarkGfm, remarkMath]}
-                          rehypePlugins={[rehypeRaw, rehypeKatex]}
-                          components={markdownComponents}
-                        >
-                          {afterFAQ}
-                        </ReactMarkdown>
+                      {/* Content after FAQ - only render if there's actual content (not just whitespace or newlines) */}
+                      {(()=>{
+                        const shouldRender = afterFAQ && afterFAQ.trim() && afterFAQ.trim().length > 0 && !/^\s*$/.test(afterFAQ);
+                        fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1523',message:'Checking afterFAQ render condition',data:{shouldRender,afterFAQLength:afterFAQ?.length||0,afterFAQPreview:afterFAQ?.substring(0,300)||'',afterFAQTrimmed:afterFAQ?.trim()||''},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'K'})}).catch(()=>{});
+                        return shouldRender;
+                      })() && (
+                        <>
+                          {/* #region agent log */}
+                          {(()=>{fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1527',message:'Rendering afterFAQ',data:{afterFAQLength:afterFAQ.length,afterFAQPreview:afterFAQ.substring(0,300),condition:true},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'B'})}).catch(()=>{});return null;})()}
+                          {/* #endregion */}
+                          <ReactMarkdown
+                            remarkPlugins={[remarkGfm, remarkMath]}
+                            rehypePlugins={[rehypeRaw, rehypeKatex]}
+                            components={markdownComponents}
+                          >
+                            {afterFAQ}
+                          </ReactMarkdown>
+                        </>
                       )}
 
                       {/* CTA Section */}

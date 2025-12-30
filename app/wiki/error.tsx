@@ -3,7 +3,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 
-export default function Error({
+export default function WikiError({
   error,
   reset,
 }: {
@@ -12,17 +12,17 @@ export default function Error({
 }) {
   useEffect(() => {
     // Log the error to an error reporting service
-    console.error('Concept page error:', error)
+    console.error('Wiki error:', error)
   }, [error])
 
   return (
     <div className="min-h-screen bg-[#f9f6f7] flex items-center justify-center px-4">
       <div className="max-w-2xl mx-auto text-center">
         <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold text-[#1f2933] mb-4">
-          Something went wrong!
+          Something went wrong in the Wiki!
         </h1>
         <p className="text-base sm:text-[17px] text-[#1f2933] mb-8 leading-[1.65]">
-          {error.message || 'An unexpected error occurred while loading this concept page.'}
+          {error.message || 'An unexpected error occurred while loading the wiki page.'}
         </p>
         <div className="flex gap-4 justify-center">
           <button
@@ -42,10 +42,6 @@ export default function Error({
     </div>
   )
 }
-
-
-
-
 
 
 

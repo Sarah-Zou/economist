@@ -129,7 +129,7 @@ Use EVE when **economic logic is a major part of the buying decision**, especial
 ## How do you implement EVE step-by-step?
 ### Inputs you need
 
-At minimum, for **one well‑defined customer segment and use case**:
+At minimum, for **one well‑defined customer segment and [use case](/wiki/pricing/value-and-customers/customer-use-cases)**:
 
 * **Next-Best Competitive Alternative (NBCA):** Identify exactly what the customer would do if your product didn't exist (including "do nothing"). NBCA's product or process, including price and commercial terms (bundles, volume discounts, service levels).
 * **Differentiated Features:** A list of every attribute that makes your product unique.
@@ -150,7 +150,7 @@ At minimum, for **one well‑defined customer segment and use case**:
 
 ### Step-by-step
 
-1. **Define the customer segment & use case:** Example: "Mid‑market e‑commerce brands, 20–200 employees, using our analytics tool to optimize ad spend."
+1. **Define the customer segment & [use case](/wiki/pricing/value-and-customers/customer-use-cases):** Example: "Mid‑market e‑commerce brands, 20–200 employees, using our analytics tool to optimize ad spend."
 
 2. **Identify NBCA and determine reference price:** Pick the competitor the customer would likely buy instead. Document its typical price, contract terms, and key pros/cons.
 
@@ -219,7 +219,7 @@ Your actual list price might be slightly above this (to allow room for discounts
 - McKinsey & Company. (2014, June 1). Using big data to make better pricing decisions. *McKinsey Quarterly*. [Link](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-big-data-to-make-better-pricing-decisions)
 - Nagle, T. T., & Müller, G. (2018). *The strategy and tactics of pricing: A guide to growing more profitably* (6th ed.). Routledge.
 
-**Related pages:** [Value‑Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Willingness to Pay (WTP) Measurement](/wiki/pricing/value-and-customers/willingness-to-pay) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger Price Testing](/wiki/pricing/research-and-metrics/gabor-granger) | [Conjoint Analysis & Discrete Choice Experiments](/wiki/pricing/research-and-metrics/conjoint-analysis) | [Price Fences & Segmentation](/wiki/pricing/price-architecture) | [ROI Calculators and Value Selling](/wiki/pricing/value-and-customers)
+**Related pages:** [Value‑Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Willingness to Pay (WTP) Measurement](/wiki/pricing/value-and-customers/willingness-to-pay) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger Price Testing](/wiki/pricing/research-and-metrics/gabor-granger) | [Conjoint Analysis & Discrete Choice Experiments](/wiki/pricing/research-and-metrics/conjoint-analysis) | [Price Fences & Segmentation](/wiki/pricing/price-architecture) | [ROI Calculators and Value Selling](/wiki/pricing/value-and-customers)
 
 ## FAQ
 

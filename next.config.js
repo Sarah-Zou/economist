@@ -8,7 +8,9 @@ const withMDX = require('@next/mdx')({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // Only use static export for production builds, not dev mode
+  // This prevents conflicts with error boundaries in development
+  ...(process.env.NODE_ENV === 'production' ? { output: 'export' } : {}),
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   images: {
     remotePatterns: [

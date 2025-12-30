@@ -62,9 +62,9 @@ Competition-based pricing leverages the reality that in most markets, the larges
 |-----------|----------------------|------------|
 | Highly competitive, price-sensitive markets with easily substitutable products | ✅ Likely | Competition determines price point in interchangeable markets (e.g., consumer staples like milk). |
 | Markets lacking differentiation with similar solutions | ✅ May be necessary initially | Use until differentiation can be established. |
-| Early prototype with poor WTP data | ⚠️ As reference | Ensure viability; plan to replace within 1–2 cycles. |
+| Early prototype with poor [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) data | ⚠️ As reference | Ensure viability; plan to replace within 1–2 cycles. |
 | Differentiated products with unique value | ❌ Avoid | Misses value capture opportunities; use value-based pricing instead. |
-| Multi-segment markets with varying WTP | ❌ Avoid | Ignores segmentation opportunity; different segments have different WTP. |
+| Multi-segment markets with varying [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) | ❌ Avoid | Ignores segmentation opportunity; different segments have different [WTP](/wiki/pricing/value-and-customers/willingness-to-pay). |
 | Markets prone to price wars | ❌ Avoid | Accelerates destructive price spirals and industry-wide profit destruction. |
 
 
@@ -84,7 +84,7 @@ If all companies focus overzealously on gaining market share and follow each oth
 
 ### 📉 Misaligns with Demand
 
-Prices can easily fall out of sync with current customer demand if every firm is simply focused on copying the competition. When firms stop paying attention to actual market conditions and customer willingness-to-pay, prices become disconnected from reality.
+Prices can easily fall out of sync with current customer demand if every firm is simply focused on copying the competition. When firms stop paying attention to actual market conditions and customer [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay), prices become disconnected from reality.
 
 ## References & Links
 
@@ -93,7 +93,7 @@ Prices can easily fall out of sync with current customer demand if every firm is
 - Raju, J., & Zhang, Z. J. (2010). *Smart Pricing: How Google, Priceline, and Leading Businesses Use Pricing Innovation for Profitability*. Pearson Prentice Hall.
 - Nagle, T. T., Müller, G., & Gruyaert, E. (2022). *The Strategy and Tactics of Pricing: A Guide to Growing More Profitably*. Routledge.
 
-**Related pages:** [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Strategic Pricing](/wiki/pricing/foundations/strategic-pricing) | [Customer-Driven Pricing](/wiki/pricing/foundations/customer-driven-pricing) | [Cost-Plus Pricing](/wiki/pricing/foundations/cost-plus-pricing)
+**Related pages:** [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Strategic Pricing](/wiki/pricing/foundations/strategic-pricing) | [Customer-Driven Pricing](/wiki/pricing/foundations/customer-driven-pricing) | [Cost-Plus Pricing](/wiki/pricing/foundations/cost-plus-pricing) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay)
 
 ## FAQ
 
@@ -112,5 +112,5 @@ Prices can easily fall out of sync with current customer demand if every firm is
 
 **Q:** When is competition-based pricing appropriate?
 
-**A:** Competition-based pricing is likely effective in highly competitive, price-sensitive markets with easily substitutable products (e.g., consumer staples like milk), where competition determines the price point. It may be necessary initially in markets lacking differentiation, or as a reference point for early prototypes with poor WTP data. However, it should rarely be the primary or sole pricing strategy, and should be avoided for differentiated products, multi-segment markets, or markets prone to price wars.
+**A:** Competition-based pricing is likely effective in highly competitive, price-sensitive markets with easily substitutable products (e.g., consumer staples like milk), where competition determines the price point. It may be necessary initially in markets lacking differentiation, or as a reference point for early prototypes with poor [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) data. However, it should rarely be the primary or sole pricing strategy, and should be avoided for differentiated products, multi-segment markets, or markets prone to price wars.
 

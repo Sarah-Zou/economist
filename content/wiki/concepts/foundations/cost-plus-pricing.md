@@ -15,12 +15,12 @@ owner: "Dr. Sarah Zou"
 
 **Why it's tempting:** Widely taught and adopted; easy to calculate; appears **financially prudent**; requires no market or value discovery; reduces decision pressure on managers.
 
-**Where it fails:** Ignores customer value and WTP; creates circular pricing logic when unit costs vary with volume; leads to avoidable **profit leakage**; encourages ad hoc pricing and overlooks opportunities for strategic differentiation.
+**Where it fails:** Ignores customer value and [WTP](/wiki/pricing/value-and-customers/willingness-to-pay); creates circular pricing logic when unit costs vary with volume; leads to avoidable **profit leakage**; encourages ad hoc pricing and overlooks opportunities for strategic differentiation.
 
 **When to use:** Early exploration; regulated or contractual pass‑through contexts; bespoke services with time‑and‑materials; as a **price floor**, not the list price, in differentiated markets.
 
 **Key Takeaways:**
-- **Common but flawed:** Cost-plus is widely taught and adopted, but it ignores customer value and willingness-to-pay, which are the true drivers of pricing decisions.
+- **Common but flawed:** Cost-plus is widely taught and adopted, but it ignores customer value and [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay), which are the true drivers of pricing decisions.
 - **Profit leakage:** Cost-plus pricing can lead to consistently sub-par prices, leaving "hidden profits" on the table when sales are brisk.
 
 
@@ -55,7 +55,7 @@ Cost-plus pricing is widely used, but understanding its limitations is critical 
 - **Widely taught and adopted:** Cost-plus is a common method taught in business schools and used across industries.
 - **Easy to calculate:** Simple formula requires minimal market research or customer discovery.
 - **Appears financially prudent:** Seems like a safe, conservative approach that ensures costs are covered.
-- **Requires no market or value discovery:** No need to understand customer willingness-to-pay or competitive dynamics.
+- **Requires no market or value discovery:** No need to understand customer [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay) or competitive dynamics.
 - **Reduces decision pressure on managers:** Provides a clear, defensible formula that reduces subjective judgment calls.
 
 
@@ -67,15 +67,15 @@ In some special cases, cost-plus pricing can be used.
 | Situation | Use cost‑plus? | Why / Note |
 |-----------|----------------|------------|
 | Regulated tariffs, cost pass‑through contracts | ✅ Likely | Pricing must track costs; margin caps exist. |
-| Early prototype with poor WTP data | ⚠️ As floor | Ensure viability; plan to replace within 1–2 cycles. |
+| Early prototype with poor [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) data | ⚠️ As floor | Ensure viability; plan to replace within 1–2 cycles. |
 | Commodities with identical specs | ⚠️ Partial | Combine with market index and competitive parity. |
 | Differentiated SaaS or hardware with moat | ❌ Avoid | Misses value; risks severe underpricing. |
-| Multi‑segment/enterprise deals | ❌ Avoid | Segments have different WTP; fences required. |
+| Multi‑segment/enterprise deals | ❌ Avoid | Segments have different [WTP](/wiki/pricing/value-and-customers/willingness-to-pay); fences required. |
 
 
 ## Where cost-plus pricing fails
 
-### Ignores Customer Value and WTP
+### Ignores Customer Value and [WTP](/wiki/pricing/value-and-customers/willingness-to-pay)
 
 It mistakenly assumes that customers base their purchase decisions on the seller's cost, which is often false. Value (the buyer's motivation) has little to no influence on the resulting price.
 

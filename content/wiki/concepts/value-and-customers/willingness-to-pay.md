@@ -38,7 +38,7 @@ owner: "Dr. Sarah Zou"
 Unlike a "price point," which is merely a number, WTP is a **distribution** which indicates what customers actually value and serves as a measure of how much they value it.
 
 * **Consumer surplus:** `WTP − Price` (how much "extra value" the buyer keeps, or incentives to purchase).
-* **WTP distribution:** Variation across customers; shaped by use case, ability to pay, alternatives, and risk.
+* **WTP distribution:** Variation across customers; shaped by [use case](/wiki/pricing/value-and-customers/customer-use-cases), ability to pay, alternatives, and risk.
 * **Price sensitivity / elasticity:** How demand changes with price.
 
 ## Why does WTP matter?
@@ -81,20 +81,20 @@ This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pric
 ### Inputs you need
 
 * **Offer + unit:** Crisp product description, **[value metric](/wiki/pricing/value-and-customers/value-metric)**, and billing period (e.g., $/seat/month) used consistently.
-* **Segmentation schema:** The segments you'll cut by (persona/firmographics, usage intensity, use-case urgency).
+* **Segmentation schema:** The segments you'll cut by (persona/firmographics, usage intensity, [use-case](/wiki/pricing/value-and-customers/customer-use-cases) urgency).
 * **Sampling plan:** Who you'll survey (customers/prospects) and outreach math to reach **~150 responses per segment**.
 * **PSM survey draft:** The 4 [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) questions + a few segment questions + attention/comprehension check.
 * **Validation constraints:** Growth-loop friction sensitivity + unit economics (cost-to-serve, CAC payback) + competitive reference point.
 
 ### Methods
 
-* **Foundational interviews:** 10–12 per segment to define use cases, alternatives, "why," and the [value metric](/wiki/pricing/value-and-customers/value-metric).
+* **Foundational interviews:** 10–12 per segment to define [use cases](/wiki/pricing/value-and-customers/customer-use-cases), alternatives, "why," and the [value metric](/wiki/pricing/value-and-customers/value-metric).
 * **[Van Westendorp PSM](/wiki/pricing/research-and-experiments/van-westendorp):** 4 price-perception questions to estimate **PMC–PME** (acceptable range) and **OPP**.
 * **Validation (and optional depth):** Pilot/A-B/live rollout to calibrate; use **[conjoint/DCE](/wiki/pricing/research-and-experiments/conjoint-analysis)** when packaging complexity is high.
 
 ### Step-by-step
 
-1. **Conduct foundation qualitative research (before any survey):** Run 10–12 interviews per key segment to nail the use case, persona, and current alternatives; identify the core "why" (time, money, risk, status); and lock a clear [value metric](/wiki/pricing/value-and-customers/value-metric) and billing period (e.g., $/seat/month) so your survey is anchored to a real unit of value.
+1. **Conduct foundation qualitative research (before any survey):** Run 10–12 interviews per key segment to nail the [use case](/wiki/pricing/value-and-customers/customer-use-cases), persona, and current alternatives; identify the core "why" (time, money, risk, status); and lock a clear [value metric](/wiki/pricing/value-and-customers/value-metric) and billing period (e.g., $/seat/month) so your survey is anchored to a real unit of value.
 
 2. **Draft the Van Westendorp survey (don't ask "How much would you pay?"):** Paste a short offer description (what's included, [value metric](/wiki/pricing/value-and-customers/value-metric), monthly vs annual) and then ask the four canonical questions: the price that's **too expensive** to consider, **too cheap** to trust, **expensive but still possible** (needs thought), and a **bargain** (great value), plus a few segment questions and a simple attention/comprehension check. See [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp) for detailed guidance.
 
@@ -104,7 +104,7 @@ This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pric
 
 5. **Plot the Price Sensitivity Meter and read the intersections:** Create cumulative curves over price and identify the **acceptable range** between the **Point of Marginal Cheapness (PMC)** (Too Cheap × Not a Bargain) and **Point of Marginal Expensiveness (PME)** (Too Expensive × Not Expensive), and the **Optimal Price Point (OPP)** where Too Cheap intersects Too Expensive—using curve stability and separation as a quick confidence check.
 
-6. **Segment results to find the real story:** Re-run the PSM outputs by persona/firmographics, usage intensity, and urgency of the use case to reveal different acceptable ranges and OPPs, then translate those differences into an initial [price-fence](/wiki/pricing/price-architecture) plan (tiers, limits, SLA/support, contract terms).
+6. **Segment results to find the real story:** Re-run the PSM outputs by persona/firmographics, usage intensity, and urgency of the [use case](/wiki/pricing/value-and-customers/customer-use-cases) to reveal different acceptable ranges and OPPs, then translate those differences into an initial [price-fence](/wiki/pricing/price-architecture) plan (tiers, limits, SLA/support, contract terms).
 
 7. **Validate against growth and unit economics:** Pressure-test whether the chosen price will slow acquisition/virality/activation in your growth model and confirm it clears cost-to-serve and CAC payback constraints; then decide on a single price vs a tier ladder and draft the rollout plan (grandfathering, discount policy, messaging).
 
@@ -141,7 +141,7 @@ This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pric
 * Ghuman, A. (2023). [*Price to scale: Practical pricing for B2B SaaS founders*](https://www.amazon.com/Price-Scale-Practical-Pricing-Founders/dp/B0C1J7QZ8K). Independently published.
 * Lehrskov-Schmidt, U. (2021). [*The pricing roadmap: How to design B2B SaaS pricing*](https://www.amazon.com/Pricing-Roadmap-Design-B2B-Pricing/dp/8797203103). Independently published.
 
-**Related pages:** [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Conjoint Analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp) | [Gabor–Granger](/wiki/pricing/research-and-experiments/gabor-granger) | [Price Elasticity](/wiki/pricing/research-and-experiments/price-elasticity) | [Price Fences](/wiki/pricing/price-architecture)
+**Related pages:** [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Conjoint Analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp) | [Gabor–Granger](/wiki/pricing/research-and-experiments/gabor-granger) | [Price Elasticity](/wiki/pricing/research-and-experiments/price-elasticity) | [Price Fences](/wiki/pricing/price-architecture)
 
 ## FAQ
 

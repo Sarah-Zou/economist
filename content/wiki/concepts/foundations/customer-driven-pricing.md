@@ -1,7 +1,7 @@
 ---
 title: "Customer-Driven Pricing (Consumer-Based Pricing)"
 metaTitle: "Customer-Driven Pricing: Definition, Framework, When to Use"
-oneLiner: "Customer-Driven Pricing is an approach that charges the highest perceived WTP based on haggling; alienates loyal customers and trains aggressive bargainers."
+oneLiner: "Customer-Driven Pricing is an approach that charges the highest perceived [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) based on haggling; alienates loyal customers and trains aggressive bargainers."
 prereqs: ["Value-Based Pricing", "Price Discrimination", "WTP Research"]
 tags: ["Pricing Flaw", "Negotiation", "Price Discrimination", "Haggling", "WTP"]
 readingTime: 6
@@ -11,7 +11,7 @@ owner: "Dr. Sarah Zou"
 
 ## Snapshot (TL;DR)
 
-**What it is:** A pricing approach where the firm actively gathers detailed customer information to assess their price sensitivity and maximum WTP, adjusting the price up or down to match the size of the customer's wallet.
+**What it is:** A pricing approach where the firm actively gathers detailed customer information to assess their price sensitivity and maximum [WTP](/wiki/pricing/value-and-customers/willingness-to-pay), adjusting the price up or down to match the size of the customer's wallet.
 
 **Why it's tempting:** This method gives the company **flexibility** to charge different prices to different customers, theoretically allowing the firm to achieve a **high volume of sales** at the **best possible margins**. It recognizes the need for pricing to reflect market conditions, unlike cost-plus pricing.
 
@@ -25,7 +25,7 @@ owner: "Dr. Sarah Zou"
 
 ## What is customer-driven pricing?
 
-**Customer-Driven Pricing (Consumer-Based Pricing)** is an approach where a firm actively determines how much a specific individual customer is willing to pay (WTP) for its product or service, often by gathering information about their circumstances (e.g., job, family, urgency) during a sales interaction, and then charging that maximum bearable price. This approach sometimes views low pricing as a substitute for inadequate marketing effort.
+**Customer-Driven Pricing (Consumer-Based Pricing)** is an approach where a firm actively determines how much a specific individual customer is willing to pay ([WTP](/wiki/pricing/value-and-customers/willingness-to-pay)) for its product or service, often by gathering information about their circumstances (e.g., job, family, urgency) during a sales interaction, and then charging that maximum bearable price. This approach sometimes views low pricing as a substitute for inadequate marketing effort.
 
 ### Key definitions
 
@@ -66,23 +66,23 @@ owner: "Dr. Sarah Zou"
   </div>
 </div>
 
-- **WTP assessment:** The process of gathering information about a customer's circumstances (job, family, urgency, financial situation) to estimate their maximum willingness to pay.
-- **Price discrimination:** Charging different prices to different customers based on their assessed WTP rather than uniform value-based pricing.
+- **[WTP](/wiki/pricing/value-and-customers/willingness-to-pay) assessment:** The process of gathering information about a customer's circumstances (job, family, urgency, financial situation) to estimate their maximum [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay).
+- **Price discrimination:** Charging different prices to different customers based on their assessed [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) rather than uniform value-based pricing.
 - **Haggling:** The negotiation process where customers learn to demand concessions, and sellers adjust prices to close deals.
 
 ### Core assumptions (flawed)
 
 Customer-driven pricing assumes:
 - Flexibility in pricing is required to maximize sales volume and margin.
-- Salespeople can accurately "size up" a customer's WTP and negotiation skill.
+- Salespeople can accurately "size up" a customer's [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) and negotiation skill.
 - The purpose of negotiation is to find the lowest price the customer will accept, rather than justify the value of the product.
 
 ## Why customer-driven pricing is tempting?
 
 Customer-driven pricing offers apparent advantages that make it appealing, but these benefits come at significant long-term costs.
 
-- **Flexibility to maximize margins:** Theoretically allows the firm to charge each customer their maximum WTP, potentially achieving higher margins than uniform pricing.
-- **Reflects market conditions:** Recognizes that different customers have different WTP, unlike rigid cost-plus pricing that ignores market dynamics.
+- **Flexibility to maximize margins:** Theoretically allows the firm to charge each customer their maximum [WTP](/wiki/pricing/value-and-customers/willingness-to-pay), potentially achieving higher margins than uniform pricing.
+- **Reflects market conditions:** Recognizes that different customers have different [WTP](/wiki/pricing/value-and-customers/willingness-to-pay), unlike rigid cost-plus pricing that ignores market dynamics.
 - **High volume potential:** Appears to enable high sales volume by adjusting prices to match individual customer price sensitivity.
 - **Sales control:** Gives salespeople flexibility to close deals by adjusting prices based on perceived customer circumstances.
 
@@ -116,7 +116,7 @@ Over time, this strategy can lead to a decline in product differentiation and se
 - Raju, J., & Zhang, Z. J. (2010). *Smart Pricing: How Google, Priceline, and Leading Businesses Use Pricing Innovation for Profitability*. Pearson Prentice Hall.
 - Nagle, T. T., Müller, G., & Gruyaert, E. (2022). *The Strategy and Tactics of Pricing: A Guide to Growing More Profitably*. Routledge.
 
-**Related pages:** [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Cost-Plus Pricing](/wiki/pricing/foundations/cost-plus-pricing) | [Strategic Pricing](/wiki/pricing/foundations/strategic-pricing) | [Price Discrimination](/wiki/pricing/price-architecture) | [WTP Research](/wiki/pricing/research-and-metrics)
+**Related pages:** [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Cost-Plus Pricing](/wiki/pricing/foundations/cost-plus-pricing) | [Strategic Pricing](/wiki/pricing/foundations/strategic-pricing) | [Price Discrimination](/wiki/pricing/price-architecture) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay)
 
 ## FAQ
 

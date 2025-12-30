@@ -28,7 +28,7 @@ This category provides financial metrics and performance measurement frameworks 
 ## Related categories
 
 - [Core Philosophies & Strategy](https://sarahzou.com/wiki/pricing/foundations) - Core pricing strategies that impact unit economics
-- [Understanding Value & Customers](https://sarahzou.com/wiki/pricing/value-and-customers) - Understanding customer value and willingness to pay
+- [Understanding Value & Customers](https://sarahzou.com/wiki/pricing/value-and-customers) - Understanding customer value and [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay)
 - [Monetization Models & Metering](https://sarahzou.com/wiki/pricing/models-and-metering) - Pricing models that impact unit economics
 - [Customer Research & Pricing Experiments](https://sarahzou.com/wiki/pricing/research-and-experiments) - Research methods that inform pricing decisions
 - [Governance, Process & Advanced Topics](https://sarahzou.com/wiki/pricing/governance-and-process) - Implementing metrics into pricing processes

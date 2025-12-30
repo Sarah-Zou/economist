@@ -44,7 +44,7 @@ Instead of starting from your costs, it starts from what buyers see as their nex
 
 - **Product value differences:** How your offer compares to the NBCA on things customers care about—brand, quality, attributes/features, service, convenience, and style/UX—and how much each of those differences is worth in dollars for the segment you're targeting.
 
-- **Adjusting forces:** External factors that shift willingness to pay even when the product itself hasn't changed—customer income/budget, prices of complementary products, and the broader market environment (fads, news, regulation, events).
+- **Adjusting forces:** External factors that shift [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) even when the product itself hasn't changed—customer income/budget, prices of complementary products, and the broader market environment (fads, news, regulation, events).
 
 ### Mental model
 
@@ -67,7 +67,7 @@ The Value Decoder is necessary because it gives teams a shared, concrete logic f
 
 - **Align the company on one price story:** Product, sales, finance, and leadership all see the same rationale for list prices, discounts, and tier gaps, which reduces internal conflict.
 
-- **Spot hidden profit opportunities:** Highlights segments, contexts, or moments (e.g., events, weather, trends) where willingness to pay is higher than your current price assumes.
+- **Spot hidden profit opportunities:** Highlights segments, contexts, or moments (e.g., events, weather, trends) where [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) is higher than your current price assumes.
 
 - **React faster to market shifts:** Provides a repeatable checklist for revisiting prices when competitors move, budgets change, or new information hits the market.
 
@@ -101,13 +101,13 @@ Founders often get the best results by **combining both**: use [EVE](/wiki/prici
 | Highly negotiated enterprise deals | Critical | Decoder gives list price / walk-away floor; deal desks then manage discounts. |
 | Commodities with transparent market prices | Limited | Price is mostly set by market; focus on differentiation or other pricing tools. |
 
-Use the Value Decoder when **you have clear substitutes or alternatives to benchmark against** and when **perception, context, and timing significantly influence willingness to pay**, especially for B2B and B2C products where market conditions change frequently.
+Use the Value Decoder when **you have clear substitutes or alternatives to benchmark against** and when **perception, context, and timing significantly influence [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay)**, especially for B2B and B2C products where market conditions change frequently.
 
 ## How do you implement the Value Decoder step-by-step?
 
 ### Inputs you need
 
-* **Customer & segment:** Who you're pricing for (industry, size, role, use case, geo); key jobs-to-be-done and pain points; basic firmographics/demographics (income or budget levels, region, industry).
+* **Customer & segment:** Who you're pricing for (industry, size, role, [use case](/wiki/pricing/value-and-customers/customer-use-cases), geo); key jobs-to-be-done and pain points; basic firmographics/demographics (income or budget levels, region, industry).
 
 * **Competitive & NBCA:** Realistic alternatives (top 2–3 rivals, DIY, "do nothing"); their actual prices (transaction or street prices, not just list); simple attribute comparison plus win/loss and review insights.
 
@@ -129,7 +129,7 @@ Use the Value Decoder when **you have clear substitutes or alternatives to bench
 
 2. **Compare characteristics:** Take your chosen NBCA and compare it against your product across the six characteristics—Brand, Convenience, Quality, Attributes, Service, and Style/UX—from the customer's point of view. For each area, decide whether you are better, equal, or worse, then assign a dollar premium for advantages and a dollar deduction for weaknesses, ideally as a low/base/high range informed by interviews, ROI estimates, or [WTP research](/wiki/pricing/value-and-customers/willingness-to-pay); summing these gives a baseline value premium or discount versus the NBCA.
 
-3. **Analyze income effects:** Ask whether anything has meaningfully shifted your segment's income or budget—tax credits, economic boom or slowdown, new budget cycles, layoffs, or funding rounds—and how that changes their willingness to pay for your category. If income or budget has risen, you may be able to move toward the higher end of your value‑based range; if it has fallen, adjust downward to stay within what feels affordable while still respecting your cost and margin floors.
+3. **Analyze income effects:** Ask whether anything has meaningfully shifted your segment's income or budget—tax credits, economic boom or slowdown, new budget cycles, layoffs, or funding rounds—and how that changes their [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) for your category. If income or budget has risen, you may be able to move toward the higher end of your value‑based range; if it has fallen, adjust downward to stay within what feels affordable while still respecting your cost and margin floors.
 
 4. **Evaluate related products (complements):** Identify the key products or services your customers buy alongside your offer—accessories, services, travel, usage‑based infrastructure, or other tools in their stack—and check whether their prices have increased or decreased. If complements have become more expensive, your customers' total solution cost has gone up and your share of wallet may need to come down; if complements are cheaper, you may have room to nudge your price upward without the overall bundle feeling out of line.
 
@@ -165,7 +165,7 @@ Use the Value Decoder when **you have clear substitutes or alternatives to bench
 - Baker, W. L., Marn, M. V., & Zawada, C. C. (2010). *The price advantage* (2nd ed.). Hoboken, NJ: John Wiley & Sons. [Link](https://www.wiley.com/en-us/The+Price+Advantage%2C+2nd+Edition-p-9780470502250)
 - Raju, J. G., & Zhang, Z. J. (2010). *Smart pricing: How Google, Priceline, and leading businesses use pricing innovation for profitability*. Upper Saddle River, NJ: Pearson. [Link](https://www.pearson.com/us/higher-education/program/Raju-Smart-Pricing-How-Google-Priceline-and-Leading-Businesses-Use-Pricing-Innovation-for-Profitability/PGM113227.html)
 
-**Related pages:** [Value-based pricing](/wiki/pricing/foundations/value-based-pricing) | [Economic Value Estimation (EVE)](/wiki/pricing/value-and-customers/economic-value-estimation) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp) | [Gabor‑Granger price testing](/wiki/pricing/research-and-experiments/gabor-granger) | [Conjoint analysis / discrete choice experiments](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Good–Better–Best (GBB) packaging](/wiki/pricing/packaging-and-bundling) | [Differential pricing & price fences](/wiki/pricing/price-architecture)
+**Related pages:** [Value-based pricing](/wiki/pricing/foundations/value-based-pricing) | [Economic Value Estimation (EVE)](/wiki/pricing/value-and-customers/economic-value-estimation) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp) | [Gabor‑Granger price testing](/wiki/pricing/research-and-experiments/gabor-granger) | [Conjoint analysis / discrete choice experiments](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Good–Better–Best (GBB) packaging](/wiki/pricing/packaging-and-bundling) | [Differential pricing & price fences](/wiki/pricing/price-architecture)
 
 ## FAQ
 
