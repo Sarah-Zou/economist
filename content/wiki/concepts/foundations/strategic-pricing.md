@@ -49,7 +49,7 @@ owner: "Dr. Sarah Zou"
 
 ### Inputs you need
 
-- **Positioning & Segmentation (Product / PMM):** ICPs, target segments, jobs-to-be-done, and buyer roles.
+- **Positioning & Segmentation (Product / PMM):** ICPs, target segments, [jobs-to-be-done](/wiki/pricing/value-and-customers/jobs-to-be-done), and buyer roles.
 - **Customer [WTP](/wiki/pricing/value-and-customers/willingness-to-pay)/Value Data (Research / Analytics):** Absolute and relative [WTP](/wiki/pricing/value-and-customers/willingness-to-pay), feature value perceived, and price sensitivity by segment.
 - **Internal Financials & Unit Economics (Finance):** Variable and fixed costs, margin targets, elasticity estimates, transaction and usage data.
 - **Market & Competitive Benchmarks (Product / Strategy):** Competitor pricing, alternatives' costs, and macro drivers (supply, demand, regulations, input costs).

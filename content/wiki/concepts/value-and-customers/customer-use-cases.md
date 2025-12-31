@@ -40,12 +40,12 @@ owner: "Dr. Sarah Zou"
 
 ## What is Customer Use Cases?
 
-A **Customer Use Case** is a foundational monetization strategy that defines a specific problem a product solves, the target persona facing that problem, and the context in which they seek a solution. It moves beyond technical features to focus on the **["Job to be Done" (JTBD)](/wiki/pricing/value-and-customers#jobs-to-be-done)**—the specific outcome a customer is trying to achieve. 
+A **Customer Use Case** is a foundational monetization strategy that defines a specific problem a product solves, the target persona facing that problem, and the context in which they seek a solution. It moves beyond technical features to focus on the **[Jobs to Be Done (JTBD)](/wiki/pricing/value-and-customers/jobs-to-be-done)**—the specific outcome a customer is trying to achieve. 
 
 In B2B SaaS, this is the first "price-your-customer" decision, categorizing users by how they derive value from your capability. 
 
 - **Example:** "RevOps manager at a 50–200 person SaaS company uses our platform weekly to identify at-risk deals and reduce pipeline slippage by 15%."
-- **Job-to-be-done (JTBD):** The underlying problem or "job" the customer hires your product to do (e.g., "get a clean, deduped customer list"), independent of your feature names. See [Jobs-to-be-Done (JTBD)](/wiki/pricing/value-and-customers#jobs-to-be-done) for more details.
+- **Job-to-be-done (JTBD):** The underlying problem or "job" the customer hires your product to do (e.g., "get a clean, deduped customer list"), independent of your feature names. See [Jobs to Be Done (JTBD)](/wiki/pricing/value-and-customers/jobs-to-be-done) for more details.
 - **Use case vs. segment:** *[Segment](/wiki/pricing/value-and-customers#customer-segments)* = group of customers with similar characteristics (company size, industry, budget, etc.). *Use case* = what those customers actually do with the product to create value. A segment can contain multiple use cases; a use case can appear across multiple segments.
 - **Primary vs. secondary use case:** *Primary use case* = the main job that justifies the purchase and drives [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay). *Secondary use cases* = additional jobs that are nice-to-have but usually not the core reason to buy.
 

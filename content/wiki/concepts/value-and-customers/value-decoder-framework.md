@@ -107,7 +107,7 @@ Use the Value Decoder when **you have clear substitutes or alternatives to bench
 
 ### Inputs you need
 
-* **Customer & segment:** Who you're pricing for (industry, size, role, [use case](/wiki/pricing/value-and-customers/customer-use-cases), geo); key jobs-to-be-done and pain points; basic firmographics/demographics (income or budget levels, region, industry).
+* **Customer & segment:** Who you're pricing for (industry, size, role, [use case](/wiki/pricing/value-and-customers/customer-use-cases), geo); key [jobs-to-be-done](/wiki/pricing/value-and-customers/jobs-to-be-done) and pain points; basic firmographics/demographics (income or budget levels, region, industry).
 
 * **Competitive & NBCA:** Realistic alternatives (top 2–3 rivals, DIY, "do nothing"); their actual prices (transaction or street prices, not just list); simple attribute comparison plus win/loss and review insights.
 
