@@ -53,7 +53,7 @@ export default function ContactThanksPage() {
                 <div className="text-left">
                   <h3 className="font-semibold text-[#1f2933] mb-1">Response Time</h3>
                   <p className="text-sm text-[#3b4652]">
-                    I typically respond within 24-48 hours. For urgent matters, feel free to reach out directly via email at sarah@sarahzou.com.
+                    I typically respond within 24-48 hours. For urgent matters, feel free to reach out directly via email at hello@sarahzou.com.
                   </p>
                 </div>
               </div>

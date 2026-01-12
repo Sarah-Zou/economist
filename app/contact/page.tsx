@@ -1,39 +1,43 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import { Mail, Linkedin, Twitter } from 'lucide-react'
-import { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata: Metadata = {
-  title: "Contact Sarah Zou, PhD | Early-Stage Tech Strategy Consultation",
-  description: "Get in touch with Sarah Zou, PhD for consulting, speaking engagements, or collaboration. Fill out the contact form or connect via email or LinkedIn.",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  alternates: {
-    canonical: "https://sarahzou.com/contact",
-  },
-  openGraph: {
-    title: "Contact Sarah Zou, PhD | Early-Stage Tech Strategy Consultation",
-    description: "Get in touch with Sarah Zou, PhD for consulting, speaking engagements, or collaboration. Fill out the contact form or connect via email or LinkedIn.",
-    type: "website",
-    url: "https://sarahzou.com/contact",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Contact Sarah Zou, PhD | Early-Stage Tech Strategy Consultation",
-    description: "Get in touch with Sarah Zou, PhD for consulting, speaking engagements, or collaboration. Fill out the contact form or connect via email or LinkedIn.",
-  },
-};
-
 export default function ContactPage() {
+  const [status, setStatus] = useState({ message: '', show: false })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setStatus({ message: 'Sending...', show: true })
+
+    const form = e.currentTarget
+    const scriptURL = process.env.NEXT_PUBLIC_GOOGLE_WEB_APP_URL || 'https://script.google.com/macros/s/AKfycbwSuMH20hBkTnnI27hVGQjsQgXQEC1cv-sxintTParyBP3cOlgyNq99I7UIv3ZRRLY/exec'
+
+    try {
+      const response = await fetch(scriptURL, {
+        method: 'POST',
+        body: new FormData(form)
+      })
+
+      if (response.ok) {
+        setStatus({ message: "Thanks! I'll be in touch soon.", show: true })
+        form.reset()
+      } else {
+        throw new Error('Form submission failed')
+      }
+    } catch (error) {
+      setStatus({ 
+        message: "Error! Please try again or email me directly at hello@sarahzou.com", 
+        show: true 
+      })
+      console.error('Error!', error)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
   return (
     <>
       <section className="min-h-screen flex flex-col items-center justify-center bg-[#f6f7f9] py-20">
@@ -44,7 +48,7 @@ export default function ContactPage() {
           </p>
           <div className="flex flex-col items-center gap-4 mb-8">
             <div className="flex gap-4">
-              <a href="mailto:sarah@sarahzou.com" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e44e1f] font-medium text-lg" target="_blank" rel="noopener noreferrer">
+              <a href="mailto:hello@sarahzou.com" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e44e1f] font-medium text-lg" target="_blank" rel="noopener noreferrer">
                 <Mail className="w-6 h-6" /> Email
               </a>
               <a href="https://www.linkedin.com/in/drsarah-saas-economist" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e44e1f] font-medium text-lg" target="_blank" rel="noopener noreferrer">
@@ -64,24 +68,14 @@ export default function ContactPage() {
             </Link>
             <p className="text-[#1f2933] text-center text-base sm:text-[17px]">Or fill out the form below:</p>
           </div>
-          <form action="https://formspree.io/f/mdkgqeye" method="POST" className="space-y-6">
-            <input type="hidden" name="_next" value="https://sarahzou.com/contact/thanks" />
-            <div className="flex flex-col md:flex-row gap-6">
-              <input
-                type="text"
-                name="firstName"
-                placeholder="First Name"
-                className="flex-1 px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
-                required
-              />
-              <input
-                type="text"
-                name="lastName"
-                placeholder="Last Name"
-                className="flex-1 px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
-                required
-              />
-            </div>
+          <form id="contact-form" onSubmit={handleSubmit} className="space-y-6">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
+              required
+            />
             <input
               type="email"
               name="email"
@@ -100,8 +94,7 @@ export default function ContactPage() {
                 <option value="pre-rev">Pre-revenue</option>
                 <option value="under-1m">Under $1M ARR</option>
                 <option value="1-5m">$1M - $5M ARR</option>
-                <option value="5-20m">$5M - $20M ARR</option>
-                <option value="20m-plus">$20M+ ARR</option>
+                <option value="5m-plus">$5M+ ARR</option>
               </select>
             </div>
             <div>
@@ -135,17 +128,24 @@ export default function ContactPage() {
             </div>
             <textarea
               name="message"
-              placeholder="Tell me more about your pricing challenges..."
+              placeholder="How can I help you?"
               rows={5}
               className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
               required
             />
             <button
               type="submit"
-              className="w-full bg-[#ff5722] text-white font-bold py-3 rounded transition-colors hover:bg-[#e44e1f] focus:outline-none focus:ring-2 focus:ring-[#ff5722] tracking-wider text-lg mt-2"
+              id="submit-btn"
+              disabled={isSubmitting}
+              className="w-full bg-[#ff5722] text-white font-bold py-3 rounded transition-colors hover:bg-[#e44e1f] focus:outline-none focus:ring-2 focus:ring-[#ff5722] tracking-wider text-lg mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               SUBMIT
             </button>
+            {status.show && (
+              <div id="form-status" className="mt-4 text-center text-[#1f2933]">
+                {status.message}
+              </div>
+            )}
           </form>
         </div>
       </section>

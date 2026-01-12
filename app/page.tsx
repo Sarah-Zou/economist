@@ -77,7 +77,7 @@ export default function Home() {
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "Business Inquiries",
-      "email": "sarah@sarahzou.com",
+      "email": "hello@sarahzou.com",
       "availableLanguage": ["English"]
     },
     "sameAs": [

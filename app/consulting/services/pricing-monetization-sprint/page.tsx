@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import FAQSection from './FAQSection';
+import ContactForm from '@/components/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Pricing & Monetization Sprint | 5-Day Pricing Strategy | Dr. Sarah Zou',
@@ -546,44 +547,12 @@ export default function PricingDiagnosticRevenueBoost() {
         <div className="max-w-2xl mx-auto mt-16 mb-16">
           <div className="bg-white rounded-lg p-8 border border-[#e5e7eb] shadow-sm">
             <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-6 text-[#1f2933] text-center">Let's get in touch</h2>
-            <form action="https://formspree.io/f/mdkgqeye" method="POST" className="space-y-6">
-              <div className="flex flex-col md:flex-row gap-6">
-                <input
-                  type="text"
-                  name="firstName"
-                  placeholder="First Name"
-                  className="flex-1 px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
-                  required
-                />
-                <input
-                  type="text"
-                  name="lastName"
-                  placeholder="Last Name"
-                  className="flex-1 px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
-                  required
-                />
-              </div>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
-                required
-              />
-              <textarea
-                name="message"
-                placeholder="Say Hello"
-                rows={5}
-                className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
-                required
-              />
-              <button
-                type="submit"
-                className="w-full bg-[#ff5722] text-white font-bold py-3 rounded-lg transition-colors hover:bg-[#e64a19] focus:outline-none focus:ring-2 focus:ring-[#ff5722] tracking-wider text-lg mt-2 shadow"
-              >
-                SEND MESSAGE
-              </button>
-            </form>
+            <ContactForm 
+              firstName={true}
+              lastName={true}
+              messagePlaceholder="Say Hello"
+              buttonText="SEND MESSAGE"
+            />
           </div>
         </div>
       </div>
