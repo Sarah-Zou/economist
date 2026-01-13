@@ -196,6 +196,29 @@ ${existingSitemaps
   existingSitemaps.forEach((sitemap) => console.log(`    - ${sitemap}`));
 }
 
+// Copy index.html to 404.html for GitHub Pages client-side routing
+function setup404Page() {
+  try {
+    const indexPath = path.join(outDir, 'index.html');
+    const notFoundPath = path.join(outDir, '404.html');
+    
+    if (!fs.existsSync(indexPath)) {
+      console.error('❌ Error: index.html not found. Run "npm run build" first.');
+      return false;
+    }
+    
+    // Copy index.html to 404.html
+    // This allows GitHub Pages to serve the Next.js app for 404s,
+    // enabling client-side routing to work properly
+    fs.copyFileSync(indexPath, notFoundPath);
+    console.log('✓ Copied index.html to 404.html for GitHub Pages routing');
+    return true;
+  } catch (error) {
+    console.error('❌ Error setting up 404 page:', error.message);
+    return false;
+  }
+}
+
 // Ensure out directory exists
 if (!fs.existsSync(outDir)) {
   console.error(`❌ Error: ${outDir} does not exist. Run 'npm run build' first.`);
@@ -203,4 +226,5 @@ if (!fs.existsSync(outDir)) {
 }
 
 generateSitemapIndex();
+setup404Page();
 
