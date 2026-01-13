@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 interface ContactFormProps {
   firstName?: boolean
@@ -23,6 +24,7 @@ export default function ContactForm({
   messagePlaceholder = "Say Hello",
   buttonText = "SEND MESSAGE"
 }: ContactFormProps) {
+  const router = useRouter()
   const [status, setStatus] = useState({ message: '', show: false })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -35,17 +37,20 @@ export default function ContactForm({
     const scriptURL = process.env.NEXT_PUBLIC_GOOGLE_WEB_APP_URL || 'https://script.google.com/macros/s/AKfycbyLhMFSGNNOOtdvwboYEjgDPiJoEy8TxBA5MA9TvVDSEDsXcWx1bgTUdcyA-lC3bBHI/exec'
 
     try {
-      const response = await fetch(scriptURL, {
+      const formData = new FormData(form)
+      
+      // Google Apps Script web apps often return redirects, so we use no-cors mode
+      // This means we can't read the response, but the data is still sent
+      await fetch(scriptURL, {
         method: 'POST',
-        body: new FormData(form)
+        mode: 'no-cors',
+        body: formData
       })
 
-      if (response.ok) {
-        setStatus({ message: "Thanks! I'll be in touch soon.", show: true })
-        form.reset()
-      } else {
-        throw new Error('Form submission failed')
-      }
+      // Since we can't read the response in no-cors mode, assume success
+      // The form data was sent to Google Apps Script
+      // Redirect to thank you page
+      router.push('/contact/thanks')
     } catch (error) {
       setStatus({ 
         message: "Error! Please try again or email me directly at hello@sarahzou.com", 
