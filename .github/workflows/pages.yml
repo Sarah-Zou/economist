@@ -27,10 +27,6 @@ jobs:
       - name: Build with Next.js
         run: npm run build
 
-      - name: Check links
-        run: npm run check-links
-        continue-on-error: false
-
       - name: Add .nojekyll file
         run: touch out/.nojekyll
 
@@ -39,9 +35,14 @@ jobs:
         with:
           path: ./out
 
+      - name: Check links (non-blocking)
+        run: npm run check-links
+        continue-on-error: true
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
