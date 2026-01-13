@@ -30,6 +30,15 @@ jobs:
       - name: Add .nojekyll file
         run: touch out/.nojekyll
 
+      - name: Verify build output
+        run: |
+          echo "Verifying build output files..."
+          ls -la out/ | head -20
+          test -f out/index.html && echo "✓ index.html exists" || echo "✗ index.html missing"
+          test -f out/404.html && echo "✓ 404.html exists" || echo "✗ 404.html missing"
+          test -f out/CNAME && echo "✓ CNAME exists" || echo "✗ CNAME missing"
+          test -f out/.nojekyll && echo "✓ .nojekyll exists" || echo "✗ .nojekyll missing"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
