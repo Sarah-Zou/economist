@@ -3,10 +3,8 @@
 import React, { useState } from 'react'
 import { Mail, Linkedin, Twitter } from 'lucide-react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 
 export default function ContactPage() {
-  const router = useRouter()
   const [status, setStatus] = useState({ message: '', show: false })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -31,8 +29,8 @@ export default function ContactPage() {
 
       // Since we can't read the response in no-cors mode, assume success
       // The form data was sent to Google Apps Script
-      // Redirect to thank you page
-      router.push('/contact/thanks')
+      // Redirect to thank you page (using window.location for static export compatibility)
+      window.location.href = '/contact/thanks'
     } catch (error) {
       setStatus({ 
         message: "Error! Please try again or email me directly at hello@sarahzou.com", 

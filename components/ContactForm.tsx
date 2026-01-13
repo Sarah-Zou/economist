@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState } from 'react'
-import { useRouter } from 'next/navigation'
 
 interface ContactFormProps {
   firstName?: boolean
@@ -24,7 +23,6 @@ export default function ContactForm({
   messagePlaceholder = "Say Hello",
   buttonText = "SEND MESSAGE"
 }: ContactFormProps) {
-  const router = useRouter()
   const [status, setStatus] = useState({ message: '', show: false })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -49,8 +47,8 @@ export default function ContactForm({
 
       // Since we can't read the response in no-cors mode, assume success
       // The form data was sent to Google Apps Script
-      // Redirect to thank you page
-      router.push('/contact/thanks')
+      // Redirect to thank you page (using window.location for static export compatibility)
+      window.location.href = '/contact/thanks'
     } catch (error) {
       setStatus({ 
         message: "Error! Please try again or email me directly at hello@sarahzou.com", 
