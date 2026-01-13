@@ -219,6 +219,42 @@ function setup404Page() {
   }
 }
 
+// Copy CNAME file to out directory for custom domain support
+function setupCNAME() {
+  try {
+    const cnameSource = path.join(process.cwd(), 'CNAME');
+    const cnameDest = path.join(outDir, 'CNAME');
+    
+    if (!fs.existsSync(cnameSource)) {
+      console.log('⚠ CNAME file not found in root directory, skipping...');
+      return false;
+    }
+    
+    // Copy CNAME file to out directory
+    // This is required for GitHub Pages custom domain configuration
+    fs.copyFileSync(cnameSource, cnameDest);
+    console.log('✓ Copied CNAME file to out directory');
+    return true;
+  } catch (error) {
+    console.error('❌ Error copying CNAME file:', error.message);
+    return false;
+  }
+}
+
+// Create .nojekyll file to disable Jekyll processing
+function setupNoJekyll() {
+  try {
+    const nojekyllPath = path.join(outDir, '.nojekyll');
+    // Create empty .nojekyll file
+    fs.writeFileSync(nojekyllPath, '');
+    console.log('✓ Created .nojekyll file');
+    return true;
+  } catch (error) {
+    console.error('❌ Error creating .nojekyll file:', error.message);
+    return false;
+  }
+}
+
 // Ensure out directory exists
 if (!fs.existsSync(outDir)) {
   console.error(`❌ Error: ${outDir} does not exist. Run 'npm run build' first.`);
@@ -227,4 +263,6 @@ if (!fs.existsSync(outDir)) {
 
 generateSitemapIndex();
 setup404Page();
+setupCNAME();
+setupNoJekyll();
 
