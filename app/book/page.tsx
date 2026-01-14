@@ -1,7 +1,8 @@
 import React from 'react'
-import { CheckCircle, Calendar } from 'lucide-react'
+import { Calendar } from 'lucide-react'
 import { Metadata } from 'next'
 import Script from 'next/script'
+import CalendlyEmbed from '@/components/CalendlyEmbed'
 
 export const metadata: Metadata = {
   title: "Thank You | Book a Consultation | Sarah Zou, PhD",
@@ -24,46 +25,41 @@ export const metadata: Metadata = {
 export default function BookPage() {
   return (
     <>
-      <section className="min-h-screen flex flex-col items-center justify-center bg-[#f6f7f9] py-12 sm:py-20">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg shadow-lg p-8 md:p-16">
+      <section className="min-h-screen flex flex-col bg-[#f6f7f9] py-4 sm:py-8 lg:py-12">
+        <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+          <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 lg:p-12">
             {/* Thank You Header */}
-            <div className="flex flex-col items-center text-center mb-8">
-              <div className="flex items-center justify-center gap-4 mb-4">
-                <CheckCircle className="w-12 h-12 sm:w-16 sm:h-16 text-[#ff5722] flex-shrink-0" />
-                <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold text-[#1f2933]">
-                  Thank You for Your Interest!
-                </h1>
-              </div>
-              <p className="mb-8 text-[#1f2933] text-base sm:text-[17px] leading-[1.65] max-w-2xl">
-                I'd love to learn more about your pricing challenges and help you build a data-driven strategy. 
-                Book a free 30-minute consultation below to get started.
+            <div className="flex flex-col items-center text-center mb-4 sm:mb-6">
+              <h1 className="font-serif-playfair text-[28px] sm:text-[32px] lg:text-[36px] font-bold text-[#1f2933] mb-2 sm:mb-4">
+                Thanks—let's make this practical.
+              </h1>
+              <p className="text-[#1f2933] text-sm sm:text-base lg:text-[17px] leading-[1.65] max-w-2xl px-2">
+                Pick a time below for a free 30-min chat. If nothing works, <a href="mailto:hello@sarahzou.com" className="text-[#ff5722] hover:text-[#e44e1f] underline">email me</a> and I'll suggest options.
               </p>
             </div>
 
-            {/* What to Expect */}
-            <div className="flex items-start gap-4 p-4 bg-[#f6f7f9] rounded-lg max-w-2xl mx-auto mb-8">
-              <Calendar className="w-6 h-6 text-[#ff5722] mt-1 flex-shrink-0" />
-              <div className="text-left">
-                <h3 className="font-semibold text-[#1f2933] mb-1">What to Expect</h3>
-                <p className="text-sm text-[#3b4652]">
-                  During our call, we'll discuss your current pricing model, key challenges, and goals. 
-                  I'll share insights tailored to your stage and help you identify quick wins and strategic opportunities.
-                </p>
-              </div>
+            {/* Calendly Inline Widget */}
+            <div className="overflow-hidden mb-4 sm:mb-6 -mx-2 sm:-mx-4 md:mx-0">
+              <CalendlyEmbed url="https://calendly.com/sarahxzou/free-consult-30-min?embed_domain=sarahzou.com&embed_type=Inline" />
             </div>
 
-            {/* Calendly Inline Widget */}
-            <div className="overflow-hidden">
-              <div 
-                className="calendly-inline-widget"
-                data-url="https://calendly.com/sarahxzou/free-consult-30-min?embed_domain=sarahzou.com&embed_type=Inline"
-                style={{ minWidth: '320px', height: '650px', overflow: 'hidden' }}
-              />
-              <Script 
-                src="https://assets.calendly.com/assets/external/widget.js"
-                strategy="lazyOnload"
-              />
+            {/* What to Expect */}
+            <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-[#f6f7f9] rounded-lg max-w-2xl mx-auto">
+              <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-[#ff5722] mt-1 flex-shrink-0" />
+              <div className="text-left flex-1">
+                <h3 className="font-semibold text-[#1f2933] mb-2 sm:mb-3 text-sm sm:text-base">What to expect:</h3>
+                <ul className="space-y-2 text-xs sm:text-sm text-[#3b4652]">
+                  <li>
+                    <span className="font-semibold text-[#1f2933]">Bring:</span> a quick overview of your product + current pricing (or your latest experiment idea)
+                  </li>
+                  <li>
+                    <span className="font-semibold text-[#1f2933]">I'll help:</span> sharpen the problem, outline options, and suggest next steps
+                  </li>
+                  <li>
+                    <span className="font-semibold text-[#1f2933]">If we're a fit:</span> I'll recommend the best engagement (or point you to resources)
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
