@@ -81,8 +81,7 @@ export default function Home() {
       "availableLanguage": ["English"]
     },
     "sameAs": [
-      "https://www.linkedin.com/in/drsarah-saas-economist",
-      "https://twitter.com/SaaS_Econ"
+      "https://www.linkedin.com/in/drsarah-saas-economist"
     ],
     "areaServed": [
       {
@@ -113,8 +112,7 @@ export default function Home() {
     "url": "https://sarahzou.com",
     "image": "https://sarahzou.com/images/headshot_v2.webp",
     "sameAs": [
-      "https://www.linkedin.com/in/drsarah-saas-economist",
-      "https://twitter.com/SaaS_Econ"
+      "https://www.linkedin.com/in/drsarah-saas-economist"
     ],
     "address": {
       "@type": "PostalAddress",

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Linkedin, Mail, Twitter } from 'lucide-react'
+import { Linkedin, Mail } from 'lucide-react'
 
 const navLinks = [
   { href: '/consulting', label: 'Consulting' },
@@ -53,9 +53,6 @@ const Footer = () => {
               </a>
               <a href="https://www.linkedin.com/in/drsarah-saas-economist" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e44e1f] font-medium text-base sm:text-lg" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
-              </a>
-              <a href="https://twitter.com/SaaS_Econ" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e44e1f] font-medium text-base sm:text-lg" target="_blank" rel="noopener noreferrer">
-                <Twitter className="w-5 h-5 sm:w-6 sm:h-6" />
               </a>
             </div>
           </div>

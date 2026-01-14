@@ -101,8 +101,12 @@ export default function BookPage() {
 
                 // Option B (recommended): also send a clean "business" conversion event
                 if (calendlyEvent === "calendly.event_scheduled" && typeof gtag === "function") {
+                  // dedupe (prevents double counting on refresh/back)
+                  if (sessionStorage.getItem("book_intro_call_sent")) return;
+                  sessionStorage.setItem("book_intro_call_sent", "1");
+
                   gtag("event", "book_intro_call", {
-                    debug_mode: true,
+                    method: "calendly",
                     event_uri: payload.event?.uri || undefined,
                     invitee_uri: payload.invitee?.uri || undefined
                   });

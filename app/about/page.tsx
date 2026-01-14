@@ -322,8 +322,7 @@ const organizationSchema = {
     "availableLanguage": ["English"]
   },
   "sameAs": [
-    "https://www.linkedin.com/in/drsarah-saas-economist",
-    "https://twitter.com/SaaS_Econ"
+    "https://www.linkedin.com/in/drsarah-saas-economist"
   ],
   "areaServed": [
     {
@@ -356,8 +355,7 @@ const personSchema = {
   "url": "https://sarahzou.com/about",
   "image": "https://sarahzou.com/images/about_headshot.webp",
   "sameAs": [
-    "https://www.linkedin.com/in/drsarah-saas-economist",
-    "https://twitter.com/SaaS_Econ"
+    "https://www.linkedin.com/in/drsarah-saas-economist"
   ],
   "address": {
     "@type": "PostalAddress",
