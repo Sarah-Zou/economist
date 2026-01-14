@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Mail, Linkedin } from 'lucide-react'
 import Link from 'next/link'
 
 export default function ContactPage() {
@@ -41,35 +40,60 @@ export default function ContactPage() {
       setIsSubmitting(false)
     }
   }
+
+  const scrollToForm = () => {
+    const nameInput = document.getElementById('name-input')
+    if (nameInput) {
+      nameInput.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      // Small delay to ensure scroll completes before focusing
+      setTimeout(() => {
+        nameInput.focus()
+      }, 300)
+    }
+  }
+
   return (
     <>
-      <section className="min-h-screen flex flex-col items-center justify-center bg-[#f6f7f9] py-20">
-        <div className="w-full max-w-2xl bg-white rounded-lg shadow-lg mx-auto p-8 md:p-16">
-          <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold mb-8 text-[#1f2933] text-center">Let's Connect</h1>
-          <p className="mb-6 text-[#1f2933] text-base sm:text-[17px] leading-[1.65] text-center">
-            Interested in working together, booking me for a speaking event, or just saying hello?
+      {/* Hero Section - Above the Fold */}
+      <section className="min-h-[70vh] flex flex-col items-center justify-center bg-[#f6f7f9] py-20 px-4">
+        <div className="w-full max-w-3xl mx-auto text-center">
+          <h1 className="font-serif-playfair text-[36px] sm:text-[42px] lg:text-[48px] font-bold mb-6 text-[#1f2933]">
+            Contact Sarah
+          </h1>
+          <p className="mb-8 text-[#1f2933] text-lg sm:text-xl lg:text-[22px] leading-[1.65] max-w-2xl mx-auto">
+            Pick what’s easiest—book a free 30-min consult, or send 2 lines.
           </p>
-          <div className="flex flex-col items-center gap-4 mb-8">
-            <div className="flex gap-4">
-              <a href="mailto:hello@sarahzou.com" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e44e1f] font-medium text-lg" target="_blank" rel="noopener noreferrer">
-                <Mail className="w-6 h-6" /> Email
-              </a>
-              <a href="https://www.linkedin.com/in/drsarah-saas-economist" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e44e1f] font-medium text-lg" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="w-6 h-6" /> LinkedIn
-              </a>
-            </div>
-          </div>
-          <div className="mb-8 text-center">
+          
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link 
               href="/book"
-              className="inline-block bg-[#ff5722] hover:bg-[#e44e1f] text-white font-bold px-8 py-4 rounded-full text-lg transition-colors mb-4"
+              className="inline-block bg-[#ff5722] hover:bg-[#e44e1f] text-white font-bold px-8 py-4 rounded-full text-lg transition-colors shadow-lg hover:shadow-xl"
             >
               Book Free Consult
             </Link>
-            <p className="text-[#1f2933] text-center text-base sm:text-[17px]">Or fill out the form below:</p>
+            <button
+              onClick={scrollToForm}
+              className="inline-block bg-transparent border-2 border-[#ff5722] text-[#ff5722] hover:bg-[#ff5722] hover:text-white font-bold px-8 py-4 rounded-full text-lg transition-colors"
+            >
+              Send a message instead
+            </button>
           </div>
-          <form id="contact-form" onSubmit={handleSubmit} className="space-y-6">
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="bg-[#f6f7f9] py-12 px-4">
+        <div className="w-full max-w-2xl bg-white rounded-lg shadow-lg mx-auto p-6 md:p-10">
+          <h2 className="font-serif-playfair text-[28px] sm:text-[32px] font-bold mb-4 text-[#1f2933] text-center">
+            Send a Message
+          </h2>
+          <p className="text-sm text-[#3b4652] text-center mb-4">
+            Typical response time: within 24 hours (usually faster).
+          </p>
+          <form id="contact-form" onSubmit={handleSubmit} className="space-y-4">
             <input
+              id="name-input"
               type="text"
               name="name"
               placeholder="Your Name"
@@ -83,8 +107,14 @@ export default function ContactPage() {
               className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
               required
             />
+            <input
+              type="text"
+              name="company"
+              placeholder="Company name or website (optional)"
+              className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
+            />
             <div>
-              <label className="block text-sm font-medium text-[#3b4652] mb-2">Stage & ARR band</label>
+              <label className="block text-sm font-medium text-[#3b4652] mb-1">Stage & ARR band (optional)</label>
               <select
                 name="stage"
                 className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
@@ -97,7 +127,7 @@ export default function ContactPage() {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-[#3b4652] mb-2">Current pricing model</label>
+              <label className="block text-sm font-medium text-[#3b4652] mb-1">Current pricing model (optional)</label>
               <select
                 name="pricingModel"
                 className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
@@ -110,7 +140,7 @@ export default function ContactPage() {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-[#3b4652] mb-2">Goal</label>
+              <label className="block text-sm font-medium text-[#3b4652] mb-1">Goal (optional)</label>
               <select
                 name="goal"
                 className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
@@ -134,12 +164,12 @@ export default function ContactPage() {
               type="submit"
               id="submit-btn"
               disabled={isSubmitting}
-              className="w-full bg-[#ff5722] text-white font-bold py-3 rounded transition-colors hover:bg-[#e44e1f] focus:outline-none focus:ring-2 focus:ring-[#ff5722] tracking-wider text-lg mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-[#ff5722] text-white font-bold py-3 rounded transition-colors hover:bg-[#e44e1f] focus:outline-none focus:ring-2 focus:ring-[#ff5722] tracking-wider text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               SUBMIT
             </button>
             {status.show && (
-              <div id="form-status" className="mt-4 text-center text-[#1f2933]">
+              <div id="form-status" className="mt-2 text-center text-[#1f2933]">
                 {status.message}
               </div>
             )}
