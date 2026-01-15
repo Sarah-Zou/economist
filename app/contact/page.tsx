@@ -129,7 +129,7 @@ export default function ContactPage() {
             <div>
               <label className="block text-sm font-medium text-[#3b4652] mb-1">Current pricing model (optional)</label>
               <select
-                name="pricingModel"
+                name="pricing"
                 className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
               >
                 <option value="">Select your model</option>
