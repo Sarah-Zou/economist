@@ -61,7 +61,7 @@ export default function ContactPage() {
             Contact Sarah
           </h1>
           <p className="mb-8 text-[#1f2933] text-lg sm:text-xl lg:text-[22px] leading-[1.65] max-w-2xl mx-auto">
-            Pick what’s easiest—book a free 30-min consult, or send 2 lines.
+            Pick what's easiest—book a free 15-min consult, or send 2 lines.
           </p>
           
           {/* CTAs */}

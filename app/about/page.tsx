@@ -488,7 +488,7 @@ const faqSchema = {
       "name": "What do engagements look like?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Start with a 30-min consult → pick a Monetization or Metrics Sprint → optional retainer for ongoing pricing moves, forward models, and experiment cadence. Fixed deliverables, clear timelines."
+        "text": "Start with a 15-min consult → pick a Monetization or Metrics Sprint → optional retainer for ongoing pricing moves, forward models, and experiment cadence. Fixed deliverables, clear timelines."
       }
     },
     {

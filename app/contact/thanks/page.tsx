@@ -1,5 +1,5 @@
 import React from 'react'
-import { CheckCircle, Mail, Clock } from 'lucide-react'
+import { CheckCircle } from 'lucide-react'
 import { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -27,52 +27,44 @@ export default function ContactThanksPage() {
       <section className="min-h-screen flex flex-col items-center justify-center bg-[#f6f7f9] py-20">
         <div className="w-full max-w-2xl bg-white rounded-lg shadow-lg mx-auto p-8 md:p-16">
           <div className="flex flex-col items-center text-center">
-            <div className="mb-6">
-              <CheckCircle className="w-20 h-20 text-[#ff5722] mx-auto" />
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-[#ff5722] flex-shrink-0" />
+              <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold text-[#1f2933]">
+                Thanks —message received
+              </h1>
             </div>
-            <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold mb-4 text-[#1f2933]">
-              Thank You for Reaching Out!
-            </h1>
             <p className="mb-8 text-[#1f2933] text-base sm:text-[17px] leading-[1.65] max-w-lg">
-              Your message has been received. I'll review your inquiry and get back to you within 24-48 hours.
+              Want the fastest next step? Book a free 15-minute consult now to skip email back-and-forth.
             </p>
             
             <div className="w-full space-y-4 mb-8">
-              <div className="flex items-start gap-4 p-4 bg-[#f6f7f9] rounded-lg">
-                <Mail className="w-6 h-6 text-[#ff5722] mt-1 flex-shrink-0" />
-                <div className="text-left">
-                  <h3 className="font-semibold text-[#1f2933] mb-1">What Happens Next?</h3>
-                  <p className="text-sm text-[#3b4652]">
-                    I'll review your message and respond via email. Please check your inbox (and spam folder) for my reply.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-4 p-4 bg-[#f6f7f9] rounded-lg">
-                <Clock className="w-6 h-6 text-[#ff5722] mt-1 flex-shrink-0" />
-                <div className="text-left">
-                  <h3 className="font-semibold text-[#1f2933] mb-1">Response Time</h3>
-                  <p className="text-sm text-[#3b4652]">
-                    I typically respond within 24-48 hours. For urgent matters, feel free to reach out directly via email at hello@sarahzou.com.
-                  </p>
-                </div>
+              <Link
+                href="/book"
+                className="inline-block bg-[#ff5722] hover:bg-[#e44e1f] text-white font-bold px-8 py-4 rounded-full text-lg transition-colors text-center w-full sm:w-auto"
+              >
+                Book free 15-min consult
+              </Link>
+              <div className="text-sm text-[#3b4652] max-w-lg mx-auto text-left">
+                <p className="mb-2">You'll leave with:</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>2–3 tailored <strong>recommendations</strong>, and</li>
+                  <li>a concrete <strong>next-step</strong> path (DIY, sprint, or retainer—whatever fits best).</li>
+                </ul>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <div className="mt-6">
               <Link
                 href="/"
-                className="inline-block bg-[#ff5722] hover:bg-[#e44e1f] text-white font-bold px-8 py-4 rounded-full text-lg transition-colors text-center"
+                className="text-[#ff5722] hover:text-[#e44e1f] underline text-base"
               >
-                Return Home
-              </Link>
-              <Link
-                href="/book"
-                className="inline-block bg-white hover:bg-[#f6f7f9] text-[#1f2933] font-bold px-8 py-4 rounded-full text-lg transition-colors border-2 border-[#e2e6ea] text-center"
-              >
-                Book a Free Consult
+                Return home
               </Link>
             </div>
+
+            <p className="mt-8 text-xs text-[#3b4652] max-w-lg mx-auto">
+              I'll reply by email within 24–48 hours. If you don’t see it, please check spam/promotions.
+            </p>
           </div>
         </div>
       </section>

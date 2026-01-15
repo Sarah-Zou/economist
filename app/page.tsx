@@ -179,7 +179,7 @@ export default function Home() {
           lede="Pricing, metrics, and economic storytelling for founders who need investor-grade decisions fast."
           photoAlt="Dr. Sarah Zou, PhD economist for early-stage tech"
           primaryCta={{
-            text: "Book a 30-min Free Consult",
+            text: "Book a 15-min Free Consult",
             href: "/book"
           }}
           secondaryCta={{
@@ -421,7 +421,7 @@ export default function Home() {
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
                 <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">What do engagements look like?</h3>
                 <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                  Start with a 30-min consult → choose a <a href="/consulting/services/pricing-monetization-sprint" className="text-[#ff5722] hover:underline">Monetization Sprint</a> or <a href="/consulting/services/metrics-experimentation-sprint" className="text-[#ff5722] hover:underline">Metrics Sprint</a> → optional <a href="/consulting/services/on-call-economist-retainer" className="text-[#ff5722] hover:underline">retainer</a> for ongoing pricing, forward models, and the experiment cadence.
+                  Start with a 15-min consult → choose a <a href="/consulting/services/pricing-monetization-sprint" className="text-[#ff5722] hover:underline">Monetization Sprint</a> or <a href="/consulting/services/metrics-experimentation-sprint" className="text-[#ff5722] hover:underline">Metrics Sprint</a> → optional <a href="/consulting/services/on-call-economist-retainer" className="text-[#ff5722] hover:underline">retainer</a> for ongoing pricing, forward models, and the experiment cadence.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
@@ -506,7 +506,7 @@ export default function Home() {
               "name": "What do engagements look like?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Start with a 30-min consult → choose a Sprint (Monetization or Metrics) → optional retainer for ongoing pricing, forward models, and the experiment cadence."
+                "text": "Start with a 15-min consult → choose a Sprint (Monetization or Metrics) → optional retainer for ongoing pricing, forward models, and the experiment cadence."
               }
             },
             {

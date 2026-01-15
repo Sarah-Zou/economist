@@ -35,7 +35,7 @@ export default function FAQSection() {
           <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
             <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">What do engagements look like?</h3>
             <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-              Start with a 30-min consult → pick a <Link href="/consulting/services/pricing-monetization-sprint" className="text-[#ff5722] hover:underline">Monetization Sprint</Link> or <Link href="/consulting/services/metrics-experimentation-sprint" className="text-[#ff5722] hover:underline">Metrics Sprint</Link> → optional <Link href="/consulting/services/on-call-economist-retainer" className="text-[#ff5722] hover:underline">retainer</Link> for ongoing pricing moves, forward models, and experiment cadence. Fixed deliverables, clear timelines.
+              Start with a 15-min consult → pick a <Link href="/consulting/services/pricing-monetization-sprint" className="text-[#ff5722] hover:underline">Monetization Sprint</Link> or <Link href="/consulting/services/metrics-experimentation-sprint" className="text-[#ff5722] hover:underline">Metrics Sprint</Link> → optional <Link href="/consulting/services/on-call-economist-retainer" className="text-[#ff5722] hover:underline">retainer</Link> for ongoing pricing moves, forward models, and experiment cadence. Fixed deliverables, clear timelines.
             </p>
           </div>
           <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">

@@ -34,13 +34,13 @@ export default function BookPage() {
                 Thanks—let's make this practical.
               </h1>
               <p className="text-[#1f2933] text-sm sm:text-base lg:text-[17px] leading-[1.65] max-w-2xl px-2">
-                Pick a time below for a free 30-min chat. If nothing works, <a href="mailto:hello@sarahzou.com" className="text-[#ff5722] hover:text-[#e44e1f] underline">email me</a> and I'll suggest options.
+                Pick a time below for a free 15-min chat. If nothing works, <a href="mailto:hello@sarahzou.com" className="text-[#ff5722] hover:text-[#e44e1f] underline">email me</a> and I'll suggest options.
               </p>
             </div>
 
             {/* Calendly Inline Widget */}
             <div className="overflow-hidden mb-4 sm:mb-6 -mx-2 sm:-mx-4 md:mx-0">
-              <CalendlyEmbed url="https://calendly.com/sarahxzou/free-consult-30-min?embed_domain=sarahzou.com&embed_type=Inline" />
+              <CalendlyEmbed url="https://calendly.com/sarahxzou/free-consult-15-min?embed_domain=sarahzou.com&embed_type=Inline" />
             </div>
 
             {/* What to Expect */}
