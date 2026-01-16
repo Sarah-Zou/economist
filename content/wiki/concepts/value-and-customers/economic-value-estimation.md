@@ -136,18 +136,6 @@ At minimum, for **one well‑defined customer segment and [use case](/wiki/prici
 * **Hypothesized levers:** Time saved, error reduction, yield improvement, conversion lift, lower churn, lower downtime, fewer compliance issues, etc.
 * **Customer Business Model Data:** Hard industry data on customer labor costs, machine downtime costs, conversion rates, churn, or revenue-per-unit to fuel value algorithms.
 
-### Methods (typical toolkit)
-
-* **In-Depth Qualitative Interviews:** Interview 10–15 customers or prospects in the same segment, probing how customers use products to uncover "unarticulated" needs and financial impacts.
-
-* **Value Driver Algorithms:** Simple formulas that translate product performance into customer dollars (e.g., hours saved per year × labor rate)
-
-* **Complementary research methods**
-
-  * [**Gabor‑Granger**](/wiki/pricing/research-and-experiments/gabor-granger) or [**Van Westendorp**](/wiki/pricing/research-and-experiments/van-westendorp) to sanity‑check [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) against EVE results.
-  * [**Conjoint / discrete choice**](/wiki/pricing/research-and-experiments/conjoint-analysis) for complex multi‑attribute offerings.
-  * **A/B testing** different price points within the EVE‑suggested range.
-
 ### Step-by-step
 
 1. **Define the customer segment & [use case](/wiki/pricing/value-and-customers/customer-use-cases):** Example: "Mid‑market e‑commerce brands, 20–200 employees, using our analytics tool to optimize ad spend."

@@ -75,16 +75,10 @@ VBP is necessary because traditional pricing methods often fail to align price w
 
 ### Inputs you need
 
-- **ICP & segmentation:** Segment hypotheses; cluster customers by needs, perceived value, and [WTP](/wiki/pricing/value-and-customers/willingness-to-pay); buyer jobs/pains.
+- **[ICP](/wiki/pricing/value-and-customers/ideal-customer-profile) & segmentation:** Segment hypotheses; cluster customers by needs, perceived value, and [WTP](/wiki/pricing/value-and-customers/willingness-to-pay); buyer jobs/pains.
 - **Competitive analysis:** Identify the **next‑best alternative (NBA)**, its price and performance, and **switching costs**.
 - **Customer [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) data:** Qualitative interviews and quantitative studies on what customers would pay for the concept and features.
 - **Cost data:** Incremental (variable/production) cost to establish the non‑negotiable price floor.
-
-### Methods
-
-- **Economic Value Estimation (EVE):** Quantify the product's monetary value relative to the NBA to set the price ceiling.
-- **[WTP](/wiki/pricing/value-and-customers/willingness-to-pay) research:** Van Westendorp, Gabor‑Granger, conjoint; buyer interviews; live price/A‑B tests.
-- **Conjoint/Discrete Choice:** Determine how customers trade off attributes and price when making decisions.
 
 ### Step-by-step
 
@@ -124,7 +118,7 @@ VBP is step one of the entire [**strategic pricing**](/wiki/pricing/foundations/
 - Nagle, T. T., Müller, G., & Gruyaert, E. (2022). *The strategy and tactics of pricing: A guide to growing more profitably* (6th ed.). Routledge.
 - Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. John Wiley & Sons. [Google Books](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ) | [Simon-Kucher](https://www.simon-kucher.com/en/insights/monetizing-innovation) 
 
-**Related pages:** [Strategic Pricing](/wiki/pricing/foundations/strategic-pricing) | [Cost-plus pricing](/wiki/pricing/foundations/cost-plus-pricing) | [Price Fences](/wiki/pricing/price-architecture) | [Value Metric](/wiki/pricing/value-and-customers/value-metric) | [Packaging & Bundling](/wiki/pricing/packaging-and-bundling) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Van Westendorp](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger](/wiki/pricing/research-and-metrics/gabor-granger) | [Conjoint Analysis](/wiki/pricing/research-and-metrics/conjoint-analysis) | [Discounting & Realization](/wiki/pricing/policies-and-governance/discounting-and-realization)
+**Related pages:** [Strategic Pricing](/wiki/pricing/foundations/strategic-pricing) | [Cost-plus pricing](/wiki/pricing/foundations/cost-plus-pricing) | [Ideal Customer Profile (ICP)](/wiki/pricing/value-and-customers/ideal-customer-profile) | [Price Fences](/wiki/pricing/price-architecture) | [Value Metric](/wiki/pricing/value-and-customers/value-metric) | [Packaging & Bundling](/wiki/pricing/packaging-and-bundling) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Van Westendorp](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger](/wiki/pricing/research-and-metrics/gabor-granger) | [Conjoint Analysis](/wiki/pricing/research-and-metrics/conjoint-analysis) | [Discounting & Realization](/wiki/pricing/policies-and-governance/discounting-and-realization)
 
 ## FAQ
 

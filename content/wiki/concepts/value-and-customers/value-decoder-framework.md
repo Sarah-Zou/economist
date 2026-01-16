@@ -115,14 +115,6 @@ Use the Value Decoder when **you have clear substitutes or alternatives to bench
 
 * **Context & environment:** Income/budget trends, prices of key complements (accessories, services, usage‑based costs), and market signals (competitor price moves, new entrants, regulation, hype cycles, local events).
 
-### Methods
-
-- Feed in **research** ([Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp), [Gabor‑Granger](/wiki/pricing/research-and-experiments/gabor-granger), [conjoint](/wiki/pricing/research-and-experiments/conjoint-analysis), [discrete choice experiments](/wiki/pricing/research-and-experiments/conjoint-analysis)) and **internal data** (win rate vs. price, discounting patterns, churn by cohort) to refine attribute premiums/discounts.
-
-- Check outputs against **unit economics** (CAC payback, gross margin, contribution margin) so the value-based price is also financially sustainable.
-
-- **Discrete Choice Analysis:** Simulating the buying experience by presenting sets of product options and prices to see which combinations customers choose.
-
 ### Step-by-step
 
 1. **Identify substitutes (NBCA):** Start by clearly naming the offer and segment you are pricing for, then list what your target customers would realistically buy or do if your product were unavailable—top competitors, in‑house tools, manual workarounds, or "do nothing." For each, determine the net price they actually pay (after discounts, bundles, usage fees), and choose the most realistic next‑best competitive alternative (NBCA) as your anchor.

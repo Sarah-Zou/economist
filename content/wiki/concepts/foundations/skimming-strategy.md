@@ -99,12 +99,6 @@ Skimming lets you monetize the highest-[WTP](/wiki/pricing/value-and-customers/w
 - **Channel and fence feasibility:** Which channels you’ll use (direct, marketplace, retail), how prices differ by channel/geo, and the practical ability to enforce fences (SKUs, region locks, eligibility checks).
 
 
-### Methods
-
-- **Research:** Gabor‑Granger (launch price window), Van Westendorp (acceptability bounds), discrete‑choice/conjoint (versioning), expert panels.
-- **In‑market:** Limited‑release A/B by channel, preorder price tests, refundable deposits, auction/lottery for first units, markdown ABIs.
-- **Analytics:** Segment WTP from usage signals (beta power users), attach/upgrade modeling, elasticity from demand shocks.
-
 ### Step-by-step
 
 1. **Clarify objectives and constraints:** Decide what skimming must achieve: e.g., recover **30–60% of R&D in 6–12 months**, hit a target margin, or fund the next release. Note hard constraints: capacity limits, minimum viable volume, key launch dates, and any contractual channel/partner requirements.

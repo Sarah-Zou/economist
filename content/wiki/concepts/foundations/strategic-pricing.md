@@ -49,7 +49,7 @@ owner: "Dr. Sarah Zou"
 
 ### Inputs you need
 
-- **Positioning & Segmentation (Product / PMM):** ICPs, target segments, [jobs-to-be-done](/wiki/pricing/value-and-customers/jobs-to-be-done), and buyer roles.
+- **Positioning & Segmentation (Product / PMM):** [ICPs](/wiki/pricing/value-and-customers/ideal-customer-profile), target segments, [jobs-to-be-done](/wiki/pricing/value-and-customers/jobs-to-be-done), and buyer roles.
 - **Customer [WTP](/wiki/pricing/value-and-customers/willingness-to-pay)/Value Data (Research / Analytics):** Absolute and relative [WTP](/wiki/pricing/value-and-customers/willingness-to-pay), feature value perceived, and price sensitivity by segment.
 - **Internal Financials & Unit Economics (Finance):** Variable and fixed costs, margin targets, elasticity estimates, transaction and usage data.
 - **Market & Competitive Benchmarks (Product / Strategy):** Competitor pricing, alternatives' costs, and macro drivers (supply, demand, regulations, input costs).
@@ -84,7 +84,7 @@ owner: "Dr. Sarah Zou"
 - Nagle, T. T., Müller, G., & Hogan, J. E. (2022). *The strategy and tactics of pricing: A guide to growing more profitably* (6th ed.). Routledge.
 - Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. John Wiley & Sons. [Google Books](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ) 
 
-**Related pages:** [Value-based pricing](/wiki/pricing/foundations/value-based-pricing) | [Cost-plus pricing](/wiki/pricing/foundations/cost-plus-pricing) | [Penetration strategy](/wiki/pricing/foundations/penetration-strategy) | [Price-led product design](/wiki/pricing/foundations/price-led-product-design) | [Packaging & Bundling](/wiki/pricing/packaging-and-bundling) | [Price Fences](/wiki/pricing/price-architecture) | [Price Elasticity](/wiki/pricing/research-and-metrics/price-elasticity) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Usage-Based Pricing](/wiki/pricing/models-and-metering/usage-based-pricing)
+**Related pages:** [Value-based pricing](/wiki/pricing/foundations/value-based-pricing) | [Cost-plus pricing](/wiki/pricing/foundations/cost-plus-pricing) | [Ideal Customer Profile (ICP)](/wiki/pricing/value-and-customers/ideal-customer-profile) | [Penetration strategy](/wiki/pricing/foundations/penetration-strategy) | [Price-led product design](/wiki/pricing/foundations/price-led-product-design) | [Packaging & Bundling](/wiki/pricing/packaging-and-bundling) | [Price Fences](/wiki/pricing/price-architecture) | [Price Elasticity](/wiki/pricing/research-and-metrics/price-elasticity) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Usage-Based Pricing](/wiki/pricing/models-and-metering/usage-based-pricing)
 
 ## FAQ
 

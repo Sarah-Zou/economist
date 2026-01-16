@@ -16,7 +16,7 @@ canonical: "https://sarahzou.com/wiki/pricing/value-and-customers"
 - **[<span id="customer-use-cases">Customer use cases</span>](/wiki/pricing/value-and-customers/customer-use-cases)**: Structured descriptions of the problem, persona, context, and outcomes that define how customers get value from your product and how you should price.
 - **[<span id="jobs-to-be-done">Jobs To Be Done (JTBD)</span>](/wiki/pricing/value-and-customers/jobs-to-be-done)**: Understanding customer outcomes and success metrics
 - **<span id="customer-segments">Segmentation by WTP/[use case](/wiki/pricing/value-and-customers/customer-use-cases)</span>**: Value-based customer segmentation strategies
-- **<span id="ideal-customer-profile">Ideal Customer Profile (ICP)</span>**: Defining and targeting your best customers
+- **[<span id="ideal-customer-profile">Ideal Customer Profile (ICP)</span>](/wiki/pricing/value-and-customers/ideal-customer-profile)**: A hypothetical description of the account type that derives the most value from your product and provides the most value back to your business.
 - **<span id="value-drivers">Value drivers</span>**: Monetary and psychological factors that drive value perception
 - **<span id="price-sensitivity">Price sensitivity & demand curves</span>**: Understanding how price changes affect demand
 - **<span id="buyer-identification-fences">Buyer identification fences</span>**: Role, geography, and organization-based targeting

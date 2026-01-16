@@ -97,13 +97,6 @@ In the landscape of strategic pricing, **maximization** is one of the three prim
 - **Cost of Delivery:** Precise identification of incremental, avoidable costs (variable and semi-fixed) to establish the price floor.
 - **Price Elasticity Curve:** A data-backed model showing how volume changes as price moves up or down.
 
-### Methods
-
-- **Scenario Simulation:** Using "what-if" models to calculate total contribution across different price points.
-- **Historical elasticity:** Use past price–volume or funnel data to estimate how sensitive demand is to price, even if only in “low / medium / high” bands. 
-- **Price experiments:** A/B or geo tests with different prices or discounts to observe actual changes in conversion, volume, and profit.
-- **Portfolio Management:** For multi-tier or multi-product lines, model how a price move shifts demand within the portfolio to avoid profit‑destroying cannibalization.
-
 ### Step-by-step
 
 1. **Define clear goals:** Force the executive team to allocate 100 points among profit, revenue, and market share to determine if you are maximizing for the bottom or top line. This alignment exercise prevents mixed objectives and ensures pricing decisions support a single, measurable outcome.

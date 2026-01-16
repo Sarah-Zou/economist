@@ -96,13 +96,6 @@ If you see people using a tool for something it wasn't intended for (e.g., using
 * **Context notes:** team setup, stakes (deadlines/risk), constraints (security/compliance), who approves (B2B)
 * **Light product data:** time-to-first-value, retention, key activation events
 
-### Methods
-
-* **Unstructured interviews (10–15):** Talk to recent buyers and churners; start with the trigger struggle and capture their words.
-* **Observation:** Watch users in their natural workflow to spot friction, workarounds, and hidden constraints.
-* **Switch interviews:** Deep-dive the timeline (first thought → evaluation → decision → onboarding) to surface Push/Pull/Habit/Anxiety.
-* **Synthesis (fast):** Turn notes into **Job Statements** and a simple **Forces map**, then translate into product/messaging/onboarding changes.
-
 ### Step-by-step
 
 1. **Identify the Struggle:** Ask: *"What happened that made you realize you needed a change?"* Note the context, stakes, and current workaround.

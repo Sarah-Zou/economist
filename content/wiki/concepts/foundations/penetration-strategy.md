@@ -133,12 +133,6 @@ Use skimming when:
 - **Capacity and operational limits:** Production, onboarding, and support capacity to handle the extra volume that lower prices are meant to unlock.
 - **Target outcomes and exit criteria:** Concrete goals (e.g., share, user base, LTV/CAC) and milestones that trigger either ending penetration pricing or stepping prices up.
 
-### Methods
-
-- **Pricing research (surveys & conjoint):** Use tools like Van Westendorp, Gabor-Granger, and conjoint analysis to estimate [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay), price elasticity, and feature–price trade-offs by segment.
-- **In-market price experiments:** Run A/B tests on different introductory prices and discount depths across cohorts to observe real conversion, ARPU, and churn responses.
-- **Financial modeling & scenario analysis:** Build scenarios for prices, volumes, churn, and cost curves to understand unit economics, breakeven volumes, and LTV/CAC under penetration versus alternative strategies.
-
 ### Step-by-step
 
 1. **Identify high-elasticity segments:** Target segments that are highly sensitive to price and willing to change suppliers for a clearly better deal, validated through research or controlled tests.

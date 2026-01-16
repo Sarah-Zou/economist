@@ -97,14 +97,6 @@ If sales reps or customers cannot articulate in one sentence which plan is for w
 * **High-level product usage data:** To approximate **frequency** and **intensity** of the problem.
 * **Competitive Analysis:** Identifying "gaps" where competitors fail to address specific workflows.
 
-### Methods (research & analysis)
-
-* **JTBD interviews:** Focused on problem, persona, context, alternatives, and frequency.
-* **Light coding / clustering:** Of interview notes into problem, persona, alternative, and value drivers.
-* **Tag accounts by primary use case:** In CRM or a spreadsheet and sum revenue / logo counts.
-* **Pricing / [WTP tests](/wiki/pricing/value-and-customers/willingness-to-pay):** Surveys or conversations framed around concrete use case descriptions.
-* **Quick experiments:** On plan names, messaging, or bundles tied to top use cases.
-
 ### Step-by-step
 
 Use this flow to define a customer use case in a way that directly feeds your monetization model.

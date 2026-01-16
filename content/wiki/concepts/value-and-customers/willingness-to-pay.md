@@ -17,7 +17,7 @@ owner: "Dr. Sarah Zou"
 - It defines your "pricing ceiling"; helps you pick a **price range** (not a guess) and avoid over/underpricing.
 - Reveals **which segments value you most**, so you can build tiers and [price fences](/wiki/pricing/price-architecture).
 
-**When to use:** During initial Product-Market Fit (PMF) discovery, before setting/raising prices, changing packaging, launching to a new segment/geo, tightening discount policy, or when pivoting your ICP (Ideal Customer Profile).
+**When to use:** During initial Product-Market Fit (PMF) discovery, before setting/raising prices, changing packaging, launching to a new segment/geo, tightening discount policy, or when pivoting your [ICP (Ideal Customer Profile)](/wiki/pricing/value-and-customers/ideal-customer-profile).
 
 **Key Takeaways:**
 - **Have the "Talk" Early:** Discussing WTP with customers must happen *before* the product is fully engineered to prioritize features correctly.
@@ -86,12 +86,6 @@ This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pric
 * **PSM survey draft:** The 4 [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) questions + a few segment questions + attention/comprehension check.
 * **Validation constraints:** Growth-loop friction sensitivity + unit economics (cost-to-serve, CAC payback) + competitive reference point.
 
-### Methods
-
-* **Foundational interviews:** 10–12 per segment to define [use cases](/wiki/pricing/value-and-customers/customer-use-cases), alternatives, "why," and the [value metric](/wiki/pricing/value-and-customers/value-metric).
-* **[Van Westendorp PSM](/wiki/pricing/research-and-experiments/van-westendorp):** 4 price-perception questions to estimate **PMC–PME** (acceptable range) and **OPP**.
-* **Validation (and optional depth):** Pilot/A-B/live rollout to calibrate; use **[conjoint/DCE](/wiki/pricing/research-and-experiments/conjoint-analysis)** when packaging complexity is high.
-
 ### Step-by-step
 
 1. **Conduct foundation qualitative research (before any survey):** Run 10–12 interviews per key segment to nail the [use case](/wiki/pricing/value-and-customers/customer-use-cases), persona, and current alternatives; identify the core "why" (time, money, risk, status); and lock a clear [value metric](/wiki/pricing/value-and-customers/value-metric) and billing period (e.g., $/seat/month) so your survey is anchored to a real unit of value.
@@ -141,7 +135,7 @@ This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pric
 * Ghuman, A. (2023). [*Price to scale: Practical pricing for B2B SaaS founders*](https://www.amazon.com/Price-Scale-Practical-Pricing-Founders/dp/B0C1J7QZ8K). Independently published.
 * Lehrskov-Schmidt, U. (2021). [*The pricing roadmap: How to design B2B SaaS pricing*](https://www.amazon.com/Pricing-Roadmap-Design-B2B-Pricing/dp/8797203103). Independently published.
 
-**Related pages:** [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Conjoint Analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp) | [Gabor–Granger](/wiki/pricing/research-and-experiments/gabor-granger) | [Price Elasticity](/wiki/pricing/research-and-experiments/price-elasticity) | [Price Fences](/wiki/pricing/price-architecture)
+**Related pages:** [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Ideal Customer Profile (ICP)](/wiki/pricing/value-and-customers/ideal-customer-profile) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Conjoint Analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp) | [Gabor–Granger](/wiki/pricing/research-and-experiments/gabor-granger) | [Price Elasticity](/wiki/pricing/research-and-experiments/price-elasticity) | [Price Fences](/wiki/pricing/price-architecture)
 
 ## FAQ
 
