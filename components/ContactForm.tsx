@@ -3,25 +3,13 @@
 import React, { useState } from 'react'
 
 interface ContactFormProps {
-  firstName?: boolean
-  lastName?: boolean
-  name?: boolean
-  stage?: boolean
-  pricing?: boolean
-  goal?: boolean
   messagePlaceholder?: string
   buttonText?: string
 }
 
 export default function ContactForm({
-  firstName = false,
-  lastName = false,
-  name = false,
-  stage = false,
-  pricing = false,
-  goal = false,
-  messagePlaceholder = "Say Hello",
-  buttonText = "SEND MESSAGE"
+  messagePlaceholder = "How can I help you?",
+  buttonText = "SUBMIT"
 }: ContactFormProps) {
   const [status, setStatus] = useState({ message: '', show: false })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -61,79 +49,68 @@ export default function ContactForm({
   }
 
   return (
-    <form id="contact-form" onSubmit={handleSubmit} className="space-y-6">
-      {firstName && lastName ? (
-        <div className="flex flex-col md:flex-row gap-6">
-          <input
-            type="text"
-            name="firstName"
-            placeholder="First Name"
-            className="flex-1 px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
-            required
-          />
-          <input
-            type="text"
-            name="lastName"
-            placeholder="Last Name"
-            className="flex-1 px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
-            required
-          />
-        </div>
-      ) : name ? (
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
-          required
-        />
-      ) : null}
-      
+    <form id="contact-form" onSubmit={handleSubmit} className="space-y-4">
       <input
-        type="email"
-        name="email"
-        placeholder="Your Email"
+        id="name-input"
+        type="text"
+        name="name"
+        placeholder="Your Name"
         className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
         required
       />
-      
-      {stage && (
+      <input
+        type="email"
+        name="email"
+        placeholder="Email Address"
+        className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
+        required
+      />
+      <input
+        type="text"
+        name="company"
+        placeholder="Company name or website (optional)"
+        className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
+      />
+      <div>
+        <label className="block text-sm font-medium text-[#3b4652] mb-1">Stage & ARR band (optional)</label>
         <select
           name="stage"
           className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
         >
-          <option value="Pre-revenue">Pre-revenue</option>
-          <option value="Under $1M ARR">Under $1M ARR</option>
+          <option value="">Select your stage</option>
+          <option value="pre-rev">Pre-revenue</option>
+          <option value="under-1m">Under $1M ARR</option>
+          <option value="1-5m">$1M - $5M ARR</option>
+          <option value="5m-plus">$5M+ ARR</option>
         </select>
-      )}
-      
-      {pricing && (
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-[#3b4652] mb-1">Current pricing model (optional)</label>
         <select
           name="pricing"
           className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
         >
-          <option value="">Select pricing model (optional)</option>
-          <option value="Seats">Seats</option>
-          <option value="Usage">Usage</option>
-          <option value="Hybrid">Hybrid</option>
-          <option value="Other">Other</option>
+          <option value="">Select your model</option>
+          <option value="seats">Seats</option>
+          <option value="usage">Usage</option>
+          <option value="hybrid">Hybrid</option>
+          <option value="other">Other</option>
         </select>
-      )}
-      
-      {goal && (
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-[#3b4652] mb-1">Goal (optional)</label>
         <select
           name="goal"
           className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
         >
-          <option value="">Select goal (optional)</option>
-          <option value="Raise ARPA">Raise ARPA</option>
-          <option value="Improve NRR">Improve NRR</option>
-          <option value="Faster payback">Faster payback</option>
-          <option value="New market">New market</option>
-          <option value="Other">Other</option>
+          <option value="">Select your goal</option>
+          <option value="raise-arpa">Raise ARPA</option>
+          <option value="improve-nrr">Improve NRR</option>
+          <option value="faster-payback">Faster payback</option>
+          <option value="new-market">New market</option>
+          <option value="other">Other</option>
         </select>
-      )}
-      
+      </div>
       <textarea
         name="message"
         placeholder={messagePlaceholder}
@@ -141,18 +118,16 @@ export default function ContactForm({
         className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
         required
       />
-      
       <button
         type="submit"
         id="submit-btn"
         disabled={isSubmitting}
-        className="w-full bg-[#ff5722] text-white font-bold py-3 rounded-lg transition-colors hover:bg-[#e64a19] focus:outline-none focus:ring-2 focus:ring-[#ff5722] tracking-wider text-lg mt-2 shadow disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-[#ff5722] text-white font-bold py-3 rounded transition-colors hover:bg-[#e44e1f] focus:outline-none focus:ring-2 focus:ring-[#ff5722] tracking-wider text-lg disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {buttonText}
       </button>
-      
       {status.show && (
-        <div id="form-status" className="mt-4 text-center text-[#1f2933]">
+        <div id="form-status" className="mt-2 text-center text-[#1f2933]">
           {status.message}
         </div>
       )}

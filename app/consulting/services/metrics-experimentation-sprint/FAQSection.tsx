@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function FAQSection() {
   return (
-    <section>
+    <section id="faq" className="scroll-mt-24">
       <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-8 text-center">Frequently Asked Questions</h2>
       <div className="space-y-4 max-w-3xl mx-auto">
         <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">

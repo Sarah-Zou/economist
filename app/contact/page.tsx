@@ -86,10 +86,10 @@ export default function ContactPage() {
       <section className="bg-[#f6f7f9] py-12 px-4">
         <div className="w-full max-w-2xl bg-white rounded-lg shadow-lg mx-auto p-6 md:p-10">
           <h2 className="font-serif-playfair text-[28px] sm:text-[32px] font-bold mb-4 text-[#1f2933] text-center">
-            Send a Message
+            Prefer email? Send a Message
           </h2>
           <p className="text-sm text-[#3b4652] text-center mb-4">
-            Typical response time: within 24 hours (usually faster).
+            Expect a reply in 1–2 business days. Want a faster answer? <Link href="/book" className="text-[#ff5722] hover:underline font-medium">Book a 15-min call</Link>
           </p>
           <form id="contact-form" onSubmit={handleSubmit} className="space-y-4">
             <input

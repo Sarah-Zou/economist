@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function FractionalChiefEconomistRetainer() {
   return (
     <>
-      <section className="bg-[#f5f8f7] min-h-screen py-0">
+      <section className="bg-[#f5f8f7] min-h-screen py-0 pb-20 md:pb-0">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -47,6 +47,34 @@ export default function FractionalChiefEconomistRetainer() {
           <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-8 max-w-3xl mx-auto">
             Guiding tech firms through market complexity with fractional chief economist services. Make smarter, data-driven decisions without the full-time overhead.
           </p>
+        </div>
+
+        {/* Navigation Chips */}
+        <div className="flex flex-wrap gap-3 mb-12 justify-center">
+          <a
+            href="#outcomes"
+            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
+          >
+            Outcomes
+          </a>
+          <a
+            href="#how-it-works"
+            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
+          >
+            How it works
+          </a>
+          <a
+            href="#pricing"
+            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
+          >
+            Pricing
+          </a>
+          <a
+            href="#faq"
+            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
+          >
+            FAQ
+          </a>
         </div>
 
         {/* Main Content */}
@@ -104,7 +132,7 @@ export default function FractionalChiefEconomistRetainer() {
           </section>
 
           {/* Outcomes Section */}
-          <section className="text-center">
+          <section id="outcomes" className="text-center scroll-mt-24">
             <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4">Outcomes (what you get every month)</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {[
@@ -207,7 +235,7 @@ export default function FractionalChiefEconomistRetainer() {
             </section>
 
           {/* Plans & Pricing Section */}
-          <section className="text-center">
+          <section id="pricing" className="text-center scroll-mt-24">
             <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-12">Plans & Pricing</h2>
             
             <div className="max-w-6xl mx-auto">
@@ -422,7 +450,7 @@ export default function FractionalChiefEconomistRetainer() {
             </section>
 
           {/* Operating Cadence & How This Fits Section */}
-            <section>
+            <section id="how-it-works" className="scroll-mt-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {/* Operating Cadence Column */}
               <div>
@@ -528,34 +556,52 @@ export default function FractionalChiefEconomistRetainer() {
           <div className="bg-white rounded-lg p-8 md:p-12 border border-[#e5e7eb] shadow-lg text-center">
             <div className="flex items-center justify-center gap-4 mb-6">
               <Image src="/images/headshot_v2.jpg" alt="Sarah Zou headshot" width={80} height={80} className="rounded-full object-cover flex-shrink-0" />
-              <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933]">Ready to own your monetization?</h2>
+              <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933]">Exploring an ongoing Chief Economist partnership?</h2>
           </div>
             <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-6 max-w-2xl mx-auto">
-              Stop juggling pricing, experiments, and forecasts alone. Let's build a steady, investor-grade economics function that keeps you ahead.
+              Use this call to discuss scope, cadence, and whether a retainer makes sense given your growth stage and internal capabilities.
             </p>
               <a
                 href="/book"
               className="inline-block bg-[#ff5722] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#e64a19] transition shadow-lg hover:shadow-xl mb-8"
               >
-              Book Your Intake Call
+              Book a free call
               </a>
             </div>
           </div>
 
           {/* Contact Form */}
         <div className="max-w-2xl mx-auto mt-16 mb-16">
-          <div className="bg-white rounded-lg p-8 border border-[#e5e7eb] shadow-sm">
-            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-6 text-[#1f2933] text-center">Let's get in touch</h2>
-            <ContactForm 
-              firstName={true}
-              lastName={true}
-              messagePlaceholder="Say Hello"
-              buttonText="SEND MESSAGE"
-            />
+          <div className="bg-white rounded-lg shadow-lg p-6 md:p-10">
+            <h2 className="font-serif-playfair text-[28px] sm:text-[32px] font-bold mb-4 text-[#1f2933] text-center">
+              Prefer email? Send a Message
+            </h2>
+            <p className="text-sm text-[#3b4652] text-center mb-4">
+              Expect a reply in 1–2 business days. Want a faster answer? <Link href="/book" className="text-[#ff5722] hover:underline font-medium">Book a 15-min call</Link> (no prep needed)
+            </p>
+            <ContactForm />
           </div>
         </div>
       </div>
     </section>
+
+      {/* Mobile Sticky Bottom Bar */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-[#e5e7eb] shadow-lg z-50 md:hidden">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex gap-3">
+          <Link
+            href="/book"
+            className="flex-1 bg-[#ff5722] hover:bg-[#e64a19] text-white font-bold px-4 py-3 rounded-lg text-center transition-colors shadow-sm"
+          >
+            Book Free Consult
+          </Link>
+          <Link
+            href="/contact"
+            className="flex-1 bg-transparent border-2 border-[#ff5722] text-[#ff5722] hover:bg-[#ff5722] hover:text-white font-bold px-4 py-3 rounded-lg text-center transition-colors"
+          >
+            Send a message
+          </Link>
+        </div>
+      </div>
     </>
   );
 } 

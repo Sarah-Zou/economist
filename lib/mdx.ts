@@ -177,13 +177,32 @@ export interface ConceptData extends ConceptFrontmatter {
 }
 
 export function getConceptBySlug(category: string, concept: string): ConceptData | null {
+  // #region agent log
+  const fullPath = path.join(conceptsDirectory, category, `${concept}.md`);
+  const logPath = path.join(process.cwd(), '.cursor', 'debug.log');
   try {
-    const fullPath = path.join(conceptsDirectory, category, `${concept}.md`);
+    const logEntry = JSON.stringify({location:'mdx.ts:179',message:'getConceptBySlug entry',data:{category,concept,conceptsDirectory,fullPath,fileExists:fs.existsSync(fullPath)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'}) + '\n';
+    fs.appendFileSync(logPath, logEntry, 'utf8');
+  } catch {}
+  // #endregion
+  try {
     if (!fs.existsSync(fullPath)) {
+      // #region agent log
+      try {
+        const logEntry = JSON.stringify({location:'mdx.ts:183',message:'File does not exist',data:{fullPath,conceptsDirectory,category,concept},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'}) + '\n';
+        fs.appendFileSync(logPath, logEntry, 'utf8');
+      } catch {}
+      // #endregion
       return null;
     }
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
+    // #region agent log
+    try {
+      const logEntry = JSON.stringify({location:'mdx.ts:189',message:'File read successfully',data:{contentLength:content.length,hasTitle:!!data.title},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'}) + '\n';
+      fs.appendFileSync(logPath, logEntry, 'utf8');
+    } catch {}
+    // #endregion
     
     return {
       ...data as ConceptFrontmatter,
@@ -191,6 +210,12 @@ export function getConceptBySlug(category: string, concept: string): ConceptData
     };
   } catch (error) {
     console.error(`Error reading concept ${category}/${concept}:`, error);
+    // #region agent log
+    try {
+      const logEntry = JSON.stringify({location:'mdx.ts:194',message:'Error in getConceptBySlug',data:{errorMessage:error instanceof Error?error.message:String(error),category,concept,fullPath},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'}) + '\n';
+      fs.appendFileSync(logPath, logEntry, 'utf8');
+    } catch {}
+    // #endregion
     return null;
   }
 }

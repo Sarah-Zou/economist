@@ -27,9 +27,9 @@ owner: "Dr. Sarah Zou"
 
 ## Key Facts
 
-- **Win-rate lift:** Organizations with a strong ICP reported ~68% higher account win rates. [TOPO 2019 Account-Based Benchmark Report, AdRoll](https://www.topohq.com/)
-- **Retention impact:** Many SaaS teams see 120%+ NRR for ICP-aligned customers versus sub-100% NRR for misaligned accounts. [GetMonetizely, 2025](https://www.getmonetizely.com/)
-- **Retention economics:** Acquiring a new customer is 5× to 25× more expensive than retaining an existing one. [Harvard Business Review](https://hbr.org/)
+- **~68% higher:** Organizations with a strong ICP reported ~68% higher account win rates. [TOPO 2019 Account-Based Benchmark Report, AdRoll](https://www.topohq.com/)
+- **120%+ NRR:** Many SaaS teams see 120%+ NRR for ICP-aligned customers versus sub-100% NRR for misaligned accounts. [GetMonetizely, 2025](https://www.getmonetizely.com/)
+- **5× to 25× more:** Acquiring a new customer is 5× to 25× more expensive than retaining an existing one. [Harvard Business Review](https://hbr.org/)
 
 ## What is Ideal Customer Profile (ICP)?
 

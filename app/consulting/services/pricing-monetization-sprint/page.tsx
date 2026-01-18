@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function PricingDiagnosticRevenueBoost() {
   return (
     <>
-      <section className="bg-[#f5f8f7] min-h-screen py-0">
+      <section className="bg-[#f5f8f7] min-h-screen py-0 pb-20 md:pb-0">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -48,6 +48,34 @@ export default function PricingDiagnosticRevenueBoost() {
           <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-8 max-w-3xl mx-auto">
             A one-week intensive sprint designed for early-stage tech founders to build a pricing and monetization strategy that converts.
           </p>
+        </div>
+
+        {/* Navigation Chips */}
+        <div className="flex flex-wrap gap-3 mb-12 justify-center">
+          <a
+            href="#key-benefits"
+            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
+          >
+            Outcomes
+          </a>
+          <a
+            href="#cadence"
+            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
+          >
+            How it works
+          </a>
+          <a
+            href="#pricing"
+            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
+          >
+            Pricing
+          </a>
+          <a
+            href="#faq"
+            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
+          >
+            FAQ
+          </a>
         </div>
 
         {/* Guarantee Card */}
@@ -94,7 +122,7 @@ export default function PricingDiagnosticRevenueBoost() {
           </section>
 
           {/* Common Triggers Section */}
-          <section className="text-center">
+          <section id="key-benefits" className="text-center scroll-mt-24">
             <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4">Common triggers</h2>
             <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-8">If any of these sound familiar, this sprint is designed for you.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -207,7 +235,7 @@ export default function PricingDiagnosticRevenueBoost() {
           </section>
 
           {/* Cadence Section */}
-          <section className="text-center">
+          <section id="cadence" className="text-center scroll-mt-24">
             <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-3">The 1-Week Sprint Cadence</h2>
             <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-12 max-w-2xl mx-auto">
               A structured, collaborative process designed for maximum impact in minimum time.
@@ -215,21 +243,22 @@ export default function PricingDiagnosticRevenueBoost() {
             <div className="max-w-6xl mx-auto px-4">
               <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-2 relative">
                 {/* Connecting line for desktop */}
-                <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-[#e5e7eb] z-0" style={{ left: '2rem', right: '2rem' }}></div>
+                <div className="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-[#e5e7eb] z-0" style={{ left: '2rem', right: '2rem' }}></div>
                 {[
-                  { num: 0, title: 'Discovery', desc: 'Inputs/data room; current-state scan' },
-                  { num: 1, title: 'Workshop #1', desc: 'Goals, ICPs, value drivers' },
-                  { num: 2, title: 'Research', desc: 'Draft architecture + first price bands' },
-                  { num: 3, title: 'Workshop #2', desc: 'Lock value metric, tiers, guardrails' },
-                  { num: 4, title: 'Validation', desc: 'Refine Unit econ + rollout plan' },
-                  { num: 5, title: 'Handoff', desc: 'Final presentation + delivery of all assets' }
+                  { day: 0, name: 'Discovery', desc: 'Data room review and current-state scan' },
+                  { day: 1, name: 'Workshop #1', desc: 'Define goals, ICPs, and value drivers' },
+                  { day: 2, name: 'Research', desc: 'Draft architecture and price bands' },
+                  { day: 3, name: 'Workshop #2', desc: 'Lock value metric and tiers' },
+                  { day: 4, name: 'Validation', desc: 'Refine unit economics and plan' },
+                  { day: 5, name: 'Handoff', desc: 'Final presentation and delivery' }
                 ].map((step, idx) => (
                   <div key={idx} className="relative z-10 flex flex-col items-center text-center">
-                    <div className="bg-[#ff5722] rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center shadow-lg">
-                      <span className="text-xl font-bold text-white">{step.num}</span>
+                    <div className="bg-[#ff5722] rounded-full w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 flex items-center justify-center shadow-lg">
+                      <span className="text-xs sm:text-sm font-bold text-white text-center leading-tight px-2">
+                        Day {step.day}<br/>{step.name}
+                      </span>
                     </div>
-                    <h3 className="font-semibold text-[20px] text-[#1f2933] mb-2">{step.title}</h3>
-                    <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">{step.desc}</p>
+                    <p className="text-sm sm:text-base text-[#1f2933] leading-[1.65] max-w-[120px]">{step.desc}</p>
                   </div>
                 ))}
               </div>
@@ -237,83 +266,83 @@ export default function PricingDiagnosticRevenueBoost() {
           </section>
 
           {/* Pricing Section */}
-          <section className="text-center">
+          <section id="pricing" className="text-center scroll-mt-24">
             <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-3">A Clear Investment in Your Growth</h2>
             <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-8 max-w-2xl mx-auto">
               Get an expert monetization strategy for a fraction of the cost and time of hiring full-time.
             </p>
             
             {/* Comparison Table */}
-            <div className="bg-white rounded-lg p-8 border border-[#e5e7eb] shadow-sm overflow-x-auto mb-8 max-w-5xl mx-auto" role="region" aria-label="Service comparison table">
-              <table className="w-full border-collapse text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+            <div className="bg-white rounded-lg p-4 sm:p-8 border border-[#e5e7eb] shadow-sm overflow-x-auto mb-8 max-w-5xl mx-auto -mx-4 sm:mx-auto" role="region" aria-label="Service comparison table">
+              <table className="w-full border-collapse min-w-[600px]">
                 <thead>
                   <tr className="border-b-2 border-[#1f2933]">
-                    <th className="text-left py-4 px-4 font-semibold text-[#1f2933]">Feature</th>
-                    <th className="text-center py-4 px-4 font-semibold text-[#1f2933]">Doing Nothing</th>
-                    <th className="text-center py-4 px-4 font-semibold text-[#1f2933]">Hire Full-Time</th>
-                    <th className="text-center py-4 px-4 font-semibold text-[#1f2933] bg-[#fff5f2] rounded-t-lg">Pricing & Monetization Sprint</th>
+                    <th className="text-left py-3 sm:py-4 px-3 sm:px-4 font-semibold text-xs sm:text-sm text-[#1f2933] whitespace-nowrap">Feature</th>
+                    <th className="text-center py-3 sm:py-4 px-3 sm:px-4 font-semibold text-xs sm:text-sm text-[#1f2933] whitespace-nowrap">Doing Nothing</th>
+                    <th className="text-center py-3 sm:py-4 px-3 sm:px-4 font-semibold text-xs sm:text-sm text-[#1f2933] whitespace-nowrap">Hire Full-Time</th>
+                    <th className="text-center py-3 sm:py-4 px-3 sm:px-4 font-semibold text-xs sm:text-sm text-[#1f2933] bg-[#fff5f2] rounded-t-lg whitespace-nowrap">Pricing & Monetization Sprint</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="border-b border-[#e5e7eb]">
-                    <td className="py-4 px-4 font-medium text-[#1f2933] text-left">Cost</td>
-                    <td className="py-4 px-4 text-center">$0 (Lost Revenue)</td>
-                    <td className="py-4 px-4 text-center">$150k+/yr</td>
-                    <td className="py-4 px-4 bg-[#fff5f2] text-[#ff5722] font-semibold text-center">$5k-$18k</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Cost</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">$0 (Lost Revenue)</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">$150k+/yr</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-[#ff5722] font-semibold text-sm sm:text-base md:text-[17px] text-center">$5k-$18k</td>
                   </tr>
                   <tr className="border-b border-[#e5e7eb]">
-                    <td className="py-4 px-4 font-medium text-[#1f2933] text-left">Time to Value</td>
-                    <td className="py-4 px-4 text-center">Never</td>
-                    <td className="py-4 px-4 text-center">3-6+ Months</td>
-                    <td className="py-4 px-4 bg-[#fff5f2] text-[#ff5722] font-semibold text-center">1-2 Weeks</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Time to Value</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">Never</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">3-6+ Months</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-[#ff5722] font-semibold text-sm sm:text-base md:text-[17px] text-center">1-2 Weeks</td>
                   </tr>
                   <tr className="border-b border-[#e5e7eb]">
-                    <td className="py-4 px-4 font-medium text-[#1f2933] text-left">Expertise</td>
-                    <td className="py-4 px-4 text-center">
-                      <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mx-auto">
-                        <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Expertise</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 text-center">
+                      <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-red-100 flex items-center justify-center mx-auto">
+                        <svg className="w-3 h-3 sm:w-4 sm:h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
                         </svg>
                       </div>
                     </td>
-                    <td className="py-4 px-4 text-center">
-                      <div className="w-6 h-6 rounded-full border-2 border-[#ff5722] flex items-center justify-center mx-auto">
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 text-center">
+                      <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full border-2 border-[#ff5722] flex items-center justify-center mx-auto">
                       </div>
                     </td>
-                    <td className="py-4 px-4 bg-[#fff5f2] text-center">
-                      <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mx-auto">
-                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-center">
+                      <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-green-500 flex items-center justify-center mx-auto">
+                        <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
                     </td>
                   </tr>
                   <tr className="border-b border-[#e5e7eb]">
-                    <td className="py-4 px-4 font-medium text-[#1f2933] text-left">Actionable Strategy</td>
-                    <td className="py-4 px-4 text-center">
-                      <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mx-auto">
-                        <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Actionable Strategy</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 text-center">
+                      <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-red-100 flex items-center justify-center mx-auto">
+                        <svg className="w-3 h-3 sm:w-4 sm:h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
                         </svg>
                       </div>
                     </td>
-                    <td className="py-4 px-4 text-center">
-                      <div className="w-6 h-6 rounded-full border-2 border-[#ff5722] flex items-center justify-center mx-auto">
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 text-center">
+                      <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full border-2 border-[#ff5722] flex items-center justify-center mx-auto">
                       </div>
                     </td>
-                    <td className="py-4 px-4 bg-[#fff5f2] text-center">
-                      <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mx-auto">
-                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-center">
+                      <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-green-500 flex items-center justify-center mx-auto">
+                        <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
                     </td>
                   </tr>
                   <tr className="border-b border-[#e5e7eb]">
-                    <td className="py-4 px-4 font-medium text-[#1f2933] text-left">Risk</td>
-                    <td className="py-4 px-4 text-center">High</td>
-                    <td className="py-4 px-4 text-center">High</td>
-                    <td className="py-4 px-4 bg-[#fff5f2] text-[#ff5722] font-semibold rounded-b-lg text-center">Zero (Guaranteed)</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Risk</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">High</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">High</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-[#ff5722] font-semibold text-sm sm:text-base md:text-[17px] rounded-b-lg text-center">Zero (Guaranteed)</td>
                   </tr>
                 </tbody>
               </table>
@@ -529,34 +558,52 @@ export default function PricingDiagnosticRevenueBoost() {
           <div className="bg-white rounded-lg p-8 md:p-12 border border-[#e5e7eb] shadow-lg text-center">
             <div className="flex items-center justify-center gap-4 mb-6">
               <Image src="/images/headshot_v2.jpg" alt="Sarah Zou headshot" width={80} height={80} className="rounded-full object-cover flex-shrink-0" />
-              <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933]">Ready to build a powerful revenue engine?</h2>
+              <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933]">Thinking about a Pricing Sprint?</h2>
             </div>
             <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-6 max-w-2xl mx-auto">
-              Stop guessing and start growing. Let's build a monetization strategy that unlocks your startup's true potential.
+              Book a free 15-minute call to assess whether pricing is your highest-impact lever right now and what outcomes you could realistically expect in 5 days.
             </p>
               <a
                 href="/book"
               className="inline-block bg-[#ff5722] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#e64a19] transition shadow-lg hover:shadow-xl mb-8"
               >
-              Book Your Sprint
+              Book a free 15-minute call
               </a>
             </div>
           </div>
 
           {/* Contact Form */}
         <div className="max-w-2xl mx-auto mt-16 mb-16">
-          <div className="bg-white rounded-lg p-8 border border-[#e5e7eb] shadow-sm">
-            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-6 text-[#1f2933] text-center">Let's get in touch</h2>
-            <ContactForm 
-              firstName={true}
-              lastName={true}
-              messagePlaceholder="Say Hello"
-              buttonText="SEND MESSAGE"
-            />
+          <div className="bg-white rounded-lg shadow-lg p-6 md:p-10">
+            <h2 className="font-serif-playfair text-[28px] sm:text-[32px] font-bold mb-4 text-[#1f2933] text-center">
+              Prefer email? Send a Message
+            </h2>
+            <p className="text-sm text-[#3b4652] text-center mb-4">
+              Expect a reply in 1–2 business days. Want a faster answer? <Link href="/book" className="text-[#ff5722] hover:underline font-medium">Book a 15-min call</Link>
+            </p>
+            <ContactForm />
           </div>
         </div>
       </div>
     </section>
+
+      {/* Mobile Sticky Bottom Bar */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-[#e5e7eb] shadow-lg z-50 md:hidden">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex gap-3">
+          <Link
+            href="/book"
+            className="flex-1 bg-[#ff5722] hover:bg-[#e64a19] text-white font-bold px-4 py-3 rounded-lg text-center transition-colors shadow-sm"
+          >
+            Book Free Consult
+          </Link>
+          <Link
+            href="/contact"
+            className="flex-1 bg-transparent border-2 border-[#ff5722] text-[#ff5722] hover:bg-[#ff5722] hover:text-white font-bold px-4 py-3 rounded-lg text-center transition-colors"
+          >
+            Send a message
+          </Link>
+        </div>
+      </div>
     </>
   );
 } 

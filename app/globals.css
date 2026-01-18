@@ -36,6 +36,7 @@
     background: #f9f6f7;
     font-size: 17px;
     line-height: 1.65;
+    scroll-behavior: smooth;
   }
   h1, h2, h3, h4, .logo-serif {
     font-family: var(--font-playfair), Playfair Display, serif;

@@ -511,6 +511,12 @@ const markdownComponents = {
       Icon = TrendingUp;
     } else if (headingText.includes('plan clarity')) {
       Icon = CheckCircle;
+    } else if (headingText.includes('interview count')) {
+      Icon = Users;
+    } else if (headingText.includes('drill/hole maxim') || headingText.includes('drill/hole')) {
+      Icon = Target;
+    } else if (headingText.includes('workaround') || headingText.includes('workaround rule')) {
+      Icon = Zap;
     }
     
     return (
@@ -545,9 +551,9 @@ const markdownComponents = {
     <blockquote className="bg-white border-l-4 border-[#ff5722] pl-6 pr-4 py-4 my-6 rounded-r-lg shadow-sm" {...props} />
   ),
   table: ({ node, ...props }: any) => (
-    <div className="overflow-x-auto my-8" role="region" aria-label="Data table" tabIndex={0}>
+    <div className="overflow-x-auto my-8 -mx-4 sm:mx-0" role="region" aria-label="Data table" tabIndex={0}>
       <div className="bg-white rounded-lg border border-[#e5e7eb] shadow-sm overflow-hidden min-w-full">
-        <table className="w-full border-collapse" {...props} />
+        <table className="w-full border-collapse min-w-[600px]" {...props} />
       </div>
     </div>
   ),
@@ -555,7 +561,7 @@ const markdownComponents = {
     <thead className="bg-[#f6f7f9]" {...props} />
   ),
   th: ({ node, ...props }: any) => (
-    <th className="text-left py-4 px-6 font-semibold text-sm text-[#1f2933] border-b-2 border-[#e5e7eb] uppercase tracking-wide first:pl-6 last:pr-6" {...props} />
+    <th className="text-left py-3 sm:py-4 px-3 sm:px-6 font-semibold text-xs sm:text-sm text-[#1f2933] border-b-2 border-[#e5e7eb] uppercase tracking-wide first:pl-3 sm:first:pl-6 last:pr-3 sm:last:pr-6 whitespace-nowrap" {...props} />
   ),
   td: ({ node, ...props }: any) => {
     // Check if this is a "Decision criteria" table cell with fit level
@@ -587,10 +593,10 @@ const markdownComponents = {
     }
     
     return (
-      <td className="py-5 px-6 text-base sm:text-[17px] text-[#1f2933] leading-[1.65] border-b border-[#e5e7eb] align-top first:pl-6 last:pr-6" {...props}>
+      <td className="py-4 sm:py-5 px-3 sm:px-6 text-sm sm:text-base md:text-[17px] text-[#1f2933] leading-[1.65] border-b border-[#e5e7eb] align-top first:pl-3 sm:first:pl-6 last:pr-3 sm:last:pr-6 min-w-[120px]" {...props}>
         {Icon ? (
           <div className="flex items-center gap-2">
-            <Icon className={`w-5 h-5 ${iconColor} flex-shrink-0`} />
+            <Icon className={`w-4 h-4 sm:w-5 sm:h-5 ${iconColor} flex-shrink-0`} />
             <span>{props.children}</span>
           </div>
         ) : (
@@ -612,11 +618,13 @@ const markdownComponents = {
   img: ({ node, src, alt, ...props }: any) => {
     // Handle images with Next.js Image component for optimization
     if (src?.startsWith('/')) {
-      // Check if this is the use case mental model image - make it smaller
+      // Check if this is the use case or JTBD mental model image - make it smaller
       const isUseCaseMental = src.includes('wiki_usecase_mental');
-      const imageWidth = isUseCaseMental ? 600 : 800;
-      const imageHeight = isUseCaseMental ? 450 : 600;
-      const maxWidth = isUseCaseMental ? 'max-w-2xl' : 'max-w-full';
+      const isJTBDMental = src.includes('wiki_JTBD_mental');
+      const isMentalModel = isUseCaseMental || isJTBDMental;
+      const imageWidth = isMentalModel ? 600 : 800;
+      const imageHeight = isMentalModel ? 450 : 600;
+      const maxWidth = isMentalModel ? 'max-w-2xl' : 'max-w-full';
       
       return (
         <div className="my-8 flex justify-center">
@@ -637,26 +645,47 @@ const markdownComponents = {
 };
 
 export default async function ConceptPage({ params }: ConceptPageProps) {
+  // #region agent log
+  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:639',message:'ConceptPage entry',data:{category:params.category,concept:params.concept},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+  // #endregion
   try {
     const category = getCategoryBySlug(params.category);
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:642',message:'After category lookup',data:{categoryFound:!!category,categoryTitle:category?.title,conceptsCount:category?.concepts?.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+    // #endregion
     
     if (!category) {
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:644',message:'Category not found, calling notFound',data:{category:params.category},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+      // #endregion
       notFound();
     }
 
     const concept = category.concepts.find(c => c.id === params.concept);
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:648',message:'After concept lookup',data:{conceptFound:!!concept,conceptId:concept?.id,conceptText:concept?.text,allConceptIds:category.concepts.map(c=>c.id)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+    // #endregion
     
     if (!concept) {
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:650',message:'Concept not found, calling notFound',data:{paramsConcept:params.concept,availableIds:category.concepts.map(c=>c.id)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+      // #endregion
       notFound();
     }
 
     // Try to get concept content
     const conceptData = getConceptBySlug(params.category, params.concept);
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:655',message:'After getConceptBySlug',data:{conceptDataFound:!!conceptData,hasTitle:!!conceptData?.title,contentLength:conceptData?.content?.length,contentPreview:conceptData?.content?.substring(0,200)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+    // #endregion
     const conceptName = conceptData?.title || concept.text.split(':')[0].trim();
     const description = conceptData?.oneLiner || (concept.text.includes(':') 
       ? concept.text.split(':').slice(1).join(':').trim()
       : '');
     const hasContent = conceptData !== null;
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:660',message:'Content check',data:{hasContent,conceptName,description},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+    // #endregion
     
     // Extract headings for table of contents (only first level - h2)
     let tocItems: Array<{ id: string; text: string; level: number }> = [];
@@ -814,6 +843,10 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
       faqItems: faqItemsForSchema
     });
 
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:838',message:'Before render return',data:{hasSnapshot:!!snapshot,hasKeyFacts:!!keyFacts,keyFactsCount:keyFacts?.length,hasSteps:!!steps,stepsCount:steps?.length,hasMetrics:!!metrics,metricsCount:metrics?.length,faqCount:faqItems.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
+    // #endregion
+
   return (
     <>
       <script
@@ -829,7 +862,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       
-      <div className="min-h-screen bg-[#f9f6f7]">
+      <div className="min-h-screen bg-[#f9f6f7] pb-20 md:pb-8">
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {breadcrumbs.length > 0 && (
             <div className="mb-6">
@@ -920,6 +953,34 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                 {description}
               </p>
             )}
+          </div>
+
+          {/* Navigation Chips */}
+          <div className="flex flex-wrap gap-3 mb-8">
+            <a
+              href="#snapshot"
+              className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
+            >
+              Outcomes
+            </a>
+            <a
+              href="#step-by-step"
+              className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
+            >
+              How it works
+            </a>
+            <a
+              href="#pricing"
+              className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
+            >
+              Pricing
+            </a>
+            <a
+              href="#faq"
+              className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
+            >
+              FAQ
+            </a>
           </div>
 
                 {/* Content */}
@@ -1066,9 +1127,11 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                       )}
                       {/* Content after Snapshot when there are no Key Facts, Steps, or Metrics but FAQ exists - render main content sections before FAQ */}
                       {(()=>{
-                        const shouldRender = (!keyFacts || keyFacts.length === 0) && (!steps || steps.length === 0) && (!metrics || metrics.length === 0) && faqItems.length > 0 && afterSnapshotContent && afterSnapshotContent.trim();
+                        // Only render if there are no intermediate sections, FAQ exists, and we have content to render
+                        // Use beforeFAQ directly to avoid duplication (it's already parsed from the content)
+                        const shouldRender = (!keyFacts || keyFacts.length === 0) && (!steps || steps.length === 0) && (!metrics || metrics.length === 0) && faqItems.length > 0 && beforeFAQ && beforeFAQ.trim();
                         if (shouldRender) {
-                          fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1068',message:'Rendering afterSnapshotContent (no intermediate sections)',data:{hasKeyFacts:!!keyFacts,hasSteps:!!steps,hasMetrics:!!metrics,hasFAQ:faqItems.length>0,afterSnapshotLength:afterSnapshotContent.length,condition:true},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'G'})}).catch(()=>{});
+                          fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1068',message:'Rendering beforeFAQ (no intermediate sections)',data:{hasKeyFacts:!!keyFacts,hasSteps:!!steps,hasMetrics:!!metrics,hasFAQ:faqItems.length>0,beforeFAQLength:beforeFAQ.length,condition:true},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'G'})}).catch(()=>{});
                         }
                         return shouldRender;
                       })() && (
@@ -1078,12 +1141,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                             rehypePlugins={[rehypeRaw, rehypeKatex]}
                             components={markdownComponents}
                           >
-                            {(()=>{
-                              const contentToRender = afterSnapshotContent.split('## FAQ')[0].trim();
-                              const splitParts = afterSnapshotContent.split('## FAQ');
-                              fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1078',message:'Content being rendered from afterSnapshotContent',data:{contentLength:contentToRender.length,afterSnapshotLength:afterSnapshotContent.length,splitPartsCount:splitParts.length,contentPreview:contentToRender.substring(0,400),last200Chars:contentToRender.substring(contentToRender.length-200),hasWhatIs:contentToRender.includes('## What is'),hasReferences:contentToRender.includes('## References'),hasFAQ:contentToRender.includes('## FAQ')},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'I'})}).catch(()=>{});
-                              return contentToRender;
-                            })()}
+                            {beforeFAQ}
                           </ReactMarkdown>
                         </div>
                       )}
@@ -1455,14 +1513,21 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                       {/* Content before FAQ (only if FAQ exists, no Metrics, and content hasn't been rendered yet via afterSnapshotContent) */}
                       {(()=>{
                         // Prevent rendering if content was already rendered via afterSnapshotContent path (no intermediate sections)
-                        const contentAlreadyRendered = (!keyFacts || keyFacts.length === 0) && (!steps || steps.length === 0) && (!metrics || metrics.length === 0) && faqItems.length > 0;
+                        // This happens when there are no keyFacts, steps, or metrics, but FAQ exists
+                        const hasNoIntermediateSections = (!keyFacts || keyFacts.length === 0) && (!steps || steps.length === 0) && (!metrics || metrics.length === 0);
+                        const contentAlreadyRendered = hasNoIntermediateSections && faqItems.length > 0 && beforeFAQ && beforeFAQ.trim();
+                        // Only render beforeFAQ if:
+                        // 1. FAQ exists
+                        // 2. No metrics (metrics have their own beforeFAQ rendering path)
+                        // 3. Has intermediate sections (keyFacts or steps) - content wasn't already rendered
+                        // 4. Content wasn't already rendered
                         const shouldRender = !contentAlreadyRendered && faqItems.length > 0 && (!metrics || metrics.length === 0) && ((keyFacts && keyFacts.length > 0) || (steps && steps.length > 0)) && beforeFAQ && beforeFAQ.trim();
-                        fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1448',message:'Checking beforeFAQ render condition',data:{shouldRender,contentAlreadyRendered,hasFAQ:faqItems.length>0,hasMetrics:!!metrics,hasKeyFacts:!!keyFacts&&keyFacts.length>0,hasSteps:!!steps&&steps.length>0,beforeFAQLength:beforeFAQ?.length||0},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'J'})}).catch(()=>{});
-                        return shouldRender;
-                      })() && (
-                        <>
+                        fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1448',message:'Checking beforeFAQ render condition',data:{shouldRender:!!shouldRender,contentAlreadyRendered,hasNoIntermediateSections,hasFAQ:faqItems.length>0,hasMetrics:!!metrics,hasKeyFacts:!!keyFacts&&keyFacts.length>0,hasSteps:!!steps&&steps.length>0,beforeFAQLength:beforeFAQ?.length||0},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'J'})}).catch(()=>{});
+                        return !!shouldRender;
+                      })() ? (
+                        <div key="before-faq-content">
                           {/* #region agent log */}
-                          {(()=>{fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1452',message:'Rendering beforeFAQ (with KeyFacts/Steps)',data:{beforeFAQLength:beforeFAQ.length,condition:true},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'H'})}).catch(()=>{});return null;})()}
+                          {(()=>{fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1456',message:'Rendering beforeFAQ (with KeyFacts/Steps)',data:{beforeFAQLength:beforeFAQ.length,condition:true},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'H'})}).catch(()=>{});return null;})()}
                           {/* #endregion */}
                           <ReactMarkdown
                             remarkPlugins={[remarkGfm, remarkMath]}
@@ -1471,8 +1536,8 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                           >
                             {beforeFAQ}
                           </ReactMarkdown>
-                        </>
-                      )}
+                        </div>
+                      ) : null}
 
                       {/* FAQ Section */}
                       {faqItems.length > 0 && (
@@ -1628,11 +1693,32 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
           </div>
         </div>
       </div>
+
+      {/* Mobile Sticky Bottom Bar */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-[#e5e7eb] shadow-lg z-50 md:hidden">
+        <div className="max-w-[90rem] mx-auto px-4 py-3 flex gap-3">
+          <Link
+            href="/book"
+            className="flex-1 bg-[#ff5722] hover:bg-[#e64a19] text-white font-bold px-4 py-3 rounded-lg text-center transition-colors shadow-sm"
+          >
+            Book Free Consult
+          </Link>
+          <Link
+            href="/contact"
+            className="flex-1 bg-transparent border-2 border-[#ff5722] text-[#ff5722] hover:bg-[#ff5722] hover:text-white font-bold px-4 py-3 rounded-lg text-center transition-colors"
+          >
+            Send a message
+          </Link>
+        </div>
+      </div>
     </>
   );
   } catch (error) {
     // Log the error and re-throw it so it can be caught by error boundaries
     console.error('Error in ConceptPage:', error);
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1658',message:'Error caught in ConceptPage',data:{errorMessage:error instanceof Error?error.message:String(error),errorStack:error instanceof Error?error.stack:undefined,category:params.category,concept:params.concept},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
+    // #endregion
     throw error;
   }
 }
