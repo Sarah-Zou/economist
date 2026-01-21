@@ -46,13 +46,10 @@ export default function WikiPricingPage() {
     { slug: 'value-and-customers', image: '/images/metrics.webp' },
     { slug: 'packaging-and-bundling', image: '/images/P-1.webp' },
     { slug: 'models-and-metering', image: '/images/P-2.webp' },
-    { slug: 'price-architecture', image: '/images/P-3.webp' },
-    { slug: 'behavioral-psychology', image: '/images/P-4.webp' },
     { slug: 'competitive-and-positioning', image: '/images/P-5.webp' },
     { slug: 'comms-and-deals', image: '/images/P-6.webp' },
     { slug: 'research-and-experiments', image: '/images/S-1.webp' },
     { slug: 'economics-and-metrics', image: '/images/S-5.webp' },
-    { slug: 'intl-channels-billing', image: '/images/S-2.webp' },
     { slug: 'governance-and-process', image: '/images/S-3.webp' },
     { slug: 'pitfalls-and-failures', image: '/images/S-4.webp' }
   ];

@@ -15,14 +15,14 @@ owner: "Dr. Sarah Zou"
 
 **Why it matters:**
 - It defines your "pricing ceiling"; helps you pick a **price range** (not a guess) and avoid over/underpricing.
-- Reveals **which segments value you most**, so you can build tiers and [price fences](/wiki/pricing/price-architecture).
+- Reveals **which segments value you most**, so you can build tiers and [price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination).
 
 **When to use:** During initial Product-Market Fit (PMF) discovery, before setting/raising prices, changing packaging, launching to a new segment/geo, tightening discount policy, or when pivoting your [ICP (Ideal Customer Profile)](/wiki/pricing/value-and-customers/ideal-customer-profile).
 
 **Key Takeaways:**
 - **Have the "Talk" Early:** Discussing WTP with customers must happen *before* the product is fully engineered to prioritize features correctly.
 - **Value is Subjective:** WTP is not determined by your costs but by the customer's circumstances, alternatives, and perceived benefits.
-- WTP is a **distribution**; your job is to capture more of it with **segmentation + [fences](/wiki/pricing/price-architecture)**.
+- WTP is a **distribution**; your job is to capture more of it with **segmentation + [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination)**.
 - Start simple with **[Van Westendorp PSM](/wiki/pricing/research-and-experiments/van-westendorp)**, then validate with behavior (pilots/A-B) as stakes rise.
 - **Kill "Undeads":** If WTP research shows customers won't pay a price that covers your costs, stop development immediately to save resources.
 
@@ -80,7 +80,7 @@ This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pric
 
 ### Inputs you need
 
-* **Offer + unit:** Crisp product description, **[value metric](/wiki/pricing/value-and-customers/value-metric)**, and billing period (e.g., $/seat/month) used consistently.
+* **Offer + unit:** Crisp product description, pricing metric, and billing period (e.g., $/seat/month) used consistently.
 * **Segmentation schema:** The segments you'll cut by (persona/firmographics, usage intensity, [use-case](/wiki/pricing/value-and-customers/customer-use-cases) urgency).
 * **Sampling plan:** Who you'll survey (customers/prospects) and outreach math to reach **~150 responses per segment**.
 * **PSM survey draft:** The 4 [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) questions + a few segment questions + attention/comprehension check.
@@ -88,9 +88,9 @@ This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pric
 
 ### Step-by-step
 
-1. **Conduct foundation qualitative research (before any survey):** Run 10–12 interviews per key segment to nail the [use case](/wiki/pricing/value-and-customers/customer-use-cases), persona, and current alternatives; identify the core "why" (time, money, risk, status); and lock a clear [value metric](/wiki/pricing/value-and-customers/value-metric) and billing period (e.g., $/seat/month) so your survey is anchored to a real unit of value.
+1. **Conduct foundation qualitative research (before any survey):** Run 10–12 interviews per key segment to nail the [use case](/wiki/pricing/value-and-customers/customer-use-cases), persona, and current alternatives; identify the core "why" (time, money, risk, status); and lock a clear pricing metric and billing period (e.g., $/seat/month) so your survey is anchored to a real unit of value.
 
-2. **Draft the Van Westendorp survey (don't ask "How much would you pay?"):** Paste a short offer description (what's included, [value metric](/wiki/pricing/value-and-customers/value-metric), monthly vs annual) and then ask the four canonical questions: the price that's **too expensive** to consider, **too cheap** to trust, **expensive but still possible** (needs thought), and a **bargain** (great value), plus a few segment questions and a simple attention/comprehension check. See [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp) for detailed guidance.
+2. **Draft the Van Westendorp survey (don't ask "How much would you pay?"):** Paste a short offer description (what's included, pricing metric, monthly vs annual) and then ask the four canonical questions: the price that's **too expensive** to consider, **too cheap** to trust, **expensive but still possible** (needs thought), and a **bargain** (great value), plus a few segment questions and a simple attention/comprehension check. See [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp) for detailed guidance.
 
 3. **Define the audience and sample size:** If you're defending retention, survey current customers; if you're expanding or changing packaging, survey customers and prospects; if you're entering a new market, survey prospects only—then aim for about **150 responses per segment** (and plan outreach accordingly, e.g., ~1,500 invites per segment at a 10% response rate).
 
@@ -98,7 +98,7 @@ This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pric
 
 5. **Plot the Price Sensitivity Meter and read the intersections:** Create cumulative curves over price and identify the **acceptable range** between the **Point of Marginal Cheapness (PMC)** (Too Cheap × Not a Bargain) and **Point of Marginal Expensiveness (PME)** (Too Expensive × Not Expensive), and the **Optimal Price Point (OPP)** where Too Cheap intersects Too Expensive—using curve stability and separation as a quick confidence check.
 
-6. **Segment results to find the real story:** Re-run the PSM outputs by persona/firmographics, usage intensity, and urgency of the [use case](/wiki/pricing/value-and-customers/customer-use-cases) to reveal different acceptable ranges and OPPs, then translate those differences into an initial [price-fence](/wiki/pricing/price-architecture) plan (tiers, limits, SLA/support, contract terms).
+6. **Segment results to find the real story:** Re-run the PSM outputs by persona/firmographics, usage intensity, and urgency of the [use case](/wiki/pricing/value-and-customers/customer-use-cases) to reveal different acceptable ranges and OPPs, then translate those differences into an initial [price-fence](/wiki/pricing/value-and-customers/price-fences-price-discrimination) plan (tiers, limits, SLA/support, contract terms).
 
 7. **Validate against growth and unit economics:** Pressure-test whether the chosen price will slow acquisition/virality/activation in your growth model and confirm it clears cost-to-serve and CAC payback constraints; then decide on a single price vs a tier ladder and draft the rollout plan (grandfathering, discount policy, messaging).
 
@@ -116,7 +116,7 @@ This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pric
 
 | Pitfall | Fix |
 |---------|-----|
-| **The Average Trap:** Designing a product for the "average" customer, which usually results in a product that appeals to no one. | Segment your market by WTP and create tiered versions (Good-Better-Best). Always produce a distribution + segment cuts; design [fences](/wiki/pricing/price-architecture). |
+| **The Average Trap:** Designing a product for the "average" customer, which usually results in a product that appeals to no one. | Segment your market by WTP and create tiered versions (Good-Better-Best). Always produce a distribution + segment cuts; design [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination). |
 | **Cost-Plus Bias:** Basing your price on a markup of your internal costs. | Flip the process; let the market WTP dictate the costs you can afford to incur. See [cost-plus pricing](/wiki/pricing/foundations/cost-plus-pricing) for why this approach fails. |
 | **The "Kiss of Death":** Taking polite, non-committal feedback (e.g., "That's a great idea") as a signal of WTP. | Require "skin in the game" through paid pilots or pre-orders. |
 | **Grandfathering Indefinitely:** Leaving early customers on low "legacy" prices as your product value increases. | Use dynamic contracts that allow for regular, [value-based](/wiki/pricing/foundations/value-based-pricing) price updates. |
@@ -135,7 +135,7 @@ This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pric
 * Ghuman, A. (2023). [*Price to scale: Practical pricing for B2B SaaS founders*](https://www.amazon.com/Price-Scale-Practical-Pricing-Founders/dp/B0C1J7QZ8K). Independently published.
 * Lehrskov-Schmidt, U. (2021). [*The pricing roadmap: How to design B2B SaaS pricing*](https://www.amazon.com/Pricing-Roadmap-Design-B2B-Pricing/dp/8797203103). Independently published.
 
-**Related pages:** [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Ideal Customer Profile (ICP)](/wiki/pricing/value-and-customers/ideal-customer-profile) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Conjoint Analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp) | [Gabor–Granger](/wiki/pricing/research-and-experiments/gabor-granger) | [Price Elasticity](/wiki/pricing/research-and-experiments/price-elasticity) | [Price Fences](/wiki/pricing/price-architecture)
+**Related pages:** [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Ideal Customer Profile (ICP)](/wiki/pricing/value-and-customers/ideal-customer-profile) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Conjoint Analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp) | [Gabor–Granger](/wiki/pricing/research-and-experiments/gabor-granger) | [Price Elasticity](/wiki/pricing/research-and-experiments/price-elasticity) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination)
 
 ## FAQ
 

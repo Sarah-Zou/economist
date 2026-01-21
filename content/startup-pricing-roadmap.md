@@ -86,7 +86,7 @@ The output of this sprint won't be a perfect price. Instead, it will provide a s
 
 ### **2.1. Introduction: The Three Pillars of a Pricing Model**
 
-A pricing model is much more than a price tag; it is the commercial architecture that defines *how* you capture a portion of the value you create. This section deconstructs that architecture into three core pillars: **[Packaging](https://sarahzou.com/wiki/pricing/packaging-and-bundling/packaging)** (the *what* you sell), the **[Value Metric](https://sarahzou.com/wiki/pricing/models-and-metering/value-metric)** (the *how* you charge), and the **[Monetization Model](https://sarahzou.com/wiki/pricing/models-and-metering/monetization-model)** (the *when* you charge). Getting this structure right is often more important than the exact price point itself.
+A pricing model is much more than a price tag; it is the commercial architecture that defines *how* you capture a portion of the value you create. This section deconstructs that architecture into three core pillars: **[Packaging](https://sarahzou.com/wiki/pricing/packaging-and-bundling/packaging)** (the *what* you sell), the **Pricing Metric** (the *how* you charge), and the **[Monetization Model](https://sarahzou.com/wiki/pricing/models-and-metering/monetization-model)** (the *when* you charge). Getting this structure right is often more important than the exact price point itself.
 
 ### **2.2. Pillar 1: Packaging Your Value into Tiers**
 
@@ -110,9 +110,9 @@ A common mistake is feature overload. Simplicity and clear differentiation betwe
 
 This sets up the next critical choice: how to measure and charge for the value within those packages.
 
-### **2.3. Pillar 2: Choosing Your Value Metric**
+### **2.3. Pillar 2: Choosing Your Pricing Metric**
 
-A [value metric](https://sarahzou.com/wiki/pricing/models-and-metering/value-metric) is the unit by which your price scales—for example, per user, per gigabyte of storage, or per contact. This is one of the most critical decisions you will make, as it directly connects the price a customer pays to the value they receive.
+A pricing metric is the unit by which your price scales—for example, per user, per gigabyte of storage, or per contact. This is one of the most critical decisions you will make, as it directly connects the price a customer pays to the value they receive.
 
 **Value Metric Litmus Test**
 
@@ -128,16 +128,16 @@ For most SaaS startups, the choice often comes down to two common starting point
 | **[Per-User/Per-Seat](https://sarahzou.com/wiki/pricing/models-and-metering/per-user-per-seat)** | Products where value is tied to the number of people using it (e.g., CRMs, project management tools). Works well when the product is a "system of record." | This can create friction by discouraging customers from adding more users, which can slow down adoption and expansion within an organization. |
 | **[Usage-Based](https://sarahzou.com/wiki/pricing/models-and-metering/usage-based-pricing)** | Products where value is tied to consumption (e.g., data storage, API calls, transactions processed). This can reduce the upfront barrier to adoption. | Unpredictability is a major concern for customers. A hybrid model, which includes a base platform fee plus a usage component, can help mitigate this. |
 
-To begin, choose one primary value metric that is simple and directly aligned with the core value you uncovered in your Phase 1 research.
+To begin, choose one primary pricing metric that is simple and directly aligned with the core value you uncovered in your Phase 1 research.
 
 ### **2.4. Pillar 3: Selecting Your Monetization Model**
 
-Your [monetization model](https://sarahzou.com/wiki/pricing/models-and-metering/monetization-model) is the commercial framework that combines your packaging and value metric into a complete offer. For most early-stage startups, two models are most relevant:
+Your [monetization model](https://sarahzou.com/wiki/pricing/models-and-metering/monetization-model) is the commercial framework that combines your packaging and pricing metric into a complete offer. For most early-stage startups, two models are most relevant:
 
 - **[Subscription](https://sarahzou.com/wiki/pricing/models-and-metering/subscription-model):** This model involves a recurring fee for access to your product. Its primary benefit for a startup is creating a predictable, recurring revenue stream, which is crucial for financial planning and attractive to investors.
 - **[Freemium](https://sarahzou.com/wiki/pricing/models-and-metering/freemium-model):** It is critical to understand that freemium is a customer acquisition model, not a revenue model. It involves offering a free version of your product to attract a large user base, with the hope of converting a small percentage to a paid plan. As a rule, only consider a freemium model if your product has a massive potential user base and natural network effects, where free users add tangible value to paid users.
 
-With your packaging, value metric, and monetization model defined, you have now designed the complete architecture of your pricing. The next step is to assign specific price points to this structure.
+With your packaging, pricing metric, and monetization model defined, you have now designed the complete architecture of your pricing. The next step is to assign specific price points to this structure.
 
 **Founder's Takeaway: You have moved beyond a simple price tag to construct a complete commercial architecture. This structure gives you the levers to not only capture value today but also to scale revenue as your customers grow with you. Getting this architecture right is more important than the initial price point.**
 
@@ -168,9 +168,9 @@ This process provides a defensible, value-based starting point for your prices, 
 
 How you present a price can influence a customer's perception as much as the number itself. Your pricing page is some of the most valuable real estate you have. How you present your prices is not a gimmick; it's a tool to guide your customer to the right choice. Use these proven tactics to **make your 'Better' tier feel like the most intelligent option on the page**.
 
-- **[The Power of 9](https://sarahzou.com/wiki/pricing/behavioral-psychology/power-of-9):** Prices ending in 9 or 99 (e.g., $49 instead of $50) are perceived as being significantly lower, a psychological quirk proven effective for decades.
-- **[Price Framing (Temporal Reframing)](https://sarahzou.com/wiki/pricing/behavioral-psychology/temporal-reframing):** Breaking down a price into a smaller unit of time can make it seem more affordable and less daunting. For example, `$1 per day` often feels more accessible than `$360 per year`, even though they are the same price.
-- **[The Anchor Effect](https://sarahzou.com/wiki/pricing/behavioral-psychology/anchor-effect):** The first price a customer sees sets an anchor for their perception of value. By presenting your "Best" tier first on your pricing page, you can make your "Better" option—where you want most customers to land—seem more reasonable and like a better deal by comparison.
+- **The Power of 9:** Prices ending in 9 or 99 (e.g., $49 instead of $50) are perceived as being significantly lower, a psychological quirk proven effective for decades.
+- **Price Framing (Temporal Reframing):** Breaking down a price into a smaller unit of time can make it seem more affordable and less daunting. For example, `$1 per day` often feels more accessible than `$360 per year`, even though they are the same price.
+- **The Anchor Effect:** The first price a customer sees sets an anchor for their perception of value. By presenting your "Best" tier first on your pricing page, you can make your "Better" option—where you want most customers to land—seem more reasonable and like a better deal by comparison.
 
 With your pricing structure designed and your initial price points set, the final phase focuses on the crucial steps of implementing your strategy effectively.
 
@@ -186,7 +186,7 @@ As your team grows, it's essential to document your pricing strategy to **ensure
 
 - **1. Pricing Goals:** What is the primary objective of your pricing? Is it to maximize short-term revenue, rapidly penetrate a new market, or skim the top of the market with a premium offer?
 - **2. Pricing Strategy:** Based on your goals, is your strategy one of Maximization, Penetration, or Skimming?
-- **3. Price Structure:** Briefly document your "[Good, Better, Best](https://sarahzou.com/wiki/pricing/packaging-and-bundling/good-better-best)" tiers, your chosen [value metric](https://sarahzou.com/wiki/pricing/models-and-metering/value-metric), and the price points for each package.
+- **3. Price Structure:** Briefly document your "[Good, Better, Best](https://sarahzou.com/wiki/pricing/packaging-and-bundling/good-better-best)" tiers, your chosen pricing metric, and the price points for each package.
 - **4. Execution Guidelines:** Define clear rules for your team. This is where you will codify your policies on crucial topics like [discounting](https://sarahzou.com/wiki/pricing/comms-and-deals/discounting) and how to handle competitive situations.
 
 This living document ensures that everyone—from sales to marketing to product—is operating from the same playbook.
@@ -238,7 +238,7 @@ This plan provides a concrete, time-boxed framework to turn the strategies in th
 **Days 31-60: Design & Price Setting (Phases 2 & 3)**
 
 - [ ]  Design your v1 "[Good, Better, Best](https://sarahzou.com/wiki/pricing/packaging-and-bundling/good-better-best)" packages based on your research.
-- [ ]  Choose your primary [value metric](https://sarahzou.com/wiki/pricing/models-and-metering/value-metric).
+- [ ]  Choose your primary pricing metric.
 - [ ]  Use the Value Decoder and interview data to set your initial price points.
 - [ ]  Draft your 1-Page Pricing Strategy Document.
 

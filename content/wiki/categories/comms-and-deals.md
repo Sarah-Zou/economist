@@ -11,12 +11,10 @@ canonical: "https://sarahzou.com/wiki/pricing/comms-and-deals"
 ## What's in this category
 
 - **<span id="value-selling">Value-selling narratives & ROI proof</span>**: Communicating value to prospects
-- **<span id="value-communication">Value communication</span>**: Benefits over features in customer messaging
 - **<span id="pricing-page">Pricing-page UX & plan comparisons</span>**: Designing effective pricing pages
 - **<span id="pricing-transparency">Transparency vs. "Talk to sales"</span>**: When to show vs. hide pricing
 - **<span id="price-change-communications">Price-change launch & customer communications</span>**: Managing pricing transitions
 - **<span id="social-proof">Social proof, guarantees & SLAs</span>**: Building trust and reducing risk
-- **<span id="procurement-negotiation">Procurement counterplays & BATNA</span>**: Enterprise deal negotiation strategies
 - **<span id="deal-structuring">Multi-year, prepay & ramp structures</span>**: Complex deal structuring
 - **<span id="discounting">Discounting</span>**: Strategic discounting policies and practices
 

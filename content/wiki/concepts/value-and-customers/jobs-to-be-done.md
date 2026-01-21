@@ -21,7 +21,7 @@ owner: "Dr. Sarah Zou"
 **When to use:**
 - **Early:** shaping a value proposition, positioning, or category story
 - **Growth stalls:** diagnosing churn, low conversion, or heavy discounting
-- **Pricing & [packaging](/wiki/pricing/packaging-and-bundling):** designing plans, picking a [value metric](/wiki/pricing/models-and-metering/value-metric), or adding tiers/[fences](/wiki/pricing/price-architecture) by stakes/context
+- **Pricing & [packaging](/wiki/pricing/packaging-and-bundling):** designing plans, picking a pricing metric, or adding tiers/[fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) by stakes/context
 - **Product direction:** deciding what to build next based on real switching triggers
 
 **Key Takeaways:**
@@ -29,7 +29,7 @@ owner: "Dr. Sarah Zou"
 - **Context is Queen:** The "when" and "where" matter more than the "who"; People with different titles can share the same job.
 - **Competition is broader than your category:** You're competing with spreadsheets, agencies, internal hacks, and "do nothing," not just direct rivals.
 - **Switching is emotional + rational:** The *Push/Pull/Habit/Anxiety* forces explain why customers stall—even when value is obvious.
-- **Packaging and pricing follow the job:** Align tiers, [fences](/wiki/pricing/price-architecture), and the [value metric](/wiki/pricing/models-and-metering/value-metric) to the customer's unit of progress; then validate [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay).
+- **Packaging and pricing follow the job:** Align tiers, [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination), and the pricing metric to the customer's unit of progress; then validate [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay).
 
 ## Key Facts
 
@@ -116,7 +116,7 @@ If you see people using a tool for something it wasn't intended for (e.g., using
    * **Product:** prioritize what removes struggle and improves outcomes.
    * **Messaging:** lead with context + progress (not features).
    * **Onboarding:** get them to the first *job-complete* moment fast.
-   * **Packaging/pricing:** pick a [value metric](/wiki/pricing/models-and-metering/value-metric) that matches the job; add [fences](/wiki/pricing/price-architecture) for higher-stakes contexts.
+   * **Packaging/pricing:** pick a pricing metric that matches the job; add [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) for higher-stakes contexts.
 
 ## Metrics to monitor
 
@@ -133,7 +133,7 @@ If you see people using a tool for something it wasn't intended for (e.g., using
 | **Skipping the forces:** Hearing "looks great" but deals stall without understanding why. | Always map Push / Pull / Habit / Anxiety and design proof to reduce anxiety (templates, ROI calc, security docs, references). |
 | **Interviewing only happy customers or power users:** Missing insights from customers who didn't succeed. | Include recent churn, lost deals, and recent switchers; switching reveals real criteria and fears. |
 | **[Packaging](/wiki/pricing/packaging-and-bundling) by feature buckets, not jobs:** Organizing plans by features like "Analytics," "Automation," "Integrations." | Bundle around jobs and stakes; put "must-have to complete the job" features in the tier where that job lives. |
-| **Calling every loss "too expensive":** Assuming price is always the issue when deals are lost. | Diagnose the quality of the no: was it the wrong job fit, unclear proof, wrong [value metric](/wiki/pricing/models-and-metering/value-metric), or missing [fence](/wiki/pricing/price-architecture) (e.g., SSO/SLA/audit logs)? |
+| **Calling every loss "too expensive":** Assuming price is always the issue when deals are lost. | Diagnose the quality of the no: was it the wrong job fit, unclear proof, wrong pricing metric, or missing [fence](/wiki/pricing/value-and-customers/price-fences-price-discrimination) (e.g., SSO/SLA/audit logs)? |
 
 ## References & Links
 
@@ -148,7 +148,7 @@ If you see people using a tool for something it wasn't intended for (e.g., using
 * Ulwick, A. W. (2005). [What customers want from your products](https://hbr.org/2005/01/what-customers-want-from-your-products). *Harvard Business Review, 83*(1), 70–82.
 * Ulwick, A. W. (2016). [*Jobs to be done: Theory to practice*](https://anthonyulwick.com/books/jobs-to-be-done-theory-to-practice/). Idea Bite Press.
 
-**Related pages:** [Value Metric](/wiki/pricing/models-and-metering/value-metric) | [Packaging & Bundling](/wiki/pricing/packaging-and-bundling) | [Price Fences](/wiki/pricing/price-architecture) | [Segmentation](/wiki/pricing/value-and-customers/segmentation) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Willingness-to-Pay](/wiki/pricing/value-and-customers/willingness-to-pay)
+**Related pages:** [Packaging & Bundling](/wiki/pricing/packaging-and-bundling) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Segmentation](/wiki/pricing/value-and-customers/segmentation) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Willingness-to-Pay](/wiki/pricing/value-and-customers/willingness-to-pay)
 
 ## FAQ
 
@@ -166,7 +166,7 @@ If you see people using a tool for something it wasn't intended for (e.g., using
 
 **Q:** How does JTBD connect to pricing?
 
-**A:** Jobs reveal the customer's unit of progress → informs [value metric](/wiki/pricing/models-and-metering/value-metric), [packaging](/wiki/pricing/packaging-and-bundling), and [fences](/wiki/pricing/price-architecture); then quantify with [WTP research](/wiki/pricing/value-and-customers/willingness-to-pay).
+**A:** Jobs reveal the customer's unit of progress → informs pricing metric, [packaging](/wiki/pricing/packaging-and-bundling), and [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination); then quantify with [WTP research](/wiki/pricing/value-and-customers/willingness-to-pay).
 
 **Q:** Should I put my newest, most advanced features in my highest tier?
 

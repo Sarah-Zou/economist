@@ -116,7 +116,7 @@ Over time, this strategy can lead to a decline in product differentiation and se
 - Raju, J., & Zhang, Z. J. (2010). *Smart Pricing: How Google, Priceline, and Leading Businesses Use Pricing Innovation for Profitability*. Pearson Prentice Hall.
 - Nagle, T. T., Müller, G., & Gruyaert, E. (2022). *The Strategy and Tactics of Pricing: A Guide to Growing More Profitably*. Routledge.
 
-**Related pages:** [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Cost-Plus Pricing](/wiki/pricing/foundations/cost-plus-pricing) | [Strategic Pricing](/wiki/pricing/foundations/strategic-pricing) | [Price Discrimination](/wiki/pricing/price-architecture) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay)
+**Related pages:** [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Cost-Plus Pricing](/wiki/pricing/foundations/cost-plus-pricing) | [Strategic Pricing](/wiki/pricing/foundations/strategic-pricing) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay)
 
 ## FAQ
 

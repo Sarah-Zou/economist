@@ -126,7 +126,7 @@ owner: "Dr. Sarah Zou"
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 * Ghuman, A. (2021). [*Price to Scale: Practical Pricing for Your High Growth Software Startup*](https://www.amazon.com/Price-Scale-Practical-Pricing-Founders/dp/B0C1J7QZ8K). Independently published.
 
-**Related pages:** [Value-based pricing](/wiki/pricing/foundations/value-based-pricing) | [Price fences](/wiki/pricing/price-architecture) | [Packaging & bundling](/wiki/pricing/packaging-and-bundling) | [Jobs-to-be-done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Conjoint analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Gabor–Granger](/wiki/pricing/research-and-experiments/gabor-granger) | [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) | [WTP & elasticity](/wiki/pricing/value-and-customers/willingness-to-pay)
+**Related pages:** [Value-based pricing](/wiki/pricing/foundations/value-based-pricing) | [Price fences / Price discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Packaging & bundling](/wiki/pricing/packaging-and-bundling) | [Jobs-to-be-done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Conjoint analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Gabor–Granger](/wiki/pricing/research-and-experiments/gabor-granger) | [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) | [WTP & elasticity](/wiki/pricing/value-and-customers/willingness-to-pay)
 
 ## FAQ
 

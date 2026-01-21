@@ -100,7 +100,7 @@ It can lead companies to set consistently sub-par prices, often leading to foreg
 - Hinterhuber, A., & Liozu, S. M. (2017). *Innovation in pricing: Contemporary theories and best practices*. Routledge.
 - Selected articles on cost‑plus pitfalls and value‑based pricing from Harvard Business Review.
 
-**Related pages:** [Value‑Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Ideal Customer Profile (ICP)](/wiki/pricing/value-and-customers/ideal-customer-profile) | [Price Floors & Guardrails](/wiki/pricing/foundations/price-floors) | [Price Fences](/wiki/pricing/price-architecture) | [Unit Economics](/wiki/pricing/foundations/unit-economics) | [Van Westendorp](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger](/wiki/pricing/research-and-metrics/gabor-granger) | [Conjoint Analysis](/wiki/pricing/research-and-metrics/conjoint-analysis)
+**Related pages:** [Value‑Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Ideal Customer Profile (ICP)](/wiki/pricing/value-and-customers/ideal-customer-profile) | [Price Floors & Guardrails](/wiki/pricing/foundations/price-floors) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Unit Economics](/wiki/pricing/foundations/unit-economics) | [Van Westendorp](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger](/wiki/pricing/research-and-metrics/gabor-granger) | [Conjoint Analysis](/wiki/pricing/research-and-metrics/conjoint-analysis)
 
 ## FAQ
 

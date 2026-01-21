@@ -16,6 +16,9 @@ canonical: "https://sarahzou.com/wiki/pricing/governance-and-process"
 - **<span id="cpq-rules">CPQ rules, deal-desk guardrails & approvals</span>**: Pricing system configuration
 - **<span id="pricing-calendar">Pricing calendar, integrity policy</span>**: Change management and consistency
 - **<span id="raising-prices">Raising-prices & grandfathering playbooks</span>**: Price increase strategies
+- **<span id="price-architecture">Price Architecture</span>**: Strategic price setting, positioning, geographic variations, and architectural decisions that maximize revenue while maintaining simplicity
+- **<span id="behavioral-psychological-pricing">Behavioral & Psychological Pricing</span>**: Psychological pricing principles including anchoring, decoy effects, fairness perceptions, and behavioral economics to optimize customer decisions
+- **<span id="global-pricing-billing-ops">Global pricing & billing ops</span>**: Global pricing strategies including currency management, tax compliance, channel partnerships, and billing operations across international markets
 
 *I'm currently working on developing detailed content for these concepts. Check back soon for comprehensive guides, step-by-step instructions, and real-world examples.*
 

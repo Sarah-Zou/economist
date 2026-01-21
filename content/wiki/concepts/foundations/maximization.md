@@ -134,7 +134,7 @@ In the landscape of strategic pricing, **maximization** is one of the three prim
 - Ghuman, A. (2020). *Price to scale: Practical pricing for your high-growth SaaS startup*. Independently published.
 - Simon, H., & Fassnacht, M. (2019). *Price management: Strategy, analysis, decision, implementation* (2nd ed.). Springer.
 
-**Related pages:** [Skimming Strategy](/wiki/pricing/foundations/skimming-strategy) | [Penetration Strategy](/wiki/pricing/foundations/penetration-strategy) | [Value‑Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Price Elasticity of Demand](/wiki/pricing/value-and-customers/price-elasticity) | [Markup Rule & Lerner Index](/wiki/pricing/foundations/markup-rule) | [Price Fences & Segmentation](/wiki/pricing/price-architecture) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-metrics/van-westendorp) | [Freemium & Usage‑based Pricing](/wiki/pricing/packaging-and-bundling/freemium)
+**Related pages:** [Skimming Strategy](/wiki/pricing/foundations/skimming-strategy) | [Penetration Strategy](/wiki/pricing/foundations/penetration-strategy) | [Value‑Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Price Elasticity of Demand](/wiki/pricing/value-and-customers/price-elasticity) | [Markup Rule & Lerner Index](/wiki/pricing/foundations/markup-rule) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-metrics/van-westendorp) | [Freemium & Usage‑based Pricing](/wiki/pricing/packaging-and-bundling/freemium)
 
 ## FAQ
 

@@ -1,7 +1,7 @@
 ---
 title: "Monetization Models & Metering"
 slug: "models-and-metering"
-summary: "Comprehensive monetization strategies including subscription models, usage-based pricing, value metrics, and advanced pricing mechanisms."
+summary: "Comprehensive monetization strategies including subscription models, usage-based pricing, and advanced pricing mechanisms."
 updated: "2025-01-15"
 level: "101"
 tags: ["pricing","saas","monetization","models","metering","subscription"]
@@ -12,7 +12,6 @@ canonical: "https://sarahzou.com/wiki/pricing/models-and-metering"
 
 - **<span id="monetization-model">Monetization model</span>**: How you charge for your product or service
 - **<span id="pricing-metric">Pricing metric</span>**: The unit of charge (per seat, per transaction, etc.)
-- **<span id="value-metric">Value metric</span>**: Metrics that scale with delivered value
 - **<span id="consumption-based-pricing">Consumption-based pricing</span>**: Pay-as-you-use pricing strategies
 - **<span id="usage-based-pricing">Usage-based pricing (PAYG)</span>**: Per-unit consumption models
 - **<span id="per-user-per-seat">Per-user/per-seat</span>**: Pricing based on number of users or seats
@@ -20,9 +19,6 @@ canonical: "https://sarahzou.com/wiki/pricing/models-and-metering"
 - **<span id="outcome-based-pricing">Outcome/performance-based pricing</span>**: Success-based pricing structures
 - **<span id="subscription-model">Subscription model</span>**: Monthly, annual, and multi-year strategies
 - **<span id="freemium-model">Freemium model</span>**: Free tier with premium upgrades
-- **<span id="price-architecture">Price Architecture</span>**: Strategic price setting, positioning, geographic variations, and architectural decisions that maximize revenue while maintaining simplicity
-- **<span id="behavioral-psychological-pricing">Behavioral & Psychological Pricing</span>**: Psychological pricing principles including anchoring, decoy effects, fairness perceptions, and behavioral economics to optimize customer decisions
-- **<span id="global-pricing-billing-ops">Global pricing & billing ops</span>**: Global pricing strategies including currency management, tax compliance, channel partnerships, and billing operations across international markets
 
 *I'm currently working on developing detailed content for these concepts. Check back soon for comprehensive guides, step-by-step instructions, and real-world examples.*
 

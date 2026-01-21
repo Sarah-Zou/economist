@@ -577,7 +577,8 @@ export default function FractionalChiefEconomistRetainer() {
               Prefer email? Send a Message
             </h2>
             <p className="text-sm text-[#3b4652] text-center mb-4">
-              Expect a reply in 1–2 business days. Want a faster answer? <Link href="/book" className="text-[#ff5722] hover:underline font-medium">Book a 15-min call</Link> (no prep needed)
+              Expect a reply in 1–2 business days. 
+              Want a faster answer? <Link href="/book" className="text-[#ff5722] hover:underline font-medium">Book a 15-min call</Link> (no prep needed)
             </p>
             <ContactForm />
           </div>
