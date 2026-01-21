@@ -35,7 +35,7 @@ owner: "Dr. Sarah Zou"
 
 - **75% failed:** Research indicates that **75% of venture-funded startups fail**, often because they lack a well-aligned price for their chosen buyer or solve a "problem" that isn't a "job". [Harvard Business Review](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done).
 - **86% success rate:** In a reported study of ODI/JTBD projects, **18 of 21** launches were rated successful (**86%** success rate). [Why do innovation projects fail?](https://anthonyulwick.com/2016/10/26/why-do-innovation-projects-fail/).
-- **Less Pricing Sensitive:** In B2B software, **[value drivers](/wiki/pricing/value-and-customers#value-drivers) and specific jobs are more important** than price which is typically only the third to seventh most important factor in a purchase decision. [Price to Scale](https://www.pricetoscale.com/).
+- **Less Pricing Sensitive:** In B2B software, **[value drivers](/wiki/pricing/value-and-customers/value-drivers) and specific jobs are more important** than price which is typically only the third to seventh most important factor in a purchase decision. [Price to Scale](https://www.pricetoscale.com/).
 
 ## What is Jobs to Be Done (JTBD)?
 

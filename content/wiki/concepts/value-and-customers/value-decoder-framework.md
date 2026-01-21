@@ -163,7 +163,7 @@ Use the Value Decoder when **you have clear substitutes or alternatives to bench
 
 **Q:** How is the Value Decoder different from simple competitor benchmarking?
 
-**A:** Competitor benchmarking highlights price gaps but rarely explains why they exist or whether they're justified. The Value Decoder forces you to make value drivers explicit (brand, features, service, context), translate them into dollars, and adjust for external forces. It's a structured value-based method, not a copy-the-competitor shortcut.
+**A:** Competitor benchmarking highlights price gaps but rarely explains why they exist or whether they're justified. The Value Decoder forces you to make [value drivers](/wiki/pricing/value-and-customers/value-drivers) explicit (brand, features, service, context), translate them into dollars, and adjust for external forces. It's a structured value-based method, not a copy-the-competitor shortcut.
 
 **Q:** How is the Value Decoder different from Economic Value Estimation (EVE)?
 

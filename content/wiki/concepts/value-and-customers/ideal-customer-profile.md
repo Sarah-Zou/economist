@@ -60,7 +60,7 @@ For startup founders, ICP is the strategic foundation that aligns product, marke
 _"If we could only win 100 customers this year, which 100 should they be—and why?"_
 
 - **Pricing power:** Price elasticity is often **more dependent on the customer than the product**. When you focus on a segment with **high pain + high value** (and budget/urgency), you can charge premium prices because you're delivering a clear, measurable outcome—not selling a commodity.
-- **Monetization efficiency:** You can't optimize pricing without knowing **who you're optimizing for**. Different segments have different [willingness-to-pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) and value drivers; a one-size-fits-all approach either leaves money on the table (underpricing) or kills conversion (overpricing).
+- **Monetization efficiency:** You can't optimize pricing without knowing **who you're optimizing for**. Different segments have different [willingness-to-pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) and [value drivers](/wiki/pricing/value-and-customers/value-drivers); a one-size-fits-all approach either leaves money on the table (underpricing) or kills conversion (overpricing).
 - **Organizational alignment (prevents "ICP drift"):** Without a clear ICP, _sales chases the wrong leads, product builds the wrong features, and marketing targets the wrong audience_. Over time, the company **drifts from its strategic focus**—wasting resources and producing confused positioning and inconsistent pricing.
 
 ## Mental model

@@ -45,7 +45,7 @@ The estimated value is called **Total Economic Value**, composed of two primary 
 
 * **Reference Value:** The price of the next‑best alternative for the same scope and volume. This is your economic "floor" – customers expect at least this much value.
 
-* **Differentiation Value:** The incremental economic impact of choosing you instead of the NBCA. It can be categorized into Monetary Value and Psychological Value, or into positive and negative value drivers.
+* **Differentiation Value:** The incremental economic impact of choosing you instead of the NBCA. It can be categorized into Monetary Value and Psychological Value, or into positive and negative [value drivers](/wiki/pricing/value-and-customers/value-drivers).
 
   * **Monetary Value:** Tangible financial gains like cost savings or increased income.
   * **Psychological Value:** Intangible benefits like prestige, security, or satisfaction.
@@ -142,7 +142,7 @@ At minimum, for **one well‑defined customer segment and [use case](/wiki/prici
 
 2. **Identify NBCA and determine reference price:** Pick the competitor the customer would likely buy instead. Document its typical price, contract terms, and key pros/cons.
 
-3. **Identify Discriminating Value Drivers:** Determine which features create the most significant financial or psychological difference for the customer.
+3. **Identify Discriminating [Value Drivers](/wiki/pricing/value-and-customers/value-drivers):** Determine which features create the most significant financial or psychological difference for the customer.
 
 4. **Develop Value Driver Algorithms:** For each driver, define: **Mechanism** (e.g., "higher conversion rate from better recommendations"), **Unit basis** (e.g., "additional orders per month" or "hours saved per support rep"), **Magnitude** (conservative and expected % change, e.g., +3% to +7% conversion), and **Monetization** (how to translate into dollars, e.g., gross margin per order, fully loaded hourly wage). Use customer data where possible; otherwise start with **conservative assumptions** and refine.
 

@@ -955,34 +955,6 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
             )}
           </div>
 
-          {/* Navigation Chips */}
-          <div className="flex flex-wrap gap-3 mb-8">
-            <a
-              href="#snapshot"
-              className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
-            >
-              Outcomes
-            </a>
-            <a
-              href="#step-by-step"
-              className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
-            >
-              How it works
-            </a>
-            <a
-              href="#pricing"
-              className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
-            >
-              Pricing
-            </a>
-            <a
-              href="#faq"
-              className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
-            >
-              FAQ
-            </a>
-          </div>
-
                 {/* Content */}
                 <div className="prose prose-lg max-w-none text-[#1f2933] text-base sm:text-[17px] leading-[1.65]">
                   {hasContent && conceptData ? (
