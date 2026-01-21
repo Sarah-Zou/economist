@@ -10,15 +10,14 @@ canonical: "https://sarahzou.com/wiki/pricing/foundations"
 
 ## What's in this category
 
-- **[<span id="strategic-pricing">Strategic pricing (profit-led, proactive)</span>](/wiki/pricing/foundations/strategic-pricing)**: Building pricing strategies that drive profitability and growth
-- **[<span id="value-based-pricing">Value-based pricing</span>](/wiki/pricing/foundations/value-based-pricing)**: Aligning price with customer value and [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay)
-- **[<span id="cost-plus-pricing">Cost-plus pricing</span>](/wiki/pricing/foundations/cost-plus-pricing)**: Using cost-plus as a benchmark, not the default approach
-- **[<span id="customer-driven-pricing">Customer-driven pricing</span>](/wiki/pricing/foundations/customer-driven-pricing)**: Charges the highest perceived [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) based on haggling; alienates loyal customers and trains aggressive bargainers
-- **[<span id="competition-based-pricing">Competition-based pricing</span>](/wiki/pricing/foundations/competition-based-pricing)**: When and how to use competitive pricing (with caution)
-- **[<span id="skimming-strategy">Skimming strategy</span>](/wiki/pricing/foundations/skimming-strategy)**: High initial prices with planned reductions
-- **[<span id="penetration-strategy">Penetration strategy</span>](/wiki/pricing/foundations/penetration-strategy)**: Low initial prices to gain market share
-- **[<span id="maximization">Maximization</span>](/wiki/pricing/foundations/maximization)**: Price at or near the value you deliver to capture revenue/profit now
-- **<span id="common-pricing-failure-patterns">Common pricing failure patterns</span>**: Common pricing mistakes and failure patterns including feature shock, minivation, hidden gems, cannibalization, and customer-driven pricing pitfalls to avoid costly errors
+- **[<span id="strategic-pricing">Strategic pricing </span>](/wiki/pricing/foundations/strategic-pricing)**: A disciplined, value-based operating system for deciding **how you charge, what you charge, and how prices evolve** so profit, growth, and positioning stay aligned.
+- **[<span id="value-based-pricing">Value-based pricing</span>](/wiki/pricing/foundations/value-based-pricing)**: Set prices from **the economic value you deliver and customers’ willingness to pay**, using costs and competitors mainly as floors/benchmarks—not the starting point.
+- **[<span id="cost-plus-pricing">Cost-plus pricing</span>](/wiki/pricing/foundations/cost-plus-pricing)**: Price = cost + markup—useful for **price floors** and unit-economics sanity checks, but risky as a default because it can ignore customer value and WTP.
+- **[<span id="customer-driven-pricing">Customer-driven pricing</span>](/wiki/pricing/foundations/customer-driven-pricing)**: Negotiate deal-by-deal to extract each buyer’s max WTP—often boosting short-term wins while **training haggling, punishing loyal customers, and eroding trust**.
+- **[<span id="competition-based-pricing">Competition-based pricing</span>](/wiki/pricing/foundations/competition-based-pricing)**: Set prices by matching (or slightly offsetting) rivals—handy as a reference in commodity-like markets, but a weak default that **disconnects price from value** and can trigger price wars.
+- **[<span id="skimming-strategy">Skimming strategy</span>](/wiki/pricing/foundations/skimming-strategy)**: Launch at a premium to monetize the highest-WTP tier first, then **step down in planned stages** to reach more price-sensitive segments without destroying the anchor.
+- **[<span id="penetration-strategy">Penetration strategy</span>](/wiki/pricing/foundations/penetration-strategy)**: Launch below long-run profit-maximizing price to **accelerate adoption and share** (especially with scale/network effects), with explicit criteria and a path to normalize pricing later.
+- **[<span id="maximization">Maximization</span>](/wiki/pricing/foundations/maximization)**: Choose the single price that **maximizes a chosen objective** (profit, revenue, or share) given demand and constraints—making pricing a testable, data-backed decision.
 
 ## How to use this
 

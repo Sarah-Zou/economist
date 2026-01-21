@@ -259,6 +259,45 @@ export default function CategoryPage({ params }: CategoryPageProps) {
           </div>
 
           <div className="prose prose-lg max-w-none">
+            {/* What's in this category Section - Only for foundations category */}
+            {params.category === 'foundations' && (whatsInCategoryContent || workingNote) && (
+              <div className="mt-12 mb-12">
+                {/* Working note - appears before the section */}
+                {workingNote && (
+                  <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                    <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] italic">
+                      {workingNote}
+                    </p>
+                  </div>
+                )}
+                
+                <div className="flex items-center mb-6">
+                  <div className="w-1 h-8 bg-blue-600 mr-3"></div>
+                  <h2 id="whats-in-this-category" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
+                    What's in this category
+                  </h2>
+                </div>
+                {whatsInCategoryContent && (
+                  <div className="prose prose-lg max-w-none text-[#1f2933]">
+                    <ReactMarkdown 
+                      remarkPlugins={[remarkGfm]}
+                      rehypePlugins={[rehypeRaw]}
+                      components={{
+                        p: ({node, ...props}: any) => <p className="text-base sm:text-[17px] leading-[1.65] mb-4" {...props} />,
+                        ul: ({node, ...props}: any) => <ul className="list-disc list-outside space-y-3 mb-4 ml-6" {...props} />,
+                        li: ({node, ...props}: any) => <li className="text-base sm:text-[17px] leading-[1.65] pl-2" {...props} />,
+                        strong: ({node, ...props}: any) => <strong className="font-semibold" {...props} />,
+                        em: ({node, ...props}: any) => <em className="italic" {...props} />,
+                        a: ({node, ...props}: any) => <a className="text-[#ff5722] hover:underline font-medium" {...props} />,
+                      }}
+                    >
+                      {whatsInCategoryContent}
+                    </ReactMarkdown>
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Introduction Section - Only for foundations category */}
             {params.category === 'foundations' && (
               <div className="mt-12 mb-12">
