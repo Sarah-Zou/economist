@@ -618,10 +618,11 @@ const markdownComponents = {
   img: ({ node, src, alt, ...props }: any) => {
     // Handle images with Next.js Image component for optimization
     if (src?.startsWith('/')) {
-      // Check if this is the use case or JTBD mental model image - make it smaller
+      // Check if this is a mental model image - make it smaller
       const isUseCaseMental = src.includes('wiki_usecase_mental');
       const isJTBDMental = src.includes('wiki_JTBD_mental');
-      const isMentalModel = isUseCaseMental || isJTBDMental;
+      const isSegmentMental = src.includes('wiki_segment_mental');
+      const isMentalModel = isUseCaseMental || isJTBDMental || isSegmentMental;
       const imageWidth = isMentalModel ? 600 : 800;
       const imageHeight = isMentalModel ? 450 : 600;
       const maxWidth = isMentalModel ? 'max-w-2xl' : 'max-w-full';
