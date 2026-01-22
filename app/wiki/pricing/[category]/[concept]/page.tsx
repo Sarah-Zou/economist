@@ -242,6 +242,9 @@ function parseKeyFacts(content: string): {
   const keyFactsContent = match[1];
   const beforeKeyFacts = content.substring(0, keyFactsStartIndex).trim();
   const afterKeyFacts = content.substring(keyFactsStartIndex + match[0].length).trim();
+  // #region agent log
+  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseKeyFacts:afterExtraction',message:'Key Facts after extraction',data:{afterKeyFactsLength:afterKeyFacts.length,afterKeyFactsPreview:afterKeyFacts.substring(0,500),hasStepByStep:afterKeyFacts.includes('Step-by-step'),hasMetrics:afterKeyFacts.includes('Metrics to monitor'),hasHowToApply:afterKeyFacts.includes('How to Apply It')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'K'})}).catch(()=>{});
+  // #endregion
 
   // Parse bullet points (lines starting with -)
   const factLines = keyFactsContent
@@ -322,10 +325,20 @@ function parseMetricsToMonitor(content: string): {
   metrics: Array<{ title: string; description: string }> | null; 
   afterMetrics: string 
 } {
+  // #region agent log
+  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseMetricsToMonitor:entry',message:'parseMetricsToMonitor entry',data:{contentLength:content.length,contentPreview:content.substring(0,500),hasMetrics:content.includes('Metrics to monitor'),hasMetricsH2:content.includes('## Metrics to monitor')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
+  // #endregion
   const metricsRegex = /##\s+Metrics to monitor\s*\n([\s\S]*?)(?=\n##|$)/;
   const match = content.match(metricsRegex);
   
+  // #region agent log
+  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseMetricsToMonitor:regex',message:'Metrics regex match result',data:{hasMatch:!!match,matchIndex:match?.index,metricsContentLength:match?.[1]?.length,metricsContentPreview:match?.[1]?.substring(0,300)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
+  // #endregion
+  
   if (!match) {
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseMetricsToMonitor:noMatch',message:'No metrics match found',data:{contentLength:content.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
+    // #endregion
     return { beforeMetrics: content, metrics: null, afterMetrics: '' };
   }
 
@@ -334,11 +347,14 @@ function parseMetricsToMonitor(content: string): {
   const beforeMetrics = content.substring(0, metricsStartIndex).trim();
   const afterMetrics = content.substring(metricsStartIndex + match[0].length).trim();
 
-  // Parse bullet points (lines starting with -)
+  // Parse bullet points (lines starting with - or *)
   const metricLines = metricsContent
     .split('\n')
-    .filter(line => line.trim().startsWith('-'))
-    .map(line => line.replace(/^-\s*/, '').trim());
+    .filter(line => {
+      const trimmed = line.trim();
+      return trimmed.startsWith('-') || trimmed.startsWith('*');
+    })
+    .map(line => line.replace(/^[-\*]\s*/, '').trim());
 
   const metrics: Array<{ title: string; description: string }> = [];
   
@@ -353,8 +369,15 @@ function parseMetricsToMonitor(content: string): {
       }
     }
   }
+  // #region agent log
+  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseMetricsToMonitor:metricsExtracted',message:'Metrics extracted',data:{metricsCount:metrics.length,metrics:metrics.map(m=>({title:m.title,descriptionLength:m.description.length})),metricLinesCount:metricLines.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
+  // #endregion
 
-  return { beforeMetrics, metrics: metrics.length > 0 ? metrics : null, afterMetrics };
+  const result = { beforeMetrics, metrics: metrics.length > 0 ? metrics : null, afterMetrics };
+  // #region agent log
+  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseMetricsToMonitor:return',message:'parseMetricsToMonitor return',data:{hasMetrics:!!result.metrics,metricsCount:result.metrics?.length||0,afterMetricsLength:result.afterMetrics.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
+  // #endregion
+  return result;
 }
 
 // Helper function to parse Step-by-step section from markdown content
@@ -365,10 +388,20 @@ function parseStepByStep(content: string): {
   afterStepsContent: string;
   afterStepByStep: string 
 } {
+  // #region agent log
+  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseStepByStep:entry',message:'parseStepByStep entry',data:{contentLength:content.length,contentPreview:content.substring(0,500),hasStepByStep:content.includes('Step-by-step'),hasStepByStepH3:content.includes('### Step-by-step')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+  // #endregion
   const stepByStepRegex = /###\s+Step-by-step\s*\n([\s\S]*?)(?=\n##|$)/;
   const match = content.match(stepByStepRegex);
   
+  // #region agent log
+  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseStepByStep:regex',message:'Step-by-step regex match result',data:{hasMatch:!!match,matchIndex:match?.index,stepByStepContentLength:match?.[1]?.length,stepByStepContentPreview:match?.[1]?.substring(0,300)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+  // #endregion
+  
   if (!match) {
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseStepByStep:noMatch',message:'No step-by-step match found',data:{contentLength:content.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+    // #endregion
     return { beforeStepByStep: content, steps: null, beforeStepsContent: '', afterStepsContent: '', afterStepByStep: '' };
   }
 
@@ -384,27 +417,75 @@ function parseStepByStep(content: string): {
     : '';
 
   // Parse numbered list items (1. **title:** description)
-  // Stop at next step, blockquote (callout after blank line), or end of string
-  const stepRegex = /(\d+)\.\s+\*\*([^*]+?):\*\*\s*([\s\S]+?)(?=\n\d+\.\s+\*\*|\n\n\s*>|$)/g;
-  const steps: Array<{ number: number; title: string; description: string }> = [];
-  let stepMatch;
-  let lastStepEndIndex = 0;
-
-  while ((stepMatch = stepRegex.exec(stepByStepContent)) !== null) {
-    steps.push({
-      number: parseInt(stepMatch[1], 10),
-      title: stepMatch[2].trim(),
-      description: stepMatch[3].trim()
+  // Stop at next step, h2 heading, or end of string
+  // Updated to handle multi-line descriptions with bullet lists by finding step positions first
+  const stepMatches: Array<{ index: number; number: number; title: string; fullMatch: string }> = [];
+  
+  // First, find all step numbers and their positions
+  const stepNumberRegex = /(\d+)\.\s+\*\*([^*]+?)[:.]\*\*/g;
+  let stepNumberMatch;
+  while ((stepNumberMatch = stepNumberRegex.exec(stepByStepContent)) !== null) {
+    stepMatches.push({
+      index: stepNumberMatch.index,
+      number: parseInt(stepNumberMatch[1], 10),
+      title: stepNumberMatch[2].trim(),
+      fullMatch: stepNumberMatch[0]
     });
-    lastStepEndIndex = stepMatch.index + stepMatch[0].length;
   }
+  
+  // Now extract the description for each step
+  const steps: Array<{ number: number; title: string; description: string }> = [];
+  // #region agent log
+  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseStepByStep:stepMatches',message:'Step matches found',data:{stepMatchesCount:stepMatches.length,stepMatches:stepMatches.map(s=>({number:s.number,title:s.title}))},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+  // #endregion
+  for (let i = 0; i < stepMatches.length; i++) {
+    const currentMatch = stepMatches[i];
+    const nextIndex = i < stepMatches.length - 1 
+      ? stepMatches[i + 1].index 
+      : stepByStepContent.length;
+    
+    // Find the end of the current step's title
+    const titleEndIndex = currentMatch.index + currentMatch.fullMatch.length;
+    
+    // Extract description from after the title until the next step
+    let description = stepByStepContent.substring(titleEndIndex, nextIndex).trim();
+    
+    // Also check if we hit an h2 heading before the next step
+    const h2Match = description.match(/\n##/);
+    if (h2Match) {
+      description = description.substring(0, h2Match.index).trim();
+    }
+    
+    steps.push({
+      number: currentMatch.number,
+      title: currentMatch.title,
+      description: description
+    });
+  }
+  // #region agent log
+  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseStepByStep:stepsExtracted',message:'Steps extracted',data:{stepsCount:steps.length,steps:steps.map(s=>({number:s.number,title:s.title,descriptionLength:s.description.length}))},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+  // #endregion
+  
+  // Calculate last step end index for afterStepsContent
+  const lastStepEndIndex = stepMatches.length > 0 
+    ? (() => {
+        const lastMatch = stepMatches[stepMatches.length - 1];
+        const fromLastMatch = stepByStepContent.substring(lastMatch.index);
+        const h2Split = fromLastMatch.split(/\n##/);
+        return lastMatch.index + h2Split[0].length;
+      })()
+    : 0;
 
   // Extract content after the last step but still within the Step-by-step section
   const afterStepsContent = lastStepEndIndex > 0
     ? stepByStepContent.substring(lastStepEndIndex).trim()
     : '';
 
-  return { beforeStepByStep, steps: steps.length > 0 ? steps : null, beforeStepsContent, afterStepsContent, afterStepByStep };
+  const result = { beforeStepByStep, steps: steps.length > 0 ? steps : null, beforeStepsContent, afterStepsContent, afterStepByStep };
+  // #region agent log
+  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseStepByStep:return',message:'parseStepByStep return',data:{hasSteps:!!result.steps,stepsCount:result.steps?.length||0,afterStepByStepLength:result.afterStepByStep.length,afterStepByStepPreview:result.afterStepByStep.substring(0,200)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+  // #endregion
+  return result;
 }
 
 // Helper function to parse FAQ section from markdown content
@@ -737,9 +818,18 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
       beforeKeyFacts = keyFactsResult.beforeKeyFacts;
       keyFacts = keyFactsResult.keyFacts;
       afterKeyFactsContent = keyFactsResult.afterKeyFacts;
+      // #region agent log
+      console.log('DEBUG: afterKeyFactsParsing', {afterKeyFactsLength: afterKeyFactsContent?.length || 0, afterKeyFactsPreview: afterKeyFactsContent?.substring(0, 500), hasStepByStep: afterKeyFactsContent?.includes('Step-by-step'), hasMetrics: afterKeyFactsContent?.includes('Metrics to monitor')});
+      fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:afterKeyFactsParsing',message:'After key facts parsing',data:{afterKeyFactsLength:afterKeyFactsContent?.length||0,afterKeyFactsPreview:afterKeyFactsContent?.substring(0,500),hasStepByStep:afterKeyFactsContent?.includes('Step-by-step'),hasMetrics:afterKeyFactsContent?.includes('Metrics to monitor')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'J'})}).catch(()=>{});
+      // #endregion
     } catch (error) {
       console.error('Error parsing key facts:', error);
     }
+
+    // #region agent log
+    console.log('DEBUG: beforeStepByStepBlock', {hasContent, hasConceptData: !!conceptData, afterKeyFactsLength: afterKeyFactsContent?.length || 0, afterKeyFactsPreview: afterKeyFactsContent?.substring(0, 200)});
+    fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:beforeStepByStepBlock',message:'About to parse step-by-step block',data:{hasContent,hasConceptData:!!conceptData,afterKeyFactsLength:afterKeyFactsContent?.length||0,afterKeyFactsPreview:afterKeyFactsContent?.substring(0,200)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'I'})}).catch(()=>{});
+    // #endregion
 
     // Parse Step-by-step section - parse from content after key facts
     let beforeStepByStep = '';
@@ -748,9 +838,15 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
     let afterStepsContent = '';
     let afterStepByStepContent = '';
     try {
+      // Search for Step-by-step - parse from afterKeyFactsContent to avoid duplicating content
+      // The Step-by-step section is an h3 inside "How to Apply It" h2, so it should be in afterKeyFactsContent
+      // But if afterKeyFactsContent is empty, fall back to full content
       const contentToParseForStepByStep = hasContent && conceptData 
-        ? (afterKeyFactsContent || afterSnapshotContent || conceptData.content)
+        ? (afterKeyFactsContent || conceptData.content)
         : '';
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:beforeParseStepByStep',message:'Before parsing step-by-step',data:{hasContent,hasKeyFacts:!!keyFacts,afterKeyFactsLength:afterKeyFactsContent?.length||0,afterSnapshotLength:afterSnapshotContent?.length||0,contentToParseLength:contentToParseForStepByStep?.length||0,contentToParsePreview:contentToParseForStepByStep?.substring(0,300)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});
+      // #endregion
       const stepByStepResult = contentToParseForStepByStep
         ? parseStepByStep(contentToParseForStepByStep)
         : { beforeStepByStep: '', steps: null, beforeStepsContent: '', afterStepsContent: '', afterStepByStep: '' };
@@ -759,6 +855,9 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
       beforeStepsContent = stepByStepResult.beforeStepsContent;
       afterStepsContent = stepByStepResult.afterStepsContent;
       afterStepByStepContent = stepByStepResult.afterStepByStep;
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:afterParseStepByStep',message:'After parsing step-by-step',data:{hasSteps:!!steps,stepsCount:steps?.length||0,afterStepByStepContentLength:afterStepByStepContent?.length||0},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});
+      // #endregion
     } catch (error) {
       console.error('Error parsing step-by-step:', error);
     }
@@ -768,15 +867,25 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
     let metrics: Array<{ title: string; description: string }> | null = null;
     let afterMetricsContent = '';
     try {
+      // Search for Metrics - parse from afterStepByStepContent to avoid duplicating content
+      // The Metrics section is an h2, so it should be in afterStepByStepContent or afterKeyFactsContent
+      // But if those are empty or don't contain Metrics, fall back to full content
       const contentToParseForMetrics = hasContent && conceptData 
-        ? (afterStepByStepContent || afterKeyFactsContent || afterSnapshotContent || conceptData.content)
+        ? (afterStepByStepContent || afterKeyFactsContent || conceptData.content)
         : '';
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:beforeParseMetrics',message:'Before parsing metrics',data:{hasSteps:!!steps,afterStepByStepLength:afterStepByStepContent?.length||0,contentToParseLength:contentToParseForMetrics?.length||0,contentToParsePreview:contentToParseForMetrics?.substring(0,300)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'G'})}).catch(()=>{});
+      // #endregion
       const metricsResult = contentToParseForMetrics
         ? parseMetricsToMonitor(contentToParseForMetrics)
         : { beforeMetrics: '', metrics: null, afterMetrics: '' };
       beforeMetrics = metricsResult.beforeMetrics;
       metrics = metricsResult.metrics;
       afterMetricsContent = metricsResult.afterMetrics;
+      // #region agent log
+      console.log('DEBUG: Metrics parsing result', { hasMetrics: !!metrics, metricsCount: metrics?.length || 0, metrics: metrics });
+      fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:afterParseMetrics',message:'After parsing metrics',data:{hasMetrics:!!metrics,metricsCount:metrics?.length||0,afterMetricsContentLength:afterMetricsContent?.length||0},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'G'})}).catch(()=>{});
+      // #endregion
     } catch (error) {
       console.error('Error parsing metrics:', error);
     }
@@ -1216,6 +1325,12 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                       )}
 
                       {/* Step-by-step Section */}
+                      {(()=>{
+                        // #region agent log
+                        fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:renderStepByStep',message:'Rendering step-by-step check',data:{hasSteps:!!steps,stepsCount:steps?.length||0,willRender:!!(steps && steps.length > 0)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'H'})}).catch(()=>{});
+                        // #endregion
+                        return null;
+                      })()}
                       {steps && steps.length > 0 && (
                         <div className="mb-8">
                           <h2 id="step-by-step" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-4 mt-[4.5rem] scroll-mt-24">
@@ -1473,7 +1588,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                           {beforeFAQ}
                         </ReactMarkdown>
                       )}
-                      {/* Content after Metrics when there are no FAQ sections */}
+                      {/* Content after Metrics when there are no FAQ sections - only render if FAQ doesn't exist to avoid duplication with beforeFAQ */}
                       {metrics && metrics.length > 0 && faqItems.length === 0 && afterMetricsContent && afterMetricsContent.trim() && (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm, remarkMath]}

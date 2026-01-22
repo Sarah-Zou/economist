@@ -11,7 +11,7 @@ owner: "Dr. Sarah Zou"
 
 ## Snapshot (TL;DR)
 
-**What it is:** A segmentation strategy that groups customers by distinct use cases and their willingness to pay, then aligns packages, fences, and price points to each segment.
+**What it is:** A segmentation strategy that groups customers by distinct use cases and their willingness to pay, then aligns packages, [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination), and price points to each segment.
 
 **Why it matters:** Single-price models leave "consumer surplus" on the table (charging too little to whales) or suffer from "deadweight loss" (pricing out smaller users).
 
@@ -22,7 +22,7 @@ owner: "Dr. Sarah Zou"
 - **Price is a proxy for value:** Different segments derive different utility from the same feature set.
 - **Price the Customer, Not the Product:** Your product is the wrong unit of analysis. Different customers extract different value from the same product; therefore, the price should vary based on the customer's [use case](/wiki/pricing/value-and-customers/customer-use-cases) and [WTP](/wiki/pricing/value-and-customers/willingness-to-pay).
 - **Don't "Average" Your Market:** Designing for the average customer leads to features the low-end doesn't need (driving up cost) and features the high-end finds insufficient (driving down value). You must build distinct packages for distinct needs.
-- **[Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) Must Be Enforceable:** If your high-value segment can easily buy the low-value segment's product (cannibalization), your segmentation has failed. You need logical barriers (features, limits, support) to keep high-[WTP](/wiki/pricing/value-and-customers/willingness-to-pay) users from downgrading.
+- **[Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) Must Be Enforceable:** If your high-value segment can easily buy the low-value segment's product (cannibalization), your segmentation has failed. You need logical barriers (features, limits, support) to keep high-WTP users from downgrading.
 
 ## Key Facts
 
@@ -44,17 +44,17 @@ owner: "Dr. Sarah Zou"
 
 ## Why does Segmentation by WTP/Use Case matter?
 
-* **Maximizing Profitability:** A single price point inevitably leaves money on the table (for high-[WTP](/wiki/pricing/value-and-customers/willingness-to-pay) customers) and shuts out viable volume (from low-WTP customers). In a linear demand curve, a single price creates two zones of waste:
+* **Maximizing Profitability:** A single price point inevitably leaves money on the table (for high-WTP customers) and shuts out viable volume (from low-WTP customers). In a linear demand curve, a single price creates two zones of waste:
 
-  1. **The Under-priced Zone:** Customers who would have paid $1,000 but were charged $100.
-  2. **The Un-served Zone:** Customers who would have paid $50 but found the $100 price prohibitive.
+  1. **The Under-priced Zone:** Customers who would have paid \$1,000 but were charged \$100.
+  2. **The Un-served Zone:** Customers who would have paid \$50 but found the \$100 price prohibitive.
 * **Preventing Commoditization:** By identifying specific [use cases](/wiki/pricing/value-and-customers/customer-use-cases) (e.g., "urgent repair" vs. "preventative maintenance"), companies can charge premiums for high-value contexts rather than competing solely on cost.
 
 ## Mental model
 
 **The "Fence and Ladder"** Think of your market strategy as a field:
 
-1. **Fencing:** You build fences to separate distinct groups of customers who have fundamentally different needs (e.g., "Enterprise" vs. "Education" or "Food Labs" vs. "Pharma Labs"). Customers should rarely jump over these fences.
+1. **Fencing:** You build [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) to separate distinct groups of customers who have fundamentally different needs (e.g., "Enterprise" vs. "Education" or "Food Labs" vs. "Pharma Labs"). Customers should rarely jump over these fences.
 
 2. **Laddering:** Within each fenced area, you build a ladder (Good/Better/Best tiers). This allows customers to self-select their price point based on the specific features or volume they need to get their job done, encouraging them to climb up (upsell) over time.
 
@@ -72,31 +72,31 @@ owner: "Dr. Sarah Zou"
 
 * **[JTBD/use-case map](/wiki/pricing/value-and-customers/customer-use-cases)** from interviews and shadowing (n≈15–30 per persona is often enough to pattern): Qualitative discussions to uncover *why* customers hire your product. (e.g., Is it for "safety" or "compliance"? These are different values with different WTP).
 * **[Max-Diff Analysis](/wiki/pricing/research-and-experiments#maxdiff):** A survey method to determine which features different segments value most and least. This helps you bundle the right features into the right tiers.
-* **[Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp):** A survey technique asking four questions (too cheap, cheap, expensive, too expensive) to map the acceptable price range for different segments
+* **[Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp):** A survey technique asking four questions (too cheap, cheap, expensive, too expensive) to map the acceptable price range for different segments.
 * **Usage telemetry:** frequency, intensity, seat counts, API calls, workspace size, time-to-value.
-* **Competitor Benchmarking:** Analyzing where competitors draw their "fences" and their reference prices.
+* **Competitor Benchmarking:** Analyzing where competitors draw their "[fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination)" and their reference prices.
 
 ### Step-by-step
 
 1. **Define target outcomes and use cases (2–4 max):** 15–30 interviews/persona; write JTBD statements; define success metrics & acceptance tests.
 
-2. **Measure [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) by persona/use case:** [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) + [Gabor‑Granger](/wiki/pricing/research-and-experiments/gabor-granger) (4–6 prices) + small A/B price tests.
+2. **Measure WTP by persona/use case:** [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) + [Gabor‑Granger](/wiki/pricing/research-and-experiments/gabor-granger) (4–6 prices) + small A/B price tests.
 
 3. **Cluster customers into actionable segments:** Features to cluster on: normalized usage (seats, API calls, projects), capability needs (SSO, audit, SLA), firmographics, WTP metrics (OPP/elasticity).
 
-4. **Design fences:** Determine how you will separate these groups. Common fences include:
+4. **Design fences:** Determine how you will separate these groups. Common [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) include:
 
    • *Product Configuration:* Bundling premium support or advanced security only for the high-WTP segment.
 
    • *Metrics:* Charging per "seat" vs. per "transaction" to align with how different segments grow.
 
-   • *Time/Location:* Charging more for rush delivery or prime-time access
+   • *Time/Location:* Charging more for rush delivery or prime-time access.
 
 5. **Construct the Offer Structure:** [Good/Better/Best](/wiki/pricing/packaging-and-bundling) or SMB/Business/Enterprise with clear outcome-based value stories. 
 
 Create tiered packages where the "Good" plan meets the minimum needs of price-sensitive buyers (killers/fillers removed), and the "Best" plan includes the high-value features ("leaders") that insensitive buyers demand.
 
-6. **Validate with Data:** Use [Max-Diff](/wiki/pricing/research-and-experiments#maxdiff) and [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) surveys to confirm that the features in your "Pro" plan are actually the ones valued by high-[WTP](/wiki/pricing/value-and-customers/willingness-to-pay) customers. If low-WTP customers care more about a feature than high-WTP customers, that feature belongs in the base plan or as an add-on.
+6. **Validate with Data:** Use [Max-Diff](/wiki/pricing/research-and-experiments#maxdiff) and [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) surveys to confirm that the features in your "Pro" plan are actually the ones valued by high-WTP customers. If low-WTP customers care more about a feature than high-WTP customers, that feature belongs in the base plan or as an add-on.
 
 ## Metrics to monitor
 
@@ -149,4 +149,4 @@ Create tiered packages where the "Good" plan meets the minimum needs of price-se
 
 **Q:** How often should I change my segments?
 
-**A:** Review every 6 months. Early-stage startups often find new high-[WTP](/wiki/pricing/value-and-customers/willingness-to-pay) [use cases](/wiki/pricing/value-and-customers/customer-use-cases) they didn't expect.
+**A:** Review every 6 months. Early-stage startups often find new high-WTP [use cases](/wiki/pricing/value-and-customers/customer-use-cases) they didn't expect.

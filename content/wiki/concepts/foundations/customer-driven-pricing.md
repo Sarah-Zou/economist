@@ -67,7 +67,7 @@ owner: "Dr. Sarah Zou"
 </div>
 
 - **[WTP](/wiki/pricing/value-and-customers/willingness-to-pay) assessment:** The process of gathering information about a customer's circumstances (job, family, urgency, financial situation) to estimate their maximum [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay).
-- **Price discrimination:** Charging different prices to different customers based on their assessed [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) rather than uniform value-based pricing.
+- **[Price discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination):** Charging different prices to different customers based on their assessed [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) rather than uniform value-based pricing.
 - **Haggling:** The negotiation process where customers learn to demand concessions, and sellers adjust prices to close deals.
 
 ### Core assumptions (flawed)

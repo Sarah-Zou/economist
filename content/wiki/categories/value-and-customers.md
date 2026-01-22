@@ -15,12 +15,10 @@ canonical: "https://sarahzou.com/wiki/pricing/value-and-customers"
 - **[<span id="willingness-to-pay">Willingness-to-pay (WTP)</span>](/wiki/pricing/value-and-customers/willingness-to-pay)**: The maximum price a buyer accepts; use it to set a defensible price range, design tiers, and validate pricing against unit economics. Includes methods like Van Westendorp PSM, Gabor–Granger, and conjoint analysis.
 - **[<span id="customer-use-cases">Customer use cases</span>](/wiki/pricing/value-and-customers/customer-use-cases)**: Structured descriptions of the problem, persona, context, and outcomes that define how customers get value from your product and how you should price.
 - **[<span id="jobs-to-be-done">Jobs To Be Done (JTBD)</span>](/wiki/pricing/value-and-customers/jobs-to-be-done)**: Understanding customer outcomes and success metrics
-- **[<span id="customer-segments">Segmentation by WTP/[use case](/wiki/pricing/value-and-customers/customer-use-cases)</span>](/wiki/pricing/value-and-customers/customer-segments)**: Value-based customer segmentation strategies
+- **[<span id="customer-segments">Segmentation by WTP/use case</span>](/wiki/pricing/value-and-customers/customer-segments)**: Value-based customer segmentation strategies
 - **[<span id="ideal-customer-profile">Ideal Customer Profile (ICP)</span>](/wiki/pricing/value-and-customers/ideal-customer-profile)**: A hypothetical description of the account type that derives the most value from your product and provides the most value back to your business.
 - **[<span id="value-drivers">Value drivers</span>](/wiki/pricing/value-and-customers/value-drivers)**: The specific product benefits that create utility and drive a customer's Willingness to Pay (WTP).
-- **<span id="price-fences-price-discrimination">Price fences / price discrimination</span>**: Strategies to segment customers and charge different prices based on willingness to pay
-
-*I'm currently working on developing detailed content for these concepts. Check back soon for comprehensive guides, step-by-step instructions, and real-world examples.*
+- **[<span id="price-fences-price-discrimination">Price fences / price discrimination</span>](/wiki/pricing/value-and-customers/price-fences-price-discrimination)**: A strategic framework for charging different customers different prices based on their willingness to pay, without triggering a PR backlash.
 
 ## How to use this
 

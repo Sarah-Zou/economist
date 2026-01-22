@@ -110,5 +110,5 @@ owner: "Dr. Sarah Zou"
 
 **Q:** Should B2B SaaS pricing models be simple?
 
-**A:** Pricing models must be easy to sell, but they often require complexity to properly discriminate between different customers (price discrimination) and to align with customer budget structures, maximizing profitability.
+**A:** Pricing models must be easy to sell, but they often require complexity to properly discriminate between different customers ([price discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination)) and to align with customer budget structures, maximizing profitability.
 

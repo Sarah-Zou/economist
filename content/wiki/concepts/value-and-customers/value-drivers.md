@@ -92,7 +92,7 @@ owner: "Dr. Sarah Zou"
 
    • *Algorithm:* (10 hours) × ($150/hr cost) × (52 weeks) = $78,000 annual value.
 
-4. **Segment:** Different customers value different drivers. A startup values *speed*; an enterprise values *compliance*. Create ROI worksheets per [segment](/wiki/pricing/value-and-customers#customer-segments).
+4. **Segment:** Different customers value different drivers. A startup values *speed*; an enterprise values *compliance*. Create ROI worksheets per [segment](/wiki/pricing/value-and-customers/customer-segments).
 
 5. **Quantify importance:** Use [MaxDiff](/wiki/pricing/research-and-experiments#maxdiff) or [conjoint](/wiki/pricing/research-and-experiments/conjoint-analysis) or [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) surveys; regress WTP on measured drivers.
 
@@ -100,10 +100,10 @@ owner: "Dr. Sarah Zou"
 
 ## Metrics to monitor
 
-* **Win/Loss Analysis:** If you are losing deals, is it because the price is too high relative to the perceived value drivers? Or did the customer not believe the value driver existed?
-* **[Price Elasticity](/wiki/pricing/research-and-experiments#price-elasticity):** If you raise prices 10% and churn stays flat, you have "Value headroom."
-* **Feature Adoption Rate:** Are the features you *think* drive value actually being used?
-* **LTV/CAC Ratio:** High ratios often indicate strong value drivers.
+- **Win/Loss Analysis:** If you are losing deals, is it because the price is too high relative to the perceived value drivers? Or did the customer not believe the value driver existed?
+- **[Price Elasticity](/wiki/pricing/research-and-experiments#price-elasticity):** If you raise prices 10% and churn stays flat, you have "Value headroom."
+- **Feature Adoption Rate:** Are the features you *think* drive value actually being used?
+- **LTV/CAC Ratio:** High ratios often indicate strong value drivers.
 
 ## Risks & anti-patterns (and fixes)
 
@@ -111,7 +111,7 @@ owner: "Dr. Sarah Zou"
 |---------|-----|
 | **Features ≠ outcomes:** Demos list features; buyers can't see ROI. | Rewrite as outcome statements ("from X to Y in Z time") and instrument outcome KPIs. |
 | **No dollarization:** Price debates devolve to cost or competitor quotes. | Build an ROI calculator using [Economic Value Estimation](/wiki/pricing/value-and-customers/economic-value-estimation) principles: (Δ time × loaded rate) + (Δ conversion × GM × volume) − Δ costs; show ranges and assumptions. |
-| **One‑size‑fits‑all drivers:** Generic tiers, heavy discounting across segments. | Create segment‑specific driver maps; fence premium drivers into add‑ons or higher tiers. |
+| **One‑size‑fits‑all drivers:** Generic tiers, heavy discounting across segments. | Create segment‑specific driver maps; [fence](/wiki/pricing/value-and-customers/price-fences-price-discrimination) premium drivers into add‑ons or higher tiers. |
 | **Ignoring the [NBCA](/wiki/pricing/value-and-customers/economic-value-estimation#next-best-competitive-alternative-nbca) (incl. do‑nothing):** Inflated claims, low win rate. | Quantify value vs. [NBCA](/wiki/pricing/value-and-customers/economic-value-estimation#next-best-competitive-alternative-nbca) and inertia costs; show payback vs. status quo. |
 | **Over‑quantifying soft drivers:** Forced $ claims for "ease of use" erode trust. | Use [conjoint](/wiki/pricing/research-and-experiments/conjoint-analysis)/[MaxDiff](/wiki/pricing/research-and-experiments#maxdiff) or [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) surveys; support with qualitative proof and risk‑reduction proxies. |
 

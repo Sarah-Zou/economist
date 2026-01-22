@@ -48,7 +48,7 @@ For startup founders, WTP is the **single most critical factor** in determining 
 Approximately **72%** of new products fail because companies postpone pricing decisions until the very end of the development process, essentially hoping for profit rather than knowing it exists. Conversely, mastering WTP allows a firm to capture its fair share of the value it creates, as a mere 1% improvement in price realization can boost operating profits by approximately **10% to 11%**.
 
 - **Defines pricing ceiling:** WTP establishes the maximum price customers will accept, helping you pick a defensible price range instead of guessing.
-- **Reveals segmentation opportunities:** Shows which segments value you most, enabling tiered pricing and price fences.
+- **Reveals segmentation opportunities:** Shows which segments value you most, enabling tiered pricing and [price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination).
 - **Prevents product failures:** Early WTP research can identify "undead" products that won't cover costs, saving development resources.
 - **Maximizes profit capture:** Understanding WTP distribution allows you to capture more value through segmentation and strategic pricing.
 
@@ -98,7 +98,7 @@ This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pric
 
 5. **Plot the Price Sensitivity Meter and read the intersections:** Create cumulative curves over price and identify the **acceptable range** between the **Point of Marginal Cheapness (PMC)** (Too Cheap × Not a Bargain) and **Point of Marginal Expensiveness (PME)** (Too Expensive × Not Expensive), and the **Optimal Price Point (OPP)** where Too Cheap intersects Too Expensive—using curve stability and separation as a quick confidence check.
 
-6. **Segment results to find the real story:** Re-run the PSM outputs by persona/firmographics, usage intensity, and urgency of the [use case](/wiki/pricing/value-and-customers/customer-use-cases) to reveal different acceptable ranges and OPPs, then translate those differences into an initial [price-fence](/wiki/pricing/value-and-customers/price-fences-price-discrimination) plan (tiers, limits, SLA/support, contract terms).
+6. **Segment results to find the real story:** Re-run the PSM outputs by persona/firmographics, usage intensity, and urgency of the [use case](/wiki/pricing/value-and-customers/customer-use-cases) to reveal different acceptable ranges and OPPs, then translate those differences into an initial price-fence plan (tiers, limits, SLA/support, contract terms).
 
 7. **Validate against growth and unit economics:** Pressure-test whether the chosen price will slow acquisition/virality/activation in your growth model and confirm it clears cost-to-serve and CAC payback constraints; then decide on a single price vs a tier ladder and draft the rollout plan (grandfathering, discount policy, messaging).
 
