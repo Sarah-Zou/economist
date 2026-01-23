@@ -40,7 +40,7 @@ const Footer = () => {
               </Link>
             ))}
           </div>
-          <div className="text-xs sm:text-sm text-[#3b4652] mt-2 sm:mt-4 text-center md:text-left">© 2025 EconNova Consulting · All rights reserved</div>
+          <div className="text-xs sm:text-sm text-[#3b4652] mt-2 sm:mt-4 text-center md:text-left">© 2026 EconNova Consulting · All rights reserved</div>
           <div className="text-xs sm:text-sm text-[#3b4652] mt-1 text-center md:text-left">Princeton, NJ · NYC · Philadelphia · Remote (US/EU)</div>
         </div>
         {/* Right: Newsletter subscription */}
@@ -62,4 +62,4 @@ const Footer = () => {
   )
 }
 
-export default Footer 
+export default Footer
