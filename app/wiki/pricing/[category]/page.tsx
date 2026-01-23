@@ -5,7 +5,7 @@ import { getCategoryBySlug, getAllCategorySlugs } from '@/lib/mdx';
 import WikiLayout from '@/components/wiki/WikiLayout';
 import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter';
 import Link from 'next/link';
-import { Diamond, Settings, TrendingDown, Grid3x3, AlertTriangle, Lightbulb, BookOpen, Briefcase, GraduationCap } from 'lucide-react';
+import { Diamond, Settings, TrendingDown, Grid3x3, AlertTriangle, Lightbulb, BookOpen, Briefcase, GraduationCap, Users, Target, Zap, TrendingUp, Calculator, BarChart, DollarSign, Layers, FileText, Sparkles, ArrowRight } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
@@ -539,8 +539,297 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               </div>
             )}
 
-            {/* Render "What's in this category" section for non-foundations categories */}
-            {params.category !== 'foundations' && (whatsInCategoryContent || workingNote) && (
+            {/* What's in this category Section - For value-and-customers category */}
+            {params.category === 'value-and-customers' && (whatsInCategoryContent || workingNote) && (
+              <div className="mt-12 mb-12">
+                {/* Working note - appears before the section */}
+                {workingNote && (
+                  <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                    <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] italic">
+                      {workingNote}
+                    </p>
+                  </div>
+                )}
+                
+                <div className="flex items-center mb-6">
+                  <div className="w-1 h-8 bg-blue-600 mr-3"></div>
+                  <h2 id="whats-in-this-category" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
+                    What's in this category
+                  </h2>
+                </div>
+                {whatsInCategoryContent && (
+                  <div className="prose prose-lg max-w-none text-[#1f2933]">
+                    <ReactMarkdown 
+                      remarkPlugins={[remarkGfm]}
+                      rehypePlugins={[rehypeRaw]}
+                      components={{
+                        p: ({node, ...props}: any) => <p className="text-base sm:text-[17px] leading-[1.65] mb-4" {...props} />,
+                        ul: ({node, ...props}: any) => <ul className="list-disc list-outside space-y-3 mb-4 ml-6" {...props} />,
+                        li: ({node, ...props}: any) => <li className="text-base sm:text-[17px] leading-[1.65] pl-2" {...props} />,
+                        strong: ({node, ...props}: any) => <strong className="font-semibold" {...props} />,
+                        em: ({node, ...props}: any) => <em className="italic" {...props} />,
+                        a: ({node, ...props}: any) => <a className="text-[#ff5722] hover:underline font-medium" {...props} />,
+                      }}
+                    >
+                      {whatsInCategoryContent}
+                    </ReactMarkdown>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Introduction Section - For value-and-customers category */}
+            {params.category === 'value-and-customers' && (
+              <div className="mt-12 mb-12">
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
+                  This category is the bridge between who you serve and what you can charge. Define <Link href="/wiki/pricing/value-and-customers/ideal-customer-profile" className="text-[#ff5722] hover:underline font-medium">ICP</Link> first, then ground it in real buying situations with <Link href="/wiki/pricing/value-and-customers/customer-use-cases" className="text-[#ff5722] hover:underline font-medium">Customer Use Cases</Link> and <Link href="/wiki/pricing/value-and-customers/jobs-to-be-done" className="text-[#ff5722] hover:underline font-medium">JTBD</Link> so you know who buys, why now, and compared to what. Next, map <Link href="/wiki/pricing/value-and-customers/value-drivers" className="text-[#ff5722] hover:underline font-medium">Value Drivers</Link> to translate features into outcomes that create utility, quantify the dollars with <Link href="/wiki/pricing/value-and-customers/economic-value-estimation" className="text-[#ff5722] hover:underline font-medium">EVE</Link>, and expand to real-world perception and context with the <Link href="/wiki/pricing/value-and-customers/value-decoder-framework" className="text-[#ff5722] hover:underline font-medium">Value Decoder</Link> to land a credible value-based price band. Validate that band with <Link href="/wiki/pricing/value-and-customers/willingness-to-pay" className="text-[#ff5722] hover:underline font-medium">WTP</Link> research to see the distribution of what customers will actually pay, then apply <Link href="/wiki/pricing/value-and-customers/customer-segments" className="text-[#ff5722] hover:underline font-medium">Segmentation by WTP / Use Case</Link> to avoid one-size-fits-all pricing. Finally, implement capture with <Link href="/wiki/pricing/value-and-customers/price-fences-price-discrimination" className="text-[#ff5722] hover:underline font-medium">Price Fences / price discrimination</Link> so different segments self-select into the right offer without leakage—then iterate as your product, market, and customer mix evolve.
+                </p>
+              </div>
+            )}
+
+            {/* The Core Concepts Section - For value-and-customers category */}
+            {params.category === 'value-and-customers' && (
+              <div className="mt-12 mb-12">
+                <div className="flex items-center mb-6">
+                  <div className="w-1 h-8 bg-blue-600 mr-3"></div>
+                  <h2 id="the-core-concepts" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
+                    The Core Concepts
+                  </h2>
+                </div>
+                <div className="space-y-32">
+                  {/* First section: Foundation concepts (ICP, Use Cases, JTBD) with insight box */}
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    {/* Left side - Foundation concept boxes */}
+                    <div className="lg:col-span-7 flex flex-col gap-4">
+                      {/* Ideal Customer Profile */}
+                      <Link 
+                        href="/wiki/pricing/value-and-customers/ideal-customer-profile"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-blue-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <Users className="w-6 h-6 text-gray-700 group-hover:text-blue-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Ideal Customer Profile (ICP)
+                          </h3>
+                          <span className="bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Foundation
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          The account/segment profile that gets the most value from your offer—and delivers the best acquisition, retention, and expansion economics. Use it to focus targeting and pricing power so you're not building (or discounting) for everyone.
+                        </p>
+                      </Link>
+
+                      {/* Customer Use Cases */}
+                      <Link 
+                        href="/wiki/pricing/value-and-customers/customer-use-cases"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-blue-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <FileText className="w-6 h-6 text-gray-700 group-hover:text-blue-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Customer Use Cases
+                          </h3>
+                          <span className="bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Foundation
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          A concrete description of who uses you for what problem, in what context, and versus which alternative. Use it to align packaging and pricing to real workflows and stakes instead of feature lists.
+                        </p>
+                      </Link>
+
+                      {/* Jobs-to-Be-Done */}
+                      <Link 
+                        href="/wiki/pricing/value-and-customers/jobs-to-be-done"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-blue-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <Target className="w-6 h-6 text-gray-700 group-hover:text-blue-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Jobs‑to‑Be‑Done (JTBD)
+                          </h3>
+                          <span className="bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Foundation
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          A lens that frames demand as the "progress" customers are trying to make, not the persona they belong to. Use it when messaging and onboarding feel fuzzy and you need a crisp "why now."
+                        </p>
+                      </Link>
+                    </div>
+
+                    {/* Right side - Foundation Insight box */}
+                    <div className="lg:col-span-5 flex">
+                      <div className="bg-[#eef0f3] rounded-lg p-6 shadow-sm sticky top-24 w-full">
+                        <div className="flex items-center gap-2 mb-1">
+                          <Lightbulb className="w-5 h-5 text-yellow-500 fill-yellow-500" />
+                          <h4 className="font-semibold text-[#1f2933] text-lg">Foundation Insight</h4>
+                        </div>
+                        <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
+                          Start with <Link href="/wiki/pricing/value-and-customers/ideal-customer-profile" className="text-[#ff5722] hover:underline font-medium">ICP</Link> to decide which accounts/segments you're optimizing for (because pricing power often depends more on the customer than the product). Then make that ICP concrete with <Link href="/wiki/pricing/value-and-customers/customer-use-cases" className="text-[#ff5722] hover:underline font-medium">Customer Use Cases</Link> and <Link href="/wiki/pricing/value-and-customers/jobs-to-be-done" className="text-[#ff5722] hover:underline font-medium">JTBD</Link>: use cases define the problem, context, and alternatives; JTBD sharpens it into the "progress" customers are trying to make. Together, they prevent "ICP drift," clarify why customers buy, and create the backbone for positioning, qualification, and packaging.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Second section: Value Logic concepts (Value Drivers, EVE, Value Decoder, WTP) with insight box */}
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    {/* Left side - Insight box */}
+                    <div className="lg:col-span-5 flex">
+                      <div className="bg-[#eef0f3] rounded-lg p-6 shadow-sm sticky top-24 w-full">
+                        <div className="flex items-center gap-2 mb-1">
+                          <Lightbulb className="w-5 h-5 text-yellow-500 fill-yellow-500" />
+                          <h4 className="font-semibold text-[#1f2933] text-lg">Value Logic Insight</h4>
+                        </div>
+                        <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
+                          Once you know who/why, you translate value into price logic. <Link href="/wiki/pricing/value-and-customers/value-drivers" className="text-[#ff5722] hover:underline font-medium">Value Drivers</Link> turn feature talk into a prioritized list of outcomes (economic, risk, emotional) that actually move WTP—and they're inherently relative to the substitute. From there, <Link href="/wiki/pricing/value-and-customers/economic-value-estimation" className="text-[#ff5722] hover:underline font-medium">EVE</Link> is your "smart-shopper" quantification engine: anchor on the next-best alternative (reference value) and stack your net differentiation value to compute a justifiable ceiling and a credible ROI narrative. <Link href="/wiki/pricing/value-and-customers/value-decoder-framework" className="text-[#ff5722] hover:underline font-medium">Value Decoder</Link> uses the same anchoring idea but is better when real-world perception and context matter (budget/income shifts, complements, market environment, timing); it outputs a defendable price band and helps you spot where you can charge a premium (or must discount) as conditions change. <Link href="/wiki/pricing/value-and-customers/willingness-to-pay" className="text-[#ff5722] hover:underline font-medium">WTP</Link> research then validates the reality: it measures the WTP distribution so you can pick a range (not a guess), stress-test pricing against unit economics, and see which use cases and segments value you most.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Right side - Value Logic concept boxes */}
+                    <div className="lg:col-span-7 flex flex-col gap-4">
+                      {/* Value Drivers */}
+                      <Link 
+                        href="/wiki/pricing/value-and-customers/value-drivers"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-green-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <Sparkles className="w-6 h-6 text-gray-700 group-hover:text-green-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Value Drivers
+                          </h3>
+                          <span className="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Value Logic
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          The specific benefits that create utility (time saved, risk reduced, revenue gained, convenience, status, etc.). Use it to justify pricing, prioritize roadmap, and design tiers around outcomes customers actually pay for.
+                        </p>
+                      </Link>
+
+                      {/* Economic Value Estimation */}
+                      <Link 
+                        href="/wiki/pricing/value-and-customers/economic-value-estimation"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-green-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <Calculator className="w-6 h-6 text-gray-700 group-hover:text-green-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Economic Value Estimation (EVE)
+                          </h3>
+                          <span className="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Value Logic
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          A value-based pricing method that anchors on the next-best alternative (reference value) and adds/subtracts your differentiation value. Use it to build a defendable ROI narrative and a credible value-based ceiling.
+                        </p>
+                      </Link>
+
+                      {/* Value Decoder Framework */}
+                      <Link 
+                        href="/wiki/pricing/value-and-customers/value-decoder-framework"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-green-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <BarChart className="w-6 h-6 text-gray-700 group-hover:text-green-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Value Decoder framework
+                          </h3>
+                          <span className="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Value Logic
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          A structured way to translate perceived value into a price band by anchoring on the alternative and adjusting for differences and context. Use it when budgets, complements, timing, or market environment change what "value" feels like.
+                        </p>
+                      </Link>
+
+                      {/* Willingness to Pay */}
+                      <Link 
+                        href="/wiki/pricing/value-and-customers/willingness-to-pay"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-green-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <DollarSign className="w-6 h-6 text-gray-700 group-hover:text-green-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Willingness to Pay (WTP)
+                          </h3>
+                          <span className="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Value Logic
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          The distribution of maximum acceptable prices across customers, not a single number. Use it to validate your value-based range, choose price points, and design tiers with evidence.
+                        </p>
+                      </Link>
+                    </div>
+                  </div>
+
+                  {/* Third section: Capture Mechanism concepts (Segmentation, Price Fences) */}
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    {/* Left side - Capture Mechanism concept boxes */}
+                    <div className="lg:col-span-7 flex flex-col gap-4">
+                      {/* Segmentation by WTP / Use Case */}
+                      <Link 
+                        href="/wiki/pricing/value-and-customers/customer-segments"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-purple-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <Layers className="w-6 h-6 text-gray-700 group-hover:text-purple-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Segmentation by WTP / Use Case
+                          </h3>
+                          <span className="bg-purple-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Capture Mechanism
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          Grouping customers by distinct jobs/use cases and WTP so one price doesn't undercharge some and exclude others. Use it to decide tiering, packaging, and go-to-market focus without drowning in complexity.
+                        </p>
+                      </Link>
+
+                      {/* Price Fences / Price Discrimination */}
+                      <Link 
+                        href="/wiki/pricing/value-and-customers/price-fences-price-discrimination"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-purple-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <Zap className="w-6 h-6 text-gray-700 group-hover:text-purple-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Price fences / price discrimination
+                          </h3>
+                          <span className="bg-purple-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Capture Mechanism
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          Enforceable rules that let different segments pay different effective prices with minimal leakage and manageable fairness risk. Use it to capture more surplus than blanket discounts—while protecting your premium segment.
+                        </p>
+                      </Link>
+                    </div>
+
+                    {/* Right side - Capture Mechanism Insight box */}
+                    <div className="lg:col-span-5 flex">
+                      <div className="bg-[#eef0f3] rounded-lg p-6 shadow-sm sticky top-24 w-full">
+                        <div className="flex items-center gap-2 mb-1">
+                          <Lightbulb className="w-5 h-5 text-yellow-500 fill-yellow-500" />
+                          <h4 className="font-semibold text-[#1f2933] text-lg">Capture Mechanism Insight</h4>
+                        </div>
+                        <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
+                          Finally, you design capture mechanisms so you don't leave value on the table. <Link href="/wiki/pricing/value-and-customers/customer-segments" className="text-[#ff5722] hover:underline font-medium">Segmentation by WTP / Use Case</Link> is what you do when one price can't fit (hobbyists vs enterprise, low vs high urgency, low vs high intensity): partition by jobs/use cases and WTP, then align packages and price points so you're not averaging your market. <Link href="/wiki/pricing/value-and-customers/price-fences-price-discrimination" className="text-[#ff5722] hover:underline font-medium">Price fences / price discrimination</Link> is the implementation layer: don't discount blindly—fence. Use eligibility or self-selection fences (features, limits, support, contract terms, time/location rules) that are enforceable and minimize arbitrage, so high-WTP customers don't leak into low-price buckets.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Render "What's in this category" section for other non-foundations categories */}
+            {params.category !== 'foundations' && params.category !== 'value-and-customers' && (whatsInCategoryContent || workingNote) && (
               <div className="mt-12 mb-12">
                 {/* Working note - appears before the section */}
                 {workingNote && (
@@ -587,7 +876,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                   </h2>
                 </div>
                 
-                {/* Custom cards for foundations category */}
+                {/* Custom cards for foundations and value-and-customers categories */}
                 {params.category === 'foundations' ? (
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {/* New to SaaS pricing */}
@@ -629,6 +918,67 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                       <p className="text-[#1f2933] leading-relaxed text-base">
                         Use the strategy cards as a syllabus for a 2–3 session MBA module.
                       </p>
+                    </div>
+                  </div>
+                ) : params.category === 'value-and-customers' ? (
+                  <div className="space-y-8">
+                    {/* The Ideal Iterative Workflow */}
+                    <div className="bg-[#eef0f3] rounded-2xl p-8 shadow-sm relative overflow-hidden">
+                      {/* Decorative circle in top right */}
+                      <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -mr-32 -mt-32 opacity-30"></div>
+                      
+                      <div className="relative z-10">
+                        <h3 className="text-[#1f2933] font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-3">The Ideal Iterative Workflow</h3>
+                        <p className="text-[#1f2933] text-base sm:text-[17px] opacity-80 mb-8 leading-[1.65]">
+                          Pricing isn't a one-time project. It's a continuous cycle of refining logic and capturing value as market conditions evolve.
+                        </p>
+                        
+                        {/* Workflow steps */}
+                        <div className="flex flex-nowrap items-center justify-between gap-2 md:gap-3 lg:gap-4">
+                          {/* Step 01: Refine ICP */}
+                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm flex-shrink-0 flex-1 min-w-0">
+                            <div className="text-[#ff5722] text-xs font-semibold mb-1.5 tracking-wide">01</div>
+                            <h4 className="text-[#1f2933] font-bold text-sm mb-1">Refine ICP</h4>
+                            <p className="text-[#1f2933] text-xs opacity-70 leading-tight">Use Cases & JTBD</p>
+                          </div>
+                          
+                          <ArrowRight className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
+                          
+                          {/* Step 02: Map Drivers */}
+                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm flex-shrink-0 flex-1 min-w-0">
+                            <div className="text-[#ff5722] text-xs font-semibold mb-1.5 tracking-wide">02</div>
+                            <h4 className="text-[#1f2933] font-bold text-sm mb-1">Map Drivers</h4>
+                            <p className="text-[#1f2933] text-xs opacity-70 leading-tight">Value Mapping</p>
+                          </div>
+                          
+                          <ArrowRight className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
+                          
+                          {/* Step 03: Quantify */}
+                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm flex-shrink-0 flex-1 min-w-0">
+                            <div className="text-[#ff5722] text-xs font-semibold mb-1.5 tracking-wide">03</div>
+                            <h4 className="text-[#1f2933] font-bold text-sm mb-1">Quantify</h4>
+                            <p className="text-[#1f2933] text-xs opacity-70 leading-tight">EVE & Decoder</p>
+                          </div>
+                          
+                          <ArrowRight className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
+                          
+                          {/* Step 04: Measure */}
+                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm flex-shrink-0 flex-1 min-w-0">
+                            <div className="text-[#ff5722] text-xs font-semibold mb-1.5 tracking-wide">04</div>
+                            <h4 className="text-[#1f2933] font-bold text-sm mb-1">Measure</h4>
+                            <p className="text-[#1f2933] text-xs opacity-70 leading-tight">WTP Research</p>
+                          </div>
+                          
+                          <ArrowRight className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
+                          
+                          {/* Step 05: Capture */}
+                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm flex-shrink-0 flex-1 min-w-0">
+                            <div className="text-[#ff5722] text-xs font-semibold mb-1.5 tracking-wide">05</div>
+                            <h4 className="text-[#1f2933] font-bold text-sm mb-1">Capture</h4>
+                            <p className="text-[#1f2933] text-xs opacity-70 leading-tight">Segment & Fence</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 ) : (

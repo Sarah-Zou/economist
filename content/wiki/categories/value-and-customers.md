@@ -10,15 +10,15 @@ canonical: "https://sarahzou.com/wiki/pricing/value-and-customers"
 
 ## What's in this category
 
-- **[<span id="economic-value-estimation">Economic Value Estimation</span>](/wiki/pricing/value-and-customers/economic-value-estimation)**: Reference value + differentiation value analysis
-- **[<span id="value-decoder-framework">Value Decoder framework</span>](/wiki/pricing/value-and-customers/value-decoder-framework)**: Perceived value framework based on next-best alternative with characteristic, income, complement, and environment adjustments
-- **[<span id="willingness-to-pay">Willingness-to-pay (WTP)</span>](/wiki/pricing/value-and-customers/willingness-to-pay)**: The maximum price a buyer accepts; use it to set a defensible price range, design tiers, and validate pricing against unit economics. Includes methods like Van Westendorp PSM, Gabor–Granger, and conjoint analysis.
-- **[<span id="customer-use-cases">Customer use cases</span>](/wiki/pricing/value-and-customers/customer-use-cases)**: Structured descriptions of the problem, persona, context, and outcomes that define how customers get value from your product and how you should price.
-- **[<span id="jobs-to-be-done">Jobs To Be Done (JTBD)</span>](/wiki/pricing/value-and-customers/jobs-to-be-done)**: Understanding customer outcomes and success metrics
-- **[<span id="customer-segments">Segmentation by WTP/use case</span>](/wiki/pricing/value-and-customers/customer-segments)**: Value-based customer segmentation strategies
-- **[<span id="ideal-customer-profile">Ideal Customer Profile (ICP)</span>](/wiki/pricing/value-and-customers/ideal-customer-profile)**: A hypothetical description of the account type that derives the most value from your product and provides the most value back to your business.
-- **[<span id="value-drivers">Value drivers</span>](/wiki/pricing/value-and-customers/value-drivers)**: The specific product benefits that create utility and drive a customer's Willingness to Pay (WTP).
-- **[<span id="price-fences-price-discrimination">Price fences / price discrimination</span>](/wiki/pricing/value-and-customers/price-fences-price-discrimination)**: A strategic framework for charging different customers different prices based on their willingness to pay, without triggering a PR backlash.
+- **[<span id="ideal-customer-profile">Ideal Customer Profile (ICP)</span>](/wiki/pricing/value-and-customers/ideal-customer-profile)**: Define the account/segment type that gets the most value from your offer and is most profitable and repeatable for you to acquire, retain, and expand.
+- **[<span id="customer-use-cases">Customer Use Cases</span>](/wiki/pricing/value-and-customers/customer-use-cases)**: Describe the specific problem + context your product solves (for whom, why now, and compared to what alternative) so pricing and packaging map to real demand.
+- **[<span id="jobs-to-be-done">Jobs‑to‑Be‑Done (JTBD)</span>](/wiki/pricing/value-and-customers/jobs-to-be-done)**: Frame demand as the "progress" customers want, so you can write clearer job statements and build messaging, onboarding, and packaging around outcomes.
+- **[<span id="value-drivers">Value Drivers</span>](/wiki/pricing/value-and-customers/value-drivers)**: Identify and prioritize the specific economic/functional/risk/emotional benefits that create utility and drive willingness to pay.
+- **[<span id="economic-value-estimation">Economic Value Estimation (EVE)</span>](/wiki/pricing/value-and-customers/economic-value-estimation)**: Quantify the dollar value you create versus the next‑best alternative (reference value + differentiation value) to set a value‑based ceiling and defend ROI.
+- **[<span id="value-decoder-framework">Value Decoder framework</span>](/wiki/pricing/value-and-customers/value-decoder-framework)**: Turn perceived value into a defendable price band by anchoring on the next‑best alternative and adjusting for product differences and context (income, complements, environment).
+- **[<span id="willingness-to-pay">Willingness to Pay (WTP)</span>](/wiki/pricing/value-and-customers/willingness-to-pay)**: Measure the maximum price buyers accept (as a distribution) to choose a defensible price range, design tiers, and validate against unit economics.
+- **[<span id="customer-segments">Segmentation by WTP / Use Case</span>](/wiki/pricing/value-and-customers/customer-segments)**: Group customers by distinct jobs/use cases and WTP, then align packages, fences, and price points to capture more of the demand curve.
+- **[<span id="price-fences-price-discrimination">Price fences / price discrimination</span>](/wiki/pricing/value-and-customers/price-fences-price-discrimination)**: Implement enforceable criteria that separate segments so you can charge different effective prices without leakage or a fairness backlash.
 
 ## How to use this
 
