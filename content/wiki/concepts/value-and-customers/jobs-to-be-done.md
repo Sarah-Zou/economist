@@ -128,7 +128,7 @@ If you see people using a tool for something it wasn't intended for (e.g., using
 
 | Pitfall | Fix |
 |---------|-----|
-| **Treating jobs like personas:** [Segmenting](/wiki/pricing/value-and-customers#customer-segments) by titles or company size instead of context and stakes. | Segment by context + stakes + constraints (and job frequency). Titles/company size are secondary. |
+| **Treating jobs like personas:** [Segmenting](/wiki/pricing/value-and-customers/customer-segments) by titles or company size instead of context and stakes. | Segment by context + stakes + constraints (and job frequency). Titles/company size are secondary. |
 | **Writing solution-y job statements:** Using product words in job statements (e.g., "Use dashboards to…"). | Rewrite to [Action] + [Object] + [Context] with no product words; validate against workarounds and "do nothing." |
 | **Skipping the forces:** Hearing "looks great" but deals stall without understanding why. | Always map Push / Pull / Habit / Anxiety and design proof to reduce anxiety (templates, ROI calc, security docs, references). |
 | **Interviewing only happy customers or power users:** Missing insights from customers who didn't succeed. | Include recent churn, lost deals, and recent switchers; switching reveals real criteria and fears. |
@@ -148,7 +148,7 @@ If you see people using a tool for something it wasn't intended for (e.g., using
 * Ulwick, A. W. (2005). [What customers want from your products](https://hbr.org/2005/01/what-customers-want-from-your-products). *Harvard Business Review, 83*(1), 70–82.
 * Ulwick, A. W. (2016). [*Jobs to be done: Theory to practice*](https://anthonyulwick.com/books/jobs-to-be-done-theory-to-practice/). Idea Bite Press.
 
-**Related pages:** [Packaging & Bundling](/wiki/pricing/packaging-and-bundling) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Segmentation](/wiki/pricing/value-and-customers/segmentation) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Willingness-to-Pay](/wiki/pricing/value-and-customers/willingness-to-pay)
+**Related pages:** [Packaging & Bundling](/wiki/pricing/packaging-and-bundling) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Segmentation by WTP/Use Case](/wiki/pricing/value-and-customers/customer-segments) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Willingness-to-Pay](/wiki/pricing/value-and-customers/willingness-to-pay)
 
 ## FAQ
 

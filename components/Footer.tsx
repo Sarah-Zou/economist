@@ -51,7 +51,7 @@ const Footer = () => {
               <a href="mailto:hello@sarahzou.com" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e44e1f] font-medium text-base sm:text-lg" target="_blank" rel="noopener noreferrer">
                 <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
               </a>
-              <a href="https://www.linkedin.com/in/drsarah-saas-economist" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e44e1f] font-medium text-base sm:text-lg" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/drsarahzou" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e44e1f] font-medium text-base sm:text-lg" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
               </a>
             </div>

@@ -322,7 +322,7 @@ const organizationSchema = {
     "availableLanguage": ["English"]
   },
   "sameAs": [
-    "https://www.linkedin.com/in/drsarah-saas-economist"
+    "https://www.linkedin.com/in/drsarahzou"
   ],
   "areaServed": [
     {
@@ -355,7 +355,7 @@ const personSchema = {
   "url": "https://sarahzou.com/about",
   "image": "https://sarahzou.com/images/about_headshot.webp",
   "sameAs": [
-    "https://www.linkedin.com/in/drsarah-saas-economist"
+    "https://www.linkedin.com/in/drsarahzou"
   ],
   "address": {
     "@type": "PostalAddress",

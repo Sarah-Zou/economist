@@ -18,10 +18,10 @@ module.exports = {
     extend: {
       colors: {
         border: "hsl(var(--border))",
-        background: "#f9f6f7",
-        foreground: "#222",
-        accent: "#ff5722",
-        muted: "#888",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        accent: "hsl(var(--accent))",
+        muted: "hsl(var(--muted))",
         gray: {
           700: '#222',
           600: '#444',

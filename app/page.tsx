@@ -81,7 +81,7 @@ export default function Home() {
       "availableLanguage": ["English"]
     },
     "sameAs": [
-      "https://www.linkedin.com/in/drsarah-saas-economist"
+      "https://www.linkedin.com/in/drsarahzou"
     ],
     "areaServed": [
       {
@@ -112,7 +112,7 @@ export default function Home() {
     "url": "https://sarahzou.com",
     "image": "https://sarahzou.com/images/headshot_v2.webp",
     "sameAs": [
-      "https://www.linkedin.com/in/drsarah-saas-economist"
+      "https://www.linkedin.com/in/drsarahzou"
     ],
     "address": {
       "@type": "PostalAddress",

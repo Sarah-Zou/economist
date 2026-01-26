@@ -194,7 +194,7 @@ Your actual list price might be slightly above this (to allow room for discounts
 |---------|-----|
 | **Ignoring the Status Quo:** Forgetting that "doing nothing" is often the strongest competitor. | Calculate the cost of the customer's current manual process as the Reference Value. |
 | **Ignoring negative value drivers:** Only positives are modeled, so buyers discount your ROI stories heavily. | Explicitly list switching costs, learning curve, and risks; include them in the EVE model and show you have accounted for them. |
-| **The "Average" Trap:** Using one generic model for all segments. Same assumptions are applied to very different customer sizes or industries, leading to nonsense value estimates. | Build **segment‑specific** EVE templates (e.g., SMB vs. enterprise, industry A vs. B) with tailored economics. See [segmentation](/wiki/pricing/value-and-customers#customer-segments) strategies. |
+| **The "Average" Trap:** Using one generic model for all segments. Same assumptions are applied to very different customer sizes or industries, leading to nonsense value estimates. | Build **segment‑specific** EVE templates (e.g., SMB vs. enterprise, industry A vs. B) with tailored economics. See [segmentation](/wiki/pricing/value-and-customers/customer-segments) strategies. |
 | **Treating EVE as a one‑off exercise:** A beautiful model is built for launch, then never updated as product and market evolve. | Set a **review cadence** (e.g., annually or after major releases); update EVE with latest data and win/loss insights. |
 
 ## References & Links

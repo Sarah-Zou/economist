@@ -20,7 +20,7 @@ owner: "Dr. Sarah Zou"
 
 **When to use:**
 - Defining or redesigning [plan structure](/wiki/pricing/packaging-and-bundling#good-better-best) (good–better–best, [add-ons](/wiki/pricing/packaging-and-bundling#unbundling-addons), or enterprise tiers).
-- Evaluating new [segments](/wiki/pricing/value-and-customers#customer-segments) or verticals and deciding whether they justify a distinct plan or price point.
+- Evaluating new [segments](/wiki/pricing/value-and-customers/customer-segments) or verticals and deciding whether they justify a distinct plan or price point.
 - Choosing or revisiting your core [pricing metric](/wiki/pricing/models-and-metering#pricing-metric) (seats, usage, outcomes, revenue processed, etc.).
 - Prioritizing roadmap and GTM investments by impact on your top 3–7 revenue-driving use cases.
 - Cleaning up a cluttered catalog of legacy plans that no longer map to real customer jobs.
@@ -46,7 +46,7 @@ In B2B SaaS, this is the first "price-your-customer" decision, categorizing user
 
 - **Example:** "RevOps manager at a 50–200 person SaaS company uses our platform weekly to identify at-risk deals and reduce pipeline slippage by 15%."
 - **Job-to-be-done (JTBD):** The underlying problem or "job" the customer hires your product to do (e.g., "get a clean, deduped customer list"), independent of your feature names. See [Jobs to Be Done (JTBD)](/wiki/pricing/value-and-customers/jobs-to-be-done) for more details.
-- **Use case vs. segment:** *[Segment](/wiki/pricing/value-and-customers#customer-segments)* = group of customers with similar characteristics (company size, industry, budget, etc.). *Use case* = what those customers actually do with the product to create value. A segment can contain multiple use cases; a use case can appear across multiple segments.
+- **Use case vs. segment:** *[Segment](/wiki/pricing/value-and-customers/customer-segments)* = group of customers with similar characteristics (company size, industry, budget, etc.). *Use case* = what those customers actually do with the product to create value. A segment can contain multiple use cases; a use case can appear across multiple segments.
 - **Primary vs. secondary use case:** *Primary use case* = the main job that justifies the purchase and drives [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay). *Secondary use cases* = additional jobs that are nice-to-have but usually not the core reason to buy.
 
 ## Why do Customer Use Cases matter?
@@ -147,7 +147,7 @@ Use this flow to define a customer use case in a way that directly feeds your mo
 * Ghuman, A. (2021). [*Price to scale: Practical pricing for your high-growth SaaS startup*](https://www.goodreads.com/book/show/57850428-price-to-scale). Independently published.
 * Maurya, A. (2012). [*Running lean: Iterate from plan A to a plan that works*](https://books.google.com/books/about/Running_Lean.html?id=_RKbzgEACAAJ). O'Reilly Media.
 
-**Related pages:** [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Jobs-to-be-Done (JTBD)](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Packaging & Bundling](/wiki/pricing/packaging-and-bundling) | [Segmentation](/wiki/pricing/value-and-customers/segmentation) | [Willingness-to-Pay Research (Van Westendorp, Gabor-Granger, Conjoint)](/wiki/pricing/value-and-customers/willingness-to-pay)
+**Related pages:** [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Jobs-to-be-Done (JTBD)](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Packaging & Bundling](/wiki/pricing/packaging-and-bundling) | [Segmentation by WTP/Use Case](/wiki/pricing/value-and-customers/customer-segments) | [Willingness-to-Pay Research (Van Westendorp, Gabor-Granger, Conjoint)](/wiki/pricing/value-and-customers/willingness-to-pay)
 
 ## FAQ
 

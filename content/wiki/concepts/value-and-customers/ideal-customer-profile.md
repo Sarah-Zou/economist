@@ -41,7 +41,7 @@ owner: "Dr. Sarah Zou"
 ### Key definitions
 
 * **Buyer Persona:** The human in specific roles (e.g., CTO, VP Sales) within that ICP you need to influence. **ICP tells you which accounts/customers; personas tell you how humans inside those accounts buy and adopt.**
-* **[Segment](/wiki/pricing/value-and-customers#customer-segments):** A group of customers sharing attributes; you can have multiple segments, but usually **1–2 ICPs at a time**.
+* **[Segment](/wiki/pricing/value-and-customers/customer-segments):** A group of customers sharing attributes; you can have multiple segments, but usually **1–2 ICPs at a time**.
 * **Beachhead market:** The first narrow segment you dominate before expanding.
 * **Unit economics:** Whether a customer is **profitable** (CAC, gross margin, retention, expansion).
 * **TAM/SAM/SOM:** The ICP helps you narrow your SOM (Serviceable Obtainable Market) into a "Bullseye" target.
