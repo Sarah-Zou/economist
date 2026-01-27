@@ -15,7 +15,7 @@ owner: "Dr. Sarah Zou"
 
 **Why it matters:** Startups fail not because they lack customers, but because they **acquire the wrong ones**. ICP focus drives **pricing power** (higher [WTP](/wiki/pricing/value-and-customers/willingness-to-pay)), **monetization efficiency** (less under/overpricing), and **organizational alignment** (prevents costly "ICP drift").
 
-**When to use:** Post-MVP when moving from "opportunistic selling" to "repeatable growth"; when adding a new segment, pricing/packaging change, or new channel.
+**When to use:** Post-MVP when moving from "opportunistic selling" to "repeatable growth"; when adding a new segment, pricing/[packaging](/wiki/pricing/packaging-and-bundling/packaging) change, or new channel.
 
 **Key Takeaways:**
 

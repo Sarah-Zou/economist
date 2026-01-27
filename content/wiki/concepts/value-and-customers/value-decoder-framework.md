@@ -20,7 +20,7 @@ owner: "Dr. Sarah Zou"
 
 **When to use:** 
 - Pricing a new product or feature where clear substitutes exist; re-pricing an existing offer in a changing market (inflation, new competitor, demand shock).
-- Deciding how much premium you can justify vs. a competitor for "good / better / best" packages.
+- Deciding how much premium you can justify vs. a competitor for "[good / better / best](/wiki/pricing/packaging-and-bundling/packaging)" [packages](/wiki/pricing/packaging-and-bundling/packaging).
 - Educating non-pricing stakeholders (founders, PMs, sales) on value-based pricing logic.
 
 **Key Takeaways:**
@@ -157,7 +157,7 @@ Use the Value Decoder when **you have clear substitutes or alternatives to bench
 - Baker, W. L., Marn, M. V., & Zawada, C. C. (2010). *The price advantage* (2nd ed.). Hoboken, NJ: John Wiley & Sons. [Link](https://www.wiley.com/en-us/The+Price+Advantage%2C+2nd+Edition-p-9780470502250)
 - Raju, J. G., & Zhang, Z. J. (2010). *Smart pricing: How Google, Priceline, and leading businesses use pricing innovation for profitability*. Upper Saddle River, NJ: Pearson. [Link](https://www.pearson.com/us/higher-education/program/Raju-Smart-Pricing-How-Google-Priceline-and-Leading-Businesses-Use-Pricing-Innovation-for-Profitability/PGM113227.html)
 
-**Related pages:** [Value-based pricing](/wiki/pricing/foundations/value-based-pricing) | [Economic Value Estimation (EVE)](/wiki/pricing/value-and-customers/economic-value-estimation) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp) | [Gabor‑Granger price testing](/wiki/pricing/research-and-experiments/gabor-granger) | [Conjoint analysis / discrete choice experiments](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Good–Better–Best (GBB) packaging](/wiki/pricing/packaging-and-bundling) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination)
+**Related pages:** [Value-based pricing](/wiki/pricing/foundations/value-based-pricing) | [Economic Value Estimation (EVE)](/wiki/pricing/value-and-customers/economic-value-estimation) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp) | [Gabor‑Granger price testing](/wiki/pricing/research-and-experiments/gabor-granger) | [Conjoint analysis / discrete choice experiments](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination)
 
 ## FAQ
 

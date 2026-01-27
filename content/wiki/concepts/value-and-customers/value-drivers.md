@@ -15,7 +15,7 @@ owner: "Dr. Sarah Zou"
 
 **Why it matters:** You cannot price effectively if you don't know which features create the most "Value Surplus." Founders often over-index on features and under-index on the value those features drive.
 
-**When to use:** New product pricing; major packaging changes; entering a segment; sales play redesign; when defending against a competitor's price cut.
+**When to use:** New product pricing; major [packaging](/wiki/pricing/packaging-and-bundling/packaging) changes; entering a segment; sales play redesign; when defending against a competitor's price cut.
 
 **Key Takeaways:**
 
@@ -76,7 +76,7 @@ owner: "Dr. Sarah Zou"
 * **Customer economics:** Loaded wage rates, gross margin, revenue per unit/time, cost of failure/downtime.
 * **Usage & outcome data:** Feature adoption, time‑on‑task, error/incident rates, conversion deltas.
 * **Voice of customer:** 8–12 in‑depth interviews; value stories and proof points.
-* **Commercial data:** Cost‑to‑serve by feature/tier, discounting logs, win/loss notes.
+* **Commercial data:** Cost‑to‑serve by feature/[tier](/wiki/pricing/packaging-and-bundling/packaging), discounting logs, win/loss notes.
 
 ### Step-by-step
 
@@ -111,7 +111,7 @@ owner: "Dr. Sarah Zou"
 |---------|-----|
 | **Features ≠ outcomes:** Demos list features; buyers can't see ROI. | Rewrite as outcome statements ("from X to Y in Z time") and instrument outcome KPIs. |
 | **No dollarization:** Price debates devolve to cost or competitor quotes. | Build an ROI calculator using [Economic Value Estimation](/wiki/pricing/value-and-customers/economic-value-estimation) principles: (Δ time × loaded rate) + (Δ conversion × GM × volume) − Δ costs; show ranges and assumptions. |
-| **One‑size‑fits‑all drivers:** Generic tiers, heavy discounting across segments. | Create segment‑specific driver maps; [fence](/wiki/pricing/value-and-customers/price-fences-price-discrimination) premium drivers into add‑ons or higher tiers. |
+| **One‑size‑fits‑all drivers:** Generic [tiers](/wiki/pricing/packaging-and-bundling/packaging), heavy discounting across segments. | Create segment‑specific driver maps; [fence](/wiki/pricing/value-and-customers/price-fences-price-discrimination) premium drivers into [add‑ons](/wiki/pricing/packaging-and-bundling#add-ons-modular) or higher [tiers](/wiki/pricing/packaging-and-bundling/packaging). |
 | **Ignoring the [NBCA](/wiki/pricing/value-and-customers/economic-value-estimation#next-best-competitive-alternative-nbca) (incl. do‑nothing):** Inflated claims, low win rate. | Quantify value vs. [NBCA](/wiki/pricing/value-and-customers/economic-value-estimation#next-best-competitive-alternative-nbca) and inertia costs; show payback vs. status quo. |
 | **Over‑quantifying soft drivers:** Forced $ claims for "ease of use" erode trust. | Use [conjoint](/wiki/pricing/research-and-experiments/conjoint-analysis)/[MaxDiff](/wiki/pricing/research-and-experiments#maxdiff) or [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) surveys; support with qualitative proof and risk‑reduction proxies. |
 
@@ -126,7 +126,7 @@ owner: "Dr. Sarah Zou"
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 * Ghuman, A. (2021). [*Price to Scale: Practical Pricing for Your High Growth Software Startup*](https://www.amazon.com/Price-Scale-Practical-Pricing-Founders/dp/B0C1J7QZ8K). Independently published.
 
-**Related pages:** [Value-based pricing](/wiki/pricing/foundations/value-based-pricing) | [Price fences / Price discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Packaging & bundling](/wiki/pricing/packaging-and-bundling) | [Jobs-to-be-done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Conjoint analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Gabor–Granger](/wiki/pricing/research-and-experiments/gabor-granger) | [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) | [WTP & elasticity](/wiki/pricing/value-and-customers/willingness-to-pay)
+**Related pages:** [Value-based pricing](/wiki/pricing/foundations/value-based-pricing) | [Price fences / Price discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Jobs-to-be-done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Conjoint analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Gabor–Granger](/wiki/pricing/research-and-experiments/gabor-granger) | [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) | [WTP & elasticity](/wiki/pricing/value-and-customers/willingness-to-pay)
 
 ## FAQ
 
@@ -156,4 +156,4 @@ owner: "Dr. Sarah Zou"
 
 **Q:** Can we do this without big research budgets?
 
-**A:** Yes, start with interviews + telemetry + a lightweight [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) survey; refine with experiments (A/B test one [price metric](/wiki/pricing/models-and-metering#pricing-metric) or tier boundary in a small cohort.)
+**A:** Yes, start with interviews + telemetry + a lightweight [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) survey; refine with experiments (A/B test one [price metric](/wiki/pricing/models-and-metering#pricing-metric) or [tier](/wiki/pricing/packaging-and-bundling/packaging) boundary in a small cohort.)

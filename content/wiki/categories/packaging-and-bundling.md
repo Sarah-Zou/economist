@@ -2,7 +2,7 @@
 title: "Product, Packaging & Bundling"
 slug: "packaging-and-bundling"
 summary: "Strategic product packaging, bundling, and offer design that maximizes value capture while maintaining customer clarity and choice."
-updated: "2025-01-15"
+updated: "2026-01-27"
 level: "101"
 tags: ["pricing","saas","monetization","packaging","bundling","offers"]
 canonical: "https://sarahzou.com/wiki/pricing/packaging-and-bundling"
@@ -10,13 +10,13 @@ canonical: "https://sarahzou.com/wiki/pricing/packaging-and-bundling"
 
 ## What's in this category
 
-- **<span id="packaging">Offer/packaging architecture</span>**: Designing comprehensive product offerings
+- **[<span id="packaging">Offer/packaging architecture</span>](/wiki/pricing/packaging-and-bundling/packaging)**: Designing comprehensive product offerings and tier structures to maximize willingness-to-pay
+- **[<span id="leader-filler-killer">Leader/Filler/Killer Features</span>](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features)**: Classifying features by their impact on purchase decisions and willingness to pay
 - **<span id="good-better-best">Good–Better–Best tiers</span>**: Classic three-tier pricing structure and variations
-- **<span id="modular-packaging-editioning">Modular packaging & editioning</span>**: Capability modules, flexible product design, and creating different product versions
-- **<span id="bundling">Bundling & mixed bundling</span>**: Creating compelling product combinations
-- **<span id="unbundling-addons">Unbundling & add-ons</span>**: When and how to break apart or add to packages
+- **<span id="add-ons-modular">Add-ons & modular packaging</span>**: Capability modules, flexible product design, and creating different product versions
+- **<span id="bundling">Bundling</span>**: Creating compelling product combinations
 
-*I'm currently working on developing detailed content for these concepts. Check back soon for comprehensive guides, step-by-step instructions, and real-world examples.*
+
 
 ## How to use this
 

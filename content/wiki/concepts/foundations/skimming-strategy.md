@@ -146,7 +146,7 @@ Skimming lets you monetize the highest-[WTP](/wiki/pricing/value-and-customers/w
 - Rao, A. R. (1984). Pricing research in marketing: The state of the art. *Journal of Business*, 57(1), S39–S60.
 - Tirole, J. (1988). *The theory of industrial organization*. MIT Press.
 
-**Related pages:** [Maximization Strategy](/wiki/pricing/foundations/maximization) | [Penetration Pricing](/wiki/pricing/foundations/penetration-strategy) | [Versioning/Good‑Better‑Best](/wiki/pricing/packaging-and-bundling) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Van Westendorp](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger](/wiki/pricing/research-and-metrics/gabor-granger) | [Product Lifecycle Pricing](/wiki/pricing/foundations/strategic-pricing)
+**Related pages:** [Maximization Strategy](/wiki/pricing/foundations/maximization) | [Penetration Pricing](/wiki/pricing/foundations/penetration-strategy) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Van Westendorp](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger](/wiki/pricing/research-and-metrics/gabor-granger) | [Product Lifecycle Pricing](/wiki/pricing/foundations/strategic-pricing)
 
 ## FAQ
 
@@ -172,7 +172,7 @@ Skimming lets you monetize the highest-[WTP](/wiki/pricing/value-and-customers/w
 
 **Q:** Can SaaS skim?
 
-**A:** Yes—launch premium‑only, then introduce lower tiers or discounts later; use usage‑based fences rather than time‑based markdowns.
+**A:** Yes—launch premium‑only, then introduce lower [tiers](/wiki/pricing/packaging-and-bundling/packaging) or discounts later; use usage‑based fences rather than time‑based markdowns.
 
 **Q:** What if network effects are critical?
 

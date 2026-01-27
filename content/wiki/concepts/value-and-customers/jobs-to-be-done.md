@@ -21,7 +21,7 @@ owner: "Dr. Sarah Zou"
 **When to use:**
 - **Early:** shaping a value proposition, positioning, or category story
 - **Growth stalls:** diagnosing churn, low conversion, or heavy discounting
-- **Pricing & [packaging](/wiki/pricing/packaging-and-bundling):** designing plans, picking a pricing metric, or adding tiers/[fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) by stakes/context
+- **Pricing & [packaging](/wiki/pricing/packaging-and-bundling/packaging):** designing plans, picking a pricing metric, or adding [tiers](/wiki/pricing/packaging-and-bundling/packaging)/[fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) by stakes/context
 - **Product direction:** deciding what to build next based on real switching triggers
 
 **Key Takeaways:**
@@ -29,7 +29,7 @@ owner: "Dr. Sarah Zou"
 - **Context is Queen:** The "when" and "where" matter more than the "who"; People with different titles can share the same job.
 - **Competition is broader than your category:** You're competing with spreadsheets, agencies, internal hacks, and "do nothing," not just direct rivals.
 - **Switching is emotional + rational:** The *Push/Pull/Habit/Anxiety* forces explain why customers stall—even when value is obvious.
-- **Packaging and pricing follow the job:** Align tiers, [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination), and the pricing metric to the customer's unit of progress; then validate [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay).
+- **Packaging and pricing follow the job:** Align [tiers](/wiki/pricing/packaging-and-bundling/packaging), [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination), and the pricing metric to the customer's unit of progress; then validate [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay).
 
 ## Key Facts
 
@@ -54,9 +54,9 @@ A "job" is distinct from a mere "problem." While a problem is a situation a user
 
 For startup founders, JTBD is the bridge between understanding customer demand and designing products, pricing, and messaging that align with real switching triggers.
 
-- **Predictable Demand:** A package built around a job taps into a pre-existing stream of demand. As one entrepreneur noted, it is like "holding your cup out—the water was already running".
+- **Predictable Demand:** A [package](/wiki/pricing/packaging-and-bundling/packaging) built around a job taps into a pre-existing stream of demand. As one entrepreneur noted, it is like "holding your cup out—the water was already running".
 
-- **Efficiency in Sales:** Aligning packaging with specific jobs makes the product instantly understandable to the buyer, which reduces sales cycles and minimizes the need for heavy discounting.
+- **Efficiency in Sales:** Aligning [packaging](/wiki/pricing/packaging-and-bundling/packaging) with specific jobs makes the product instantly understandable to the buyer, which reduces sales cycles and minimizes the need for heavy discounting.
 
 - **Portfolio Integrity:** Using JTBD prevents the creation of **"Monoliths"** (overengineered products that deliver too much functionality for most users, leading to under-monetization) and **"Hydras"** (products that grow in unmanageable complexity because every new feature is spun out as a new module).
 
@@ -116,7 +116,7 @@ If you see people using a tool for something it wasn't intended for (e.g., using
    * **Product:** prioritize what removes struggle and improves outcomes.
    * **Messaging:** lead with context + progress (not features).
    * **Onboarding:** get them to the first *job-complete* moment fast.
-   * **Packaging/pricing:** pick a pricing metric that matches the job; add [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) for higher-stakes contexts.
+   * **[Packaging](/wiki/pricing/packaging-and-bundling/packaging)/pricing:** pick a pricing metric that matches the job; add [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) for higher-stakes contexts.
 
 ## Metrics to monitor
 
@@ -132,7 +132,7 @@ If you see people using a tool for something it wasn't intended for (e.g., using
 | **Writing solution-y job statements:** Using product words in job statements (e.g., "Use dashboards to…"). | Rewrite to [Action] + [Object] + [Context] with no product words; validate against workarounds and "do nothing." |
 | **Skipping the forces:** Hearing "looks great" but deals stall without understanding why. | Always map Push / Pull / Habit / Anxiety and design proof to reduce anxiety (templates, ROI calc, security docs, references). |
 | **Interviewing only happy customers or power users:** Missing insights from customers who didn't succeed. | Include recent churn, lost deals, and recent switchers; switching reveals real criteria and fears. |
-| **[Packaging](/wiki/pricing/packaging-and-bundling) by feature buckets, not jobs:** Organizing plans by features like "Analytics," "Automation," "Integrations." | Bundle around jobs and stakes; put "must-have to complete the job" features in the tier where that job lives. |
+| **[Packaging](/wiki/pricing/packaging-and-bundling/packaging) by feature buckets, not jobs:** Organizing plans by features like "Analytics," "Automation," "Integrations." | Bundle around jobs and stakes; put "must-have to complete the job" features in the [tier](/wiki/pricing/packaging-and-bundling/packaging) where that job lives. |
 | **Calling every loss "too expensive":** Assuming price is always the issue when deals are lost. | Diagnose the quality of the no: was it the wrong job fit, unclear proof, wrong pricing metric, or missing [fence](/wiki/pricing/value-and-customers/price-fences-price-discrimination) (e.g., SSO/SLA/audit logs)? |
 
 ## References & Links
@@ -148,7 +148,7 @@ If you see people using a tool for something it wasn't intended for (e.g., using
 * Ulwick, A. W. (2005). [What customers want from your products](https://hbr.org/2005/01/what-customers-want-from-your-products). *Harvard Business Review, 83*(1), 70–82.
 * Ulwick, A. W. (2016). [*Jobs to be done: Theory to practice*](https://anthonyulwick.com/books/jobs-to-be-done-theory-to-practice/). Idea Bite Press.
 
-**Related pages:** [Packaging & Bundling](/wiki/pricing/packaging-and-bundling) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Segmentation by WTP/Use Case](/wiki/pricing/value-and-customers/customer-segments) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Willingness-to-Pay](/wiki/pricing/value-and-customers/willingness-to-pay)
+**Related pages:** [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Segmentation by WTP/Use Case](/wiki/pricing/value-and-customers/customer-segments) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Willingness-to-Pay](/wiki/pricing/value-and-customers/willingness-to-pay)
 
 ## FAQ
 
@@ -166,11 +166,11 @@ If you see people using a tool for something it wasn't intended for (e.g., using
 
 **Q:** How does JTBD connect to pricing?
 
-**A:** Jobs reveal the customer's unit of progress → informs pricing metric, [packaging](/wiki/pricing/packaging-and-bundling), and [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination); then quantify with [WTP research](/wiki/pricing/value-and-customers/willingness-to-pay).
+**A:** Jobs reveal the customer's unit of progress → informs pricing metric, [packaging](/wiki/pricing/packaging-and-bundling/packaging), and [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination); then quantify with [WTP research](/wiki/pricing/value-and-customers/willingness-to-pay).
 
 **Q:** Should I put my newest, most advanced features in my highest tier?
 
-**A:** Not necessarily. If a feature is essential to solving the specific job of a lower tier, put it there to ensure the customer gets value. Differentiate your tiers by the *jobs* they solve, not just by feature count.
+**A:** Not necessarily. If a feature is essential to solving the specific job of a lower [tier](/wiki/pricing/packaging-and-bundling/packaging), put it there to ensure the customer gets value. Differentiate your [tiers](/wiki/pricing/packaging-and-bundling/packaging) by the *jobs* they solve, not just by feature count.
 
 **Q:** What's a quick sign we picked the wrong job?
 

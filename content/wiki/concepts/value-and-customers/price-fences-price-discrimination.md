@@ -65,7 +65,7 @@ Most price fences fall into four categories: **Buyer Identification** (Who they 
 ### Degrees of price discrimination
 
 * **1st degree (perfect):** Charging every individual their maximum willingness to pay (rare; approximated with auctions/custom deals).
-* **2nd degree (self-selection):** Customers choose their own price based on quantity or features ([Good/Better/Best](/wiki/pricing/packaging-and-bundling), usage [tiers](/wiki/pricing/packaging-and-bundling), seat packs).
+* **2nd degree (self-selection):** Customers choose their own price based on quantity or features ([Good/Better/Best](/wiki/pricing/packaging-and-bundling/packaging), usage [tiers](/wiki/pricing/packaging-and-bundling/packaging), seat packs).
 * **3rd degree (segment-based):** Pricing based on group attributes (e.g., Student discounts, Geography). This relies on [segmentation](/wiki/pricing/value-and-customers/customer-segments) to identify distinct customer groups.
 
 ## Why do Price Fences matter?
@@ -114,7 +114,7 @@ You place a "hurdle" in front of the low price. This hurdle must be essentially 
 
 2. **Select the Fence:** Choose a criterion that naturally separates these two groups.
 
-   * Most SaaS: start with **[packaging](/wiki/pricing/packaging-and-bundling) + time (annual)**; add **usage** as you scale.
+   * Most SaaS: start with **[packaging](/wiki/pricing/packaging-and-bundling/packaging) + time (annual)**; add **usage** as you scale.
 
 3. **Design a clean tier ladder:** Define "entry" (self-serve), "growth" (team), "enterprise" (risk/compliance).
 
@@ -135,8 +135,8 @@ You place a "hurdle" in front of the low price. This hurdle must be essentially 
 
 ## Metrics to monitor
 
-- **Unit Economics & Growth:** Track **ARPU** and **Gross Margin** by [tier](/wiki/pricing/packaging-and-bundling). Monitor **Net Revenue Retention (NRR)** to ensure fences support long-term expansion rather than just initial bookings.
-- **Funnel & Expansion Dynamics:** Measure **Conversion by [Tier](/wiki/pricing/packaging-and-bundling)** and **Upgrade Rate**. A high **Add-on Attach Rate** indicates your fences successfully encourage modular spending.
+- **Unit Economics & Growth:** Track **ARPU** and **Gross Margin** by [tier](/wiki/pricing/packaging-and-bundling/packaging). Monitor **Net Revenue Retention (NRR)** to ensure fences support long-term expansion rather than just initial bookings.
+- **Funnel & Expansion Dynamics:** Measure **Conversion by [Tier](/wiki/pricing/packaging-and-bundling/packaging)** and **Upgrade Rate**. A high **Add-on Attach Rate** indicates your fences successfully encourage modular spending.
 - **Fence Integrity (Leakage):** Track the **Leakage Rate** (high-value users using discount codes) and **Downgrade Rate**. Monitor unauthorized resale or "Grey Market" activity to ensure location/identity fences are holding.
 - **Segment Health:** Analyze **Churn by Tier** and **Segment Profitability** to ensure discounted tiers aren't burning resources (support tickets per $ revenue) at the expense of premium tiers.
 
@@ -159,7 +159,7 @@ You place a "hurdle" in front of the low price. This hurdle must be essentially 
 * Varian, H. R. (1997). [*Versioning information goods*](https://people.ischool.berkeley.edu/~hal/Papers/version.pdf) (Working paper). University of California, Berkeley.
 * Federal Trade Commission. (n.d.). [*Price discrimination: Robinson-Patman violations*](https://www.ftc.gov/advice-guidance/competition-guidance/guide-antitrust-laws/price-discrimination-robinson-patman-violations).
 
-**Related pages:** [Packaging & tiering](/wiki/pricing/packaging-and-bundling) · [Good-Better-Best](/wiki/pricing/packaging-and-bundling) · [Discount policy](/wiki/pricing/policies-and-governance/discounting-and-realization) · [Value metric](/wiki/pricing/models-and-metering#pricing-metric) · [Conjoint analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) · [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) · [Segmentation by WTP/use case](/wiki/pricing/value-and-customers/customer-segments) · [Value drivers](/wiki/pricing/value-and-customers/value-drivers)
+**Related pages:** [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) · [Good-Better-Best](/wiki/pricing/packaging-and-bundling#good-better-best) · [Discount policy](/wiki/pricing/policies-and-governance/discounting-and-realization) · [Value metric](/wiki/pricing/models-and-metering#pricing-metric) · [Conjoint analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) · [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) · [Segmentation by WTP/use case](/wiki/pricing/value-and-customers/customer-segments) · [Value drivers](/wiki/pricing/value-and-customers/value-drivers)
 
 ## FAQ
 
@@ -173,7 +173,7 @@ You place a "hurdle" in front of the low price. This hurdle must be essentially 
 
 **Q:** Which fence should a SaaS startup start with?
 
-**A:** Usually **[packaging](/wiki/pricing/packaging-and-bundling) (features) + time (annual vs monthly)**, then add **usage** as data maturity grows.
+**A:** Usually **[packaging](/wiki/pricing/packaging-and-bundling/packaging) (features) + time (annual vs monthly)**, then add **usage** as data maturity grows.
 
 **Q:** How do I prevent enterprise customers from buying the cheap tier?
 

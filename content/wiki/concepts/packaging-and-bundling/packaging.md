@@ -1,164 +1,190 @@
 ---
-title: "Offer/packaging architecture"
-metaTitle: "Offer/packaging architecture: Definition, Framework, Steps"
-oneLiner: "The strategic design of product offerings that organize features, capabilities, and value into distinct packages aligned with customer segments and willingness to pay."
+title: "Packaging architecture"
+metaTitle: "Packaging architecture: Definition, Framework, Steps"
+oneLiner: "The blueprint for how to group features into distinct tiers to maximize willingness-to-pay and simplify the buying process."
 prereqs: ["Value-Based Pricing", "Segmentation", "Value Drivers", "Jobs-to-Be-Done", "Customer Use Cases"]
-tags: ["pricing", "packaging", "bundling", "monetization", "segmentation", "SaaS", "B2B", "consumer"]
+tags: ["monetization", "tiering", "bundling", "add-ons", "value metric", "growth", "SaaS"]
 readingTime: 8
-lastUpdated: "2026-01-23"
+lastUpdated: "2026-01-27"
 owner: "Dr. Sarah Zou"
 ---
 
 ## Snapshot (TL;DR)
 
-**What it is:** The systematic organization of product features, capabilities, and value into distinct offers (packages, tiers, plans) that align with different customer segments and their willingness to pay.
+**What it is:** The structural design of *what* you sell (plans/modules/pack sizes) and *how customers move up* (upgrade paths) — independent of the exact price points.
 
-**Why it matters:** Poor packaging leaves money on the table by failing to capture value from high-WTP customers, while confusing or misaligned packages reduce conversion and increase sales cycles. Well-designed packaging architecture is the bridge between your product's value and your revenue model.
+**Why it matters:** Good packaging reduces decision friction, increases Average Contract Value (ACV), and prevents "feature giveaways" that kill margins.
 
-**When to use:** New product launches; major feature additions; entering new segments; when conversion rates are low or discounting is high; when customers struggle to choose between plans; when you need to justify price increases.
+**When to use:**
+
+* You have more than 5 distinct features
+* You have multiple customer segments with different needs or budgets.
+* You're launching [add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular) (AI, security, compliance) or moving to [usage](/wiki/pricing/models-and-metering)/[value-based billing](/wiki/pricing/foundations/value-based-pricing).
+* You are preparing to scale from Seed to Series A.
 
 **Key Takeaways:**
 
-- **Packaging is Segmentation in Action:** Each package should map to a distinct [customer segment](/wiki/pricing/value-and-customers/customer-segments) or [use case](/wiki/pricing/value-and-customers/customer-use-cases) with different [value drivers](/wiki/pricing/value-and-customers/value-drivers) and [WTP](/wiki/pricing/value-and-customers/willingness-to-pay).
-- **Features Follow Jobs:** Organize packages around [jobs-to-be-done](/wiki/pricing/value-and-customers/jobs-to-be-done) and outcomes, not feature lists. If a customer can't articulate which package fits their job in one sentence, your packaging is too abstract.
-- **The Upgrade Path Must Be Clear:** Good packaging creates a natural progression from entry to premium tiers, with each tier solving a more complete or advanced version of the customer's job.
+- **Packaging Precedes Pricing:** You cannot determine the right price point ($50 vs. $100) until you have defined the right package (what features are included). Packaging is the primary lever; price setting is secondary.
+- Tiers should reflect **distinct buyer outcomes** (not arbitrary feature lists). Use the "Good-Better-Best" (GBB) framework to anchor value.
+- Complexity kills control: A strong architecture has **one main [pricing/value metric](/wiki/pricing/models-and-metering#pricing-metric)** (seats/usage/workspaces) and **few, high-signal [add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular)**.
 
 ## Key Facts
 
-- **~70% of SaaS companies:** Use a Good–Better–Best (three-tier) structure, which typically captures 2–3x more revenue than single-tier pricing. ([ProfitWell, 2020](https://www.profitwell.com/recur/all/pricing-page-benchmarks))
-- **25% rule:** Ideally, no more than 25% of customers should choose the lowest tier; the majority should self-select into "Better" or "Best" tiers. ([Price Intelligently](https://www.priceintelligently.com/blog/bid/184651/the-ultimate-guide-to-saas-pricing-strategy))
-- **3–7 packages:** Most companies should offer 3–7 distinct packages. Fewer than 3 limits segmentation; more than 7 creates decision paralysis. ([Nagle, Hogan & Zale, 2016](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Hogan-Zale/p/book/9780133553644))
+- **72% Failure Rate:** Approximately 72% of **new products** fail to meet revenue targets, often because companies design the product **before** determining if customers are willing to pay for the package configuration. ([Ramanujam, M., & Tacke, G. (2016). Monetizing Innovation](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840))
+- **~30% Better Pricing:** **Simpler packaging** (e.g., ~3 tiers, <5 add-ons) is associated with **~30% higher likelihood** of effective pricing/discount controls. ([McKinsey, 2023](https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-art-of-software-pricing-unleashing-growth-with-data-driven-insights))
+- **70%+ are using:** Over 70% of high-growth SaaS companies utilize a three-tier **"Good-Better-Best"** architecture. [OpenView, 2020](https://openviewpartners.com/expansion-saas-benchmarks/)
 
-## What is Offer/Packaging Architecture?
+## Core Concepts & Framework
 
-**Offer/Packaging Architecture** is the strategic framework for organizing your product's features, capabilities, and value into distinct offers that customers can purchase. It defines *what* you sell (the package contents), *how* it's structured (tiers, add-ons, bundles), and *why* customers should choose one package over another.
+**Packaging Architecture** is the strategic design of *what* you sell, distinct from price setting, which determines *how much* you charge. It is the process of grouping features, services, and commercial terms into sellable units (offers) that align with specific [customer segments](/wiki/pricing/value-and-customers/customer-segments) and their [willingness to pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay).
+
+- **Packaging architecture vs Pricing:**
+
+   - Packaging determines *what* the customer gets, while pricing determines *how much* they pay.
+   - It is important to distinguish the **price** (the number) and the **architecture** (how you organize what you sell). For founders, **the money is often found not in optimizing the price point, but in optimizing the architecture**.
+
+- **Packaging vs Offer:**
+   - While "packaging" is the *"design" phase* and the *internal strategy*, the "offer" is the *external presentation*. 
+   - The offer is the final, market-facing proposition presented to the customer. It is the *combination* of the package (features), the price model, and the price point.
 
 ### Key definitions
 
-* **Package (Plan/Tier):** A curated bundle of features, capabilities, and value propositions designed for a specific [customer segment](/wiki/pricing/value-and-customers/customer-segments) or [use case](/wiki/pricing/value-and-customers/customer-use-cases).
+* **[Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features):** To design a package, you must classify every feature into one of three categories. Never put a "Killer" in a mass-market package. Use "Leaders" to differentiate tiers.
 
-* **Good–Better–Best (G/B/B):** A classic three-tier structure where "Good" contains core features, "Better" adds differentiating capabilities, and "Best" includes premium features and support.
+  * **Leaders:** Must-have features that drive the purchase decision and high willingness to pay.
+  * **Fillers:** Nice-to-have features that add perceived value/bulk but don't drive the sale.
+  * **Killers:** Features that actively turn customers away or devalue the offer (e.g., forcing a complex enterprise feature on a small business).
 
-* **Feature Packaging:** The process of assigning features to tiers based on their [value drivers](/wiki/pricing/value-and-customers/value-drivers), segment relevance, and cost-to-serve.
+* **[Good/Better/Best (G/B/B) Tiers](/wiki/pricing/packaging-and-bundling#good-better-best):** The gold standard for packaging. It involves creating three (sometimes four) distinct tiers: "Good" (entry-level/price-sensitive), "Better" (mass market), and "Best" (premium/specialized). It utilizes the *"compromise effect"* and the *"decoy effect"* to encourage customers to settle on the middle option, maximizing revenue.
 
-* **[Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination):** Criteria (usage limits, feature gates, support tiers) that separate packages and prevent high-WTP customers from choosing lower-priced options.
+* **[Pricing metric / value metric](/wiki/pricing/models-and-metering#pricing-metric):** The unit by which you charge (e.g., per user, per gigabyte, per transaction, per API call, per $ processed). It is the single most consequential decision in pricing. It must align with how the customer derives value. If the metric is wrong (e.g., charging per user when value is derived from data usage), it creates friction and limits growth.
 
-* **[Pricing Metric](/wiki/pricing/models-and-metering#pricing-metric):** The unit you charge for (seats, usage, revenue processed) that scales with delivered value and aligns with the package structure.
+* **Plan/Tier/Version vs Bundle:**
 
-* **Editioning:** Creating different product versions (e.g., "Professional" vs. "Enterprise") that target different segments with distinct feature sets and pricing.
+  * **Plan/Tier/Version** **(Vertical Segmentation)** is designed to separate customers based on their needs and [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) for essentially the same core value proposition. Customers typically select **one** tier. This strategic process is often referred to as **Product Configuration** or **Laddering**.
+  * **Bundle (Horizontal Aggregation)** is selling multiple *distinct* products or services together as a single package to increase total profit and simplify the purchase decision. While a tier technically "bundles" features, true bundling usually refers to combining separate standalone offerings (e.g., Microsoft Word + Excel = Office Bundle, or Pizza + Breadsticks = Meal Deal).
+  * **Distinction:** Plan/Tier/Version is a **vertical strategy** to segment customers based on [willingness to pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) for a single product, while Bundle is a **horizontal strategy** to aggregate distinct products or features to maximize total revenue or simplify purchasing. A typical structure of Plan/Tier/Version is **[Good/Better/Best](/wiki/pricing/packaging-and-bundling#good-better-best)**, while Bundle is **Core + [Add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular) or Multi-product Suite**.
 
-## Why does Packaging Architecture matter?
+* **Plan/Tier/Version vs Add‑on/Module:**
 
-- **Maximizing Revenue Capture:** Well-designed packaging prevents high-WTP customers from underpaying while making your product accessible to price-sensitive segments. This is the foundation of [price discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination).
+  * **[Add‑on/Module](/wiki/pricing/packaging-and-bundling#add-ons-modular):** Optional, logical groupings of features that solve a specific "[Job to be Done](/wiki/pricing/value-and-customers/jobs-to-be-done)." Modular features sold *outside* the core packages to increase expansion revenue without bloating the base price.
+  * **Distinction:** Plan/Tier/Version is a **vertical configuration** (Gold vs. Silver) where customers typically select one. A Module is a **flexible grouping** of features that can be added to a base package. Use modules for heterogeneous markets where customers have vastly different needs.
 
-- **Reducing Sales Friction:** When packages align with customer [jobs-to-be-done](/wiki/pricing/value-and-customers/jobs-to-be-done), customers can self-select the right tier, reducing sales cycles and discount pressure.
+* **Fencing vs Laddering:**
 
-- **Product-Market Fit Signal:** If customers consistently choose one tier or request custom packages, your packaging reveals gaps in your product-market fit or segmentation strategy.
+  * **[Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination)** are the rules, metrics, or feature limitations used to separate customers with different [willingness-to-pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay). They prevent high-value customers from buying the low-cost version intended for price-sensitive buyers.
+  * **Laddering** is the design of product tiers (e.g., [Good/Better/Best](/wiki/pricing/packaging-and-bundling#good-better-best), or Starter/Pro/Enterprise) to guide a customer's journey upward over time. It provides a *clear path* for a customer to enter at a lower price point and "expand" to higher tiers as their needs grow.
+  * **Distinction:** Fencing is about *separation*. While Fencing is about keeping segments **apart** (e.g., "Student Discount" is a fence based on identification; "10-user limit" is a fence based on usage quantity.), laddering is about moving customers **up**. It is the structural foundation of a "Land and Expand" strategy.
 
-- **Roadmap Prioritization:** Packaging decisions force you to prioritize features based on their value to specific segments, preventing "feature bloat" that increases costs without increasing WTP.
+### Why It Matters
 
-## Mental model / diagram
+Most founders fall into **"The Kitchen Sink Syndrome"**—adding every new feature to the same plan. Over time, this creates two predictable problems. First, **value leakage**: your most advanced customers pay roughly the same as your smallest ones, despite deriving far more value. Second, **analysis paralysis**: prospects struggle to understand the differences between plans, delaying or abandoning the purchase altogether.
 
-![Packaging architecture mental model: A visual diagram showing how packaging architecture connects customer segments to product offers. The diagram illustrates how customer segments with different jobs-to-be-done, value drivers, and willingness to pay (WTP) map to distinct packages (Good/Better/Best tiers). Each package contains features organized by value drivers, with clear price fences (usage limits, feature gates, support tiers) that separate tiers. The architecture creates a natural upgrade path that guides customers from entry to premium tiers while maximizing revenue capture across segments.](/images/wiki_packaging_mental.png)
+Well-designed packaging solves this by aligning offers with [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) and operational reality:
 
-## Equations & rules of thumb
+* **Monetization leverage:** Changes to packaging and pricing drive a **12.7%** improvement to the bottom line on average, compared to just **3.3%** from improving customer acquisition alone. Packaging is one of the highest-ROI levers founders control.
+* **Unlocking hidden revenue:** A single package for the "average" customer inevitably over-serves the low end (giving away value) and under-serves the high end (leaving money on the table). Thoughtful packaging captures more of the demand curve by matching distinct value propositions to distinct segments.
+* **Operational velocity:** Clear packaging standardizes how products are sold. Without it, sales teams default to custom deals and exceptions, slowing deal cycles, increasing discounts, and creating long-term technical and roadmap debt.
 
-* **The 25/50/25 Rule:** In a three-tier structure, aim for ~25% of customers in "Good," ~50% in "Better," and ~25% in "Best." If >50% choose "Good," your entry tier may be too feature-rich or your upgrade path unclear.
+## Mental model
 
-* **Feature Packaging Value Test:** A feature belongs in a tier if removing it would cause ≥20% of that tier's target segment to downgrade or churn. If <20%, it's likely table stakes and should be in a lower tier.
+Refer to **The "Fence and Ladder"** in [Segmentation by Willingness to Pay (WTP) / Use Case](/wiki/pricing/value-and-customers/customer-segments) page.
 
-* **Upgrade Path Clarity:** The price gap between tiers should be justified by the incremental value. If customers can't articulate why they'd pay 2x for "Better" vs. "Good," the packaging is misaligned.
+## Rules of thumb
 
-* **Package Count Rule:** Start with 3 packages (Good/Better/Best). Add packages only when data shows a persistent, monetizable segment (≥20–30% of revenue) with distinct WTP and feature needs.
+**Use as starting hypotheses:**
+
+* Start with **3 core tiers** (or 2 + enterprise) unless your segmentation is extreme.
+* Keep add-ons **<5** initially; make them big, unambiguous, and widely applicable.
+* Ensure the "middle" tier is the *default* for your [ICP](/wiki/pricing/value-and-customers/ideal-customer-profile) (copy + limits + CTA).
+* Gate by **outcome/complexity/risk** (e.g., security, compliance, scale), not by "random features."
+* **The 10x Rule:** For every move up a tier, the customer should ideally perceive at least 10x the value, even if the price only triples.
+
+## Decision criteria
+
+| If your situation looks like…                     | Prefer this packaging pattern                                 | Why                                              |
+| ------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------ |
+| Clear segment steps (SMB → MM → Ent)              | **Tiered (Good/Better/Best)** + optional enterprise           | Simple self-selection and sales motion alignment |
+| One product, many use cases                       | **Modular** (core + role/department modules)                  | Avoids bloated tiers; matches varied needs       |
+| Value increases mostly with volume                | **[Usage](/wiki/pricing/models-and-metering)/seat scaling** with clear included amounts            | Aligns spend with value and creates expansion    |
+| High [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay) for specific capabilities | **[Add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular)** for high-value bundles (security, AI, compliance) | Captures [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) without forcing everyone up         |
+| Retail/CPG with multiple sizes                    | **Price-pack architecture** (sizes + price points)            | Covers occasions/budgets and manages trade-down  |
 
 ## How to Apply It
 
 ### Inputs you need
 
-* **Customer segmentation data:** [Segments](/wiki/pricing/value-and-customers/customer-segments) with distinct [jobs](/wiki/pricing/value-and-customers/jobs-to-be-done), [use cases](/wiki/pricing/value-and-customers/customer-use-cases), and [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) distributions.
-* **[Value driver maps](/wiki/pricing/value-and-customers/value-drivers):** Which features drive value for which segments, quantified where possible.
-* **Feature adoption data:** Which features are used by which segments, usage frequency, and correlation with retention/expansion.
-* **Cost-to-serve:** Incremental costs (support, infrastructure, onboarding) by feature and tier.
-* **Competitive packaging:** How competitors structure their offers and where you differentiate.
-* **Sales data:** Win/loss reasons, discount patterns, upgrade/downgrade paths, common objections.
+* **Usage telemetry:** Behavioral data showing which features are actually used by high-value versus low-value customers, informing which capabilities should move up or down tiers, paired with **cost-to-serve** data such as support load, infrastructure cost, and risk.
+* **[MaxDiff analysis](/wiki/pricing/research-and-experiments#maxdiff):** A survey method that forces customers to trade off features, helping you identify true **Leaders** (purchase drivers) versus **Fillers** (nice-to-haves).
+* **[Willingness-to-pay (WTP) data](/wiki/pricing/value-and-customers/willingness-to-pay):** Quantitative inputs (e.g., [Van Westendorp surveys](/wiki/pricing/research-and-experiments/van-westendorp)) that reveal price sensitivity and acceptable price ranges for different packages.
+* **[Jobs-to-be-Done (JTBD) research](/wiki/pricing/value-and-customers/jobs-to-be-done):** Qualitative interviews that clarify the specific "job" customers hire your product to do (e.g., Predictive Maintenance vs. Operational Reporting).
+* **Competitor benchmarks:** Visibility into competitors' tiers, add-ons, and usage limits—not to copy them, but to understand the pricing and packaging **mental anchors** your customers already bring to the decision.
 
 ### Step-by-step
 
-1. **Map Segments to Jobs:** Identify 3–7 primary [customer segments](/wiki/pricing/value-and-customers/customer-segments) or [use cases](/wiki/pricing/value-and-customers/customer-use-cases) that drive ≥70–85% of revenue. For each, document the [job-to-be-done](/wiki/pricing/value-and-customers/jobs-to-be-done) and success metrics.
+1. **Segment your audience:** Investigate whether you have distinct customer types that require different selling motions or product configurations. Define 2–3 distinct customer outcomes or jobs-to-be-done that matter most across segments. (Refer to page [Segmentation](/wiki/pricing/value-and-customers/customer-segments))
 
-2. **Identify Value Drivers by Segment:** For each segment, list the [value drivers](/wiki/pricing/value-and-customers/value-drivers) (features → outcomes → dollarized value) that justify purchase and price premiums.
+2. **Define the value metric / pricing metric:** Decide what you charge for (e.g., seats, usage, API calls, revenue processed). This is the engine of your architecture. (Refer to page [Value Metric / Pricing Metric](/wiki/pricing/models-and-metering#pricing-metric))
 
-3. **Design the Tier Structure:** Start with Good–Better–Best (3 tiers). Assign features to tiers using this framework:
-   - **"Good" (Entry):** Core features that solve the fundamental job for the largest segment. Must deliver clear value but leave room for upgrades.
-   - **"Better" (Growth):** Adds differentiating features for segments with higher WTP or more advanced jobs.
-   - **"Best" (Premium):** Includes premium features, support, and capabilities for high-WTP segments (often enterprise).
+3. **Classify features (Leader/Filler/Killer):** For each segment, list all potential features and categorize them to avoid "feature shock." Use MaxDiff analysis to identify true **Leaders** (purchase drivers) versus **Fillers** (nice-to-haves), and remove **Killers** (features that turn customers away). (Refer to page [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features))
 
-4. **Build Price Fences:** Add [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) (usage limits, feature gates, support tiers) that prevent high-WTP customers from choosing lower tiers. Fences should feel natural, not punitive.
+4. **Map features to tiers:** Place high-value/low-cost features in lower tiers to drive adoption. Reserve high-value/high-cost (or high-complexity) features for higher tiers. Create 3 (sometimes 4) tiers within your fence. (Refer to page [Good/Better/Best](/wiki/pricing/packaging-and-bundling#good-better-best))
 
-5. **Choose the Pricing Metric:** Select a [pricing metric](/wiki/pricing/models-and-metering#pricing-metric) (seats, usage, revenue processed) that scales with delivered value and aligns with how customers measure success.
+5. **Add fences, add-ons, and upgrade paths:** Set usage limits and guardrails to prevent leakage, introduce [add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular) only where value is high but not universal, and ensure the next upgrade step is obvious and frictionless as customers grow. Determine exactly when a user *must* upgrade (e.g., "Once you hit 5 team members, you move to Pro"). (Refer to page [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) and [Add-ons & Modular Packaging](/wiki/pricing/packaging-and-bundling#add-ons-modular))
 
-6. **Validate with Customers:** Test package clarity with 8–12 customer interviews. Can they articulate which package fits their job? Do the price gaps feel justified? Refine based on feedback.
-
-7. **Monitor and Iterate:** Track conversion by tier, upgrade/downgrade rates, discount patterns, and win/loss reasons. Adjust packaging when data shows misalignment (e.g., >50% in one tier, high downgrade rates).
+6. **Migrate, launch, and iterate:** Map existing customers to the new structure, define grandfathering rules, launch with clear communication, and instrument plan mix, expansion, and retention before adjusting headline prices. When selling, listen carefully to why customers reject the offer.
 
 ## Metrics to monitor
 
-- **Tier Distribution:** What percentage of customers choose each tier? If >50% choose one tier, packaging may be misaligned.
-- **Upgrade Rate:** What percentage of customers upgrade within 12 months? Low rates suggest unclear upgrade path or insufficient value in higher tiers.
-- **Downgrade Rate:** What percentage downgrade? High rates may indicate over-packaging or price sensitivity.
-- **Discount Rate by Tier:** Are discounts concentrated in one tier? This may indicate pricing or packaging misalignment.
-- **Feature Adoption by Tier:** Are premium features actually used by customers in higher tiers? Low adoption suggests mispackaging.
-- **Win/Loss by Tier:** Are you losing deals because customers can't find the right package, or because pricing feels misaligned?
+* **Take Rate by Tier:** % of users on each tier. (Target: 30% Good / 50% Better / 20% Best). If >50% of customers choose the "Good" plan, your entry tier is too rich, or the upsell path is weak.
+
+* **Net Revenue Retention (NRR):** Revenue from customers moving up the packaging ladder. Are customers moving up over time? If not, your packaging does not support the "Expand" motion.
+
+* **Downgrade Rate:** If high, your fences are likely too weak or your "Better" tier is over-priced.
 
 ## Risks & anti-patterns (and fixes)
 
 | Pitfall | Fix |
 |---------|-----|
-| **Packaging by feature buckets, not jobs:** Organizing plans by features like "Analytics," "Automation," "Integrations." | Bundle around [jobs-to-be-done](/wiki/pricing/value-and-customers/jobs-to-be-done) and [use cases](/wiki/pricing/value-and-customers/customer-use-cases); put "must-have to complete the job" features in the tier where that job lives. |
-| **Too many tiers:** Offering 7+ packages creates decision paralysis and reduces conversion. | Consolidate to 3–5 packages. Use add-ons for edge cases rather than creating new tiers. |
-| **Feature bloat in entry tier:** Including too many features in "Good" reduces upgrade incentive and increases cost-to-serve. | Move non-core features to higher tiers. Entry tier should solve the core job, not every job. |
-| **Unclear upgrade path:** Customers can't see why they'd pay 2x for "Better" vs. "Good." | Make the value gap explicit: quantify incremental outcomes (time saved, revenue gained) in higher tiers. |
-| **Ignoring cost-to-serve:** Packaging features that are expensive to deliver (e.g., high-touch support) into low-priced tiers. | Align packaging with cost-to-serve: premium support, dedicated resources, and high-infrastructure features belong in premium tiers. |
-| **One-size-fits-all packaging:** Using the same tier structure across segments with different WTP and needs. | Create segment-specific packages (e.g., "Enterprise" vs. "SMB") with [price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) that prevent arbitrage. |
+| **The "Feature Soup":** Too many features in every plan makes them hard to distinguish. | Remove features from lower tiers until the "Why Upgrade" story is clear. |
+| **Misaligned [Value Metric](/wiki/pricing/models-and-metering#pricing-metric):** Charging for seats when the value is in data processing; customers can't predict cost; or spend doesn't track value. | Pick a metric buyers understand, can influence, and that correlates with value creation. |
+| **The "Hydra" Product:** Continually adding new features as paid add-ons until the pricing page becomes a maze and sales negotiates everything. | Periodically re-bundle features into the core G/B/B tiers to simplify the choice architecture; limit add-ons; create a standard enterprise bundle. |
+| **Cannibalization:** Making the "Good" plan so feature-rich that "Best" buyers trade down; or customers buy small [add-on](/wiki/pricing/packaging-and-bundling#add-ons-modular) instead of moving up a tier. | Use strict "[fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination)" (e.g., limiting users, removing SSO, capping usage) to force high-value buyers into the higher tiers; re-package to keep core tier ladder as the main path. |
 
 ## References & Links
 
 ### Sources
 
-* Nagle, T. T., Hogan, J., & Zale, J. (2016). [*The Strategy and Tactics of Pricing*](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Hogan-Zale/p/book/9780133553644) (5th ed.). Pearson.
+* McKinsey & Company. (2023, June 2). [The art of software pricing: Unleashing growth with data-driven insights](https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-art-of-software-pricing-unleashing-growth-with-data-driven-insights). McKinsey & Company.
+* Mohammed, R. (2018). [The Good-Better-Best Approach to Pricing](https://hbr.org/2018/09/the-good-better-best-approach-to-pricing). *Harvard Business Review*, 96(5), 118-125.
+* Forth, S. (2022, February 14). [Core Concepts: Tiered Pricing Architecture](https://www.ibbaka.com/blog/core-concepts-tiered-pricing-architecture). Ibbaka Market Blog.
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
-* Anderson, J. C., Narus, J. A., & van Rossum, W. (2006). [Customer value propositions in business markets](https://hbr.org/2006/03/customer-value-propositions-in-business-markets). *Harvard Business Review*, 84(3), 90–99.
-* Christensen, C. M., Hall, T., Dillon, K., & Duncan, D. S. (2016). [Know Your Customers' "Jobs to Be Done"](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done). *Harvard Business Review*, 94(9), 54–62.
-* Ghuman, A. (2021). [*Price to Scale: Practical Pricing for Your High Growth Software Startup*](https://www.amazon.com/Price-Scale-Practical-Pricing-Founders/dp/B0C1J7QZ8K). Independently published.
+* Lehrskov-Schmidt, U. (2023). *The Pricing Roadmap*. Independently published.
 
-**Related pages:** [Value-based pricing](/wiki/pricing/foundations/value-based-pricing) | [Value drivers](/wiki/pricing/value-and-customers/value-drivers) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Jobs-to-be-done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Customer use cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Price fences / Price discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Pricing metric](/wiki/pricing/models-and-metering#pricing-metric) | [Willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay)
+**Related pages:** [Price Metrics / Value Metrics](/wiki/pricing/models-and-metering#pricing-metric) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling#good-better-best) | [Add-ons & Modular Packaging](/wiki/pricing/packaging-and-bundling#add-ons-modular) | [Bundling](/wiki/pricing/packaging-and-bundling#bundling) | [Usage-Based Pricing](/wiki/pricing/models-and-metering)
 
 ## FAQ
 
-**Q:** How many packages should I offer?
+**Q:** How many tiers should I have?
 
-**A:** Start with 3 (Good–Better–Best). Add packages only when data shows a persistent, monetizable segment (≥20–30% of revenue) with distinct [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) and feature needs. Most companies should have 3–7 packages total.
+**A:** Start with 3 (or 2 + enterprise). Three is standard because it utilizes the "compromise effect" (people pick the middle) and the "Decoy Effect" (the highest price makes the middle price look like a bargain). More than four tiers usually confuses customers unless you have clear, stable segments with distinct outcomes.
 
-**Q:** Should I organize packages by features or by customer segments?
+**Q:** When should something be an add-on vs. a higher tier feature?
 
-**A:** Organize by [jobs-to-be-done](/wiki/pricing/value-and-customers/jobs-to-be-done) and [use cases](/wiki/pricing/value-and-customers/customer-use-cases), not feature lists. Each package should solve a specific job or serve a specific [segment](/wiki/pricing/value-and-customers/customer-segments). If a customer can't articulate which package fits their job in one sentence, your packaging is too abstract.
+**A:** Use an add-on when value is high but not universal. Otherwise, keep it as a tier differentiator.
 
-**Q:** What if different segments need the same features but have different WTP?
+**Q:** Should I have a Free tier?
 
-**A:** Use [price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) (usage limits, support tiers, company size) to separate segments while keeping similar feature sets. For example, "SMB" and "Enterprise" might have similar features but different limits, support SLAs, and pricing.
+**A:** Only if your product has a natural "viral loop" or if the cost to serve a free user is near zero. Otherwise, use a Free Trial to show value without the long-term support burden.
 
-**Q:** How do I decide which features go in which tier?
+**Q:** When should I move a feature from a high tier to a lower one?
 
-**A:** Use the **Feature Packaging Value Test:** A feature belongs in a tier if removing it would cause ≥20% of that tier's target segment to downgrade or churn. Core features that solve the fundamental job go in "Good"; differentiating features for higher-WTP segments go in "Better" and "Best."
+**A:** When that feature becomes a "commodity" in your industry. If every competitor offers it for free, it's no longer a "Best" tier differentiator; it's a "Good" tier requirement.
 
-**Q:** What if customers are choosing the wrong tier (e.g., enterprise customers choosing SMB packages)?
+**Q:** How do I migrate existing customers without churn?
 
-**A:** This indicates weak [price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination). Add fences (company size, usage limits, support tiers) that prevent high-WTP customers from accessing lower-priced tiers. Fences should feel natural (e.g., "up to 50 users") rather than punitive.
+**A:** Map each old plan to a new equivalent, grandfather price for a defined period, and communicate the "why" plus a clear upgrade path.
 
-**Q:** Should I offer add-ons or just packages?
+**Q:** How should AI features fit into packaging?
 
-**A:** Use packages for core job-aligned bundles; use add-ons for edge cases or features that only some customers need. Too many add-ons create complexity; too few limit flexibility. Start with packages, add add-ons when data shows persistent demand for specific features outside core packages.
-
-**Q:** How often should I revise my packaging?
-
-**A:** Review packaging when: (1) >50% of customers choose one tier, (2) upgrade rates are <10% after 12 months, (3) discount rates are >30%, (4) you're losing deals due to packaging misalignment, or (5) you're adding major features that change value drivers. Most companies should review packaging 1–2x per year.
+**A:** Usually as (1) a [usage-based](/wiki/pricing/models-and-metering) unit (credits) for variable cost, or (2) a premium [add-on](/wiki/pricing/packaging-and-bundling#add-ons-modular) for high [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) + predictable entitlements.

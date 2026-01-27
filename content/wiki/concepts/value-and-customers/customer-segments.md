@@ -40,7 +40,7 @@ owner: "Dr. Sarah Zou"
 
 * **Segment:** A group of customers with similar [JTBD](/wiki/pricing/value-and-customers/jobs-to-be-done), [value drivers](/wiki/pricing/value-and-customers/value-drivers), and [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) distribution.
 
-* **[Package](/wiki/pricing/packaging-and-bundling) (plan/tier):** A curated bundle mapped to a target segment's outcomes and [WTP](/wiki/pricing/value-and-customers/willingness-to-pay).
+* **[Package](/wiki/pricing/packaging-and-bundling/packaging) (plan/tier):** A curated bundle mapped to a target segment's outcomes and [WTP](/wiki/pricing/value-and-customers/willingness-to-pay).
 
 ## Why does Segmentation by WTP/Use Case matter?
 
@@ -56,7 +56,7 @@ owner: "Dr. Sarah Zou"
 
 1. **Fencing:** You build [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) to separate distinct groups of customers who have fundamentally different needs (e.g., "Enterprise" vs. "Education" or "Food Labs" vs. "Pharma Labs"). Customers should rarely jump over these fences.
 
-2. **Laddering:** Within each fenced area, you build a ladder (Good/Better/Best tiers). This allows customers to self-select their price point based on the specific features or volume they need to get their job done, encouraging them to climb up (upsell) over time.
+2. **Laddering:** Within each fenced area, you build a ladder ([Good/Better/Best tiers](/wiki/pricing/packaging-and-bundling/packaging)). This allows customers to self-select their price point based on the specific features or volume they need to get their job done, encouraging them to climb up (upsell) over time.
 
 ![Segmentation by WTP/Use Case Mental Model: A visual diagram illustrating the "Fence and Ladder" framework for market segmentation. The diagram shows how companies build fences to separate distinct customer groups with fundamentally different needs (such as Enterprise vs. Education, or Food Labs vs. Pharma Labs), preventing customers from easily crossing between segments. Within each fenced area, companies build a ladder with Good/Better/Best tiers, allowing customers to self-select their price point based on features or volume needed. This framework enables companies to capture maximum value by preventing high-WTP customers from accessing lower prices while encouraging upsells within each segment over time.](/images/wiki_segment_mental.png)
 
@@ -92,7 +92,7 @@ owner: "Dr. Sarah Zou"
 
    • *Time/Location:* Charging more for rush delivery or prime-time access.
 
-5. **Construct the Offer Structure:** [Good/Better/Best](/wiki/pricing/packaging-and-bundling) or SMB/Business/Enterprise with clear outcome-based value stories. 
+5. **Construct the Offer Structure:** [Good/Better/Best](/wiki/pricing/packaging-and-bundling/packaging) or SMB/Business/Enterprise with clear outcome-based value stories. 
 
 Create tiered packages where the "Good" plan meets the minimum needs of price-sensitive buyers (killers/fillers removed), and the "Best" plan includes the high-value features ("leaders") that insensitive buyers demand.
 
@@ -123,13 +123,13 @@ Create tiered packages where the "Good" plan meets the minimum needs of price-se
 * Hinterhuber, A., & Liozu, S. M. (2013). [*Innovation in Pricing: Contemporary Theories and Best Practices*](https://www.routledge.com/Innovation-in-Pricing-Contemporary-Theories-and-Best-Practices/Hinterhuber-Liozu/p/book/9780415674500). Routledge.
 * Christensen, C. M., Hall, T., Dillon, K., & Duncan, D. S. (2016). [*Competing Against Luck: The Story of Innovation and Customer Jobs to Be Done*](https://www.harpercollins.com/products/competing-against-luck-clayton-m-christensen). HarperBusiness.
 
-**Related pages:** [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Packaging & Bundling](/wiki/pricing/packaging-and-bundling) | [Gabor-Granger](/wiki/pricing/research-and-experiments/gabor-granger) | [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) | [Conjoint Analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Usage-Based Pricing](/wiki/pricing/models-and-metering) | [Discounting & Realization](/wiki/pricing/policies-and-governance/discounting-and-realization)
+**Related pages:** [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Gabor-Granger](/wiki/pricing/research-and-experiments/gabor-granger) | [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) | [Conjoint Analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Usage-Based Pricing](/wiki/pricing/models-and-metering) | [Discounting & Realization](/wiki/pricing/policies-and-governance/discounting-and-realization)
 
 ## FAQ
 
 **Q:** How many segments should we start with?
 
-**A:** Usually three [packages](/wiki/pricing/packaging-and-bundling) ([Good/Better/Best](/wiki/pricing/packaging-and-bundling)) plus add-ons; expand when data shows a persistent, monetizable niche.
+**A:** Usually three [packages](/wiki/pricing/packaging-and-bundling/packaging) ([Good/Better/Best](/wiki/pricing/packaging-and-bundling/packaging)) plus [add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular); expand when data shows a persistent, monetizable niche.
 
 **Q:** Should I segment by company size (SMB vs. Enterprise)?
 

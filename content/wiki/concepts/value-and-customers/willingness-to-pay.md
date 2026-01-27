@@ -15,9 +15,9 @@ owner: "Dr. Sarah Zou"
 
 **Why it matters:**
 - It defines your "pricing ceiling"; helps you pick a **price range** (not a guess) and avoid over/underpricing.
-- Reveals **which segments value you most**, so you can build tiers and [price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination).
+- Reveals **which segments value you most**, so you can build [tiers](/wiki/pricing/packaging-and-bundling/packaging) and [price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination).
 
-**When to use:** During initial Product-Market Fit (PMF) discovery, before setting/raising prices, changing packaging, launching to a new segment/geo, tightening discount policy, or when pivoting your [ICP (Ideal Customer Profile)](/wiki/pricing/value-and-customers/ideal-customer-profile).
+**When to use:** During initial Product-Market Fit (PMF) discovery, before setting/raising prices, changing [packaging](/wiki/pricing/packaging-and-bundling/packaging), launching to a new segment/geo, tightening discount policy, or when pivoting your [ICP (Ideal Customer Profile)](/wiki/pricing/value-and-customers/ideal-customer-profile).
 
 **Key Takeaways:**
 - **Have the "Talk" Early:** Discussing WTP with customers must happen *before* the product is fully engineered to prioritize features correctly.
@@ -48,7 +48,7 @@ For startup founders, WTP is the **single most critical factor** in determining 
 Approximately **72%** of new products fail because companies postpone pricing decisions until the very end of the development process, essentially hoping for profit rather than knowing it exists. Conversely, mastering WTP allows a firm to capture its fair share of the value it creates, as a mere 1% improvement in price realization can boost operating profits by approximately **10% to 11%**.
 
 - **Defines pricing ceiling:** WTP establishes the maximum price customers will accept, helping you pick a defensible price range instead of guessing.
-- **Reveals segmentation opportunities:** Shows which segments value you most, enabling tiered pricing and [price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination).
+- **Reveals segmentation opportunities:** Shows which segments value you most, enabling [tiered pricing](/wiki/pricing/packaging-and-bundling/packaging) and [price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination).
 - **Prevents product failures:** Early WTP research can identify "undead" products that won't cover costs, saving development resources.
 - **Maximizes profit capture:** Understanding WTP distribution allows you to capture more value through segmentation and strategic pricing.
 
@@ -69,7 +69,7 @@ A practical mental model for WTP is the **"Reasonable Price Range"**.
 | Your decision                       | Best-fit WTP approach                                      | Use when                                    | Watch-outs                                          |
 | ----------------------------------- | ---------------------------------------------------------- | ------------------------------------------- | --------------------------------------------------- |
 | **Set a single price level**        | [Van Westendorp (PSM)](/wiki/pricing/research-and-experiments/van-westendorp), [Gabor–Granger](/wiki/pricing/research-and-experiments/gabor-granger), simple A/B price test | Early-stage, one offer, limited time        | PSM can be noisy; G-G can anchor; A/B needs traffic |
-| **Set packages / tiers**            | [Conjoint / Discrete Choice (CBC)](/wiki/pricing/research-and-experiments/conjoint-analysis), menu-based experiments   | Multiple features/tiers; want tradeoffs     | Requires careful design; analysis skill             |
+| **Set [packages / tiers](/wiki/pricing/packaging-and-bundling/packaging)**            | [Conjoint / Discrete Choice (CBC)](/wiki/pricing/research-and-experiments/conjoint-analysis), menu-based experiments   | Multiple features/[tiers](/wiki/pricing/packaging-and-bundling/packaging); want tradeoffs     | Requires careful design; analysis skill             |
 | **Enterprise / negotiated pricing** | [Value-based](/wiki/pricing/foundations/value-based-pricing) ROI model + win/loss + quote analysis          | Heterogeneous deals; sales-led motions      | Hard to isolate price from discounting/politics     |
 | **True incentive-compatible WTP**   | BDM / Vickrey auctions (field/lab)                         | Research context; can enforce real purchase | Participant comprehension + trust critical          |
 | **Competitor-heavy markets**        | Conjoint with competitive sets; market simulation          | Many close substitutes                      | Garbage-in if competitor set unrealistic            |
@@ -92,17 +92,17 @@ This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pric
 
 2. **Draft the Van Westendorp survey (don't ask "How much would you pay?"):** Paste a short offer description (what's included, pricing metric, monthly vs annual) and then ask the four canonical questions: the price that's **too expensive** to consider, **too cheap** to trust, **expensive but still possible** (needs thought), and a **bargain** (great value), plus a few segment questions and a simple attention/comprehension check. See [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp) for detailed guidance.
 
-3. **Define the audience and sample size:** If you're defending retention, survey current customers; if you're expanding or changing packaging, survey customers and prospects; if you're entering a new market, survey prospects only—then aim for about **150 responses per segment** (and plan outreach accordingly, e.g., ~1,500 invites per segment at a 10% response rate).
+3. **Define the audience and sample size:** If you're defending retention, survey current customers; if you're expanding or changing [packaging](/wiki/pricing/packaging-and-bundling/packaging), survey customers and prospects; if you're entering a new market, survey prospects only—then aim for about **150 responses per segment** (and plan outreach accordingly, e.g., ~1,500 invites per segment at a 10% response rate).
 
 4. **Field the survey and clean the data:** Ensure every respondent saw the same context (offer + period), then remove speeders and inconsistent answers, and investigate extreme values that often come from unit confusion (e.g., monthly vs annual, per seat vs per company).
 
 5. **Plot the Price Sensitivity Meter and read the intersections:** Create cumulative curves over price and identify the **acceptable range** between the **Point of Marginal Cheapness (PMC)** (Too Cheap × Not a Bargain) and **Point of Marginal Expensiveness (PME)** (Too Expensive × Not Expensive), and the **Optimal Price Point (OPP)** where Too Cheap intersects Too Expensive—using curve stability and separation as a quick confidence check.
 
-6. **Segment results to find the real story:** Re-run the PSM outputs by persona/firmographics, usage intensity, and urgency of the [use case](/wiki/pricing/value-and-customers/customer-use-cases) to reveal different acceptable ranges and OPPs, then translate those differences into an initial price-fence plan (tiers, limits, SLA/support, contract terms).
+6. **Segment results to find the real story:** Re-run the PSM outputs by persona/firmographics, usage intensity, and urgency of the [use case](/wiki/pricing/value-and-customers/customer-use-cases) to reveal different acceptable ranges and OPPs, then translate those differences into an initial price-fence plan ([tiers](/wiki/pricing/packaging-and-bundling/packaging), limits, SLA/support, contract terms).
 
-7. **Validate against growth and unit economics:** Pressure-test whether the chosen price will slow acquisition/virality/activation in your growth model and confirm it clears cost-to-serve and CAC payback constraints; then decide on a single price vs a tier ladder and draft the rollout plan (grandfathering, discount policy, messaging).
+7. **Validate against growth and unit economics:** Pressure-test whether the chosen price will slow acquisition/virality/activation in your growth model and confirm it clears cost-to-serve and CAC payback constraints; then decide on a single price vs a [tier ladder](/wiki/pricing/packaging-and-bundling/packaging) and draft the rollout plan (grandfathering, discount policy, messaging).
 
-8. **(Optional) Add advanced validation:** For higher stakes or more complex packaging, use [conjoint/DCE](/wiki/pricing/research-and-experiments/conjoint-analysis) to simulate bundle choices and estimate feature-level WTP, and/or run live testing (A/B price tests, sales pilots, controlled rollouts) to calibrate stated WTP against observed behavior.
+8. **(Optional) Add advanced validation:** For higher stakes or more complex [packaging](/wiki/pricing/packaging-and-bundling/packaging), use [conjoint/DCE](/wiki/pricing/research-and-experiments/conjoint-analysis) to simulate bundle choices and estimate feature-level WTP, and/or run live testing (A/B price tests, sales pilots, controlled rollouts) to calibrate stated WTP against observed behavior.
 
 ## Metrics to monitor
 
@@ -116,7 +116,7 @@ This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pric
 
 | Pitfall | Fix |
 |---------|-----|
-| **The Average Trap:** Designing a product for the "average" customer, which usually results in a product that appeals to no one. | Segment your market by WTP and create tiered versions (Good-Better-Best). Always produce a distribution + segment cuts; design [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination). |
+| **The Average Trap:** Designing a product for the "average" customer, which usually results in a product that appeals to no one. | Segment your market by WTP and create [tiered versions](/wiki/pricing/packaging-and-bundling/packaging) ([Good-Better-Best](/wiki/pricing/packaging-and-bundling/packaging)). Always produce a distribution + segment cuts; design [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination). |
 | **Cost-Plus Bias:** Basing your price on a markup of your internal costs. | Flip the process; let the market WTP dictate the costs you can afford to incur. See [cost-plus pricing](/wiki/pricing/foundations/cost-plus-pricing) for why this approach fails. |
 | **The "Kiss of Death":** Taking polite, non-committal feedback (e.g., "That's a great idea") as a signal of WTP. | Require "skin in the game" through paid pilots or pre-orders. |
 | **Grandfathering Indefinitely:** Leaving early customers on low "legacy" prices as your product value increases. | Use dynamic contracts that allow for regular, [value-based](/wiki/pricing/foundations/value-based-pricing) price updates. |

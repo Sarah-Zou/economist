@@ -176,7 +176,7 @@ If you aim to capture **30% of incremental value**:
 * Price premium target = 0.30 × 90,000 = $27,000.
 * **Target price ≈ $47,000/year.**
 
-Your actual list price might be slightly above this (to allow room for discounts) or tiered (*e.g., $39k / $49k / $59k*) depending on strategy.
+Your actual list price might be slightly above this (to allow room for discounts) or [tiered](/wiki/pricing/packaging-and-bundling/packaging) (*e.g., $39k / $49k / $59k*) depending on strategy.
 
 ## Metrics to monitor
 
@@ -225,7 +225,7 @@ Your actual list price might be slightly above this (to allow room for discounts
 
 **Q:** How often should we update our EVE models?
 
-**A:** As a rule of thumb, review and update EVE **at least annually** and whenever a competitor changes their price, or when you launch new features or new tiers, or when you enter a new segment or geography, or when you see sustained shifts in input costs, customer economics, or competitive offers.
+**A:** As a rule of thumb, review and update EVE **at least annually** and whenever a competitor changes their price, or when you launch new features or new [tiers](/wiki/pricing/packaging-and-bundling/packaging), or when you enter a new segment or geography, or when you see sustained shifts in input costs, customer economics, or competitive offers.
 
 **Q:** How does EVE relate to willingness‑to‑pay (WTP) studies?
 

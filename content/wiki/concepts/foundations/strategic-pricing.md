@@ -59,7 +59,7 @@ owner: "Dr. Sarah Zou"
 > **This is a 2–4 week collaborative sprint for a new or existing product, not a one-hour exercise.**
 
 1. **Understand value:** Define what customers gain and ensure features justify costs by delivering measurable value.
-2. **Design price structure:** Choose a monetization model (tiers, usage, bundles) to reflect customer value and budget anchors.
+2. **Design price structure:** Choose a monetization model ([tiers](/wiki/pricing/packaging-and-bundling/packaging), usage, bundles) to reflect customer value and budget anchors.
 3. **Set pricing policies:** Establish competitive positioning, discount rules, clear escalation and approval processes, and other rules.
 4. **Choose price levels:** Select price points within feasible ranges that balance customer value, competition, and margin goals.
 5. **Communicate value:** Create clear ROI stories and pricing page; draft pricing explanations for customers and internal teams.
@@ -84,7 +84,7 @@ owner: "Dr. Sarah Zou"
 - Nagle, T. T., Müller, G., & Hogan, J. E. (2022). *The strategy and tactics of pricing: A guide to growing more profitably* (6th ed.). Routledge.
 - Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. John Wiley & Sons. [Google Books](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ) 
 
-**Related pages:** [Value-based pricing](/wiki/pricing/foundations/value-based-pricing) | [Cost-plus pricing](/wiki/pricing/foundations/cost-plus-pricing) | [Ideal Customer Profile (ICP)](/wiki/pricing/value-and-customers/ideal-customer-profile) | [Penetration strategy](/wiki/pricing/foundations/penetration-strategy) | [Price-led product design](/wiki/pricing/foundations/price-led-product-design) | [Packaging & Bundling](/wiki/pricing/packaging-and-bundling) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Price Elasticity](/wiki/pricing/research-and-metrics/price-elasticity) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Usage-Based Pricing](/wiki/pricing/models-and-metering/usage-based-pricing)
+**Related pages:** [Value-based pricing](/wiki/pricing/foundations/value-based-pricing) | [Cost-plus pricing](/wiki/pricing/foundations/cost-plus-pricing) | [Ideal Customer Profile (ICP)](/wiki/pricing/value-and-customers/ideal-customer-profile) | [Penetration strategy](/wiki/pricing/foundations/penetration-strategy) | [Price-led product design](/wiki/pricing/foundations/price-led-product-design) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Price Elasticity](/wiki/pricing/research-and-metrics/price-elasticity) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Usage-Based Pricing](/wiki/pricing/models-and-metering/usage-based-pricing)
 
 ## FAQ
 
