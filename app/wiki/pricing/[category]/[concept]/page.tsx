@@ -402,7 +402,9 @@ function parseStepByStep(content: string): {
     // #region agent log
     fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseStepByStep:noMatch',message:'No step-by-step match found',data:{contentLength:content.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
     // #endregion
-    return { beforeStepByStep: content, steps: null, beforeStepsContent: '', afterStepsContent: '', afterStepByStep: '' };
+    // ✅ Nothing to "render before step-by-step" if the section doesn't exist.
+    // Pass content forward so later parsers (Metrics/FAQ) can consume it.
+    return { beforeStepByStep: '', steps: null, beforeStepsContent: '', afterStepsContent: '', afterStepByStep: content };
   }
 
   const stepByStepStartIndex = match.index!;
