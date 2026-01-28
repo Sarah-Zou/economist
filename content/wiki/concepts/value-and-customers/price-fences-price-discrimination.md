@@ -65,7 +65,7 @@ Most price fences fall into four categories: **Buyer Identification** (Who they 
 ### Degrees of price discrimination
 
 * **1st degree (perfect):** Charging every individual their maximum willingness to pay (rare; approximated with auctions/custom deals).
-* **2nd degree (self-selection):** Customers choose their own price based on quantity or features ([Good/Better/Best](/wiki/pricing/packaging-and-bundling/packaging), usage [tiers](/wiki/pricing/packaging-and-bundling/packaging), seat packs).
+* **2nd degree (self-selection):** Customers choose their own price based on quantity or features ([Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best), usage [tiers](/wiki/pricing/packaging-and-bundling/packaging), seat packs).
 * **3rd degree (segment-based):** Pricing based on group attributes (e.g., Student discounts, Geography). This relies on [segmentation](/wiki/pricing/value-and-customers/customer-segments) to identify distinct customer groups.
 
 ## Why do Price Fences matter?
@@ -159,7 +159,7 @@ You place a "hurdle" in front of the low price. This hurdle must be essentially 
 * Varian, H. R. (1997). [*Versioning information goods*](https://people.ischool.berkeley.edu/~hal/Papers/version.pdf) (Working paper). University of California, Berkeley.
 * Federal Trade Commission. (n.d.). [*Price discrimination: Robinson-Patman violations*](https://www.ftc.gov/advice-guidance/competition-guidance/guide-antitrust-laws/price-discrimination-robinson-patman-violations).
 
-**Related pages:** [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) · [Good-Better-Best](/wiki/pricing/packaging-and-bundling#good-better-best) · [Discount policy](/wiki/pricing/policies-and-governance/discounting-and-realization) · [Value metric](/wiki/pricing/models-and-metering#pricing-metric) · [Conjoint analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) · [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) · [Segmentation by WTP/use case](/wiki/pricing/value-and-customers/customer-segments) · [Value drivers](/wiki/pricing/value-and-customers/value-drivers)
+**Related pages:** [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) · [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) · [Discount policy](/wiki/pricing/policies-and-governance/discounting-and-realization) · [Value metric](/wiki/pricing/models-and-metering#pricing-metric) · [Conjoint analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) · [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) · [Segmentation by WTP/use case](/wiki/pricing/value-and-customers/customer-segments) · [Value drivers](/wiki/pricing/value-and-customers/value-drivers)
 
 ## FAQ
 

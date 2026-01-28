@@ -115,7 +115,6 @@ export default function Home() {
     "sameAs": [
       "https://www.linkedin.com/in/drsarahzou/"
     ],
-    "knowsAbout": ["Pricing", "Monetization", "Unit Economics", "Experimentation", "Econometrics"],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Princeton",
@@ -140,12 +139,16 @@ export default function Home() {
       "url": "https://sarahzou.com"
     },
     "knowsAbout": [
+      "Pricing",
+      "Monetization",
+      "Unit Economics",
+      "Experimentation",
+      "Econometrics",
       "Tech Startup Pricing Strategy",
       "Early-Stage Monetization",
       "Value-Based Pricing",
       "Revenue Optimization",
       "Fractional Chief Economist",
-      "Unit Economics",
       "Investor Communications",
       "Monetization Research"
     ],

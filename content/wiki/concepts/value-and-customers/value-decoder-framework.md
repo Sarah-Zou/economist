@@ -20,7 +20,7 @@ owner: "Dr. Sarah Zou"
 
 **When to use:** 
 - Pricing a new product or feature where clear substitutes exist; re-pricing an existing offer in a changing market (inflation, new competitor, demand shock).
-- Deciding how much premium you can justify vs. a competitor for "[good / better / best](/wiki/pricing/packaging-and-bundling/packaging)" [packages](/wiki/pricing/packaging-and-bundling/packaging).
+- Deciding how much premium you can justify vs. a competitor for "[good / better / best](/wiki/pricing/packaging-and-bundling/good-better-best)" [packages](/wiki/pricing/packaging-and-bundling/packaging).
 - Educating non-pricing stakeholders (founders, PMs, sales) on value-based pricing logic.
 
 **Key Takeaways:**

@@ -116,7 +116,7 @@ This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pric
 
 | Pitfall | Fix |
 |---------|-----|
-| **The Average Trap:** Designing a product for the "average" customer, which usually results in a product that appeals to no one. | Segment your market by WTP and create [tiered versions](/wiki/pricing/packaging-and-bundling/packaging) ([Good-Better-Best](/wiki/pricing/packaging-and-bundling/packaging)). Always produce a distribution + segment cuts; design [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination). |
+| **The Average Trap:** Designing a product for the "average" customer, which usually results in a product that appeals to no one. | Segment your market by WTP and create [tiered versions](/wiki/pricing/packaging-and-bundling/packaging) ([Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best)). Always produce a distribution + segment cuts; design [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination). |
 | **Cost-Plus Bias:** Basing your price on a markup of your internal costs. | Flip the process; let the market WTP dictate the costs you can afford to incur. See [cost-plus pricing](/wiki/pricing/foundations/cost-plus-pricing) for why this approach fails. |
 | **The "Kiss of Death":** Taking polite, non-committal feedback (e.g., "That's a great idea") as a signal of WTP. | Require "skin in the game" through paid pilots or pre-orders. |
 | **Grandfathering Indefinitely:** Leaving early customers on low "legacy" prices as your product value increases. | Use dynamic contracts that allow for regular, [value-based](/wiki/pricing/foundations/value-based-pricing) price updates. |

@@ -55,7 +55,7 @@ owner: "Dr. Sarah Zou"
   * **Fillers:** Nice-to-have features that add perceived value/bulk but don't drive the sale.
   * **Killers:** Features that actively turn customers away or devalue the offer (e.g., forcing a complex enterprise feature on a small business).
 
-* **[Good/Better/Best (G/B/B) Tiers](/wiki/pricing/packaging-and-bundling#good-better-best):** The gold standard for packaging. It involves creating three (sometimes four) distinct tiers: "Good" (entry-level/price-sensitive), "Better" (mass market), and "Best" (premium/specialized). It utilizes the *"compromise effect"* and the *"decoy effect"* to encourage customers to settle on the middle option, maximizing revenue.
+* **[Good/Better/Best (G/B/B) Tiers](/wiki/pricing/packaging-and-bundling/good-better-best):** The gold standard for packaging. It involves creating three (sometimes four) distinct tiers: "Good" (entry-level/price-sensitive), "Better" (mass market), and "Best" (premium/specialized). It utilizes the *"compromise effect"* and the *"decoy effect"* to encourage customers to settle on the middle option, maximizing revenue.
 
 * **[Pricing metric / value metric](/wiki/pricing/models-and-metering#pricing-metric):** The unit by which you charge (e.g., per user, per gigabyte, per transaction, per API call, per $ processed). It is the single most consequential decision in pricing. It must align with how the customer derives value. If the metric is wrong (e.g., charging per user when value is derived from data usage), it creates friction and limits growth.
 
@@ -63,7 +63,7 @@ owner: "Dr. Sarah Zou"
 
   * **Plan/Tier/Version** **(Vertical Segmentation)** is designed to separate customers based on their needs and [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) for essentially the same core value proposition. Customers typically select **one** tier. This strategic process is often referred to as **Product Configuration** or **Laddering**.
   * **Bundle (Horizontal Aggregation)** is selling multiple *distinct* products or services together as a single package to increase total profit and simplify the purchase decision. While a tier technically "bundles" features, true bundling usually refers to combining separate standalone offerings (e.g., Microsoft Word + Excel = Office Bundle, or Pizza + Breadsticks = Meal Deal).
-  * **Distinction:** Plan/Tier/Version is a **vertical strategy** to segment customers based on [willingness to pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) for a single product, while Bundle is a **horizontal strategy** to aggregate distinct products or features to maximize total revenue or simplify purchasing. A typical structure of Plan/Tier/Version is **[Good/Better/Best](/wiki/pricing/packaging-and-bundling#good-better-best)**, while Bundle is **Core + [Add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular) or Multi-product Suite**.
+  * **Distinction:** Plan/Tier/Version is a **vertical strategy** to segment customers based on [willingness to pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) for a single product, while Bundle is a **horizontal strategy** to aggregate distinct products or features to maximize total revenue or simplify purchasing. A typical structure of Plan/Tier/Version is **[Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best)**, while Bundle is **Core + [Add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular) or Multi-product Suite**.
 
 * **Plan/Tier/Version vs Add‑on/Module:**
 
@@ -73,7 +73,7 @@ owner: "Dr. Sarah Zou"
 * **Fencing vs Laddering:**
 
   * **[Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination)** are the rules, metrics, or feature limitations used to separate customers with different [willingness-to-pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay). They prevent high-value customers from buying the low-cost version intended for price-sensitive buyers.
-  * **Laddering** is the design of product tiers (e.g., [Good/Better/Best](/wiki/pricing/packaging-and-bundling#good-better-best), or Starter/Pro/Enterprise) to guide a customer's journey upward over time. It provides a *clear path* for a customer to enter at a lower price point and "expand" to higher tiers as their needs grow.
+  * **Laddering** is the design of product tiers (e.g., [Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best), or Starter/Pro/Enterprise) to guide a customer's journey upward over time. It provides a *clear path* for a customer to enter at a lower price point and "expand" to higher tiers as their needs grow.
   * **Distinction:** Fencing is about *separation*. While Fencing is about keeping segments **apart** (e.g., "Student Discount" is a fence based on identification; "10-user limit" is a fence based on usage quantity.), laddering is about moving customers **up**. It is the structural foundation of a "Land and Expand" strategy.
 
 ### Why It Matters
@@ -128,7 +128,7 @@ Refer to **The "Fence and Ladder"** in [Segmentation by Willingness to Pay (WTP)
 
 3. **Classify features (Leader/Filler/Killer):** For each segment, list all potential features and categorize them to avoid "feature shock." Use MaxDiff analysis to identify true **Leaders** (purchase drivers) versus **Fillers** (nice-to-haves), and remove **Killers** (features that turn customers away). (Refer to page [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features))
 
-4. **Map features to tiers:** Place high-value/low-cost features in lower tiers to drive adoption. Reserve high-value/high-cost (or high-complexity) features for higher tiers. Create 3 (sometimes 4) tiers within your fence. (Refer to page [Good/Better/Best](/wiki/pricing/packaging-and-bundling#good-better-best))
+4. **Map features to tiers:** Place high-value/low-cost features in lower tiers to drive adoption. Reserve high-value/high-cost (or high-complexity) features for higher tiers. Create 3 (sometimes 4) tiers within your fence. (Refer to page [Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best))
 
 5. **Add fences, add-ons, and upgrade paths:** Set usage limits and guardrails to prevent leakage, introduce [add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular) only where value is high but not universal, and ensure the next upgrade step is obvious and frictionless as customers grow. Determine exactly when a user *must* upgrade (e.g., "Once you hit 5 team members, you move to Pro"). (Refer to page [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) and [Add-ons & Modular Packaging](/wiki/pricing/packaging-and-bundling#add-ons-modular))
 
@@ -161,7 +161,7 @@ Refer to **The "Fence and Ladder"** in [Segmentation by Willingness to Pay (WTP)
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 * Lehrskov-Schmidt, U. (2023). *The Pricing Roadmap*. Independently published.
 
-**Related pages:** [Price Metrics / Value Metrics](/wiki/pricing/models-and-metering#pricing-metric) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling#good-better-best) | [Add-ons & Modular Packaging](/wiki/pricing/packaging-and-bundling#add-ons-modular) | [Bundling](/wiki/pricing/packaging-and-bundling#bundling) | [Usage-Based Pricing](/wiki/pricing/models-and-metering)
+**Related pages:** [Price Metrics / Value Metrics](/wiki/pricing/models-and-metering#pricing-metric) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Add-ons & Modular Packaging](/wiki/pricing/packaging-and-bundling#add-ons-modular) | [Bundling](/wiki/pricing/packaging-and-bundling#bundling) | [Usage-Based Pricing](/wiki/pricing/models-and-metering)
 
 ## FAQ
 

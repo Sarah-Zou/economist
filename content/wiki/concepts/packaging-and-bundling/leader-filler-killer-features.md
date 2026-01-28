@@ -69,7 +69,7 @@ For startup founders, proper feature classification prevents three common packag
 
 Proper classification enables effective [packaging architecture](/wiki/pricing/packaging-and-bundling/packaging) by:
 
-* **Differentiating tiers:** Use Leaders to create clear "Why Upgrade" stories between [Good/Better/Best](/wiki/pricing/packaging-and-bundling#good-better-best) tiers.
+* **Differentiating tiers:** Use Leaders to create clear "Why Upgrade" stories between [Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best) tiers.
 * **Optimizing value capture:** Reserve high-value Leaders for higher tiers where customers with higher [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) will pay for them.
 * **Reducing complexity:** Exclude Killers from packages where they don't belong, and use Fillers strategically to add perceived value without bloating core offerings.
 
@@ -117,7 +117,7 @@ All Features
 
 3. **Classify by segment:** For each [customer segment](/wiki/pricing/value-and-customers/customer-segments), classify every feature as Leader, Filler, or Killer. Remember: a feature's classification can vary by segment.
 
-4. **Map Leaders to tiers:** Use Leaders to differentiate your [Good/Better/Best](/wiki/pricing/packaging-and-bundling#good-better-best) tiers. Reserve the strongest Leaders for the highest tiers where customers with the highest [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) will pay for them.
+4. **Map Leaders to tiers:** Use Leaders to differentiate your [Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best) tiers. Reserve the strongest Leaders for the highest tiers where customers with the highest [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) will pay for them.
 
 5. **Place Fillers strategically:** Include Fillers in all tiers (to add perceived value) or as [add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular) (to avoid bloating base prices). Don't use Fillers to differentiate tiers—they won't drive upgrades.
 
@@ -155,7 +155,7 @@ All Features
 * McKinsey & Company. (2023, June 2). [The art of software pricing: Unleashing growth with data-driven insights](https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-art-of-software-pricing-unleashing-growth-with-data-driven-insights). McKinsey & Company.
 * Pendo. (2019). [The 2019 Feature Adoption Report](https://www.pendo.io/resources/the-2019-feature-adoption-report/). Pendo.
 
-**Related pages:** [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Value Drivers](/wiki/pricing/value-and-customers/value-drivers) | [Good-Better-Best Tiers](/wiki/pricing/packaging-and-bundling#good-better-best) | [MaxDiff Analysis](/wiki/pricing/research-and-experiments#maxdiff) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Segmentation](/wiki/pricing/value-and-customers/customer-segments)
+**Related pages:** [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Value Drivers](/wiki/pricing/value-and-customers/value-drivers) | [Good-Better-Best Tiers](/wiki/pricing/packaging-and-bundling/good-better-best) | [MaxDiff Analysis](/wiki/pricing/research-and-experiments#maxdiff) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Segmentation](/wiki/pricing/value-and-customers/customer-segments)
 
 ## FAQ
 
