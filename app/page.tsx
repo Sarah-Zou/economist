@@ -23,7 +23,7 @@ const homepageTestimonials = [
 ]
 
 export const metadata: Metadata = {
-  title: "Pricing & Monetization for Early-Stage Tech | Fractional Chief Economist Sarah Zou",
+  title: "Sarah Zou, PhD — Pricing & Monetization Economist (Fractional Chief Economist)",
   description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in growth strategies for early-stage tech startups.",
   robots: {
     index: true,
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     canonical: "https://sarahzou.com",
   },
   openGraph: {
-    title: "Pricing & Monetization for Early-Stage Tech | Fractional Chief Economist Sarah Zou",
+    title: "Sarah Zou, PhD — Pricing & Monetization Economist (Fractional Chief Economist)",
     description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in growth strategies for early-stage tech startups.",
     type: "website",
     url: "https://sarahzou.com",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pricing & Monetization for Early-Stage Tech | Fractional Chief Economist Sarah Zou",
+    title: "Sarah Zou, PhD — Pricing & Monetization Economist (Fractional Chief Economist)",
     description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in growth strategies for early-stage tech startups.",
     images: ["https://sarahzou.com/images/headshot_v2.webp"],
   },
@@ -105,15 +105,17 @@ export default function Home() {
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Dr. Sarah Zou",
-    "alternateName": "Sarah Zou",
+    "name": "Sarah Zou",
+    "honorificSuffix": "PhD",
+    "alternateName": "Dr. Sarah Zou",
     "jobTitle": "Fractional Chief Economist",
     "description": "PhD Economist specializing in pricing strategies, metrics analytics, and investor-ready storytelling for early-stage tech startups.",
     "url": "https://sarahzou.com",
     "image": "https://sarahzou.com/images/headshot_v2.webp",
     "sameAs": [
-      "https://www.linkedin.com/in/drsarahzou"
+      "https://www.linkedin.com/in/drsarahzou/"
     ],
+    "knowsAbout": ["Pricing", "Monetization", "Unit Economics", "Experimentation", "Econometrics"],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Princeton",
@@ -175,7 +177,7 @@ export default function Home() {
           photoSrc="/images/headshot_v2.webp"
           bgSrc="/images/background.webp"
           kicker="PHD ECONOMIST"
-          title="Fractional Chief Economist for Tech"
+          title="Pricing Economist & Fractional Chief Economist for Tech"
           lede="Pricing, metrics, and economic storytelling for founders who need investor-grade decisions fast."
           photoAlt="Dr. Sarah Zou, PhD economist for early-stage tech"
           primaryCta={{

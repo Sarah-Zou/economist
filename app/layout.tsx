@@ -45,6 +45,24 @@ export default function RootLayout({
         {/* Cookie Consent CSS - loaded asynchronously via script */}
       </head>
       <body className="font-sans">
+        {/* Person Schema for SEO - added to all pages */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Sarah Zou",
+              "honorificSuffix": "PhD",
+              "jobTitle": "Fractional Chief Economist",
+              "url": "https://sarahzou.com/",
+              "sameAs": [
+                "https://www.linkedin.com/in/drsarahzou/"
+              ],
+              "knowsAbout": ["Pricing", "Monetization", "Unit Economics", "Experimentation", "Econometrics"]
+            })
+          }}
+        />
         {/* Initialize Google Tag Manager with consent mode denied by default (GDPR compliant) */}
         <Script id="gtag-init" strategy="afterInteractive" dangerouslySetInnerHTML={{
           __html: `

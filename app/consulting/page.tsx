@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Pricing Consulting for Early-Stage Tech | Fractional Chief Economist Sarah Zou",
+  title: "Sarah Zou, PhD — Pricing & Monetization Economist (Fractional Chief Economist)",
   description: "Expert pricing strategy consulting for early-stage tech startups. Get validated price points, experiment-ready plans, and revenue optimization from PhD economist Sarah Zou.",
   robots: {
     index: true,
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     canonical: "https://sarahzou.com/consulting",
   },
   openGraph: {
-    title: "Pricing Consulting for Early-Stage Tech | Fractional Chief Economist Sarah Zou",
+    title: "Sarah Zou, PhD — Pricing & Monetization Economist (Fractional Chief Economist)",
     description: "Expert pricing strategy consulting for early-stage tech startups. Get validated price points, experiment-ready plans, and revenue optimization from PhD economist Sarah Zou.",
     type: "website",
     url: "https://sarahzou.com/consulting",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pricing Consulting for Early-Stage Tech | Fractional Chief Economist Sarah Zou",
+    title: "Sarah Zou, PhD — Pricing & Monetization Economist (Fractional Chief Economist)",
     description: "Expert pricing strategy consulting for early-stage tech startups. Get validated price points, experiment-ready plans, and revenue optimization from PhD economist Sarah Zou.",
     images: ["https://sarahzou.com/images/P-1.webp"],
   },
@@ -197,7 +197,7 @@ function ConsultingContent() {
             {/* Left Section - Text Content */}
             <div>
               <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold mb-4 sm:mb-6 text-[#1f2933] leading-tight">
-              Economics for Early-Stage Teams: Price. Test. Scale.
+              Pricing Economist for Early-Stage Teams: Price. Test. Scale.
               </h1>
               <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
               From first price to forward model—everything you need to learn fast.
