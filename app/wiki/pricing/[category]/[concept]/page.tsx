@@ -243,7 +243,7 @@ function parseKeyFacts(content: string): {
   const beforeKeyFacts = content.substring(0, keyFactsStartIndex).trim();
   const afterKeyFacts = content.substring(keyFactsStartIndex + match[0].length).trim();
   // #region agent log
-  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseKeyFacts:afterExtraction',message:'Key Facts after extraction',data:{afterKeyFactsLength:afterKeyFacts.length,afterKeyFactsPreview:afterKeyFacts.substring(0,500),hasStepByStep:afterKeyFacts.includes('Step-by-step'),hasMetrics:afterKeyFacts.includes('Metrics to monitor'),hasHowToApply:afterKeyFacts.includes('How to Apply It')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'K'})}).catch(()=>{});
+  process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseKeyFacts:afterExtraction',message:'Key Facts after extraction',data:{afterKeyFactsLength:afterKeyFacts.length,afterKeyFactsPreview:afterKeyFacts.substring(0,500),hasStepByStep:afterKeyFacts.includes('Step-by-step'),hasMetrics:afterKeyFacts.includes('Metrics to monitor'),hasHowToApply:afterKeyFacts.includes('How to Apply It')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'K'})}).catch(()=>{});
   // #endregion
 
   // Parse bullet points (lines starting with -)
@@ -326,18 +326,18 @@ function parseMetricsToMonitor(content: string): {
   afterMetrics: string 
 } {
   // #region agent log
-  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseMetricsToMonitor:entry',message:'parseMetricsToMonitor entry',data:{contentLength:content.length,contentPreview:content.substring(0,500),hasMetrics:content.includes('Metrics to monitor'),hasMetricsH2:content.includes('## Metrics to monitor')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
+  process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseMetricsToMonitor:entry',message:'parseMetricsToMonitor entry',data:{contentLength:content.length,contentPreview:content.substring(0,500),hasMetrics:content.includes('Metrics to monitor'),hasMetricsH2:content.includes('## Metrics to monitor')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
   // #endregion
   const metricsRegex = /##\s+Metrics to monitor\s*\n([\s\S]*?)(?=\n##|$)/;
   const match = content.match(metricsRegex);
   
   // #region agent log
-  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseMetricsToMonitor:regex',message:'Metrics regex match result',data:{hasMatch:!!match,matchIndex:match?.index,metricsContentLength:match?.[1]?.length,metricsContentPreview:match?.[1]?.substring(0,300)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
+  process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseMetricsToMonitor:regex',message:'Metrics regex match result',data:{hasMatch:!!match,matchIndex:match?.index,metricsContentLength:match?.[1]?.length,metricsContentPreview:match?.[1]?.substring(0,300)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
   // #endregion
   
   if (!match) {
     // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseMetricsToMonitor:noMatch',message:'No metrics match found',data:{contentLength:content.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
+    process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseMetricsToMonitor:noMatch',message:'No metrics match found',data:{contentLength:content.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
     // #endregion
     return { beforeMetrics: content, metrics: null, afterMetrics: '' };
   }
@@ -370,12 +370,12 @@ function parseMetricsToMonitor(content: string): {
     }
   }
   // #region agent log
-  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseMetricsToMonitor:metricsExtracted',message:'Metrics extracted',data:{metricsCount:metrics.length,metrics:metrics.map(m=>({title:m.title,descriptionLength:m.description.length})),metricLinesCount:metricLines.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
+  process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseMetricsToMonitor:metricsExtracted',message:'Metrics extracted',data:{metricsCount:metrics.length,metrics:metrics.map(m=>({title:m.title,descriptionLength:m.description.length})),metricLinesCount:metricLines.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
   // #endregion
 
   const result = { beforeMetrics, metrics: metrics.length > 0 ? metrics : null, afterMetrics };
   // #region agent log
-  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseMetricsToMonitor:return',message:'parseMetricsToMonitor return',data:{hasMetrics:!!result.metrics,metricsCount:result.metrics?.length||0,afterMetricsLength:result.afterMetrics.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
+  process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseMetricsToMonitor:return',message:'parseMetricsToMonitor return',data:{hasMetrics:!!result.metrics,metricsCount:result.metrics?.length||0,afterMetricsLength:result.afterMetrics.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
   // #endregion
   return result;
 }
@@ -389,18 +389,18 @@ function parseStepByStep(content: string): {
   afterStepByStep: string 
 } {
   // #region agent log
-  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseStepByStep:entry',message:'parseStepByStep entry',data:{contentLength:content.length,contentPreview:content.substring(0,500),hasStepByStep:content.includes('Step-by-step'),hasStepByStepH3:content.includes('### Step-by-step')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+  process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseStepByStep:entry',message:'parseStepByStep entry',data:{contentLength:content.length,contentPreview:content.substring(0,500),hasStepByStep:content.includes('Step-by-step'),hasStepByStepH3:content.includes('### Step-by-step')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
   // #endregion
   const stepByStepRegex = /###\s+Step-by-step\s*\n([\s\S]*?)(?=\n##|$)/;
   const match = content.match(stepByStepRegex);
   
   // #region agent log
-  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseStepByStep:regex',message:'Step-by-step regex match result',data:{hasMatch:!!match,matchIndex:match?.index,stepByStepContentLength:match?.[1]?.length,stepByStepContentPreview:match?.[1]?.substring(0,300)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+  process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseStepByStep:regex',message:'Step-by-step regex match result',data:{hasMatch:!!match,matchIndex:match?.index,stepByStepContentLength:match?.[1]?.length,stepByStepContentPreview:match?.[1]?.substring(0,300)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
   // #endregion
   
   if (!match) {
     // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseStepByStep:noMatch',message:'No step-by-step match found',data:{contentLength:content.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+    process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseStepByStep:noMatch',message:'No step-by-step match found',data:{contentLength:content.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
     // #endregion
     // ✅ Nothing to "render before step-by-step" if the section doesn't exist.
     // Pass content forward so later parsers (Metrics/FAQ) can consume it.
@@ -438,7 +438,7 @@ function parseStepByStep(content: string): {
   // Now extract the description for each step
   const steps: Array<{ number: number; title: string; description: string }> = [];
   // #region agent log
-  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseStepByStep:stepMatches',message:'Step matches found',data:{stepMatchesCount:stepMatches.length,stepMatches:stepMatches.map(s=>({number:s.number,title:s.title}))},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+  process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseStepByStep:stepMatches',message:'Step matches found',data:{stepMatchesCount:stepMatches.length,stepMatches:stepMatches.map(s=>({number:s.number,title:s.title}))},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
   // #endregion
   for (let i = 0; i < stepMatches.length; i++) {
     const currentMatch = stepMatches[i];
@@ -465,7 +465,7 @@ function parseStepByStep(content: string): {
     });
   }
   // #region agent log
-  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseStepByStep:stepsExtracted',message:'Steps extracted',data:{stepsCount:steps.length,steps:steps.map(s=>({number:s.number,title:s.title,descriptionLength:s.description.length}))},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+  process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseStepByStep:stepsExtracted',message:'Steps extracted',data:{stepsCount:steps.length,steps:steps.map(s=>({number:s.number,title:s.title,descriptionLength:s.description.length}))},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
   // #endregion
   
   // Calculate last step end index for afterStepsContent
@@ -485,7 +485,7 @@ function parseStepByStep(content: string): {
 
   const result = { beforeStepByStep, steps: steps.length > 0 ? steps : null, beforeStepsContent, afterStepsContent, afterStepByStep };
   // #region agent log
-  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseStepByStep:return',message:'parseStepByStep return',data:{hasSteps:!!result.steps,stepsCount:result.steps?.length||0,afterStepByStepLength:result.afterStepByStep.length,afterStepByStepPreview:result.afterStepByStep.substring(0,200)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+  process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseStepByStep:return',message:'parseStepByStep return',data:{hasSteps:!!result.steps,stepsCount:result.steps?.length||0,afterStepByStepLength:result.afterStepByStep.length,afterStepByStepPreview:result.afterStepByStep.substring(0,200)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
   // #endregion
   return result;
 }
@@ -496,7 +496,7 @@ function parseFAQ(content: string): { beforeFAQ: string; faqItems: Array<{ quest
   const match = content.match(faqRegex);
   
   // #region agent log
-  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseFAQ:413',message:'parseFAQ entry',data:{contentLength:content.length,hasMatch:!!match,matchIndex:match?.index||-1},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
+  process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseFAQ:413',message:'parseFAQ entry',data:{contentLength:content.length,hasMatch:!!match,matchIndex:match?.index||-1},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
   // #endregion
   
   if (!match) {
@@ -509,7 +509,7 @@ function parseFAQ(content: string): { beforeFAQ: string; faqItems: Array<{ quest
   const afterFAQ = content.substring(faqStartIndex + match[0].length).trim();
 
   // #region agent log
-  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseFAQ:422',message:'parseFAQ extraction',data:{faqStartIndex,beforeFAQLength:beforeFAQ.length,afterFAQLength:afterFAQ.length,faqContentLength:faqContent.length,beforeFAQFirst200:beforeFAQ.substring(0,200),afterFAQFirst200:afterFAQ.substring(0,200)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
+  process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:parseFAQ:422',message:'parseFAQ extraction',data:{faqStartIndex,beforeFAQLength:beforeFAQ.length,afterFAQLength:afterFAQ.length,faqContentLength:faqContent.length,beforeFAQFirst200:beforeFAQ.substring(0,200),afterFAQFirst200:afterFAQ.substring(0,200)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
   // #endregion
 
   // Parse Q/A pairs
@@ -730,29 +730,29 @@ const markdownComponents = {
 
 export default async function ConceptPage({ params }: ConceptPageProps) {
   // #region agent log
-  fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:639',message:'ConceptPage entry',data:{category:params.category,concept:params.concept},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+  process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:639',message:'ConceptPage entry',data:{category:params.category,concept:params.concept},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
   // #endregion
   try {
     const category = getCategoryBySlug(params.category);
     // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:642',message:'After category lookup',data:{categoryFound:!!category,categoryTitle:category?.title,conceptsCount:category?.concepts?.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+    process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:642',message:'After category lookup',data:{categoryFound:!!category,categoryTitle:category?.title,conceptsCount:category?.concepts?.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
     // #endregion
     
     if (!category) {
       // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:644',message:'Category not found, calling notFound',data:{category:params.category},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+      process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:644',message:'Category not found, calling notFound',data:{category:params.category},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
       // #endregion
       notFound();
     }
 
     const concept = category.concepts.find(c => c.id === params.concept);
     // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:648',message:'After concept lookup',data:{conceptFound:!!concept,conceptId:concept?.id,conceptText:concept?.text,allConceptIds:category.concepts.map(c=>c.id)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+    process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:648',message:'After concept lookup',data:{conceptFound:!!concept,conceptId:concept?.id,conceptText:concept?.text,allConceptIds:category.concepts.map(c=>c.id)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
     // #endregion
     
     if (!concept) {
       // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:650',message:'Concept not found, calling notFound',data:{paramsConcept:params.concept,availableIds:category.concepts.map(c=>c.id)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+      process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:650',message:'Concept not found, calling notFound',data:{paramsConcept:params.concept,availableIds:category.concepts.map(c=>c.id)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
       // #endregion
       notFound();
     }
@@ -760,7 +760,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
     // Try to get concept content
     const conceptData = getConceptBySlug(params.category, params.concept);
     // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:655',message:'After getConceptBySlug',data:{conceptDataFound:!!conceptData,hasTitle:!!conceptData?.title,contentLength:conceptData?.content?.length,contentPreview:conceptData?.content?.substring(0,200)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+    process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:655',message:'After getConceptBySlug',data:{conceptDataFound:!!conceptData,hasTitle:!!conceptData?.title,contentLength:conceptData?.content?.length,contentPreview:conceptData?.content?.substring(0,200)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
     // #endregion
     const conceptName = conceptData?.title || concept.text.split(':')[0].trim();
     const description = conceptData?.oneLiner || (concept.text.includes(':') 
@@ -768,7 +768,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
       : '');
     const hasContent = conceptData !== null;
     // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:660',message:'Content check',data:{hasContent,conceptName,description},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+    process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:660',message:'Content check',data:{hasContent,conceptName,description},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
     // #endregion
     
     // Extract headings for table of contents (only first level - h2)
@@ -800,7 +800,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
       snapshot = snapshotResult.snapshot;
       afterSnapshotContent = snapshotResult.afterSnapshot;
       // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:680',message:'After snapshot parsing',data:{afterSnapshotLength:afterSnapshotContent.length,afterSnapshotPreview:afterSnapshotContent.substring(0,300),hasFAQ:afterSnapshotContent.includes('## FAQ')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
+      process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:680',message:'After snapshot parsing',data:{afterSnapshotLength:afterSnapshotContent.length,afterSnapshotPreview:afterSnapshotContent.substring(0,300),hasFAQ:afterSnapshotContent.includes('## FAQ')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
       // #endregion
     } catch (error) {
       console.error('Error parsing snapshot:', error);
@@ -822,7 +822,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
       afterKeyFactsContent = keyFactsResult.afterKeyFacts;
       // #region agent log
       console.log('DEBUG: afterKeyFactsParsing', {afterKeyFactsLength: afterKeyFactsContent?.length || 0, afterKeyFactsPreview: afterKeyFactsContent?.substring(0, 500), hasStepByStep: afterKeyFactsContent?.includes('Step-by-step'), hasMetrics: afterKeyFactsContent?.includes('Metrics to monitor')});
-      fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:afterKeyFactsParsing',message:'After key facts parsing',data:{afterKeyFactsLength:afterKeyFactsContent?.length||0,afterKeyFactsPreview:afterKeyFactsContent?.substring(0,500),hasStepByStep:afterKeyFactsContent?.includes('Step-by-step'),hasMetrics:afterKeyFactsContent?.includes('Metrics to monitor')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'J'})}).catch(()=>{});
+      process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:afterKeyFactsParsing',message:'After key facts parsing',data:{afterKeyFactsLength:afterKeyFactsContent?.length||0,afterKeyFactsPreview:afterKeyFactsContent?.substring(0,500),hasStepByStep:afterKeyFactsContent?.includes('Step-by-step'),hasMetrics:afterKeyFactsContent?.includes('Metrics to monitor')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'J'})}).catch(()=>{});
       // #endregion
     } catch (error) {
       console.error('Error parsing key facts:', error);
@@ -830,7 +830,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
 
     // #region agent log
     console.log('DEBUG: beforeStepByStepBlock', {hasContent, hasConceptData: !!conceptData, afterKeyFactsLength: afterKeyFactsContent?.length || 0, afterKeyFactsPreview: afterKeyFactsContent?.substring(0, 200)});
-    fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:beforeStepByStepBlock',message:'About to parse step-by-step block',data:{hasContent,hasConceptData:!!conceptData,afterKeyFactsLength:afterKeyFactsContent?.length||0,afterKeyFactsPreview:afterKeyFactsContent?.substring(0,200)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'I'})}).catch(()=>{});
+    process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:beforeStepByStepBlock',message:'About to parse step-by-step block',data:{hasContent,hasConceptData:!!conceptData,afterKeyFactsLength:afterKeyFactsContent?.length||0,afterKeyFactsPreview:afterKeyFactsContent?.substring(0,200)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'I'})}).catch(()=>{});
     // #endregion
 
     // Parse Step-by-step section - parse from content after key facts
@@ -847,7 +847,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
         ? (afterKeyFactsContent || conceptData.content)
         : '';
       // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:beforeParseStepByStep',message:'Before parsing step-by-step',data:{hasContent,hasKeyFacts:!!keyFacts,afterKeyFactsLength:afterKeyFactsContent?.length||0,afterSnapshotLength:afterSnapshotContent?.length||0,contentToParseLength:contentToParseForStepByStep?.length||0,contentToParsePreview:contentToParseForStepByStep?.substring(0,300)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});
+      process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:beforeParseStepByStep',message:'Before parsing step-by-step',data:{hasContent,hasKeyFacts:!!keyFacts,afterKeyFactsLength:afterKeyFactsContent?.length||0,afterSnapshotLength:afterSnapshotContent?.length||0,contentToParseLength:contentToParseForStepByStep?.length||0,contentToParsePreview:contentToParseForStepByStep?.substring(0,300)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});
       // #endregion
       const stepByStepResult = contentToParseForStepByStep
         ? parseStepByStep(contentToParseForStepByStep)
@@ -858,7 +858,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
       afterStepsContent = stepByStepResult.afterStepsContent;
       afterStepByStepContent = stepByStepResult.afterStepByStep;
       // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:afterParseStepByStep',message:'After parsing step-by-step',data:{hasSteps:!!steps,stepsCount:steps?.length||0,afterStepByStepContentLength:afterStepByStepContent?.length||0},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});
+      process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:afterParseStepByStep',message:'After parsing step-by-step',data:{hasSteps:!!steps,stepsCount:steps?.length||0,afterStepByStepContentLength:afterStepByStepContent?.length||0},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});
       // #endregion
     } catch (error) {
       console.error('Error parsing step-by-step:', error);
@@ -876,7 +876,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
         ? (afterStepByStepContent || afterKeyFactsContent || conceptData.content)
         : '';
       // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:beforeParseMetrics',message:'Before parsing metrics',data:{hasSteps:!!steps,afterStepByStepLength:afterStepByStepContent?.length||0,contentToParseLength:contentToParseForMetrics?.length||0,contentToParsePreview:contentToParseForMetrics?.substring(0,300)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'G'})}).catch(()=>{});
+      process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:beforeParseMetrics',message:'Before parsing metrics',data:{hasSteps:!!steps,afterStepByStepLength:afterStepByStepContent?.length||0,contentToParseLength:contentToParseForMetrics?.length||0,contentToParsePreview:contentToParseForMetrics?.substring(0,300)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'G'})}).catch(()=>{});
       // #endregion
       const metricsResult = contentToParseForMetrics
         ? parseMetricsToMonitor(contentToParseForMetrics)
@@ -886,7 +886,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
       afterMetricsContent = metricsResult.afterMetrics;
       // #region agent log
       console.log('DEBUG: Metrics parsing result', { hasMetrics: !!metrics, metricsCount: metrics?.length || 0, metrics: metrics });
-      fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:afterParseMetrics',message:'After parsing metrics',data:{hasMetrics:!!metrics,metricsCount:metrics?.length||0,afterMetricsContentLength:afterMetricsContent?.length||0},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'G'})}).catch(()=>{});
+      process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:afterParseMetrics',message:'After parsing metrics',data:{hasMetrics:!!metrics,metricsCount:metrics?.length||0,afterMetricsContentLength:afterMetricsContent?.length||0},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'G'})}).catch(()=>{});
       // #endregion
     } catch (error) {
       console.error('Error parsing metrics:', error);
@@ -901,7 +901,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
         ? (afterMetricsContent || afterStepByStepContent || afterKeyFactsContent || afterSnapshotContent || conceptData.content)
         : '';
       // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:751',message:'FAQ parsing input',data:{contentLength:contentToParseForFAQ?.length||0,contentPreview:contentToParseForFAQ?.substring(0,200)||'',hasMetrics:!!metrics,hasSteps:!!steps,hasKeyFacts:!!keyFacts},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+      process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:751',message:'FAQ parsing input',data:{contentLength:contentToParseForFAQ?.length||0,contentPreview:contentToParseForFAQ?.substring(0,200)||'',hasMetrics:!!metrics,hasSteps:!!steps,hasKeyFacts:!!keyFacts},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
       // #endregion
       const faqResult = contentToParseForFAQ
         ? parseFAQ(contentToParseForFAQ)
@@ -910,7 +910,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
       faqItems = faqResult.faqItems;
       afterFAQ = faqResult.afterFAQ;
       // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:757',message:'FAQ parsing result',data:{beforeFAQLength:beforeFAQ.length,beforeFAQPreview:beforeFAQ.substring(0,300),afterFAQLength:afterFAQ.length,afterFAQPreview:afterFAQ.substring(0,300),faqItemsCount:faqItems.length,beforeFAQHasReferences:beforeFAQ.includes('References'),beforeFAQHasWhatIs:beforeFAQ.includes('What is'),beforeFAQHasWhyTempting:beforeFAQ.includes('Why')&&beforeFAQ.includes('tempting')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+      process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:757',message:'FAQ parsing result',data:{beforeFAQLength:beforeFAQ.length,beforeFAQPreview:beforeFAQ.substring(0,300),afterFAQLength:afterFAQ.length,afterFAQPreview:afterFAQ.substring(0,300),faqItemsCount:faqItems.length,beforeFAQHasReferences:beforeFAQ.includes('References'),beforeFAQHasWhatIs:beforeFAQ.includes('What is'),beforeFAQHasWhyTempting:beforeFAQ.includes('Why')&&beforeFAQ.includes('tempting')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
       // #endregion
     } catch (error) {
       console.error('Error parsing FAQ:', error);
@@ -956,7 +956,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
     });
 
     // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:838',message:'Before render return',data:{hasSnapshot:!!snapshot,hasKeyFacts:!!keyFacts,keyFactsCount:keyFacts?.length,hasSteps:!!steps,stepsCount:steps?.length,hasMetrics:!!metrics,metricsCount:metrics?.length,faqCount:faqItems.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
+    process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:838',message:'Before render return',data:{hasSnapshot:!!snapshot,hasKeyFacts:!!keyFacts,keyFactsCount:keyFacts?.length,hasSteps:!!steps,stepsCount:steps?.length,hasMetrics:!!metrics,metricsCount:metrics?.length,faqCount:faqItems.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
     // #endregion
 
   return (
@@ -1215,7 +1215,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                         // Use beforeFAQ directly to avoid duplication (it's already parsed from the content)
                         const shouldRender = (!keyFacts || keyFacts.length === 0) && (!steps || steps.length === 0) && (!metrics || metrics.length === 0) && faqItems.length > 0 && beforeFAQ && beforeFAQ.trim();
                         if (shouldRender) {
-                          fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1068',message:'Rendering beforeFAQ (no intermediate sections)',data:{hasKeyFacts:!!keyFacts,hasSteps:!!steps,hasMetrics:!!metrics,hasFAQ:faqItems.length>0,beforeFAQLength:beforeFAQ.length,condition:true},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'G'})}).catch(()=>{});
+                          process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1068',message:'Rendering beforeFAQ (no intermediate sections)',data:{hasKeyFacts:!!keyFacts,hasSteps:!!steps,hasMetrics:!!metrics,hasFAQ:faqItems.length>0,beforeFAQLength:beforeFAQ.length,condition:true},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'G'})}).catch(()=>{});
                         }
                         return shouldRender;
                       })() && (
@@ -1329,7 +1329,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                       {/* Step-by-step Section */}
                       {(()=>{
                         // #region agent log
-                        fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:renderStepByStep',message:'Rendering step-by-step check',data:{hasSteps:!!steps,stepsCount:steps?.length||0,willRender:!!(steps && steps.length > 0)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'H'})}).catch(()=>{});
+                        process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:renderStepByStep',message:'Rendering step-by-step check',data:{hasSteps:!!steps,stepsCount:steps?.length||0,willRender:!!(steps && steps.length > 0)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'H'})}).catch(()=>{});
                         // #endregion
                         return null;
                       })()}
@@ -1514,7 +1514,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                       {(!steps || steps.length === 0) && (!metrics || metrics.length === 0) && faqItems.length === 0 && beforeFAQ && beforeFAQ.trim() && (
                         <>
                           {/* #region agent log */}
-                          {(()=>{fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1343',message:'Rendering beforeFAQ (no FAQ path)',data:{hasSteps:!!steps,hasMetrics:!!metrics,hasFAQ:faqItems.length>0,condition:true},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});return null;})()}
+                          {(()=>{process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1343',message:'Rendering beforeFAQ (no FAQ path)',data:{hasSteps:!!steps,hasMetrics:!!metrics,hasFAQ:faqItems.length>0,condition:true},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});return null;})()}
                           {/* #endregion */}
                           <ReactMarkdown
                             remarkPlugins={[remarkGfm, remarkMath]}
@@ -1612,12 +1612,12 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                         // 3. Has intermediate sections (keyFacts or steps) - content wasn't already rendered
                         // 4. Content wasn't already rendered
                         const shouldRender = !contentAlreadyRendered && faqItems.length > 0 && (!metrics || metrics.length === 0) && ((keyFacts && keyFacts.length > 0) || (steps && steps.length > 0)) && beforeFAQ && beforeFAQ.trim();
-                        fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1448',message:'Checking beforeFAQ render condition',data:{shouldRender:!!shouldRender,contentAlreadyRendered,hasNoIntermediateSections,hasFAQ:faqItems.length>0,hasMetrics:!!metrics,hasKeyFacts:!!keyFacts&&keyFacts.length>0,hasSteps:!!steps&&steps.length>0,beforeFAQLength:beforeFAQ?.length||0},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'J'})}).catch(()=>{});
+                        process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1448',message:'Checking beforeFAQ render condition',data:{shouldRender:!!shouldRender,contentAlreadyRendered,hasNoIntermediateSections,hasFAQ:faqItems.length>0,hasMetrics:!!metrics,hasKeyFacts:!!keyFacts&&keyFacts.length>0,hasSteps:!!steps&&steps.length>0,beforeFAQLength:beforeFAQ?.length||0},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'J'})}).catch(()=>{});
                         return !!shouldRender;
                       })() ? (
                         <div key="before-faq-content">
                           {/* #region agent log */}
-                          {(()=>{fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1456',message:'Rendering beforeFAQ (with KeyFacts/Steps)',data:{beforeFAQLength:beforeFAQ.length,condition:true},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'H'})}).catch(()=>{});return null;})()}
+                          {(()=>{process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1456',message:'Rendering beforeFAQ (with KeyFacts/Steps)',data:{beforeFAQLength:beforeFAQ.length,condition:true},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'H'})}).catch(()=>{});return null;})()}
                           {/* #endregion */}
                           <ReactMarkdown
                             remarkPlugins={[remarkGfm, remarkMath]}
@@ -1687,12 +1687,12 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                       {/* Content after FAQ - only render if there's actual content (not just whitespace or newlines) */}
                       {(()=>{
                         const shouldRender = afterFAQ && afterFAQ.trim() && afterFAQ.trim().length > 0 && !/^\s*$/.test(afterFAQ);
-                        fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1523',message:'Checking afterFAQ render condition',data:{shouldRender,afterFAQLength:afterFAQ?.length||0,afterFAQPreview:afterFAQ?.substring(0,300)||'',afterFAQTrimmed:afterFAQ?.trim()||''},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'K'})}).catch(()=>{});
+                        process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1523',message:'Checking afterFAQ render condition',data:{shouldRender,afterFAQLength:afterFAQ?.length||0,afterFAQPreview:afterFAQ?.substring(0,300)||'',afterFAQTrimmed:afterFAQ?.trim()||''},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'K'})}).catch(()=>{});
                         return shouldRender;
                       })() && (
                         <>
                           {/* #region agent log */}
-                          {(()=>{fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1527',message:'Rendering afterFAQ',data:{afterFAQLength:afterFAQ.length,afterFAQPreview:afterFAQ.substring(0,300),condition:true},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'B'})}).catch(()=>{});return null;})()}
+                          {(()=>{process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1527',message:'Rendering afterFAQ',data:{afterFAQLength:afterFAQ.length,afterFAQPreview:afterFAQ.substring(0,300),condition:true},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'B'})}).catch(()=>{});return null;})()}
                           {/* #endregion */}
                           <ReactMarkdown
                             remarkPlugins={[remarkGfm, remarkMath]}
@@ -1807,7 +1807,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
     // Log the error and re-throw it so it can be caught by error boundaries
     console.error('Error in ConceptPage:', error);
     // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1658',message:'Error caught in ConceptPage',data:{errorMessage:error instanceof Error?error.message:String(error),errorStack:error instanceof Error?error.stack:undefined,category:params.category,concept:params.concept},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
+    process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:1658',message:'Error caught in ConceptPage',data:{errorMessage:error instanceof Error?error.message:String(error),errorStack:error instanceof Error?error.stack:undefined,category:params.category,concept:params.concept},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
     // #endregion
     throw error;
   }
