@@ -1,184 +1,154 @@
 ---
-title: "Leader/Filler/Killer Features"
-metaTitle: "Leader/Filler/Killer Features: Definition, Framework, Classification"
-oneLiner: "A classification system for categorizing features by their impact on purchase decisions and willingness to pay."
+title: "Leader / Filler / Killer Features"
+metaTitle: "Leader / Filler / Killer Features: Definition, Framework, Classification"
+oneLiner: "A packaging lens that classifies features so you can design high-converting tiers and avoid \"feature soup.\""
 prereqs: ["Value-Based Pricing", "Packaging Architecture", "Value Drivers", "Segmentation"]
-tags: ["packaging", "feature classification", "tiering", "monetization", "SaaS", "product strategy"]
-readingTime: 6
-lastUpdated: "2026-01-27"
+tags: ["Packaging", "Tiering", "Good–Better–Best", "Growth", "SaaS pricing", "Value-based pricing"]
+readingTime: 7
+lastUpdated: "2026-01-28"
 owner: "Dr. Sarah Zou"
 ---
 
 ## Snapshot (TL;DR)
 
-**What it is:** A three-category framework for classifying every product feature based on its role in driving purchase decisions and [willingness to pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay).
+**What it is:** A practical way to sort features into (1) leaders that drive choosing a tier, (2) fillers that make the tier feel complete, and (3) killers that devalue the tier.
 
-**Why it matters:** Misclassifying features leads to "feature shock" (too many unwanted features), value leakage (giving away high-value features), or customer rejection (including features that turn buyers away). Proper classification is the foundation of effective [packaging architecture](/wiki/pricing/packaging-and-bundling/packaging).
+**Why it matters:** Most startups fail at pricing because they treat all features as equal. This framework helps you decide what goes in the "Pro" plan vs. the "Free" plan. Misplaced features can cause plan cannibalization, low ARPA, and feature-bloat.
 
-**When to use:**
-- Designing or redesigning [product tiers](/wiki/pricing/packaging-and-bundling/packaging)
-- Deciding which features belong in which [tier](/wiki/pricing/packaging-and-bundling/packaging)
-- Evaluating whether to add a new feature to an existing plan
-- Preparing for a packaging overhaul
+**When to use:** Use this during initial packaging design, when launching a new major feature, or when preparing for a price increase.
 
 **Key Takeaways:**
-- **Leaders** drive purchases and justify price premiums—use them to differentiate tiers.
-- **Fillers** add perceived value but don't drive sales—include them strategically to bulk up offers.
-- **Killers** actively turn customers away—never include them in mass-market packages.
-- A feature's classification can change by [segment](/wiki/pricing/value-and-customers/customer-segments) and over time as markets evolve.
+
+- **Leaders define the Tier:** Your "Best" tier should be defined by the inclusion of premium Leaders that high-value customers buy the product for. Leaders should be few, specific, and clearly tied to a [segment's job-to-be-done](/wiki/pricing/value-and-customers/jobs-to-be-done).
+- **Fillers prevent "Nickel-and-Diming":** Do not charge extra for Fillers. Include them to add "bulk" and perceived value. Fillers should reduce risk (trust, usability, completeness) but not be your main differentiator.
+- **Killers must be exiled:** Killers actually decrease [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) for certain segments and should be removed. If a small group loves the feature, sell it as a separate [Add-on](/wiki/pricing/packaging-and-bundling#add-ons-modular).
+- The goal isn't "more features"—it's **a clean upgrade story**.
 
 ## Key Facts
 
-- **~80% of features:** In the average software product, **~80% of features** are rarely or never used—often because they're misclassified as Leaders when they're actually Fillers. ([Pendo, 2019 Feature Adoption Report](https://www.pendo.io/resources/the-2019-feature-adoption-report/))
-- **72% failure rate:** Approximately **72% of new products** fail to meet revenue targets, often because companies include Killer features in mass-market packages or fail to use Leaders to differentiate tiers. ([Ramanujam, M., & Tacke, G. (2016). Monetizing Innovation](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.)
-- **30% pricing improvement:** Companies that properly classify features and use Leaders to differentiate tiers see **~30% higher likelihood** of effective pricing/discount controls. ([McKinsey, 2023](https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-art-of-software-pricing-unleashing-growth-with-data-driven-insights))
+- **70%+ rarely used:** Over 70% of features in the average software product are rarely or never used (also estimated $29.5B spent building them). ([Pendo, 2019 Feature Adoption Report](https://www.pendo.io/resources/the-2019-feature-adoption-report/))
+- **2x more impactful:** [Packaging](/wiki/pricing/packaging-and-bundling/packaging) (the what) is often 2x more impactful on growth than the price point (the how much). ([ProfitWell's "Anatomy of SaaS Pricing"](https://www.profitwell.com/recurring/all/saas-pricing-strategy))
+- **25% Uplift:** A web hosting company increased revenue by 25% simply by removing unwanted features (Killers) from their core package, proving that "less" can be worth more. ([Ramanujam & Tacke, Monetizing Innovation](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840))
 
-## What are Leader/Filler/Killer Features?
+## Core Concepts & Framework
 
-**Leader/Filler/Killer** is a classification framework that helps product and pricing teams categorize every feature based on its impact on customer purchase decisions and [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay). This classification is essential for designing effective [packaging architecture](/wiki/pricing/packaging-and-bundling/packaging) that maximizes revenue while avoiding common pitfalls.
+The Leader/Filler/Killer framework is a method for classifying product features based on customer preference and [willingness to pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay). It is used to design product [packages](/wiki/pricing/packaging-and-bundling/packaging) that maximize revenue and minimize sales friction.
 
 ### Key definitions
 
-* **Leader Features:** Must-have features that drive the purchase decision and high [willingness to pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay). These are the features customers actively seek and are willing to pay a premium for. Without Leaders, customers won't buy. With strong Leaders, customers will pay more.
+* **Leader feature** ("hero" or **"must-have"**): A feature that drives the customer's decision to purchase. It solves the core problem and has high value and high WTP across your target [segment](/wiki/pricing/value-and-customers/customer-segments).
 
-  * *Examples:* Advanced security/SSO for enterprise buyers, AI-powered automation for efficiency-focused teams, real-time collaboration for distributed teams, compliance certifications for regulated industries.
+* **Filler feature** (**"nice-to-have"** or "table stakes / hygiene"): A feature rarely justifies the purchase on its own, but it adds perceived value and makes the package feel "complete." Customers won't buy for the filler, but they feel better about the price because it is included.
 
-  * *How to identify:* Features that customers mention first in interviews, features that correlate with higher [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) in surveys, features that appear in win/loss analysis as deal-winners.
+* **Killer feature** ("cannibalizer"): A feature that actively devalues the product for a specific [customer segment](/wiki/pricing/value-and-customers/customer-segments). Including a "Killer" can reduce the customer's likelihood of purchase or the amount they are willing to pay because they view it as unnecessary clutter, complexity, or a cost driver they don't want to subsidize.
 
-* **Filler Features:** Nice-to-have features that add perceived value/bulk but don't drive the sale. These features enhance the offer's perceived completeness but aren't decisive in purchase decisions. Customers appreciate them but won't pay extra for them alone.
+### Why It Matters
 
-  * *Examples:* Customizable themes/branding, export to multiple formats, basic integrations, standard reporting, mobile apps (when desktop is primary).
-
-  * *How to identify:* Features that customers mention as "nice to have" but don't prioritize, features with low usage rates even when included, features that don't correlate with [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) or retention.
-
-* **Killer Features:** Features that actively turn customers away or devalue the offer. These are features that create friction, complexity, or negative associations that reduce [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) or cause customers to reject the offer entirely.
-
-  * *Examples:* Forcing complex enterprise features (e.g., advanced compliance, multi-tenant architecture) on small businesses; requiring extensive setup/configuration for simple use cases; including features that signal the product is "too advanced" or "too basic" for the target segment.
-
-  * *How to identify:* Features mentioned in lost-deal analysis as deal-breakers, features that correlate with lower conversion or higher churn, features that create support burden without adding value.
-
-## Why do Leader/Filler/Killer Features matter?
-
-For startup founders, proper feature classification prevents three common packaging mistakes:
-
-- **Feature Shock:** Including too many features (especially Fillers and Killers) in every tier creates confusion and reduces perceived value. Customers can't distinguish between plans, leading to analysis paralysis and abandoned purchases.
-
-- **Value Leakage:** Misclassifying Leaders as Fillers and including them in lower tiers means high-value customers pay the same as low-value customers, despite deriving far more value. This leaves money on the table.
-
-- **Customer Rejection:** Including Killer features in mass-market packages actively drives away potential customers. For example, forcing enterprise-grade security on a small business signals the product is "too complex" or "not for them."
-
-Proper classification enables effective [packaging architecture](/wiki/pricing/packaging-and-bundling/packaging) by:
-
-* **Differentiating tiers:** Use Leaders to create clear "Why Upgrade" stories between [Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best) tiers.
-* **Optimizing value capture:** Reserve high-value Leaders for higher tiers where customers with higher [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) will pay for them.
-* **Reducing complexity:** Exclude Killers from packages where they don't belong, and use Fillers strategically to add perceived value without bloating core offerings.
+Without this distinction, founders fall into **"Kitchen Sink Syndrome"**: piling features into one [tier](/wiki/pricing/packaging-and-bundling/good-better-best), raising COGS and complexity without earning a higher price. The Leader/Filler/Killer lens forces a sharper [packaging](/wiki/pricing/packaging-and-bundling/packaging) story—what drives the decision, what rounds out the offer, and what should be [fenced](/wiki/pricing/value-and-customers/price-fences-price-discrimination) or moved up.
 
 ## Mental model
 
-Think of feature classification as a **filtering system** for your [packaging architecture](/wiki/pricing/packaging-and-bundling/packaging):
+**The "Steak, Bread/Sides, and Coffee"**
 
-```
-All Features
-    ↓
-[Classification Filter]
-    ↓
-    ├─→ Leaders → Higher Tiers (Premium Pricing)
-    ├─→ Fillers → Strategic Placement (All Tiers or Add-ons)
-    └─→ Killers → Exclude or Segment-Specific Only
-```
+* **Leader (The Steak):** The main reason you went to the restaurant. You are happy to pay $50 because you want the steak.
+* **Filler (The Bread/Sides):** You wouldn't go to the restaurant just for the bread, but you expect it to be there. It makes the $50 price tag feel justifiable.
+* **Killer (The Coffee for a Child):** Imagine the "Family Meal Deal" forces you to pay for coffee for everyone, including your 5-year-old. You resent paying for it because your child can't use it. You might walk away and go to a place that lets you buy just the food.
 
-**The Golden Rule:** Never put a Killer in a mass-market package. Always use Leaders to differentiate tiers. Use Fillers to add perceived value without driving up costs or complexity.
+Think of a simple 2×2 grid:
+
+![Leader/Filler/Killer packaging matrix: 2×2 grid with Perceived Value (Low to High) on the X-axis and Willingness to Pay (Low to High) on the Y-axis. Quadrants show Leader (High/High – reason customers buy), Filler (High Value/Low WTP – nice-to-have), Killer (Low/Low – devalues product), and Add-on (Low Value/High WTP – sell separately).](/images/wiki_lfk_mental.png)
+
+* **X-Axis:** Perceived Value (Relative Preference) — Low to High  
+* **Y-Axis:** Willingness to Pay (WTP) — Low to High  
+* **Leader:** High Value / High WTP (The reason customers buy; "must-have").  
+* **Filler:** High Value / Low WTP ("nice-to-have"; feel "complete").  
+* **Killer:** Low Value / Low WTP ("cannibalizer"; devalues the product).  
+* **Add-on:** Low Value / High WTP (a small group loves the feature).
 
 ## Rules of thumb
 
-* **The 80/20 Rule:** Typically, **~20% of features are Leaders**, **~60% are Fillers**, and **~20% are Killers** (or segment-specific). Focus your packaging decisions on the Leaders.
-
-* **Segment-Specific Classification:** A feature can be a Leader for one [segment](/wiki/pricing/value-and-customers/customer-segments) and a Killer for another. For example, "Advanced compliance certifications" is a Leader for enterprise buyers but a Killer for small businesses (signals complexity/cost).
-
-* **Time Decay:** Features can shift categories over time. A Leader today (e.g., "AI-powered automation") may become a Filler tomorrow (when competitors offer it) and eventually a requirement for the "Good" tier (when it becomes table stakes).
-
-* **The "Would They Pay More?" Test:** If removing a feature doesn't meaningfully reduce [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) or conversion, it's likely a Filler. If customers actively avoid plans with a feature, it's a Killer.
+* **Leaders per tier:** Aim for **1–2 leader features** that are *unique* (or uniquely powerful) to that tier.
+* **Filler ratio:** If your plan page is mostly fillers, you're competing on a checklist and inviting price pressure.
+* **The 20/20 Rule:** A feature is likely a **Killer** if it is valued by less than 20% of your customers and actively not valued (or seen as worthless) by more than 20%.
+* **Fence before you ship:** Don't release a Leader without an upgrade [fence](/wiki/pricing/value-and-customers/price-fences-price-discrimination) (limits, governance, advanced workflow, risk controls).
 
 ## How to Apply It
 
 ### Inputs you need
 
-* **[Value Drivers](/wiki/pricing/value-and-customers/value-drivers) research:** Quantitative and qualitative data on which features drive [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) and purchase decisions.
-* **[MaxDiff analysis](/wiki/pricing/research-and-experiments#maxdiff):** Survey method that forces customers to trade off features, revealing true Leaders (purchase drivers) versus Fillers (nice-to-haves).
-* **Usage telemetry:** Behavioral data showing which features are actually used by high-value versus low-value customers.
-* **Win/loss analysis:** Deal-level data on which features were mentioned as deal-winners (Leaders) or deal-breakers (Killers).
-* **[Customer interviews](/wiki/pricing/value-and-customers/jobs-to-be-done):** Qualitative insights on which features customers actively seek (Leaders), appreciate but don't prioritize (Fillers), or avoid (Killers).
+* **[Customer segmentation](/wiki/pricing/value-and-customers/customer-segments):** 2–4 segments with distinct [jobs-to-be-done](/wiki/pricing/value-and-customers/jobs-to-be-done) and budgets.
+* **Feature list:** current + near-term roadmap.
+* **[MaxDiff Analysis](/wiki/pricing/research-and-experiments#maxdiff) (Maximum Difference Scaling):** A survey method where customers are forced to choose the "Most Preferred" and "Least Preferred" features from a list. This forces trade-offs and clearly identifies Leaders vs. Killers.
+* **Willingness to Pay (WTP) Data:** Data from [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) surveys to correlate feature preference with price sensitivity.
+* **Competitive context:** common "table stakes" and typical [tier](/wiki/pricing/packaging-and-bundling/good-better-best) [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination).
 
 ### Step-by-step
 
-1. **List all features:** Create a comprehensive inventory of every feature, capability, and service in your product. Include both existing features and planned features.
+1. **List and Categorize Features:** List all potential features (both current and roadmap). Don't just list technical specs; list benefits/capabilities.
 
-2. **Gather classification data:** Use [MaxDiff](/wiki/pricing/research-and-experiments#maxdiff) surveys, [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) research, usage telemetry, and win/loss analysis to understand how each feature impacts purchase decisions and [WTP](/wiki/pricing/value-and-customers/willingness-to-pay).
+2. **Survey Your Customers (The MaxDiff Method):** Ask customers: "Which of these features adds the most value to your business, and which adds the least?" Get a relative preference score for each feature.
 
-3. **Classify by segment:** For each [customer segment](/wiki/pricing/value-and-customers/customer-segments), classify every feature as Leader, Filler, or Killer. Remember: a feature's classification can vary by segment.
+3. **Plot the "Packaging Strategies Matrix":** Create a 2×2 matrix (refer to mental model above).
+   * X-Axis: Relative Preference (Low to High).
+   * Y-Axis: Willingness to Pay (Low to High).
+   * Plot features:
+     * **High Value / High WTP:** These are Leaders. Put them in your premium [tiers](/wiki/pricing/packaging-and-bundling/good-better-best) to drive upsells.
+     * **Low Value / High WTP:** These are potential [Add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular). Only a few people want them, but they will pay a lot. Sell them separately.
+     * **High Value / Low WTP:** These are Fillers. Everyone wants them, but won't pay extra. Include in all plans.
+     * **Low Value / Low WTP:** These are Killers. Remove them or offer as a separate [add-on](/wiki/pricing/packaging-and-bundling#add-ons-modular).
 
-4. **Map Leaders to tiers:** Use Leaders to differentiate your [Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best) tiers. Reserve the strongest Leaders for the highest tiers where customers with the highest [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) will pay for them.
-
-5. **Place Fillers strategically:** Include Fillers in all tiers (to add perceived value) or as [add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular) (to avoid bloating base prices). Don't use Fillers to differentiate tiers—they won't drive upgrades.
-
-6. **Exclude or segment Killers:** Never include Killers in mass-market packages. If a feature is a Killer for one segment but a Leader for another, create segment-specific packages or [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) to separate them.
-
-7. **Validate and iterate:** After launching your [packaging](/wiki/pricing/packaging-and-bundling/packaging), monitor feature adoption, conversion by tier, and customer feedback. Reclassify features as markets evolve and competitors change.
+4. **Construct the Packages:** Refer to page [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best).
 
 ## Metrics to monitor
 
-* **Feature adoption by tier:** Are Leaders actually being used by customers in the tiers where they're included? Low adoption suggests misclassification.
-
-* **Conversion impact:** Do plans with specific Leaders convert better? Do plans with Killers convert worse? Track conversion rates by feature mix.
-
-* **Upgrade drivers:** Which features are mentioned most often when customers upgrade? These are likely Leaders that should be positioned as tier differentiators.
-
-* **Churn correlation:** Do customers who have access to Killer features churn at higher rates? This confirms Killer classification.
-
-* **WTP correlation:** In [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) surveys, which features correlate with higher acceptable price ranges? These are Leaders.
+* **Feature Usage Rate:** What % of users in a tier actually use the "Leader" feature? (Should be > 50%). If a feature in your "Best" plan has <5% usage, it is likely a Filler or Killer masquerading as a Leader.
+* **Upgrade funnel:** upgrade conversion rate, time-to-upgrade, downgrade rate.
+* **Win/Loss Reasons:** If prospects say, "I don't need all that stuff," you have a packaging problem involving Killers.
 
 ## Risks & anti-patterns (and fixes)
 
 | Pitfall | Fix |
 |---------|-----|
-| **Treating all features as Leaders:** Assuming every feature drives purchase decisions, leading to bloated tiers that confuse customers. | Use [MaxDiff](/wiki/pricing/research-and-experiments#maxdiff) analysis to identify true Leaders. Most features are Fillers—accept this and package accordingly. |
-| **Using Fillers to differentiate tiers:** Trying to justify higher-tier pricing with Fillers, which don't drive upgrades. | Use Leaders to differentiate tiers. Fillers can be included in all tiers or as [add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular), but they won't drive the upgrade decision. |
-| **Including Killers in mass-market packages:** Forcing enterprise features on small businesses, or simple features on enterprise buyers, causing rejection. | Segment-specific packaging: exclude Killers from packages where they don't belong, or use [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) to separate segments. |
-| **Ignoring segment differences:** Classifying features the same way for all segments, missing that a Leader for one segment can be a Killer for another. | Classify features separately for each [segment](/wiki/pricing/value-and-customers/customer-segments). Build separate feature maps per segment. |
-| **Not reclassifying over time:** Treating feature classifications as permanent, missing that Leaders become Fillers as markets mature. | Review classifications annually or when competitors change. A Leader today (e.g., "AI features") may become a Filler tomorrow (when everyone offers it). |
+| **The "Kitchen Sink" Trap:** Engineering teams often want to bundle everything they built. | Use the "20% Rule." If >20% of customers don't value it, cut it from the base package. |
+| **Confusing Fillers with Leaders:** Thinking a "nice-to-have" feature will drive upgrades. | Check the MaxDiff data. If WTP is low, it's a Filler. Don't fence it; use it to sweeten the deal. |
+| **Killing a potential add-on:** Removing a weird feature that 5% of users love and would pay huge money for. | Don't kill it; turn it into a high-margin [Add-on](/wiki/pricing/packaging-and-bundling#add-ons-modular) module. |
+| **Leaders that aren't used:** Customers pay, then don't activate → churn. | Use onboarding that activates leader features; set success milestones per tier. |
+| **Over-fencing:** Feels punitive; customers seek alternatives. | [Fence](/wiki/pricing/value-and-customers/price-fences-price-discrimination) around value (scale, risk, governance), not basic usability. |
 
 ## References & Links
 
 ### Sources
 
-* Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
-* McKinsey & Company. (2023, June 2). [The art of software pricing: Unleashing growth with data-driven insights](https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-art-of-software-pricing-unleashing-growth-with-data-driven-insights). McKinsey & Company.
-* Pendo. (2019). [The 2019 Feature Adoption Report](https://www.pendo.io/resources/the-2019-feature-adoption-report/). Pendo.
+* Baker, W., Kiewell, D., & Winkler, G. (2014). [*The hidden power of pricing: How B2B companies can unlock profit*](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/ebook-the-hidden-power-of-pricing-how-b2b-companies-can-unlock-profit). McKinsey & Company.
+* Ghuman, A. (2021). [*Price to Scale: Practical Pricing for Your High Growth Software Startup*](https://www.amazon.com/Price-Scale-Practical-Pricing-Growth-Startup/dp/0578937502). Independently published.
+* Gourville, J. T., & Soman, D. (2018). [The good-better-best approach to pricing](https://hbr.org/2018/09/the-good-better-best-approach-to-pricing). *Harvard Business Review*, *96*(5), 118–125.
+* Nagle, T. T., Hogan, J. E., & Zale, J. (2016). [*The strategy and tactics of pricing: A guide to growing more profitably*](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Hogan-Zale/p/book/9781138846774) (6th ed.). Routledge.
+* Ramanujam, M., & Tacke, G. (2016). [*Monetizing innovation: How smart companies design the product around the price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 
-**Related pages:** [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Value Drivers](/wiki/pricing/value-and-customers/value-drivers) | [Good-Better-Best Tiers](/wiki/pricing/packaging-and-bundling/good-better-best) | [MaxDiff Analysis](/wiki/pricing/research-and-experiments#maxdiff) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Segmentation](/wiki/pricing/value-and-customers/customer-segments)
+**Related pages:** [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good–Better–Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Add-ons & Modular Pricing](/wiki/pricing/packaging-and-bundling#add-ons-modular) | [Customer Segments](/wiki/pricing/value-and-customers/customer-segments) | [Jobs-to-Be-Done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Willingness to Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Value Drivers](/wiki/pricing/value-and-customers/value-drivers) | [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) | [MaxDiff Analysis](/wiki/pricing/research-and-experiments#maxdiff)
 
 ## FAQ
 
-**Q:** Can a feature be both a Leader and a Killer?
+**Q:** How many leader features should a plan have?
 
-**A:** Yes, but for different segments. For example, "Advanced compliance certifications" is a Leader for enterprise buyers (they need it) but a Killer for small businesses (signals complexity/cost they can't afford). This is why you must classify features separately for each [segment](/wiki/pricing/value-and-customers/customer-segments).
+**A:** Typically 1 or 2. If you have 5 Leaders in one tier, you are likely leaving money on the table and increase the chance you create a killer in a lower tier.
 
-**Q:** How do I know if a feature is a Leader or just a Filler?
+**Q:** What if a feature is both table stakes and a leader?
 
-**A:** Use the "Would they pay more?" test: If removing the feature doesn't meaningfully reduce [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) or conversion, it's a Filler. Leaders correlate with higher [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) and appear in win/loss analysis as deal-winners. [MaxDiff](/wiki/pricing/research-and-experiments#maxdiff) analysis is the most reliable method to identify true Leaders.
+**A:** Provide the basic version everywhere (filler) and gate the advanced version (leader) via limits, governance, or scale.
 
-**Q:** Should I include Fillers in my packaging at all?
+**Q:** What do I do if a feature is a Leader for one segment and a Killer for another?
 
-**A:** Yes, but strategically. Fillers add perceived value and completeness to offers. Include them in all tiers (to bulk up perceived value) or as [add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular) (to avoid bloating base prices). Just don't use them to differentiate tiers—they won't drive upgrades.
+**A:** This is the primary signal that you need distinct [packages](/wiki/pricing/packaging-and-bundling/packaging) or [modules](/wiki/pricing/packaging-and-bundling#add-ons-modular). You cannot sell the same bundle to both. Create an "Enterprise Edition" (with the feature) and a "Starter Edition" (without it) to prevent the Killer effect.
 
-**Q:** What if I'm not sure whether a feature is a Killer?
+**Q:** How do I identify a "Killer" without a survey?
 
-**A:** Look for negative signals: Does it appear in lost-deal analysis as a deal-breaker? Does it correlate with lower conversion or higher churn? Does it create support burden without adding value? If yes, it's likely a Killer for that segment. Test by excluding it from a package and measuring conversion impact.
+**A:** Listen to sales calls. If prospects ask, "Can I get a discount if I remove X?" or "We won't use X, why are we paying for it?", then X is a Killer.
 
-**Q:** How often should I reclassify features?
+**Q:** How do I test if a feature is a leader vs filler?
 
-**A:** Review classifications annually or when: (1) competitors launch similar features (Leaders may become Fillers), (2) you enter a new segment (features may shift categories), (3) usage data shows low adoption (may indicate misclassification), or (4) win/loss analysis reveals new patterns.
+**A:** Run message tests and bundle tests: does highlighting it increase conversion for a [segment](/wiki/pricing/value-and-customers/customer-segments)? Does gating it increase upgrades without spiking churn?
 
-**Q:** Can I have too many Leaders in one tier?
+**Q:** How often should we reclassify features?
 
-**A:** Yes. If every tier has too many Leaders, customers can't distinguish between tiers, leading to analysis paralysis. Use Leaders strategically to create clear "Why Upgrade" stories. Typically, each tier should have 2–3 distinct Leaders that differentiate it from the tier below.
+**A:** At least quarterly for fast-moving SaaS or whenever you release major capabilities; leaders often become fillers over time.

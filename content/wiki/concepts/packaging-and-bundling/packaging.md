@@ -36,7 +36,7 @@ owner: "Dr. Sarah Zou"
 
 ## Core Concepts & Framework
 
-**Packaging Architecture** is the strategic design of *what* you sell, distinct from price setting, which determines *how much* you charge. It is the process of grouping features, services, and commercial terms into sellable units (offers) that align with specific [customer segments](/wiki/pricing/value-and-customers/customer-segments) and their [willingness to pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay).
+**Packaging Architecture** (sometimes called product configuration) is the strategic design of *what* you sell, distinct from price setting, which determines *how much* you charge. It is the process of grouping features, services, and commercial terms into sellable units (offers) that align with specific [customer segments](/wiki/pricing/value-and-customers/customer-segments) and their [willingness to pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay).
 
 - **Packaging architecture vs Pricing:**
 
@@ -115,7 +115,7 @@ Refer to **The "Fence and Ladder"** in [Segmentation by Willingness to Pay (WTP)
 ### Inputs you need
 
 * **Usage telemetry:** Behavioral data showing which features are actually used by high-value versus low-value customers, informing which capabilities should move up or down tiers, paired with **cost-to-serve** data such as support load, infrastructure cost, and risk.
-* **[MaxDiff analysis](/wiki/pricing/research-and-experiments#maxdiff):** A survey method that forces customers to trade off features, helping you identify true **Leaders** (purchase drivers) versus **Fillers** (nice-to-haves).
+* **[MaxDiff analysis](/wiki/pricing/research-and-experiments#maxdiff):** A survey method that forces customers to trade off features, helping you identify true [Leaders](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) (purchase drivers) versus [Fillers](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) (nice-to-haves).
 * **[Willingness-to-pay (WTP) data](/wiki/pricing/value-and-customers/willingness-to-pay):** Quantitative inputs (e.g., [Van Westendorp surveys](/wiki/pricing/research-and-experiments/van-westendorp)) that reveal price sensitivity and acceptable price ranges for different packages.
 * **[Jobs-to-be-Done (JTBD) research](/wiki/pricing/value-and-customers/jobs-to-be-done):** Qualitative interviews that clarify the specific "job" customers hire your product to do (e.g., Predictive Maintenance vs. Operational Reporting).
 * **Competitor benchmarks:** Visibility into competitors' tiers, add-ons, and usage limits—not to copy them, but to understand the pricing and packaging **mental anchors** your customers already bring to the decision.
@@ -161,7 +161,7 @@ Refer to **The "Fence and Ladder"** in [Segmentation by Willingness to Pay (WTP)
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 * Lehrskov-Schmidt, U. (2023). *The Pricing Roadmap*. Independently published.
 
-**Related pages:** [Price Metrics / Value Metrics](/wiki/pricing/models-and-metering#pricing-metric) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Add-ons & Modular Packaging](/wiki/pricing/packaging-and-bundling#add-ons-modular) | [Bundling](/wiki/pricing/packaging-and-bundling#bundling) | [Usage-Based Pricing](/wiki/pricing/models-and-metering)
+**Related pages:** [Price Metrics / Value Metrics](/wiki/pricing/models-and-metering#pricing-metric) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Add-ons & Modular Packaging](/wiki/pricing/packaging-and-bundling#add-ons-modular) | [Bundling](/wiki/pricing/packaging-and-bundling#bundling) | [Usage-Based Pricing](/wiki/pricing/models-and-metering)
 
 ## FAQ
 

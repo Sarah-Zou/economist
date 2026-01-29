@@ -94,7 +94,7 @@ owner: "Dr. Sarah Zou"
 
 5. **Construct the Offer Structure:** [Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best) or SMB/Business/Enterprise with clear outcome-based value stories. 
 
-Create tiered packages where the "Good" plan meets the minimum needs of price-sensitive buyers (killers/fillers removed), and the "Best" plan includes the high-value features ("leaders") that insensitive buyers demand.
+Create tiered packages where the "Good" plan meets the minimum needs of price-sensitive buyers ([Killers](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features)/[Fillers](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) removed), and the "Best" plan includes the high-value features ([Leaders](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features)) that insensitive buyers demand.
 
 6. **Validate with Data:** Use [Max-Diff](/wiki/pricing/research-and-experiments#maxdiff) and [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) surveys to confirm that the features in your "Pro" plan are actually the ones valued by high-WTP customers. If low-WTP customers care more about a feature than high-WTP customers, that feature belongs in the base plan or as an add-on.
 
@@ -123,7 +123,7 @@ Create tiered packages where the "Good" plan meets the minimum needs of price-se
 * Hinterhuber, A., & Liozu, S. M. (2013). [*Innovation in Pricing: Contemporary Theories and Best Practices*](https://www.routledge.com/Innovation-in-Pricing-Contemporary-Theories-and-Best-Practices/Hinterhuber-Liozu/p/book/9780415674500). Routledge.
 * Christensen, C. M., Hall, T., Dillon, K., & Duncan, D. S. (2016). [*Competing Against Luck: The Story of Innovation and Customer Jobs to Be Done*](https://www.harpercollins.com/products/competing-against-luck-clayton-m-christensen). HarperBusiness.
 
-**Related pages:** [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Gabor-Granger](/wiki/pricing/research-and-experiments/gabor-granger) | [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) | [Conjoint Analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Usage-Based Pricing](/wiki/pricing/models-and-metering) | [Discounting & Realization](/wiki/pricing/policies-and-governance/discounting-and-realization)
+**Related pages:** [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Gabor-Granger](/wiki/pricing/research-and-experiments/gabor-granger) | [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) | [Conjoint Analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Usage-Based Pricing](/wiki/pricing/models-and-metering) | [Discounting & Realization](/wiki/pricing/policies-and-governance/discounting-and-realization)
 
 ## FAQ
 
