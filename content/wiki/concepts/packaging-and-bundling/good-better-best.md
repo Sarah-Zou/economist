@@ -131,7 +131,7 @@ Goal: each step adds a *meaningful* outcome and a clear reason to upgrade.
 |---------|-----|
 | **The "Gold-Plating" Trap:** Stuffing the "Best" tier with useless features just to justify a high price. | Ensure the "Best" tier solves a high-value problem (e.g., "Compliance" or "Scale"), not just "more widgets". |
 | **The "Good" is too good:** Making the "Good" tier so feature-rich that users never need to upgrade. | Apply "Selective Uglification." Intentionally remove a feature (like priority support or SSO) to force the upgrade. |
-| **Feature Shock:** Cramming so many features into tiers that customers get confused and don't buy. | Simplify. Focus on the top 3-5 "[Leader](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features)" features per tier in your marketing. Move everything else to a feature comparison grid below the fold. |
+| **Feature Shock:** Cramming so many features into tiers that customers get confused and don't buy. | Simplify. Focus on the top 1-2 "[Leader](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features)" features per tier in your marketing. Move everything else to a feature comparison grid below the fold. |
 | **The "Price Cliff":** The jump from Good to Better is too expensive (e.g., $9 to $99). | Create a "Bridge" offer or add a seat-based variable to smooth the transition. |
 
 ## References & Links
