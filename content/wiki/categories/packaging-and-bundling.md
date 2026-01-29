@@ -13,7 +13,7 @@ canonical: "https://sarahzou.com/wiki/pricing/packaging-and-bundling"
 - **[<span id="packaging">Offer/packaging architecture</span>](/wiki/pricing/packaging-and-bundling/packaging)**: Designing comprehensive product offerings and tier structures to maximize willingness-to-pay
 - **[<span id="leader-filler-killer-features">Leader/Filler/Killer Features</span>](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features)**: Classifying features by their impact on purchase decisions and willingness to pay
 - **<span id="good-better-best">Good–Better–Best tiers</span>**: Classic three-tier pricing structure and variations
-- **<span id="add-ons-modular">Add-ons & modular packaging</span>**: Capability modules, flexible product design, and creating different product versions
+- **[<span id="add-ons-modular">Add-ons & modular packaging</span>](/wiki/pricing/packaging-and-bundling/add-ons-modular)**: Capability modules, flexible product design, and creating different product versions
 - **<span id="bundling">Bundling</span>**: Creating compelling product combinations
 
 

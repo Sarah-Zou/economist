@@ -96,7 +96,7 @@ owner: "Dr. Sarah Zou"
 
 Create tiered packages where the "Good" plan meets the minimum needs of price-sensitive buyers ([Killers](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features)/[Fillers](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) removed), and the "Best" plan includes the high-value features ([Leaders](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features)) that insensitive buyers demand.
 
-6. **Validate with Data:** Use [Max-Diff](/wiki/pricing/research-and-experiments#maxdiff) and [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) surveys to confirm that the features in your "Pro" plan are actually the ones valued by high-WTP customers. If low-WTP customers care more about a feature than high-WTP customers, that feature belongs in the base plan or as an add-on.
+6. **Validate with Data:** Use [Max-Diff](/wiki/pricing/research-and-experiments#maxdiff) and [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) surveys to confirm that the features in your "Pro" plan are actually the ones valued by high-WTP customers. If low-WTP customers care more about a feature than high-WTP customers, that feature belongs in the base plan or as an [add-on](/wiki/pricing/packaging-and-bundling/add-ons-modular).
 
 ## Metrics to monitor
 
@@ -109,7 +109,7 @@ Create tiered packages where the "Good" plan meets the minimum needs of price-se
 | Pitfall | Fix |
 |---------|-----|
 | **Leaky [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination):** Creating a discount segment (e.g., "Student Edition") without strict verification, allowing high-value corporate customers to buy the cheaper version. | Tighten thresholds, move must-have features up, add SLA/performance fences. |
-| **Over‑segmentation:** Creating too many tiers (e.g., 10 different plans) creates "decision paralysis" for the customer and operational nightmares for your team. | 3 core plans + add‑ons; use a "Contact Us" for the high end. |
+| **Over‑segmentation:** Creating too many tiers (e.g., 10 different plans) creates "decision paralysis" for the customer and operational nightmares for your team. | 3 core plans + [add‑ons](/wiki/pricing/packaging-and-bundling/add-ons-modular); use a "Contact Us" for the high end. |
 | **The "Gold-Plating" Trap:** Adding features to a premium tier that the segment doesn't actually value, just to justify a higher price. This leads to churn when customers realize they are paying for shelfware. | Conduct a "Relative Preference" survey to ensure premium features solve high-stakes pain points for that specific segment. |
 
 ## References & Links
@@ -123,13 +123,13 @@ Create tiered packages where the "Good" plan meets the minimum needs of price-se
 * Hinterhuber, A., & Liozu, S. M. (2013). [*Innovation in Pricing: Contemporary Theories and Best Practices*](https://www.routledge.com/Innovation-in-Pricing-Contemporary-Theories-and-Best-Practices/Hinterhuber-Liozu/p/book/9780415674500). Routledge.
 * Christensen, C. M., Hall, T., Dillon, K., & Duncan, D. S. (2016). [*Competing Against Luck: The Story of Innovation and Customer Jobs to Be Done*](https://www.harpercollins.com/products/competing-against-luck-clayton-m-christensen). HarperBusiness.
 
-**Related pages:** [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Gabor-Granger](/wiki/pricing/research-and-experiments/gabor-granger) | [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) | [Conjoint Analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Usage-Based Pricing](/wiki/pricing/models-and-metering) | [Discounting & Realization](/wiki/pricing/policies-and-governance/discounting-and-realization)
+**Related pages:** [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Gabor-Granger](/wiki/pricing/research-and-experiments/gabor-granger) | [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) | [Conjoint Analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Usage-Based Pricing](/wiki/pricing/models-and-metering) | [Discounting & Realization](/wiki/pricing/policies-and-governance/discounting-and-realization)
 
 ## FAQ
 
 **Q:** How many segments should we start with?
 
-**A:** Usually three [packages](/wiki/pricing/packaging-and-bundling/packaging) ([Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best)) plus [add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular); expand when data shows a persistent, monetizable niche.
+**A:** Usually three [packages](/wiki/pricing/packaging-and-bundling/packaging) ([Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best)) plus [add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular); expand when data shows a persistent, monetizable niche.
 
 **Q:** Should I segment by company size (SMB vs. Enterprise)?
 

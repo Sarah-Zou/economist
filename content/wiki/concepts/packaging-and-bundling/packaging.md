@@ -19,14 +19,14 @@ owner: "Dr. Sarah Zou"
 
 * You have more than 5 distinct features
 * You have multiple customer segments with different needs or budgets.
-* You're launching [add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular) (AI, security, compliance) or moving to [usage](/wiki/pricing/models-and-metering)/[value-based billing](/wiki/pricing/foundations/value-based-pricing).
+* You're launching [add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular) (AI, security, compliance) or moving to [usage](/wiki/pricing/models-and-metering)/[value-based billing](/wiki/pricing/foundations/value-based-pricing).
 * You are preparing to scale from Seed to Series A.
 
 **Key Takeaways:**
 
 - **Packaging Precedes Pricing:** You cannot determine the right price point ($50 vs. $100) until you have defined the right package (what features are included). Packaging is the primary lever; price setting is secondary.
 - Tiers should reflect **distinct buyer outcomes** (not arbitrary feature lists). Use the "Good-Better-Best" (GBB) framework to anchor value.
-- Complexity kills control: A strong architecture has **one main [pricing/value metric](/wiki/pricing/models-and-metering#pricing-metric)** (seats/usage/workspaces) and **few, high-signal [add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular)**.
+- Complexity kills control: A strong architecture has **one main [pricing/value metric](/wiki/pricing/models-and-metering#pricing-metric)** (seats/usage/workspaces) and **few, high-signal [add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular)**.
 
 ## Key Facts
 
@@ -63,11 +63,11 @@ owner: "Dr. Sarah Zou"
 
   * **Plan/Tier/Version** **(Vertical Segmentation)** is designed to separate customers based on their needs and [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) for essentially the same core value proposition. Customers typically select **one** tier. This strategic process is often referred to as **Product Configuration** or **Laddering**.
   * **Bundle (Horizontal Aggregation)** is selling multiple *distinct* products or services together as a single package to increase total profit and simplify the purchase decision. While a tier technically "bundles" features, true bundling usually refers to combining separate standalone offerings (e.g., Microsoft Word + Excel = Office Bundle, or Pizza + Breadsticks = Meal Deal).
-  * **Distinction:** Plan/Tier/Version is a **vertical strategy** to segment customers based on [willingness to pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) for a single product, while Bundle is a **horizontal strategy** to aggregate distinct products or features to maximize total revenue or simplify purchasing. A typical structure of Plan/Tier/Version is **[Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best)**, while Bundle is **Core + [Add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular) or Multi-product Suite**.
+  * **Distinction:** Plan/Tier/Version is a **vertical strategy** to segment customers based on [willingness to pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) for a single product, while Bundle is a **horizontal strategy** to aggregate distinct products or features to maximize total revenue or simplify purchasing. A typical structure of Plan/Tier/Version is **[Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best)**, while Bundle is **Core + [Add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular) or Multi-product Suite**.
 
 * **Plan/Tier/Version vs Add‑on/Module:**
 
-  * **[Add‑on/Module](/wiki/pricing/packaging-and-bundling#add-ons-modular):** Optional, logical groupings of features that solve a specific "[Job to be Done](/wiki/pricing/value-and-customers/jobs-to-be-done)." Modular features sold *outside* the core packages to increase expansion revenue without bloating the base price.
+  * **[Add‑on/Module](/wiki/pricing/packaging-and-bundling/add-ons-modular):** Optional, logical groupings of features that solve a specific "[Job to be Done](/wiki/pricing/value-and-customers/jobs-to-be-done)." Modular features sold *outside* the core packages to increase expansion revenue without bloating the base price.
   * **Distinction:** Plan/Tier/Version is a **vertical configuration** (Gold vs. Silver) where customers typically select one. A Module is a **flexible grouping** of features that can be added to a base package. Use modules for heterogeneous markets where customers have vastly different needs.
 
 * **Fencing vs Laddering:**
@@ -107,7 +107,7 @@ Refer to **The "Fence and Ladder"** in [Segmentation by Willingness to Pay (WTP)
 | Clear segment steps (SMB → MM → Ent)              | **Tiered (Good/Better/Best)** + optional enterprise           | Simple self-selection and sales motion alignment |
 | One product, many use cases                       | **Modular** (core + role/department modules)                  | Avoids bloated tiers; matches varied needs       |
 | Value increases mostly with volume                | **[Usage](/wiki/pricing/models-and-metering)/seat scaling** with clear included amounts            | Aligns spend with value and creates expansion    |
-| High [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay) for specific capabilities | **[Add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular)** for high-value bundles (security, AI, compliance) | Captures [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) without forcing everyone up         |
+| High [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay) for specific capabilities | **[Add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular)** for high-value bundles (security, AI, compliance) | Captures [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) without forcing everyone up         |
 | Retail/CPG with multiple sizes                    | **Price-pack architecture** (sizes + price points)            | Covers occasions/budgets and manages trade-down  |
 
 ## How to Apply It
@@ -130,7 +130,7 @@ Refer to **The "Fence and Ladder"** in [Segmentation by Willingness to Pay (WTP)
 
 4. **Map features to tiers:** Place high-value/low-cost features in lower tiers to drive adoption. Reserve high-value/high-cost (or high-complexity) features for higher tiers. Create 3 (sometimes 4) tiers within your fence. (Refer to page [Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best))
 
-5. **Add fences, add-ons, and upgrade paths:** Set usage limits and guardrails to prevent leakage, introduce [add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular) only where value is high but not universal, and ensure the next upgrade step is obvious and frictionless as customers grow. Determine exactly when a user *must* upgrade (e.g., "Once you hit 5 team members, you move to Pro"). (Refer to page [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) and [Add-ons & Modular Packaging](/wiki/pricing/packaging-and-bundling#add-ons-modular))
+5. **Add fences, add-ons, and upgrade paths:** Set usage limits and guardrails to prevent leakage, introduce [add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular) only where value is high but not universal, and ensure the next upgrade step is obvious and frictionless as customers grow. Determine exactly when a user *must* upgrade (e.g., "Once you hit 5 team members, you move to Pro"). (Refer to page [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) and [Add-ons & Modular Packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular))
 
 6. **Migrate, launch, and iterate:** Map existing customers to the new structure, define grandfathering rules, launch with clear communication, and instrument plan mix, expansion, and retention before adjusting headline prices. When selling, listen carefully to why customers reject the offer.
 
@@ -149,7 +149,7 @@ Refer to **The "Fence and Ladder"** in [Segmentation by Willingness to Pay (WTP)
 | **The "Feature Soup":** Too many features in every plan makes them hard to distinguish. | Remove features from lower tiers until the "Why Upgrade" story is clear. |
 | **Misaligned [Value Metric](/wiki/pricing/models-and-metering#pricing-metric):** Charging for seats when the value is in data processing; customers can't predict cost; or spend doesn't track value. | Pick a metric buyers understand, can influence, and that correlates with value creation. |
 | **The "Hydra" Product:** Continually adding new features as paid add-ons until the pricing page becomes a maze and sales negotiates everything. | Periodically re-bundle features into the core G/B/B tiers to simplify the choice architecture; limit add-ons; create a standard enterprise bundle. |
-| **Cannibalization:** Making the "Good" plan so feature-rich that "Best" buyers trade down; or customers buy small [add-on](/wiki/pricing/packaging-and-bundling#add-ons-modular) instead of moving up a tier. | Use strict "[fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination)" (e.g., limiting users, removing SSO, capping usage) to force high-value buyers into the higher tiers; re-package to keep core tier ladder as the main path. |
+| **Cannibalization:** Making the "Good" plan so feature-rich that "Best" buyers trade down; or customers buy small [add-on](/wiki/pricing/packaging-and-bundling/add-ons-modular) instead of moving up a tier. | Use strict "[fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination)" (e.g., limiting users, removing SSO, capping usage) to force high-value buyers into the higher tiers; re-package to keep core tier ladder as the main path. |
 
 ## References & Links
 
@@ -161,7 +161,7 @@ Refer to **The "Fence and Ladder"** in [Segmentation by Willingness to Pay (WTP)
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 * Lehrskov-Schmidt, U. (2023). *The Pricing Roadmap*. Independently published.
 
-**Related pages:** [Price Metrics / Value Metrics](/wiki/pricing/models-and-metering#pricing-metric) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Add-ons & Modular Packaging](/wiki/pricing/packaging-and-bundling#add-ons-modular) | [Bundling](/wiki/pricing/packaging-and-bundling#bundling) | [Usage-Based Pricing](/wiki/pricing/models-and-metering)
+**Related pages:** [Price Metrics / Value Metrics](/wiki/pricing/models-and-metering#pricing-metric) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Bundling](/wiki/pricing/packaging-and-bundling#bundling) | [Usage-Based Pricing](/wiki/pricing/models-and-metering)
 
 ## FAQ
 
@@ -187,4 +187,4 @@ Refer to **The "Fence and Ladder"** in [Segmentation by Willingness to Pay (WTP)
 
 **Q:** How should AI features fit into packaging?
 
-**A:** Usually as (1) a [usage-based](/wiki/pricing/models-and-metering) unit (credits) for variable cost, or (2) a premium [add-on](/wiki/pricing/packaging-and-bundling#add-ons-modular) for high [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) + predictable entitlements.
+**A:** Usually as (1) a [usage-based](/wiki/pricing/models-and-metering) unit (credits) for variable cost, or (2) a premium [add-on](/wiki/pricing/packaging-and-bundling/add-ons-modular) for high [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) + predictable entitlements.

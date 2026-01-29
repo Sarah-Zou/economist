@@ -21,7 +21,7 @@ owner: "Dr. Sarah Zou"
 
 - **Leaders define the Tier:** Your "Best" tier should be defined by the inclusion of premium Leaders that high-value customers buy the product for. Leaders should be few, specific, and clearly tied to a [segment's job-to-be-done](/wiki/pricing/value-and-customers/jobs-to-be-done).
 - **Fillers prevent "Nickel-and-Diming":** Do not charge extra for Fillers. Include them to add "bulk" and perceived value. Fillers should reduce risk (trust, usability, completeness) but not be your main differentiator.
-- **Killers must be exiled:** Killers actually decrease [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) for certain segments and should be removed. If a small group loves the feature, sell it as a separate [Add-on](/wiki/pricing/packaging-and-bundling#add-ons-modular).
+- **Killers must be exiled:** Killers actually decrease [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) for certain segments and should be removed. If a small group loves the feature, sell it as a separate [Add-on](/wiki/pricing/packaging-and-bundling/add-ons-modular).
 - The goal isn't "more features"—it's **a clean upgrade story**.
 
 ## Key Facts
@@ -93,9 +93,9 @@ Think of a simple 2×2 grid:
    * Y-Axis: Willingness to Pay (Low to High).
    * Plot features:
      * **High Value / High WTP:** These are Leaders. Put them in your premium [tiers](/wiki/pricing/packaging-and-bundling/good-better-best) to drive upsells.
-     * **Low Value / High WTP:** These are potential [Add-ons](/wiki/pricing/packaging-and-bundling#add-ons-modular). Only a few people want them, but they will pay a lot. Sell them separately.
+     * **Low Value / High WTP:** These are potential [Add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular). Only a few people want them, but they will pay a lot. Sell them separately.
      * **High Value / Low WTP:** These are Fillers. Everyone wants them, but won't pay extra. Include in all plans.
-     * **Low Value / Low WTP:** These are Killers. Remove them or offer as a separate [add-on](/wiki/pricing/packaging-and-bundling#add-ons-modular).
+     * **Low Value / Low WTP:** These are Killers. Remove them or offer as a separate [add-on](/wiki/pricing/packaging-and-bundling/add-ons-modular).
 
 4. **Construct the Packages:** Refer to page [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best).
 
@@ -111,7 +111,7 @@ Think of a simple 2×2 grid:
 |---------|-----|
 | **The "Kitchen Sink" Trap:** Engineering teams often want to bundle everything they built. | Use the "20% Rule." If >20% of customers don't value it, cut it from the base package. |
 | **Confusing Fillers with Leaders:** Thinking a "nice-to-have" feature will drive upgrades. | Check the MaxDiff data. If WTP is low, it's a Filler. Don't fence it; use it to sweeten the deal. |
-| **Killing a potential add-on:** Removing a weird feature that 5% of users love and would pay huge money for. | Don't kill it; turn it into a high-margin [Add-on](/wiki/pricing/packaging-and-bundling#add-ons-modular) module. |
+| **Killing a potential add-on:** Removing a weird feature that 5% of users love and would pay huge money for. | Don't kill it; turn it into a high-margin [Add-on](/wiki/pricing/packaging-and-bundling/add-ons-modular) module. |
 | **Leaders that aren't used:** Customers pay, then don't activate → churn. | Use onboarding that activates leader features; set success milestones per tier. |
 | **Over-fencing:** Feels punitive; customers seek alternatives. | [Fence](/wiki/pricing/value-and-customers/price-fences-price-discrimination) around value (scale, risk, governance), not basic usability. |
 
@@ -125,7 +125,7 @@ Think of a simple 2×2 grid:
 * Nagle, T. T., Hogan, J. E., & Zale, J. (2016). [*The strategy and tactics of pricing: A guide to growing more profitably*](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Hogan-Zale/p/book/9781138846774) (6th ed.). Routledge.
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing innovation: How smart companies design the product around the price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 
-**Related pages:** [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good–Better–Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Add-ons & Modular Pricing](/wiki/pricing/packaging-and-bundling#add-ons-modular) | [Customer Segments](/wiki/pricing/value-and-customers/customer-segments) | [Jobs-to-Be-Done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Willingness to Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Value Drivers](/wiki/pricing/value-and-customers/value-drivers) | [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) | [MaxDiff Analysis](/wiki/pricing/research-and-experiments#maxdiff)
+**Related pages:** [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good–Better–Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Customer Segments](/wiki/pricing/value-and-customers/customer-segments) | [Jobs-to-Be-Done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Willingness to Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Value Drivers](/wiki/pricing/value-and-customers/value-drivers) | [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) | [MaxDiff Analysis](/wiki/pricing/research-and-experiments#maxdiff)
 
 ## FAQ
 
@@ -139,7 +139,7 @@ Think of a simple 2×2 grid:
 
 **Q:** What do I do if a feature is a Leader for one segment and a Killer for another?
 
-**A:** This is the primary signal that you need distinct [packages](/wiki/pricing/packaging-and-bundling/packaging) or [modules](/wiki/pricing/packaging-and-bundling#add-ons-modular). You cannot sell the same bundle to both. Create an "Enterprise Edition" (with the feature) and a "Starter Edition" (without it) to prevent the Killer effect.
+**A:** This is the primary signal that you need distinct [packages](/wiki/pricing/packaging-and-bundling/packaging) or [modules](/wiki/pricing/packaging-and-bundling/add-ons-modular). You cannot sell the same bundle to both. Create an "Enterprise Edition" (with the feature) and a "Starter Edition" (without it) to prevent the Killer effect.
 
 **Q:** How do I identify a "Killer" without a survey?
 
