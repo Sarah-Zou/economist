@@ -16,7 +16,7 @@ owner: "Dr. Sarah Zou"
 **Why it matters:**
 - **Predictable demand:** Jobs already exist; you're aligning to a current of demand rather than inventing one.
 - **Faster sales + fewer discounts:** Job-aligned packaging makes value obvious and reduces explanation.
-- **Cleaner product lines:** Avoid **monoliths** (overbuilt bundles) and **hydras** (unmanageable module sprawl) by bundling around jobs.
+- **Cleaner product lines:** Avoid **monoliths** (overbuilt bundles) and **hydras** (unmanageable module sprawl) by [bundling](/wiki/pricing/packaging-and-bundling/bundling) around jobs.
 
 **When to use:**
 - **Early:** shaping a value proposition, positioning, or category story
@@ -148,7 +148,7 @@ If you see people using a tool for something it wasn't intended for (e.g., using
 * Ulwick, A. W. (2005). [What customers want from your products](https://hbr.org/2005/01/what-customers-want-from-your-products). *Harvard Business Review, 83*(1), 70–82.
 * Ulwick, A. W. (2016). [*Jobs to be done: Theory to practice*](https://anthonyulwick.com/books/jobs-to-be-done-theory-to-practice/). Idea Bite Press.
 
-**Related pages:** [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Segmentation by WTP/Use Case](/wiki/pricing/value-and-customers/customer-segments) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Willingness-to-Pay](/wiki/pricing/value-and-customers/willingness-to-pay)
+**Related pages:** [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Segmentation by WTP/Use Case](/wiki/pricing/value-and-customers/customer-segments) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Willingness-to-Pay](/wiki/pricing/value-and-customers/willingness-to-pay)
 
 ## FAQ
 

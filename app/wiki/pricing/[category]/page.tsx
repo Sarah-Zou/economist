@@ -5,7 +5,7 @@ import { getCategoryBySlug, getAllCategorySlugs } from '@/lib/mdx';
 import WikiLayout from '@/components/wiki/WikiLayout';
 import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter';
 import Link from 'next/link';
-import { Diamond, Settings, TrendingDown, Grid3x3, AlertTriangle, Lightbulb, BookOpen, Briefcase, GraduationCap, Users, Target, Zap, TrendingUp, Calculator, BarChart, DollarSign, Layers, FileText, Sparkles, ArrowRight } from 'lucide-react';
+import { Diamond, Settings, TrendingDown, Grid3x3, AlertTriangle, Lightbulb, BookOpen, Briefcase, GraduationCap, Users, Target, Zap, TrendingUp, Calculator, BarChart, DollarSign, Layers, FileText, Sparkles, ArrowRight, Package, PackageCheck } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
@@ -539,8 +539,8 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               </div>
             )}
 
-            {/* What's in this category Section - For value-and-customers category */}
-            {params.category === 'value-and-customers' && (whatsInCategoryContent || workingNote) && (
+            {/* What's in this category Section - For value-and-customers and packaging-and-bundling categories */}
+            {(params.category === 'value-and-customers' || params.category === 'packaging-and-bundling') && (whatsInCategoryContent || workingNote) && (
               <div className="mt-12 mb-12">
                 {/* Working note - appears before the section */}
                 {workingNote && (
@@ -583,6 +583,15 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               <div className="mt-12 mb-12">
                 <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
                   This category is the bridge between who you serve and what you can charge. Define <Link href="/wiki/pricing/value-and-customers/ideal-customer-profile" className="text-[#ff5722] hover:underline font-medium">ICP</Link> first, then ground it in real buying situations with <Link href="/wiki/pricing/value-and-customers/customer-use-cases" className="text-[#ff5722] hover:underline font-medium">Customer Use Cases</Link> and <Link href="/wiki/pricing/value-and-customers/jobs-to-be-done" className="text-[#ff5722] hover:underline font-medium">JTBD</Link> so you know who buys, why now, and compared to what. Next, map <Link href="/wiki/pricing/value-and-customers/value-drivers" className="text-[#ff5722] hover:underline font-medium">Value Drivers</Link> to translate features into outcomes that create utility, quantify the dollars with <Link href="/wiki/pricing/value-and-customers/economic-value-estimation" className="text-[#ff5722] hover:underline font-medium">EVE</Link>, and expand to real-world perception and context with the <Link href="/wiki/pricing/value-and-customers/value-decoder-framework" className="text-[#ff5722] hover:underline font-medium">Value Decoder</Link> to land a credible value-based price band. Validate that band with <Link href="/wiki/pricing/value-and-customers/willingness-to-pay" className="text-[#ff5722] hover:underline font-medium">WTP</Link> research to see the distribution of what customers will actually pay, then apply <Link href="/wiki/pricing/value-and-customers/customer-segments" className="text-[#ff5722] hover:underline font-medium">Segmentation by WTP / Use Case</Link> to avoid one-size-fits-all pricing. Finally, implement capture with <Link href="/wiki/pricing/value-and-customers/price-fences-price-discrimination" className="text-[#ff5722] hover:underline font-medium">Price Fences / price discrimination</Link> so different segments self-select into the right offer without leakage—then iterate as your product, market, and customer mix evolve.
+                </p>
+              </div>
+            )}
+
+            {/* Introduction Section - For packaging-and-bundling category */}
+            {params.category === 'packaging-and-bundling' && (
+              <div className="mt-12 mb-12">
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
+                  This category is the bridge between what customers value and how you structure offers. Start with <Link href="/wiki/pricing/packaging-and-bundling/packaging" className="text-[#ff5722] hover:underline font-medium">offer/packaging architecture</Link> to define what you sell (plans, modules, upgrade paths) independent of price points. Use <Link href="/wiki/pricing/packaging-and-bundling/leader-filler-killer-features" className="text-[#ff5722] hover:underline font-medium">Leader/Filler/Killer Features</Link> to classify features by impact on purchase decisions and willingness to pay, then design tiers with <Link href="/wiki/pricing/packaging-and-bundling/good-better-best" className="text-[#ff5722] hover:underline font-medium">Good–Better–Best</Link> so you serve budget and power users without one-size-fits-all. Capture expansion with <Link href="/wiki/pricing/packaging-and-bundling/add-ons-modular" className="text-[#ff5722] hover:underline font-medium">Add-ons & modular packaging</Link> for optional modules and <Link href="/wiki/pricing/packaging-and-bundling/bundling" className="text-[#ff5722] hover:underline font-medium">Bundling</Link> when selling multiple products together increases revenue and stickiness—then iterate as your product and segments evolve.
                 </p>
               </div>
             )}
@@ -828,8 +837,145 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               </div>
             )}
 
+            {/* The Core Concepts Section - For packaging-and-bundling category */}
+            {params.category === 'packaging-and-bundling' && (
+              <div className="mt-12 mb-12">
+                <div className="flex items-center mb-6">
+                  <div className="w-1 h-8 bg-blue-600 mr-3"></div>
+                  <h2 id="the-core-concepts" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
+                    The Core Concepts
+                  </h2>
+                </div>
+                <div className="space-y-32">
+                  {/* First section: Architecture (Packaging, L/F/K, GBB) with insight box */}
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    <div className="lg:col-span-7 flex flex-col gap-4">
+                      <Link 
+                        href="/wiki/pricing/packaging-and-bundling/packaging"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-blue-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <Package className="w-6 h-6 text-gray-700 group-hover:text-blue-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Offer/packaging architecture
+                          </h3>
+                          <span className="bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Foundation
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          The structural design of what you sell (plans, modules, upgrade paths) and how customers move up—independent of exact price points. Use it to reduce decision friction, increase ACV, and avoid feature giveaways that kill margins.
+                        </p>
+                      </Link>
+
+                      <Link 
+                        href="/wiki/pricing/packaging-and-bundling/leader-filler-killer-features"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-blue-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <Layers className="w-6 h-6 text-gray-700 group-hover:text-blue-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Leader/Filler/Killer Features
+                          </h3>
+                          <span className="bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Foundation
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          Classify features by impact on purchase decisions: leaders that drive tier choice, fillers that make the tier feel complete, killers that devalue the tier. Use it to design high-converting tiers and avoid feature soup.
+                        </p>
+                      </Link>
+
+                      <Link 
+                        href="/wiki/pricing/packaging-and-bundling/good-better-best"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-blue-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <TrendingUp className="w-6 h-6 text-gray-700 group-hover:text-blue-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Good–Better–Best tiers
+                          </h3>
+                          <span className="bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Foundation
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          A tiered packaging pattern (typically 3 plans) that offers entry, mass-market, and premium options to anchor value, segment buyers, and create predictable upgrade paths.
+                        </p>
+                      </Link>
+                    </div>
+
+                    <div className="lg:col-span-5 flex">
+                      <div className="bg-[#eef0f3] rounded-lg p-6 shadow-sm sticky top-24 w-full">
+                        <div className="flex items-center gap-2 mb-1">
+                          <Lightbulb className="w-5 h-5 text-yellow-500 fill-yellow-500" />
+                          <h4 className="font-semibold text-[#1f2933] text-lg">Architecture Insight</h4>
+                        </div>
+                        <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
+                          Start with <Link href="/wiki/pricing/packaging-and-bundling/packaging" className="text-[#ff5722] hover:underline font-medium">packaging architecture</Link> to define what you sell and how customers move up—packaging precedes pricing. Use <Link href="/wiki/pricing/packaging-and-bundling/leader-filler-killer-features" className="text-[#ff5722] hover:underline font-medium">Leader/Filler/Killer</Link> to decide what belongs in each tier so leaders drive upgrades and killers don't devalue the offer. Then apply <Link href="/wiki/pricing/packaging-and-bundling/good-better-best" className="text-[#ff5722] hover:underline font-medium">Good–Better–Best</Link>: design the middle tier first as the obvious default, fence hard so Good doesn't cannibalize Better, and make upgrading feel inevitable as customers hit success triggers (seats, usage, workflows).
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Second section: Expansion (Add-ons, Bundling) with insight box */}
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    <div className="lg:col-span-5 flex">
+                      <div className="bg-[#eef0f3] rounded-lg p-6 shadow-sm sticky top-24 w-full">
+                        <div className="flex items-center gap-2 mb-1">
+                          <Lightbulb className="w-5 h-5 text-yellow-500 fill-yellow-500" />
+                          <h4 className="font-semibold text-[#1f2933] text-lg">Expansion Insight</h4>
+                        </div>
+                        <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
+                          Once your core tiers are clear, capture more of the demand curve with <Link href="/wiki/pricing/packaging-and-bundling/add-ons-modular" className="text-[#ff5722] hover:underline font-medium">Add-ons & modular packaging</Link>: optional modules that keep entry simple while letting power users pay for what they value. Use <Link href="/wiki/pricing/packaging-and-bundling/bundling" className="text-[#ff5722] hover:underline font-medium">Bundling</Link> when you have multiple products: mixed bundling (bundle + à la carte) often beats pure bundles by capturing both suite buyers and single-feature users—bundle for value and workflow, not just volume.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="lg:col-span-7 flex flex-col gap-4">
+                      <Link 
+                        href="/wiki/pricing/packaging-and-bundling/add-ons-modular"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-green-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <Grid3x3 className="w-6 h-6 text-gray-700 group-hover:text-green-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Add-ons & modular packaging
+                          </h3>
+                          <span className="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Expansion
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          Customers buy a core offer, then optionally purchase add-ons (modules) to tailor the product. Use it to capture WTP differences, keep entry plans simple, and create repeatable expansion paths.
+                        </p>
+                      </Link>
+
+                      <Link 
+                        href="/wiki/pricing/packaging-and-bundling/bundling"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-green-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <PackageCheck className="w-6 h-6 text-gray-700 group-hover:text-green-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Bundling
+                          </h3>
+                          <span className="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Expansion
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          Selling multiple complementary products together at one price to increase total revenue and customer stickiness. Use it when customers value different items differently and marginal cost per extra item is low.
+                        </p>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Render "What's in this category" section for other non-foundations categories */}
-            {params.category !== 'foundations' && params.category !== 'value-and-customers' && (whatsInCategoryContent || workingNote) && (
+            {params.category !== 'foundations' && params.category !== 'value-and-customers' && params.category !== 'packaging-and-bundling' && (whatsInCategoryContent || workingNote) && (
               <div className="mt-12 mb-12">
                 {/* Working note - appears before the section */}
                 {workingNote && (
@@ -976,6 +1122,44 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                             <div className="text-[#ff5722] text-xs font-semibold mb-1.5 tracking-wide">05</div>
                             <h4 className="text-[#1f2933] font-bold text-sm mb-1">Capture</h4>
                             <p className="text-[#1f2933] text-xs opacity-70 leading-tight">Segment & Fence</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ) : params.category === 'packaging-and-bundling' ? (
+                  <div className="space-y-8">
+                    {/* Packaging & Bundling Workflow */}
+                    <div className="bg-[#eef0f3] rounded-2xl p-8 shadow-sm relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -mr-32 -mt-32 opacity-30"></div>
+                      <div className="relative z-10">
+                        <h3 className="text-[#1f2933] font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-3">The Packaging Workflow</h3>
+                        <p className="text-[#1f2933] text-base sm:text-[17px] opacity-80 mb-8 leading-[1.65]">
+                          Package first, price second. Define your offer structure and upgrade paths, then set price points so tiers capture value without leaving money on the table.
+                        </p>
+                        <div className="flex flex-nowrap items-center justify-between gap-2 md:gap-3 lg:gap-4">
+                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm flex-shrink-0 flex-1 min-w-0">
+                            <div className="text-[#ff5722] text-xs font-semibold mb-1.5 tracking-wide">01</div>
+                            <h4 className="text-[#1f2933] font-bold text-sm mb-1">Define Architecture</h4>
+                            <p className="text-[#1f2933] text-xs opacity-70 leading-tight">Plans & Upgrade Paths</p>
+                          </div>
+                          <ArrowRight className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
+                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm flex-shrink-0 flex-1 min-w-0">
+                            <div className="text-[#ff5722] text-xs font-semibold mb-1.5 tracking-wide">02</div>
+                            <h4 className="text-[#1f2933] font-bold text-sm mb-1">Classify Features</h4>
+                            <p className="text-[#1f2933] text-xs opacity-70 leading-tight">Leader/Filler/Killer</p>
+                          </div>
+                          <ArrowRight className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
+                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm flex-shrink-0 flex-1 min-w-0">
+                            <div className="text-[#ff5722] text-xs font-semibold mb-1.5 tracking-wide">03</div>
+                            <h4 className="text-[#1f2933] font-bold text-sm mb-1">Set Tiers</h4>
+                            <p className="text-[#1f2933] text-xs opacity-70 leading-tight">Good–Better–Best</p>
+                          </div>
+                          <ArrowRight className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
+                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm flex-shrink-0 flex-1 min-w-0">
+                            <div className="text-[#ff5722] text-xs font-semibold mb-1.5 tracking-wide">04</div>
+                            <h4 className="text-[#1f2933] font-bold text-sm mb-1">Expand</h4>
+                            <p className="text-[#1f2933] text-xs opacity-70 leading-tight">Add-ons & Bundling</p>
                           </div>
                         </div>
                       </div>

@@ -40,7 +40,7 @@ owner: "Dr. Sarah Zou"
 
 * **Segment:** A group of customers with similar [JTBD](/wiki/pricing/value-and-customers/jobs-to-be-done), [value drivers](/wiki/pricing/value-and-customers/value-drivers), and [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) distribution.
 
-* **[Package](/wiki/pricing/packaging-and-bundling/packaging) (plan/tier):** A curated bundle mapped to a target segment's outcomes and [WTP](/wiki/pricing/value-and-customers/willingness-to-pay).
+* **[Package](/wiki/pricing/packaging-and-bundling/packaging) (plan/tier):** A curated [bundle](/wiki/pricing/packaging-and-bundling/bundling) of features mapped to a target segment's outcomes and [WTP](/wiki/pricing/value-and-customers/willingness-to-pay).
 
 ## Why does Segmentation by WTP/Use Case matter?
 
@@ -86,7 +86,7 @@ owner: "Dr. Sarah Zou"
 
 4. **Design fences:** Determine how you will separate these groups. Common [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) include:
 
-   • *Product Configuration:* Bundling premium support or advanced security only for the high-WTP segment.
+   • *Product Configuration:* [Bundling](/wiki/pricing/packaging-and-bundling/bundling) premium support or advanced security only for the high-WTP segment.
 
    • *Metrics:* Charging per "seat" vs. per "transaction" to align with how different segments grow.
 
@@ -123,7 +123,7 @@ Create tiered packages where the "Good" plan meets the minimum needs of price-se
 * Hinterhuber, A., & Liozu, S. M. (2013). [*Innovation in Pricing: Contemporary Theories and Best Practices*](https://www.routledge.com/Innovation-in-Pricing-Contemporary-Theories-and-Best-Practices/Hinterhuber-Liozu/p/book/9780415674500). Routledge.
 * Christensen, C. M., Hall, T., Dillon, K., & Duncan, D. S. (2016). [*Competing Against Luck: The Story of Innovation and Customer Jobs to Be Done*](https://www.harpercollins.com/products/competing-against-luck-clayton-m-christensen). HarperBusiness.
 
-**Related pages:** [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Gabor-Granger](/wiki/pricing/research-and-experiments/gabor-granger) | [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) | [Conjoint Analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Usage-Based Pricing](/wiki/pricing/models-and-metering) | [Discounting & Realization](/wiki/pricing/policies-and-governance/discounting-and-realization)
+**Related pages:** [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Gabor-Granger](/wiki/pricing/research-and-experiments/gabor-granger) | [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) | [Conjoint Analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Usage-Based Pricing](/wiki/pricing/models-and-metering) | [Discounting & Realization](/wiki/pricing/policies-and-governance/discounting-and-realization)
 
 ## FAQ
 

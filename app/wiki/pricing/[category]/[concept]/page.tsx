@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { unstable_noStore } from 'next/cache';
 import { generateArticleJsonLd, generateBreadcrumbJsonLd, generateFAQJsonLd } from '@/lib/generateJsonLd';
 import { getCategoryBySlug, getAllCategories, getConceptBySlug } from '@/lib/mdx';
 import WikiLayout from '@/components/wiki/WikiLayout';
@@ -729,6 +730,10 @@ const markdownComponents = {
 };
 
 export default async function ConceptPage({ params }: ConceptPageProps) {
+  // In development, opt out of route cache so content file changes show without restarting the server
+  if (process.env.NODE_ENV === 'development') {
+    unstable_noStore();
+  }
   // #region agent log
   process.env.NODE_ENV === 'development' && fetch('http://127.0.0.1:7242/ingest/7cdfc052-f0eb-41b2-9929-6d06a5eacf86',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:639',message:'ConceptPage entry',data:{category:params.category,concept:params.concept},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
   // #endregion

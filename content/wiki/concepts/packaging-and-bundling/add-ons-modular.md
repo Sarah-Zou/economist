@@ -77,7 +77,7 @@ Think of your product not as a single block, but as a Base Platform (the core fe
 
 ## Rules of thumb
 
-- **One add-on = one sentence.** If you can't explain it simply, it's probably a [bundle](/wiki/pricing/packaging-and-bundling#bundling) or a [tier](/wiki/pricing/packaging-and-bundling/good-better-best).
+- **One add-on = one sentence.** If you can't explain it simply, it's probably a [bundle](/wiki/pricing/packaging-and-bundling/bundling) or a [tier](/wiki/pricing/packaging-and-bundling/good-better-best).
 - **One add-on = one buyer.** Aim for a clear economic buyer (IT, Finance, Ops) rather than "everyone."
 - **The 20/80 Rule:** Only 20% of your users should need a specific add-on. If 80% need it, it's a core feature and you are "nickel-and-diming" your customers; then it becomes a [Killer](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) feature that reduces conversion.
 - **The Pricing Anchor:** Add-ons should typically be priced at 15–30% of the base plan price to ensure they feel like an "upsell" rather than a "new purchase."
@@ -131,7 +131,7 @@ Think of your product not as a single block, but as a Base Platform (the core fe
 * Lehrskov-Schmidt, U. (2023). *The Pricing Roadmap*. Independently published.
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 
-**Related pages:** [Packaging architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Bundling](/wiki/pricing/packaging-and-bundling#bundling) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) | [Jobs-to-Be-Done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Value metric](/wiki/pricing/models-and-metering#pricing-metric) | [Usage-based pricing](/wiki/pricing/models-and-metering) | [Freemium](/wiki/pricing/models-and-metering)
+**Related pages:** [Packaging architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) | [Jobs-to-Be-Done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Value metric](/wiki/pricing/models-and-metering#pricing-metric) | [Usage-based pricing](/wiki/pricing/models-and-metering) | [Freemium](/wiki/pricing/models-and-metering)
 
 ## FAQ
 

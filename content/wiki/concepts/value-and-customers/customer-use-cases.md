@@ -77,7 +77,7 @@ Aim for **3–7 primary use cases** that together account for **≥70–85%** of
 
 ### Dedicated plan threshold
 
-If a distinct use case represents **≥20–30% of revenue** *and* has materially different [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) or feature needs, consider a dedicated [plan or bundle](/wiki/pricing/packaging-and-bundling#bundling).
+If a distinct use case represents **≥20–30% of revenue** *and* has materially different [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) or feature needs, consider a dedicated [plan or bundle](/wiki/pricing/packaging-and-bundling/bundling).
 
 ### Use case profitability (simplified)
 
@@ -113,7 +113,7 @@ Use this flow to define a customer use case in a way that directly feeds your mo
 
 5. **Determine the frequency and intensity of the problem:** Estimate how often the persona encounters the problem (e.g., hourly, daily, weekly, quarterly). Assess intensity: what happens if they *don't* solve it (lost revenue, fines, churn, reputational risk)? Use frequency × intensity to choose [pricing metrics](/wiki/pricing/models-and-metering#pricing-metric) and tiers: High frequency + high intensity → strong case for higher ACV and/or [usage-based pricing](/wiki/pricing/models-and-metering#usage-based-pricing). Low frequency + moderate intensity → better fit for project-based, feature-gated, or [add-on pricing](/wiki/pricing/packaging-and-bundling/add-ons-modular).
 
-6. **Draft the use case card and link it to pricing/packaging:** Fill out a standard use case card: Who, When, Goal/outcome, Constraints, Success metrics, Critical features, Nice-to-haves. Decide how this use case maps to your monetization model: Which **[plan or bundle](/wiki/pricing/packaging-and-bundling#bundling)** is the natural home for this use case? Which **[pricing metric](/wiki/pricing/models-and-metering#pricing-metric)** reflects how value scales (seats, usage, revenue processed, etc.)? Which **features must be included** vs. sold as [add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular)?
+6. **Draft the use case card and link it to pricing/packaging:** Fill out a standard use case card: Who, When, Goal/outcome, Constraints, Success metrics, Critical features, Nice-to-haves. Decide how this use case maps to your monetization model: Which **[plan or bundle](/wiki/pricing/packaging-and-bundling/bundling)** is the natural home for this use case? Which **[pricing metric](/wiki/pricing/models-and-metering#pricing-metric)** reflects how value scales (seats, usage, revenue processed, etc.)? Which **features must be included** vs. sold as [add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular)?
 
 7. **Quantify and prioritize across use cases:** Tag existing customers with their primary use case using the above definition. For each use case, estimate: revenue today, growth potential, discounting levels, and support cost. Prioritize 3–7 primary use cases to optimize for in your pricing; treat others as secondary or out-of-scope.
 
@@ -147,7 +147,7 @@ Use this flow to define a customer use case in a way that directly feeds your mo
 * Ghuman, A. (2021). [*Price to scale: Practical pricing for your high-growth SaaS startup*](https://www.goodreads.com/book/show/57850428-price-to-scale). Independently published.
 * Maurya, A. (2012). [*Running lean: Iterate from plan A to a plan that works*](https://books.google.com/books/about/Running_Lean.html?id=_RKbzgEACAAJ). O'Reilly Media.
 
-**Related pages:** [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Jobs-to-be-Done (JTBD)](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Segmentation by WTP/Use Case](/wiki/pricing/value-and-customers/customer-segments) | [Willingness-to-Pay Research (Van Westendorp, Gabor-Granger, Conjoint)](/wiki/pricing/value-and-customers/willingness-to-pay)
+**Related pages:** [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Jobs-to-be-Done (JTBD)](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Segmentation by WTP/Use Case](/wiki/pricing/value-and-customers/customer-segments) | [Willingness-to-Pay Research (Van Westendorp, Gabor-Granger, Conjoint)](/wiki/pricing/value-and-customers/willingness-to-pay)
 
 ## FAQ
 
