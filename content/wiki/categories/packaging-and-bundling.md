@@ -10,11 +10,11 @@ canonical: "https://sarahzou.com/wiki/pricing/packaging-and-bundling"
 
 ## What's in this category
 
-- **[<span id="packaging">Offer/packaging architecture</span>](/wiki/pricing/packaging-and-bundling/packaging)**: Designing comprehensive product offerings and tier structures to maximize willingness-to-pay
-- **[<span id="leader-filler-killer-features">Leader/Filler/Killer Features</span>](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features)**: Classifying features by their impact on purchase decisions and willingness to pay
-- **[<span id="good-better-best">Good–Better–Best tiers</span>](/wiki/pricing/packaging-and-bundling/good-better-best)**: Classic three-tier pricing structure and variations
-- **[<span id="add-ons-modular">Add-ons & modular packaging</span>](/wiki/pricing/packaging-and-bundling/add-ons-modular)**: Capability modules, flexible product design, and creating different product versions
-- **[<span id="bundling">Bundling</span>](/wiki/pricing/packaging-and-bundling/bundling)**: Selling multiple complementary products together to increase revenue and stickiness
+- **[<span id="packaging">Packaging architecture</span>](/wiki/pricing/packaging-and-bundling/packaging)**: Sketch your plan ladder in 30 minutes (who each plan is for, what triggers an upgrade, and what's out of scope) so you stop debating features one by one.
+- **[<span id="leader-filler-killer-features">Leader/Filler/Killer Features</span>](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features)**: For every feature, decide: does it sell upgrades (leader), is it expected (filler), or does it create confusion/cost (killer)—then package accordingly.
+- **[<span id="good-better-best">Good–Better–Best tiers</span>](/wiki/pricing/packaging-and-bundling/good-better-best)**: Launch 3 plans where "Better" is the default, "Good" is a safe entry point, and "Best" unlocks a real step‑change for high‑WTP customers.
+- **[<span id="add-ons-modular">Add‑ons & modular packaging</span>](/wiki/pricing/packaging-and-bundling/add-ons-modular)**: Use add‑ons for power/scale (more volume, seats, automation) and modules for distinct roles/use cases—so the core plans stay simple.
+- **[<span id="bundling">Bundling</span>](/wiki/pricing/packaging-and-bundling/bundling)**: When you have multiple products/offers, sell a bundle that improves the workflow and keep à la carte pricing (mixed bundling) to avoid forcing everyone into the suite.
 
 
 

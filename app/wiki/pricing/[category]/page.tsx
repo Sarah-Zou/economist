@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { unstable_noStore } from 'next/cache';
 import { generateArticleJsonLd, generateBreadcrumbJsonLd, generateFAQJsonLd } from '@/lib/generateJsonLd';
 import { getCategoryBySlug, getAllCategorySlugs } from '@/lib/mdx';
 import WikiLayout from '@/components/wiki/WikiLayout';
@@ -76,6 +77,10 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
 }
 
 export default function CategoryPage({ params }: CategoryPageProps) {
+  // In development, opt out of route cache so content/UI changes show without restarting the server
+  if (process.env.NODE_ENV === 'development') {
+    unstable_noStore();
+  }
   const category = getCategoryBySlug(params.category);
   
   if (!category) {
@@ -259,6 +264,21 @@ export default function CategoryPage({ params }: CategoryPageProps) {
           </div>
 
           <div className="prose prose-lg max-w-none">
+            {/* Summary Section - For foundations (above What's in this category) */}
+            {params.category === 'foundations' && (
+              <div className="mt-12 mb-12">
+                <div className="flex items-center mb-6">
+                  <div className="w-1 h-8 bg-blue-600 mr-3"></div>
+                  <h2 id="summary" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
+                    Summary
+                  </h2>
+                </div>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
+                  In practice, a healthy SaaS pricing system is <Link href="/wiki/pricing/foundations/value-based-pricing" className="text-[#ff5722] hover:underline font-medium">value‑based pricing</Link> at its core and implemented through <Link href="/wiki/pricing/foundations/strategic-pricing" className="text-[#ff5722] hover:underline font-medium">strategic pricing</Link> as an operating system. <Link href="/wiki/pricing/foundations/cost-plus-pricing" className="text-[#ff5722] hover:underline font-medium">Cost‑plus pricing</Link> and <Link href="/wiki/pricing/foundations/competition-based-pricing" className="text-[#ff5722] hover:underline font-medium">competition‑based pricing</Link> define your feasible range rather than your answer, and <Link href="/wiki/pricing/foundations/customer-driven-pricing" className="text-[#ff5722] hover:underline font-medium">customer‑driven pricing</Link> tactics mark the edge of what not to do if you care about fairness and relationship equity. Within that frame, you choose posture: <Link href="/wiki/pricing/foundations/skimming-strategy" className="text-[#ff5722] hover:underline font-medium">skimming strategy</Link> when you have strong differentiation and clear high‑WTP tiers, <Link href="/wiki/pricing/foundations/penetration-strategy" className="text-[#ff5722] hover:underline font-medium">penetration strategy</Link> when speed, scale, or network effects are the primary goal, and <Link href="/wiki/pricing/foundations/maximization" className="text-[#ff5722] hover:underline font-medium">maximization strategy</Link> when demand is well understood and near‑term cash or profit is the binding constraint.
+                </p>
+              </div>
+            )}
+
             {/* What's in this category Section - Only for foundations category */}
             {params.category === 'foundations' && (whatsInCategoryContent || workingNote) && (
               <div className="mt-12 mb-12">
@@ -295,15 +315,6 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                     </ReactMarkdown>
                   </div>
                 )}
-              </div>
-            )}
-
-            {/* Introduction Section - Only for foundations category */}
-            {params.category === 'foundations' && (
-              <div className="mt-12 mb-12">
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
-                  In practice, a healthy SaaS pricing system is <Link href="/wiki/pricing/foundations/value-based-pricing" className="text-[#ff5722] hover:underline font-medium">value‑based pricing</Link> at its core and implemented through <Link href="/wiki/pricing/foundations/strategic-pricing" className="text-[#ff5722] hover:underline font-medium">strategic pricing</Link> as an operating system. <Link href="/wiki/pricing/foundations/cost-plus-pricing" className="text-[#ff5722] hover:underline font-medium">Cost‑plus pricing</Link> and <Link href="/wiki/pricing/foundations/competition-based-pricing" className="text-[#ff5722] hover:underline font-medium">competition‑based pricing</Link> define your feasible range rather than your answer, and <Link href="/wiki/pricing/foundations/customer-driven-pricing" className="text-[#ff5722] hover:underline font-medium">customer‑driven pricing</Link> tactics mark the edge of what not to do if you care about fairness and relationship equity. Within that frame, you choose posture: <Link href="/wiki/pricing/foundations/skimming-strategy" className="text-[#ff5722] hover:underline font-medium">skimming strategy</Link> when you have strong differentiation and clear high‑WTP tiers, <Link href="/wiki/pricing/foundations/penetration-strategy" className="text-[#ff5722] hover:underline font-medium">penetration strategy</Link> when speed, scale, or network effects are the primary goal, and <Link href="/wiki/pricing/foundations/maximization" className="text-[#ff5722] hover:underline font-medium">maximization strategy</Link> when demand is well understood and near‑term cash or profit is the binding constraint.
-                </p>
               </div>
             )}
 
@@ -539,6 +550,36 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               </div>
             )}
 
+            {/* Summary Section - For value-and-customers (above What's in this category) */}
+            {params.category === 'value-and-customers' && (
+              <div className="mt-12 mb-12">
+                <div className="flex items-center mb-6">
+                  <div className="w-1 h-8 bg-blue-600 mr-3"></div>
+                  <h2 id="summary" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
+                    Summary
+                  </h2>
+                </div>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
+                  This category is the bridge between who you serve and what you can charge. Define <Link href="/wiki/pricing/value-and-customers/ideal-customer-profile" className="text-[#ff5722] hover:underline font-medium">ICP</Link> first, then ground it in real buying situations with <Link href="/wiki/pricing/value-and-customers/customer-use-cases" className="text-[#ff5722] hover:underline font-medium">Customer Use Cases</Link> and <Link href="/wiki/pricing/value-and-customers/jobs-to-be-done" className="text-[#ff5722] hover:underline font-medium">JTBD</Link> so you know who buys, why now, and compared to what. Next, map <Link href="/wiki/pricing/value-and-customers/value-drivers" className="text-[#ff5722] hover:underline font-medium">Value Drivers</Link> to translate features into outcomes that create utility, quantify the dollars with <Link href="/wiki/pricing/value-and-customers/economic-value-estimation" className="text-[#ff5722] hover:underline font-medium">EVE</Link>, and expand to real-world perception and context with the <Link href="/wiki/pricing/value-and-customers/value-decoder-framework" className="text-[#ff5722] hover:underline font-medium">Value Decoder</Link> to land a credible value-based price band. Validate that band with <Link href="/wiki/pricing/value-and-customers/willingness-to-pay" className="text-[#ff5722] hover:underline font-medium">WTP</Link> research to see the distribution of what customers will actually pay, then apply <Link href="/wiki/pricing/value-and-customers/customer-segments" className="text-[#ff5722] hover:underline font-medium">Segmentation by WTP / Use Case</Link> to avoid one-size-fits-all pricing. Finally, implement capture with <Link href="/wiki/pricing/value-and-customers/price-fences-price-discrimination" className="text-[#ff5722] hover:underline font-medium">Price Fences / price discrimination</Link> so different segments self-select into the right offer without leakage—then iterate as your product, market, and customer mix evolve.
+                </p>
+              </div>
+            )}
+
+            {/* Summary Section - For packaging-and-bundling (above What's in this category) */}
+            {params.category === 'packaging-and-bundling' && (
+              <div className="mt-12 mb-12">
+                <div className="flex items-center mb-6">
+                  <div className="w-1 h-8 bg-blue-600 mr-3"></div>
+                  <h2 id="summary" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
+                    Summary
+                  </h2>
+                </div>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
+                  Packaging is how you turn a product into an offer customers can choose and upgrade: start with <Link href="/wiki/pricing/packaging-and-bundling/packaging" className="text-[#ff5722] hover:underline font-medium">Packaging architecture</Link> to define your plan ladder, use <Link href="/wiki/pricing/packaging-and-bundling/leader-filler-killer-features" className="text-[#ff5722] hover:underline font-medium">Leader/Filler/Killer Features</Link> to decide what drives upgrades vs what's table-stakes, ship clear <Link href="/wiki/pricing/packaging-and-bundling/good-better-best" className="text-[#ff5722] hover:underline font-medium">Good–Better–Best</Link> tiers, then capture extra willingness-to-pay with <Link href="/wiki/pricing/packaging-and-bundling/add-ons-modular" className="text-[#ff5722] hover:underline font-medium">add-ons & modular packaging</Link>. If you have multiple products or offers, use <Link href="/wiki/pricing/packaging-and-bundling/bundling" className="text-[#ff5722] hover:underline font-medium">bundling</Link>—ideally mixed bundling—to sell a better workflow without forcing everyone into a suite.
+                </p>
+              </div>
+            )}
+
             {/* What's in this category Section - For value-and-customers and packaging-and-bundling categories */}
             {(params.category === 'value-and-customers' || params.category === 'packaging-and-bundling') && (whatsInCategoryContent || workingNote) && (
               <div className="mt-12 mb-12">
@@ -575,24 +616,6 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                     </ReactMarkdown>
                   </div>
                 )}
-              </div>
-            )}
-
-            {/* Introduction Section - For value-and-customers category */}
-            {params.category === 'value-and-customers' && (
-              <div className="mt-12 mb-12">
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
-                  This category is the bridge between who you serve and what you can charge. Define <Link href="/wiki/pricing/value-and-customers/ideal-customer-profile" className="text-[#ff5722] hover:underline font-medium">ICP</Link> first, then ground it in real buying situations with <Link href="/wiki/pricing/value-and-customers/customer-use-cases" className="text-[#ff5722] hover:underline font-medium">Customer Use Cases</Link> and <Link href="/wiki/pricing/value-and-customers/jobs-to-be-done" className="text-[#ff5722] hover:underline font-medium">JTBD</Link> so you know who buys, why now, and compared to what. Next, map <Link href="/wiki/pricing/value-and-customers/value-drivers" className="text-[#ff5722] hover:underline font-medium">Value Drivers</Link> to translate features into outcomes that create utility, quantify the dollars with <Link href="/wiki/pricing/value-and-customers/economic-value-estimation" className="text-[#ff5722] hover:underline font-medium">EVE</Link>, and expand to real-world perception and context with the <Link href="/wiki/pricing/value-and-customers/value-decoder-framework" className="text-[#ff5722] hover:underline font-medium">Value Decoder</Link> to land a credible value-based price band. Validate that band with <Link href="/wiki/pricing/value-and-customers/willingness-to-pay" className="text-[#ff5722] hover:underline font-medium">WTP</Link> research to see the distribution of what customers will actually pay, then apply <Link href="/wiki/pricing/value-and-customers/customer-segments" className="text-[#ff5722] hover:underline font-medium">Segmentation by WTP / Use Case</Link> to avoid one-size-fits-all pricing. Finally, implement capture with <Link href="/wiki/pricing/value-and-customers/price-fences-price-discrimination" className="text-[#ff5722] hover:underline font-medium">Price Fences / price discrimination</Link> so different segments self-select into the right offer without leakage—then iterate as your product, market, and customer mix evolve.
-                </p>
-              </div>
-            )}
-
-            {/* Introduction Section - For packaging-and-bundling category */}
-            {params.category === 'packaging-and-bundling' && (
-              <div className="mt-12 mb-12">
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
-                  This category is the bridge between what customers value and how you structure offers. Start with <Link href="/wiki/pricing/packaging-and-bundling/packaging" className="text-[#ff5722] hover:underline font-medium">offer/packaging architecture</Link> to define what you sell (plans, modules, upgrade paths) independent of price points. Use <Link href="/wiki/pricing/packaging-and-bundling/leader-filler-killer-features" className="text-[#ff5722] hover:underline font-medium">Leader/Filler/Killer Features</Link> to classify features by impact on purchase decisions and willingness to pay, then design tiers with <Link href="/wiki/pricing/packaging-and-bundling/good-better-best" className="text-[#ff5722] hover:underline font-medium">Good–Better–Best</Link> so you serve budget and power users without one-size-fits-all. Capture expansion with <Link href="/wiki/pricing/packaging-and-bundling/add-ons-modular" className="text-[#ff5722] hover:underline font-medium">Add-ons & modular packaging</Link> for optional modules and <Link href="/wiki/pricing/packaging-and-bundling/bundling" className="text-[#ff5722] hover:underline font-medium">Bundling</Link> when selling multiple products together increases revenue and stickiness—then iterate as your product and segments evolve.
-                </p>
               </div>
             )}
 
@@ -847,9 +870,20 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                   </h2>
                 </div>
                 <div className="space-y-32">
-                  {/* First section: Architecture (Packaging, L/F/K, GBB) with insight box */}
+                  {/* Blueprint: Packaging architecture */}
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-                    <div className="lg:col-span-7 flex flex-col gap-4">
+                    <div className="lg:col-span-5 flex order-2 lg:order-1">
+                      <div className="bg-[#eef0f3] rounded-lg p-6 shadow-sm sticky top-24 w-full">
+                        <div className="flex items-center gap-2 mb-1">
+                          <Lightbulb className="w-5 h-5 text-yellow-500 fill-yellow-500" />
+                          <h4 className="font-semibold text-[#1f2933] text-lg">Blueprint Insight</h4>
+                        </div>
+                        <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
+                          Start with <Link href="/wiki/pricing/packaging-and-bundling/packaging" className="text-[#ff5722] hover:underline font-medium">Packaging architecture</Link> to define your offer structure (plans, modules, limits, upgrade paths) independent of the price numbers—because packaging precedes pricing. A good architecture reduces decision friction, prevents feature giveaways, and sets you up for clean upgrades as customers hit natural &quot;success triggers.&quot;
+                        </p>
+                      </div>
+                    </div>
+                    <div className="lg:col-span-7 flex flex-col gap-4 order-1 lg:order-2">
                       <Link 
                         href="/wiki/pricing/packaging-and-bundling/packaging"
                         className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-blue-600 no-underline"
@@ -857,17 +891,22 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                         <div className="flex items-center gap-3 mb-0">
                           <Package className="w-6 h-6 text-gray-700 group-hover:text-blue-600 transition-colors flex-shrink-0" />
                           <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
-                            Offer/packaging architecture
+                            Packaging architecture
                           </h3>
                           <span className="bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
-                            Foundation
+                            Blueprint
                           </span>
                         </div>
                         <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
                           The structural design of what you sell (plans, modules, upgrade paths) and how customers move up—independent of exact price points. Use it to reduce decision friction, increase ACV, and avoid feature giveaways that kill margins.
                         </p>
                       </Link>
+                    </div>
+                  </div>
 
+                  {/* Tier design: Leader/Filler/Killer Features; Good–Better–Best tiers */}
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    <div className="lg:col-span-7 flex flex-col gap-4">
                       <Link 
                         href="/wiki/pricing/packaging-and-bundling/leader-filler-killer-features"
                         className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-blue-600 no-underline"
@@ -878,14 +917,13 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                             Leader/Filler/Killer Features
                           </h3>
                           <span className="bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
-                            Foundation
+                            Tier design
                           </span>
                         </div>
                         <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
                           Classify features by impact on purchase decisions: leaders that drive tier choice, fillers that make the tier feel complete, killers that devalue the tier. Use it to design high-converting tiers and avoid feature soup.
                         </p>
                       </Link>
-
                       <Link 
                         href="/wiki/pricing/packaging-and-bundling/good-better-best"
                         className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-blue-600 no-underline"
@@ -896,7 +934,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                             Good–Better–Best tiers
                           </h3>
                           <span className="bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
-                            Foundation
+                            Tier design
                           </span>
                         </div>
                         <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
@@ -904,21 +942,20 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                         </p>
                       </Link>
                     </div>
-
                     <div className="lg:col-span-5 flex">
                       <div className="bg-[#eef0f3] rounded-lg p-6 shadow-sm sticky top-24 w-full">
                         <div className="flex items-center gap-2 mb-1">
                           <Lightbulb className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-                          <h4 className="font-semibold text-[#1f2933] text-lg">Architecture Insight</h4>
+                          <h4 className="font-semibold text-[#1f2933] text-lg">Tier design Insight</h4>
                         </div>
                         <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
-                          Start with <Link href="/wiki/pricing/packaging-and-bundling/packaging" className="text-[#ff5722] hover:underline font-medium">packaging architecture</Link> to define what you sell and how customers move up—packaging precedes pricing. Use <Link href="/wiki/pricing/packaging-and-bundling/leader-filler-killer-features" className="text-[#ff5722] hover:underline font-medium">Leader/Filler/Killer</Link> to decide what belongs in each tier so leaders drive upgrades and killers don't devalue the offer. Then apply <Link href="/wiki/pricing/packaging-and-bundling/good-better-best" className="text-[#ff5722] hover:underline font-medium">Good–Better–Best</Link>: design the middle tier first as the obvious default, fence hard so Good doesn't cannibalize Better, and make upgrading feel inevitable as customers hit success triggers (seats, usage, workflows).
+                          Next, use <Link href="/wiki/pricing/packaging-and-bundling/leader-filler-killer-features" className="text-[#ff5722] hover:underline font-medium">Leader/Filler/Killer Features</Link> to decide what belongs where. Leaders are the few capabilities that actually drive someone to buy; fillers are expected &quot;completeness&quot; items; killers are the clutter or cost drivers that lower willingness to pay for some segments and should be removed—or sold separately. With those classifications in hand, design <Link href="/wiki/pricing/packaging-and-bundling/good-better-best" className="text-[#ff5722] hover:underline font-medium">Good–Better–Best</Link> tiers so each plan targets a real segment: make &quot;Better&quot; the obvious default, fence premium value drivers so Good doesn't cannibalize upgrades, and make the Best tier meaningfully different (not just a longer checklist).
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  {/* Second section: Expansion (Add-ons, Bundling) with insight box */}
+                  {/* Expansion: Add‑ons & modular packaging; Bundling */}
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                     <div className="lg:col-span-5 flex">
                       <div className="bg-[#eef0f3] rounded-lg p-6 shadow-sm sticky top-24 w-full">
@@ -927,11 +964,10 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                           <h4 className="font-semibold text-[#1f2933] text-lg">Expansion Insight</h4>
                         </div>
                         <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
-                          Once your core tiers are clear, capture more of the demand curve with <Link href="/wiki/pricing/packaging-and-bundling/add-ons-modular" className="text-[#ff5722] hover:underline font-medium">Add-ons & modular packaging</Link>: optional modules that keep entry simple while letting power users pay for what they value. Use <Link href="/wiki/pricing/packaging-and-bundling/bundling" className="text-[#ff5722] hover:underline font-medium">Bundling</Link> when you have multiple products: mixed bundling (bundle + à la carte) often beats pure bundles by capturing both suite buyers and single-feature users—bundle for value and workflow, not just volume.
+                          Once your core ladder is clear, expand your revenue capture without bloating the base plans. Use <Link href="/wiki/pricing/packaging-and-bundling/add-ons-modular" className="text-[#ff5722] hover:underline font-medium">add‑ons & modular packaging</Link> when value is high but not universal: add‑ons work best as &quot;power/scale&quot; top‑ups, while modules work best when they map to distinct roles or use cases that can't fit neatly into one tier ladder. Use <Link href="/wiki/pricing/packaging-and-bundling/bundling" className="text-[#ff5722] hover:underline font-medium">bundling</Link> when you have multiple products (or distinct offers) and customers value the combination: mixed bundling is often a safer default because it preserves choice while encouraging larger purchases—bundle for workflow value (and sometimes charge a premium), not just for volume discounts.
                         </p>
                       </div>
                     </div>
-
                     <div className="lg:col-span-7 flex flex-col gap-4">
                       <Link 
                         href="/wiki/pricing/packaging-and-bundling/add-ons-modular"
@@ -940,7 +976,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                         <div className="flex items-center gap-3 mb-0">
                           <Grid3x3 className="w-6 h-6 text-gray-700 group-hover:text-green-600 transition-colors flex-shrink-0" />
                           <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
-                            Add-ons & modular packaging
+                            Add‑ons & modular packaging
                           </h3>
                           <span className="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
                             Expansion
@@ -950,7 +986,6 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                           Customers buy a core offer, then optionally purchase add-ons (modules) to tailor the product. Use it to capture WTP differences, keep entry plans simple, and create repeatable expansion paths.
                         </p>
                       </Link>
-
                       <Link 
                         href="/wiki/pricing/packaging-and-bundling/bundling"
                         className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-green-600 no-underline"
@@ -971,6 +1006,21 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                     </div>
                   </div>
                 </div>
+              </div>
+            )}
+
+            {/* Summary Section - For other categories (above What's in this category) */}
+            {params.category !== 'foundations' && params.category !== 'value-and-customers' && params.category !== 'packaging-and-bundling' && (
+              <div className="mt-12 mb-12">
+                <div className="flex items-center mb-6">
+                  <div className="w-1 h-8 bg-[#ff5722] mr-3"></div>
+                  <h2 id="summary" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
+                    Summary
+                  </h2>
+                </div>
+                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
+                  {category.summary}
+                </p>
               </div>
             )}
 
@@ -1135,28 +1185,34 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                       <div className="relative z-10">
                         <h3 className="text-[#1f2933] font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-3">The Packaging Workflow</h3>
                         <p className="text-[#1f2933] text-base sm:text-[17px] opacity-80 mb-8 leading-[1.65]">
-                          Package first, price second. Define your offer structure and upgrade paths, then set price points so tiers capture value without leaving money on the table.
+                          Package first, price second. A quarterly packaging check-in to keep tiers clean, upgrades obvious, and new features monetized..
                         </p>
-                        <div className="flex flex-nowrap items-center justify-between gap-2 md:gap-3 lg:gap-4">
-                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm flex-shrink-0 flex-1 min-w-0">
+                        <div className="grid gap-2 md:gap-3 lg:gap-4 items-stretch" style={{ gridTemplateColumns: '1fr auto 1fr auto 1fr auto 1fr' }}>
+                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm min-h-[5.5rem] flex flex-col">
                             <div className="text-[#ff5722] text-xs font-semibold mb-1.5 tracking-wide">01</div>
                             <h4 className="text-[#1f2933] font-bold text-sm mb-1">Define Architecture</h4>
                             <p className="text-[#1f2933] text-xs opacity-70 leading-tight">Plans & Upgrade Paths</p>
                           </div>
-                          <ArrowRight className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm flex-shrink-0 flex-1 min-w-0">
+                          <div className="flex items-center justify-center">
+                            <ArrowRight className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
+                          </div>
+                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm min-h-[5.5rem] flex flex-col">
                             <div className="text-[#ff5722] text-xs font-semibold mb-1.5 tracking-wide">02</div>
                             <h4 className="text-[#1f2933] font-bold text-sm mb-1">Classify Features</h4>
                             <p className="text-[#1f2933] text-xs opacity-70 leading-tight">Leader/Filler/Killer</p>
                           </div>
-                          <ArrowRight className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm flex-shrink-0 flex-1 min-w-0">
+                          <div className="flex items-center justify-center">
+                            <ArrowRight className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
+                          </div>
+                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm min-h-[5.5rem] flex flex-col">
                             <div className="text-[#ff5722] text-xs font-semibold mb-1.5 tracking-wide">03</div>
                             <h4 className="text-[#1f2933] font-bold text-sm mb-1">Set Tiers</h4>
                             <p className="text-[#1f2933] text-xs opacity-70 leading-tight">Good–Better–Best</p>
                           </div>
-                          <ArrowRight className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm flex-shrink-0 flex-1 min-w-0">
+                          <div className="flex items-center justify-center">
+                            <ArrowRight className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
+                          </div>
+                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm min-h-[5.5rem] flex flex-col">
                             <div className="text-[#ff5722] text-xs font-semibold mb-1.5 tracking-wide">04</div>
                             <h4 className="text-[#1f2933] font-bold text-sm mb-1">Expand</h4>
                             <p className="text-[#1f2933] text-xs opacity-70 leading-tight">Add-ons & Bundling</p>
