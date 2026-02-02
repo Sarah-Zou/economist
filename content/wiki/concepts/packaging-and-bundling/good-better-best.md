@@ -84,7 +84,7 @@ Goal: each step adds a *meaningful* outcome and a clear reason to upgrade.
 | One clear persona, simple product                | ❌                       | Single plan (+ [add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular))                        |
 | Two strong personas (e.g., SMB vs enterprise)    | ✅                       | 2–3 plans + enterprise custom                  |
 | Many personas / multi-product suite              | ⚠️                      | Multiple pages/tabs; [bundles](/wiki/pricing/packaging-and-bundling/bundling); a la carte       |
-| Your best customers scale on a measurable metric | ✅                       | GBB + [usage/seat ladder](/wiki/pricing/models-and-metering#pricing-metric)                        |
+| Your best customers scale on a measurable metric | ✅                       | GBB + [usage/seat ladder](/wiki/pricing/models-and-metering/pricing-metric-value-metric)                        |
 | Heavy compliance / security / procurement needs  | ✅                       | Put trust/compliance in Best (or "Enterprise") |
 
 ## How to Apply It
@@ -95,7 +95,7 @@ Goal: each step adds a *meaningful* outcome and a clear reason to upgrade.
 * **MaxDiff Analysis:** Survey data to identify which features are "Leaders" (high value) versus "Fillers". (Refer to page [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features))
 * **Willingness to Pay (WTP) Data:** Run [Van Westendorp Price Sensitivity surveys](/wiki/pricing/research-and-experiments/van-westendorp) to determine the acceptable price ranges for each tier.
 * **Jobs to be Done (JTBD):** Understanding the specific "job" each segment hires your product to do (e.g., "Maintenance" vs. "Optimization"). (Refer to page [Jobs-to-Be-Done](/wiki/pricing/value-and-customers/jobs-to-be-done))
-* **Competitor Benchmarking:** Map your competitors' tiers. Are they "feature-gating" (Best gets more features) or "usage-gating" (Best gets more seats)? (See [Value Metric / Pricing Metric](/wiki/pricing/models-and-metering#pricing-metric) for usage-based pricing models)
+* **Competitor Benchmarking:** Map your competitors' tiers. Are they "feature-gating" (Best gets more features) or "usage-gating" (Best gets more seats)? (See [Value Metric / Pricing Metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) for usage-based pricing models)
 
 ### Step-by-step
 
@@ -143,7 +143,7 @@ Goal: each step adds a *meaningful* outcome and a clear reason to upgrade.
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 * Ghuman, A. (2021). *Price to Scale*. Independently published.
 
-**Related pages:** [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Customer Segments](/wiki/pricing/value-and-customers/customer-segments) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Willingness to Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Jobs-to-Be-Done (JTBD)](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Value Drivers](/wiki/pricing/value-and-customers/value-drivers) | [Value Metric (Seats vs Usage)](/wiki/pricing/models-and-metering#pricing-metric) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp)
+**Related pages:** [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Customer Segments](/wiki/pricing/value-and-customers/customer-segments) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Willingness to Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Jobs-to-Be-Done (JTBD)](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Value Drivers](/wiki/pricing/value-and-customers/value-drivers) | [Value Metric (Seats vs Usage)](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp)
 
 ## FAQ
 

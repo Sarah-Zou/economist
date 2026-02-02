@@ -125,7 +125,7 @@ For most SaaS startups, the choice often comes down to two common starting point
 
 | Metric Type | Best For... | Key Consideration |
 | --- | --- | --- |
-| **[Per-User/Per-Seat](https://sarahzou.com/wiki/pricing/models-and-metering/per-user-per-seat)** | Products where value is tied to the number of people using it (e.g., CRMs, project management tools). Works well when the product is a "system of record." | This can create friction by discouraging customers from adding more users, which can slow down adoption and expansion within an organization. |
+| **[Seat-based pricing](https://sarahzou.com/wiki/pricing/models-and-metering/seat-based-pricing)** | Products where value is tied to the number of people using it (e.g., CRMs, project management tools). Works well when the product is a "system of record." | This can create friction by discouraging customers from adding more users, which can slow down adoption and expansion within an organization. |
 | **[Usage-Based](https://sarahzou.com/wiki/pricing/models-and-metering/usage-based-pricing)** | Products where value is tied to consumption (e.g., data storage, API calls, transactions processed). This can reduce the upfront barrier to adoption. | Unpredictability is a major concern for customers. A hybrid model, which includes a base platform fee plus a usage component, can help mitigate this. |
 
 To begin, choose one primary pricing metric that is simple and directly aligned with the core value you uncovered in your Phase 1 research.

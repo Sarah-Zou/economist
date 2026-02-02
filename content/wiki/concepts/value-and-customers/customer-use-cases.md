@@ -21,7 +21,7 @@ owner: "Dr. Sarah Zou"
 **When to use:**
 - Defining or redesigning [plan structure](/wiki/pricing/packaging-and-bundling/packaging) (good–better–best, [add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular), or enterprise [tiers](/wiki/pricing/packaging-and-bundling/packaging)).
 - Evaluating new [segments](/wiki/pricing/value-and-customers/customer-segments) or verticals and deciding whether they justify a distinct plan or price point.
-- Choosing or revisiting your core [pricing metric](/wiki/pricing/models-and-metering#pricing-metric) (seats, usage, outcomes, revenue processed, etc.).
+- Choosing or revisiting your core [pricing metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) (seats, usage, outcomes, revenue processed, etc.).
 - Prioritizing roadmap and GTM investments by impact on your top 3–7 revenue-driving use cases.
 - Cleaning up a cluttered catalog of legacy plans that no longer map to real customer jobs.
 
@@ -30,7 +30,7 @@ owner: "Dr. Sarah Zou"
 - A use case is a combination of **problem + persona + context + outcome**, not a feature list, persona label, or industry.
 - Most SaaS companies should optimize pricing and roadmap around **3–7 primary use cases** (1–2 at seed stage) that drive the majority of revenue.
 - Each plan should map clearly to **one anchor use case** (or at most two), expressed in plain, outcome-oriented language.
-- Frequency and intensity of the problem are core inputs to your [pricing metric](/wiki/pricing/models-and-metering#pricing-metric) and [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay).
+- Frequency and intensity of the problem are core inputs to your [pricing metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) and [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay).
 
 ## Key Facts
 
@@ -109,11 +109,11 @@ Use this flow to define a customer use case in a way that directly feeds your mo
 
 3. **Identify alternative solutions (including non-consumption):** List realistic alternatives: competing tools, spreadsheets, manual processes, internal builds, "do nothing". For each alternative, capture: cost (time/money), reliability, and key limitations. Use this to highlight adjacent customer problems that could become future monetization opportunities (e.g., services, add-ons, higher tiers).
 
-4. **Understand why users choose your product over alternatives:** Ask directly: "Why did you choose us instead of X?" and "What almost stopped you from choosing us?" Distill 2–3 **[value drivers](/wiki/pricing/value-and-customers/value-drivers)** (e.g., speed, accuracy, compliance, collaboration) that matter most for this use case. Translate these value drivers into pricing levers: higher tiers for premium outcomes, [add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular) for specialized capabilities, [usage metric](/wiki/pricing/models-and-metering#usage-based-pricing) aligned to the value driver.
+4. **Understand why users choose your product over alternatives:** Ask directly: "Why did you choose us instead of X?" and "What almost stopped you from choosing us?" Distill 2–3 **[value drivers](/wiki/pricing/value-and-customers/value-drivers)** (e.g., speed, accuracy, compliance, collaboration) that matter most for this use case. Translate these value drivers into pricing levers: higher tiers for premium outcomes, [add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular) for specialized capabilities, [usage metric](/wiki/pricing/models-and-metering/usage-based-pricing) aligned to the value driver.
 
-5. **Determine the frequency and intensity of the problem:** Estimate how often the persona encounters the problem (e.g., hourly, daily, weekly, quarterly). Assess intensity: what happens if they *don't* solve it (lost revenue, fines, churn, reputational risk)? Use frequency × intensity to choose [pricing metrics](/wiki/pricing/models-and-metering#pricing-metric) and tiers: High frequency + high intensity → strong case for higher ACV and/or [usage-based pricing](/wiki/pricing/models-and-metering#usage-based-pricing). Low frequency + moderate intensity → better fit for project-based, feature-gated, or [add-on pricing](/wiki/pricing/packaging-and-bundling/add-ons-modular).
+5. **Determine the frequency and intensity of the problem:** Estimate how often the persona encounters the problem (e.g., hourly, daily, weekly, quarterly). Assess intensity: what happens if they *don't* solve it (lost revenue, fines, churn, reputational risk)? Use frequency × intensity to choose [pricing metrics](/wiki/pricing/models-and-metering/pricing-metric-value-metric) and tiers: High frequency + high intensity → strong case for higher ACV and/or [usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing). Low frequency + moderate intensity → better fit for project-based, feature-gated, or [add-on pricing](/wiki/pricing/packaging-and-bundling/add-ons-modular).
 
-6. **Draft the use case card and link it to pricing/packaging:** Fill out a standard use case card: Who, When, Goal/outcome, Constraints, Success metrics, Critical features, Nice-to-haves. Decide how this use case maps to your monetization model: Which **[plan or bundle](/wiki/pricing/packaging-and-bundling/bundling)** is the natural home for this use case? Which **[pricing metric](/wiki/pricing/models-and-metering#pricing-metric)** reflects how value scales (seats, usage, revenue processed, etc.)? Which **features must be included** vs. sold as [add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular)?
+6. **Draft the use case card and link it to pricing/packaging:** Fill out a standard use case card: Who, When, Goal/outcome, Constraints, Success metrics, Critical features, Nice-to-haves. Decide how this use case maps to your monetization model: Which **[plan or bundle](/wiki/pricing/packaging-and-bundling/bundling)** is the natural home for this use case? Which **[pricing metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric)** reflects how value scales (seats, usage, revenue processed, etc.)? Which **features must be included** vs. sold as [add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular)?
 
 7. **Quantify and prioritize across use cases:** Tag existing customers with their primary use case using the above definition. For each use case, estimate: revenue today, growth potential, discounting levels, and support cost. Prioritize 3–7 primary use cases to optimize for in your pricing; treat others as secondary or out-of-scope.
 

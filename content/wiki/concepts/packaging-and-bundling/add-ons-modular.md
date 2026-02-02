@@ -105,7 +105,7 @@ Think of your product not as a single block, but as a Base Platform (the core fe
 4. **Price the Add-on/Module:** Determine price based on the incremental value provided.
    - **Flat Fee:** Simple, predictable. Good for features like "Advanced Reporting" module ($500/mo).
    - **Anchor to core price:** Common starting point is +20–50% of core for a high-value module.
-   - **Metric/Usage:** Good for high-cost features (e.g., $0.01 per API call). See [value metric](/wiki/pricing/models-and-metering#pricing-metric) and [usage-based pricing](/wiki/pricing/models-and-metering). Aligns cost with revenue.
+   - **Metric/Usage:** Good for high-cost features (e.g., $0.01 per API call). See [value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) and [usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing). Aligns cost with revenue.
 
 ## Metrics to monitor
 
@@ -131,7 +131,7 @@ Think of your product not as a single block, but as a Base Platform (the core fe
 * Lehrskov-Schmidt, U. (2023). *The Pricing Roadmap*. Independently published.
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 
-**Related pages:** [Packaging architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) | [Jobs-to-Be-Done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Value metric](/wiki/pricing/models-and-metering#pricing-metric) | [Usage-based pricing](/wiki/pricing/models-and-metering) | [Freemium](/wiki/pricing/models-and-metering)
+**Related pages:** [Packaging architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) | [Jobs-to-Be-Done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Freemium](/wiki/pricing/models-and-metering/freemium-model)
 
 ## FAQ
 

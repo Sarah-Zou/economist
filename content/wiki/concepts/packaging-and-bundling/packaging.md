@@ -26,7 +26,7 @@ owner: "Dr. Sarah Zou"
 
 - **Packaging Precedes Pricing:** You cannot determine the right price point ($50 vs. $100) until you have defined the right package (what features are included). Packaging is the primary lever; price setting is secondary.
 - Tiers should reflect **distinct buyer outcomes** (not arbitrary feature lists). Use the "Good-Better-Best" (GBB) framework to anchor value.
-- Complexity kills control: A strong architecture has **one main [pricing/value metric](/wiki/pricing/models-and-metering#pricing-metric)** (seats/usage/workspaces) and **few, high-signal [add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular)**.
+- Complexity kills control: A strong architecture has **one main [pricing/value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric)** (seats/usage/workspaces) and **few, high-signal [add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular)**.
 
 ## Key Facts
 
@@ -57,7 +57,7 @@ owner: "Dr. Sarah Zou"
 
 * **[Good/Better/Best (G/B/B) Tiers](/wiki/pricing/packaging-and-bundling/good-better-best):** The gold standard for packaging. It involves creating three (sometimes four) distinct tiers: "Good" (entry-level/price-sensitive), "Better" (mass market), and "Best" (premium/specialized). It utilizes the *"compromise effect"* and the *"decoy effect"* to encourage customers to settle on the middle option, maximizing revenue.
 
-* **[Pricing metric / value metric](/wiki/pricing/models-and-metering#pricing-metric):** The unit by which you charge (e.g., per user, per gigabyte, per transaction, per API call, per $ processed). It is the single most consequential decision in pricing. It must align with how the customer derives value. If the metric is wrong (e.g., charging per user when value is derived from data usage), it creates friction and limits growth.
+* **[Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric):** The unit by which you charge (e.g., per user, per gigabyte, per transaction, per API call, per $ processed). It is the single most consequential decision in pricing. It must align with how the customer derives value. If the metric is wrong (e.g., charging per user when value is derived from data usage), it creates friction and limits growth.
 
 * **Plan/Tier/Version vs Bundle:**
 
@@ -124,7 +124,7 @@ Refer to **The "Fence and Ladder"** in [Segmentation by Willingness to Pay (WTP)
 
 1. **Segment your audience:** Investigate whether you have distinct customer types that require different selling motions or product configurations. Define 2–3 distinct customer outcomes or jobs-to-be-done that matter most across segments. (Refer to page [Segmentation](/wiki/pricing/value-and-customers/customer-segments))
 
-2. **Define the value metric / pricing metric:** Decide what you charge for (e.g., seats, usage, API calls, revenue processed). This is the engine of your architecture. (Refer to page [Value Metric / Pricing Metric](/wiki/pricing/models-and-metering#pricing-metric))
+2. **Define the value metric / pricing metric:** Decide what you charge for (e.g., seats, usage, API calls, revenue processed). This is the engine of your architecture. (Refer to page [Value Metric / Pricing Metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric))
 
 3. **Classify features (Leader/Filler/Killer):** For each segment, list all potential features and categorize them to avoid "feature shock." Use MaxDiff analysis to identify true **Leaders** (purchase drivers) versus **Fillers** (nice-to-haves), and remove **Killers** (features that turn customers away). (Refer to page [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features))
 
@@ -147,7 +147,7 @@ Refer to **The "Fence and Ladder"** in [Segmentation by Willingness to Pay (WTP)
 | Pitfall | Fix |
 |---------|-----|
 | **The "Feature Soup":** Too many features in every plan makes them hard to distinguish. | Remove features from lower tiers until the "Why Upgrade" story is clear. |
-| **Misaligned [Value Metric](/wiki/pricing/models-and-metering#pricing-metric):** Charging for seats when the value is in data processing; customers can't predict cost; or spend doesn't track value. | Pick a metric buyers understand, can influence, and that correlates with value creation. |
+| **Misaligned [Value Metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric):** Charging for seats when the value is in data processing; customers can't predict cost; or spend doesn't track value. | Pick a metric buyers understand, can influence, and that correlates with value creation. |
 | **The "Hydra" Product:** Continually adding new features as paid add-ons until the pricing page becomes a maze and sales negotiates everything. | Periodically re-bundle features into the core G/B/B tiers to simplify the choice architecture; limit add-ons; create a standard enterprise bundle. |
 | **Cannibalization:** Making the "Good" plan so feature-rich that "Best" buyers trade down; or customers buy small [add-on](/wiki/pricing/packaging-and-bundling/add-ons-modular) instead of moving up a tier. | Use strict "[fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination)" (e.g., limiting users, removing SSO, capping usage) to force high-value buyers into the higher tiers; re-package to keep core tier ladder as the main path. |
 
@@ -161,7 +161,7 @@ Refer to **The "Fence and Ladder"** in [Segmentation by Willingness to Pay (WTP)
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 * Lehrskov-Schmidt, U. (2023). *The Pricing Roadmap*. Independently published.
 
-**Related pages:** [Price Metrics / Value Metrics](/wiki/pricing/models-and-metering#pricing-metric) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Usage-Based Pricing](/wiki/pricing/models-and-metering)
+**Related pages:** [Price Metrics / Value Metrics](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing)
 
 ## FAQ
 

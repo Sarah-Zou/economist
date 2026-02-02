@@ -45,7 +45,7 @@ owner: "Dr. Sarah Zou"
   * **Experience:** Ease of use, onboarding time, support SLAs, brand trust.
   * **Social/emotional:** Peace of mind, status, community, mission alignment.
 * **Outcome vs. feature:** A **feature** enables an **outcome**; value drivers live at the outcome level.
-* **[Price metric](/wiki/pricing/models-and-metering#pricing-metric):** The unit you charge for (seats, usage, revenue processed) that best scales with delivered value.
+* **[Price metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric):** The unit you charge for (seats, usage, revenue processed) that best scales with delivered value.
 * **Dollarization:** Translating outcomes into monetary impact for the buyer.
 
 ## Why do Value Drivers matter?
@@ -140,7 +140,7 @@ owner: "Dr. Sarah Zou"
 
 **Q:** What if segments value different things? Can I have different value drivers for different customers?
 
-**A:** Yes, this is the definition of **Value-Based Segmentation**. For example, a commercial lab values a test kit for *yield* (profit), while a university lab values it for *accuracy* (publication). You should build separate maps, [price metrics](/wiki/pricing/models-and-metering#pricing-metric), and packages for each.
+**A:** Yes, this is the definition of **Value-Based Segmentation**. For example, a commercial lab values a test kit for *yield* (profit), while a university lab values it for *accuracy* (publication). You should build separate maps, [price metrics](/wiki/pricing/models-and-metering/pricing-metric-value-metric), and packages for each.
 
 **Q:** What if I can't quantify the value (e.g., brand, design)?
 
@@ -156,4 +156,4 @@ owner: "Dr. Sarah Zou"
 
 **Q:** Can we do this without big research budgets?
 
-**A:** Yes, start with interviews + telemetry + a lightweight [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) survey; refine with experiments (A/B test one [price metric](/wiki/pricing/models-and-metering#pricing-metric) or [tier](/wiki/pricing/packaging-and-bundling/packaging) boundary in a small cohort.)
+**A:** Yes, start with interviews + telemetry + a lightweight [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) survey; refine with experiments (A/B test one [price metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) or [tier](/wiki/pricing/packaging-and-bundling/packaging) boundary in a small cohort.)
