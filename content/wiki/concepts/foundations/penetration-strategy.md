@@ -83,6 +83,22 @@ Penetration pricing works when the scale, network, and lock-in you gain from the
 
 > **💡 Related:** See [How Maximization differs from Skimming and Penetration](/wiki/pricing/foundations/maximization#how-maximization-differs-from-skimming-and-penetration) for a detailed comparison of these three primary pricing strategies.
 
+### Rules of thumb
+
+- **The Contribution Rule:** Penetration pricing is most viable when incremental costs (variable and incremental fixed) represent a small share of the price, e.g. SaaS products.
+
+**Penetration vs. skimming rule-of-thumb:**
+
+Use penetration pricing when:
+- [Price elasticity](/wiki/pricing/research-and-experiments#price-elasticity) of demand is high (small price cuts drive big volume gains).
+- Economies of scale are strong (unit cost drops significantly with volume).
+- Lifetime value (LTV) grows with user base (network effects, data, ecosystem).
+
+Use skimming when:
+- Capacity is constrained.
+- Product is highly differentiated with inelastic demand.
+- You want to position as premium or luxury.
+
 ## Why does penetration pricing matter?
 
 For startup founders, penetration pricing is essential in markets **dominated by network effects**—where a product becomes more valuable as more people use it. It is a **"land-and-expand"** tactic, designed to capture a significant customer footprint early, which can later be leveraged for expansion revenue and increased customer lifetime value.
@@ -105,22 +121,6 @@ For startup founders, penetration pricing is essential in markets **dominated by
 | Capacity or supply is tightly constrained | ❌ Avoid | You don't need low prices to sell out | Niche luxury goods |
 | Premium brand positioning | ❌ Usually avoid | Low prices conflict with premium signals | Luxury goods, high-end B2B |
 | Easy for competitors to match / undercut | ⚠️ Risky | Can trigger price wars; advantage may be short-lived | Commodity categories |
-
-### Rules of thumb
-
-- **The Contribution Rule:** Penetration pricing is most viable when incremental costs (variable and incremental fixed) represent a small share of the price, e.g. SaaS products.
-
-**Penetration vs. skimming rule-of-thumb:**
-
-Use penetration pricing when:
-- [Price elasticity](/wiki/pricing/research-and-experiments#price-elasticity) of demand is high (small price cuts drive big volume gains).
-- Economies of scale are strong (unit cost drops significantly with volume).
-- Lifetime value (LTV) grows with user base (network effects, data, ecosystem).
-
-Use skimming when:
-- Capacity is constrained.
-- Product is highly differentiated with inelastic demand.
-- You want to position as premium or luxury.
 
 ## How do you implement penetration pricing step-by-step?
 

@@ -49,15 +49,7 @@ In B2B SaaS, this is the first "price-your-customer" decision, categorizing user
 - **Use case vs. segment:** *[Segment](/wiki/pricing/value-and-customers/customer-segments)* = group of customers with similar characteristics (company size, industry, budget, etc.). *Use case* = what those customers actually do with the product to create value. A segment can contain multiple use cases; a use case can appear across multiple segments.
 - **Primary vs. secondary use case:** *Primary use case* = the main job that justifies the purchase and drives [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay). *Secondary use cases* = additional jobs that are nice-to-have but usually not the core reason to buy.
 
-## Why do Customer Use Cases matter?
-
-For startup founders, customer use cases are the bridge between product features and pricing strategy. Approximately **72%** of new products fail because they are the "wrong answer to the right question" or an answer to a question no one was asking. Mapping use cases prevents "Feature Shock," where a company overengineers a product with "nice-to-haves" that increase costs without increasing [willingness-to-pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay).
-
-- **Avoids "Undead" Products:** Focuses development on jobs customers actually need done, not features that look good on paper.
-- **Efficiency:** Prevents overengineering by identifying which features are must-haves vs. nice-to-haves for each use case.
-- **Scalability:** Aligning your product with specific use cases leads to shorter sales cycles, less discounting, and higher Net Retention Rates (NRR).
-
-## Mental model 
+### Mental model
 
 Think of customer use cases as a structured card:
 
@@ -69,25 +61,33 @@ Pricing uses these cards to make choices about:
 - Which to **serve but not optimize** (add-ons, upsells, manual workarounds).
 - Which to **say no to** (edge cases that distract your roadmap).
 
-## Rules of thumb
+### Rules of thumb
 
-### Revenue coverage rule
+#### Revenue coverage rule
 
 Aim for **3–7 primary use cases** that together account for **≥70–85%** of current and target revenue.
 
-### Dedicated plan threshold
+#### Dedicated plan threshold
 
 If a distinct use case represents **≥20–30% of revenue** *and* has materially different [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) or feature needs, consider a dedicated [plan or bundle](/wiki/pricing/packaging-and-bundling/bundling).
 
-### Use case profitability (simplified)
+#### Use case profitability (simplified)
 
 [Use case profit] ≈ (Average [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) per customer × # of addressable customers) − (Incremental cost-to-serve). Focus on use cases where this is clearly positive and defensible.
 
-### Plan clarity rule
+#### Plan clarity rule
 
 If sales reps or customers cannot articulate in one sentence which plan is for which use case, your [packaging](/wiki/pricing/packaging-and-bundling/packaging) is too abstract.
 
-## How to Apply It
+## Why do Customer Use Cases matter?
+
+For startup founders, customer use cases are the bridge between product features and pricing strategy. Approximately **72%** of new products fail because they are the "wrong answer to the right question" or an answer to a question no one was asking. Mapping use cases prevents "Feature Shock," where a company overengineers a product with "nice-to-haves" that increase costs without increasing [willingness-to-pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay).
+
+- **Avoids "Undead" Products:** Focuses development on jobs customers actually need done, not features that look good on paper.
+- **Efficiency:** Prevents overengineering by identifying which features are must-haves vs. nice-to-haves for each use case.
+- **Scalability:** Aligning your product with specific use cases leads to shorter sales cycles, less discounting, and higher Net Retention Rates (NRR).
+
+## How do you implement customer use cases step-by-step?
 
 ### Inputs you need
 
@@ -137,7 +137,7 @@ Use this flow to define a customer use case in a way that directly feeds your mo
 
 ## References & Links
 
-### Sources
+### Sources:
 
 * Christensen, C. M., Hall, T., Dillon, K., & Duncan, D. S. (2016). *[Competing against luck: The story of innovation and customer choice](https://archive.org/details/competingagainst0000chri_l4t1).* Harper Business.
 * Nagle, T. T., Hogan, J. E., & Zale, J. (2016). [*The strategy and tactics of pricing: A guide to growing more profitably*](https://www.taylorfrancis.com/books/mono/10.4324/9781315266220/strategy-tactics-pricing-thomas-nagle-john-hogan-joseph-zale). Routledge.
@@ -147,7 +147,7 @@ Use this flow to define a customer use case in a way that directly feeds your mo
 * Ghuman, A. (2021). [*Price to scale: Practical pricing for your high-growth SaaS startup*](https://www.goodreads.com/book/show/57850428-price-to-scale). Independently published.
 * Maurya, A. (2012). [*Running lean: Iterate from plan A to a plan that works*](https://books.google.com/books/about/Running_Lean.html?id=_RKbzgEACAAJ). O'Reilly Media.
 
-**Related pages:** [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Jobs-to-be-Done (JTBD)](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Segmentation by WTP/Use Case](/wiki/pricing/value-and-customers/customer-segments) | [Willingness-to-Pay Research (Van Westendorp, Gabor-Granger, Conjoint)](/wiki/pricing/value-and-customers/willingness-to-pay)
+**Related pages:** [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Jobs-to-be-Done (JTBD)](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Segmentation by WTP/Use Case](/wiki/pricing/value-and-customers/customer-segments) | [Willingness-to-Pay Research (Van Westendorp, Gabor-Granger, Conjoint)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing)
 
 ## FAQ
 

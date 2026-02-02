@@ -54,6 +54,18 @@ The estimated value is called **Total Economic Value**, composed of two primary 
 
 * **Share of value captured:** The portion of incremental economic value reflected in your price premium over the NBCA.
 
+### Mental model
+
+Think of a vertical "Value Stack" chart:
+
+![EVE Mental Model showing a Value Stack chart with Reference Value ($100) at the base, Positive Differentiation Values ($70) stacked above, Negative Differentiation Value ($20) deducted, and Total Economic Value ($150) at the top](/images/wiki_EVE_mental.png)
+
+1. **The Foundation:** The bottom block is the **Reference Value**, the price of the competitor's product, say $100.
+2. **The Value Add:** Above the foundation, you stack blocks representing **Positive Differentiation Values** (e.g., extra revenue, lower labor, lower risk, say $70 in total as shown in the chart).
+3. **The Deduction:** If a competitor's product is superior in some minor way, a small slice is removed from the top, representing **Negative Differentiation Value** (e.g., switching costs, extra modules needed, say $20).
+4. **The Ceiling:** The very top of this stack is the **Total Economic Value**, the price ceiling for your most informed customers, that is, $150 in the chart.
+5. Your price should sit **somewhere between the alternative's price and total economic value**, depending on your positioning and bargaining power.
+
 ## Why does EVE matter?
 
 For startup founders, EVE is essential to move from "hoping" a price works to "knowing" it is justified by value.
@@ -68,39 +80,29 @@ For startup founders, EVE is essential to move from "hoping" a price works to "k
 
 - **Critical for novel products:** Especially vital for revolutionary products where customers have no experience to judge value and may initially perceive the offering as overpriced without a quantified justification.
 
-## Mental model
+## When should you use EVE?
 
-Think of a vertical "Value Stack" chart:
+### Equations & rules of thumb
 
-![EVE Mental Model showing a Value Stack chart with Reference Value ($100) at the base, Positive Differentiation Values ($70) stacked above, Negative Differentiation Value ($20) deducted, and Total Economic Value ($150) at the top](/images/wiki_EVE_mental.png)
-
-1. **The Foundation:** The bottom block is the **Reference Value**, the price of the competitor's product, say $100.
-2. **The Value Add:** Above the foundation, you stack blocks representing **Positive Differentiation Values** (e.g., extra revenue, lower labor, lower risk, say $70 in total as shown in the chart).
-3. **The Deduction:** If a competitor's product is superior in some minor way, a small slice is removed from the top, representing **Negative Differentiation Value** (e.g., switching costs, extra modules needed, say $20).
-4. **The Ceiling:** The very top of this stack is the **Total Economic Value**, the price ceiling for your most informed customers, that is, $150 in the chart.
-5. Your price should sit **somewhere between the alternative's price and total economic value**, depending on your positioning and bargaining power.
-
-## Equations & rules of thumb
-
-### Core equation
+#### Core equation
 
 $$
 \text{Economic Value} = P_{NBCA} + \sum_i PositiveDifferentiation_i - \sum_j NegativeDifferentiation_j
 $$
 
-### Price premium vs. alternative
+#### Price premium vs. alternative
 
 $$
 \text{Price Premium} = P_{yours} - P_{NBCA}
 $$
 
-### Share of incremental value captured
+#### Share of incremental value captured
 
 $$
 \text{Share Captured} = \frac{P_{yours} - P_{NBCA}}{\text{Economic Value} - P_{NBCA}}
 $$
 
-### Rule‑of‑thumb bands (B2B / SaaS)
+#### Rule‑of‑thumb bands (B2B / SaaS)
 
 **The 50/50 Rule:** While EVE establishes the ceiling, founders should typically target capturing roughly **50%** of the differentiation value as a fair price premium, ensuring the customer still has a strong "incentive to purchase". Specifically,
 
@@ -114,7 +116,7 @@ These are guidelines, not laws—realistic shares depend on risk, switching fric
 
 > **💡 Related:** See [Value Decoder vs. Economic Value Estimation (EVE)](/wiki/pricing/value-and-customers/value-decoder-framework#value-decoder-vs-economic-value-estimation-eve) for a detailed comparison of these two value-based pricing frameworks and when to use each.
 
-## Decision criteria (When EVE is the right tool?)
+### Decision criteria
 
 | Situation / Question                                                 | Is EVE a good fit? | What to do                                                                                      |
 | -------------------------------------------------------------------- | ------------------ | ----------------------------------------------------------------------------------------------- |
@@ -199,7 +201,7 @@ Your actual list price might be slightly above this (to allow room for discounts
 
 ## References & Links
 
-### Sources
+### Sources:
 
 - Gourville, J. T. (2006, June). Eager sellers and stony buyers: Understanding the psychology of new-product adoption. *Harvard Business Review*. [Link](https://hbr.org/2006/06/eager-sellers-and-stony-buyers-understanding-the-psychology-of-new-product-adoption)
 - Liozu, S. M. (2019). Ten golden rules of EVE models. *Professional Pricing Society Publications*.

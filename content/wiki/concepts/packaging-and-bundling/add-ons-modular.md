@@ -30,7 +30,7 @@ owner: "Dr. Sarah Zou"
 - **51.5% revenues:** In airline "ancillaries" (add-ons), some carriers have earned ~51.5% of revenue from add-ons (e.g., Spirit, 2022). ([IdeaWorksCompany Yearbook](https://www.ideaworkscompany.com/))
 - **60%+ expansion:** Over 60% of expansion revenue in scale-up tech firms typically comes from feature add-ons rather than seat-based expansion. ([OpenView](https://openviewpartners.com/blog/saas-metrics-benchmarks/))
 
-## Core Concepts & Framework
+## What are add-ons and modular packaging?
 
 **The Core offer:** The base product customers must buy to solve the primary problem.
 
@@ -58,13 +58,7 @@ While both concepts involve selling features separately from the core offering, 
 2. **Operational Overlap:** In practice, the line is often blurred. A "Module" is often technically implemented as a large "Add-on" in billing systems.
 3. **The "Core + Extension" Architecture:** Both rely on the concept of a "Base" or "Platform" fee (to cover CAC and core R&D) plus variable elements (modules/add-ons) to capture upside.
 
-### Why It Matters
-
-- **Capturing Heterogeneous Demand:** If your market has high variance in needs (e.g., one customer needs Analytics but not Security; another needs Security but not Analytics), standard tiers will fail. Modular pricing maximizes revenue by allowing each customer to pay for exactly what they value.
-- **Monetizing "Niche Leaders":** Some features are highly valued by a small segment of users (High Willingness to Pay) but irrelevant to the majority (Low Popularity). If you bundle these into the core product, you bloat the price for everyone; if you sell them as add-ons, you capture pure profit from the power users.
-- **Wallet Structuring:** Large enterprises have different budgets (e.g., IT budget vs. Marketing budget). Modular packaging allows you to sell different parts of your product to different stakeholders within the same company, effectively maximizing the total contract value.
-
-## Mental model
+### Mental model
 
 **The "Core + Lego" System**
 
@@ -75,7 +69,7 @@ Think of your product not as a single block, but as a Base Platform (the core fe
 
 ![Diagram of Core plus Lego blocks: a base platform (core) with optional add-on and module blocks that customers can attach—contrasting vertical tier strategy (pre-built castle) with horizontal strategy (base plus optional drawbridge and moat)](/images/wiki_addon_mental.png)
 
-## Rules of thumb
+### Rules of thumb
 
 - **One add-on = one sentence.** If you can't explain it simply, it's probably a [bundle](/wiki/pricing/packaging-and-bundling/bundling) or a [tier](/wiki/pricing/packaging-and-bundling/good-better-best).
 - **One add-on = one buyer.** Aim for a clear economic buyer (IT, Finance, Ops) rather than "everyone."
@@ -83,7 +77,13 @@ Think of your product not as a single block, but as a Base Platform (the core fe
 - **The Pricing Anchor:** Add-ons should typically be priced at 15–30% of the base plan price to ensure they feel like an "upsell" rather than a "new purchase."
 - **Fewer, bigger modules beats many tiny toggles.** Start with 2–5 high-value modules. Do not offer more than 3–5 standalone add-ons/modules at the mass-market level. If you have more, group them into an "Enterprise Pack" or "Security Suite" to reduce decision paralysis.
 
-## How to Apply It
+## Why do add-ons and modular packaging matter?
+
+- **Capturing Heterogeneous Demand:** If your market has high variance in needs (e.g., one customer needs Analytics but not Security; another needs Security but not Analytics), standard tiers will fail. Modular pricing maximizes revenue by allowing each customer to pay for exactly what they value.
+- **Monetizing "Niche Leaders":** Some features are highly valued by a small segment of users (High Willingness to Pay) but irrelevant to the majority (Low Popularity). If you bundle these into the core product, you bloat the price for everyone; if you sell them as add-ons, you capture pure profit from the power users.
+- **Wallet Structuring:** Large enterprises have different budgets (e.g., IT budget vs. Marketing budget). Modular packaging allows you to sell different parts of your product to different stakeholders within the same company, effectively maximizing the total contract value.
+
+## How do you implement add-ons and modular packaging step-by-step?
 
 ### Inputs you need
 
@@ -123,7 +123,7 @@ Think of your product not as a single block, but as a Base Platform (the core fe
 
 ## References & Links
 
-### Sources
+### Sources:
 
 * Baker, W. L., Marn, M. V., & Zawada, C. C. (2010). [*The Price Advantage*](https://www.wiley.com/en-us/The+Price+Advantage%2C+3rd+Edition-p-9780470537952). Wiley.
 * Ghuman, A. (2021). *Price to Scale*. Independently published.

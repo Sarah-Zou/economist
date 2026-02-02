@@ -31,7 +31,7 @@ owner: "Dr. Sarah Zou"
 - **36%:** In a study of 50 best‑in‑class SaaS pricing pages, **36%** used **multiple pricing pages or tabs** to handle multiple markets/products. ([FastSpring, 2022](https://fastspring.com/blog/three-tier-pricing-strategy-for-saas-is-it-still-ideal/))
 - **The "Decoy" Effect:** In a famous experiment with *The Economist*, adding a "decoy" option shifted customer preference for the high-priced option from **32% to 84%**. ([Ramanujam, M., & Tacke, G. (2016). Monetizing Innovation](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840))
 
-## Core Concepts & Framework
+## What is Good-Better-Best?
 
 **Good–Better–Best (G/B/B)** is a tiered [packaging architecture](/wiki/pricing/packaging-and-bundling/packaging) that bundles features and services into three distinct tiers to target different [customer segments](/wiki/pricing/value-and-customers/customer-segments) with varying [Willingness to Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay).
 
@@ -49,17 +49,7 @@ owner: "Dr. Sarah Zou"
 
 * **Price Anchoring:** The cognitive bias where the first price a customer sees (usually the "Best" tier) serves as a mental reference point for evaluating the value of subsequent options.
 
-### Why It Matters
-
-Early-stage startups often underprice because they fear rejection. GBB reduces that pressure by letting you serve multiple willingness-to-pay levels at once—capturing more **consumer surplus** (what high-value users would pay) without pricing out budget-conscious adopters. It shifts pricing from a single "take it or leave it" number to a clearer "which option fits your needs?" choice.
-
-* **Psychological guidance:** With three options, many buyers avoid the extremes and choose the middle tier—so you can design **Better** to be the default and best-margin package (while still being a legitimate fit).
-
-* **Maximizing coverage:** One price forces a binary yes/no. GBB lets **Good** win price-sensitive buyers while **Best** monetizes high-value needs (scale, risk reduction, advanced workflows), increasing total revenue across [segments](/wiki/pricing/value-and-customers/customer-segments).
-
-* **Sales velocity:** Tiers standardize the sales conversation. Instead of starting negotiations from scratch, reps qualify needs and map them to a plan (e.g., "If you need X, Better is the right tier"), which reduces friction and speeds decisions.
-
-## Mental model
+### Mental model
 
 Imagine a **Pyramid** divided into three horizontal slices:
 
@@ -71,13 +61,25 @@ Goal: each step adds a *meaningful* outcome and a clear reason to upgrade.
 
 ![Pyramid diagram showing Good-Better-Best framework with three horizontal tiers: Base (Good) focused on Basic Utility, Middle (Better) focused on Efficiency and Growth representing the target segment, and Top (Best) focused on Peace of Mind with highest ARPU but smallest customer volume](/images/wiki_GBB_mental.png)
 
-## Rules of thumb
+### Rules of thumb
 
 * **The 30/50/20 Rule:** Ideally, your customer distribution should be roughly **30% Good**, **50% Better**, and **20% Best**. If >50% buy "Good," your entry-level product is too rich (you gave away too much value). If <10% buy "Best," your premium differentiation is too weak.
 
 * **The 1x-2x-4x Rule:** A common starting ratio for pricing. If "Good" is \$10, "Better" is \$20, and "Best" is \$40+.
 
-## Decision criteria
+## Why does Good-Better-Best matter?
+
+Early-stage startups often underprice because they fear rejection. GBB reduces that pressure by letting you serve multiple willingness-to-pay levels at once—capturing more **consumer surplus** (what high-value users would pay) without pricing out budget-conscious adopters. It shifts pricing from a single "take it or leave it" number to a clearer "which option fits your needs?" choice.
+
+* **Psychological guidance:** With three options, many buyers avoid the extremes and choose the middle tier—so you can design **Better** to be the default and best-margin package (while still being a legitimate fit).
+
+* **Maximizing coverage:** One price forces a binary yes/no. GBB lets **Good** win price-sensitive buyers while **Best** monetizes high-value needs (scale, risk reduction, advanced workflows), increasing total revenue across [segments](/wiki/pricing/value-and-customers/customer-segments).
+
+* **Sales velocity:** Tiers standardize the sales conversation. Instead of starting negotiations from scratch, reps qualify needs and map them to a plan (e.g., "If you need X, Better is the right tier"), which reduces friction and speeds decisions.
+
+## When should you use Good-Better-Best?
+
+### Decision criteria
 
 | Situation                                        | Use classic 3-tier GBB? | Better alternative                             |
 | ------------------------------------------------ | ----------------------- | ---------------------------------------------- |
@@ -87,7 +89,7 @@ Goal: each step adds a *meaningful* outcome and a clear reason to upgrade.
 | Your best customers scale on a measurable metric | ✅                       | GBB + [usage/seat ladder](/wiki/pricing/models-and-metering/pricing-metric-value-metric)                        |
 | Heavy compliance / security / procurement needs  | ✅                       | Put trust/compliance in Best (or "Enterprise") |
 
-## How to Apply It
+## How do you implement Good-Better-Best step-by-step?
 
 ### Inputs you need
 
@@ -95,7 +97,7 @@ Goal: each step adds a *meaningful* outcome and a clear reason to upgrade.
 * **MaxDiff Analysis:** Survey data to identify which features are "Leaders" (high value) versus "Fillers". (Refer to page [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features))
 * **Willingness to Pay (WTP) Data:** Run [Van Westendorp Price Sensitivity surveys](/wiki/pricing/research-and-experiments/van-westendorp) to determine the acceptable price ranges for each tier.
 * **Jobs to be Done (JTBD):** Understanding the specific "job" each segment hires your product to do (e.g., "Maintenance" vs. "Optimization"). (Refer to page [Jobs-to-Be-Done](/wiki/pricing/value-and-customers/jobs-to-be-done))
-* **Competitor Benchmarking:** Map your competitors' tiers. Are they "feature-gating" (Best gets more features) or "usage-gating" (Best gets more seats)? (See [Value Metric / Pricing Metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) for usage-based pricing models)
+* **Competitor Benchmarking:** Map your competitors' tiers. Are they "feature-gating" (Best gets more features) or "usage-gating" (Best gets more seats)? (See [Value Metric / Pricing Metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) and [usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing).)
 
 ### Step-by-step
 
@@ -136,14 +138,14 @@ Goal: each step adds a *meaningful* outcome and a clear reason to upgrade.
 
 ## References & Links
 
-### Sources
+### Sources:
 
 * Gourville, J. T., & Soman, D. (2018). [The Good-Better-Best Approach to Pricing](https://hbr.org/2018/09/the-good-better-best-approach-to-pricing). *Harvard Business Review*, *96*(5), 118-125.
 * Nagle, T. T., Hogan, J. E., & Zale, J. (2016). [*The Strategy and Tactics of Pricing*](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Hogan-Zale/p/book/9781138846774) (6th ed.). Routledge.
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 * Ghuman, A. (2021). *Price to Scale*. Independently published.
 
-**Related pages:** [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Customer Segments](/wiki/pricing/value-and-customers/customer-segments) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Willingness to Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Jobs-to-Be-Done (JTBD)](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Value Drivers](/wiki/pricing/value-and-customers/value-drivers) | [Value Metric (Seats vs Usage)](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp)
+**Related pages:** [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Customer Segments](/wiki/pricing/value-and-customers/customer-segments) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Willingness to Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Jobs-to-Be-Done (JTBD)](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Value Drivers](/wiki/pricing/value-and-customers/value-drivers) | [Value Metric (Seats vs Usage)](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp)
 
 ## FAQ
 

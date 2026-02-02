@@ -41,18 +41,7 @@ Unlike a "price point," which is merely a number, WTP is a **distribution** whic
 * **WTP distribution:** Variation across customers; shaped by [use case](/wiki/pricing/value-and-customers/customer-use-cases), ability to pay, alternatives, and risk.
 * **Price sensitivity / elasticity:** How demand changes with price.
 
-## Why does WTP matter?
-
-For startup founders, WTP is the **single most critical factor** in determining whether a product will make money. The **"root of all innovation evil"** is the failure to put the customer's WTP at the core of product design. 
-
-Approximately **72%** of new products fail because companies postpone pricing decisions until the very end of the development process, essentially hoping for profit rather than knowing it exists. Conversely, mastering WTP allows a firm to capture its fair share of the value it creates, as a mere 1% improvement in price realization can boost operating profits by approximately **10% to 11%**.
-
-- **Defines pricing ceiling:** WTP establishes the maximum price customers will accept, helping you pick a defensible price range instead of guessing.
-- **Reveals segmentation opportunities:** Shows which segments value you most, enabling [tiered pricing](/wiki/pricing/packaging-and-bundling/packaging) and [price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination).
-- **Prevents product failures:** Early WTP research can identify "undead" products that won't cover costs, saving development resources.
-- **Maximizes profit capture:** Understanding WTP distribution allows you to capture more value through segmentation and strategic pricing.
-
-## Mental model
+### Mental model
 
 A practical mental model for WTP is the **"Reasonable Price Range"**.
 
@@ -64,7 +53,20 @@ A practical mental model for WTP is the **"Reasonable Price Range"**.
 
 • **The Incentive to purchase:** The gap between the chosen price and the maximum WTP.
 
-## Decision criteria (When is WTP research the right tool?)
+## Why does WTP matter?
+
+For startup founders, WTP is the **single most critical factor** in determining whether a product will make money. The **"root of all innovation evil"** is the failure to put the customer's WTP at the core of product design. 
+
+Approximately **72%** of new products fail because companies postpone pricing decisions until the very end of the development process, essentially hoping for profit rather than knowing it exists. Conversely, mastering WTP allows a firm to capture its fair share of the value it creates, as a mere 1% improvement in price realization can boost operating profits by approximately **10% to 11%**.
+
+- **Defines pricing ceiling:** WTP establishes the maximum price customers will accept, helping you pick a defensible price range instead of guessing.
+- **Reveals segmentation opportunities:** Shows which segments value you most, enabling [tiered pricing](/wiki/pricing/packaging-and-bundling/packaging) and [price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination).
+- **Prevents product failures:** Early WTP research can identify "undead" products that won't cover costs, saving development resources.
+- **Maximizes profit capture:** Understanding WTP distribution allows you to capture more value through segmentation and strategic pricing.
+
+## When should you use WTP research?
+
+### Decision criteria
 
 | Your decision                       | Best-fit WTP approach                                      | Use when                                    | Watch-outs                                          |
 | ----------------------------------- | ---------------------------------------------------------- | ------------------------------------------- | --------------------------------------------------- |
@@ -123,7 +125,7 @@ This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pric
 
 ## References & Links
 
-### Sources
+### Sources:
 
 * Becker, G. M., DeGroot, M. H., & Marschak, J. (1964). [*Measuring utility by a single-response sequential method*](https://doi.org/10.1002/bs.3830090304). **Behavioral Science, 9**(3), 226–232.
 * Murphy, J. J., Allen, P. G., Stevens, T. H., & Weatherhead, D. (2005). [*A meta-analysis of hypothetical bias in stated preference valuation*](https://doi.org/10.1007/s10640-004-3332-1). **Environmental and Resource Economics, 30**, 313–325.

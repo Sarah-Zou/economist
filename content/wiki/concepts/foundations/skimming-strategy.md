@@ -55,6 +55,12 @@ Imagine a **"Value Waterfall"** or **"Step-Down Ladder"**:
 
 > **💡 Related:** See [How Maximization differs from Skimming and Penetration](/wiki/pricing/foundations/maximization#how-maximization-differs-from-skimming-and-penetration) for a detailed comparison of these three primary pricing strategies.
 
+### Rules of thumb
+
+- **Innovation Trigger:** If your product is "Revolutionary" (creating its own market) or "Evolutionary" (significant upgrades), skimming is often the default best choice.
+- **The 30% Margin Rule:** Skimming is most effective when the profit from selling a low volume to price-insensitive customers exceeds the total profit of selling a high volume at a lower price.
+- **Cadence guardrail:** Do not cut list price more than 10–15% within ≤30 days of launch unless supply/demand shock; prefer bundles/rebates.
+
 ## Why does skimming strategy matter?
 
 Skimming lets you monetize the highest-[WTP](/wiki/pricing/value-and-customers/willingness-to-pay) customers first while protecting your long-run price level and brand.
@@ -77,12 +83,6 @@ Skimming lets you monetize the highest-[WTP](/wiki/pricing/value-and-customers/w
 | Supply constrained / long lead times | ✅ | Monetize scarcity rather than rationing. |
 | High arbitrage risk (channels/regions) | ❌ Risky | Need tight fences; otherwise leaks. |
 | Strong network effects or learning-by-doing | ❌ Favor penetration | Value of share growth outweighs early margins. |
-
-### Rules of thumb
-
-- **Innovation Trigger:** If your product is "Revolutionary" (creating its own market) or "Evolutionary" (significant upgrades), skimming is often the default best choice.
-- **The 30% Margin Rule:** Skimming is most effective when the profit from selling a low volume to price-insensitive customers exceeds the total profit of selling a high volume at a lower price.
-- **Cadence guardrail:** Do not cut list price more than 10–15% within ≤30 days of launch unless supply/demand shock; prefer bundles/rebates.
 
 ## How do you implement skimming strategy step-by-step?
 

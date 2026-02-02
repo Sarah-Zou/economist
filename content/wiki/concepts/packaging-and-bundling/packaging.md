@@ -34,7 +34,7 @@ owner: "Dr. Sarah Zou"
 - **~30% Better Pricing:** **Simpler packaging** (e.g., ~3 tiers, <5 add-ons) is associated with **~30% higher likelihood** of effective pricing/discount controls. ([McKinsey, 2023](https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-art-of-software-pricing-unleashing-growth-with-data-driven-insights))
 - **70%+ are using:** Over 70% of high-growth SaaS companies utilize a three-tier **"Good-Better-Best"** architecture. [OpenView, 2020](https://openviewpartners.com/expansion-saas-benchmarks/)
 
-## Core Concepts & Framework
+## What is packaging architecture?
 
 **Packaging Architecture** (sometimes called product configuration) is the strategic design of *what* you sell, distinct from price setting, which determines *how much* you charge. It is the process of grouping features, services, and commercial terms into sellable units (offers) that align with specific [customer segments](/wiki/pricing/value-and-customers/customer-segments) and their [willingness to pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay).
 
@@ -76,21 +76,11 @@ owner: "Dr. Sarah Zou"
   * **Laddering** is the design of product tiers (e.g., [Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best), or Starter/Pro/Enterprise) to guide a customer's journey upward over time. It provides a *clear path* for a customer to enter at a lower price point and "expand" to higher tiers as their needs grow.
   * **Distinction:** Fencing is about *separation*. While Fencing is about keeping segments **apart** (e.g., "Student Discount" is a fence based on identification; "10-user limit" is a fence based on usage quantity.), laddering is about moving customers **up**. It is the structural foundation of a "Land and Expand" strategy.
 
-### Why It Matters
-
-Most founders fall into **"The Kitchen Sink Syndrome"**—adding every new feature to the same plan. Over time, this creates two predictable problems. First, **value leakage**: your most advanced customers pay roughly the same as your smallest ones, despite deriving far more value. Second, **analysis paralysis**: prospects struggle to understand the differences between plans, delaying or abandoning the purchase altogether.
-
-Well-designed packaging solves this by aligning offers with [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) and operational reality:
-
-* **Monetization leverage:** Changes to packaging and pricing drive a **12.7%** improvement to the bottom line on average, compared to just **3.3%** from improving customer acquisition alone. Packaging is one of the highest-ROI levers founders control.
-* **Unlocking hidden revenue:** A single package for the "average" customer inevitably over-serves the low end (giving away value) and under-serves the high end (leaving money on the table). Thoughtful packaging captures more of the demand curve by matching distinct value propositions to distinct segments.
-* **Operational velocity:** Clear packaging standardizes how products are sold. Without it, sales teams default to custom deals and exceptions, slowing deal cycles, increasing discounts, and creating long-term technical and roadmap debt.
-
-## Mental model
+### Mental model
 
 Refer to **The "Fence and Ladder"** in [Segmentation by Willingness to Pay (WTP) / Use Case](/wiki/pricing/value-and-customers/customer-segments) page.
 
-## Rules of thumb
+### Rules of thumb
 
 **Use as starting hypotheses:**
 
@@ -100,7 +90,19 @@ Refer to **The "Fence and Ladder"** in [Segmentation by Willingness to Pay (WTP)
 * Gate by **outcome/complexity/risk** (e.g., security, compliance, scale), not by "random features."
 * **The 10x Rule:** For every move up a tier, the customer should ideally perceive at least 10x the value, even if the price only triples.
 
-## Decision criteria
+## Why does packaging architecture matter?
+
+Most founders fall into **"The Kitchen Sink Syndrome"**—adding every new feature to the same plan. Over time, this creates two predictable problems. First, **value leakage**: your most advanced customers pay roughly the same as your smallest ones, despite deriving far more value. Second, **analysis paralysis**: prospects struggle to understand the differences between plans, delaying or abandoning the purchase altogether.
+
+Well-designed packaging solves this by aligning offers with [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) and operational reality:
+
+* **Monetization leverage:** Changes to packaging and pricing drive a **12.7%** improvement to the bottom line on average, compared to just **3.3%** from improving customer acquisition alone. Packaging is one of the highest-ROI levers founders control.
+* **Unlocking hidden revenue:** A single package for the "average" customer inevitably over-serves the low end (giving away value) and under-serves the high end (leaving money on the table). Thoughtful packaging captures more of the demand curve by matching distinct value propositions to distinct segments.
+* **Operational velocity:** Clear packaging standardizes how products are sold. Without it, sales teams default to custom deals and exceptions, slowing deal cycles, increasing discounts, and creating long-term technical and roadmap debt.
+
+## When should you use packaging architecture?
+
+### Decision criteria
 
 | If your situation looks like…                     | Prefer this packaging pattern                                 | Why                                              |
 | ------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------ |
@@ -110,7 +112,7 @@ Refer to **The "Fence and Ladder"** in [Segmentation by Willingness to Pay (WTP)
 | High [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay) for specific capabilities | **[Add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular)** for high-value bundles (security, AI, compliance) | Captures [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) without forcing everyone up         |
 | Retail/CPG with multiple sizes                    | **Price-pack architecture** (sizes + price points)            | Covers occasions/budgets and manages trade-down  |
 
-## How to Apply It
+## How do you implement packaging architecture step-by-step?
 
 ### Inputs you need
 
@@ -153,7 +155,7 @@ Refer to **The "Fence and Ladder"** in [Segmentation by Willingness to Pay (WTP)
 
 ## References & Links
 
-### Sources
+### Sources:
 
 * McKinsey & Company. (2023, June 2). [The art of software pricing: Unleashing growth with data-driven insights](https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-art-of-software-pricing-unleashing-growth-with-data-driven-insights). McKinsey & Company.
 * Mohammed, R. (2018). [The Good-Better-Best Approach to Pricing](https://hbr.org/2018/09/the-good-better-best-approach-to-pricing). *Harvard Business Review*, 96(5), 118-125.
@@ -187,4 +189,4 @@ Refer to **The "Fence and Ladder"** in [Segmentation by Willingness to Pay (WTP)
 
 **Q:** How should AI features fit into packaging?
 
-**A:** Usually as (1) a [usage-based](/wiki/pricing/models-and-metering) unit (credits) for variable cost, or (2) a premium [add-on](/wiki/pricing/packaging-and-bundling/add-ons-modular) for high [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) + predictable entitlements.
+**A:** Usually as (1) a [usage-based](/wiki/pricing/models-and-metering/usage-based-pricing) unit (credits) for variable cost, or (2) a premium [add-on](/wiki/pricing/packaging-and-bundling/add-ons-modular) for high [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) + predictable entitlements.

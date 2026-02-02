@@ -53,17 +53,7 @@ To understand ICP, **distinguish between observable vs. value-based characterist
 | **Observable (easy to see)** | demographics/firmographics, industry, size, tech stack | Helps you find them and target channels |
 | **Value-based (higher signal)** | needs, pain intensity, urgency, success criteria, [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) | Predicts conversion, retention, expansion, and pricing power |
 
-## Why does ICP matter?
-
-For startup founders, ICP is the strategic foundation that aligns product, marketing, sales, success, and pricing around one answer:
-
-_"If we could only win 100 customers this year, which 100 should they be—and why?"_
-
-- **Pricing power:** Price elasticity is often **more dependent on the customer than the product**. When you focus on a segment with **high pain + high value** (and budget/urgency), you can charge premium prices because you're delivering a clear, measurable outcome—not selling a commodity.
-- **Monetization efficiency:** You can't optimize pricing without knowing **who you're optimizing for**. Different segments have different [willingness-to-pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) and [value drivers](/wiki/pricing/value-and-customers/value-drivers); a one-size-fits-all approach either leaves money on the table (underpricing) or kills conversion (overpricing).
-- **Organizational alignment (prevents "ICP drift"):** Without a clear ICP, _sales chases the wrong leads, product builds the wrong features, and marketing targets the wrong audience_. Over time, the company **drifts from its strategic focus**—wasting resources and producing confused positioning and inconsistent pricing.
-
-## Mental model
+### Mental model
 
 **ICP = Fit ∩ Value ∩ Reach**
 - **Fit (can you serve them?):** product requirements, integrations, constraints.
@@ -75,21 +65,31 @@ _"If we could only win 100 customers this year, which 100 should they be—and w
 
 If any circle is missing, you'll feel it as churn (Value), failed deals (Fit), or runaway CAC (Reach).
 
-## Rules of thumb
+### Rules of thumb
 
-### 💰 The LTV/CAC Rule
+#### 💰 The LTV/CAC Rule
 
 Your ICP should ideally yield an **$LTV/CAC > 3$**. If it's $< 3$, your ICP is **too broad** or your pricing is **misaligned**.
 
-### ⏱️ The "Payback Period" Rule
+#### ⏱️ The "Payback Period" Rule
 
 The ICP should ideally have a **CAC Payback period of $< 12$ months**, for many B2B SaaS motions (shorter for PLG).
 
-### 🔍 The "Rule of 3"
+#### 🔍 The "Rule of 3"
 
 If **3 of your top 5 customers** share a specific trait (e.g., "Using AWS" or "Series B funded"), that trait is a **candidate for your ICP definition**.
 
-## How to Apply It
+## Why does ICP matter?
+
+For startup founders, ICP is the strategic foundation that aligns product, marketing, sales, success, and pricing around one answer:
+
+_"If we could only win 100 customers this year, which 100 should they be—and why?"_
+
+- **Pricing power:** Price elasticity is often **more dependent on the customer than the product**. When you focus on a segment with **high pain + high value** (and budget/urgency), you can charge premium prices because you're delivering a clear, measurable outcome—not selling a commodity.
+- **Monetization efficiency:** You can't optimize pricing without knowing **who you're optimizing for**. Different segments have different [willingness-to-pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) and [value drivers](/wiki/pricing/value-and-customers/value-drivers); a one-size-fits-all approach either leaves money on the table (underpricing) or kills conversion (overpricing).
+- **Organizational alignment (prevents "ICP drift"):** Without a clear ICP, _sales chases the wrong leads, product builds the wrong features, and marketing targets the wrong audience_. Over time, the company **drifts from its strategic focus**—wasting resources and producing confused positioning and inconsistent pricing.
+
+## How do you implement ICP step-by-step?
 
 ### Inputs you need
 
@@ -133,7 +133,7 @@ If **3 of your top 5 customers** share a specific trait (e.g., "Using AWS" or "S
 
 ## References & Links
 
-### Sources
+### Sources:
 
 * Blank, S., & Dorf, B. (2012). [*The Startup Owner's Manual: The Step-by-Step Guide for Building a Great Company*](https://www.amazon.com/Startup-Owners-Manual-Step-Step/dp/0984999302). K&S Ranch.
 * Dunford, A. (2019). [*Obviously Awesome: How to Nail Product Positioning so Customers Get It, Buy It, Love It*](https://www.obviouslyawesomebook.com/). Ambient Press.

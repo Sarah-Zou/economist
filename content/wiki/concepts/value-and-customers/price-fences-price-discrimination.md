@@ -28,7 +28,7 @@ owner: "Dr. Sarah Zou"
 
 - **Psychology:** 64% of consumers feel a price is "unfair" if they see others paying less for the *exact* same thing without a clear reason (the "Fence"). [Annenberg Public Policy Center](https://share.google/Mu6ISyr86LP9ndCmi)
 - **30% Untapped Revenue:** Companies implementing effective price discrimination techniques can capture up to 30% more revenue from their existing customer base by minimizing "consumer surplus" leakage. ([BCG](https://www.bcg.com/capabilities/marketing-sales/pricing))
-- **The 2x Growth:** Companies that align their price fences with a value metric (usage-based or outcome-based) grow at least 2x faster than those using traditional seat-based flat pricing. ([OpenView](https://openviewpartners.com/blog/2023-saas-benchmarks-report/))
+- **The 2x Growth:** Companies that align their price fences with a value metric ([usage-based](/wiki/pricing/models-and-metering/usage-based-pricing) or [outcome-based](/wiki/pricing/models-and-metering/outcome-performance-based-pricing)) grow at least 2x faster than those using traditional seat-based flat pricing. ([OpenView](https://openviewpartners.com/blog/2023-saas-benchmarks-report/))
 
 ## What are Price Fences?
 
@@ -68,15 +68,7 @@ Most price fences fall into four categories: **Buyer Identification** (Who they 
 * **2nd degree (self-selection):** Customers choose their own price based on quantity or features ([Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best), usage [tiers](/wiki/pricing/packaging-and-bundling/packaging), seat packs).
 * **3rd degree (segment-based):** Pricing based on group attributes (e.g., Student discounts, Geography). This relies on [segmentation](/wiki/pricing/value-and-customers/customer-segments) to identify distinct customer groups.
 
-## Why do Price Fences matter?
-
-* **Capture consumer surplus:** A single price is inherently inefficient. It leaves money on the table from high‑value customers (who would pay more) while excluding low‑value customers who would buy above variable cost.
-
-* **Maximize profitability:** [Segmentation](/wiki/pricing/value-and-customers/customer-segments) lets you skim the "cream" of high willingness‑to‑pay while still driving enough volume at lower prices to cover fixed costs.
-
-* **Serve diverse needs without cannibalization:** Price fences allow you to serve budget‑constrained segments (students, SMBs) without eroding revenue from high‑budget segments (enterprises).
-
-## Mental model
+### Mental model
 
 ![Price fences mental model: A visual diagram illustrating the "Hurdle" framework for price discrimination. The diagram shows how companies place hurdles (fences) in front of low prices that are easy for price-sensitive customers to jump (e.g., booking in advance, accepting limited features) but difficult or impossible for high-value customers to overcome (e.g., business travelers who need flexibility, enterprise customers who require compliance features). This self-selection mechanism allows segments to naturally separate, with high-value customers paying premiums to avoid hurdles while low-value customers jump hurdles to access discounts.](/images/wiki_fence_mental.png)
 
@@ -88,7 +80,7 @@ You place a "hurdle" in front of the low price. This hurdle must be essentially 
 
 **Result: the segments self-select.** The high-value customer pays the premium to avoid the hurdle; the low-value customer jumps the hurdle to get the discount.
 
-## Rules of thumb
+### Rules of thumb
 
 * **The Break-Even Rule:** A price fence is only useful if:
 
@@ -96,6 +88,14 @@ You place a "hurdle" in front of the low price. This hurdle must be essentially 
   * **Enforcement cost** (operations + engagement + support) **must be lower than** the incremental profit.
 
 * **The Cannibalization Check:** If the "fence" is too low (easy to jump), high-value customers will trade down. You must practice "selective uglification"—intentionally stripping value from the lower tier to prevent this migration.
+
+## Why do Price Fences matter?
+
+* **Capture consumer surplus:** A single price is inherently inefficient. It leaves money on the table from high‑value customers (who would pay more) while excluding low‑value customers who would buy above variable cost.
+
+* **Maximize profitability:** [Segmentation](/wiki/pricing/value-and-customers/customer-segments) lets you skim the "cream" of high willingness‑to‑pay while still driving enough volume at lower prices to cover fixed costs.
+
+* **Serve diverse needs without cannibalization:** Price fences allow you to serve budget‑constrained segments (students, SMBs) without eroding revenue from high‑budget segments (enterprises).
 
 ## How do you implement price fences step-by-step?
 
@@ -151,7 +151,7 @@ You place a "hurdle" in front of the low price. This hurdle must be essentially 
 
 ## References & Links
 
-### Sources
+### Sources:
 
 * Baker, W., Kiewell, D., & Winkler, G. (2011). [*The hidden power of pricing: How B2B companies can unlock profit*](https://www.mckinsey.com/~/media/mckinsey/business%20functions/marketing%20and%20sales/our%20insights/ebook%20the%20hidden%20power%20of%20pricing%20how%20b2b%20companies%20can%20unlock%20profit/the-hidden-power-of-pricing.pdf). McKinsey & Company.
 * Borenstein, S., & Rose, N. L. (1994). [Competition and price dispersion in the U.S. airline industry](https://faculty.haas.berkeley.edu/borenste/download/JPE94AirPrice.pdf). *Journal of Political Economy, 102*(4), 653–683.
@@ -159,7 +159,7 @@ You place a "hurdle" in front of the low price. This hurdle must be essentially 
 * Varian, H. R. (1997). [*Versioning information goods*](https://people.ischool.berkeley.edu/~hal/Papers/version.pdf) (Working paper). University of California, Berkeley.
 * Federal Trade Commission. (n.d.). [*Price discrimination: Robinson-Patman violations*](https://www.ftc.gov/advice-guidance/competition-guidance/guide-antitrust-laws/price-discrimination-robinson-patman-violations).
 
-**Related pages:** [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) · [Bundling](/wiki/pricing/packaging-and-bundling/bundling) · [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) · [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) · [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) · [Discount policy](/wiki/pricing/policies-and-governance/discounting-and-realization) · [Value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) · [Conjoint analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) · [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) · [Segmentation by WTP/use case](/wiki/pricing/value-and-customers/customer-segments) · [Value drivers](/wiki/pricing/value-and-customers/value-drivers)
+**Related pages:** [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) · [Bundling](/wiki/pricing/packaging-and-bundling/bundling) · [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) · [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) · [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) · [Discount policy](/wiki/pricing/policies-and-governance/discounting-and-realization) · [Value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) · [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) · [Outcome/performance-based pricing](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) · [Conjoint analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) · [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) · [Segmentation by WTP/use case](/wiki/pricing/value-and-customers/customer-segments) · [Value drivers](/wiki/pricing/value-and-customers/value-drivers)
 
 ## FAQ
 

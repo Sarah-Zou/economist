@@ -91,7 +91,9 @@ The Value Decoder is the **perception and opportunity scanner**. It explains why
 
 Founders often get the best results by **combining both**: use [EVE](/wiki/pricing/value-and-customers/economic-value-estimation) to build the core economic logic beneath your price, then run the Value Decoder to align that price with how real humans actually experience value—and to decide where, when, and for whom you can charge more.
 
-## Decision criteria (When is the Value Decoder the right tool?)
+## When should you use the Value Decoder?
+
+### Decision criteria
 
 | Situation | Use Value Decoder? | What to do |
 |-----------|-------------------|------------|

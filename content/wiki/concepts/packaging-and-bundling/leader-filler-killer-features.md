@@ -30,7 +30,7 @@ owner: "Dr. Sarah Zou"
 - **2x more impactful:** [Packaging](/wiki/pricing/packaging-and-bundling/packaging) (the what) is often 2x more impactful on growth than the price point (the how much). ([ProfitWell's "Anatomy of SaaS Pricing"](https://www.profitwell.com/recurring/all/saas-pricing-strategy))
 - **25% Uplift:** A web hosting company increased revenue by 25% simply by removing unwanted features (Killers) from their core package, proving that "less" can be worth more. ([Ramanujam & Tacke, Monetizing Innovation](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840))
 
-## Core Concepts & Framework
+## What are Leader/Filler/Killer features?
 
 The Leader/Filler/Killer framework is a method for classifying product features based on customer preference and [willingness to pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay). It is used to design product [packages](/wiki/pricing/packaging-and-bundling/packaging) that maximize revenue and minimize sales friction.
 
@@ -42,11 +42,7 @@ The Leader/Filler/Killer framework is a method for classifying product features 
 
 * **Killer feature** ("cannibalizer"): A feature that actively devalues the product for a specific [customer segment](/wiki/pricing/value-and-customers/customer-segments). Including a "Killer" can reduce the customer's likelihood of purchase or the amount they are willing to pay because they view it as unnecessary clutter, complexity, or a cost driver they don't want to subsidize.
 
-### Why It Matters
-
-Without this distinction, founders fall into **"Kitchen Sink Syndrome"**: piling features into one [tier](/wiki/pricing/packaging-and-bundling/good-better-best), raising COGS and complexity without earning a higher price. The Leader/Filler/Killer lens forces a sharper [packaging](/wiki/pricing/packaging-and-bundling/packaging) story—what drives the decision, what rounds out the offer, and what should be [fenced](/wiki/pricing/value-and-customers/price-fences-price-discrimination) or moved up.
-
-## Mental model
+### Mental model
 
 **The "Steak, Bread/Sides, and Coffee"**
 
@@ -65,14 +61,18 @@ Think of a simple 2×2 grid:
 * **Killer:** Low Value / Low WTP ("cannibalizer"; devalues the product).  
 * **Add-on:** Low Value / High WTP (a small group loves the feature).
 
-## Rules of thumb
+### Rules of thumb
 
 * **Leaders per tier:** Aim for **1–2 leader features** that are *unique* (or uniquely powerful) to that tier.
 * **Filler ratio:** If your plan page is mostly fillers, you're competing on a checklist and inviting price pressure.
 * **The 20/20 Rule:** A feature is likely a **Killer** if it is valued by less than 20% of your customers and actively not valued (or seen as worthless) by more than 20%.
 * **Fence before you ship:** Don't release a Leader without an upgrade [fence](/wiki/pricing/value-and-customers/price-fences-price-discrimination) (limits, governance, advanced workflow, risk controls).
 
-## How to Apply It
+## Why do Leader/Filler/Killer features matter?
+
+Without this distinction, founders fall into **"Kitchen Sink Syndrome"**: piling features into one [tier](/wiki/pricing/packaging-and-bundling/good-better-best), raising COGS and complexity without earning a higher price. The Leader/Filler/Killer lens forces a sharper [packaging](/wiki/pricing/packaging-and-bundling/packaging) story—what drives the decision, what rounds out the offer, and what should be [fenced](/wiki/pricing/value-and-customers/price-fences-price-discrimination) or moved up.
+
+## How do you implement Leader/Filler/Killer features step-by-step?
 
 ### Inputs you need
 
@@ -117,7 +117,7 @@ Think of a simple 2×2 grid:
 
 ## References & Links
 
-### Sources
+### Sources:
 
 * Baker, W., Kiewell, D., & Winkler, G. (2014). [*The hidden power of pricing: How B2B companies can unlock profit*](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/ebook-the-hidden-power-of-pricing-how-b2b-companies-can-unlock-profit). McKinsey & Company.
 * Ghuman, A. (2021). [*Price to Scale: Practical Pricing for Your High Growth Software Startup*](https://www.amazon.com/Price-Scale-Practical-Pricing-Growth-Startup/dp/0578937502). Independently published.

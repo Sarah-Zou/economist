@@ -50,19 +50,9 @@ A "job" is distinct from a mere "problem." While a problem is a situation a user
 * **Job story (format):** *When ___, I want to ___, so I can ___.*
 * **Desired outcomes (ODI lens):** Metrics the customer uses to judge success (speed, effort, reliability, risk, compliance).
 
-## Why do Jobs to Be Done matter?
+### Mental model
 
-For startup founders, JTBD is the bridge between understanding customer demand and designing products, pricing, and messaging that align with real switching triggers.
-
-- **Predictable Demand:** A [package](/wiki/pricing/packaging-and-bundling/packaging) built around a job taps into a pre-existing stream of demand. As one entrepreneur noted, it is like "holding your cup out—the water was already running".
-
-- **Efficiency in Sales:** Aligning [packaging](/wiki/pricing/packaging-and-bundling/packaging) with specific jobs makes the product instantly understandable to the buyer, which reduces sales cycles and minimizes the need for heavy discounting.
-
-- **Portfolio Integrity:** Using JTBD prevents the creation of **"Monoliths"** (overengineered products that deliver too much functionality for most users, leading to under-monetization) and **"Hydras"** (products that grow in unmanageable complexity because every new feature is spun out as a new module).
-
-## Mental model 
-
-### The Forces of Progress
+#### The Forces of Progress
 
 To understand why a customer "hires" your startup, you must look at the four forces acting on them at the moment of purchase:
 
@@ -73,21 +63,31 @@ To understand why a customer "hires" your startup, you must look at the four for
 3. **Anxiety of the New:** Fear of the unknown (e.g., "Will this be hard to learn?").
 4. **Allegiance to the Old:** Habit and inertia (e.g., "I already know how to use my messy spreadsheet").
 
-## Rules of thumb
+### Rules of thumb
 
-### Interview count
+#### Interview count
 
 Approximately **90% of key customer needs** can be identified by conducting just **10–12 in-depth interviews** per market segment. (source: The Strategy and Tactics of Pricing)
 
-### The Drill/Hole Maxim
+#### The Drill/Hole Maxim
 
 "People don't want a quarter-inch drill; they want a quarter-inch hole."
 
-### The "Workaround" Rule
+#### The "Workaround" Rule
 
 If you see people using a tool for something it wasn't intended for (e.g., using Excel as a CRM), there is a massive JTBD opportunity there.
 
-## How to Apply It
+## Why do Jobs to Be Done matter?
+
+For startup founders, JTBD is the bridge between understanding customer demand and designing products, pricing, and messaging that align with real switching triggers.
+
+- **Predictable Demand:** A [package](/wiki/pricing/packaging-and-bundling/packaging) built around a job taps into a pre-existing stream of demand. As one entrepreneur noted, it is like "holding your cup out—the water was already running".
+
+- **Efficiency in Sales:** Aligning [packaging](/wiki/pricing/packaging-and-bundling/packaging) with specific jobs makes the product instantly understandable to the buyer, which reduces sales cycles and minimizes the need for heavy discounting.
+
+- **Portfolio Integrity:** Using JTBD prevents the creation of **"Monoliths"** (overengineered products that deliver too much functionality for most users, leading to under-monetization) and **"Hydras"** (products that grow in unmanageable complexity because every new feature is spun out as a new module).
+
+## How do you implement Jobs to Be Done step-by-step?
 
 ### Inputs you need
 
@@ -137,7 +137,7 @@ If you see people using a tool for something it wasn't intended for (e.g., using
 
 ## References & Links
 
-### Sources
+### Sources:
 
 * Christensen, C. M., Hall, T., Dillon, K., & Duncan, D. S. (2016a, September). [Know your customers' jobs to be done](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done). *Harvard Business Review.*
 * Christensen, C. M., Dillon, K., Hall, T., & Duncan, D. S. (2016b). [*Competing against luck: The story of innovation and customer choice*](https://www.harpercollins.com/products/competing-against-luck-clayton-m-christensen). HarperBusiness.

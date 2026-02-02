@@ -48,6 +48,10 @@ owner: "Dr. Sarah Zou"
 * **[Price metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric):** The unit you charge for (seats, usage, revenue processed) that best scales with delivered value.
 * **Dollarization:** Translating outcomes into monetary impact for the buyer.
 
+### Mental model / diagram
+
+![Value drivers mental model: A visual diagram showing the value driver pipeline from features to pricing decisions. The diagram illustrates how product features enable specific capabilities, which produce measurable outcome KPIs (key performance indicators). These outcomes are then dollarized to quantify their economic impact, which increases customer willingness to pay (WTP) and ultimately informs pricing and packaging choices. This framework helps translate product features into quantifiable value that drives customer purchasing decisions and justifies price premiums.](/images/wiki_valueDriver_mental.png)
+
 ## Why do Value Drivers matter?
 
 - **Avoiding Commoditization:** Without clearly defined value drivers, customers default to comparing products based on price alone. Understanding value drivers allows you to price based on the *economic value* you create rather than your internal costs, which is the foundation of [value-based pricing](/wiki/pricing/foundations/value-based-pricing).
@@ -56,11 +60,9 @@ owner: "Dr. Sarah Zou"
 
 - **Sales Justification:** Sales teams cannot defend a price premium without articulating the quantified value drivers that justify the difference between your product and the competitor's.
 
-## Mental model / diagram
+## When should you use value drivers?
 
-![Value drivers mental model: A visual diagram showing the value driver pipeline from features to pricing decisions. The diagram illustrates how product features enable specific capabilities, which produce measurable outcome KPIs (key performance indicators). These outcomes are then dollarized to quantify their economic impact, which increases customer willingness to pay (WTP) and ultimately informs pricing and packaging choices. This framework helps translate product features into quantifiable value that drives customer purchasing decisions and justifies price premiums.](/images/wiki_valueDriver_mental.png)
-
-## Equations & rules of thumb
+### Equations & rules of thumb
 
 * **Value Driver Algorithm:** A formula that quantifies a benefit.
 
@@ -68,7 +70,7 @@ owner: "Dr. Sarah Zou"
 * **The 50/30 Rule:** When pricing a solution based on value drivers, you should communicate 100% of the value created, target capturing 50% of that value in your price, and accept no less than 30%.
 * **Differentiation Ratio:** The value-based price premium is often much greater than the percentage increase in technical efficiency. If a machine is 2x faster but saves an entire production line from shutting down, the value driver is the *shutdown prevention*, not just the speed.
 
-## How to Apply It
+## How do you implement value drivers step-by-step?
 
 ### Inputs you need
 
@@ -117,7 +119,7 @@ owner: "Dr. Sarah Zou"
 
 ## References & Links
 
-### Sources
+### Sources:
 
 * Anderson, J. C., Narus, J. A., & van Rossum, W. (2006). [Customer value propositions in business markets](https://hbr.org/2006/03/customer-value-propositions-in-business-markets). *Harvard Business Review*, 84(3), 90–99.
 * Nagle, T. T., Hogan, J., & Zale, J. (2016). [*The Strategy and Tactics of Pricing*](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Hogan-Zale/p/book/9780133553644) (5th ed.). Pearson.

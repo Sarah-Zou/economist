@@ -42,15 +42,7 @@ owner: "Dr. Sarah Zou"
 
 * **[Package](/wiki/pricing/packaging-and-bundling/packaging) (plan/tier):** A curated [bundle](/wiki/pricing/packaging-and-bundling/bundling) of features mapped to a target segment's outcomes and [WTP](/wiki/pricing/value-and-customers/willingness-to-pay).
 
-## Why does Segmentation by WTP/Use Case matter?
-
-* **Maximizing Profitability:** A single price point inevitably leaves money on the table (for high-WTP customers) and shuts out viable volume (from low-WTP customers). In a linear demand curve, a single price creates two zones of waste:
-
-  1. **The Under-priced Zone:** Customers who would have paid \$1,000 but were charged \$100.
-  2. **The Un-served Zone:** Customers who would have paid \$50 but found the \$100 price prohibitive.
-* **Preventing Commoditization:** By identifying specific [use cases](/wiki/pricing/value-and-customers/customer-use-cases) (e.g., "urgent repair" vs. "preventative maintenance"), companies can charge premiums for high-value contexts rather than competing solely on cost.
-
-## Mental model
+### Mental model
 
 **The "Fence and Ladder"** Think of your market strategy as a field:
 
@@ -60,13 +52,21 @@ owner: "Dr. Sarah Zou"
 
 ![Segmentation by WTP/Use Case Mental Model: A visual diagram illustrating the "Fence and Ladder" framework for market segmentation. The diagram shows how companies build fences to separate distinct customer groups with fundamentally different needs (such as Enterprise vs. Education, or Food Labs vs. Pharma Labs), preventing customers from easily crossing between segments. Within each fenced area, companies build a ladder with Good/Better/Best tiers, allowing customers to self-select their price point based on features or volume needed. This framework enables companies to capture maximum value by preventing high-WTP customers from accessing lower prices while encouraging upsells within each segment over time.](/images/wiki_segment_mental.png)
 
-## Rules of thumb
+### Rules of thumb
 
 * **The Golden Rule of Segmentation:** You should only segment your market if you can *act differently* toward each group. If you cannot offer different products, prices, or service levels, the segmentation is a theoretical exercise with no ROI.
 * **Value = Perceived Benefits – Perceived Price:** Customers buy when this equation is positive relative to their next best alternative. Segmentation aligns this equation for different groups.
 * **The 3-Tier Standard:** Start with 3 to 4 segments. Fewer than three usually fails to capture the demand curve's breadth; more than four adds operational complexity that often outweighs the revenue gains.
 
-## How to Apply It
+## Why does Segmentation by WTP/Use Case matter?
+
+* **Maximizing Profitability:** A single price point inevitably leaves money on the table (for high-WTP customers) and shuts out viable volume (from low-WTP customers). In a linear demand curve, a single price creates two zones of waste:
+
+  1. **The Under-priced Zone:** Customers who would have paid \$1,000 but were charged \$100.
+  2. **The Un-served Zone:** Customers who would have paid \$50 but found the \$100 price prohibitive.
+* **Preventing Commoditization:** By identifying specific [use cases](/wiki/pricing/value-and-customers/customer-use-cases) (e.g., "urgent repair" vs. "preventative maintenance"), companies can charge premiums for high-value contexts rather than competing solely on cost.
+
+## How do you implement segmentation by WTP/Use Case step-by-step?
 
 ### Inputs you need
 
@@ -114,7 +114,7 @@ Create tiered packages where the "Good" plan meets the minimum needs of price-se
 
 ## References & Links
 
-### Sources
+### Sources:
 
 * Nagle, T. T., Müller, G., & Hogan, J. (2023). [*The Strategy and Tactics of Pricing: A Guide to Growing More Profitably*](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Muller-Hogan/p/book/9781032011500) (7th ed.). Routledge.
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
@@ -123,7 +123,7 @@ Create tiered packages where the "Good" plan meets the minimum needs of price-se
 * Hinterhuber, A., & Liozu, S. M. (2013). [*Innovation in Pricing: Contemporary Theories and Best Practices*](https://www.routledge.com/Innovation-in-Pricing-Contemporary-Theories-and-Best-Practices/Hinterhuber-Liozu/p/book/9780415674500). Routledge.
 * Christensen, C. M., Hall, T., Dillon, K., & Duncan, D. S. (2016). [*Competing Against Luck: The Story of Innovation and Customer Jobs to Be Done*](https://www.harpercollins.com/products/competing-against-luck-clayton-m-christensen). HarperBusiness.
 
-**Related pages:** [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Gabor-Granger](/wiki/pricing/research-and-experiments/gabor-granger) | [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) | [Conjoint Analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Usage-Based Pricing](/wiki/pricing/models-and-metering) | [Discounting & Realization](/wiki/pricing/policies-and-governance/discounting-and-realization)
+**Related pages:** [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Gabor-Granger](/wiki/pricing/research-and-experiments/gabor-granger) | [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) | [Conjoint Analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Discounting & Realization](/wiki/pricing/policies-and-governance/discounting-and-realization)
 
 ## FAQ
 
