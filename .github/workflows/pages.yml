@@ -27,17 +27,14 @@ jobs:
       - name: Build with Next.js
         run: npm run build
 
-      - name: Add .nojekyll file
-        run: touch out/.nojekyll
-
       - name: Verify build output
         run: |
           echo "Verifying build output files..."
           ls -la out/ | head -20
-          test -f out/index.html && echo "✓ index.html exists" || echo "✗ index.html missing"
-          test -f out/404.html && echo "✓ 404.html exists" || echo "✗ 404.html missing"
-          test -f out/CNAME && echo "✓ CNAME exists" || echo "✗ CNAME missing"
-          test -f out/.nojekyll && echo "✓ .nojekyll exists" || echo "✗ .nojekyll missing"
+          test -f out/index.html && echo "✓ index.html exists" || (echo "✗ index.html missing" && exit 1)
+          test -f out/404.html && echo "✓ 404.html exists" || (echo "✗ 404.html missing - this will cause 404 errors" && exit 1)
+          test -f out/CNAME && echo "✓ CNAME exists" || echo "⚠ CNAME missing (may be OK if not using custom domain)"
+          test -f out/.nojekyll && echo "✓ .nojekyll exists" || echo "⚠ .nojekyll missing (will be created by postbuild script)"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
