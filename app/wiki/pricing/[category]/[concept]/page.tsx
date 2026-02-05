@@ -907,6 +907,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                 breadcrumbs={[]}
                 customGridRatio="9:3"
                 noOuterWrapper={true}
+                showAreasFooter={false}
                 rightSidebarContent={
                   <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
                     <div className="space-y-4">
@@ -1596,17 +1597,14 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                               className="rounded-full object-cover flex-shrink-0" 
                             />
                             <h2 className="font-serif-playfair text-2xl md:text-[28px] font-semibold text-[#1f2933]">
-                              Ready to build a powerful revenue engine?
+                              If you want help applying this to your business…
                             </h2>
                           </div>
-                          <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-6 max-w-2xl mx-auto">
-                            Stop guessing and start growing. Let's build a monetization strategy that unlocks your startup's true potential.
-                          </p>
                           <a
                             href="/book"
                             className="inline-block bg-[#ff5722] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#e64a19] transition shadow-lg hover:shadow-xl"
                           >
-                            Book Your Sprint
+                            Book a 15-min intro call
                           </a>
                         </div>
                       </div>

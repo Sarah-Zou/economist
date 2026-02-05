@@ -6,6 +6,7 @@ import { getCategoryBySlug, getAllCategorySlugs } from '@/lib/mdx';
 import WikiLayout from '@/components/wiki/WikiLayout';
 import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Diamond, Settings, TrendingDown, Grid3x3, AlertTriangle, Lightbulb, BookOpen, Briefcase, GraduationCap, Users, Target, Zap, TrendingUp, Calculator, BarChart, DollarSign, Layers, FileText, Sparkles, ArrowRight, Package, PackageCheck } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -235,7 +236,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       
-      <WikiLayout breadcrumbs={breadcrumbs}>
+      <WikiLayout breadcrumbs={breadcrumbs} showAreasFooter={false}>
         <div className="max-w-4xl">
           {/* Hero Section with Background Image */}
           <div className="mb-8">
@@ -1272,17 +1273,27 @@ export default function CategoryPage({ params }: CategoryPageProps) {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-12 bg-[#ff5722] rounded-lg p-8 text-white text-center">
-            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-white mb-4">Use this in your pricing sprint</h2>
-            <p className="mb-6">
-              Ready to apply these concepts to your business? Get expert guidance to implement these strategies effectively.
-            </p>
-            <Link 
-              href="/book"
-              className="inline-block bg-white text-[#ff5722] font-bold px-8 py-3 rounded-full hover:bg-[#f6f7f9] transition-colors"
-            >
-              Book Free Consult
-            </Link>
+          <div className="max-w-4xl mx-auto mt-16 mb-8">
+            <div className="bg-white rounded-lg p-8 md:p-12 border border-[#e5e7eb] shadow-lg text-center">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <Image 
+                  src="/images/headshot_v2.jpg" 
+                  alt="Sarah Zou headshot" 
+                  width={80} 
+                  height={80} 
+                  className="rounded-full object-cover flex-shrink-0" 
+                />
+                <h2 className="font-serif-playfair text-2xl md:text-[28px] font-semibold text-[#1f2933]">
+                  If you want help applying this to your business…
+                </h2>
+              </div>
+              <a
+                href="/book"
+                className="inline-block bg-[#ff5722] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#e64a19] transition shadow-lg hover:shadow-xl"
+              >
+                Book a 15-min intro call
+              </a>
+            </div>
           </div>
 
           {/* License Footer */}
