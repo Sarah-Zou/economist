@@ -85,7 +85,7 @@ For startup founders, JTBD is the bridge between understanding customer demand a
 
 - **Efficiency in Sales:** Aligning [packaging](/wiki/pricing/packaging-and-bundling/packaging) with specific jobs makes the product instantly understandable to the buyer, which reduces sales cycles and minimizes the need for heavy discounting.
 
-- **Portfolio Integrity:** Using JTBD prevents the creation of **"Monoliths"** (overengineered products that deliver too much functionality for most users, leading to under-monetization) and **"Hydras"** (products that grow in unmanageable complexity because every new feature is spun out as a new module).
+- **Portfolio Integrity:** Using JTBD prevents the creation of **"Monoliths"** (overengineered products that deliver too much functionality for most users, leading to under-[monetization](/wiki/pricing/models-and-metering/monetization-model)) and **"Hydras"** (products that grow in unmanageable complexity because every new feature is spun out as a new module).
 
 ## How do you implement Jobs to Be Done step-by-step?
 
@@ -148,7 +148,7 @@ For startup founders, JTBD is the bridge between understanding customer demand a
 * Ulwick, A. W. (2005). [What customers want from your products](https://hbr.org/2005/01/what-customers-want-from-your-products). *Harvard Business Review, 83*(1), 70–82.
 * Ulwick, A. W. (2016). [*Jobs to be done: Theory to practice*](https://anthonyulwick.com/books/jobs-to-be-done-theory-to-practice/). Idea Bite Press.
 
-**Related pages:** [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Segmentation by WTP/Use Case](/wiki/pricing/value-and-customers/customer-segments) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Willingness-to-Pay](/wiki/pricing/value-and-customers/willingness-to-pay)
+**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Segmentation by WTP/Use Case](/wiki/pricing/value-and-customers/customer-segments) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Willingness-to-Pay](/wiki/pricing/value-and-customers/willingness-to-pay)
 
 ## FAQ
 

@@ -60,7 +60,7 @@ Scale, Data & Network Effects
       ↓
 Lower Unit Costs + Higher Perceived Value
       ↓
-Ability to Raise Prices / Expand Monetization
+Ability to Raise Prices / Expand [Monetization](/wiki/pricing/models-and-metering/monetization-model)
       ↺  (feeds back into stronger advantage vs. competitors)
 ```
 
@@ -106,7 +106,7 @@ For startup founders, penetration pricing is essential in markets **dominated by
 - **Faster scale and network effects:** Low entry prices reduce friction to try, helping you build a large user base quickly—critical in categories where "the biggest wins."
 - **Stronger competitive position:** Early share gains and locked-in users make it harder and more expensive for later entrants or incumbents to dislodge you.
 - **Better unit economics at scale:** Higher volume can drive down unit costs (learning curves, supplier terms, infrastructure leverage), widening margins once prices normalize.
-- **More expansion and LTV upside:** A larger installed base gives you more opportunities for upsell, cross-sell, and monetization experiments over time.
+- **More expansion and LTV upside:** A larger installed base gives you more opportunities for upsell, cross-sell, and [monetization](/wiki/pricing/models-and-metering/monetization-model) experiments over time.
 - **Ability to shape market expectations:** By entering with a bold price move, you can redefine value norms in the category and force competitors to respond on your terms.
 
 ## When should you use penetration pricing?
@@ -165,7 +165,7 @@ For startup founders, penetration pricing is essential in markets **dominated by
 * Raju, J., & Zhang, Z. J. (2010). *Smart pricing: How Google, Priceline, and leading businesses use pricing innovation for profitability*. FT Press.
 * Ghuman, A. (2021). *Price to scale: Practical pricing for your high-growth SaaS startup*. Independently published.
 
-**Related pages:** [Maximization Strategy](/wiki/pricing/foundations/maximization) | [Skimming Strategy](/wiki/pricing/foundations/skimming-strategy) | [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Strategic Pricing](/wiki/pricing/foundations/strategic-pricing) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Van Westendorp](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger](/wiki/pricing/research-and-metrics/gabor-granger) | [Conjoint Analysis](/wiki/pricing/research-and-metrics/conjoint-analysis)
+**Related pages:** [Maximization Strategy](/wiki/pricing/foundations/maximization) | [Skimming Strategy](/wiki/pricing/foundations/skimming-strategy) | [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Strategic Pricing](/wiki/pricing/foundations/strategic-pricing) | [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Van Westendorp](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger](/wiki/pricing/research-and-metrics/gabor-granger) | [Conjoint Analysis](/wiki/pricing/research-and-metrics/conjoint-analysis)
 
 ## FAQ
 

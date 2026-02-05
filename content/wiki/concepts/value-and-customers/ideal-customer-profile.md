@@ -13,7 +13,7 @@ owner: "Dr. Sarah Zou"
 
 **What it is:** A hypothetical description of the type of **company (not person)** that gets the **most value** from your product and is the **most profitable and repeatable** for you to acquire, retain, and expand.
 
-**Why it matters:** Startups fail not because they lack customers, but because they **acquire the wrong ones**. ICP focus drives **pricing power** (higher [WTP](/wiki/pricing/value-and-customers/willingness-to-pay)), **monetization efficiency** (less under/overpricing), and **organizational alignment** (prevents costly "ICP drift").
+**Why it matters:** Startups fail not because they lack customers, but because they **acquire the wrong ones**. ICP focus drives **pricing power** (higher [WTP](/wiki/pricing/value-and-customers/willingness-to-pay)), **[monetization](/wiki/pricing/models-and-metering/monetization-model) efficiency** (less under/overpricing), and **organizational alignment** (prevents costly "ICP drift").
 
 **When to use:** Post-MVP when moving from "opportunistic selling" to "repeatable growth"; when adding a new segment, pricing/[packaging](/wiki/pricing/packaging-and-bundling/packaging) change, or new channel.
 
@@ -86,7 +86,7 @@ For startup founders, ICP is the strategic foundation that aligns product, marke
 _"If we could only win 100 customers this year, which 100 should they be—and why?"_
 
 - **Pricing power:** Price elasticity is often **more dependent on the customer than the product**. When you focus on a segment with **high pain + high value** (and budget/urgency), you can charge premium prices because you're delivering a clear, measurable outcome—not selling a commodity.
-- **Monetization efficiency:** You can't optimize pricing without knowing **who you're optimizing for**. Different segments have different [willingness-to-pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) and [value drivers](/wiki/pricing/value-and-customers/value-drivers); a one-size-fits-all approach either leaves money on the table (underpricing) or kills conversion (overpricing).
+- **[Monetization](/wiki/pricing/models-and-metering/monetization-model) efficiency:** You can't optimize pricing without knowing **who you're optimizing for**. Different segments have different [willingness-to-pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) and [value drivers](/wiki/pricing/value-and-customers/value-drivers); a one-size-fits-all approach either leaves money on the table (underpricing) or kills conversion (overpricing).
 - **Organizational alignment (prevents "ICP drift"):** Without a clear ICP, _sales chases the wrong leads, product builds the wrong features, and marketing targets the wrong audience_. Over time, the company **drifts from its strategic focus**—wasting resources and producing confused positioning and inconsistent pricing.
 
 ## How do you implement ICP step-by-step?
@@ -143,7 +143,7 @@ _"If we could only win 100 customers this year, which 100 should they be—and w
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 * Ghuman, A. (2021). [*Price to Scale: Practical Pricing for Your High Growth SaaS Startup*](https://www.amazon.com/Price-Scale-Practical-Pricing-Founders/dp/B0C1J7QZ8K). Independently published.
 
-**Related pages:** [Segmentation](/wiki/pricing/value-and-customers#customer-segments) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Jobs to Be Done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Willingness-to-Pay](/wiki/pricing/value-and-customers/willingness-to-pay) | [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing)
+**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Segmentation](/wiki/pricing/value-and-customers#customer-segments) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Jobs to Be Done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Willingness-to-Pay](/wiki/pricing/value-and-customers/willingness-to-pay) | [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing)
 
 ## FAQ
 

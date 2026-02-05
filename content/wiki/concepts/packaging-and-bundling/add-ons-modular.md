@@ -22,7 +22,7 @@ owner: "Dr. Sarah Zou"
 - **Keep the Core Clean:** Don't clutter the base tier with niche features.
 - **Don't "Average" Your Customers:** If you sell to diverse industries, a static [tier](/wiki/pricing/packaging-and-bundling/good-better-best) structure will leave money on the table. Use add-ons to monetize distinct value dimensions (not minor toggles).
 - Add-ons work best when they're **independently valuable** and **easy to explain**.
-- **Beware the "Hydra":** Spinning out every new feature as an add-on is a lazy monetization strategy. It increases Customer Acquisition Cost (CAC) because sales reps have to explain complex menus, and it increases Cost to Serve. Periodically re-package add-ons into [tiers](/wiki/pricing/packaging-and-bundling/good-better-best) to clean up the mess.
+- **Beware the "Hydra":** Spinning out every new feature as an add-on is a lazy [monetization](/wiki/pricing/models-and-metering/monetization-model) strategy. It increases Customer Acquisition Cost (CAC) because sales reps have to explain complex menus, and it increases Cost to Serve. Periodically re-package add-ons into [tiers](/wiki/pricing/packaging-and-bundling/good-better-best) to clean up the mess.
 
 ## Key Facts
 
@@ -131,7 +131,7 @@ Think of your product not as a single block, but as a Base Platform (the core fe
 * Lehrskov-Schmidt, U. (2023). *The Pricing Roadmap*. Independently published.
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 
-**Related pages:** [Packaging architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) | [Jobs-to-Be-Done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Freemium](/wiki/pricing/models-and-metering/freemium-model)
+**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Packaging architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Good/Better/Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) | [Jobs-to-Be-Done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Freemium](/wiki/pricing/models-and-metering/freemium-model)
 
 ## FAQ
 

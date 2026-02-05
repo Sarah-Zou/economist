@@ -96,7 +96,7 @@ Most founders fall into **"The Kitchen Sink Syndrome"**—adding every new featu
 
 Well-designed packaging solves this by aligning offers with [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) and operational reality:
 
-* **Monetization leverage:** Changes to packaging and pricing drive a **12.7%** improvement to the bottom line on average, compared to just **3.3%** from improving customer acquisition alone. Packaging is one of the highest-ROI levers founders control.
+* **[Monetization](/wiki/pricing/models-and-metering/monetization-model) leverage:** Changes to packaging and pricing drive a **12.7%** improvement to the bottom line on average, compared to just **3.3%** from improving customer acquisition alone. Packaging is one of the highest-ROI levers founders control.
 * **Unlocking hidden revenue:** A single package for the "average" customer inevitably over-serves the low end (giving away value) and under-serves the high end (leaving money on the table). Thoughtful packaging captures more of the demand curve by matching distinct value propositions to distinct segments.
 * **Operational velocity:** Clear packaging standardizes how products are sold. Without it, sales teams default to custom deals and exceptions, slowing deal cycles, increasing discounts, and creating long-term technical and roadmap debt.
 
@@ -163,7 +163,7 @@ Well-designed packaging solves this by aligning offers with [willingness to pay]
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 * Lehrskov-Schmidt, U. (2023). *The Pricing Roadmap*. Independently published.
 
-**Related pages:** [Price Metrics / Value Metrics](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing)
+**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Price Metrics / Value Metrics](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing)
 
 ## FAQ
 
