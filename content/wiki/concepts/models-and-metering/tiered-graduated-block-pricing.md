@@ -22,3 +22,7 @@ owner: "Dr. Sarah Zou"
 - Define bands and unit prices clearly; avoid too many tiers so buyers can reason about cost.
 - Can be purely usage-based or combined with a [subscription](/wiki/pricing/models-and-metering/subscription-model) base; [minimum commitment + overage](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage) is a common variant.
 - Align band boundaries with natural “step changes” in value or usage (e.g. SMB vs. mid-market vs. enterprise bands).
+
+## References & Links
+
+**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing) | [Minimum commitment + overage](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage) | [Prepaid credits](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model)

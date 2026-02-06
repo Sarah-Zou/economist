@@ -22,3 +22,7 @@ owner: "Dr. Sarah Zou"
 - Design the base to cover “minimum viable value” and the variable component to scale with [pricing metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) (usage, seats, transactions).
 - Communicate clearly: “$X/month base + $Y per unit above Z” so buyers can model cost; consider [minimum commitment + overage](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage) framing.
 - Billing and metering must support both components; [tiered](/wiki/pricing/models-and-metering/tiered-graduated-block-pricing) or [prepaid credits](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model) can simplify the variable piece.
+
+## References & Links
+
+**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing) | [Minimum commitment + overage](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage) | [Prepaid credits](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model) | [Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Tiered/graduated/block pricing](/wiki/pricing/models-and-metering/tiered-graduated-block-pricing)

@@ -22,3 +22,7 @@ owner: "Dr. Sarah Zou"
 - Define the transaction clearly (what counts, what doesn’t) and whether pricing is per unit, [tiered](/wiki/pricing/models-and-metering/tiered-graduated-block-pricing), or [commit-plus-overage](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage).
 - Can be combined with a base [subscription](/wiki/pricing/models-and-metering/subscription-model) in a [hybrid](/wiki/pricing/models-and-metering/hybrid-pricing) model.
 - Common in fintech, e-commerce, and developer tools; watch for high-volume, low-margin scenarios and consider minimums or blocks.
+
+## References & Links
+
+**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing) | [Minimum commitment + overage](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage) | [Tiered/graduated/block pricing](/wiki/pricing/models-and-metering/tiered-graduated-block-pricing) | [Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric)

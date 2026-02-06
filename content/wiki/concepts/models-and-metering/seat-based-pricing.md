@@ -22,3 +22,7 @@ owner: "Dr. Sarah Zou"
 - Seat count is a clear [pricing metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric); ensure it aligns with value (e.g. active users vs. provisioned seats) to avoid gaming or conflict.
 - Often combined with [tiered](/wiki/pricing/models-and-metering/tiered-graduated-block-pricing) or [capability-based](/wiki/pricing/models-and-metering/capability-feature-based-pricing) pricing (more features at higher tiers) and sometimes with [usage-based](/wiki/pricing/models-and-metering/usage-based-pricing) in a [hybrid](/wiki/pricing/models-and-metering/hybrid-pricing) model.
 - Consider minimum seats, seat minimums per tier, and expansion mechanics (e.g. adding seats at renewal).
+
+## References & Links
+
+**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing) | [Tiered/graduated/block pricing](/wiki/pricing/models-and-metering/tiered-graduated-block-pricing) | [Capability/feature-based pricing](/wiki/pricing/models-and-metering/capability-feature-based-pricing) | [Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric)

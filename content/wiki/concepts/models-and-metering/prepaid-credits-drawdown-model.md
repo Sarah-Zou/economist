@@ -22,3 +22,7 @@ owner: "Dr. Sarah Zou"
 - Define credit unit clearly (e.g. 1 credit = 1 API call or 1 minute) and expiration/rollover rules to avoid confusion.
 - Balance prepay discount with flexibility; too aggressive expiration can create waste and dissatisfaction.
 - Drawdown can sit alongside [subscription](/wiki/pricing/models-and-metering/subscription-model) (e.g. base fee + credit pool) in a [hybrid](/wiki/pricing/models-and-metering/hybrid-pricing) model.
+
+## References & Links
+
+**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing) | [Minimum commitment + overage](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage)

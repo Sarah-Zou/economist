@@ -22,3 +22,7 @@ owner: "Dr. Sarah Zou"
 - Requires clear definition of the outcome, attribution, and data access; legal and governance complexity is higher than with [subscription](/wiki/pricing/models-and-metering/subscription-model) or [usage-based](/wiki/pricing/models-and-metering/usage-based-pricing) alone.
 - Often used in sales tech, marketing tech, and professional services; can be combined with a base fee plus outcome-based upside.
 - Best when the outcome is indisputable and easy to measure; avoid when attribution is murky or disputed.
+
+## References & Links
+
+**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric)
