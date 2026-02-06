@@ -82,7 +82,7 @@ This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pric
 
 ### Inputs you need
 
-* **Offer + unit:** Crisp product description, pricing metric, and billing period (e.g., $/seat/month) used consistently.
+* **Offer + unit:** Crisp product description, [pricing metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric), and billing period (e.g., $/seat/month) used consistently.
 * **Segmentation schema:** The segments you'll cut by (persona/firmographics, usage intensity, [use-case](/wiki/pricing/value-and-customers/customer-use-cases) urgency).
 * **Sampling plan:** Who you'll survey (customers/prospects) and outreach math to reach **~150 responses per segment**.
 * **PSM survey draft:** The 4 [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) questions + a few segment questions + attention/comprehension check.
@@ -90,9 +90,9 @@ This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pric
 
 ### Step-by-step
 
-1. **Conduct foundation qualitative research (before any survey):** Run 10–12 interviews per key segment to nail the [use case](/wiki/pricing/value-and-customers/customer-use-cases), persona, and current alternatives; identify the core "why" (time, money, risk, status); and lock a clear pricing metric and billing period (e.g., $/seat/month) so your survey is anchored to a real unit of value.
+1. **Conduct foundation qualitative research (before any survey):** Run 10–12 interviews per key segment to nail the [use case](/wiki/pricing/value-and-customers/customer-use-cases), persona, and current alternatives; identify the core "why" (time, money, risk, status); and lock a clear [pricing metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) and billing period (e.g., $/seat/month) so your survey is anchored to a real unit of value.
 
-2. **Draft the Van Westendorp survey (don't ask "How much would you pay?"):** Paste a short offer description (what's included, pricing metric, monthly vs annual) and then ask the four canonical questions: the price that's **too expensive** to consider, **too cheap** to trust, **expensive but still possible** (needs thought), and a **bargain** (great value), plus a few segment questions and a simple attention/comprehension check. See [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp) for detailed guidance.
+2. **Draft the Van Westendorp survey (don't ask "How much would you pay?"):** Paste a short offer description (what's included, [pricing metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric), monthly vs annual) and then ask the four canonical questions: the price that's **too expensive** to consider, **too cheap** to trust, **expensive but still possible** (needs thought), and a **bargain** (great value), plus a few segment questions and a simple attention/comprehension check. See [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp) for detailed guidance.
 
 3. **Define the audience and sample size:** If you're defending retention, survey current customers; if you're expanding or changing [packaging](/wiki/pricing/packaging-and-bundling/packaging), survey customers and prospects; if you're entering a new market, survey prospects only—then aim for about **150 responses per segment** (and plan outreach accordingly, e.g., ~1,500 invites per segment at a 10% response rate).
 

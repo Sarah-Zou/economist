@@ -21,7 +21,7 @@ owner: "Dr. Sarah Zou"
 **When to use:**
 - **Early:** shaping a value proposition, positioning, or category story
 - **Growth stalls:** diagnosing churn, low conversion, or heavy discounting
-- **Pricing & [packaging](/wiki/pricing/packaging-and-bundling/packaging):** designing plans, picking a pricing metric, or adding [tiers](/wiki/pricing/packaging-and-bundling/packaging)/[fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) by stakes/context
+- **Pricing & [packaging](/wiki/pricing/packaging-and-bundling/packaging):** designing plans, picking a [pricing metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric), or adding [tiers](/wiki/pricing/packaging-and-bundling/packaging)/[fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) by stakes/context
 - **Product direction:** deciding what to build next based on real switching triggers
 
 **Key Takeaways:**
@@ -29,7 +29,7 @@ owner: "Dr. Sarah Zou"
 - **Context is Queen:** The "when" and "where" matter more than the "who"; People with different titles can share the same job.
 - **Competition is broader than your category:** You're competing with spreadsheets, agencies, internal hacks, and "do nothing," not just direct rivals.
 - **Switching is emotional + rational:** The *Push/Pull/Habit/Anxiety* forces explain why customers stall—even when value is obvious.
-- **Packaging and pricing follow the job:** Align [tiers](/wiki/pricing/packaging-and-bundling/packaging), [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination), and the pricing metric to the customer's unit of progress; then validate [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay).
+- **Packaging and pricing follow the job:** Align [tiers](/wiki/pricing/packaging-and-bundling/packaging), [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination), and the [pricing metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) to the customer's unit of progress; then validate [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay).
 
 ## Key Facts
 
@@ -116,7 +116,7 @@ For startup founders, JTBD is the bridge between understanding customer demand a
    * **Product:** prioritize what removes struggle and improves outcomes.
    * **Messaging:** lead with context + progress (not features).
    * **Onboarding:** get them to the first *job-complete* moment fast.
-   * **[Packaging](/wiki/pricing/packaging-and-bundling/packaging)/pricing:** pick a pricing metric that matches the job; add [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) for higher-stakes contexts.
+   * **[Packaging](/wiki/pricing/packaging-and-bundling/packaging)/pricing:** pick a [pricing metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) that matches the job; add [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) for higher-stakes contexts.
 
 ## Metrics to monitor
 
@@ -133,7 +133,7 @@ For startup founders, JTBD is the bridge between understanding customer demand a
 | **Skipping the forces:** Hearing "looks great" but deals stall without understanding why. | Always map Push / Pull / Habit / Anxiety and design proof to reduce anxiety (templates, ROI calc, security docs, references). |
 | **Interviewing only happy customers or power users:** Missing insights from customers who didn't succeed. | Include recent churn, lost deals, and recent switchers; switching reveals real criteria and fears. |
 | **[Packaging](/wiki/pricing/packaging-and-bundling/packaging) by feature buckets, not jobs:** Organizing plans by features like "Analytics," "Automation," "Integrations." | Bundle around jobs and stakes; put "must-have to complete the job" features in the [tier](/wiki/pricing/packaging-and-bundling/packaging) where that job lives. |
-| **Calling every loss "too expensive":** Assuming price is always the issue when deals are lost. | Diagnose the quality of the no: was it the wrong job fit, unclear proof, wrong pricing metric, or missing [fence](/wiki/pricing/value-and-customers/price-fences-price-discrimination) (e.g., SSO/SLA/audit logs)? |
+| **Calling every loss "too expensive":** Assuming price is always the issue when deals are lost. | Diagnose the quality of the no: was it the wrong job fit, unclear proof, wrong [pricing metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric), or missing [fence](/wiki/pricing/value-and-customers/price-fences-price-discrimination) (e.g., SSO/SLA/audit logs)? |
 
 ## References & Links
 
@@ -166,7 +166,7 @@ For startup founders, JTBD is the bridge between understanding customer demand a
 
 **Q:** How does JTBD connect to pricing?
 
-**A:** Jobs reveal the customer's unit of progress → informs pricing metric, [packaging](/wiki/pricing/packaging-and-bundling/packaging), and [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination); then quantify with [WTP research](/wiki/pricing/value-and-customers/willingness-to-pay).
+**A:** Jobs reveal the customer's unit of progress → informs [pricing metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric), [packaging](/wiki/pricing/packaging-and-bundling/packaging), and [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination); then quantify with [WTP research](/wiki/pricing/value-and-customers/willingness-to-pay).
 
 **Q:** Should I put my newest, most advanced features in my highest tier?
 

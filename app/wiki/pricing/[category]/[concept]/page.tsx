@@ -12,7 +12,7 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import rehypeRaw from 'rehype-raw';
 import rehypeKatex from 'rehype-katex';
-import { Zap, Info, TrendingUp, Clock, CheckCircle, DollarSign, Users, AlertCircle, TrendingDown, XCircle, ArrowLeftRight, Target, ArrowRight } from 'lucide-react';
+import { Zap, Info, TrendingUp, Clock, CheckCircle, DollarSign, Users, AlertCircle, TrendingDown, XCircle, ArrowLeftRight, Target, ArrowRight, BarChart, Percent, FileWarning, Activity } from 'lucide-react';
 import Image from 'next/image';
 
 interface ConceptPageProps {
@@ -1424,12 +1424,29 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {metrics.map((metric, index) => {
                               // Choose icon based on content
+                              const titleLower = metric.title.toLowerCase();
                               let Icon = TrendingUp;
-                              if (metric.title.toLowerCase().includes('price') || metric.title.toLowerCase().includes('asp') || metric.title.toLowerCase().includes('arpa')) {
+                              
+                              // Pricing metric page specific metrics
+                              if (titleLower.includes('nrr') || titleLower.includes('net revenue retention') || titleLower.includes('retention')) {
+                                Icon = BarChart;
+                              } else if (titleLower.includes('overage') || titleLower.includes('contribution')) {
+                                Icon = Percent;
+                              } else if (titleLower.includes('churn') || titleLower.includes('downgrade')) {
+                                Icon = TrendingDown;
+                              } else if (titleLower.includes('dispute') || titleLower.includes('credit') || titleLower.includes('invoice')) {
+                                Icon = FileWarning;
+                              } else if (titleLower.includes('margin') || titleLower.includes('gross margin')) {
                                 Icon = DollarSign;
-                              } else if (metric.title.toLowerCase().includes('elasticity')) {
+                              } else if (titleLower.includes('usage') && titleLower.includes('adoption')) {
+                                Icon = Activity;
+                              }
+                              // General metrics
+                              else if (titleLower.includes('price') || titleLower.includes('asp') || titleLower.includes('arpa')) {
+                                Icon = DollarSign;
+                              } else if (titleLower.includes('elasticity')) {
                                 Icon = TrendingUp;
-                              } else if (metric.title.toLowerCase().includes('discount') || metric.title.toLowerCase().includes('realization')) {
+                              } else if (titleLower.includes('discount') || titleLower.includes('realization')) {
                                 Icon = AlertCircle;
                               }
 
