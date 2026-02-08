@@ -4,6 +4,7 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { generateOrganizationProfessionalServiceJsonLd } from '@/lib/generateJsonLd'
 
 const inter = Inter({ 
   subsets: ['latin'], 
@@ -20,11 +21,11 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sarahzou.com'),
-  title: 'Sarah Zou | Economist for Early-Stage Tech',
-  description: 'Pricing & metrics strategy for early-stage tech founders—data-driven insights from PhD economist Sarah Zou.',
+  title: 'Fractional Chief Economist for Seed–Series A Tech | Sarah Zou',
+  description: 'Pricing, value metric, and metrics strategy for SaaS, APIs & AI. Lift NRR, improve payback, and ship investor-grade monetization. PhD economist for early-stage startups.',
   openGraph: {
-    title: 'Sarah Zou | Economist for Early-Stage Tech',
-    description: 'Pricing & metrics strategy for early-stage tech founders—data-driven insights from PhD economist Sarah Zou.',
+    title: 'Fractional Chief Economist for Seed–Series A Tech | Sarah Zou',
+    description: 'Pricing, value metric, and metrics strategy for SaaS, APIs & AI. Lift NRR, improve payback, and ship investor-grade monetization. PhD economist for early-stage startups.',
     type: 'website',
   },
 }
@@ -45,7 +46,7 @@ export default function RootLayout({
         {/* Cookie Consent CSS - loaded asynchronously via script */}
       </head>
       <body className="font-sans">
-        {/* Person Schema for SEO - added to all pages */}
+        {/* Person Schema for SEO - added to all pages for disambiguation */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -55,12 +56,22 @@ export default function RootLayout({
               "name": "Sarah Zou",
               "honorificSuffix": "PhD",
               "jobTitle": "Fractional Chief Economist",
-              "url": "https://sarahzou.com/",
-              "sameAs": [
-                "https://www.linkedin.com/in/drsarahzou/"
-              ],
+              "url": "https://sarahzou.com/about",
+              "sameAs": ["https://www.linkedin.com/in/drsarahzou"],
+              "worksFor": {
+                "@type": "Organization",
+                "name": "EconNova Consulting",
+                "url": "https://sarahzou.com"
+              },
               "knowsAbout": ["Pricing", "Monetization", "Unit Economics", "Experimentation", "Econometrics"]
             })
+          }}
+        />
+        {/* Organization / ProfessionalService schema site-wide (footer entity) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateOrganizationProfessionalServiceJsonLd())
           }}
         />
         {/* Initialize Google Tag Manager with consent mode denied by default (GDPR compliant) */}

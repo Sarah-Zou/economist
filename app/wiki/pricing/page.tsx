@@ -6,8 +6,8 @@ import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter';
 import CategoryCard from '@/components/wiki/CategoryCard';
 
 export const metadata: Metadata = {
-  title: 'Pricing & Monetization Wiki | Sarah Zou',
-  description: 'An evidence-based encyclopedia of pricing & monetization concepts for tech startups—definitions, applications, pitfalls, and metrics.',
+  title: 'Pricing & Monetization Wiki for SaaS & Tech Startups | Sarah Zou',
+  description: 'Evidence-based concepts: value metric, packaging, NRR, payback, usage-based pricing. For Seed–Series A SaaS, APIs & AI. Definitions, applications, pitfalls, metrics.',
   robots: {
     index: true,
     follow: true,
@@ -23,16 +23,16 @@ export const metadata: Metadata = {
     canonical: 'https://sarahzou.com/wiki/pricing'
   },
   openGraph: {
-    title: 'Pricing & Monetization Wiki',
-    description: 'An evidence-based encyclopedia of pricing & monetization concepts for tech startups—definitions, applications, pitfalls, and metrics.',
+    title: 'Pricing & Monetization Wiki for SaaS & Tech Startups | Sarah Zou',
+    description: 'Evidence-based concepts: value metric, packaging, NRR, payback, usage-based pricing. For Seed–Series A SaaS, APIs & AI. Definitions, applications, pitfalls, metrics.',
     url: 'https://sarahzou.com/wiki/pricing',
     siteName: 'Sarah Zou',
     type: 'website'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing & Monetization Wiki',
-    description: 'An evidence-based encyclopedia of pricing & monetization concepts for tech startups—definitions, applications, pitfalls, and metrics.',
+    title: 'Pricing & Monetization Wiki for SaaS & Tech Startups | Sarah Zou',
+    description: 'Evidence-based concepts: value metric, packaging, NRR, payback, usage-based pricing. For Seed–Series A SaaS, APIs & AI. Definitions, applications, pitfalls, metrics.',
   },
 };
 

@@ -6,6 +6,7 @@ import { getCategoryBySlug, getAllCategories, getConceptBySlug } from '@/lib/mdx
 import WikiLayout from '@/components/wiki/WikiLayout';
 import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter';
 import TableOfContents from '@/components/wiki/TableOfContents';
+import CiteThisPage from '@/components/wiki/CiteThisPage';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -909,47 +910,56 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                 noOuterWrapper={true}
                 showAreasFooter={false}
                 rightSidebarContent={
-                  <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
-                    <div className="space-y-4">
-                      <div>
-                        <p className="text-xs font-semibold text-[#3b4652] uppercase tracking-wide mb-2">Category</p>
-                        <Link 
-                          href={`/wiki/pricing/${category.slug}`}
-                          className="text-sm text-[#ff5722] hover:underline font-medium"
-                        >
-                          {category.title}
-                        </Link>
-                      </div>
-                      {conceptData?.lastUpdated && (
+                  <div className="space-y-6">
+                    <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
+                      <div className="space-y-4">
                         <div>
-                          <p className="text-xs font-semibold text-[#3b4652] uppercase tracking-wide mb-2">Last Updated</p>
-                          <p className="text-sm text-[#1f2933]">
-                            {new Date(conceptData.lastUpdated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-                          </p>
+                          <p className="text-xs font-semibold text-[#3b4652] uppercase tracking-wide mb-2">Category</p>
+                          <Link 
+                            href={`/wiki/pricing/${category.slug}`}
+                            className="text-sm text-[#ff5722] hover:underline font-medium"
+                          >
+                            {category.title}
+                          </Link>
                         </div>
-                      )}
-                      {conceptData?.readingTime && (
-                        <div>
-                          <p className="text-xs font-semibold text-[#3b4652] uppercase tracking-wide mb-2">Reading Time</p>
-                          <p className="text-sm text-[#1f2933]">{conceptData.readingTime} minutes</p>
-                        </div>
-                      )}
-                      {conceptData?.tags && conceptData.tags.length > 0 && (
-                        <div>
-                          <p className="text-xs font-semibold text-[#3b4652] uppercase tracking-wide mb-2">Tags</p>
-                          <div className="flex flex-wrap gap-2">
-                            {conceptData.tags.map((tag, index) => (
-                              <span
-                                key={index}
-                                className="text-xs text-[#3b4652] bg-[#f6f7f9] px-2 py-1 rounded-full border border-[#e5e7eb]"
-                              >
-                                {tag}
-                              </span>
-                            ))}
+                        {conceptData?.lastUpdated && (
+                          <div>
+                            <p className="text-xs font-semibold text-[#3b4652] uppercase tracking-wide mb-2">Last Updated</p>
+                            <p className="text-sm text-[#1f2933]">
+                              {new Date(conceptData.lastUpdated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                            </p>
                           </div>
-                        </div>
-                      )}
+                        )}
+                        {conceptData?.readingTime && (
+                          <div>
+                            <p className="text-xs font-semibold text-[#3b4652] uppercase tracking-wide mb-2">Reading Time</p>
+                            <p className="text-sm text-[#1f2933]">{conceptData.readingTime} minutes</p>
+                          </div>
+                        )}
+                        {conceptData?.tags && conceptData.tags.length > 0 && (
+                          <div>
+                            <p className="text-xs font-semibold text-[#3b4652] uppercase tracking-wide mb-2">Tags</p>
+                            <div className="flex flex-wrap gap-2">
+                              {conceptData.tags.map((tag, index) => (
+                                <span
+                                  key={index}
+                                  className="text-xs text-[#3b4652] bg-[#f6f7f9] px-2 py-1 rounded-full border border-[#e5e7eb]"
+                                >
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     </div>
+                    <CiteThisPage
+                      canonicalUrl={`https://sarahzou.com/wiki/pricing/${params.category}/${params.concept}`}
+                      title={conceptName}
+                      categoryTitle={category.title}
+                      lastUpdated={conceptData?.lastUpdated || category.updated}
+                      conceptSlug={params.concept}
+                    />
                   </div>
                 }
               >

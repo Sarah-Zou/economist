@@ -23,8 +23,8 @@ const homepageTestimonials = [
 ]
 
 export const metadata: Metadata = {
-  title: "Sarah Zou, PhD — Pricing & Monetization Economist (Fractional Chief Economist)",
-  description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in growth strategies for early-stage tech startups.",
+  title: "Pricing & Monetization Economist for Seed–Series A Startups | Sarah Zou, PhD",
+  description: "Value-based pricing, packaging, and experiments that lift ARR, NRR, and CAC payback. For SaaS, APIs & AI (Pre-Seed–Series A). Sprints and fractional chief economist retainer.",
   robots: {
     index: true,
     follow: true,
@@ -40,16 +40,16 @@ export const metadata: Metadata = {
     canonical: "https://sarahzou.com",
   },
   openGraph: {
-    title: "Sarah Zou, PhD — Pricing & Monetization Economist (Fractional Chief Economist)",
-    description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in growth strategies for early-stage tech startups.",
+    title: "Pricing & Monetization Economist for Seed–Series A Startups | Sarah Zou, PhD",
+    description: "Value-based pricing, packaging, and experiments that lift ARR, NRR, and CAC payback. For SaaS, APIs & AI (Pre-Seed–Series A). Sprints and fractional chief economist retainer.",
     type: "website",
     url: "https://sarahzou.com",
     images: ["https://sarahzou.com/images/headshot_v2.webp"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sarah Zou, PhD — Pricing & Monetization Economist (Fractional Chief Economist)",
-    description: "Value-based pricing, packaging, and revenue experiments that lift ARR and retention. PhD economist specializing in growth strategies for early-stage tech startups.",
+    title: "Pricing & Monetization Economist for Seed–Series A Startups | Sarah Zou, PhD",
+    description: "Value-based pricing, packaging, and experiments that lift ARR, NRR, and CAC payback. For SaaS, APIs & AI (Pre-Seed–Series A). Sprints and fractional chief economist retainer.",
     images: ["https://sarahzou.com/images/headshot_v2.webp"],
   },
 };

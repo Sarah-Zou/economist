@@ -3,10 +3,11 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import FAQSection from './FAQSection';
 import ContactForm from '@/components/ContactForm';
+import { generateServiceJsonLd } from '@/lib/generateJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Pricing & Monetization Sprint | 5-Day Pricing Strategy | Dr. Sarah Zou',
-  description: 'Land your value metric, 3-tier pricing, discount guardrails, and rollout plan in 5 business days—or get one extra week at no fee. For early-stage tech founders (Pre-Seed → Series A).',
+  title: 'Pricing & Monetization Sprint for Seed–Series A Startups | Sarah Zou',
+  description: '5-day sprint: land value metric, 3-tier pricing, discount guardrails, rollout plan. For Pre-Seed–Series A SaaS, APIs & AI. Optional extra week at no fee. NRR & payback focus.',
   robots: {
     index: true,
     follow: true,
@@ -22,21 +23,33 @@ export const metadata: Metadata = {
     canonical: 'https://sarahzou.com/consulting/services/pricing-monetization-sprint',
   },
   openGraph: {
-    title: 'Pricing & Monetization Sprint | Sarah Zou',
-    description: 'Land your value metric, 3-tier pricing, discount guardrails, and rollout plan in 5 business days—or get one extra week at no fee.',
+    title: 'Pricing & Monetization Sprint for Seed–Series A Startups | Sarah Zou',
+    description: '5-day sprint: land value metric, 3-tier pricing, discount guardrails, rollout plan. For Pre-Seed–Series A SaaS, APIs & AI. Optional extra week at no fee. NRR & payback focus.',
     type: 'website',
     url: 'https://sarahzou.com/consulting/services/pricing-monetization-sprint',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing & Monetization Sprint | Sarah Zou',
-    description: 'Land your value metric, 3-tier pricing, discount guardrails, and rollout plan in 5 business days—or get one extra week at no fee.',
+    title: 'Pricing & Monetization Sprint for Seed–Series A Startups | Sarah Zou',
+    description: '5-day sprint: land value metric, 3-tier pricing, discount guardrails, rollout plan. For Pre-Seed–Series A SaaS, APIs & AI. Optional extra week at no fee. NRR & payback focus.',
   },
 };
 
+const SERVICE_URL = 'https://sarahzou.com/consulting/services/pricing-monetization-sprint';
+
 export default function PricingDiagnosticRevenueBoost() {
+  const serviceJsonLd = generateServiceJsonLd({
+    name: 'Pricing & Monetization Sprint',
+    description: 'Land your value metric, 3-tier pricing, discount guardrails, and rollout plan in 5 business days—or get one extra week at no fee. For early-stage tech founders (Pre-Seed → Series A).',
+    url: SERVICE_URL
+  });
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       <section className="bg-[#f5f8f7] min-h-screen py-0 pb-20 md:pb-0">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         {/* Hero Section */}

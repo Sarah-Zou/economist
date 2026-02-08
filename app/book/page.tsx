@@ -5,8 +5,8 @@ import Script from 'next/script'
 import CalendlyEmbed from '@/components/CalendlyEmbed'
 
 export const metadata: Metadata = {
-  title: "Thank You | Book a Consultation | Sarah Zou, PhD",
-  description: "Thank you for your interest. Book a free consultation with Sarah Zou, PhD to discuss your pricing and metrics strategy.",
+  title: "Book a Free 15-Min Consultation | Pricing & Metrics for Seed–Series A | Sarah Zou",
+  description: "Book a free 15-min call. For Seed–Series A SaaS, APIs & AI: pricing, value metric, NRR, payback, and monetization. No prep needed—get tailored next steps.",
   robots: {
     index: true,
     follow: true,
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     canonical: "https://sarahzou.com/book",
   },
   openGraph: {
-    title: "Thank You | Book a Consultation | Sarah Zou, PhD",
-    description: "Thank you for your interest. Book a free consultation with Sarah Zou, PhD to discuss your pricing and metrics strategy.",
+    title: "Book a Free 15-Min Consultation | Pricing & Metrics for Seed–Series A | Sarah Zou",
+    description: "Book a free 15-min call. For Seed–Series A SaaS, APIs & AI: pricing, value metric, NRR, payback, and monetization. No prep needed—get tailored next steps.",
     type: "website",
     url: "https://sarahzou.com/book",
   },
@@ -28,20 +28,41 @@ export default function BookPage() {
       <section className="min-h-screen flex flex-col bg-[#f6f7f9] py-4 sm:py-8 lg:py-12">
         <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
           <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 lg:p-12">
-            {/* Thank You Header */}
+            {/* Booking page header — clear intent for SERPs and users */}
             <div className="flex flex-col items-center text-center mb-4 sm:mb-6">
               <h1 className="font-serif-playfair text-[28px] sm:text-[32px] lg:text-[36px] font-bold text-[#1f2933] mb-2 sm:mb-4">
-                Thanks—let's make this practical.
+                Book a free 15-min consultation
               </h1>
               <p className="text-[#1f2933] text-sm sm:text-base lg:text-[17px] leading-[1.65] max-w-2xl px-2">
-                Pick a time below for a free 15-min chat. If nothing works, <a href="mailto:hello@sarahzou.com" className="text-[#ff5722] hover:text-[#e44e1f] underline">email me</a> and I'll suggest options.
+                Pick a time below. After you book, you&apos;ll get a confirmation and calendar invite. If nothing works, <a href="mailto:hello@sarahzou.com" className="text-[#ff5722] hover:text-[#e44e1f] underline">email me</a> and I&apos;ll suggest options.
               </p>
             </div>
+
+            {/* Fallback link: visible in HTML for bots and when embed fails to load */}
+            <p className="text-center mb-3 sm:mb-4">
+              <a
+                href="https://calendly.com/sarahxzou/free-consult-15-min"
+                className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e44e1f] font-medium underline"
+              >
+                If the scheduler doesn&apos;t load, book here →
+              </a>
+            </p>
 
             {/* Calendly Inline Widget */}
             <div className="overflow-hidden mb-4 sm:mb-6 -mx-2 sm:-mx-4 md:mx-0">
               <CalendlyEmbed url="https://calendly.com/sarahxzou/free-consult-15-min?embed_domain=sarahzou.com&embed_type=Inline" />
             </div>
+
+            <noscript>
+              <p className="text-center mb-4 p-4 bg-[#f6f7f9] rounded-lg">
+                <a
+                  href="https://calendly.com/sarahxzou/free-consult-15-min"
+                  className="text-[#ff5722] hover:text-[#e44e1f] font-semibold underline text-lg"
+                >
+                  Book a free 15-min consultation on Calendly →
+                </a>
+              </p>
+            </noscript>
 
             {/* What to Expect */}
             <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-[#f6f7f9] rounded-lg max-w-2xl mx-auto">

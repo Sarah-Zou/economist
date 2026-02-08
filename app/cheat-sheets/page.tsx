@@ -3,8 +3,8 @@ import { Metadata } from 'next';
 import { BookOpen, Users, Network, Tag, Calendar } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "The Startup Monetization Roadmap | Free Download | Sarah Zou",
-  description: "A step-by-step playbook to go from zero to first dollar—value-based, investor-grade. Get the 4-phase system, interview scripts, pricing architecture, and 30-60-90 action plan.",
+  title: "Startup Monetization Roadmap | Free Playbook for Seed–Series A | Sarah Zou",
+  description: "Free download: 4-phase playbook from zero to first dollar. Value-based pricing, interview scripts, packaging, 30-60-90 plan. For SaaS, APIs & AI. Sign up; link in welcome email.",
   robots: {
     index: true,
     follow: true,
@@ -20,15 +20,15 @@ export const metadata: Metadata = {
     canonical: "https://sarahzou.com/cheat-sheets",
   },
   openGraph: {
-    title: "The Startup Monetization Roadmap | Free Download | Sarah Zou",
-    description: "A step-by-step playbook to go from zero to first dollar—value-based, investor-grade. Get the 4-phase system, interview scripts, pricing architecture, and 30-60-90 action plan.",
+    title: "Startup Monetization Roadmap | Free Playbook for Seed–Series A | Sarah Zou",
+    description: "Free download: 4-phase playbook from zero to first dollar. Value-based pricing, interview scripts, packaging, 30-60-90 plan. For SaaS, APIs & AI. Sign up; link in welcome email.",
     type: "website",
     url: "https://sarahzou.com/cheat-sheets",
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Startup Monetization Roadmap | Free Download | Sarah Zou",
-    description: "A step-by-step playbook to go from zero to first dollar—value-based, investor-grade. Get the 4-phase system, interview scripts, pricing architecture, and 30-60-90 action plan.",
+    title: "Startup Monetization Roadmap | Free Playbook for Seed–Series A | Sarah Zou",
+    description: "Free download: 4-phase playbook from zero to first dollar. Value-based pricing, interview scripts, packaging, 30-60-90 plan. For SaaS, APIs & AI. Sign up; link in welcome email.",
   },
 };
 

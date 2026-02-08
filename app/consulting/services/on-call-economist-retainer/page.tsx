@@ -3,10 +3,11 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import FAQSection from './FAQSection';
 import ContactForm from '@/components/ContactForm';
+import { generateServiceJsonLd } from '@/lib/generateJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Fractional Chief Economist (Retainer) | Dr. Sarah Zou',
-  description: 'Decisions, not dashboards. Ongoing ownership of monetization, forward models, and experiment cadence so pricing, payback, and runway stay investor-grade and up to date.',
+  title: 'Fractional Chief Economist Retainer for Seed–Series A | Sarah Zou',
+  description: 'Ongoing monetization, NRR & payback, forward models, experiment cadence. Decisions, not dashboards—investor-grade every month. For SaaS, APIs & AI. Board pack, pricing updates.',
   robots: {
     index: true,
     follow: true,
@@ -22,21 +23,33 @@ export const metadata: Metadata = {
     canonical: 'https://sarahzou.com/consulting/services/on-call-economist-retainer',
   },
   openGraph: {
-    title: 'Fractional Chief Economist (Retainer) | Sarah Zou',
-    description: 'Decisions, not dashboards. Ongoing ownership of monetization, forward models, and experiment cadence so pricing, payback, and runway stay investor-grade and up to date.',
+    title: 'Fractional Chief Economist Retainer for Seed–Series A | Sarah Zou',
+    description: 'Ongoing monetization, NRR & payback, forward models, experiment cadence. Decisions, not dashboards—investor-grade every month. For SaaS, APIs & AI. Board pack, pricing updates.',
     type: 'website',
     url: 'https://sarahzou.com/consulting/services/on-call-economist-retainer',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fractional Chief Economist (Retainer) | Sarah Zou',
-    description: 'Decisions, not dashboards. Ongoing ownership of monetization, forward models, and experiment cadence so pricing, payback, and runway stay investor-grade and up to date.',
+    title: 'Fractional Chief Economist Retainer for Seed–Series A | Sarah Zou',
+    description: 'Ongoing monetization, NRR & payback, forward models, experiment cadence. Decisions, not dashboards—investor-grade every month. For SaaS, APIs & AI. Board pack, pricing updates.',
   },
 };
 
+const SERVICE_URL = 'https://sarahzou.com/consulting/services/on-call-economist-retainer';
+
 export default function FractionalChiefEconomistRetainer() {
+  const serviceJsonLd = generateServiceJsonLd({
+    name: 'Fractional Chief Economist (Retainer)',
+    description: 'Decisions, not dashboards. Ongoing ownership of monetization, forward models, and experiment cadence so pricing, payback, and runway stay investor-grade and up to date.',
+    url: SERVICE_URL
+  });
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       <section className="bg-[#f5f8f7] min-h-screen py-0 pb-20 md:pb-0">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         {/* Hero Section */}

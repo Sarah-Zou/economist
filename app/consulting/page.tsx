@@ -4,8 +4,8 @@ import Image from 'next/image'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Sarah Zou, PhD — Pricing & Monetization Economist (Fractional Chief Economist)",
-  description: "Expert pricing strategy consulting for early-stage tech startups. Get validated price points, experiment-ready plans, and revenue optimization from PhD economist Sarah Zou.",
+  title: "Pricing & Monetization Consulting for Seed–Series A Startups | Sarah Zou",
+  description: "Sprints and retainer: value metric, 3-tier pricing, NRR & payback, experiment cadence. For SaaS, APIs & AI. 5-day pricing sprint, metrics sprint, or fractional chief economist.",
   robots: {
     index: true,
     follow: true,
@@ -21,16 +21,16 @@ export const metadata: Metadata = {
     canonical: "https://sarahzou.com/consulting",
   },
   openGraph: {
-    title: "Sarah Zou, PhD — Pricing & Monetization Economist (Fractional Chief Economist)",
-    description: "Expert pricing strategy consulting for early-stage tech startups. Get validated price points, experiment-ready plans, and revenue optimization from PhD economist Sarah Zou.",
+    title: "Pricing & Monetization Consulting for Seed–Series A Startups | Sarah Zou",
+    description: "Sprints and retainer: value metric, 3-tier pricing, NRR & payback, experiment cadence. For SaaS, APIs & AI. 5-day pricing sprint, metrics sprint, or fractional chief economist.",
     type: "website",
     url: "https://sarahzou.com/consulting",
     images: ["https://sarahzou.com/images/P-1.webp"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sarah Zou, PhD — Pricing & Monetization Economist (Fractional Chief Economist)",
-    description: "Expert pricing strategy consulting for early-stage tech startups. Get validated price points, experiment-ready plans, and revenue optimization from PhD economist Sarah Zou.",
+    title: "Pricing & Monetization Consulting for Seed–Series A Startups | Sarah Zou",
+    description: "Sprints and retainer: value metric, 3-tier pricing, NRR & payback, experiment cadence. For SaaS, APIs & AI. 5-day pricing sprint, metrics sprint, or fractional chief economist.",
     images: ["https://sarahzou.com/images/P-1.webp"],
   },
 };

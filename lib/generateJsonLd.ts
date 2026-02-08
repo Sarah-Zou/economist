@@ -70,16 +70,24 @@ export function generateArticleJsonLd(data: ArticleData) {
   };
 }
 
-export function generateBreadcrumbJsonLd(breadcrumbs: BreadcrumbItem[]) {
+const DEFAULT_BASE_URL = "https://sarahzou.com";
+
+export function generateBreadcrumbJsonLd(
+  breadcrumbs: BreadcrumbItem[],
+  baseUrl: string = DEFAULT_BASE_URL
+) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": breadcrumbs.map((item, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "name": item.name,
-      "item": item.url
-    }))
+    "itemListElement": breadcrumbs.map((item, index) => {
+      const absoluteUrl = item.url.startsWith("http") ? item.url : `${baseUrl.replace(/\/$/, "")}${item.url.startsWith("/") ? item.url : `/${item.url}`}`;
+      return {
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": absoluteUrl
+      };
+    })
   };
 }
 
@@ -117,6 +125,50 @@ export function generateWebPageJsonLd(data: {
       "@type": "WebSite",
       "name": "Sarah Zou",
       "url": "https://sarahzou.com"
+    }
+  };
+}
+
+export interface ServiceData {
+  name: string;
+  description: string;
+  url: string;
+}
+
+export function generateServiceJsonLd(data: ServiceData) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": data.name,
+    "description": data.description,
+    "url": data.url,
+    "provider": {
+      "@type": "Organization",
+      "name": "EconNova Consulting",
+      "url": "https://sarahzou.com"
+    }
+  };
+}
+
+export function generateOrganizationProfessionalServiceJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "EconNova Consulting",
+    "url": "https://sarahzou.com",
+    "logo": "https://sarahzou.com/images/EconNova_logo.png",
+    "description": "Fractional Chief Economist and pricing strategy for early-stage tech. Pricing, metrics, unit economics, and investor-grade economic storytelling.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Princeton",
+      "addressRegion": "NJ",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Business Inquiries",
+      "email": "hello@sarahzou.com",
+      "url": "https://sarahzou.com/contact"
     }
   };
 }

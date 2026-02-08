@@ -6,8 +6,8 @@ import Cta from '@/components/about/Cta'
 import FAQSection from '@/components/about/FAQSection'
 
 export const metadata: Metadata = {
-  title: "About — Sarah Zou",
-  description: "Economist & Pricing Strategist for early-stage tech startups.",
+  title: "About Sarah Zou — Fractional Chief Economist for Tech Startups | Sarah Zou",
+  description: "PhD economist. Pricing, metrics, and monetization for Seed–Series A SaaS, APIs & AI. NRR, payback, value metric, and investor-grade narrative—without big-company bloat.",
   robots: {
     index: true,
     follow: true,
@@ -23,16 +23,16 @@ export const metadata: Metadata = {
     canonical: "https://sarahzou.com/about",
   },
   openGraph: {
-    title: "About — Sarah Zou",
-    description: "Economist & Pricing Strategist for early-stage tech startups.",
+    title: "About Sarah Zou — Fractional Chief Economist for Tech Startups | Sarah Zou",
+    description: "PhD economist. Pricing, metrics, and monetization for Seed–Series A SaaS, APIs & AI. NRR, payback, value metric, and investor-grade narrative—without big-company bloat.",
     type: "website",
     url: "https://sarahzou.com/about",
     images: ["https://sarahzou.com/images/about_headshot.webp"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About — Sarah Zou",
-    description: "Economist & Pricing Strategist for early-stage tech startups.",
+    title: "About Sarah Zou — Fractional Chief Economist for Tech Startups | Sarah Zou",
+    description: "PhD economist. Pricing, metrics, and monetization for Seed–Series A SaaS, APIs & AI. NRR, payback, value metric, and investor-grade narrative—without big-company bloat.",
     images: ["https://sarahzou.com/images/about_headshot.webp"],
   },
 };

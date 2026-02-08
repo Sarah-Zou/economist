@@ -3,10 +3,11 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import FAQSection from './FAQSection';
 import ContactForm from '@/components/ContactForm';
+import { generateServiceJsonLd } from '@/lib/generateJsonLd';
 
 export const metadata: Metadata = {
-  title: 'Metrics & Experimentation Sprint | Dr. Sarah Zou',
-  description: 'A one-week intensive sprint for early-stage teams to stand up a working KPI system and a repeatable experimentation loop that lifts conversion and ARPU.',
+  title: 'Metrics & Experimentation Sprint for Seed–Series A Startups | Sarah Zou',
+  description: 'One-week sprint: working KPI system, North Star metric, and repeatable experiment loop. Lift conversion & ARPU. For SaaS, APIs & AI. Dashboards, test briefs, decision cadence.',
   robots: {
     index: true,
     follow: true,
@@ -22,21 +23,33 @@ export const metadata: Metadata = {
     canonical: 'https://sarahzou.com/consulting/services/metrics-experimentation-sprint',
   },
   openGraph: {
-    title: 'Metrics & Experimentation Sprint | Sarah Zou',
-    description: 'A one-week intensive sprint for early-stage teams to stand up a working KPI system and a repeatable experimentation loop that lifts conversion and ARPU.',
+    title: 'Metrics & Experimentation Sprint for Seed–Series A Startups | Sarah Zou',
+    description: 'One-week sprint: working KPI system, North Star metric, and repeatable experiment loop. Lift conversion & ARPU. For SaaS, APIs & AI. Dashboards, test briefs, decision cadence.',
     type: 'website',
     url: 'https://sarahzou.com/consulting/services/metrics-experimentation-sprint',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Metrics & Experimentation Sprint | Sarah Zou',
-    description: 'A one-week intensive sprint for early-stage teams to stand up a working KPI system and a repeatable experimentation loop that lifts conversion and ARPU.',
+    title: 'Metrics & Experimentation Sprint for Seed–Series A Startups | Sarah Zou',
+    description: 'One-week sprint: working KPI system, North Star metric, and repeatable experiment loop. Lift conversion & ARPU. For SaaS, APIs & AI. Dashboards, test briefs, decision cadence.',
   },
 };
 
+const SERVICE_URL = 'https://sarahzou.com/consulting/services/metrics-experimentation-sprint';
+
 export default function MetricsExperimentationSprint() {
+  const serviceJsonLd = generateServiceJsonLd({
+    name: 'Metrics & Experimentation Sprint',
+    description: 'A one-week intensive sprint for early-stage teams to stand up a working KPI system and a repeatable experimentation loop that lifts conversion and ARPU.',
+    url: SERVICE_URL
+  });
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       <section className="bg-[#f5f8f7] min-h-screen py-0 pb-20 md:pb-0">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         {/* Hero Section */}
