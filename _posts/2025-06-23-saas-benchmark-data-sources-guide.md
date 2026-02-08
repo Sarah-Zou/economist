@@ -23,10 +23,6 @@ The solution: **This guide helps you match the right benchmark sources to your s
 
 ![SaaS Startup Benchmark Sources 2024–25 comparison cheat sheet, showing top VC and public SaaS metrics sources](/assets/images/newsletter/SaaS_Benchmark_Data_Sources_June_2025.jpg)
 
-*Want the hi-res, print-ready PDF version of this SaaS Benchmark Source Cheat Sheet—-complete with clickable links to the latest benchmark reports and original sources? [Download it free here](/downloads/saas-benchmark-source-navigator).*
-
-
-
 ## SaaS Benchmark Data Sources Guide
 
 *Use this framework to select credible benchmarking data for pitch decks and investor communications.*
