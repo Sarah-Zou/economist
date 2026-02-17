@@ -13,7 +13,7 @@ export default function ContactPage() {
     setStatus({ message: 'Sending...', show: true })
 
     const form = e.currentTarget
-    const scriptURL = process.env.NEXT_PUBLIC_GOOGLE_WEB_APP_URL || 'https://script.google.com/macros/s/AKfycbyLhMFSGNNOOtdvwboYEjgDPiJoEy8TxBA5MA9TvVDSEDsXcWx1bgTUdcyA-lC3bBHI/exec'
+    const scriptURL = process.env.NEXT_PUBLIC_GOOGLE_WEB_APP_URL || 'https://script.google.com/macros/s/AKfycbyM_r8F368DURM5BPZliHGh1cx5NSAijtxWpH98MvVuv9vNBnQpuW9HlygUjz4j2zU7/exec'
 
     try {
       const formData = new FormData(form)
