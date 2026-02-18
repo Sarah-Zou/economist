@@ -79,10 +79,10 @@ owner: "Dr. Sarah Zou"
 
 ### Sources:
 
-- Baker, W. L., Marn, M. V., & Zawada, C. C. (2010). *The price advantage* (2nd ed.). Wiley.
-- McKinsey & Company. (n.d.). Pricing: Price realization, growth transformations. [Link](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/pricing)
-- Nagle, T. T., Müller, G., & Hogan, J. E. (2022). *The strategy and tactics of pricing: A guide to growing more profitably* (6th ed.). Routledge.
-- Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. John Wiley & Sons. [Google Books](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ) 
+- Baker, W. L., Marn, M. V., & Zawada, C. C. (2010). [*The price advantage*](https://www.wiley.com/en-us/The+Price+Advantage%2C+2nd+Edition-p-9780470502250) (2nd ed.). *John Wiley & Sons*.
+- McKinsey & Company. (n.d.). [*Pricing: Price realization, growth transformations*](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/pricing). *McKinsey & Company*.
+- Nagle, T. T., Muller, G., & Gruyaert, E. (2023). [*The strategy and tactics of pricing: A guide to growing more profitably*](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Muller-Gruyaert/p/book/9780367763994) (7th ed.). *Routledge*.
+- Ramanujam, M., & Tacke, G. (2016). [*Monetizing innovation: How smart companies design the product around the price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119240860). *Wiley*.
 
 **Related pages:** [Value-based pricing](/wiki/pricing/foundations/value-based-pricing) | [Cost-plus pricing](/wiki/pricing/foundations/cost-plus-pricing) | [Ideal Customer Profile (ICP)](/wiki/pricing/value-and-customers/ideal-customer-profile) | [Penetration strategy](/wiki/pricing/foundations/penetration-strategy) | [Price-led product design](/wiki/pricing/foundations/price-led-product-design) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Price Elasticity](/wiki/pricing/research-and-metrics/price-elasticity) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Usage-Based Pricing](/wiki/pricing/models-and-metering/usage-based-pricing)
 

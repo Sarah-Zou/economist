@@ -57,12 +57,9 @@ export default function CiteThisPage({ canonicalUrl, title, categoryTitle, lastU
   const [showBibTeX, setShowBibTeX] = useState(false);
   const suggestedCitation = formatSuggestedCitation(title, categoryTitle, canonicalUrl, lastUpdated);
   const bibTeX = formatBibTeX(title, categoryTitle, canonicalUrl, lastUpdated, conceptSlug);
-  const lastUpdatedDisplay = lastUpdated
-    ? new Date(lastUpdated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
-    : null;
 
   return (
-    <div className="border border-[#e5e7eb] rounded-lg bg-[#fafafa] p-4 mt-6">
+    <div className="border border-[#e5e7eb] rounded-lg bg-[#fafafa] p-4 mt-6 overflow-hidden">
       <h3 className="text-sm font-semibold text-[#1f2933] uppercase tracking-wide mb-3 flex items-center gap-2">
         <Quote className="w-4 h-4 text-[#ff5722]" />
         How to cite this page
@@ -71,10 +68,10 @@ export default function CiteThisPage({ canonicalUrl, title, categoryTitle, lastU
       <div className="space-y-3 text-sm">
         <div>
           <p className="text-xs font-medium text-[#3b4652] mb-1">Canonical URL</p>
-          <div className="flex items-start justify-between gap-2">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-3 min-w-0">
             <a
               href={canonicalUrl}
-              className="text-[#ff5722] hover:underline break-all"
+              className="text-[#ff5722] hover:underline break-words min-w-0"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -86,18 +83,11 @@ export default function CiteThisPage({ canonicalUrl, title, categoryTitle, lastU
 
         <div>
           <p className="text-xs font-medium text-[#3b4652] mb-1">Suggested citation</p>
-          <div className="flex items-start justify-between gap-2">
-            <p className="text-[#1f2933] leading-snug flex-1 min-w-0">{suggestedCitation}</p>
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-3 min-w-0">
+            <p className="text-[#1f2933] leading-snug break-words min-w-0">{suggestedCitation}</p>
             <CopyButton text={suggestedCitation} label="Copy citation" />
           </div>
         </div>
-
-        {lastUpdatedDisplay && (
-          <div>
-            <p className="text-xs font-medium text-[#3b4652] mb-0.5">Last updated</p>
-            <p className="text-[#1f2933]">{lastUpdatedDisplay}</p>
-          </div>
-        )}
 
         <div>
           <button

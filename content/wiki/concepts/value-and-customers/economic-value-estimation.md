@@ -203,11 +203,11 @@ Your actual list price might be slightly above this (to allow room for discounts
 
 ### Sources:
 
-- Gourville, J. T. (2006, June). Eager sellers and stony buyers: Understanding the psychology of new-product adoption. *Harvard Business Review*. [Link](https://hbr.org/2006/06/eager-sellers-and-stony-buyers-understanding-the-psychology-of-new-product-adoption)
+- Gourville, J. T. (2006, June). [*Eager sellers and stony buyers: Understanding the psychology of new-product adoption*](https://hbr.org/2006/06/eager-sellers-and-stony-buyers-understanding-the-psychology-of-new-product-adoption). *Harvard Business Review*.
 - Liozu, S. M. (2019). Ten golden rules of EVE models. *Professional Pricing Society Publications*.
-- McKinsey & Company. (2003). The power of pricing. *McKinsey Quarterly*. [Link](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-power-of-pricing)
-- McKinsey & Company. (2014, June 1). Using big data to make better pricing decisions. *McKinsey Quarterly*. [Link](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-big-data-to-make-better-pricing-decisions)
-- Nagle, T. T., & Müller, G. (2018). *The strategy and tactics of pricing: A guide to growing more profitably* (6th ed.). Routledge.
+- McKinsey & Company. (2003). [*The power of pricing*](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-power-of-pricing). *McKinsey Quarterly*.
+- McKinsey & Company. (2014, June 1). [*Using big data to make better pricing decisions*](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-big-data-to-make-better-pricing-decisions). *McKinsey Quarterly*.
+- Nagle, T. T., Muller, G., & Gruyaert, E. (2023). [*The strategy and tactics of pricing: A guide to growing more profitably*](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Muller-Gruyaert/p/book/9780367763994) (7th ed.). *Routledge*.
 
 **Related pages:** [Value‑Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Willingness to Pay (WTP) Measurement](/wiki/pricing/value-and-customers/willingness-to-pay) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger Price Testing](/wiki/pricing/research-and-metrics/gabor-granger) | [Conjoint Analysis & Discrete Choice Experiments](/wiki/pricing/research-and-metrics/conjoint-analysis) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [ROI Calculators and Value Selling](/wiki/pricing/value-and-customers)
 

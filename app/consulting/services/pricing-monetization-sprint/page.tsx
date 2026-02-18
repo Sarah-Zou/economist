@@ -456,12 +456,12 @@ export default function PricingDiagnosticRevenueBoost() {
                         </li>
                       ))}
                     </ul>
-                    <a
+                    <Link
                       href="/book"
                       className={`${tier.buttonStyle} text-center py-3 px-6 rounded-lg font-semibold transition-colors mt-auto`}
                     >
                       {tier.buttonText}
-                    </a>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -576,12 +576,12 @@ export default function PricingDiagnosticRevenueBoost() {
             <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-6 max-w-2xl mx-auto">
               Book a free 15-minute call to assess whether pricing is your highest-impact lever right now and what outcomes you could realistically expect in 5 days.
             </p>
-              <a
+              <Link
                 href="/book"
               className="inline-block bg-[#ff5722] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#e64a19] transition shadow-lg hover:shadow-xl mb-8"
               >
               Book a free 15-minute call
-              </a>
+              </Link>
             </div>
           </div>
 

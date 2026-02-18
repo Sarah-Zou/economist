@@ -1,6 +1,7 @@
 import ContactCTA from '@/components/ContactCTA'
 import TestimonialCard from '@/components/TestimonialCard'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -308,9 +309,9 @@ function ConsultingContent() {
                   {/* Pricing & Monetization Sprint */}
                   <tr className="hover:bg-[#f6f7f9] transition-colors">
                     <td className="py-5 px-4">
-                      <a href="/consulting/services/pricing-monetization-sprint" className="font-bold text-base text-[#ff5722] hover:text-[#e44e1f] transition-colors">
+                      <Link href="/consulting/services/pricing-monetization-sprint" className="font-bold text-base text-[#ff5722] hover:text-[#e44e1f] transition-colors">
                         Pricing & Monetization Sprint
-                      </a>
+                      </Link>
                     </td>
                     <td className="py-5 px-4">
                       <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
@@ -338,9 +339,9 @@ function ConsultingContent() {
                   {/* Metrics & Experimentation Sprint */}
                   <tr className="hover:bg-[#f6f7f9] transition-colors">
                     <td className="py-5 px-4">
-                      <a href="/consulting/services/metrics-experimentation-sprint" className="font-bold text-base text-[#ff5722] hover:text-[#e44e1f] transition-colors">
+                      <Link href="/consulting/services/metrics-experimentation-sprint" className="font-bold text-base text-[#ff5722] hover:text-[#e44e1f] transition-colors">
                         Metrics & Experimentation Sprint
-                      </a>
+                      </Link>
                     </td>
                     <td className="py-5 px-4">
                       <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
@@ -368,9 +369,9 @@ function ConsultingContent() {
                   {/* Fractional Chief Economist (Retainer) */}
                   <tr className="hover:bg-[#f6f7f9] transition-colors">
                     <td className="py-5 px-4">
-                      <a href="/consulting/services/on-call-economist-retainer" className="font-bold text-base text-[#ff5722] hover:text-[#e44e1f] transition-colors">
+                      <Link href="/consulting/services/on-call-economist-retainer" className="font-bold text-base text-[#ff5722] hover:text-[#e44e1f] transition-colors">
                         Fractional Chief Economist (Retainer)
-                      </a>
+                      </Link>
                     </td>
                     <td className="py-5 px-4">
                       <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">

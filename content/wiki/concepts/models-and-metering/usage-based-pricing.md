@@ -3,7 +3,7 @@ title: "Usage-based pricing"
 metaTitle: "Usage-based pricing (pay-as-you-go): Definition and Examples"
 oneLiner: "Charge customers based on measured consumption so price scales with value, improving adoption and expansion."
 prereqs: []
-tags: ["SaaS", "cloud", "consumption pricing", "monetization", "packaging", "PLG", "billing"]
+tags: ["usage-based pricing", "consumption pricing", "value metric", "metering", "saas pricing", "hybrid pricing", "net revenue retention"]
 readingTime: 10
 lastUpdated: "2026-01-31"
 owner: "Dr. Sarah Zou"
@@ -29,7 +29,7 @@ owner: "Dr. Sarah Zou"
 
 - **38% Faster Growth:** Public SaaS companies utilizing usage-based pricing grew 38% faster year-over-year compared to those with traditional models. ([OpenView, 2023](https://openviewpartners.com/blog/state-of-usage-based-pricing/))
 - **54% of CFOs like UBP:** 54% of CFOs agree that flexible "pay-as-you-use" models are a game-changer for reducing customer churn. ([LogiSense](https://twitter.com/LogiSense/status/1658172144566583296))
-- **2/3 use UBP:** 80% of customers said consumption pricing better aligns with value; ~2/3 of software companies using it said it increases revenue with existing customers. ([Bain](https://www.bain.com/insights/is-consumption-based-pricing-right-for-your-software-tech-report-2022/))
+- **2/3 use UBP:** 80% of customers said usage-based pricing better aligns with value; ~2/3 of software companies using it said it increases revenue with existing customers. ([Bain](https://www.bain.com/insights/is-consumption-based-pricing-right-for-your-software-tech-report-2022/))
 
 ## What is usage-based pricing?
 
@@ -138,12 +138,12 @@ In traditional [seat-based](/wiki/pricing/models-and-metering/seat-based-pricing
 
 ### Sources:
 
-* Heap, S., & Brar, S. (2022). [*Is consumption-based pricing right for your software?*](https://www.bain.com/insights/is-consumption-based-pricing-right-for-your-software-tech-report-2022/). Bain & Company.
-* Nagle, T. T., Müller, G., & Gruyaert, E. (2023). *The Strategy and Tactics of Pricing: A Guide to Growing More Profitably* (7th ed.). Routledge.
-* Poyar, K. (2023, February 2). [*The State of Usage-Based Pricing: 2nd Edition*](https://openviewpartners.com/blog/state-of-usage-based-pricing/). OpenView Partners.
-* Hinterhuber, A., & Liozu, S. M. (2020). *Pricing Strategy Implementation: Translating Pricing Strategy into Results*. Routledge.
-* Howatson, A. (2024). *The Usage Economy: Strategies for Growth, Smart Pricing, and Effective Technology Management*.
-* Ghuman, A. (2021). *Price to Scale: Practical Pricing for Your High Growth Software Startup*.
+* Heap, S., & Brar, S. (2022). [*Is consumption-based pricing right for your software?*](https://www.bain.com/insights/is-consumption-based-pricing-right-for-your-software-tech-report-2022/). *Bain & Company*.
+* Nagle, T. T., Muller, G., & Gruyaert, E. (2023). [*The strategy and tactics of pricing: A guide to growing more profitably*](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Muller-Gruyaert/p/book/9780367763994) (7th ed.). *Routledge*.
+* Poyar, K. (2023, February 2). [*The state of usage-based pricing: 2nd edition*](https://openviewpartners.com/blog/state-of-usage-based-pricing/). *OpenView Partners*.
+* Hinterhuber, A., & Liozu, S. M. (2020). [*Pricing strategy implementation: Translating pricing strategy into results*](https://www.routledge.com/Pricing-Strategy-Implementation-Translating-Pricing-Strategy-into-Results/Hinterhuber-Liozu/p/book/9780367441205). *Routledge*.
+* Howatson, A. (2024). [*The usage economy: Strategies for growth, smart pricing, and effective technology management*](https://book.usageeconomy.com/). *Usage Economy Publishing*.
+* Ghuman, A. (2021). [*Price to scale: Practical pricing for your high-growth software startup*](https://www.pricetoscale.com/). *Independently published*.
 
 **Related pages:** [Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing) | [Minimum commitment + overage](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage) | [Prepaid credits](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing) | [Outcome/performance-based pricing](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) | [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Freemium](/wiki/pricing/models-and-metering/freemium-model)
 

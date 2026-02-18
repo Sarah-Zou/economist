@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { unstable_noStore } from 'next/cache';
-import { generateArticleJsonLd, generateBreadcrumbJsonLd, generateFAQJsonLd } from '@/lib/generateJsonLd';
+import { generateCollectionPageJsonLd, generateBreadcrumbJsonLd } from '@/lib/generateJsonLd';
 import { getCategoryBySlug, getAllCategorySlugs } from '@/lib/mdx';
 import WikiLayout from '@/components/wiki/WikiLayout';
 import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter';
@@ -129,37 +129,14 @@ export default function CategoryPage({ params }: CategoryPageProps) {
     { name: category.title, url: `/wiki/pricing/${category.slug}` }
   ];
 
-  const articleJsonLd = generateArticleJsonLd({
+  const collectionPageJsonLd = generateCollectionPageJsonLd({
     title: category.title,
     description: category.summary,
     url: category.canonical,
-    datePublished: category.updated,
     dateModified: category.updated,
-    author: 'Dr. Sarah Zou'
   });
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
-
-  // Generate FAQ schema with relevant questions about the category
-  const faqItems = [
-    {
-      question: `What is ${category.title}?`,
-      answer: category.summary
-    },
-    {
-      question: `How do I use the ${category.title} category?`,
-      answer: `The ${category.title} category provides comprehensive guidance on ${category.summary.toLowerCase()}. Browse the concepts in this category to find detailed information, step-by-step guides, and practical applications for your pricing strategy.`
-    },
-    {
-      question: `What concepts are covered in ${category.title}?`,
-      answer: `This category covers ${category.concepts.length} key concepts related to ${category.title.toLowerCase()}. Each concept includes detailed explanations, real-world examples, and actionable strategies you can implement in your business.`
-    }
-  ];
-
-  const faqJsonLd = generateFAQJsonLd({
-    url: category.canonical,
-    faqItems
-  });
 
   // Extract the "What's in this category" section from markdown content (without the heading)
   const extractWhatsInCategorySection = (content: string): { content: string; workingNote: string } => {
@@ -225,15 +202,11 @@ export default function CategoryPage({ params }: CategoryPageProps) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd) }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       
       <WikiLayout breadcrumbs={breadcrumbs} showAreasFooter={false}>
@@ -1287,12 +1260,12 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                   If you want help applying this to your business…
                 </h2>
               </div>
-              <a
+              <Link
                 href="/book"
                 className="inline-block bg-[#ff5722] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#e64a19] transition shadow-lg hover:shadow-xl"
               >
                 Book a 15-min intro call
-              </a>
+              </Link>
             </div>
           </div>
 

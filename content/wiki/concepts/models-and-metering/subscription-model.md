@@ -3,7 +3,7 @@ title: "Subscription model"
 metaTitle: "Subscription model: Definition and Best Practices"
 oneLiner: "A pricing model where customers pay repeatedly (monthly/annual) for ongoing access, usage, or replenishment—optimizing predictability and lifetime value."
 prereqs: []
-tags: ["business model", "pricing strategy", "SaaS", "membership", "retention", "billing", "packaging", "growth"]
+tags: ["subscription model", "recurring revenue", "saas pricing", "retention", "churn", "billing", "hybrid pricing"]
 readingTime: 8
 lastUpdated: "2026-02-06"
 owner: "Dr. Sarah Zou"
@@ -147,12 +147,12 @@ Imagine your customer base as a bucket. New customers are water being poured in 
 
 ### Sources:
 
-* Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119240863). Wiley.
-* Ghuman, A. (2021). [*Price to Scale: Practical Pricing for Your High Growth Software Startup*](https://www.pricetoscale.com/). Independently published.
-* Lehrskov-Schmidt, U. (2023). [*The Pricing Roadmap: How to Design B2B SaaS Pricing That Wins*](https://www.thepricingroadmap.com/). Independently published.
-* Einav, L., Klopack, B., & Mahoney, N. (2025). Selling subscriptions. [*American Economic Review, 115*(5), 1650–1671](https://www.aeaweb.org/articles?id=10.1257/aer.20231612).
-* Gallo, A. (2014). The value of keeping the right customers. [*Harvard Business Review*](https://hbr.org/2014/10/the-value-of-keeping-the-right-customers).
-* Reichheld, F. F., & Markey, R. (2001). *The loyalty effect* / *Loyalty rules!* (selected chapters). [Bain & Company](https://www.bain.com/contentassets/29f74ec417fa4e36a1d7d7e7479badc5/loyalty_rules_chapter_one.pdf).
+* Ramanujam, M., & Tacke, G. (2016). [*Monetizing innovation: How smart companies design the product around the price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119240863). *Wiley*.
+* Ghuman, A. (2021). [*Price to scale: Practical pricing for your high-growth software startup*](https://www.pricetoscale.com/). *Independently published*.
+* Lehrskov-Schmidt, U. (2023). [*The pricing roadmap: How to design B2B SaaS pricing that wins*](https://www.thepricingroadmap.com/). *The Pricing Roadmap*.
+* Einav, L., Klopack, B., & Mahoney, N. (2025). [*Selling subscriptions*](https://www.aeaweb.org/articles?id=10.1257/aer.20231612). *American Economic Review, 115*(5), 1650-1671.
+* Gallo, A. (2014). [*The value of keeping the right customers*](https://hbr.org/2014/10/the-value-of-keeping-the-right-customers). *Harvard Business Review*.
+* Reichheld, F. F., & Markey, R. (2001). [*The loyalty effect*](https://www.bain.com/contentassets/29f74ec417fa4e36a1d7d7e7479badc5/loyalty_rules_chapter_one.pdf). *Harvard Business School Press*.
 
 
 **Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing) | [Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing) | [Minimum commitment + overage](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage) | [Freemium](/wiki/pricing/models-and-metering/freemium-model) | [Outcome/performance-based pricing](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) | [Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Tiered/graduated/block pricing](/wiki/pricing/models-and-metering/tiered-graduated-block-pricing) | [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Jobs to be done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination)

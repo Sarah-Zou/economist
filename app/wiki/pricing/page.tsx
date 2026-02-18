@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { generateItemListJsonLd, generateWebPageJsonLd, generateArticleJsonLd, generateFAQJsonLd } from '@/lib/generateJsonLd';
+import { generateItemListJsonLd, generateWebPageJsonLd, generateCollectionPageJsonLd } from '@/lib/generateJsonLd';
 import { getAllCategories } from '@/lib/mdx';
 import WikiLayout from '@/components/wiki/WikiLayout';
 import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter';
@@ -87,38 +87,14 @@ export default function WikiPricingPage() {
     dateModified: '2025-01-02'
   });
 
-  const articleJsonLd = generateArticleJsonLd({
+  const collectionPageJsonLd = generateCollectionPageJsonLd({
     title: 'Pricing & Monetization Wiki',
     description: 'An evidence-based encyclopedia of pricing & monetization concepts for tech startups—definitions, applications, pitfalls, and metrics.',
     url: 'https://sarahzou.com/wiki/pricing',
-    datePublished: '2025-01-02',
     dateModified: '2025-01-02',
-    author: 'Dr. Sarah Zou'
   });
 
   const totalConcepts = categories.reduce((sum, cat) => sum + cat.conceptCount, 0);
-  
-  const faqJsonLd = generateFAQJsonLd({
-    url: 'https://sarahzou.com/wiki/pricing',
-    faqItems: [
-      {
-        question: 'What is the Pricing & Monetization Wiki?',
-        answer: 'The Pricing & Monetization Wiki is a comprehensive, evidence-based guide to pricing and monetization strategies for tech startups. It covers foundational concepts, advanced tactics, and practical applications to help you optimize your pricing for maximum growth.'
-      },
-      {
-        question: 'How is the wiki organized?',
-        answer: `The wiki is organized into ${categories.length} main categories covering different aspects of pricing and monetization. Currently, ${categoriesWithContent.length} categories contain detailed concept pages with ${totalConcepts} total concepts available. Categories include foundations, value and customers, packaging and bundling, models and metering, competitive positioning, communications and deals, customer research and pricing experiments, unit economics and pricing performance, and governance and process.`
-      },
-      {
-        question: 'Who is this wiki for?',
-        answer: 'This wiki is designed for tech startup founders, product managers, pricing strategists, and anyone looking to understand and implement effective pricing and monetization strategies. Whether you\'re new to SaaS pricing or looking to refine your approach, you\'ll find actionable insights and evidence-based guidance.'
-      },
-      {
-        question: 'How do I navigate the wiki?',
-        answer: 'Start by browsing the category cards on the main page. Each category contains multiple concepts with detailed explanations, step-by-step guides, real-world examples, and metrics to monitor. Categories with content are highlighted, and you can click any category card to explore its concepts.'
-      }
-    ]
-  });
 
   return (
     <>
@@ -132,11 +108,7 @@ export default function WikiPricingPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd) }}
       />
       
       <WikiLayout breadcrumbs={[]}>

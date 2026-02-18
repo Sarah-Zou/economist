@@ -3,7 +3,7 @@ title: "Pricing Metric (Value Metric)"
 metaTitle: "Pricing metric and value metric: Definition and Examples"
 oneLiner: "The pricing unit you charge on (seats, GB, transactions) that ensures your revenue grows as your customers succeed."
 prereqs: []
-tags: ["pricing structure", "value-based pricing", "packaging", "SaaS", "PLG", "billing", "monetization"]
+tags: ["pricing metric", "value metric", "saas pricing", "packaging", "usage-based pricing", "monetization", "expansion revenue"]
 readingTime: 10
 lastUpdated: "2026-02-05"
 owner: "Dr. Sarah Zou"
@@ -169,11 +169,11 @@ Visualize your customer's workflow as a chain from **Input** → **Process** →
 
 ### Sources:
 
-* Ghuman, A. (2021). [*Price to Scale: Practical Pricing for Your High Growth Software Startup*](https://www.amazon.com/Price-Scale-Practical-Pricing-Startup/dp/B092CB6147).
-* Lehrskov-Schmidt, U. (2023). *The Pricing Roadmap: How to Design B2B SaaS Pricing Models That Your Customers Will Love*.
-* Poyar, K. (2023, February 2). [*The State of Usage-Based Pricing: 2nd Edition*](https://openviewpartners.com/blog/state-of-usage-based-pricing/). OpenView Partners.
-* Nagle, T. T., Müller, G., & Gruyaert, E. (2023). *The Strategy and Tactics of Pricing: A Guide to Growing More Profitably* (7th ed.). Routledge.
-* Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119240860). Wiley.
+* Ghuman, A. (2021). [*Price to scale: Practical pricing for your high-growth software startup*](https://www.pricetoscale.com/). *Independently published*.
+* Lehrskov-Schmidt, U. (2023). [*The pricing roadmap: How to design B2B SaaS pricing models that your customers will love*](https://www.thepricingroadmap.com/). *The Pricing Roadmap*.
+* Poyar, K. (2023, February 2). [*The state of usage-based pricing: 2nd edition*](https://openviewpartners.com/blog/state-of-usage-based-pricing/). *OpenView Partners*.
+* Nagle, T. T., Muller, G., & Gruyaert, E. (2023). [*The strategy and tactics of pricing: A guide to growing more profitably*](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Muller-Gruyaert/p/book/9780367763994) (7th ed.). *Routledge*.
+* Ramanujam, M., & Tacke, G. (2016). [*Monetizing innovation: How smart companies design the product around the price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119240860). *Wiley*.
 
 **Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Usage-Based Pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing) | [Transaction-based pricing](/wiki/pricing/models-and-metering/transaction-based-pricing) | [Outcome/performance-based pricing](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) | [Capability/feature-based pricing](/wiki/pricing/models-and-metering/capability-feature-based-pricing) | [Minimum commitment + overage](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage) | [Prepaid credits](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model) | [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Customer use cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Jobs-to-Be-Done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Value drivers](/wiki/pricing/value-and-customers/value-drivers) | [Value-based pricing](/wiki/pricing/foundations/value-based-pricing) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Willingness to Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay)
 

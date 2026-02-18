@@ -4,6 +4,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { format } from 'date-fns'
 
+const POSTS_PER_PAGE = 10
+
 export const metadata: Metadata = {
   title: "Newsletter | Pricing & Monetization Insights | Sarah Zou",
   description: "Weekly newsletter on pricing research, experiments, benchmarks, and real case studies from tech startups. Actionable frameworks for pricing and growth strategies.",
@@ -36,10 +38,12 @@ export const metadata: Metadata = {
 
 function ArticleList() {
   const posts = getAllPosts()
+  const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE)
+  const pagePosts = posts.slice(0, POSTS_PER_PAGE)
 
   return (
     <section className="flex flex-col gap-8 w-full max-w-2xl mx-auto">
-      {posts.map((post) => (
+      {pagePosts.map((post) => (
         <div key={post.slug} className="flex items-start justify-between gap-4">
           <div className="flex-1 min-w-0">
             <Link
@@ -68,6 +72,26 @@ function ArticleList() {
           )}
         </div>
       ))}
+      {totalPages > 1 && (
+        <nav aria-label="Newsletter pagination" className="pt-4">
+          <div className="flex items-center justify-center gap-2">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+              <Link
+                key={pageNum}
+                href={pageNum === 1 ? '/newsletter' : `/newsletter/page/${pageNum}`}
+                className={`px-3 py-1.5 rounded border text-sm ${
+                  pageNum === 1
+                    ? 'bg-[#ff5722] text-white border-[#ff5722]'
+                    : 'bg-white text-[#1f2933] border-[#e2e6ea] hover:border-[#ff5722]'
+                }`}
+                aria-current={pageNum === 1 ? 'page' : undefined}
+              >
+                {pageNum}
+              </Link>
+            ))}
+          </div>
+        </nav>
+      )}
     </section>
   );
 }

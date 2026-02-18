@@ -3,8 +3,8 @@ export interface ArticleData {
   description: string;
   url: string;
   image?: string;
-  datePublished: string;
-  dateModified: string;
+  datePublished?: string;
+  dateModified?: string;
   author: string;
 }
 
@@ -60,13 +60,20 @@ export function generateArticleJsonLd(data: ArticleData) {
       "name": "Sarah Zou",
       "url": "https://sarahzou.com"
     },
-    "datePublished": data.datePublished,
-    "dateModified": data.dateModified,
+    ...(data.datePublished ? { "datePublished": data.datePublished } : {}),
+    ...(data.dateModified ? { "dateModified": data.dateModified } : {}),
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": data.url
     },
     "url": data.url
+  };
+}
+
+export function generateTechArticleJsonLd(data: ArticleData) {
+  return {
+    ...generateArticleJsonLd(data),
+    "@type": "TechArticle"
   };
 }
 
@@ -117,6 +124,27 @@ export function generateWebPageJsonLd(data: {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
+    "name": data.title,
+    "description": data.description,
+    "url": data.url,
+    "dateModified": data.dateModified,
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sarah Zou",
+      "url": "https://sarahzou.com"
+    }
+  };
+}
+
+export function generateCollectionPageJsonLd(data: {
+  title: string;
+  description: string;
+  url: string;
+  dateModified: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
     "name": data.title,
     "description": data.description,
     "url": data.url,

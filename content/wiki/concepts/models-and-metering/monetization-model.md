@@ -3,7 +3,7 @@ title: "Monetization model"
 metaTitle: "Monetization model: Definition, Framework, and How to Choose"
 oneLiner: "The way a business turns delivered value into revenue—who pays, for what unit, and how the money scales."
 prereqs: []
-tags: ["pricing", "business-model", "revenue", "packaging", "go-to-market", "unit-economics"]
+tags: ["monetization model", "revenue model", "pricing strategy", "saas pricing", "unit economics", "go-to-market", "packaging"]
 readingTime: 9
 lastUpdated: "2026-02-02"
 owner: "Dr. Sarah Zou"
@@ -144,12 +144,12 @@ Visualizing monetization models based on who holds the risk:
 
 ### Sources:
 
-* Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119240860). Wiley.
-* Ghuman, A. (2021). [*Price to Scale: Practical Pricing for Your High Growth Software Startup*](https://www.amazon.com/Price-Scale-Practical-Pricing-Startup/dp/B092CB6147).
-* Howatson, A. (2024). [*The Usage Economy: Strategies for Growth, Smart Pricing, and Effective Technology Management*](https://book.usageeconomy.com/).
-* Osterwalder, A., & Pigneur, Y. (2010). [*Business Model Generation: A Handbook for Visionaries, Game Changers, and Challengers*](https://www.wiley.com/en-us/Business+Model+Generation%3A+A+Handbook+for+Visionaries%2C+Game+Changers%2C+and+Challengers-p-9780470876411). Wiley.
-* Teece, D. J. (2010). [Business models, business strategy and innovation](https://doi.org/10.1016/j.lrp.2009.07.003). *Long Range Planning, 43*(2–3), 172–194.
-* Anderson, C. (2009). [*Free: The Future of a Radical Price*](https://www.hachettebookgroup.com/titles/chris-anderson/free/9781401394516/). Hyperion.
+* Ramanujam, M., & Tacke, G. (2016). [*Monetizing innovation: How smart companies design the product around the price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119240860). *Wiley*.
+* Ghuman, A. (2021). [*Price to scale: Practical pricing for your high-growth software startup*](https://www.pricetoscale.com/). *Independently published*.
+* Howatson, A. (2024). [*The usage economy: Strategies for growth, smart pricing, and effective technology management*](https://book.usageeconomy.com/). *Usage Economy Publishing*.
+* Osterwalder, A., & Pigneur, Y. (2010). [*Business model generation: A handbook for visionaries, game changers, and challengers*](https://www.wiley.com/en-us/Business+Model+Generation%3A+A+Handbook+for+Visionaries%2C+Game+Changers%2C+and+Challengers-p-9780470876411). *Wiley*.
+* Teece, D. J. (2010). [*Business models, business strategy and innovation*](https://doi.org/10.1016/j.lrp.2009.07.003). *Long Range Planning, 43*(2-3), 172-194.
+* Anderson, C. (2009). [*Free: The future of a radical price*](https://www.hachettebookgroup.com/titles/chris-anderson/free/9781401394516/). *Hyperion*.
 
 **Related pages:** [Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing) | [Transaction-based pricing](/wiki/pricing/models-and-metering/transaction-based-pricing) | [Freemium](/wiki/pricing/models-and-metering/freemium-model) | [Outcome/performance-based pricing](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) | [Minimum commitment + overage](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage) | [Prepaid credits](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model) | [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay)
 

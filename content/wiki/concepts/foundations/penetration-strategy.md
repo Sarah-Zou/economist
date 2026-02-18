@@ -158,12 +158,12 @@ For startup founders, penetration pricing is essential in markets **dominated by
 
 ## References & Links
 
-### Sources
+### Sources:
 
-* Nagle, T. T., Müller, G., & Gruyaert, E. (2023). *The strategy and tactics of pricing: A guide to growing more profitably* (7th ed.). Routledge.
-* Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. John Wiley & Sons. [Google Books](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ)
-* Raju, J., & Zhang, Z. J. (2010). *Smart pricing: How Google, Priceline, and leading businesses use pricing innovation for profitability*. FT Press.
-* Ghuman, A. (2021). *Price to scale: Practical pricing for your high-growth SaaS startup*. Independently published.
+* Nagle, T. T., Muller, G., & Gruyaert, E. (2023). [*The strategy and tactics of pricing: A guide to growing more profitably*](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Muller-Gruyaert/p/book/9780367763994) (7th ed.). *Routledge*.
+* Ramanujam, M., & Tacke, G. (2016). [*Monetizing innovation: How smart companies design the product around the price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119240860). *Wiley*.
+* Raju, J. G., & Zhang, Z. J. (2010). [*Smart pricing: How Google, Priceline, and leading businesses use pricing innovation for profitability*](https://www.pearson.com/us/higher-education/program/Raju-Smart-Pricing-How-Google-Priceline-and-Leading-Businesses-Use-Pricing-Innovation-for-Profitability/PGM113227.html). *Pearson*.
+* Ghuman, A. (2021). [*Price to scale: Practical pricing for your high-growth software startup*](https://www.pricetoscale.com/). *Independently published*.
 
 **Related pages:** [Maximization Strategy](/wiki/pricing/foundations/maximization) | [Skimming Strategy](/wiki/pricing/foundations/skimming-strategy) | [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Strategic Pricing](/wiki/pricing/foundations/strategic-pricing) | [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Van Westendorp](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger](/wiki/pricing/research-and-metrics/gabor-granger) | [Conjoint Analysis](/wiki/pricing/research-and-metrics/conjoint-analysis)
 

@@ -111,12 +111,12 @@ VBP is step one of the entire [**strategic pricing**](/wiki/pricing/foundations/
 
 ### Sources:
 
-- Baker, W., Kiewell, D., & Winkler, G. (2014, June 1). *Using big data to make better pricing decisions*. McKinsey & Company. [Link](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-big-data-to-make-better-pricing-decisions)
-- De Toni, D., Milan, G. S., Saciloto, E. B., & Larentis, F. (2017). *Pricing strategies and levels and their impact on corporate profitability*. *Revista de Administração, 52*(2), 120–133. [DOI](https://doi.org/10.1016/j.rausp.2016.12.004)
-- Hinterhuber, A. (2008). *Customer value-based pricing strategies: Why companies resist*. *Journal of Business Strategy, 29*(4), 41–50. [DOI](https://doi.org/10.1108/02756660810887079)
-- Lehrskov-Schmidt, U. (2023). *The pricing roadmap: How to design B2B SaaS pricing models that your customers will love*. Independently published.
-- Nagle, T. T., Müller, G., & Gruyaert, E. (2022). *The strategy and tactics of pricing: A guide to growing more profitably* (6th ed.). Routledge.
-- Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. John Wiley & Sons. [Google Books](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ) | [Simon-Kucher](https://www.simon-kucher.com/en/insights/monetizing-innovation) 
+- Baker, W., Kiewell, D., & Winkler, G. (2014, June 1). [*Using big data to make better pricing decisions*](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-big-data-to-make-better-pricing-decisions). *McKinsey & Company*.
+- De Toni, D., Milan, G. S., Saciloto, E. B., & Larentis, F. (2017). [*Pricing strategies and levels and their impact on corporate profitability*](https://doi.org/10.1016/j.rausp.2016.12.004). *Revista de Administração, 52*(2), 120-133.
+- Hinterhuber, A. (2008). [*Customer value-based pricing strategies: Why companies resist*](https://doi.org/10.1108/02756660810887079). *Journal of Business Strategy, 29*(4), 41-50.
+- Lehrskov-Schmidt, U. (2023). [*The pricing roadmap: How to design B2B SaaS pricing models that your customers will love*](https://www.thepricingroadmap.com/). *The Pricing Roadmap*.
+- Nagle, T. T., Muller, G., & Gruyaert, E. (2023). [*The strategy and tactics of pricing: A guide to growing more profitably*](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Muller-Gruyaert/p/book/9780367763994) (7th ed.). *Routledge*.
+- Ramanujam, M., & Tacke, G. (2016). [*Monetizing innovation: How smart companies design the product around the price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119240860). *Wiley*.
 
 **Related pages:** [Strategic Pricing](/wiki/pricing/foundations/strategic-pricing) | [Cost-plus pricing](/wiki/pricing/foundations/cost-plus-pricing) | [Ideal Customer Profile (ICP)](/wiki/pricing/value-and-customers/ideal-customer-profile) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Van Westendorp](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger](/wiki/pricing/research-and-metrics/gabor-granger) | [Conjoint Analysis](/wiki/pricing/research-and-metrics/conjoint-analysis) | [Discounting & Realization](/wiki/pricing/policies-and-governance/discounting-and-realization)
 

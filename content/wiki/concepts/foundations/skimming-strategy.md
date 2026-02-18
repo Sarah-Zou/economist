@@ -138,13 +138,13 @@ Skimming lets you monetize the highest-[WTP](/wiki/pricing/value-and-customers/w
 
 ### Sources:
 
-- Nagle, T. T., Hogan, J., & Zale, J. (2023). *The strategy and tactics of pricing* (6th ed.). Routledge.
-- Kotler, P., & Keller, K. L. (2022). *Marketing management* (16th ed.). Pearson.
-- Mohammed, R. (2017). *The art of pricing: How to find the hidden profits to grow your business*. Harper Business.
-- Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. John Wiley & Sons. [Google Books](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ) | [Simon-Kucher publisher page](https://www.simon-kucher.com/en/insights/monetizing-innovation)
-- Raju, J. S., & Zhang, Z. J. (2010). *Smart pricing: How Google, Priceline, and leading businesses use pricing innovation for profitability*. Wharton School Publishing.
-- Rao, A. R. (1984). Pricing research in marketing: The state of the art. *Journal of Business*, 57(1), S39–S60.
-- Tirole, J. (1988). *The theory of industrial organization*. MIT Press.
+- Nagle, T. T., Muller, G., & Gruyaert, E. (2023). [*The strategy and tactics of pricing: A guide to growing more profitably*](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Muller-Gruyaert/p/book/9780367763994) (7th ed.). *Routledge*.
+- Kotler, P., & Keller, K. L. (2022). [*Marketing management*](https://www.pearson.com/en-us/subject-catalog/p/marketing-management/P200000003101/9780135887150) (16th ed.). *Pearson*.
+- Mohammed, R. (2005). [*The art of pricing: How to find the hidden profits to grow your business*](https://www.pricingforprofit.com/the-art-of-pricing). *Crown Business*.
+- Ramanujam, M., & Tacke, G. (2016). [*Monetizing innovation: How smart companies design the product around the price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119240860). *Wiley*.
+- Raju, J. G., & Zhang, Z. J. (2010). [*Smart pricing: How Google, Priceline, and leading businesses use pricing innovation for profitability*](https://www.pearson.com/us/higher-education/program/Raju-Smart-Pricing-How-Google-Priceline-and-Leading-Businesses-Use-Pricing-Innovation-for-Profitability/PGM113227.html). *Pearson*.
+- Rao, A. R. (1984). [*Pricing research in marketing: The state of the art*](https://www.jstor.org/stable/2352897). *Journal of Business, 57*(1), S39-S60.
+- Tirole, J. (1988). [*The theory of industrial organization*](https://mitpress.mit.edu/9780262200716/the-theory-of-industrial-organization/). *MIT Press*.
 
 **Related pages:** [Maximization Strategy](/wiki/pricing/foundations/maximization) | [Penetration Pricing](/wiki/pricing/foundations/penetration-strategy) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Van Westendorp](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger](/wiki/pricing/research-and-metrics/gabor-granger) | [Product Lifecycle Pricing](/wiki/pricing/foundations/strategic-pricing)
 

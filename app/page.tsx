@@ -267,7 +267,7 @@ export default function Home() {
           </p>
           <div className="max-w-6xl w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-4 mb-8 sm:mb-10">
             {/* Card 1: Pricing & Monetization Sprint */}
-            <a href="/consulting/services/pricing-monetization-sprint" className="block group">
+            <Link href="/consulting/services/pricing-monetization-sprint" className="block group">
               <div 
                 className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
                 style={{
@@ -300,10 +300,10 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </a>
+            </Link>
 
             {/* Card 2: Metrics & Experimentation Sprint */}
-            <a href="/consulting/services/metrics-experimentation-sprint" className="block group">
+            <Link href="/consulting/services/metrics-experimentation-sprint" className="block group">
               <div 
                 className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
                 style={{
@@ -336,10 +336,10 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </a>
+            </Link>
 
             {/* Card 3: Fractional Chief Economist */}
-            <a href="/consulting/services/on-call-economist-retainer" className="block group">
+            <Link href="/consulting/services/on-call-economist-retainer" className="block group">
               <div 
                 className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
                 style={{
@@ -372,7 +372,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
           <Link
             href="/book"
@@ -390,7 +390,7 @@ export default function Home() {
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
                 <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">What is a fractional chief economist?</h3>
                 <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                  A fractional chief economist is a part-time executive who designs your pricing system, unit economics, and decision cadence—bringing PhD-level rigor without a full-time hire. Learn more about <a href="/about" className="text-[#ff5722] hover:underline">fractional economics services</a>.
+                  A fractional chief economist is a part-time executive who designs your pricing system, unit economics, and decision cadence—bringing PhD-level rigor without a full-time hire. Learn more about <Link href="/about" className="text-[#ff5722] hover:underline">fractional economics services</Link>.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
@@ -408,13 +408,13 @@ export default function Home() {
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
                 <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">Who do you work with?</h3>
                 <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                  Pre-seed to Series A teams across SaaS, APIs, AI, OSS-commercial, operator-led marketplaces, and hardware-as-a-service that want rigor without enterprise bloat. See <a href="/about" className="text-[#ff5722] hover:underline">who I work with</a>.
+                  Pre-seed to Series A teams across SaaS, APIs, AI, OSS-commercial, operator-led marketplaces, and hardware-as-a-service that want rigor without enterprise bloat. See <Link href="/about" className="text-[#ff5722] hover:underline">who I work with</Link>.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
                 <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">How fast do we see impact?</h3>
                 <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                  Decisions ship in 1–2 weeks via focused <a href="/consulting/services/pricing-monetization-sprint" className="text-[#ff5722] hover:underline">Monetization Sprints</a> or <a href="/consulting/services/metrics-experimentation-sprint" className="text-[#ff5722] hover:underline">Metrics Sprints</a>, with measurable effects typically within 2–4 weeks and a 90-day experiment plan to learn fast.
+                  Decisions ship in 1–2 weeks via focused <Link href="/consulting/services/pricing-monetization-sprint" className="text-[#ff5722] hover:underline">Monetization Sprints</Link> or <Link href="/consulting/services/metrics-experimentation-sprint" className="text-[#ff5722] hover:underline">Metrics Sprints</Link>, with measurable effects typically within 2–4 weeks and a 90-day experiment plan to learn fast.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
@@ -426,13 +426,13 @@ export default function Home() {
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
                 <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">What do engagements look like?</h3>
                 <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                  Start with a 15-min consult → choose a <a href="/consulting/services/pricing-monetization-sprint" className="text-[#ff5722] hover:underline">Monetization Sprint</a> or <a href="/consulting/services/metrics-experimentation-sprint" className="text-[#ff5722] hover:underline">Metrics Sprint</a> → optional <a href="/consulting/services/on-call-economist-retainer" className="text-[#ff5722] hover:underline">retainer</a> for ongoing pricing, forward models, and the experiment cadence.
+                  Start with a 15-min consult → choose a <Link href="/consulting/services/pricing-monetization-sprint" className="text-[#ff5722] hover:underline">Monetization Sprint</Link> or <Link href="/consulting/services/metrics-experimentation-sprint" className="text-[#ff5722] hover:underline">Metrics Sprint</Link> → optional <Link href="/consulting/services/on-call-economist-retainer" className="text-[#ff5722] hover:underline">retainer</Link> for ongoing pricing, forward models, and the experiment cadence.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
                 <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">What does it cost?</h3>
                 <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                  Sprints are fixed-fee ($5k–$18k for <a href="/consulting/services/pricing-monetization-sprint" className="text-[#ff5722] hover:underline">Monetization</a>; $6k–$12k for <a href="/consulting/services/metrics-experimentation-sprint" className="text-[#ff5722] hover:underline">Metrics</a>) with defined deliverables and timelines. <a href="/consulting/services/on-call-economist-retainer" className="text-[#ff5722] hover:underline">Retainers</a> start at $4k/mo with tiered time commitments.
+                  Sprints are fixed-fee ($5k–$18k for <Link href="/consulting/services/pricing-monetization-sprint" className="text-[#ff5722] hover:underline">Monetization</Link>; $6k–$12k for <Link href="/consulting/services/metrics-experimentation-sprint" className="text-[#ff5722] hover:underline">Metrics</Link>) with defined deliverables and timelines. <Link href="/consulting/services/on-call-economist-retainer" className="text-[#ff5722] hover:underline">Retainers</Link> start at $4k/mo with tiered time commitments.
                 </p>
               </div>
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
@@ -444,7 +444,7 @@ export default function Home() {
               <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
                 <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">Where do you work from?</h3>
                 <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                  Remote first; based in Princeton/NJ with on-site availability in the NYC and Philadelphia metros; US/EU coverage. See <a href="/about" className="text-[#ff5722] hover:underline">where I work</a>.
+                  Remote first; based in Princeton/NJ with on-site availability in the NYC and Philadelphia metros; US/EU coverage. See <Link href="/about" className="text-[#ff5722] hover:underline">where I work</Link>.
                 </p>
               </div>
             </div>

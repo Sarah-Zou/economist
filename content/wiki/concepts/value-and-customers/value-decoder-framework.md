@@ -152,12 +152,12 @@ Use the Value Decoder when **you have clear substitutes or alternatives to bench
 
 ### Sources:
 
-- Mohammed, R. (2010). *The 1% windfall: How successful companies use price to profit and grow*. New York, NY: HarperBusiness. [Link](https://www.harpercollins.com/products/the-1-windfall-rafi-mohammed)
-- Mohammed, R. (2005). *The art of pricing: How to find the hidden profits to grow your business*. New York, NY: Crown Business. [Link](https://www.pricingforprofit.com/the-art-of-pricing)
+- Mohammed, R. (2010). [*The 1% windfall: How successful companies use price to profit and grow*](https://www.harpercollins.com/products/the-1-windfall-rafi-mohammed). *HarperBusiness*.
+- Mohammed, R. (2005). [*The art of pricing: How to find the hidden profits to grow your business*](https://www.pricingforprofit.com/the-art-of-pricing). *Crown Business*.
 - Simon-Kucher & Partners. (2021). *Global pricing study*. Retrieved from [Simon-Kucher](https://www.simon-kucher.com)
-- Nagle, T. T., Hogan, J. E., & Zale, J. (2016). *The strategy and tactics of pricing: A guide to growing more profitably* (5th ed.). New York, NY: Routledge. [Link](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Hogan-Zale/p/book/9780133553644)
-- Baker, W. L., Marn, M. V., & Zawada, C. C. (2010). *The price advantage* (2nd ed.). Hoboken, NJ: John Wiley & Sons. [Link](https://www.wiley.com/en-us/The+Price+Advantage%2C+2nd+Edition-p-9780470502250)
-- Raju, J. G., & Zhang, Z. J. (2010). *Smart pricing: How Google, Priceline, and leading businesses use pricing innovation for profitability*. Upper Saddle River, NJ: Pearson. [Link](https://www.pearson.com/us/higher-education/program/Raju-Smart-Pricing-How-Google-Priceline-and-Leading-Businesses-Use-Pricing-Innovation-for-Profitability/PGM113227.html)
+- Nagle, T. T., Muller, G., & Gruyaert, E. (2023). [*The strategy and tactics of pricing: A guide to growing more profitably*](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Muller-Gruyaert/p/book/9780367763994) (7th ed.). *Routledge*.
+- Baker, W. L., Marn, M. V., & Zawada, C. C. (2010). [*The price advantage*](https://www.wiley.com/en-us/The+Price+Advantage%2C+2nd+Edition-p-9780470502250) (2nd ed.). *John Wiley & Sons*.
+- Raju, J. G., & Zhang, Z. J. (2010). [*Smart pricing: How Google, Priceline, and leading businesses use pricing innovation for profitability*](https://www.pearson.com/us/higher-education/program/Raju-Smart-Pricing-How-Google-Priceline-and-Leading-Businesses-Use-Pricing-Innovation-for-Profitability/PGM113227.html). *Pearson*.
 
 **Related pages:** [Value-based pricing](/wiki/pricing/foundations/value-based-pricing) | [Economic Value Estimation (EVE)](/wiki/pricing/value-and-customers/economic-value-estimation) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp) | [Gabor‑Granger price testing](/wiki/pricing/research-and-experiments/gabor-granger) | [Conjoint analysis / discrete choice experiments](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination)
 

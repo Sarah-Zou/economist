@@ -95,10 +95,10 @@ It can lead companies to set consistently sub-par prices, often leading to foreg
 
 ### Sources:
 
-- Nagle, T. T., Müller, G., & Hogan, J. (2023). *The strategy and tactics of pricing*. Pearson.
-- Ramanujam, M., & Tacke, G. (2016). *Monetizing innovation: How smart companies design the product around the price*. John Wiley & Sons. [Google Books](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ) | [Simon-Kucher publisher page](https://www.simon-kucher.com/en/insights/monetizing-innovation)
-- Hinterhuber, A., & Liozu, S. M. (2017). *Innovation in pricing: Contemporary theories and best practices*. Routledge.
-- Selected articles on cost‑plus pitfalls and value‑based pricing from Harvard Business Review.
+- Nagle, T. T., Muller, G., & Gruyaert, E. (2023). [*The strategy and tactics of pricing: A guide to growing more profitably*](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Muller-Gruyaert/p/book/9780367763994) (7th ed.). *Routledge*.
+- Ramanujam, M., & Tacke, G. (2016). [*Monetizing innovation: How smart companies design the product around the price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119240860). *Wiley*.
+- Hinterhuber, A., & Liozu, S. M. (2017). [*Innovation in pricing: Contemporary theories and best practices*](https://www.routledge.com/Innovation-in-Pricing-Contemporary-Theories-and-Best-Practices/Hinterhuber-Liozu/p/book/9781138790089). *Routledge*.
+- Gourville, J. T. (2006, June). [*Eager sellers and stony buyers: Understanding the psychology of new-product adoption*](https://hbr.org/2006/06/eager-sellers-and-stony-buyers-understanding-the-psychology-of-new-product-adoption). *Harvard Business Review*.
 
 **Related pages:** [Value‑Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Ideal Customer Profile (ICP)](/wiki/pricing/value-and-customers/ideal-customer-profile) | [Price Floors & Guardrails](/wiki/pricing/foundations/price-floors) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Unit Economics](/wiki/pricing/foundations/unit-economics) | [Van Westendorp](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger](/wiki/pricing/research-and-metrics/gabor-granger) | [Conjoint Analysis](/wiki/pricing/research-and-metrics/conjoint-analysis)
 
@@ -116,11 +116,11 @@ It can lead companies to set consistently sub-par prices, often leading to foreg
 
 **A:** Re‑examine cost structure, packaging, and [ICP](/wiki/pricing/value-and-customers/ideal-customer-profile); avoid selling below sustainable margins.
 
-**Q:** When is cost-plus pricing appropriate?
+**Q:** What is a practical way to use cost-plus without getting stuck with bad prices?
 
-**A:** Cost-plus is appropriate as a price floor in early exploration, in regulated/contractual pass-through contexts, for bespoke time-and-materials services, or when combined with market data for commodities. Avoid using it as the primary strategy for differentiated products with market moats.
+**A:** Use cost-plus as a guardrail: first compute a floor (variable cost + minimum acceptable contribution margin), then choose the actual price using customer value and market context. Revisit the floor regularly as costs change.
 
-**Q:** How does cost-plus differ from value-based pricing?
+**Q:** How can I transition a team from cost-plus habits to value-based pricing?
 
-**A:** Cost-plus starts with internal costs and adds a markup. Value-based pricing starts with customer value and willingness-to-pay, then ensures costs are covered. Cost-plus is inward-looking; value-based pricing is customer-oriented.
+**A:** Start with one pilot segment, define a value metric, gather 10-15 buyer interviews on willingness-to-pay, and test one revised price/package. Keep cost-plus as a safety floor while you build confidence with value-based evidence.
 

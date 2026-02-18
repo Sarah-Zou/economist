@@ -1,8 +1,9 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { unstable_noStore } from 'next/cache';
-import { generateArticleJsonLd, generateBreadcrumbJsonLd, generateFAQJsonLd } from '@/lib/generateJsonLd';
+import { generateTechArticleJsonLd, generateBreadcrumbJsonLd, generateFAQJsonLd } from '@/lib/generateJsonLd';
 import { getCategoryBySlug, getAllCategories, getConceptBySlug } from '@/lib/mdx';
+import { normalizeHeadingText, createUniqueHeadingId, extractNodeText } from '@/lib/wikiHeadingUtils';
 import WikiLayout from '@/components/wiki/WikiLayout';
 import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter';
 import TableOfContents from '@/components/wiki/TableOfContents';
@@ -133,18 +134,13 @@ export async function generateMetadata({ params }: ConceptPageProps): Promise<Me
 function extractHeadings(content: string): Array<{ id: string; text: string; level: number }> {
   const headingRegex = /^(#{2,3})\s+(.+)$/gm;
   const headings: Array<{ id: string; text: string; level: number }> = [];
+  const seenIds = new Map<string, number>();
   let match;
 
   while ((match = headingRegex.exec(content)) !== null) {
     const level = match[1].length;
-    const text = match[2].trim();
-    // Create ID from text (lowercase, replace spaces with hyphens, remove special chars)
-    const id = text
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, '')
-      .replace(/\s+/g, '-')
-      .replace(/-+/g, '-')
-      .trim();
+    const text = normalizeHeadingText(match[2].trim());
+    const id = createUniqueHeadingId(text, seenIds);
     
     headings.push({ id, text, level });
   }
@@ -152,17 +148,19 @@ function extractHeadings(content: string): Array<{ id: string; text: string; lev
   return headings;
 }
 
+type SnapshotData = {
+  whatItIs?: string;
+  whyItMatters?: string;
+  whyItsTempting?: string;
+  whereItFails?: string;
+  whenToUse?: string;
+  keyTakeaways?: string[];
+};
+
 // Helper function to parse Snapshot section from markdown content
 function parseSnapshot(content: string): { 
   beforeSnapshot: string; 
-  snapshot: { 
-    whatItIs?: string; 
-    whyItMatters?: string; 
-    whyItsTempting?: string;
-    whereItFails?: string;
-    whenToUse?: string; 
-    keyTakeaways?: string[] 
-  } | null; 
+  snapshot: SnapshotData | null; 
   afterSnapshot: string 
 } {
   const snapshotRegex = /##\s+Snapshot\s*\(TL;DR\)\s*\n([\s\S]*?)(?=\n##|$)/;
@@ -178,7 +176,7 @@ function parseSnapshot(content: string): {
   const afterSnapshot = content.substring(snapshotStartIndex + match[0].length).trim();
 
   // Parse snapshot fields
-  const snapshot: { whatItIs?: string; whyItMatters?: string; whyItsTempting?: string; whereItFails?: string; whenToUse?: string; keyTakeaways?: string[] } = {};
+  const snapshot: SnapshotData = {};
   
   // Extract "What it is:" - stop at newline followed by next field
   const whatItIsMatch = snapshotContent.match(/\*\*What it is:\*\*\s*([\s\S]*?)(?=\n\*\*(?:Why it matters|Why it's tempting|Where it fails|When to use|Key Takeaways):|$)/);
@@ -225,6 +223,117 @@ function parseSnapshot(content: string): {
   }
 
   return { beforeSnapshot, snapshot, afterSnapshot };
+}
+
+function SnapshotTopCard({ snapshot }: { snapshot: SnapshotData }) {
+  const conciseWhyItMatters = snapshot.whyItMatters
+    ? snapshot.whyItMatters
+        .split(/(?<=[.!?])\s+/)
+        .find((sentence) => sentence.trim().length > 0)
+        ?.trim() || snapshot.whyItMatters
+    : undefined;
+
+  return (
+    <div className="relative overflow-hidden rounded-2xl border border-[#e5e7eb] bg-white shadow-sm mb-8">
+      <div className="px-5 py-5 sm:px-7 sm:py-7">
+      <div className="mb-4">
+        <h2 id="snapshot" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] scroll-mt-24">
+          Snapshot (TL;DR)
+        </h2>
+      </div>
+      <div className="space-y-4">
+        {snapshot.whatItIs && (
+          <div className="rounded-xl border border-[#edf1f5] bg-[#fafbfc] px-4 py-4 sm:px-5">
+            <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2">What it is</h3>
+            <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />,
+                  strong: ({ node, ...props }) => <strong className="font-bold text-[#1f2933]" {...props} />,
+                }}
+              >
+                {snapshot.whatItIs}
+              </ReactMarkdown>
+            </div>
+          </div>
+        )}
+        {conciseWhyItMatters && (
+          <div className="rounded-xl border border-[#edf1f5] bg-[#fafbfc] px-4 py-4 sm:px-5">
+            <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2">Why it matters</h3>
+            <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />,
+                  strong: ({ node, ...props }) => <strong className="font-bold text-[#1f2933]" {...props} />,
+                }}
+              >
+                  {conciseWhyItMatters}
+              </ReactMarkdown>
+            </div>
+          </div>
+        )}
+        {snapshot.whyItsTempting && (
+          <div className="rounded-xl border border-[#edf1f5] bg-[#fafbfc] px-4 py-4 sm:px-5">
+            <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2">Why it's tempting</h3>
+            <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />,
+                  strong: ({ node, ...props }) => <strong className="font-bold text-[#1f2933]" {...props} />,
+                }}
+              >
+                {snapshot.whyItsTempting}
+              </ReactMarkdown>
+            </div>
+          </div>
+        )}
+        {snapshot.whereItFails && (
+          <div className="rounded-xl border border-[#edf1f5] bg-[#fafbfc] px-4 py-4 sm:px-5">
+            <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2">Where it fails</h3>
+            <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />,
+                  strong: ({ node, ...props }) => <strong className="font-bold text-[#1f2933]" {...props} />,
+                }}
+              >
+                {snapshot.whereItFails}
+              </ReactMarkdown>
+            </div>
+          </div>
+        )}
+        {snapshot.keyTakeaways && snapshot.keyTakeaways.length > 0 && (
+          <div className="rounded-xl border border-[#ffe0d6] bg-[#fff8f5] px-4 py-4 sm:px-5">
+            <h3 className="font-semibold text-[20px] text-[#1f2933] mb-2">Key Takeaways</h3>
+            <ul className="space-y-2">
+              {snapshot.keyTakeaways.map((takeaway, index) => (
+                <li key={index} className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-[#ff5722] mt-1 flex-shrink-0" />
+                  <span>
+                    <ReactMarkdown
+                      remarkPlugins={[remarkGfm]}
+                      components={{
+                        strong: ({ node, ...props }) => (
+                          <strong className="font-bold text-[#1f2933]" {...props} />
+                        ),
+                      }}
+                    >
+                      {takeaway}
+                    </ReactMarkdown>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+      </div>
+    </div>
+  );
 }
 
 // Helper function to parse Key Facts section from markdown content
@@ -303,8 +412,8 @@ function parseKeyFacts(content: string): {
       descriptionText = description.substring(colonIndex + 1).trim();
     }
     
-    // Strip markdown bold syntax (**text**) from title only (description will be parsed by ReactMarkdown)
-    title = title.replace(/\*\*/g, '').trim();
+    // Keep titles plain text only (no embedded markdown links)
+    title = normalizeHeadingText(title.replace(/\*\*/g, '').trim());
     
     // Clean up any orphaned ** at the start or end of description (but preserve internal **text** patterns)
     // Remove leading ** followed by space, or trailing ** preceded by space
@@ -351,7 +460,7 @@ function parseMetricsToMonitor(content: string): {
     // Extract title from **Title:** and description after colon
     const boldMatch = line.match(/\*\*([^*]+?):\*\*\s*(.+)/);
     if (boldMatch) {
-      const title = boldMatch[1].trim();
+      const title = normalizeHeadingText(boldMatch[1].trim());
       const description = boldMatch[2].trim();
       if (title && description) {
         metrics.push({ title, description });
@@ -401,7 +510,7 @@ function parseStepByStep(content: string): {
     stepMatches.push({
       index: stepNumberMatch.index,
       number: parseInt(stepNumberMatch[1], 10),
-      title: stepNumberMatch[2].trim(),
+      title: normalizeHeadingText(stepNumberMatch[2].trim()),
       fullMatch: stepNumberMatch[0]
     });
   }
@@ -482,15 +591,12 @@ function parseFAQ(content: string): { beforeFAQ: string; faqItems: Array<{ quest
 }
 
 // Shared ReactMarkdown components for consistent styling
-const markdownComponents = {
+function createMarkdownComponents() {
+  const renderedHeadingIds = new Map<string, number>();
+  return {
   h2: ({ node, ...props }: any) => {
-    const text = String(props.children)
-    const id = text
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, '')
-      .replace(/\s+/g, '-')
-      .replace(/-+/g, '-')
-      .trim()
+    const text = normalizeHeadingText(extractNodeText(props.children))
+    const id = createUniqueHeadingId(text, renderedHeadingIds)
     
     // Add icons for specific h2 headings
     let Icon = null;
@@ -500,20 +606,22 @@ const markdownComponents = {
     }
     
     return (
-      <h2 id={id} className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-[4.5rem] scroll-mt-24 flex items-center gap-3">
+      <h2 id={id} className="group font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-[4.5rem] scroll-mt-24 flex items-center gap-3">
         {Icon && <Icon className="w-6 h-6 text-[#ff5722] flex-shrink-0" />}
-        <span>{props.children}</span>
+        <span>{text}</span>
+        <a
+          href={`#${id}`}
+          className="text-sm text-[#3b4652] opacity-0 transition-opacity group-hover:opacity-100 focus:opacity-100"
+          aria-label={`Link to ${text}`}
+        >
+          #
+        </a>
       </h2>
     );
   },
   h3: ({ node, ...props }: any) => {
-    const text = String(props.children)
-    const id = text
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, '')
-      .replace(/\s+/g, '-')
-      .replace(/-+/g, '-')
-      .trim()
+    const text = normalizeHeadingText(extractNodeText(props.children))
+    const id = createUniqueHeadingId(text, renderedHeadingIds)
     
     // Add icons for "Where cost-plus pricing fails" subsections
     let Icon = null;
@@ -557,14 +665,21 @@ const markdownComponents = {
     }
     
     return (
-      <h3 id={id} className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-4 mt-8 scroll-mt-24 flex items-center gap-2">
+      <h3 id={id} className="group font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-4 mt-8 scroll-mt-24 flex items-center gap-2">
         {Icon && <Icon className="w-5 h-5 text-[#ff5722] flex-shrink-0" />}
-        <span>{props.children}</span>
+        <span>{text}</span>
+        <a
+          href={`#${id}`}
+          className="text-xs text-[#3b4652] opacity-0 transition-opacity group-hover:opacity-100 focus:opacity-100"
+          aria-label={`Link to ${text}`}
+        >
+          #
+        </a>
       </h3>
     );
   },
   a: ({ node, href, ...props }: any) => {
-    const isInternalLink = href?.startsWith('/wiki/pricing/');
+    const isInternalLink = href?.startsWith('/');
     if (isInternalLink && href) {
       return (
         <Link 
@@ -587,18 +702,38 @@ const markdownComponents = {
   blockquote: ({ node, ...props }: any) => (
     <blockquote className="bg-white border-l-4 border-[#ff5722] pl-6 pr-4 py-4 my-6 rounded-r-lg shadow-sm" {...props} />
   ),
+  pre: ({ node, ...props }: any) => (
+    <pre
+      className="bg-[#111827] text-[#f8fafc] rounded-lg p-4 my-6 overflow-x-auto text-sm leading-relaxed"
+      {...props}
+    />
+  ),
+  code: ({ node, inline, className, ...props }: any) => {
+    if (inline) {
+      return (
+        <code
+          className="bg-[#f3f4f6] text-[#1f2933] px-1.5 py-0.5 rounded text-[0.9em]"
+          {...props}
+        />
+      );
+    }
+    return (
+      <code
+        className={`font-mono text-sm ${className || ''}`.trim()}
+        {...props}
+      />
+    );
+  },
   table: ({ node, ...props }: any) => (
-    <div className="overflow-x-auto my-8 -mx-4 sm:mx-0" role="region" aria-label="Data table" tabIndex={0}>
-      <div className="bg-white rounded-lg border border-[#e5e7eb] shadow-sm overflow-hidden min-w-full">
-        <table className="w-full border-collapse min-w-[600px]" {...props} />
-      </div>
+    <div className="my-8 w-full max-w-full overflow-x-auto rounded-xl border border-[#e5e7eb] bg-white shadow-sm" role="region" aria-label="Data table" tabIndex={0}>
+      <table className="w-full border-separate border-spacing-0 min-w-[620px]" {...props} />
     </div>
   ),
   thead: ({ node, ...props }: any) => (
     <thead className="bg-[#f6f7f9]" {...props} />
   ),
   th: ({ node, ...props }: any) => (
-    <th className="text-left py-3 sm:py-4 px-3 sm:px-6 font-semibold text-xs sm:text-sm text-[#1f2933] border-b-2 border-[#e5e7eb] uppercase tracking-wide first:pl-3 sm:first:pl-6 last:pr-3 sm:last:pr-6 whitespace-nowrap" {...props} />
+    <th className="text-left py-3.5 sm:py-4 px-4 sm:px-6 font-semibold text-sm text-[#1f2933] border-b border-[#dfe5eb] first:pl-4 sm:first:pl-6 last:pr-4 sm:last:pr-6 whitespace-nowrap" {...props} />
   ),
   td: ({ node, ...props }: any) => {
     // Check if this is a "Decision criteria" table cell with fit level
@@ -630,7 +765,7 @@ const markdownComponents = {
     }
     
     return (
-      <td className="py-4 sm:py-5 px-3 sm:px-6 text-sm sm:text-base md:text-[17px] text-[#1f2933] leading-[1.65] border-b border-[#e5e7eb] align-top first:pl-3 sm:first:pl-6 last:pr-3 sm:last:pr-6 min-w-[120px]" {...props}>
+      <td className="py-4 sm:py-4.5 px-4 sm:px-6 text-[15px] sm:text-base text-[#1f2933] leading-[1.6] border-b border-[#e5e7eb] align-top first:pl-4 sm:first:pl-6 last:pr-4 sm:last:pr-6 min-w-[140px]" {...props}>
         {Icon ? (
           <div className="flex items-center gap-2">
             <Icon className={`w-4 h-4 sm:w-5 sm:h-5 ${iconColor} flex-shrink-0`} />
@@ -646,7 +781,7 @@ const markdownComponents = {
     <tbody className="divide-y divide-[#e5e7eb]" {...props} />
   ),
   tr: ({ node, ...props }: any) => (
-    <tr className="hover:bg-[#f6f7f9] transition-colors duration-150 last:border-b-0" {...props} />
+    <tr className="even:bg-[#fafbfc] hover:bg-[#f6f7f9] transition-colors duration-150 last:border-b-0" {...props} />
   ),
   div: ({ node, ...props }: any) => {
     // Preserve all props including className for nested divs
@@ -680,7 +815,8 @@ const markdownComponents = {
     // Fallback for external images
     return <img src={src} alt={alt} className="my-8 rounded-lg shadow-lg max-w-full h-auto" {...props} />;
   },
-};
+  };
+}
 
 export default async function ConceptPage({ params }: ConceptPageProps) {
   // In development, opt out of route cache so content file changes show without restarting the server
@@ -707,12 +843,13 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
       ? concept.text.split(':').slice(1).join(':').trim()
       : '');
     const hasContent = conceptData !== null;
+    const markdownComponents = createMarkdownComponents();
     
     // Extract headings for table of contents (only first level - h2)
     let tocItems: Array<{ id: string; text: string; level: number }> = [];
     try {
       tocItems = hasContent && conceptData 
-        ? extractHeadings(conceptData.content).filter(item => item.level === 2)
+        ? extractHeadings(conceptData.content).filter(item => item.level === 2 && !item.id.startsWith('snapshot'))
         : [];
     } catch (error) {
       console.error('Error extracting headings:', error);
@@ -720,14 +857,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
 
     // Parse Snapshot section if content exists
     let beforeSnapshot = '';
-    let snapshot: { 
-      whatItIs?: string; 
-      whyItMatters?: string; 
-      whyItsTempting?: string;
-      whereItFails?: string;
-      whenToUse?: string; 
-      keyTakeaways?: string[] 
-    } | null = null;
+    let snapshot: SnapshotData | null = null;
     let afterSnapshotContent = '';
     try {
       const snapshotResult = hasContent && conceptData
@@ -738,6 +868,10 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
       afterSnapshotContent = snapshotResult.afterSnapshot;
     } catch (error) {
       console.error('Error parsing snapshot:', error);
+    }
+
+    if (snapshot && !tocItems.some((item) => item.id.startsWith('snapshot') || item.text.toLowerCase().includes('snapshot'))) {
+      tocItems = [{ id: 'snapshot', text: 'Snapshot (TL;DR)', level: 2 }, ...tocItems];
     }
 
     // Parse Key Facts section - parse from content after snapshot only (never full content when Snapshot exists to avoid duplicating it)
@@ -818,44 +952,33 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
       console.error('Error parsing FAQ:', error);
     }
 
+    const references = (conceptData?.references || []).filter((ref) => ref?.title && ref?.url);
     const breadcrumbs = [
       { name: 'Pricing', url: '/wiki/pricing' },
       { name: category.title, url: `/wiki/pricing/${category.slug}` },
       { name: conceptName, url: `/wiki/pricing/${params.category}/${params.concept}` }
     ];
 
-    const articleJsonLd = generateArticleJsonLd({
+    const articleJsonLd = generateTechArticleJsonLd({
       title: conceptName,
       description: description || `Learn about ${conceptName} in the context of ${category.title}`,
       url: `https://sarahzou.com/wiki/pricing/${params.category}/${params.concept}`,
-      datePublished: conceptData?.lastUpdated || category.updated,
+      datePublished: conceptData?.publishedAt,
       dateModified: conceptData?.lastUpdated || category.updated,
       author: conceptData?.owner || 'Dr. Sarah Zou'
     });
 
     const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs);
 
-    // Generate FAQ schema from parsed FAQ items, or create default FAQs if none exist
-    const faqItemsForSchema = faqItems.length > 0 
-      ? faqItems.map(item => ({
-          question: item.question,
-          answer: item.answer
-        }))
-      : [
-          {
-            question: `What is ${conceptName}?`,
-            answer: description || `Learn about ${conceptName} in the context of ${category.title}. This concept is part of the ${category.title} category in the Pricing & Monetization Wiki.`
-          },
-          {
-            question: `How does ${conceptName} relate to ${category.title}?`,
-            answer: `${conceptName} is a key concept within ${category.title}, which focuses on ${category.summary.toLowerCase()}. Understanding this concept helps you apply ${category.title.toLowerCase()} strategies effectively.`
-          }
-        ];
-
-    const faqJsonLd = generateFAQJsonLd({
-      url: `https://sarahzou.com/wiki/pricing/${params.category}/${params.concept}`,
-      faqItems: faqItemsForSchema
-    });
+    const faqJsonLd = faqItems.length > 0
+      ? generateFAQJsonLd({
+          url: `https://sarahzou.com/wiki/pricing/${params.category}/${params.concept}`,
+          faqItems: faqItems.map(item => ({
+            question: item.question,
+            answer: item.answer
+          }))
+        })
+      : null;
 
   return (
     <>
@@ -867,10 +990,12 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       
       <div className="min-h-screen bg-[#f9f6f7] pb-20 md:pb-8">
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -889,6 +1014,19 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                   </span>
                 ))}
               </nav>
+            </div>
+          )}
+
+          {tocItems.length > 0 && (
+            <div className="xl:hidden mb-6">
+              <details className="bg-white rounded-lg border border-[#e5e7eb] shadow-sm">
+                <summary className="cursor-pointer list-none px-4 py-3 text-sm font-semibold text-[#1f2933] border-b border-[#e5e7eb]">
+                  On this page
+                </summary>
+                <div className="p-4">
+                  <TableOfContents items={tocItems} title={conceptName} />
+                </div>
+              </details>
             </div>
           )}
 
@@ -964,19 +1102,48 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                 }
               >
           {/* Header */}
-          <div className="mb-8">
+          <div className="mb-8 max-w-[78ch]">
             <h1 className="text-[32px] sm:text-[36px] font-serif-playfair font-bold text-[#1f2933] mb-4">
               {conceptName}
             </h1>
             {description && (
-              <p className="text-lg sm:text-xl text-[#1f2933] leading-relaxed italic">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  p: ({ node, ...props }) => (
+                    <p className="text-lg sm:text-xl text-[#1f2933] leading-relaxed italic mb-0" {...props} />
+                  ),
+                  a: ({ node, href, ...props }: any) => {
+                    const isInternalLink = href?.startsWith('/');
+                    if (isInternalLink && href) {
+                      return (
+                        <Link
+                          href={href}
+                          className="text-[#ff5722] hover:underline font-medium not-italic"
+                          {...props}
+                        />
+                      );
+                    }
+                    return (
+                      <a
+                        href={href}
+                        className="text-[#ff5722] hover:underline not-italic"
+                        target={href?.startsWith('http') ? '_blank' : undefined}
+                        rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        {...props}
+                      />
+                    );
+                  },
+                }}
+              >
                 {description}
-              </p>
+              </ReactMarkdown>
             )}
+            {snapshot && <div className="mt-8"><SnapshotTopCard snapshot={snapshot} /></div>}
           </div>
 
                 {/* Content */}
-                <div className="prose prose-lg max-w-none text-[#1f2933] text-base sm:text-[17px] leading-[1.65]">
+                <div className="prose prose-lg max-w-[78ch] text-[#1f2933] text-base sm:text-[17px] leading-[1.7]">
                   {hasContent && conceptData ? (
                     <>
                       {/* Content before Snapshot */}
@@ -988,123 +1155,6 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                         >
                           {beforeSnapshot}
                         </ReactMarkdown>
-                      )}
-
-                      {/* Snapshot Section */}
-                      {snapshot && (
-                        <>
-                          <h2 id="snapshot" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] scroll-mt-24 mb-4 mt-[2.25rem]">
-                            Snapshot (TL;DR)
-                          </h2>
-                          <div className="bg-white rounded-lg pt-4 pb-6 px-6 sm:pt-4 sm:pb-8 sm:px-8 border border-[#e5e7eb] shadow-sm mb-8">
-                            <div className="space-y-1.5">
-                              {snapshot.whatItIs && (
-                                <div>
-                                  <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-[1px]">What it is</h3>
-                                  <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                                    <ReactMarkdown
-                                      remarkPlugins={[remarkGfm]}
-                                      components={{
-                                        p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />,
-                                        strong: ({ node, ...props }) => <strong className="font-bold text-[#1f2933]" {...props} />,
-                                      }}
-                                    >
-                                      {snapshot.whatItIs}
-                                    </ReactMarkdown>
-                                  </div>
-                                </div>
-                              )}
-                              {snapshot.whyItMatters && (
-                                <div>
-                                  <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-[1px]">Why it matters</h3>
-                                  <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                                    <ReactMarkdown
-                                      remarkPlugins={[remarkGfm]}
-                                      components={{
-                                        p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />,
-                                        strong: ({ node, ...props }) => <strong className="font-bold text-[#1f2933]" {...props} />,
-                                      }}
-                                    >
-                                      {snapshot.whyItMatters}
-                                    </ReactMarkdown>
-                                  </div>
-                                </div>
-                              )}
-                              {snapshot.whyItsTempting && (
-                                <div>
-                                  <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-[1px]">Why it's tempting</h3>
-                                  <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                                    <ReactMarkdown
-                                      remarkPlugins={[remarkGfm]}
-                                      components={{
-                                        p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />,
-                                        strong: ({ node, ...props }) => <strong className="font-bold text-[#1f2933]" {...props} />,
-                                      }}
-                                    >
-                                      {snapshot.whyItsTempting}
-                                    </ReactMarkdown>
-                                  </div>
-                                </div>
-                              )}
-                              {snapshot.whereItFails && (
-                                <div>
-                                  <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-[1px]">Where it fails</h3>
-                                  <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                                    <ReactMarkdown
-                                      remarkPlugins={[remarkGfm]}
-                                      components={{
-                                        p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />,
-                                        strong: ({ node, ...props }) => <strong className="font-bold text-[#1f2933]" {...props} />,
-                                      }}
-                                    >
-                                      {snapshot.whereItFails}
-                                    </ReactMarkdown>
-                                  </div>
-                                </div>
-                              )}
-                              {snapshot.whenToUse && (
-                                <div>
-                                  <h3 className="font-semibold text-[20px] text-[#1f2933] mb-[1px]">When to use</h3>
-                                  <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                                    <ReactMarkdown
-                                      remarkPlugins={[remarkGfm]}
-                                      components={{
-                                        p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />,
-                                        strong: ({ node, ...props }) => <strong className="font-bold text-[#1f2933]" {...props} />,
-                                      }}
-                                    >
-                                      {snapshot.whenToUse}
-                                    </ReactMarkdown>
-                                  </div>
-                                </div>
-                              )}
-                              {snapshot.keyTakeaways && snapshot.keyTakeaways.length > 0 && (
-                                <div>
-                                  <h3 className="font-semibold text-[20px] text-[#1f2933] mb-[1.5px]">Key Takeaways</h3>
-                                  <ul className="space-y-0.5">
-                                    {snapshot.keyTakeaways.map((takeaway, index) => (
-                                      <li key={index} className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] flex items-start gap-2">
-                                        <CheckCircle className="w-4 h-4 text-[#ff5722] mt-1.5 flex-shrink-0" />
-                                        <span>
-                                          <ReactMarkdown
-                                            remarkPlugins={[remarkGfm]}
-                                            components={{
-                                              strong: ({ node, ...props }) => (
-                                                <strong className="font-bold text-[#1f2933]" {...props} />
-                                              ),
-                                            }}
-                                          >
-                                            {takeaway}
-                                          </ReactMarkdown>
-                                        </span>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                        </>
                       )}
 
                       {/* Content after Snapshot but before Key Facts */}
@@ -1221,7 +1271,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                       )}
 
                       {/* Content after Key Facts but before Step-by-step */}
-                      {beforeStepByStep && beforeStepByStep.trim() && (
+                      {steps && steps.length > 0 && beforeStepByStep && beforeStepByStep.trim() && (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm, remarkMath]}
                           rehypePlugins={[rehypeRaw, rehypeKatex]}
@@ -1254,7 +1304,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                     <blockquote className="bg-white border-l-4 border-[#ff5722] pl-6 pr-4 py-4 my-6 rounded-r-lg shadow-sm" {...props} />
                                   ),
                                   a: ({ node, href, ...props }: any) => {
-                                    const isInternalLink = href?.startsWith('/wiki/pricing/');
+                                    const isInternalLink = href?.startsWith('/');
                                     if (isInternalLink && href) {
                                       return (
                                         <Link 
@@ -1316,7 +1366,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                             <strong className="font-bold text-[#1f2933]" {...props} />
                                           ),
                                           a: ({ node, href, ...props }: any) => {
-                                            const isInternalLink = href?.startsWith('/wiki/pricing/');
+                                            const isInternalLink = href?.startsWith('/');
                                             if (isInternalLink && href) {
                                               return (
                                                 <Link 
@@ -1360,7 +1410,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                     <blockquote className="bg-white border-l-4 border-[#ff5722] pl-6 pr-4 py-4 my-6 rounded-r-lg shadow-sm" {...props} />
                                   ),
                                   a: ({ node, href, ...props }: any) => {
-                                    const isInternalLink = href?.startsWith('/wiki/pricing/');
+                                    const isInternalLink = href?.startsWith('/');
                                     if (isInternalLink && href) {
                                       return (
                                         <Link 
@@ -1565,7 +1615,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                         <strong className="font-bold text-[#1f2933]" {...props} />
                                       ),
                                       a: ({ node, href, ...props }) => {
-                                        const isInternalLink = href?.startsWith('/wiki/pricing/');
+                                        const isInternalLink = href?.startsWith('/');
                                         if (isInternalLink && href) {
                                           return (
               <Link 
@@ -1612,6 +1662,29 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                         </>
                       )}
 
+                      {references.length > 0 && (
+                        <section className="mt-12 mb-12">
+                          <h2 id="references" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-[4.5rem] scroll-mt-24">
+                            References / Further reading
+                          </h2>
+                          <ol className="list-decimal pl-5 space-y-3">
+                            {references.map((ref, index) => (
+                              <li key={`${ref.url}-${index}`} className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+                                <a
+                                  href={ref.url}
+                                  className="text-[#ff5722] hover:underline font-medium"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  {ref.title}
+                                </a>
+                                {ref.source && <span className="text-[#3b4652]"> - {ref.source}</span>}
+                              </li>
+                            ))}
+                          </ol>
+                        </section>
+                      )}
+
                       {/* CTA Section */}
                       <div className="max-w-4xl mx-auto mt-16 mb-8">
                         <div className="bg-white rounded-lg p-8 md:p-12 border border-[#e5e7eb] shadow-lg text-center">
@@ -1627,12 +1700,12 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                               If you want help applying this to your business…
                             </h2>
                           </div>
-                          <a
+                          <Link
                             href="/book"
                             className="inline-block bg-[#ff5722] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#e64a19] transition shadow-lg hover:shadow-xl"
                           >
                             Book a 15-min intro call
-                          </a>
+                          </Link>
                         </div>
                       </div>
 
@@ -1650,36 +1723,6 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                 This page will include step-by-step guides, real-world examples, and practical applications.
               </p>
             </div>
-
-            <h2>Related Concepts</h2>
-            <p className="text-gray-700 mb-4">
-              Other concepts in this category:
-            </p>
-            <ul className="space-y-2">
-              {category.concepts
-                .filter(c => c.id !== params.concept)
-                .map((relatedConcept, index) => {
-                  const relatedName = relatedConcept.text.split(':')[0].trim();
-                  return (
-                    <li key={index}>
-                      <Link
-                        href={relatedConcept.id 
-                          ? `/wiki/pricing/${params.category}/${relatedConcept.id}`
-                          : `/wiki/pricing/${params.category}#${relatedConcept.id || 'concept'}`
-                        }
-                        className="text-[#ff5722] hover:underline"
-                      >
-                        {relatedName}
-                      </Link>
-                      {relatedConcept.text.includes(':') && (
-                        <span className="text-gray-600 text-sm ml-2">
-                          - {relatedConcept.text.split(':').slice(1).join(':').trim()}
-                        </span>
-                      )}
-                    </li>
-                  );
-                })}
-            </ul>
                     </>
                   )}
                 </div>
