@@ -89,7 +89,8 @@ Visualizing monetization models based on who holds the risk:
 * **The Payback Period Rule:** Ideally, your monetization model should allow you to recover your CAC in **< 12 months**.
 * **Expansion Revenue Goal:** A healthy model should allow for "Negative Churn"—where existing customers pay you more over time (e.g., through usage [tiers](/wiki/pricing/packaging-and-bundling/good-better-best)).
 
-## When should you use which model? Decision criteria
+## When should you use which model? 
+### Decision criteria
 
 | Situation                                         | Best-fit monetization patterns                        | Why                                                   |
 | ------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
