@@ -22,11 +22,6 @@ owner: "Dr. Sarah Zou"
 - **The anchor is an asset:** make the launch premium *explainable* (scarcity, warranty, concierge, performance) and avoid training the market with early discounts.
 - **Fences *are* the strategy:** if customers can arbitrage between rungs, skimming collapses into random discounting—use version, time, channel, eligibility, and geo controls.
 
-## Key Facts
-- 16% "cream": In diffusion theory, innovators (2.5%) + early adopters (13.5%) ≈ 16% of the market are the **"cream" tiers** skimming targets before the Early Majority (34%) arrives. ([Lumen Learning](https://courses.lumenlearning.com/clinton-marketing/chapter/reading-diffusion-of-innovation/))
-- 50–60% brand-loyal: In consumer tech, ~50–60% of early adopters are **brand‑loyal** and are willing to **pay a premium** for early access. ([Gönen (2024)](https://www.researchgate.net/publication/378123456))
-- 25% high-WTP tier: Premium smartphones reached **25% of the global market** in 2024, meaning the high-WTP tier is now **big enough** that "price the top first" can move company-level outcomes. ([Counterpoint Research (2025)](https://counterpointresearch.com/en/insights/post-insight-research-notes-blogs-global-premium-smartphone-share-climbs-to-25-in-2024-as-premiumization-continues))
-
 ## What is skimming strategy?
 
 **Skim pricing, or "skimming,"** is a strategy designed to capture superior margins by initially launching at **a deliberately high price** to capture surplus from customers with the highest willingness to pay, then **stepping prices down** in planned stages to reach more price-sensitive segments.
@@ -55,6 +50,19 @@ Imagine a **"Value Waterfall"** or **"Step-Down Ladder"**:
 
 > **💡 Related:** See [How Maximization differs from Skimming and Penetration](/wiki/pricing/foundations/maximization#how-maximization-differs-from-skimming-and-penetration) for a detailed comparison of these three primary pricing strategies.
 
+## When should you use skimming strategy?
+
+### Decision criteria
+
+| Condition | Skimming Fit? | Notes |
+|-----------|---------------|-------|
+| High [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) dispersion (early adopters exist) | ✅ Strong | Use research to size premium segment ≥10–20% of buyers. |
+| Low price elasticity at launch | ✅ | Measure via preorders/A‑B tests. |
+| IP/brand novelty, low direct substitutes | ✅ | Premium anchor credible. |
+| Supply constrained / long lead times | ✅ | Monetize scarcity rather than rationing. |
+| High arbitrage risk (channels/regions) | ❌ Risky | Need tight fences; otherwise leaks. |
+| Strong network effects or learning-by-doing | ❌ Favor penetration | Value of share growth outweighs early margins. |
+
 ### Rules of thumb
 
 - **Innovation Trigger:** If your product is "Revolutionary" (creating its own market) or "Evolutionary" (significant upgrades), skimming is often the default best choice.
@@ -71,18 +79,10 @@ Skimming lets you monetize the highest-[WTP](/wiki/pricing/value-and-customers/w
 - **Avoid underpricing innovation:** Prevents you from locking in a low reference price before the market fully understands the value.
 - **Create room for future discounts:** Planned step-downs and promotions can be meaningful without ever touching the original premium anchor.
 
-## When should you use skimming strategy?
-
-### Decision criteria
-
-| Condition | Skimming Fit? | Notes |
-|-----------|---------------|-------|
-| High [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) dispersion (early adopters exist) | ✅ Strong | Use research to size premium segment ≥10–20% of buyers. |
-| Low price elasticity at launch | ✅ | Measure via preorders/A‑B tests. |
-| IP/brand novelty, low direct substitutes | ✅ | Premium anchor credible. |
-| Supply constrained / long lead times | ✅ | Monetize scarcity rather than rationing. |
-| High arbitrage risk (channels/regions) | ❌ Risky | Need tight fences; otherwise leaks. |
-| Strong network effects or learning-by-doing | ❌ Favor penetration | Value of share growth outweighs early margins. |
+## Key Facts
+- 16% "cream": In diffusion theory, innovators (2.5%) + early adopters (13.5%) ≈ 16% of the market are the **"cream" tiers** skimming targets before the Early Majority (34%) arrives. ([Lumen Learning](https://courses.lumenlearning.com/clinton-marketing/chapter/reading-diffusion-of-innovation/))
+- 50–60% brand-loyal: In consumer tech, ~50–60% of early adopters are **brand‑loyal** and are willing to **pay a premium** for early access. ([Gönen (2024)](https://www.researchgate.net/publication/378123456))
+- 25% high-WTP tier: Premium smartphones reached **25% of the global market** in 2024, meaning the high-WTP tier is now **big enough** that "price the top first" can move company-level outcomes. ([Counterpoint Research (2025)](https://counterpointresearch.com/en/insights/post-insight-research-notes-blogs-global-premium-smartphone-share-climbs-to-25-in-2024-as-premiumization-continues))
 
 ## How do you implement skimming strategy step-by-step?
 

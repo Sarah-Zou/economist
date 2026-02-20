@@ -24,12 +24,6 @@ owner: "Dr. Sarah Zou"
 - Add-ons work best when they're **independently valuable** and **easy to explain**.
 - **Beware the "Hydra":** Spinning out every new feature as an add-on is a lazy [monetization](/wiki/pricing/models-and-metering/monetization-model) strategy. It increases Customer Acquisition Cost (CAC) because sales reps have to explain complex menus, and it increases Cost to Serve. Periodically re-package add-ons into [tiers](/wiki/pricing/packaging-and-bundling/good-better-best) to clean up the mess.
 
-## Key Facts
-
-- **~30% shorter sales cycle:** Companies using modular pricing often experience a 30% reduction in sales cycle length for the base product by reducing initial price friction. ([McKinsey](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-pricing-puzzle-how-to-optimize-packaging-and-pricing))
-- **51.5% revenues:** In airline "ancillaries" (add-ons), some carriers have earned ~51.5% of revenue from add-ons (e.g., Spirit, 2022). ([IdeaWorksCompany Yearbook](https://www.ideaworkscompany.com/))
-- **60%+ expansion:** Over 60% of expansion revenue in scale-up tech firms typically comes from feature add-ons rather than seat-based expansion. ([OpenView](https://openviewpartners.com/blog/saas-metrics-benchmarks/))
-
 ## What are add-ons and modular packaging?
 
 **The Core offer:** The base product customers must buy to solve the primary problem.
@@ -82,6 +76,12 @@ Think of your product not as a single block, but as a Base Platform (the core fe
 - **Capturing Heterogeneous Demand:** If your market has high variance in needs (e.g., one customer needs Analytics but not Security; another needs Security but not Analytics), standard tiers will fail. Modular pricing maximizes revenue by allowing each customer to pay for exactly what they value.
 - **Monetizing "Niche Leaders":** Some features are highly valued by a small segment of users (High Willingness to Pay) but irrelevant to the majority (Low Popularity). If you bundle these into the core product, you bloat the price for everyone; if you sell them as add-ons, you capture pure profit from the power users.
 - **Wallet Structuring:** Large enterprises have different budgets (e.g., IT budget vs. Marketing budget). Modular packaging allows you to sell different parts of your product to different stakeholders within the same company, effectively maximizing the total contract value.
+
+## Key Facts
+
+- **~30% shorter sales cycle:** Companies using modular pricing often experience a 30% reduction in sales cycle length for the base product by reducing initial price friction. ([McKinsey](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-pricing-puzzle-how-to-optimize-packaging-and-pricing))
+- **51.5% revenues:** In airline "ancillaries" (add-ons), some carriers have earned ~51.5% of revenue from add-ons (e.g., Spirit, 2022). ([IdeaWorksCompany Yearbook](https://www.ideaworkscompany.com/))
+- **60%+ expansion:** Over 60% of expansion revenue in scale-up tech firms typically comes from feature add-ons rather than seat-based expansion. ([OpenView](https://openviewpartners.com/blog/saas-metrics-benchmarks/))
 
 ## How do you implement add-ons and modular packaging step-by-step?
 

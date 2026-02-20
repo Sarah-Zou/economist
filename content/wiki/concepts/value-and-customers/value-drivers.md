@@ -23,12 +23,6 @@ owner: "Dr. Sarah Zou"
 - **Quantify or Die:** In B2B, you must translate features into dollars (revenue gained or costs saved). If you cannot quantify the value driver, you cannot easily charge for it.
 - **Segment by Driver:** Different customers have different value drivers for the same product. You must build separate maps per [job](/wiki/pricing/value-and-customers/jobs-to-be-done)/[use case](/wiki/pricing/value-and-customers/customer-use-cases).
 
-## Key Facts
-
-- **<10 hours/year:** Most companies spend **<10 hours/year** on pricing—leaving growth on the table. ([Paddle / Price Intelligently](https://www.paddle.com/resources/pricing-strategy))
-- **~80% of features:** In the average software product, **~80% of features** are rarely or never used—misallocated R&D that doesn't map to value drivers. ([Pendo, 2019 Feature Adoption Report](https://www.pendo.io/resources/the-2019-feature-adoption-report/))
-- **≥90% of needs:** In a homogeneous segment, **20–30 qualitative interviews** typically surface **≥90%** of customer needs—enough to map value drivers. ([Griffin & Hauser (1993) via MIT Sloan](https://mitsloan.mit.edu/shared/ods/documents?PublicationDocumentID=5259))
-
 ## What are Value Drivers?
 
 **Value Drivers** are the specific attributes of a product or service that create measurable benefits for a customer and directly influence their [Willingness to Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay). They act as the bridge between your product's features and the customer's wallet.
@@ -52,14 +46,6 @@ owner: "Dr. Sarah Zou"
 
 ![Value drivers mental model: A visual diagram showing the value driver pipeline from features to pricing decisions. The diagram illustrates how product features enable specific capabilities, which produce measurable outcome KPIs (key performance indicators). These outcomes are then dollarized to quantify their economic impact, which increases customer willingness to pay (WTP) and ultimately informs pricing and packaging choices. This framework helps translate product features into quantifiable value that drives customer purchasing decisions and justifies price premiums.](/images/wiki_valueDriver_mental.png)
 
-## Why do Value Drivers matter?
-
-- **Avoiding Commoditization:** Without clearly defined value drivers, customers default to comparing products based on price alone. Understanding value drivers allows you to price based on the *economic value* you create rather than your internal costs, which is the foundation of [value-based pricing](/wiki/pricing/foundations/value-based-pricing).
-
-- **Product Prioritization:** Identifying which features actually drive value prevents "Feature Shock"—the failure mode of cramming too many unwanted features into a product, driving up costs without increasing WTP.
-
-- **Sales Justification:** Sales teams cannot defend a price premium without articulating the quantified value drivers that justify the difference between your product and the competitor's.
-
 ## When should you use value drivers?
 
 ### Equations & rules of thumb
@@ -69,6 +55,20 @@ owner: "Dr. Sarah Zou"
       ◦ *Example:* (Reduction in Labor Hours) × (Hourly Wage of Staff) = Value of Efficiency Driver.
 * **The 50/30 Rule:** When pricing a solution based on value drivers, you should communicate 100% of the value created, target capturing 50% of that value in your price, and accept no less than 30%.
 * **Differentiation Ratio:** The value-based price premium is often much greater than the percentage increase in technical efficiency. If a machine is 2x faster but saves an entire production line from shutting down, the value driver is the *shutdown prevention*, not just the speed.
+
+## Why do Value Drivers matter?
+
+- **Avoiding Commoditization:** Without clearly defined value drivers, customers default to comparing products based on price alone. Understanding value drivers allows you to price based on the *economic value* you create rather than your internal costs, which is the foundation of [value-based pricing](/wiki/pricing/foundations/value-based-pricing).
+
+- **Product Prioritization:** Identifying which features actually drive value prevents "Feature Shock"—the failure mode of cramming too many unwanted features into a product, driving up costs without increasing WTP.
+
+- **Sales Justification:** Sales teams cannot defend a price premium without articulating the quantified value drivers that justify the difference between your product and the competitor's.
+
+## Key Facts
+
+- **<10 hours/year:** Most companies spend **<10 hours/year** on pricing—leaving growth on the table. ([Paddle / Price Intelligently](https://www.paddle.com/resources/pricing-strategy))
+- **~80% of features:** In the average software product, **~80% of features** are rarely or never used—misallocated R&D that doesn't map to value drivers. ([Pendo, 2019 Feature Adoption Report](https://www.pendo.io/resources/the-2019-feature-adoption-report/))
+- **≥90% of needs:** In a homogeneous segment, **20–30 qualitative interviews** typically surface **≥90%** of customer needs—enough to map value drivers. ([Griffin & Hauser (1993) via MIT Sloan](https://mitsloan.mit.edu/shared/ods/documents?PublicationDocumentID=5259))
 
 ## How do you implement value drivers step-by-step?
 

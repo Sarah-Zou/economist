@@ -24,12 +24,6 @@ owner: "Dr. Sarah Zou"
 - **Don't "Average" Your Market:** Designing for the average customer leads to features the low-end doesn't need (driving up cost) and features the high-end finds insufficient (driving down value). You must build distinct packages for distinct needs.
 - **[Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) Must Be Enforceable:** If your high-value segment can easily buy the low-value segment's product (cannibalization), your segmentation has failed. You need logical barriers (features, limits, support) to keep high-WTP users from downgrading.
 
-## Key Facts
-
-- **+80% profit:** Charging separate prices to five distinct segments can lift profit contribution ~80% vs. a single price. [Nagle et al., The Strategy and Tactics of Pricing, Ch. 4](https://studylib.net/doc/28119504/the-strategy-and-tactics-of-pricing-a-guide-to-growing-more-profitably-by-m%C3%BCller-georg-nagle-thomas-t).
-- **2x better:** Multi-tier pricing strategies result in **2x better LTV/CAC ratios** than flat-rate models. [Price Intelligently/ProfitWell](https://www.devtodev.com/upload/files/devtodev-Price-Intelligently-SaaS-Pricing-Strategy-Petrova.pdf).
-- **<25%:** **81%** of executives say segmentation is critical, but **<25%** say their companies use it effectively. [Bain & Company via HBR](https://hbr.org/2006/02/rediscovering-market-segmentation).
-
 ## What is Segmentation by WTP/Use Case?
 
 **Segmentation by WTP ([Willingness to Pay](/wiki/pricing/value-and-customers/willingness-to-pay)) & Use Case** is the strategic division of a market based on *how much* customers are willing to pay and *why* they need the product (their "job to be done"), rather than who they are (demographics) or how big they are (firmographics).
@@ -65,6 +59,12 @@ owner: "Dr. Sarah Zou"
   1. **The Under-priced Zone:** Customers who would have paid \$1,000 but were charged \$100.
   2. **The Un-served Zone:** Customers who would have paid \$50 but found the \$100 price prohibitive.
 * **Preventing Commoditization:** By identifying specific [use cases](/wiki/pricing/value-and-customers/customer-use-cases) (e.g., "urgent repair" vs. "preventative maintenance"), companies can charge premiums for high-value contexts rather than competing solely on cost.
+
+## Key Facts
+
+- **+80% profit:** Charging separate prices to five distinct segments can lift profit contribution ~80% vs. a single price. [Nagle et al., The Strategy and Tactics of Pricing, Ch. 4](https://studylib.net/doc/28119504/the-strategy-and-tactics-of-pricing-a-guide-to-growing-more-profitably-by-m%C3%BCller-georg-nagle-thomas-t).
+- **2x better:** Multi-tier pricing strategies result in **2x better LTV/CAC ratios** than flat-rate models. [Price Intelligently/ProfitWell](https://www.devtodev.com/upload/files/devtodev-Price-Intelligently-SaaS-Pricing-Strategy-Petrova.pdf).
+- **<25%:** **81%** of executives say segmentation is critical, but **<25%** say their companies use it effectively. [Bain & Company via HBR](https://hbr.org/2006/02/rediscovering-market-segmentation).
 
 ## How do you implement segmentation by WTP/Use Case step-by-step?
 

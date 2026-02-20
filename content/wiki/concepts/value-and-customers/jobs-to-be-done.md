@@ -31,12 +31,6 @@ owner: "Dr. Sarah Zou"
 - **Switching is emotional + rational:** The *Push/Pull/Habit/Anxiety* forces explain why customers stall—even when value is obvious.
 - **Packaging and pricing follow the job:** Align [tiers](/wiki/pricing/packaging-and-bundling/packaging), [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination), and the [pricing metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) to the customer's unit of progress; then validate [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay).
 
-## Key Facts
-
-- **75% failed:** Research indicates that **75% of venture-funded startups fail**, often because they lack a well-aligned price for their chosen buyer or solve a "problem" that isn't a "job". [Harvard Business Review](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done).
-- **86% success rate:** In a reported study of ODI/JTBD projects, **18 of 21** launches were rated successful (**86%** success rate). [Why do innovation projects fail?](https://anthonyulwick.com/2016/10/26/why-do-innovation-projects-fail/).
-- **Less Pricing Sensitive:** In B2B software, **[value drivers](/wiki/pricing/value-and-customers/value-drivers) and specific jobs are more important** than price which is typically only the third to seventh most important factor in a purchase decision. [Price to Scale](https://www.pricetoscale.com/).
-
 ## What is Jobs to Be Done (JTBD)?
 
 The **Jobs to Be Done (JTBD)** theory, pioneered by Clayton Christensen, a Harvard Business School professor, asserts that customers do not buy products; they "hire" them to perform a specific "job". 
@@ -86,6 +80,12 @@ For startup founders, JTBD is the bridge between understanding customer demand a
 - **Efficiency in Sales:** Aligning [packaging](/wiki/pricing/packaging-and-bundling/packaging) with specific jobs makes the product instantly understandable to the buyer, which reduces sales cycles and minimizes the need for heavy discounting.
 
 - **Portfolio Integrity:** Using JTBD prevents the creation of **"Monoliths"** (overengineered products that deliver too much functionality for most users, leading to under-[monetization](/wiki/pricing/models-and-metering/monetization-model)) and **"Hydras"** (products that grow in unmanageable complexity because every new feature is spun out as a new module).
+
+## Key Facts
+
+- **75% failed:** Research indicates that **75% of venture-funded startups fail**, often because they lack a well-aligned price for their chosen buyer or solve a "problem" that isn't a "job". [Harvard Business Review](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done).
+- **86% success rate:** In a reported study of ODI/JTBD projects, **18 of 21** launches were rated successful (**86%** success rate). [Why do innovation projects fail?](https://anthonyulwick.com/2016/10/26/why-do-innovation-projects-fail/).
+- **Less Pricing Sensitive:** In B2B software, **[value drivers](/wiki/pricing/value-and-customers/value-drivers) and specific jobs are more important** than price which is typically only the third to seventh most important factor in a purchase decision. [Price to Scale](https://www.pricetoscale.com/).
 
 ## How do you implement Jobs to Be Done step-by-step?
 

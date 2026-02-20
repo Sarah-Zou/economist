@@ -794,22 +794,23 @@ function createMarkdownComponents() {
       const isUseCaseMental = src.includes('wiki_usecase_mental');
       const isJTBDMental = src.includes('wiki_JTBD_mental');
       const isSegmentMental = src.includes('wiki_segment_mental');
-      const isMentalModel = isUseCaseMental || isJTBDMental || isSegmentMental;
+      const isPenetrationMental = src.includes('wiki_penetration_mental');
+      const isMentalModel = isUseCaseMental || isJTBDMental || isSegmentMental || isPenetrationMental;
       const imageWidth = isMentalModel ? 600 : 800;
       const imageHeight = isMentalModel ? 450 : 600;
       const maxWidth = isMentalModel ? 'max-w-2xl' : 'max-w-full';
       
       return (
-        <div className="my-8 flex justify-center">
+        <span className="my-8 block text-center">
           <Image
             src={src}
             alt={alt || ''}
             width={imageWidth}
             height={imageHeight}
-            className={`rounded-lg shadow-lg ${maxWidth} h-auto`}
+            className={`inline-block rounded-lg shadow-lg ${maxWidth} h-auto`}
             {...props}
           />
-        </div>
+        </span>
       );
     }
     // Fallback for external images

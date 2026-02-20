@@ -24,11 +24,6 @@ owner: "Dr. Sarah Zou"
 - **High Risk, High Reward:** Because you are taking on the risk of failure, you can capture a portion of the total value created, often leading to much higher ACV (Annual Contract Value) than [seat-based](/wiki/pricing/models-and-metering/seat-based-pricing) models. 
 - **Sales Cycle Accelerator:** It lowers the barrier to entry for skeptical customers.
 
-## Key Facts
-
-- **Market demands OBP:** A report shows **77% of business leaders** say customers are increasingly pushing for outcome-based pricing, but only **32% of businesses** report defining "usage" in that way (highlighting an implementation gap). ([Stripe](https://stripe.com/resources/more/outcome-based-pricing))
-- **The Ad-Tech Standard:** The internet advertising industry shifted from CPM (Cost per Thousand views—an input) to CPC/CPA (Cost per Click/Action—an outcome), which is now the **dominant** model because it guarantees advertiser value. (*The Strategy and Tactics of Pricing*)
-
 ## What is outcome / performance-based pricing?
 
 **Outcome / Performance-Based Pricing** is a [monetization model](/wiki/pricing/models-and-metering/monetization-model) where the fee is variable and contingent upon achieving a specific, measurable result.
@@ -85,18 +80,6 @@ To succeed in OBP, you must move beyond a simple transaction and enter a "Partne
 
 *This shifts the startup from a "Cost Center" (vendor) to a "Profit Center" (partner).*
 
-### Rules of thumb
-
-* **The 10:1 ROI Rule:** In B2B, a common benchmark is to deliver a 10x Return on Investment. If you generate \$1M in new value, you can reasonably charge \$100k–\$200k. Do not try to capture 50% unless you are a full-service partner (like a hedge fund or lawyer).
-* **The Risk Premium:** Because you take the risk of zero revenue, your effective margin in successful months should be higher than a standard fixed-fee contract.
-
-## Why does outcome-based pricing matter?
-
-Traditional SaaS pricing ([per seat](/wiki/pricing/models-and-metering/seat-based-pricing)) is a "tax on growth"—the more people use it, the more it costs, even if the value isn't there. OBP flips this. It's particularly powerful for **AI Startups** where the value isn't in the "software" but in the "work" the AI completes.
-
-* **Overcoming Skepticism:** For startups, the biggest objection is "Will this work?" Outcome pricing answers this by saying, "We don't get paid unless it does." It is the ultimate risk-reversal strategy.
-* **Uncapping Revenue:** In a SaaS [per-seat](/wiki/pricing/models-and-metering/seat-based-pricing) model, you are capped by the number of employees. In outcome pricing, you are capped only by the customer's success. As they grow, your revenue grows linearly with their success, often yielding far higher ACV (Annual Contract Value) than [seat-based](/wiki/pricing/models-and-metering/seat-based-pricing) pricing.
-
 ## When should you use outcome-based pricing?
 
 Use the decision criteria below to assess whether OBP is a good fit. Green lights support outcome pricing; yellow signals a [hybrid](/wiki/pricing/models-and-metering/hybrid-pricing) or capped structure; red flags suggest sticking with [subscription](/wiki/pricing/models-and-metering/subscription-model) or [usage-based](/wiki/pricing/models-and-metering/usage-based-pricing) pricing instead.
@@ -110,6 +93,23 @@ Use the decision criteria below to assess whether OBP is a good fit. Green light
 | **Attributable:** Can the customer argue that "the market" or "another tool" caused the win? | Clear counterfactual (A/B, matched cohort, but-for evidence) | Attribution plausible but imperfect | Attribution inherently ambiguous; many confounders |
 | **Time-to-outcome:** Can you reach a billable, verified result within the billing cycle? | Days–weeks | 1–2 quarters | 6–18+ months |
 | **Volatility:** Is the outcome stable enough to build a predictable business? | Stable distribution; variance manageable | Medium variance; needs caps/floors | Highly volatile/noisy; hard to forecast |
+
+### Rules of thumb
+
+* **The 10:1 ROI Rule:** In B2B, a common benchmark is to deliver a 10x Return on Investment. If you generate \$1M in new value, you can reasonably charge \$100k–\$200k. Do not try to capture 50% unless you are a full-service partner (like a hedge fund or lawyer).
+* **The Risk Premium:** Because you take the risk of zero revenue, your effective margin in successful months should be higher than a standard fixed-fee contract.
+
+## Why does outcome-based pricing matter?
+
+Traditional SaaS pricing ([per seat](/wiki/pricing/models-and-metering/seat-based-pricing)) is a "tax on growth"—the more people use it, the more it costs, even if the value isn't there. OBP flips this. It's particularly powerful for **AI Startups** where the value isn't in the "software" but in the "work" the AI completes.
+
+* **Overcoming Skepticism:** For startups, the biggest objection is "Will this work?" Outcome pricing answers this by saying, "We don't get paid unless it does." It is the ultimate risk-reversal strategy.
+* **Uncapping Revenue:** In a SaaS [per-seat](/wiki/pricing/models-and-metering/seat-based-pricing) model, you are capped by the number of employees. In outcome pricing, you are capped only by the customer's success. As they grow, your revenue grows linearly with their success, often yielding far higher ACV (Annual Contract Value) than [seat-based](/wiki/pricing/models-and-metering/seat-based-pricing) pricing.
+
+## Key Facts
+
+- **Market demands OBP:** A report shows **77% of business leaders** say customers are increasingly pushing for outcome-based pricing, but only **32% of businesses** report defining "usage" in that way (highlighting an implementation gap). ([Stripe](https://stripe.com/resources/more/outcome-based-pricing))
+- **The Ad-Tech Standard:** The internet advertising industry shifted from CPM (Cost per Thousand views—an input) to CPC/CPA (Cost per Click/Action—an outcome), which is now the **dominant** model because it guarantees advertiser value. (*The Strategy and Tactics of Pricing*)
 
 ## How do you implement outcome-based pricing step-by-step?
 

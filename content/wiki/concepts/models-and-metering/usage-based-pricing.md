@@ -25,12 +25,6 @@ owner: "Dr. Sarah Zou"
 - **Net Retention Power:** UBP is the primary driver of 130%+ Net Revenue Retention (NRR).
 - **Audit for "The Taxi Meter Effect":** If customers are afraid to use your product because they see the "meter running," you will kill adoption.
 
-## Key Facts
-
-- **38% Faster Growth:** Public SaaS companies utilizing usage-based pricing grew 38% faster year-over-year compared to those with traditional models. ([OpenView, 2023](https://openviewpartners.com/blog/state-of-usage-based-pricing/))
-- **54% of CFOs like UBP:** 54% of CFOs agree that flexible "pay-as-you-use" models are a game-changer for reducing customer churn. ([LogiSense](https://twitter.com/LogiSense/status/1658172144566583296))
-- **2/3 use UBP:** 80% of customers said usage-based pricing better aligns with value; ~2/3 of software companies using it said it increases revenue with existing customers. ([Bain](https://www.bain.com/insights/is-consumption-based-pricing-right-for-your-software-tech-report-2022/))
-
 ## What is usage-based pricing?
 
 **Usage-Based Pricing (Consumption Pricing),** often called "pay-as-you-go", is a [monetization model](/wiki/pricing/models-and-metering/monetization-model) where customers are charged based on their consumption of a product or service (e.g., gigabytes stored, API calls made, messages sent) rather than a flat fee or per-user license. It aligns the price paid directly with the volume of value received.
@@ -71,6 +65,18 @@ Add predictability option: "Commit \$1,500/month for up to 8M events at an effec
 * **Usage-Based (The Taxi):** You pay only for the specific distance traveled. If you don't travel, you pay zero. The risk of asset utilization shifts from the buyer to the seller.
 * **[Hybrid](/wiki/pricing/models-and-metering/hybrid-pricing) (The Cell Phone Plan):** The most common successful B2B model. You pay a base fee for a "bucket" of usage (e.g., 5GB data), and pay extra (overage) only if you exceed it. This creates predictability while capturing upside.
 
+## When should you use usage-based pricing?
+
+### Decision criteria
+
+| If your product…                                        | Usage-based pricing is a good fit when…                        | Watch-outs                                       |
+| -------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------ |
+| Value grows with activity (compute, data, transactions) | More usage = more customer value                                | Bill shock; heavy-user discounts may be expected |
+| Has measurable, auditable events                         | Metering is accurate and hard to spoof                          | Metering disputes; instrumentation gaps         |
+| Serves developers / automated workflows                  | Seats don't reflect value (APIs, agents, pipelines)             | Harder to sell "budget certainty"                |
+| Has significant variable cost                            | You need price to scale with cost and avoid margin compression  | Must model worst-case usage/margin               |
+| Has wide customer size variance                          | You want low-friction entry + organic expansion                 | Revenue forecasting becomes usage forecasting    |
+
 ### Rules of thumb
 
 * **Pick a "value meter" first, then design [packaging](/wiki/pricing/packaging-and-bundling/packaging).** If your unit doesn't track value, UBP becomes "taxation," not alignment.
@@ -86,17 +92,11 @@ In traditional [seat-based](/wiki/pricing/models-and-metering/seat-based-pricing
 * **Built-in Expansion (NRR):** As a customer's usage grows, revenue grows automatically without requiring a sales interaction to upsell a new [tier](/wiki/pricing/packaging-and-bundling/good-better-best). This maximizes Net Revenue Retention (NRR).
 * **Fairness & Churn Reduction:** Customers perceive it as fair because they only pay for what they value. Unlike flat [subscriptions](/wiki/pricing/models-and-metering/subscription-model) where low-usage customers might churn because they feel they are "overpaying," UBP allows them to scale costs down during quiet periods without leaving the platform.
 
-## When should you use usage-based pricing?
+## Key Facts
 
-### Decision criteria
-
-| If your product…                                        | Usage-based pricing is a good fit when…                        | Watch-outs                                       |
-| -------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------ |
-| Value grows with activity (compute, data, transactions) | More usage = more customer value                                | Bill shock; heavy-user discounts may be expected |
-| Has measurable, auditable events                         | Metering is accurate and hard to spoof                          | Metering disputes; instrumentation gaps         |
-| Serves developers / automated workflows                  | Seats don't reflect value (APIs, agents, pipelines)             | Harder to sell "budget certainty"                |
-| Has significant variable cost                            | You need price to scale with cost and avoid margin compression  | Must model worst-case usage/margin               |
-| Has wide customer size variance                          | You want low-friction entry + organic expansion                 | Revenue forecasting becomes usage forecasting    |
+- **38% Faster Growth:** Public SaaS companies utilizing usage-based pricing grew 38% faster year-over-year compared to those with traditional models. ([OpenView, 2023](https://openviewpartners.com/blog/state-of-usage-based-pricing/))
+- **54% of CFOs like UBP:** 54% of CFOs agree that flexible "pay-as-you-use" models are a game-changer for reducing customer churn. ([LogiSense](https://twitter.com/LogiSense/status/1658172144566583296))
+- **2/3 use UBP:** 80% of customers said usage-based pricing better aligns with value; ~2/3 of software companies using it said it increases revenue with existing customers. ([Bain](https://www.bain.com/insights/is-consumption-based-pricing-right-for-your-software-tech-report-2022/))
 
 ## How do you implement usage-based pricing step-by-step?
 

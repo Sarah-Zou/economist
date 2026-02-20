@@ -24,12 +24,6 @@ owner: "Dr. Sarah Zou"
 - **Fences Must Be Enforceable:** A fence is useless if customers can easily lie or arbitrage (buy low and resell high). You must have a way to verify the criteria (e.g., student ID, shipping address) or make the product inherently different.
 - Monitor *leakage* (who buys what) as closely as you monitor revenue.
 
-## Key Facts
-
-- **Psychology:** 64% of consumers feel a price is "unfair" if they see others paying less for the *exact* same thing without a clear reason (the "Fence"). [Annenberg Public Policy Center](https://share.google/Mu6ISyr86LP9ndCmi)
-- **30% Untapped Revenue:** Companies implementing effective price discrimination techniques can capture up to 30% more revenue from their existing customer base by minimizing "consumer surplus" leakage. ([BCG](https://www.bcg.com/capabilities/marketing-sales/pricing))
-- **The 2x Growth:** Companies that align their price fences with a value metric ([usage-based](/wiki/pricing/models-and-metering/usage-based-pricing) or [outcome-based](/wiki/pricing/models-and-metering/outcome-performance-based-pricing)) grow at least 2x faster than those using traditional seat-based flat pricing. ([OpenView](https://openviewpartners.com/blog/2023-saas-benchmarks-report/))
-
 ## What are Price Fences?
 
 **Price Fences** are the specific criteria, rules, or barriers that companies use to charge different prices to different customers for essentially the same product or service. They act as a mechanism to enforce **Price Discrimination** (often called *differential pricing* to avoid negative connotations), which is the strategy of capturing different amounts of value from customers with different levels of [Willingness to Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay).
@@ -97,6 +91,12 @@ You place a "hurdle" in front of the low price. This hurdle must be essentially 
 
 * **Serve diverse needs without cannibalization:** Price fences allow you to serve budget‑constrained segments (students, SMBs) without eroding revenue from high‑budget segments (enterprises).
 
+## Key Facts
+
+- **Psychology:** 64% of consumers feel a price is "unfair" if they see others paying less for the *exact* same thing without a clear reason (the "Fence"). [Annenberg Public Policy Center](https://share.google/Mu6ISyr86LP9ndCmi)
+- **30% Untapped Revenue:** Companies implementing effective price discrimination techniques can capture up to 30% more revenue from their existing customer base by minimizing "consumer surplus" leakage. ([BCG](https://www.bcg.com/capabilities/marketing-sales/pricing))
+- **The 2x Growth:** Companies that align their price fences with a value metric ([usage-based](/wiki/pricing/models-and-metering/usage-based-pricing) or [outcome-based](/wiki/pricing/models-and-metering/outcome-performance-based-pricing)) grow at least 2x faster than those using traditional seat-based flat pricing. ([OpenView](https://openviewpartners.com/blog/2023-saas-benchmarks-report/))
+
 ## How do you implement price fences step-by-step?
 
 ### Inputs you need
@@ -159,7 +159,7 @@ You place a "hurdle" in front of the low price. This hurdle must be essentially 
 * Varian, H. R. (1997). [*Versioning information goods*](https://people.ischool.berkeley.edu/~hal/Papers/version.pdf) (Working paper). University of California, Berkeley.
 * Federal Trade Commission. (n.d.). [*Price discrimination: Robinson-Patman violations*](https://www.ftc.gov/advice-guidance/competition-guidance/guide-antitrust-laws/price-discrimination-robinson-patman-violations).
 
-**Related pages:** [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) · [Bundling](/wiki/pricing/packaging-and-bundling/bundling) · [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) · [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) · [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) · [Discount policy](/wiki/pricing/policies-and-governance/discounting-and-realization) · [Value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) · [Subscription model](/wiki/pricing/models-and-metering/subscription-model) · [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) · [Outcome/performance-based pricing](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) · [Conjoint analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) · [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) · [Segmentation by WTP/use case](/wiki/pricing/value-and-customers/customer-segments) · [Value drivers](/wiki/pricing/value-and-customers/value-drivers)
+**Related pages:** [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) · [Bundling](/wiki/pricing/packaging-and-bundling/bundling) · [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) · [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) · [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) · [Discount policy](/wiki/pricing/policies-and-governance/discounting-and-realization) · [Value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) · [Subscription model](/wiki/pricing/models-and-metering/subscription-model) · [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) · [Outcome/performance-based pricing](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) · [Conjoint analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) · [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) · [Segmentation by WTP/use case](/wiki/pricing/value-and-customers/customer-segments) · [Value drivers](/wiki/pricing/value-and-customers/value-drivers) · [Freemium](/wiki/pricing/models-and-metering/freemium-model)
 
 ## FAQ
 

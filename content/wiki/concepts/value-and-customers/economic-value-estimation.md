@@ -28,11 +28,6 @@ owner: "Dr. Sarah Zou"
 - **Solve for Dollars, Not Features:** EVE quantifies "soft" benefits (hours saved, scrap avoided, higher conversion, lower churn, fewer incidents) into "hard" dollar outcomes.
 - **Create incentives:** Capture only a portion (~10–50%) of the value created to ensure an "incentive" for the customer to switch.
 
-## Key Facts
-- **+8.7% profit boost:** A widely cited McKinsey analysis found that a **1% price increase** boosted operating profit by **8.7% on average** (vs. 2–8% for similar cost or volume changes). ([McKinsey (2014)](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-big-data-to-make-better-pricing-decisions))
-- **30% pricing failures:** Up to **30% of the thousands of pricing decisions** companies make each year fail to deliver the best price, leaving significant value uncaptured. ([McKinsey (2014)](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-big-data-to-make-better-pricing-decisions))
-- **70–90% launch failures:** Various studies suggest that **70–90% of new product launches underperform**, with misaligned pricing and weak value articulation recurring among the drivers. ([HBR (2006)](https://hbr.org/2006/06/eager-sellers-and-stony-buyers-understanding-the-psychology-of-new-product-adoption))
-
 ## What is Economic Value Estimation (EVE)?
 
 **Economic Value Estimation (EVE)** is a strategic framework used to calculate the maximum price a "smart shopper," who is fully informed and seeking the best value, would pay for a product or service.
@@ -66,21 +61,20 @@ Think of a vertical "Value Stack" chart:
 4. **The Ceiling:** The very top of this stack is the **Total Economic Value**, the price ceiling for your most informed customers, that is, $150 in the chart.
 5. Your price should sit **somewhere between the alternative's price and total economic value**, depending on your positioning and bargaining power.
 
-## Why does EVE matter?
-
-For startup founders, EVE is essential to move from "hoping" a price works to "knowing" it is justified by value.
-
-- **Escapes cost-plus thinking:** Helps founders move beyond [cost-plus pricing](/wiki/pricing/foundations/cost-plus-pricing), which often underprices high-value or innovative products.
-
-- **Connects features to dollars:** Translates product benefits into concrete financial impact on the customer’s P&L or life, not just a feature list.
-
-- **Justifies higher prices:** Provides a quantified logic for pricing, turning "I hope this works" into "I can show why this price is fair."
-
-- **Enables value selling:** Arms sales and founders with a simple storyline for ROI decks, fundraising, and enterprise procurement.
-
-- **Critical for novel products:** Especially vital for revolutionary products where customers have no experience to judge value and may initially perceive the offering as overpriced without a quantified justification.
 
 ## When should you use EVE?
+
+### Decision criteria
+
+| Situation / Question                                                 | Is EVE a good fit? | What to do                                                                                      |
+| -------------------------------------------------------------------- | ------------------ | ----------------------------------------------------------------------------------------------- |
+| Product has **clear, quantifiable impact** on cost, revenue, or risk | Very high          | Build a full EVE model and anchor list prices and discount policy on it.                        |
+| New B2B product with **few direct competitors**                      | High               | Use EVE to benchmark against the dominant status quo or manual workaround.                      |
+| Fast‑moving B2C product with small ticket size                       | Lower              | Use EVE for internal strategy, but rely on A/B tests and behavioral pricing in market.          |
+| Procurement‑driven deals with heavy ROI scrutiny                     | Critical           | Make EVE the backbone of your customer business cases and proposals.                            |
+| Mostly emotional or brand‑driven value (e.g., fashion)               | Limited            | Use EVE cautiously and complement it with research on [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) and brand positioning. |
+
+Use EVE when **economic logic is a major part of the buying decision**, especially for B2B software, services, equipment, and process improvements.
 
 ### Equations & rules of thumb
 
@@ -116,17 +110,24 @@ These are guidelines, not laws—realistic shares depend on risk, switching fric
 
 > **💡 Related:** See [Value Decoder vs. Economic Value Estimation (EVE)](/wiki/pricing/value-and-customers/value-decoder-framework#value-decoder-vs-economic-value-estimation-eve) for a detailed comparison of these two value-based pricing frameworks and when to use each.
 
-### Decision criteria
+## Why does EVE matter?
 
-| Situation / Question                                                 | Is EVE a good fit? | What to do                                                                                      |
-| -------------------------------------------------------------------- | ------------------ | ----------------------------------------------------------------------------------------------- |
-| Product has **clear, quantifiable impact** on cost, revenue, or risk | Very high          | Build a full EVE model and anchor list prices and discount policy on it.                        |
-| New B2B product with **few direct competitors**                      | High               | Use EVE to benchmark against the dominant status quo or manual workaround.                      |
-| Fast‑moving B2C product with small ticket size                       | Lower              | Use EVE for internal strategy, but rely on A/B tests and behavioral pricing in market.          |
-| Procurement‑driven deals with heavy ROI scrutiny                     | Critical           | Make EVE the backbone of your customer business cases and proposals.                            |
-| Mostly emotional or brand‑driven value (e.g., fashion)               | Limited            | Use EVE cautiously and complement it with research on [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) and brand positioning. |
+For startup founders, EVE is essential to move from "hoping" a price works to "knowing" it is justified by value.
 
-Use EVE when **economic logic is a major part of the buying decision**, especially for B2B software, services, equipment, and process improvements.
+- **Escapes cost-plus thinking:** Helps founders move beyond [cost-plus pricing](/wiki/pricing/foundations/cost-plus-pricing), which often underprices high-value or innovative products.
+
+- **Connects features to dollars:** Translates product benefits into concrete financial impact on the customer's P&L or life, not just a feature list.
+
+- **Justifies higher prices:** Provides a quantified logic for pricing, turning "I hope this works" into "I can show why this price is fair."
+
+- **Enables value selling:** Arms sales and founders with a simple storyline for ROI decks, fundraising, and enterprise procurement.
+
+- **Critical for novel products:** Especially vital for revolutionary products where customers have no experience to judge value and may initially perceive the offering as overpriced without a quantified justification.
+
+## Key Facts
+- **+8.7% profit boost:** A widely cited McKinsey analysis found that a **1% price increase** boosted operating profit by **8.7% on average** (vs. 2–8% for similar cost or volume changes). ([McKinsey (2014)](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-big-data-to-make-better-pricing-decisions))
+- **30% pricing failures:** Up to **30% of the thousands of pricing decisions** companies make each year fail to deliver the best price, leaving significant value uncaptured. ([McKinsey (2014)](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-big-data-to-make-better-pricing-decisions))
+- **70–90% launch failures:** Various studies suggest that **70–90% of new product launches underperform**, with misaligned pricing and weak value articulation recurring among the drivers. ([HBR (2006)](https://hbr.org/2006/06/eager-sellers-and-stony-buyers-understanding-the-psychology-of-new-product-adoption))
 
 ## How do you implement EVE step-by-step?
 ### Inputs you need

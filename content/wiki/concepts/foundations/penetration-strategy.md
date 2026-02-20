@@ -27,12 +27,6 @@ owner: "Dr. Sarah Zou"
 - The main dangers are **"profitless prosperity"** (big share, no profits), **low-quality signaling**, and **competitor retaliation**—all of which must be managed deliberately.
 - Effective penetration strategies are tied to an **expansion plan** (cross-sell, upsell, usage growth) and **explicit exit criteria** for when to stop discounting.
 
-## Key Facts
-
-- +25–30% premium growth: Companies using penetration pricing reported **25–30% market-share growth** in the first year. ([McKinsey](https://www.sciative.com))
-- ~70% brand retention: Penetration pricing had a **positive, statistically significant effect on customer retention** (pricing strategies together explained ~70% of the variance in retention). ([Journal of Positive School Psychology (2022)](https://journalppw.com))
-- ~75% startup failure: Approximately **75% of venture capital-funded startups fail**, often because they focus on growth (volume) through penetration without a clear path to eventual profitability. ([Monetizing Innovation (2016)](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ))
-
 ## What is penetration pricing?
 
 **Penetration pricing** is a strategy where a product is intentionally priced low relative to its perceived value to accelerate adoption and market share, with a plan to increase prices as the product gains traction, scale, or lock-in. 
@@ -51,18 +45,8 @@ Think of penetration pricing as a **flywheel**: you trade short-term margin for 
 
 **Penetration Pricing Flywheel:**
 
-```
-Low Intro Price
-      ↓
-Fast Adoption & Share Gain
-      ↓
-Scale, Data & Network Effects
-      ↓
-Lower Unit Costs + Higher Perceived Value
-      ↓
-Ability to Raise Prices / Expand [Monetization](/wiki/pricing/models-and-metering/monetization-model)
-      ↺  (feeds back into stronger advantage vs. competitors)
-```
+![Penetration pricing flywheel: low intro price leads to fast adoption and share gain, then scale and network effects, lower unit costs and higher perceived value, then ability to raise prices and expand monetization; the loop feeds back for stronger competitive advantage.](/images/wiki_penetration_mental.png)
+
 
 If this loop spins faster than competitors can respond, penetration pricing doesn't just buy share—it locks in an economic advantage.
 
@@ -82,6 +66,19 @@ A simple way to "see" penetration vs. skimming is to compare early and later sta
 Penetration pricing works when the scale, network, and lock-in you gain from the right-hand column are worth far more than the margin you give up in the early periods.
 
 > **💡 Related:** See [How Maximization differs from Skimming and Penetration](/wiki/pricing/foundations/maximization#how-maximization-differs-from-skimming-and-penetration) for a detailed comparison of these three primary pricing strategies.
+
+## When should you use penetration pricing?
+
+### Decision criteria
+
+| Market / product condition | Penetration pricing? | Why | Example type |
+|----------------------------|-----------------------------|-----|--------------|
+| High price sensitivity, many similar alternatives | ✅ Strong | Low price is a key lever to win share quickly | Consumer apps, utilities |
+| Strong economies of scale | ✅ Strong | Early volume lowers cost, making later profits higher | Hardware, SaaS infra |
+| Strong network or data effects | ✅ Strong | More users → more value → easier to raise prices later | Marketplaces, platforms |
+| Capacity or supply is tightly constrained | ❌ Avoid | You don't need low prices to sell out | Niche luxury goods |
+| Premium brand positioning | ❌ Usually avoid | Low prices conflict with premium signals | Luxury goods, high-end B2B |
+| Easy for competitors to match / undercut | ⚠️ Risky | Can trigger price wars; advantage may be short-lived | Commodity categories |
 
 ### Rules of thumb
 
@@ -109,18 +106,11 @@ For startup founders, penetration pricing is essential in markets **dominated by
 - **More expansion and LTV upside:** A larger installed base gives you more opportunities for upsell, cross-sell, and [monetization](/wiki/pricing/models-and-metering/monetization-model) experiments over time.
 - **Ability to shape market expectations:** By entering with a bold price move, you can redefine value norms in the category and force competitors to respond on your terms.
 
-## When should you use penetration pricing?
+## Key Facts
 
-### Decision criteria
-
-| Market / product condition | Favors penetration pricing? | Why | Example type |
-|----------------------------|-----------------------------|-----|--------------|
-| High price sensitivity, many similar alternatives | ✅ Strong | Low price is a key lever to win share quickly | Consumer apps, utilities |
-| Strong economies of scale | ✅ Strong | Early volume lowers cost, making later profits higher | Hardware, SaaS infra |
-| Strong network or data effects | ✅ Strong | More users → more value → easier to raise prices later | Marketplaces, platforms |
-| Capacity or supply is tightly constrained | ❌ Avoid | You don't need low prices to sell out | Niche luxury goods |
-| Premium brand positioning | ❌ Usually avoid | Low prices conflict with premium signals | Luxury goods, high-end B2B |
-| Easy for competitors to match / undercut | ⚠️ Risky | Can trigger price wars; advantage may be short-lived | Commodity categories |
+- +25–30% premium growth: Companies using penetration pricing reported **25–30% market-share growth** in the first year. ([McKinsey](https://www.sciative.com))
+- ~70% brand retention: Penetration pricing had a **positive, statistically significant effect on customer retention** (pricing strategies together explained ~70% of the variance in retention). ([Journal of Positive School Psychology (2022)](https://journalppw.com))
+- ~75% startup failure: Approximately **75% of venture capital-funded startups fail**, often because they focus on growth (volume) through penetration without a clear path to eventual profitability. ([Monetizing Innovation (2016)](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ))
 
 ## How do you implement penetration pricing step-by-step?
 
@@ -165,7 +155,7 @@ For startup founders, penetration pricing is essential in markets **dominated by
 * Raju, J. G., & Zhang, Z. J. (2010). [*Smart pricing: How Google, Priceline, and leading businesses use pricing innovation for profitability*](https://www.pearson.com/us/higher-education/program/Raju-Smart-Pricing-How-Google-Priceline-and-Leading-Businesses-Use-Pricing-Innovation-for-Profitability/PGM113227.html). *Pearson*.
 * Ghuman, A. (2021). [*Price to scale: Practical pricing for your high-growth software startup*](https://www.pricetoscale.com/). *Independently published*.
 
-**Related pages:** [Maximization Strategy](/wiki/pricing/foundations/maximization) | [Skimming Strategy](/wiki/pricing/foundations/skimming-strategy) | [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Strategic Pricing](/wiki/pricing/foundations/strategic-pricing) | [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Van Westendorp](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger](/wiki/pricing/research-and-metrics/gabor-granger) | [Conjoint Analysis](/wiki/pricing/research-and-metrics/conjoint-analysis)
+**Related pages:** [Maximization Strategy](/wiki/pricing/foundations/maximization) | [Skimming Strategy](/wiki/pricing/foundations/skimming-strategy) | [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Strategic Pricing](/wiki/pricing/foundations/strategic-pricing) | [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Van Westendorp](/wiki/pricing/research-and-metrics/van-westendorp) | [Gabor‑Granger](/wiki/pricing/research-and-metrics/gabor-granger) | [Conjoint Analysis](/wiki/pricing/research-and-metrics/conjoint-analysis) | [Freemium](/wiki/pricing/models-and-metering/freemium-model)
 
 ## FAQ
 

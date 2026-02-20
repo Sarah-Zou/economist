@@ -32,12 +32,6 @@ owner: "Dr. Sarah Zou"
 - Each plan should map clearly to **one anchor use case** (or at most two), expressed in plain, outcome-oriented language.
 - Frequency and intensity of the problem are core inputs to your [pricing metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) and [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay).
 
-## Key Facts
-
-- **98% of new users:** **98% of new users** will churn within the first 14 days if they do not experience the product's core value (the "Aha! moment") through a specific use case. [Amplitude 2025 Product Benchmark Report](https://amplitude.com/blog/time-to-value-drives-user-retention)
-- **30% Conversion Lift:** Clear use-case-based marketing can increase landing page conversions by up to **30%** compared to feature-heavy messaging. [Adobe Summit](https://business.adobe.com/summit/2025/sessions/data-collaboration-with-adobe-how-alterra-achieved-s507.html)
-- **25% faster:** Sales cycles are often **25% faster** when reps lead with a specific use case rather than a general product demo. [Articsledge](https://www.articsledge.com/post/ai-micro-segmentation)
-
 ## What is Customer Use Cases?
 
 A **Customer Use Case** is a foundational [monetization](/wiki/pricing/models-and-metering/monetization-model) strategy that defines a specific problem a product solves, the target persona facing that problem, and the context in which they seek a solution. It moves beyond technical features to focus on the **[Jobs to Be Done (JTBD)](/wiki/pricing/value-and-customers/jobs-to-be-done)**—the specific outcome a customer is trying to achieve. 
@@ -86,6 +80,12 @@ For startup founders, customer use cases are the bridge between product features
 - **Avoids "Undead" Products:** Focuses development on jobs customers actually need done, not features that look good on paper.
 - **Efficiency:** Prevents overengineering by identifying which features are must-haves vs. nice-to-haves for each use case.
 - **Scalability:** Aligning your product with specific use cases leads to shorter sales cycles, less discounting, and higher Net Retention Rates (NRR).
+
+## Key Facts
+
+- **98% of new users:** **98% of new users** will churn within the first 14 days if they do not experience the product's core value (the "Aha! moment") through a specific use case. [Amplitude 2025 Product Benchmark Report](https://amplitude.com/blog/time-to-value-drives-user-retention)
+- **30% Conversion Lift:** Clear use-case-based marketing can increase landing page conversions by up to **30%** compared to feature-heavy messaging. [Adobe Summit](https://business.adobe.com/summit/2025/sessions/data-collaboration-with-adobe-how-alterra-achieved-s507.html)
+- **25% faster:** Sales cycles are often **25% faster** when reps lead with a specific use case rather than a general product demo. [Articsledge](https://www.articsledge.com/post/ai-micro-segmentation)
 
 ## How do you implement customer use cases step-by-step?
 

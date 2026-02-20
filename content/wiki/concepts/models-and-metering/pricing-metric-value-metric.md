@@ -24,12 +24,6 @@ owner: "Dr. Sarah Zou"
 - **The "Goldilocks" Metric:** It must be easy for the customer to understand, easy for you to measure, and perfectly correlated with value.
 - **Avoid "Seat-Tax" traps:** In the era of AI and automation, products often reduce the need for human users. Per-user pricing often disincentivizes adoption; if your value isn't collaborative, don't charge by the [seat](/wiki/pricing/models-and-metering/seat-based-pricing).
 
-## Key Facts
-
-- **4x Efficiency:** It costs 4x less to acquire \$1 of revenue through upsells/expansion (driven by a scaling metric) than to acquire \$1 from a new customer. ([OpenView, 2023](https://openviewpartners.com/blog/state-of-usage-based-pricing/))
-- **38% Faster Growth:** Public SaaS companies utilizing usage-based pricing grew 38% faster year-over-year compared to those with traditional models. ([OpenView, 2023](https://openviewpartners.com/blog/state-of-usage-based-pricing/))
-- **70-85% using:** Over 70-85% of SaaS companies now use some form of usage or value-based metric rather than flat monthly fees. ([Metronome, 2025](https://metronome.com/state-of-usage-based-pricing-2025))
-
 ## What is a pricing metric (value metric)?
 
 **Pricing Metric (Value Metric)** is the specific unit of value by which you charge for your product or service (e.g., per user, per gigabyte, per [transaction](/wiki/pricing/models-and-metering/transaction-based-pricing), per successful lead). It defines the terms of exchange between buyer and seller.
@@ -50,14 +44,6 @@ owner: "Dr. Sarah Zou"
 | Security/IT                   | endpoints, devices, logs ingested      |
 | Fintech/payments              | \$ processed, transactions, invoices    |
 | AI features                   | tokens, credits, minutes, generations  |
-
-## Why does the pricing metric matter?
-
-For a startup, the value metric is *the most powerful lever* for **Net Revenue Retention (NRR)**. If you charge \$100/month flat, your growth is limited by your ability to find new logos. If you charge \$0.10 per [transaction](/wiki/pricing/models-and-metering/transaction-based-pricing), your revenue grows automatically as your customer's business grows, often without a single sales call.
-
-* **Expansion engine:** The right metric allows revenue to grow automatically as the customer grows (Net Revenue Retention), without requiring a new sales cycle. If your metric is flat (e.g., a one-time license), you must constantly resell the customer to capture more value.
-* **Alignment:** A good metric aligns your incentives with the customer's success. If you charge "per hour" for a service that should be fast, you are penalized for efficiency. If you charge "per [outcome](/wiki/pricing/models-and-metering/outcome-performance-based-pricing)," you are rewarded for efficiency. Customers accept paying more when they clearly get more value.
-* **Churn Reduction:** Products with [value-based](/wiki/pricing/foundations/value-based-pricing) metrics experience lower churn because customers can scale down their spend during slow periods rather than canceling the [subscription](/wiki/pricing/models-and-metering/subscription-model) entirely.
 
 ### Mental model
 
@@ -81,6 +67,18 @@ Visualize your customer's workflow as a chain from **Input** → **Process** →
 
 **Strategy:** Always attempt to attach your pricing as close to the **Output** as possible. If the output is too hard to measure or too volatile, move one step back to **Process**. Avoid **Input** unless your product is purely collaborative.
 
+## When should you use which pricing metric?
+
+### Decision criteria
+
+| If your value scales mostly with…    | Strong metric candidates                | Notes                                                    |
+| ------------------------------------ | --------------------------------------- | -------------------------------------------------------- |
+| # of people collaborating            | Seats, active users                     | Define "active" carefully to avoid gaming.               |
+| Volume processed (data/transactions) | Events, API calls, GB, minutes          | Use included [bundles](/wiki/pricing/packaging-and-bundling/bundling) + alerts to prevent bill shock.     |
+| Organizational footprint             | Accounts, locations, endpoints          | Good for enterprise; watch for "all-you-can-eat" abuse.  |
+| Business outcomes you can measure    | % of savings, \$ influenced, conversions | Needs trust, attribution, and often contracts.           |
+| Mixed drivers                        | [Hybrid](/wiki/pricing/models-and-metering/hybrid-pricing): base + usage, or seats + usage  | Most common compromise: budgetable base + fair variable. |
+
 ### Rules of thumb
 
 * **The SMP Test:** A viable pricing metric must pass the **SMP** test:
@@ -99,17 +97,19 @@ Visualize your customer's workflow as a chain from **Input** → **Process** →
 
 * **One primary growth lever:** Keep one "main" metric; add a second only if necessary (e.g., seats + usage).
 
-## When should you use which pricing metric?
+## Why does the pricing metric matter?
 
-### Decision criteria
+For a startup, the value metric is *the most powerful lever* for **Net Revenue Retention (NRR)**. If you charge \$100/month flat, your growth is limited by your ability to find new logos. If you charge \$0.10 per [transaction](/wiki/pricing/models-and-metering/transaction-based-pricing), your revenue grows automatically as your customer's business grows, often without a single sales call.
 
-| If your value scales mostly with…    | Strong metric candidates                | Notes                                                    |
-| ------------------------------------ | --------------------------------------- | -------------------------------------------------------- |
-| # of people collaborating            | Seats, active users                     | Define "active" carefully to avoid gaming.               |
-| Volume processed (data/transactions) | Events, API calls, GB, minutes          | Use included [bundles](/wiki/pricing/packaging-and-bundling/bundling) + alerts to prevent bill shock.     |
-| Organizational footprint             | Accounts, locations, endpoints          | Good for enterprise; watch for "all-you-can-eat" abuse.  |
-| Business outcomes you can measure    | % of savings, \$ influenced, conversions | Needs trust, attribution, and often contracts.           |
-| Mixed drivers                        | [Hybrid](/wiki/pricing/models-and-metering/hybrid-pricing): base + usage, or seats + usage  | Most common compromise: budgetable base + fair variable. |
+* **Expansion engine:** The right metric allows revenue to grow automatically as the customer grows (Net Revenue Retention), without requiring a new sales cycle. If your metric is flat (e.g., a one-time license), you must constantly resell the customer to capture more value.
+* **Alignment:** A good metric aligns your incentives with the customer's success. If you charge "per hour" for a service that should be fast, you are penalized for efficiency. If you charge "per [outcome](/wiki/pricing/models-and-metering/outcome-performance-based-pricing)," you are rewarded for efficiency. Customers accept paying more when they clearly get more value.
+* **Churn Reduction:** Products with [value-based](/wiki/pricing/foundations/value-based-pricing) metrics experience lower churn because customers can scale down their spend during slow periods rather than canceling the [subscription](/wiki/pricing/models-and-metering/subscription-model) entirely.
+
+## Key Facts
+
+- **4x Efficiency:** It costs 4x less to acquire \$1 of revenue through upsells/expansion (driven by a scaling metric) than to acquire \$1 from a new customer. ([OpenView, 2023](https://openviewpartners.com/blog/state-of-usage-based-pricing/))
+- **38% Faster Growth:** Public SaaS companies utilizing usage-based pricing grew 38% faster year-over-year compared to those with traditional models. ([OpenView, 2023](https://openviewpartners.com/blog/state-of-usage-based-pricing/))
+- **70-85% using:** Over 70-85% of SaaS companies now use some form of usage or value-based metric rather than flat monthly fees. ([Metronome, 2025](https://metronome.com/state-of-usage-based-pricing-2025))
 
 ## How do you choose and implement a pricing metric step-by-step?
 

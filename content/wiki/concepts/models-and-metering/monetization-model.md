@@ -24,12 +24,6 @@ owner: "Dr. Sarah Zou"
 - **Don't Default to Subscription:** While [subscriptions](/wiki/pricing/models-and-metering/subscription-model) are popular, they are not always optimal. If your product has high variable costs (e.g., AI tokens, SMS) or variable usage patterns, a flat subscription can kill your margins or force you to underprice high-volume users.
 - Treat "how you get paid" **as a product feature**: simplicity beats cleverness at early stage.
 
-## Key Facts
-
-- **72% failure:** The failure rate of new products, often attributed to postponing monetization discussions until after the product is built. (Ramanujam & Tacke, *Monetizing Innovation*)
-- **12.7%+ profit:** A **1% improvement** in monetization results in a **12.7% increase** in bottom-line profit, compared to only 3% for volume improvements. ([Price Intelligently](https://www.paddle.com/blog/price-intelligently-the-levers-of-saas-growth))
-- **2x higher ARPA:** Companies that review their monetization every 6 months see a **2x higher ARPA** (Average Revenue Per Account) than those that do it annually. ([ProfitWell](https://www.paddle.com/blog/how-often-should-you-change-your-pricing))
-
 ## What is a monetization model?
 
 **Monetization model** is the mechanism of how a business generates revenue. It answers *how* you charge (e.g., [Subscription](/wiki/pricing/models-and-metering/subscription-model), Dynamic, [Usage-based](/wiki/pricing/models-and-metering/usage-based-pricing), [Freemium](/wiki/pricing/models-and-metering/freemium-model)), whereas price setting answers *how much* you charge. It is the architectural blueprint for revenue generation.
@@ -39,14 +33,6 @@ owner: "Dr. Sarah Zou"
 * **[Pricing Metric (Value Metric)](/wiki/pricing/models-and-metering/pricing-metric-value-metric):** The specific unit of value the customer pays for (e.g., per user, per gigabyte, per transaction). This is the engine inside the monetization model.
 * **Price Structure:** The tactical arrangement of the price, such as flat fees, tiered bundles, or multi-part tariffs (e.g., base fee + overage).
 * **LTV/CAC Ratio:** The relationship between the lifetime value of a customer and the cost to acquire them—this is the "health check" for any monetization model.
-
-### Why it matters
-
-In the early stages, founders often treat monetization as an afterthought ("we'll figure it out after we get users"). However, if you align your product features, sales motion, and operating costs with your chosen model from day one, you ensure that every dollar spent on development is geared toward a sustainable value-capture engine rather than a product that is "too expensive to sell" or "too cheap to support." This concept is also known as "**building around the price**."
-
-* **Strategic Leverage:** "**How** you charge trumps **what** you charge." A superior monetization model can differentiate a product more effectively than features alone. For example, Michelin shifted from selling tires (product) to charging per kilometer driven (outcome), aligning their incentives perfectly with fleet operators.
-* **Growth Acceleration:** Companies using usage-based monetization models grow **38% faster** than their peers because they better align cost with value, reducing barriers to entry and enabling automatic expansion revenue (NRR).
-* **Profit Sensitivity:** A 1% improvement in monetization (price/model) generates a **12.7%** increase in operating profit, making it the most efficient lever for profitability compared to acquisition or cost reduction.
 
 ### Mental model
 
@@ -83,13 +69,7 @@ Visualizing monetization models based on who holds the risk:
 
 * If variable cost is \$0.002/run and overage is \$0.01/run, you have room for support, payment fees, and margin.
 
-### Rules of thumb
-
-* **The "3-Second Rule":** A visitor should understand how you charge within 3 seconds of looking at your pricing page. Prefer **simple, explainable pricing** until you hit strong product-market fit.
-* **The Payback Period Rule:** Ideally, your monetization model should allow you to recover your CAC in **< 12 months**.
-* **Expansion Revenue Goal:** A healthy model should allow for "Negative Churn"—where existing customers pay you more over time (e.g., through usage [tiers](/wiki/pricing/packaging-and-bundling/good-better-best)).
-
-## When should you use which model? 
+## When should you use which model?
 ### Decision criteria
 
 | Situation                                         | Best-fit monetization patterns                        | Why                                                   |
@@ -100,6 +80,26 @@ Visualizing monetization models based on who holds the risk:
 | Consumer attention product (media/social)         | **Ads** + optional premium subscription              | Users "pay" with attention; premium removes friction  |
 | Hardware + recurring service                      | **Razor-and-blades** (hardware margin + subscription) | Lowers adoption barrier; monetizes ongoing value      |
 | Outcome is measurable and attributable            | **[Outcome-based](/wiki/pricing/models-and-metering/outcome-performance-based-pricing)** (success fee) + minimum | Strong alignment; harder to measure/finance           |
+
+### Rules of thumb
+
+* **The "3-Second Rule":** A visitor should understand how you charge within 3 seconds of looking at your pricing page. Prefer **simple, explainable pricing** until you hit strong product-market fit.
+* **The Payback Period Rule:** Ideally, your monetization model should allow you to recover your CAC in **< 12 months**.
+* **Expansion Revenue Goal:** A healthy model should allow for "Negative Churn"—where existing customers pay you more over time (e.g., through usage [tiers](/wiki/pricing/packaging-and-bundling/good-better-best)).
+
+## Why does monetization model matter?
+
+In the early stages, founders often treat monetization as an afterthought ("we'll figure it out after we get users"). However, if you align your product features, sales motion, and operating costs with your chosen model from day one, you ensure that every dollar spent on development is geared toward a sustainable value-capture engine rather than a product that is "too expensive to sell" or "too cheap to support." This concept is also known as "**building around the price**."
+
+* **Strategic Leverage:** "**How** you charge trumps **what** you charge." A superior monetization model can differentiate a product more effectively than features alone. For example, Michelin shifted from selling tires (product) to charging per kilometer driven (outcome), aligning their incentives perfectly with fleet operators.
+* **Growth Acceleration:** Companies using usage-based monetization models grow **38% faster** than their peers because they better align cost with value, reducing barriers to entry and enabling automatic expansion revenue (NRR).
+* **Profit Sensitivity:** A 1% improvement in monetization (price/model) generates a **12.7%** increase in operating profit, making it the most efficient lever for profitability compared to acquisition or cost reduction.
+
+## Key Facts
+
+- **72% failure:** The failure rate of new products, often attributed to postponing monetization discussions until after the product is built. (Ramanujam & Tacke, *Monetizing Innovation*)
+- **12.7%+ profit:** A **1% improvement** in monetization results in a **12.7% increase** in bottom-line profit, compared to only 3% for volume improvements. ([Price Intelligently](https://www.paddle.com/blog/price-intelligently-the-levers-of-saas-growth))
+- **2x higher ARPA:** Companies that review their monetization every 6 months see a **2x higher ARPA** (Average Revenue Per Account) than those that do it annually. ([ProfitWell](https://www.paddle.com/blog/how-often-should-you-change-your-pricing))
 
 ## How do you apply it step-by-step?
 

@@ -25,12 +25,6 @@ owner: "Dr. Sarah Zou"
 - **Separate ICP (account/company) from persona (human)**—you need both.
 - Treat ICP as a **hypothesis**: validate, then update as product + market evolve.
 
-## Key Facts
-
-- **~68% higher:** Organizations with a strong ICP reported ~68% higher account win rates. [TOPO 2019 Account-Based Benchmark Report, AdRoll](https://www.topohq.com/)
-- **120%+ NRR:** Many SaaS teams see 120%+ NRR for ICP-aligned customers versus sub-100% NRR for misaligned accounts. [GetMonetizely, 2025](https://www.getmonetizely.com/)
-- **5× to 25× more:** Acquiring a new customer is 5× to 25× more expensive than retaining an existing one. [Harvard Business Review](https://hbr.org/)
-
 ## What is Ideal Customer Profile (ICP)?
 
 **ICP (Ideal Customer Profile)** is a detailed description of a hypothetical customer who would derive the **most value** from your product or service and, conversely, provide the **most value to your business**. It acts as a **blueprint** for the specific type of customer you want to attract, retain, and grow.
@@ -88,6 +82,12 @@ _"If we could only win 100 customers this year, which 100 should they be—and w
 - **Pricing power:** Price elasticity is often **more dependent on the customer than the product**. When you focus on a segment with **high pain + high value** (and budget/urgency), you can charge premium prices because you're delivering a clear, measurable outcome—not selling a commodity.
 - **[Monetization](/wiki/pricing/models-and-metering/monetization-model) efficiency:** You can't optimize pricing without knowing **who you're optimizing for**. Different segments have different [willingness-to-pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) and [value drivers](/wiki/pricing/value-and-customers/value-drivers); a one-size-fits-all approach either leaves money on the table (underpricing) or kills conversion (overpricing).
 - **Organizational alignment (prevents "ICP drift"):** Without a clear ICP, _sales chases the wrong leads, product builds the wrong features, and marketing targets the wrong audience_. Over time, the company **drifts from its strategic focus**—wasting resources and producing confused positioning and inconsistent pricing.
+
+## Key Facts
+
+- **~68% higher:** Organizations with a strong ICP reported ~68% higher account win rates. [TOPO 2019 Account-Based Benchmark Report, AdRoll](https://www.topohq.com/)
+- **120%+ NRR:** Many SaaS teams see 120%+ NRR for ICP-aligned customers versus sub-100% NRR for misaligned accounts. [GetMonetizely, 2025](https://www.getmonetizely.com/)
+- **5× to 25× more:** Acquiring a new customer is 5× to 25× more expensive than retaining an existing one. [Harvard Business Review](https://hbr.org/)
 
 ## How do you implement ICP step-by-step?
 

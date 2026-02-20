@@ -23,12 +23,6 @@ owner: "Dr. Sarah Zou"
 - **Bundle for Value, Not Just Volume:** Don't just bundle to dump inventory. Bundle to solve a complete "[Job to be Done](/wiki/pricing/value-and-customers/jobs-to-be-done)." If the bundle creates a seamless workflow, charge premium for that convenience.
 - Bundling is most effective when customer preferences are **negatively correlated** (Customer A loves Feature 1; Customer B loves Feature 2).
 
-## Key Facts
-
-- **The 33% Uplift:** In both theoretical models and practical tech applications, mixed bundling can generate **33% more revenue** than selling items only separately. (Adams & Yellen, 1976; [QJE](https://doi.org/10.2307/1884975))
-- **10–15% higher ARPU:** Companies utilizing "Mixed Bundling" typically see a 10–15% higher ARPU than those relying solely on pure bundles, as it captures both high-value "suite" buyers and single-feature users. ([ProfitWell](https://www.profitwell.com/recur/all/bundle-pricing))
-- **Power of the bundling model:** As of Fiscal Year 2025, Microsoft's Productivity and Business Processes segment—anchored by the Office 365 bundle—accounted for over **54% of the company's total operating profit** ($69.8B of $128.5B). ([Microsoft](https://www.microsoft.com/en-us/investor/earnings/fy-2025-q4/segment-revenues))
-
 ## What is bundling?
 
 **Bundling:** The practice of selling multiple distinct products or services together as a single bundle, often at a price *different* (discount or premium) from the sum of their individual prices.
@@ -105,6 +99,12 @@ This scenario is common with [Leader (must-have)](/wiki/pricing/packaging-and-bu
 * **Maximizing "Share of Wallet":** Bundling allows companies to capture more revenue from each customer by encouraging them to buy items they might not have purchased individually.
 * **Smoothing Demand Curves:** Different customers value different products differently. One might love Product A and feel lukewarm about Product B, while another feels the opposite. Bundling allows you to average out these differences and capture revenue from both.
 * **Simplification:** It reduces the cognitive load for customers. Instead of making five distinct purchase decisions, they make one. This reduces sales friction and increases customer satisfaction.
+
+## Key Facts
+
+- **The 33% Uplift:** In both theoretical models and practical tech applications, mixed bundling can generate **33% more revenue** than selling items only separately. (Adams & Yellen, 1976; [QJE](https://doi.org/10.2307/1884975))
+- **10–15% higher ARPU:** Companies utilizing "Mixed Bundling" typically see a 10–15% higher ARPU than those relying solely on pure bundles, as it captures both high-value "suite" buyers and single-feature users. ([ProfitWell](https://www.profitwell.com/recur/all/bundle-pricing))
+- **Power of the bundling model:** As of Fiscal Year 2025, Microsoft's Productivity and Business Processes segment—anchored by the Office 365 bundle—accounted for over **54% of the company's total operating profit** ($69.8B of $128.5B). ([Microsoft](https://www.microsoft.com/en-us/investor/earnings/fy-2025-q4/segment-revenues))
 
 ## How do you implement bundling step-by-step?
 

@@ -24,12 +24,6 @@ owner: "Dr. Sarah Zou"
 - **Killers must be exiled:** Killers actually decrease [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) for certain segments and should be removed. If a small group loves the feature, sell it as a separate [Add-on](/wiki/pricing/packaging-and-bundling/add-ons-modular).
 - The goal isn't "more features"—it's **a clean upgrade story**.
 
-## Key Facts
-
-- **70%+ rarely used:** Over 70% of features in the average software product are rarely or never used (also estimated $29.5B spent building them). ([Pendo, 2019 Feature Adoption Report](https://www.pendo.io/resources/the-2019-feature-adoption-report/))
-- **2x more impactful:** [Packaging](/wiki/pricing/packaging-and-bundling/packaging) (the what) is often 2x more impactful on growth than the price point (the how much). ([ProfitWell's "Anatomy of SaaS Pricing"](https://www.profitwell.com/recurring/all/saas-pricing-strategy))
-- **25% Uplift:** A web hosting company increased revenue by 25% simply by removing unwanted features (Killers) from their core package, proving that "less" can be worth more. ([Ramanujam & Tacke, Monetizing Innovation](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840))
-
 ## What are Leader/Filler/Killer features?
 
 The Leader/Filler/Killer framework is a method for classifying product features based on customer preference and [willingness to pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay). It is used to design product [packages](/wiki/pricing/packaging-and-bundling/packaging) that maximize revenue and minimize sales friction.
@@ -71,6 +65,12 @@ Think of a simple 2×2 grid:
 ## Why do Leader/Filler/Killer features matter?
 
 Without this distinction, founders fall into **"Kitchen Sink Syndrome"**: piling features into one [tier](/wiki/pricing/packaging-and-bundling/good-better-best), raising COGS and complexity without earning a higher price. The Leader/Filler/Killer lens forces a sharper [packaging](/wiki/pricing/packaging-and-bundling/packaging) story—what drives the decision, what rounds out the offer, and what should be [fenced](/wiki/pricing/value-and-customers/price-fences-price-discrimination) or moved up.
+
+## Key Facts
+
+- **70%+ rarely used:** Over 70% of features in the average software product are rarely or never used (also estimated $29.5B spent building them). ([Pendo, 2019 Feature Adoption Report](https://www.pendo.io/resources/the-2019-feature-adoption-report/))
+- **2x more impactful:** [Packaging](/wiki/pricing/packaging-and-bundling/packaging) (the what) is often 2x more impactful on growth than the price point (the how much). ([ProfitWell's "Anatomy of SaaS Pricing"](https://www.profitwell.com/recurring/all/saas-pricing-strategy))
+- **25% Uplift:** A web hosting company increased revenue by 25% simply by removing unwanted features (Killers) from their core package, proving that "less" can be worth more. ([Ramanujam & Tacke, Monetizing Innovation](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840))
 
 ## How do you implement Leader/Filler/Killer features step-by-step?
 

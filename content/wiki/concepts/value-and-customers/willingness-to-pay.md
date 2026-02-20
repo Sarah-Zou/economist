@@ -26,11 +26,6 @@ owner: "Dr. Sarah Zou"
 - Start simple with **[Van Westendorp PSM](/wiki/pricing/research-and-experiments/van-westendorp)**, then validate with behavior (pilots/A-B) as stakes rise.
 - **Kill "Undeads":** If WTP research shows customers won't pay a price that covers your costs, stop development immediately to save resources.
 
-## Key Facts
-- **72% Failure Rate:** **72% of new products** miss their revenue and profit goals because they are developed without a clear WTP strategy. [Monetizing Innovation](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840)
-- **The 5% Inclusion Gap:** **Only about 5% of corporate business cases** contain actual data on how much customers are willing to pay; the rest are essentially guesses. [Monetizing Innovation](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840)
-- **The 1% Lever:** A **1% improvement in price is the most efficient profit lever**, often outperforming a 1% reduction in variable costs by more than 50%. [The Price Advantage](https://www.wiley.com/en-us/The+Price+Advantage%2C+2nd+Edition-p-9780470502250)
-
 ## What is Willingness to Pay (WTP)?
 
 **Willingness-to-pay (WTP)** is the fundamental measure of the perceived value an innovation holds for a customer. It is defined as the **maximum amount** of money a potential buyer is willing to part with in exchange for the benefits provided by a product or service.
@@ -53,17 +48,6 @@ A practical mental model for WTP is the **"Reasonable Price Range"**.
 
 • **The Incentive to purchase:** The gap between the chosen price and the maximum WTP.
 
-## Why does WTP matter?
-
-For startup founders, WTP is the **single most critical factor** in determining whether a product will make money. The **"root of all innovation evil"** is the failure to put the customer's WTP at the core of product design. 
-
-Approximately **72%** of new products fail because companies postpone pricing decisions until the very end of the development process, essentially hoping for profit rather than knowing it exists. Conversely, mastering WTP allows a firm to capture its fair share of the value it creates, as a mere 1% improvement in price realization can boost operating profits by approximately **10% to 11%**.
-
-- **Defines pricing ceiling:** WTP establishes the maximum price customers will accept, helping you pick a defensible price range instead of guessing.
-- **Reveals segmentation opportunities:** Shows which segments value you most, enabling [tiered pricing](/wiki/pricing/packaging-and-bundling/packaging) and [price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination).
-- **Prevents product failures:** Early WTP research can identify "undead" products that won't cover costs, saving development resources.
-- **Maximizes profit capture:** Understanding WTP distribution allows you to capture more value through segmentation and strategic pricing.
-
 ## When should you use WTP research?
 
 ### Decision criteria
@@ -75,6 +59,22 @@ Approximately **72%** of new products fail because companies postpone pricing de
 | **Enterprise / negotiated pricing** | [Value-based](/wiki/pricing/foundations/value-based-pricing) ROI model + win/loss + quote analysis          | Heterogeneous deals; sales-led motions      | Hard to isolate price from discounting/politics     |
 | **True incentive-compatible WTP**   | BDM / Vickrey auctions (field/lab)                         | Research context; can enforce real purchase | Participant comprehension + trust critical          |
 | **Competitor-heavy markets**        | Conjoint with competitive sets; market simulation          | Many close substitutes                      | Garbage-in if competitor set unrealistic            |
+
+## Why does WTP matter?
+
+For startup founders, WTP is the **single most critical factor** in determining whether a product will make money. The **"root of all innovation evil"** is the failure to put the customer's WTP at the core of product design. 
+
+Approximately **72%** of new products fail because companies postpone pricing decisions until the very end of the development process, essentially hoping for profit rather than knowing it exists. Conversely, mastering WTP allows a firm to capture its fair share of the value it creates, as a mere 1% improvement in price realization can boost operating profits by approximately **10% to 11%**.
+
+- **Defines pricing ceiling:** WTP establishes the maximum price customers will accept, helping you pick a defensible price range instead of guessing.
+- **Reveals segmentation opportunities:** Shows which segments value you most, enabling [tiered pricing](/wiki/pricing/packaging-and-bundling/packaging) and [price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination).
+- **Prevents product failures:** Early WTP research can identify "undead" products that won't cover costs, saving development resources.
+- **Maximizes profit capture:** Understanding WTP distribution allows you to capture more value through segmentation and strategic pricing.
+
+## Key Facts
+- **72% Failure Rate:** **72% of new products** miss their revenue and profit goals because they are developed without a clear WTP strategy. [Monetizing Innovation](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840)
+- **The 5% Inclusion Gap:** **Only about 5% of corporate business cases** contain actual data on how much customers are willing to pay; the rest are essentially guesses. [Monetizing Innovation](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840)
+- **The 1% Lever:** A **1% improvement in price is the most efficient profit lever**, often outperforming a 1% reduction in variable costs by more than 50%. [The Price Advantage](https://www.wiley.com/en-us/The+Price+Advantage%2C+2nd+Edition-p-9780470502250)
 
 ## How do you implement WTP research step-by-step?
 

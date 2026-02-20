@@ -29,11 +29,6 @@ owner: "Dr. Sarah Zou"
 - **Interdependence of Related Products:** The value of your offering is influenced by the price and demand of complementary goods; for instance, rising costs in a related service can lower the perceived value of your core product.
 - **Empowerment via Internal Transparency:** Presenting a Value Decoder analysis to the entire organization builds a "culture of profit" by giving employees the data-backed confidence to articulate value and justify the price to customers.
 
-## Key Facts
-- **4x Revenue Growth:** Companies that excel in four or more value elements (e.g., quality, saves time, reduces anxiety, and affiliation) see **revenue growth four times greater** (around 11.8% CAGR vs. roughly 2–5% for those with few or none). ([Bain brief](https://www.bain.com/contentassets/8824d432de2441378bfc2943ad3f4d40/bain_brief-delivering_what_consumers_really_value.pdf))
-- **$1.1 billion in hidden profits:** Ford's 2010 results attributed about **$1.1 billion in extra quarterly profit** to improved pricing alone—illustrating how better price realization can surface "hidden profit" without changing the product. ([TheStreet coverage](https://www.thestreet.com/opinion/fords-secret-profit-weapon-better-pricing-10821974))
-- **84% "First-Mover" Advantage:** **84% of buyers** said the first vendor they contacted ultimately won the business, underscoring the payoff from decoding and communicating value early in the journey. ([6sense summary](https://6sense.com/newsroom/84-of-b2b-deals-are-decided-before-marketers-even-know-about-them/))
-
 ## What is the Value Decoder framework?
 
 **The Value Decoder** is a [value-based pricing](/wiki/pricing/foundations/value-based-pricing) framework that decomposes how customers perceive value and converts that perception into a concrete price band, originally introduced by Rafi Mohammed's [The Art of Pricing](PricingforProfit.com).
@@ -57,6 +52,20 @@ Think of the Value Decoder as a simple value equation pipeline:
 - **Decode context value:** Adjust again for income, complements, and environment.
 - **Output:** A price (or small band) that reflects current perceived value for a specific segment.
 
+## When should you use the Value Decoder?
+
+### Decision criteria
+
+| Situation | Use Value Decoder? | What to do |
+|-----------|-------------------|------------|
+| Clear, widely known competitors and prices | Very high | Works best when you can identify a realistic NBA. |
+| New-to-world product but replacing a current workaround (e.g., spreadsheets, agency) | High | Treat the workaround (incl. time cost) as the NBA. |
+| No obvious substitute, blue-ocean category | Lower | Use it to structure thinking, but rely more on [WTP research](/wiki/pricing/value-and-customers/willingness-to-pay) ([Gabor-Granger](/wiki/pricing/research-and-experiments/gabor-granger), [conjoint](/wiki/pricing/research-and-experiments/conjoint-analysis), etc.). |
+| Highly negotiated enterprise deals | Critical | Decoder gives list price / walk-away floor; deal desks then manage discounts. |
+| Commodities with transparent market prices | Limited | Price is mostly set by market; focus on differentiation or other pricing tools. |
+
+Use the Value Decoder when **you have clear substitutes or alternatives to benchmark against** and when **perception, context, and timing significantly influence [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay)**, especially for B2B and B2C products where market conditions change frequently.
+
 ## Why does the Value Decoder matter?
 
 The Value Decoder is necessary because it gives teams a shared, concrete logic for turning fuzzy ideas about "value" into specific prices they can defend and improve over time.
@@ -70,6 +79,11 @@ The Value Decoder is necessary because it gives teams a shared, concrete logic f
 - **Spot hidden profit opportunities:** Highlights segments, contexts, or moments (e.g., events, weather, trends) where [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) is higher than your current price assumes.
 
 - **React faster to market shifts:** Provides a repeatable checklist for revisiting prices when competitors move, budgets change, or new information hits the market.
+
+## Key Facts
+- **4x Revenue Growth:** Companies that excel in four or more value elements (e.g., quality, saves time, reduces anxiety, and affiliation) see **revenue growth four times greater** (around 11.8% CAGR vs. roughly 2–5% for those with few or none). ([Bain brief](https://www.bain.com/contentassets/8824d432de2441378bfc2943ad3f4d40/bain_brief-delivering_what_consumers_really_value.pdf))
+- **$1.1 billion in hidden profits:** Ford's 2010 results attributed about **$1.1 billion in extra quarterly profit** to improved pricing alone—illustrating how better price realization can surface "hidden profit" without changing the product. ([TheStreet coverage](https://www.thestreet.com/opinion/fords-secret-profit-weapon-better-pricing-10821974))
+- **84% "First-Mover" Advantage:** **84% of buyers** said the first vendor they contacted ultimately won the business, underscoring the payoff from decoding and communicating value early in the journey. ([6sense summary](https://6sense.com/newsroom/84-of-b2b-deals-are-decided-before-marketers-even-know-about-them/))
 
 ## Value Decoder vs. Economic Value Estimation (EVE)
 
@@ -90,20 +104,6 @@ In practice, [EVE](/wiki/pricing/value-and-customers/economic-value-estimation) 
 The Value Decoder is the **perception and opportunity scanner**. It explains why two offers with similar economics can support vastly different prices based on role, symbolism, or context, and it surfaces moments when value spikes (e.g., a sudden storm for umbrellas) but prices don't.
 
 Founders often get the best results by **combining both**: use [EVE](/wiki/pricing/value-and-customers/economic-value-estimation) to build the core economic logic beneath your price, then run the Value Decoder to align that price with how real humans actually experience value—and to decide where, when, and for whom you can charge more.
-
-## When should you use the Value Decoder?
-
-### Decision criteria
-
-| Situation | Use Value Decoder? | What to do |
-|-----------|-------------------|------------|
-| Clear, widely known competitors and prices | Very high | Works best when you can identify a realistic NBA. |
-| New-to-world product but replacing a current workaround (e.g., spreadsheets, agency) | High | Treat the workaround (incl. time cost) as the NBA. |
-| No obvious substitute, blue-ocean category | Lower | Use it to structure thinking, but rely more on [WTP research](/wiki/pricing/value-and-customers/willingness-to-pay) ([Gabor-Granger](/wiki/pricing/research-and-experiments/gabor-granger), [conjoint](/wiki/pricing/research-and-experiments/conjoint-analysis), etc.). |
-| Highly negotiated enterprise deals | Critical | Decoder gives list price / walk-away floor; deal desks then manage discounts. |
-| Commodities with transparent market prices | Limited | Price is mostly set by market; focus on differentiation or other pricing tools. |
-
-Use the Value Decoder when **you have clear substitutes or alternatives to benchmark against** and when **perception, context, and timing significantly influence [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay)**, especially for B2B and B2C products where market conditions change frequently.
 
 ## How do you implement the Value Decoder step-by-step?
 

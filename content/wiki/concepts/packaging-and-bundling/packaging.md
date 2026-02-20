@@ -28,12 +28,6 @@ owner: "Dr. Sarah Zou"
 - Tiers should reflect **distinct buyer outcomes** (not arbitrary feature lists). Use the "Good-Better-Best" (GBB) framework to anchor value.
 - Complexity kills control: A strong architecture has **one main [pricing/value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric)** (seats/usage/workspaces) and **few, high-signal [add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular)**.
 
-## Key Facts
-
-- **72% Failure Rate:** Approximately 72% of **new products** fail to meet revenue targets, often because companies design the product **before** determining if customers are willing to pay for the package configuration. ([Ramanujam, M., & Tacke, G. (2016). Monetizing Innovation](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840))
-- **~30% Better Pricing:** **Simpler packaging** (e.g., ~3 tiers, <5 add-ons) is associated with **~30% higher likelihood** of effective pricing/discount controls. ([McKinsey, 2023](https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-art-of-software-pricing-unleashing-growth-with-data-driven-insights))
-- **70%+ are using:** Over 70% of high-growth SaaS companies utilize a three-tier **"Good-Better-Best"** architecture. [OpenView, 2020](https://openviewpartners.com/expansion-saas-benchmarks/)
-
 ## What is packaging architecture?
 
 **Packaging Architecture** (sometimes called product configuration) is the strategic design of *what* you sell, distinct from price setting, which determines *how much* you charge. It is the process of grouping features, services, and commercial terms into sellable units (offers) that align with specific [customer segments](/wiki/pricing/value-and-customers/customer-segments) and their [willingness to pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay).
@@ -80,6 +74,18 @@ owner: "Dr. Sarah Zou"
 
 Refer to **The "Fence and Ladder"** in [Segmentation by Willingness to Pay (WTP) / Use Case](/wiki/pricing/value-and-customers/customer-segments) page.
 
+## When should you use packaging architecture?
+
+### Decision criteria
+
+| If your situation looks like…                     | Prefer this packaging pattern                                 | Why                                              |
+| ------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------ |
+| Clear segment steps (SMB → MM → Ent)              | **Tiered (Good/Better/Best)** + optional enterprise           | Simple self-selection and sales motion alignment |
+| One product, many use cases                       | **Modular** (core + role/department modules)                  | Avoids bloated tiers; matches varied needs       |
+| Value increases mostly with volume                | **[Usage](/wiki/pricing/models-and-metering)/seat scaling** with clear included amounts            | Aligns spend with value and creates expansion    |
+| High [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay) for specific capabilities | **[Add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular)** for high-value bundles (security, AI, compliance) | Captures [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) without forcing everyone up         |
+| Retail/CPG with multiple sizes                    | **Price-pack architecture** (sizes + price points)            | Covers occasions/budgets and manages trade-down  |
+
 ### Rules of thumb
 
 **Use as starting hypotheses:**
@@ -100,17 +106,11 @@ Well-designed packaging solves this by aligning offers with [willingness to pay]
 * **Unlocking hidden revenue:** A single package for the "average" customer inevitably over-serves the low end (giving away value) and under-serves the high end (leaving money on the table). Thoughtful packaging captures more of the demand curve by matching distinct value propositions to distinct segments.
 * **Operational velocity:** Clear packaging standardizes how products are sold. Without it, sales teams default to custom deals and exceptions, slowing deal cycles, increasing discounts, and creating long-term technical and roadmap debt.
 
-## When should you use packaging architecture?
+## Key Facts
 
-### Decision criteria
-
-| If your situation looks like…                     | Prefer this packaging pattern                                 | Why                                              |
-| ------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------ |
-| Clear segment steps (SMB → MM → Ent)              | **Tiered (Good/Better/Best)** + optional enterprise           | Simple self-selection and sales motion alignment |
-| One product, many use cases                       | **Modular** (core + role/department modules)                  | Avoids bloated tiers; matches varied needs       |
-| Value increases mostly with volume                | **[Usage](/wiki/pricing/models-and-metering)/seat scaling** with clear included amounts            | Aligns spend with value and creates expansion    |
-| High [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay) for specific capabilities | **[Add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular)** for high-value bundles (security, AI, compliance) | Captures [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) without forcing everyone up         |
-| Retail/CPG with multiple sizes                    | **Price-pack architecture** (sizes + price points)            | Covers occasions/budgets and manages trade-down  |
+- **72% Failure Rate:** Approximately 72% of **new products** fail to meet revenue targets, often because companies design the product **before** determining if customers are willing to pay for the package configuration. ([Ramanujam, M., & Tacke, G. (2016). Monetizing Innovation](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840))
+- **~30% Better Pricing:** **Simpler packaging** (e.g., ~3 tiers, <5 add-ons) is associated with **~30% higher likelihood** of effective pricing/discount controls. ([McKinsey, 2023](https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-art-of-software-pricing-unleashing-growth-with-data-driven-insights))
+- **70%+ are using:** Over 70% of high-growth SaaS companies utilize a three-tier **"Good-Better-Best"** architecture. [OpenView, 2020](https://openviewpartners.com/expansion-saas-benchmarks/)
 
 ## How do you implement packaging architecture step-by-step?
 
@@ -163,7 +163,7 @@ Well-designed packaging solves this by aligning offers with [willingness to pay]
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 * Lehrskov-Schmidt, U. (2023). *The Pricing Roadmap*. Independently published.
 
-**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Price Metrics / Value Metrics](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing)
+**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Price Metrics / Value Metrics](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Freemium](/wiki/pricing/models-and-metering/freemium-model)
 
 ## FAQ
 

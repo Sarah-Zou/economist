@@ -25,12 +25,6 @@ owner: "Dr. Sarah Zou"
 - **Package first, price second.** Lock outcomes and [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) per tier, then set the numbers.
 - **Make upgrading feel inevitable.** Use "success triggers" (seats, usage, workflows) customers naturally hit as they grow.
 
-## Key Facts
-
-- **~15% higher ARPU:** Companies with **two tiers vs one** saw about **15% higher ARPU**—a direct [monetization](/wiki/pricing/models-and-metering/monetization-model) lift from price anchoring/upsell structure. ([Paddle Studios](https://www.paddle.com/studios/shows/profitwell-report/price-tier-anchoring))
-- **36%:** In a study of 50 best‑in‑class SaaS pricing pages, **36%** used **multiple pricing pages or tabs** to handle multiple markets/products. ([FastSpring, 2022](https://fastspring.com/blog/three-tier-pricing-strategy-for-saas-is-it-still-ideal/))
-- **The "Decoy" Effect:** In a famous experiment with *The Economist*, adding a "decoy" option shifted customer preference for the high-priced option from **32% to 84%**. ([Ramanujam, M., & Tacke, G. (2016). Monetizing Innovation](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840))
-
 ## What is Good-Better-Best?
 
 **Good–Better–Best (G/B/B)** is a tiered [packaging architecture](/wiki/pricing/packaging-and-bundling/packaging) that bundles features and services into three distinct tiers to target different [customer segments](/wiki/pricing/value-and-customers/customer-segments) with varying [Willingness to Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay).
@@ -61,6 +55,18 @@ Goal: each step adds a *meaningful* outcome and a clear reason to upgrade.
 
 ![Pyramid diagram showing Good-Better-Best framework with three horizontal tiers: Base (Good) focused on Basic Utility, Middle (Better) focused on Efficiency and Growth representing the target segment, and Top (Best) focused on Peace of Mind with highest ARPU but smallest customer volume](/images/wiki_GBB_mental.png)
 
+## When should you use Good-Better-Best?
+
+### Decision criteria
+
+| Situation                                        | Use classic 3-tier GBB? | Better alternative                             |
+| ------------------------------------------------ | ----------------------- | ---------------------------------------------- |
+| One clear persona, simple product                | ❌                       | Single plan (+ [add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular))                        |
+| Two strong personas (e.g., SMB vs enterprise)    | ✅                       | 2–3 plans + enterprise custom                  |
+| Many personas / multi-product suite              | ⚠️                      | Multiple pages/tabs; [bundles](/wiki/pricing/packaging-and-bundling/bundling); a la carte       |
+| Your best customers scale on a measurable metric | ✅                       | GBB + [usage/seat ladder](/wiki/pricing/models-and-metering/pricing-metric-value-metric)                        |
+| Heavy compliance / security / procurement needs  | ✅                       | Put trust/compliance in Best (or "Enterprise") |
+
 ### Rules of thumb
 
 * **The 30/50/20 Rule:** Ideally, your customer distribution should be roughly **30% Good**, **50% Better**, and **20% Best**. If >50% buy "Good," your entry-level product is too rich (you gave away too much value). If <10% buy "Best," your premium differentiation is too weak.
@@ -77,17 +83,11 @@ Early-stage startups often underprice because they fear rejection. GBB reduces t
 
 * **Sales velocity:** Tiers standardize the sales conversation. Instead of starting negotiations from scratch, reps qualify needs and map them to a plan (e.g., "If you need X, Better is the right tier"), which reduces friction and speeds decisions.
 
-## When should you use Good-Better-Best?
+## Key Facts
 
-### Decision criteria
-
-| Situation                                        | Use classic 3-tier GBB? | Better alternative                             |
-| ------------------------------------------------ | ----------------------- | ---------------------------------------------- |
-| One clear persona, simple product                | ❌                       | Single plan (+ [add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular))                        |
-| Two strong personas (e.g., SMB vs enterprise)    | ✅                       | 2–3 plans + enterprise custom                  |
-| Many personas / multi-product suite              | ⚠️                      | Multiple pages/tabs; [bundles](/wiki/pricing/packaging-and-bundling/bundling); a la carte       |
-| Your best customers scale on a measurable metric | ✅                       | GBB + [usage/seat ladder](/wiki/pricing/models-and-metering/pricing-metric-value-metric)                        |
-| Heavy compliance / security / procurement needs  | ✅                       | Put trust/compliance in Best (or "Enterprise") |
+- **~15% higher ARPU:** Companies with **two tiers vs one** saw about **15% higher ARPU**—a direct [monetization](/wiki/pricing/models-and-metering/monetization-model) lift from price anchoring/upsell structure. ([Paddle Studios](https://www.paddle.com/studios/shows/profitwell-report/price-tier-anchoring))
+- **36%:** In a study of 50 best‑in‑class SaaS pricing pages, **36%** used **multiple pricing pages or tabs** to handle multiple markets/products. ([FastSpring, 2022](https://fastspring.com/blog/three-tier-pricing-strategy-for-saas-is-it-still-ideal/))
+- **The "Decoy" Effect:** In a famous experiment with *The Economist*, adding a "decoy" option shifted customer preference for the high-priced option from **32% to 84%**. ([Ramanujam, M., & Tacke, G. (2016). Monetizing Innovation](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840))
 
 ## How do you implement Good-Better-Best step-by-step?
 
@@ -145,7 +145,7 @@ Early-stage startups often underprice because they fear rejection. GBB reduces t
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 * Ghuman, A. (2021). *Price to Scale*. Independently published.
 
-**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Customer Segments](/wiki/pricing/value-and-customers/customer-segments) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Willingness to Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Jobs-to-Be-Done (JTBD)](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Value Drivers](/wiki/pricing/value-and-customers/value-drivers) | [Value Metric (Seats vs Usage)](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp)
+**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Customer Segments](/wiki/pricing/value-and-customers/customer-segments) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Willingness to Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Jobs-to-Be-Done (JTBD)](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Value Drivers](/wiki/pricing/value-and-customers/value-drivers) | [Value Metric (Seats vs Usage)](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Freemium](/wiki/pricing/models-and-metering/freemium-model) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp)
 
 ## FAQ
 

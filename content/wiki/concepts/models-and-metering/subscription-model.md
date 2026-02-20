@@ -26,12 +26,6 @@ owner: "Dr. Sarah Zou"
 - **Data-Driven:** The model provides a constant stream of usage data to inform product development.
 - **Term Length Trade-off:** Monthly subscriptions lower the friction to buy (higher conversion) but increase churn. Annual subscriptions increase the friction to buy (lower conversion) but improve retention and cash flow.
 
-## Key Facts
-
-- **3.4× Growth:** Subscription-based companies in Zuora's SEI grew **3.4× faster than the S&P 500 over 12 years** ([Zuora, 2024](https://www.zuora.com/press-release/sei-report-2024/)).
-- **100%+ NRR:** In private B2B SaaS, **median Net Revenue Retention (NRR) ~102%** and **median Gross Revenue Retention (GRR) ~91%** ([SaaS Capital, 2023](https://www.saas-capital.com/wp-content/uploads/2023/05/RB28WS1-2023-B2B-SaaS-Retention-Benchmarks.pdf)).
-- **25–95%+ profit:** A **+5% retention** improvement is associated with **~25%–95% profit increase** in many contexts ([HBR](https://hbr.org/2014/10/the-value-of-keeping-the-right-customers)).
-
 ## What is the subscription model?
 
 **Subscription model** is a [monetization model](/wiki/pricing/models-and-metering/monetization-model) where the price is charged at regular intervals (monthly/annual). It is distinct from **Perpetual/License** (one-time buy) and **Usage/Consumption** ([usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing)/pay-as-you-go).
@@ -47,14 +41,6 @@ owner: "Dr. Sarah Zou"
 * **GRR / NRR:**
   * **GRR** = (Starting recurring revenue − contractions − churn) / Starting recurring revenue
   * **NRR** = (Starting recurring revenue − contractions − churn + expansions) / Starting recurring revenue
-
-### Why it matters
-
-For founders, subscriptions move the needle on **Capital Efficiency**.
-
-* **Predictability:** Subscription revenue is easier to forecast than transactional sales, smoothing out cash flow.
-* **Lock-in:** Subscriptions help lock out competitors. Once a customer subscribes, they stop looking for alternatives, whereas transactional customers re-evaluate their choice with every purchase.
-* **Access vs. Ownership:** It aligns with the modern shift from "owning assets" (which rust in the driveway) to "accessing utility" (using the car when needed).
 
 ### Mental model
 
@@ -94,6 +80,26 @@ Imagine your customer base as a bucket. New customers are water being poured in 
 | **Usage variance** | Consumption is **stable** month-to-month or can be [tiered](/wiki/pricing/models-and-metering/tiered-graduated-block-pricing) with clear limits. | Consumption is **high-variance** (seasonal/bursty) → favor [usage-based](/wiki/pricing/models-and-metering/usage-based-pricing) or [base + overage](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage). |
 | **Customer preference** | Buyers want budgeting simplicity and predictable spend. | Buyers demand pay-as-you-go or strongly prefer one-time purchases. |
 | **Operational readiness** | You can run billing hygiene (renewals, dunning, proration, invoicing/tax). | Billing ops are immature; risk of leakage, disputes, and compliance issues is high. |
+
+### Rules of thumb
+
+* If customers don't get clear value within the **first 1–2 billing cycles**, churn spikes.
+* **CAC Payback Period:** In subscriptions, you collect cash slowly. You must ensure your **Customer Lifetime Value (CLTV)** exceeds **Customer Acquisition Cost (CAC)** by at least 3:1 (if 1:1, you're losing money; if 5:1, you aren't spending enough on growth), and you recover CAC in <12 months.
+* Use annual billing to reduce churn and improve cash flow **only if** the value is continuous and measurable.
+
+## Why does the subscription model matter?
+
+For founders, subscriptions move the needle on **Capital Efficiency**.
+
+* **Predictability:** Subscription revenue is easier to forecast than transactional sales, smoothing out cash flow.
+* **Lock-in:** Subscriptions help lock out competitors. Once a customer subscribes, they stop looking for alternatives, whereas transactional customers re-evaluate their choice with every purchase.
+* **Access vs. Ownership:** It aligns with the modern shift from "owning assets" (which rust in the driveway) to "accessing utility" (using the car when needed).
+
+## Key Facts
+
+- **3.4× Growth:** Subscription-based companies in Zuora's SEI grew **3.4× faster than the S&P 500 over 12 years** ([Zuora, 2024](https://www.zuora.com/press-release/sei-report-2024/)).
+- **100%+ NRR:** In private B2B SaaS, **median Net Revenue Retention (NRR) ~102%** and **median Gross Revenue Retention (GRR) ~91%** ([SaaS Capital, 2023](https://www.saas-capital.com/wp-content/uploads/2023/05/RB28WS1-2023-B2B-SaaS-Retention-Benchmarks.pdf)).
+- **25–95%+ profit:** A **+5% retention** improvement is associated with **~25%–95% profit increase** in many contexts ([HBR](https://hbr.org/2014/10/the-value-of-keeping-the-right-customers)).
 
 ## How do you implement subscription pricing step-by-step?
 

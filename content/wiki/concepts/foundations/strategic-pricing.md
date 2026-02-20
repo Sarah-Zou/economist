@@ -22,11 +22,6 @@ owner: "Dr. Sarah Zou"
 - Treat pricing as **a system** (value × structure × policy), not a one-time number – _this is how you keep prices aligned as the product and market evolve._
 - Pricing is your **Single most critical lever** for profitability – _a 1% lift in average price typically drives 8–10% operating profit gains in large companies._
 
-## Key Facts
-- +8.7% profit: A 1% increase in average price can translate into an 8.7% to 10.29% increase in operating profit for a typical large company. ([McKinsey (2014)](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-big-data-to-make-better-pricing-decisions))
-- <10 hours/year: Companies spend <10 hours/year on pricing. ([ProfitWell/Paddle](https://www.paddle.com/studios/shows/profitwell-report/pricing-for-bottom-line))
-- 85% of companies: 85% of companies say their pricing needs significant improvement, signaling widespread capability gaps. ([Bain](https://www.bain.com/insights/a-survey-of-1700-companies-reveals-common-b2b-pricing-mistakes-hbr/))
-
 ## What is strategic pricing?
 
 **Strategic pricing:** A comprehensive management system coordinating short- and long-term monetization strategies to achieve sustainable profitability. It's not about finding a "perfect price," but creating a disciplined, intentional process with clear goals and timing.
@@ -44,6 +39,11 @@ owner: "Dr. Sarah Zou"
 - **Maximizing profitability:** Pricing is the single most powerful lever for profit. Even small price increases can lead to substantial operating profit gains.
 - **Avoiding trade-offs:** Strategic pricing enables capturing different value levels across customer segments without sacrificing margin or volume.
 - **Guiding strategic decisions:** A structured pricing system ensures coherent policies and alignment with business goals.
+
+## Key Facts
+- +8.7% profit: A 1% increase in average price can translate into an 8.7% to 10.29% increase in operating profit for a typical large company. ([McKinsey (2014)](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-big-data-to-make-better-pricing-decisions))
+- <10 hours/year: Companies spend <10 hours/year on pricing. ([ProfitWell/Paddle](https://www.paddle.com/studios/shows/profitwell-report/pricing-for-bottom-line))
+- 85% of companies: 85% of companies say their pricing needs significant improvement, signaling widespread capability gaps. ([Bain](https://www.bain.com/insights/a-survey-of-1700-companies-reveals-common-b2b-pricing-mistakes-hbr/))
 
 ## How do you implement strategic pricing step-by-step?
 

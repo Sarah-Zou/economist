@@ -22,11 +22,6 @@ owner: "Dr. Sarah Zou"
 - **Value = perceived benefits - perceived price** – _focus on economic value to customer (EVC) relative to next-best alternative._
 - Use a **multi‑price mindset** and segment customers by needs, value, and [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) to tailor offers – _high‑value customers pay more; lower‑value segments access lighter packages._
 
-## Key Facts
-- +8.7% profit: A 1% increase in average price can translate into an 8.7% to 10.29% increase in operating profit for a typical large company. ([McKinsey (2014)](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-big-data-to-make-better-pricing-decisions))
-- 150 industrial firms: In a study of 150 industrial firms, profitability was positively affected by customer-value-based pricing strategies and high price levels. ([Revista de Administração (2017)](https://doi.org/10.1016/j.rausp.2016.12.004))
-- 5% of cases: Only ~5% of new‑product business cases explicitly include [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) inputs—teams often guess revenue. ([Monetizing Innovation (2016)](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ))
-
 ## What is value-based pricing?
 
 **Value‑based pricing (VBP)** is a strategic approach that anchors prices to the *perceived value* customers receive and their *[willingness‑to‑pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay)*, rather than to *internal costs* or *competitor prices*.
@@ -70,6 +65,11 @@ VBP is necessary because traditional pricing methods often fail to align price w
 
 - **Guiding strategy and innovation:**
   - Value math early in development helps kill weak concepts and design products around feasible price points.
+
+## Key Facts
+- +8.7% profit: A 1% increase in average price can translate into an 8.7% to 10.29% increase in operating profit for a typical large company. ([McKinsey (2014)](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-big-data-to-make-better-pricing-decisions))
+- 150 industrial firms: In a study of 150 industrial firms, profitability was positively affected by customer-value-based pricing strategies and high price levels. ([Revista de Administração (2017)](https://doi.org/10.1016/j.rausp.2016.12.004))
+- 5% of cases: Only ~5% of new‑product business cases explicitly include [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) inputs—teams often guess revenue. ([Monetizing Innovation (2016)](https://books.google.com/books/about/Monetizing_Innovation.html?id=XKUtCwAAQBAJ))
 
 ## How do you implement value-based pricing step-by-step?
 
