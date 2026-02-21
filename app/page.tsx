@@ -1,4 +1,3 @@
-import TestimonialCard from '@/components/TestimonialCard'
 import HeroStackedImages from '@/components/HeroStackedImages'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -269,15 +268,15 @@ export default function Home() {
           <div className="max-w-6xl w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-4 mb-8 sm:mb-10">
             {/* Card 1: Pricing & Monetization Sprint */}
             <Link href="/consulting/services/pricing-monetization-sprint" className="block group">
-              <div 
-                className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
-                style={{
-                  backgroundImage: 'url(/images/S-4.webp)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat'
-                }}
-              >
+              <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]">
+                <Image
+                  src="/images/S-4.webp"
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 92vw"
+                  loading="lazy"
+                />
                 {/* Dark overlay for better text readability */}
                 <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
                 
@@ -305,15 +304,15 @@ export default function Home() {
 
             {/* Card 2: Metrics & Experimentation Sprint */}
             <Link href="/consulting/services/metrics-experimentation-sprint" className="block group">
-              <div 
-                className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
-                style={{
-                  backgroundImage: 'url(/images/metrics.webp)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat'
-                }}
-              >
+              <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]">
+                <Image
+                  src="/images/metrics.webp"
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 92vw"
+                  loading="lazy"
+                />
                 {/* Dark overlay for better text readability */}
                 <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
                 
@@ -341,15 +340,15 @@ export default function Home() {
 
             {/* Card 3: Fractional Chief Economist */}
             <Link href="/consulting/services/on-call-economist-retainer" className="block group">
-              <div 
-                className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]"
-                style={{
-                  backgroundImage: 'url(/images/P-2.webp)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat'
-                }}
-              >
+              <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]">
+                <Image
+                  src="/images/P-2.webp"
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 92vw"
+                  loading="lazy"
+                />
                 {/* Dark overlay for better text readability */}
                 <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
                 

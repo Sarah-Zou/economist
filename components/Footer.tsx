@@ -34,7 +34,7 @@ const Footer = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="bg-white text-[#111] px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-sm sm:text-base font-medium shadow-sm border border-[#eee] hover:bg-[#ff5722] hover:text-white transition-colors"
+                className="bg-white text-[#111] px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-sm sm:text-base font-medium shadow-sm border border-[#eee] hover:bg-[#c2410c] hover:text-white transition-colors"
               >
                 {link.label}
               </Link>
@@ -48,10 +48,10 @@ const Footer = () => {
           <div className="max-w-md w-full flex flex-col items-center md:items-end">
             <div className="font-bold text-base sm:text-lg mb-3 text-[#111]">Connect with me</div>
             <div className="flex gap-3 sm:gap-4">
-              <a href="mailto:hello@sarahzou.com" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e44e1f] font-medium text-base sm:text-lg" target="_blank" rel="noopener noreferrer">
+              <a href="mailto:hello@sarahzou.com" className="inline-flex items-center gap-2 text-[#c2410c] hover:text-[#9a3412] font-medium text-base sm:text-lg" target="_blank" rel="noopener noreferrer">
                 <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
               </a>
-              <a href="https://www.linkedin.com/in/drsarahzou" className="inline-flex items-center gap-2 text-[#ff5722] hover:text-[#e44e1f] font-medium text-base sm:text-lg" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/drsarahzou" className="inline-flex items-center gap-2 text-[#c2410c] hover:text-[#9a3412] font-medium text-base sm:text-lg" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
               </a>
             </div>

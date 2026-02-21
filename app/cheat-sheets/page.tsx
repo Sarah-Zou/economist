@@ -52,7 +52,7 @@ export default function CheatSheetsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               {/* Signup box */}
               <div className="flex flex-col items-center md:items-start w-full">
-                <h3 className="text-2xl sm:text-[28px] font-semibold mb-4 text-[#ff5722] text-left w-full">Get the Free Roadmap</h3>
+                <h3 className="text-2xl sm:text-[28px] font-semibold mb-4 text-[#c2410c] text-left w-full">Get the Free Roadmap</h3>
                 <div className="w-full flex justify-center md:justify-start mb-8">
                   <iframe
                     src="https://sarahzou.substack.com/embed"
@@ -89,11 +89,11 @@ export default function CheatSheetsPage() {
               Everything you need to build a value-based, investor-grade pricing strategy from the ground up.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-lg p-6 shadow-sm border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
+              <div className="bg-white rounded-lg p-6 shadow-sm border border-[#e2e6ea] hover:border-[#c2410c] transition-colors">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 rounded-lg bg-[#ff5722]/10 flex items-center justify-center">
-                      <BookOpen className="h-6 w-6 text-[#ff5722]" />
+                      <BookOpen className="h-6 w-6 text-[#c2410c]" />
                     </div>
                   </div>
                   <div className="flex-1">
@@ -104,11 +104,11 @@ export default function CheatSheetsPage() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-lg p-6 shadow-sm border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
+              <div className="bg-white rounded-lg p-6 shadow-sm border border-[#e2e6ea] hover:border-[#c2410c] transition-colors">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 rounded-lg bg-[#ff5722]/10 flex items-center justify-center">
-                      <Users className="h-6 w-6 text-[#ff5722]" />
+                      <Users className="h-6 w-6 text-[#c2410c]" />
                     </div>
                   </div>
                   <div className="flex-1">
@@ -119,11 +119,11 @@ export default function CheatSheetsPage() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-lg p-6 shadow-sm border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
+              <div className="bg-white rounded-lg p-6 shadow-sm border border-[#e2e6ea] hover:border-[#c2410c] transition-colors">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 rounded-lg bg-[#ff5722]/10 flex items-center justify-center">
-                      <Network className="h-6 w-6 text-[#ff5722]" />
+                      <Network className="h-6 w-6 text-[#c2410c]" />
                     </div>
                   </div>
                   <div className="flex-1">
@@ -134,11 +134,11 @@ export default function CheatSheetsPage() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-lg p-6 shadow-sm border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
+              <div className="bg-white rounded-lg p-6 shadow-sm border border-[#e2e6ea] hover:border-[#c2410c] transition-colors">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 rounded-lg bg-[#ff5722]/10 flex items-center justify-center">
-                      <Tag className="h-6 w-6 text-[#ff5722]" />
+                      <Tag className="h-6 w-6 text-[#c2410c]" />
                     </div>
                   </div>
                   <div className="flex-1">
@@ -149,11 +149,11 @@ export default function CheatSheetsPage() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:border-[#ff5722] transition-colors md:col-span-2 max-w-2xl mx-auto">
+              <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:border-[#c2410c] transition-colors md:col-span-2 max-w-2xl mx-auto">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 rounded-lg bg-[#ff5722]/10 flex items-center justify-center">
-                      <Calendar className="h-6 w-6 text-[#ff5722]" />
+                      <Calendar className="h-6 w-6 text-[#c2410c]" />
                     </div>
                   </div>
                   <div className="flex-1">

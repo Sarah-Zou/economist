@@ -12,7 +12,7 @@ export default function PricingWikiNotFound() {
         </p>
         <Link
           href="/wiki/pricing"
-          className="inline-block bg-[#ff5722] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#e64a19] transition-colors"
+          className="inline-block bg-[#c2410c] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#9a3412] transition-colors"
         >
           Go to Pricing Wiki
         </Link>

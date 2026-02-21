@@ -128,12 +128,12 @@ export default function WikiPricingPage() {
 
             {/* Stats */}
             <div className="flex flex-wrap gap-6 mt-8">
-              <div className="bg-white rounded-lg px-6 py-4 border border-[#e2e6ea] shadow-sm hover:border-[#ff5722] transition-colors">
-                <div className="text-2xl font-bold text-[#ff5722]">{categoriesWithContent.length}</div>
+              <div className="bg-white rounded-lg px-6 py-4 border border-[#e2e6ea] shadow-sm hover:border-[#c2410c] transition-colors">
+                <div className="text-2xl font-bold text-[#c2410c]">{categoriesWithContent.length}</div>
                 <div className="text-sm text-[#3b4652]">Active Categories</div>
               </div>
-              <div className="bg-white rounded-lg px-6 py-4 border border-[#e2e6ea] shadow-sm hover:border-[#ff5722] transition-colors">
-                <div className="text-2xl font-bold text-[#ff5722]">{totalConcepts}</div>
+              <div className="bg-white rounded-lg px-6 py-4 border border-[#e2e6ea] shadow-sm hover:border-[#c2410c] transition-colors">
+                <div className="text-2xl font-bold text-[#c2410c]">{totalConcepts}</div>
                 <div className="text-sm text-[#3b4652]">Concepts Available</div>
               </div>
             </div>
@@ -145,7 +145,7 @@ export default function WikiPricingPage() {
               <input
                 type="text"
                 placeholder="Search pricing concepts..."
-                className="w-full px-4 py-3 border border-[#e2e6ea] rounded-lg focus:ring-2 focus:ring-[#ff5722] focus:border-transparent bg-white hover:border-[#ff5722] transition-colors"
+                className="w-full px-4 py-3 border border-[#e2e6ea] rounded-lg focus:ring-2 focus:ring-[#ff5722] focus:border-transparent bg-white hover:border-[#c2410c] transition-colors"
                 disabled
               />
               <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
@@ -180,7 +180,7 @@ export default function WikiPricingPage() {
                       image={category.image}
                     />
                     {category.conceptCount > 0 && (
-                      <div className="absolute top-3 right-3 bg-[#ff5722] text-white text-xs font-semibold px-2 py-1 rounded-full">
+                      <div className="absolute top-3 right-3 bg-[#c2410c] text-white text-xs font-semibold px-2 py-1 rounded-full">
                         {category.conceptCount} {category.conceptCount === 1 ? 'concept' : 'concepts'}
                       </div>
                     )}
@@ -204,9 +204,9 @@ export default function WikiPricingPage() {
                 Browse concepts alphabetically or by topic area. 
                 This section will be expanded as we add more detailed content to each category.
               </p>
-              <div className="bg-[#f6f7f9] rounded-lg p-6 border border-[#e2e6ea] hover:border-[#ff5722] transition-colors">
+              <div className="bg-[#f6f7f9] rounded-lg p-6 border border-[#e2e6ea] hover:border-[#c2410c] transition-colors">
                 <div className="flex items-center gap-3">
-                  <svg className="w-6 h-6 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-[#c2410c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                   <p className="text-sm text-[#3b4652] font-medium">

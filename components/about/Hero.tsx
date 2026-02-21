@@ -31,7 +31,7 @@ export default function Hero({ name, title, intro, badge, images }: HeroProps) {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-sm font-medium text-[#ff5722] uppercase tracking-wide"
+              className="text-sm font-medium text-[#c2410c] uppercase tracking-wide"
             >
               {badge}
             </motion.div>

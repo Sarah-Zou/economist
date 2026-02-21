@@ -44,7 +44,7 @@ function CopyButton({ text, label }: { text: string; label: string }) {
     <button
       type="button"
       onClick={copy}
-      className="inline-flex items-center gap-1.5 text-xs text-[#ff5722] hover:text-[#e44e1f] font-medium"
+      className="inline-flex items-center gap-1.5 text-xs text-[#c2410c] hover:text-[#9a3412] font-medium"
       aria-label={label}
     >
       {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
@@ -61,7 +61,7 @@ export default function CiteThisPage({ canonicalUrl, title, categoryTitle, lastU
   return (
     <div className="border border-[#e5e7eb] rounded-lg bg-[#fafafa] p-4 mt-6 overflow-hidden">
       <h3 className="text-sm font-semibold text-[#1f2933] uppercase tracking-wide mb-3 flex items-center gap-2">
-        <Quote className="w-4 h-4 text-[#ff5722]" />
+        <Quote className="w-4 h-4 text-[#c2410c]" />
         How to cite this page
       </h3>
 
@@ -71,7 +71,7 @@ export default function CiteThisPage({ canonicalUrl, title, categoryTitle, lastU
           <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-3 min-w-0">
             <a
               href={canonicalUrl}
-              className="text-[#ff5722] hover:underline break-words min-w-0"
+              className="text-[#c2410c] hover:underline break-words min-w-0"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -93,7 +93,7 @@ export default function CiteThisPage({ canonicalUrl, title, categoryTitle, lastU
           <button
             type="button"
             onClick={() => setShowBibTeX(!showBibTeX)}
-            className="inline-flex items-center gap-1 text-xs font-medium text-[#ff5722] hover:text-[#e44e1f]"
+            className="inline-flex items-center gap-1 text-xs font-medium text-[#c2410c] hover:text-[#9a3412]"
           >
             {showBibTeX ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
             {showBibTeX ? 'Hide' : 'Show'} BibTeX

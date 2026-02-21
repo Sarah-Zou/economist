@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { primaryButton } from '@/lib/brandStyles'
 
 interface ContactCTAProps {
   variant?: 'section' | 'inline'
@@ -10,7 +11,7 @@ const ContactCTA = ({ variant = 'section' }: ContactCTAProps) => {
     return (
       <div className="text-center">
         <Link href="/contact">
-          <Button className="bg-accent hover:bg-accent/90 text-white rounded-full px-6 py-3 focus:ring-2 focus:ring-[#ff5722]">
+          <Button className={`${primaryButton} h-auto px-6 py-3`}>
             Get in touch
           </Button>
         </Link>
@@ -29,7 +30,7 @@ const ContactCTA = ({ variant = 'section' }: ContactCTAProps) => {
             Let's work together to optimize your pricing, improve your metrics, and scale your business with confidence.
           </p>
           <Link href="/contact">
-            <Button className="bg-accent hover:bg-accent/90 text-white rounded-full px-6 py-3 focus:ring-2 focus:ring-[#ff5722]">
+            <Button className={`${primaryButton} h-auto px-6 py-3`}>
               Get in touch
             </Button>
           </Link>

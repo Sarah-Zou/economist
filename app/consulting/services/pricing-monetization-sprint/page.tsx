@@ -67,25 +67,25 @@ export default function PricingDiagnosticRevenueBoost() {
         <div className="flex flex-wrap gap-3 mb-12 justify-center">
           <a
             href="#key-benefits"
-            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
+            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#c2410c] hover:text-[#c2410c] transition-colors cursor-pointer active:scale-95"
           >
             Outcomes
           </a>
           <a
             href="#cadence"
-            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
+            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#c2410c] hover:text-[#c2410c] transition-colors cursor-pointer active:scale-95"
           >
             How it works
           </a>
           <a
             href="#pricing"
-            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
+            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#c2410c] hover:text-[#c2410c] transition-colors cursor-pointer active:scale-95"
           >
             Pricing
           </a>
           <a
             href="#faq"
-            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
+            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#c2410c] hover:text-[#c2410c] transition-colors cursor-pointer active:scale-95"
           >
             FAQ
           </a>
@@ -190,7 +190,7 @@ export default function PricingDiagnosticRevenueBoost() {
                   {[
                     { 
                       icon: (
-                        <svg className="w-5 h-5 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[#c2410c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>
                       ),
@@ -198,7 +198,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     },
                     { 
                       icon: (
-                        <svg className="w-5 h-5 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[#c2410c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                         </svg>
                       ),
@@ -206,7 +206,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     },
                     { 
                       icon: (
-                        <svg className="w-5 h-5 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[#c2410c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
                         </svg>
                       ),
@@ -214,7 +214,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     },
                     { 
                       icon: (
-                        <svg className="w-5 h-5 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[#c2410c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                         </svg>
                       ),
@@ -222,7 +222,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     },
                     { 
                       icon: (
-                        <svg className="w-5 h-5 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[#c2410c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                         </svg>
                       ),
@@ -230,7 +230,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     },
                     { 
                       icon: (
-                        <svg className="w-5 h-5 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[#c2410c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                       ),
@@ -267,7 +267,7 @@ export default function PricingDiagnosticRevenueBoost() {
                 ].map((step, idx) => (
                   <div key={idx} className="relative z-10 flex flex-col items-center text-center">
                     <div className="bg-[#ff5722] rounded-full w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 flex items-center justify-center shadow-lg">
-                      <span className="text-xs sm:text-sm font-bold text-white text-center leading-tight px-2">
+                      <span className="text-[13px] sm:text-[14px] font-extrabold text-[#1f2933] text-center leading-tight px-2">
                         Day {step.day}<br/>{step.name}
                       </span>
                     </div>
@@ -301,13 +301,13 @@ export default function PricingDiagnosticRevenueBoost() {
                     <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Cost</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">$0 (Lost Revenue)</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">$150k+/yr</td>
-                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-[#ff5722] font-semibold text-sm sm:text-base md:text-[17px] text-center">$5k-$18k</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-[#c2410c] font-semibold text-sm sm:text-base md:text-[17px] text-center">$5k-$18k</td>
                   </tr>
                   <tr className="border-b border-[#e5e7eb]">
                     <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Time to Value</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">Never</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">3-6+ Months</td>
-                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-[#ff5722] font-semibold text-sm sm:text-base md:text-[17px] text-center">1-2 Weeks</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-[#c2410c] font-semibold text-sm sm:text-base md:text-[17px] text-center">1-2 Weeks</td>
                   </tr>
                   <tr className="border-b border-[#e5e7eb]">
                     <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Expertise</td>
@@ -355,7 +355,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Risk</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">High</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">High</td>
-                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-[#ff5722] font-semibold text-sm sm:text-base md:text-[17px] rounded-b-lg text-center">Zero (Guaranteed)</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-[#c2410c] font-semibold text-sm sm:text-base md:text-[17px] rounded-b-lg text-center">Zero (Guaranteed)</td>
                   </tr>
                 </tbody>
               </table>
@@ -393,7 +393,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     duration: '/ 1 wk',
                     description: 'Early-revenue startups (pilots to ~$1M ARR) with weak yield needing value metric validation, tier refinement, and first pricing experiment.',
                     buttonText: 'Get Started',
-                    buttonStyle: 'bg-[#ff5722] text-white hover:bg-[#e44e1f]',
+                    buttonStyle: 'bg-[#ff5722] text-white hover:bg-[#e64a19]',
                     features: [
                       { text: <>2x60 min <strong>Workshops</strong></>, included: true },
                       { text: <>12-18 pp <strong>Strategy Report</strong></>, included: true },
@@ -427,7 +427,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     className="bg-white rounded-lg border-2 border-[#e5e7eb] shadow-sm p-6 flex flex-col"
                   >
                     <div className="mb-6">
-                      <h4 className="font-serif-playfair text-2xl font-bold text-[#ff5722] mb-3 text-left">{tier.name}</h4>
+                      <h4 className="font-serif-playfair text-2xl font-bold text-[#c2410c] mb-3 text-left">{tier.name}</h4>
                       <div className="mb-2 text-left">
                         <span className="text-3xl font-bold text-[#1f2933]">{tier.price}</span>
                         <span className="text-sm text-[#3b4652] ml-1">{tier.duration}</span>
@@ -477,7 +477,7 @@ export default function PricingDiagnosticRevenueBoost() {
                   title: 'Customer Value Research Pack', 
                   desc: 'Interviews/survey to de-risk pricing assumptions',
                   icon: (
-                    <svg className="w-6 h-6 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#c2410c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                   )
@@ -486,7 +486,7 @@ export default function PricingDiagnosticRevenueBoost() {
                   title: 'Pricing Page Wireframe + Comms Pack', 
                   desc: 'Web copy, emails, in-app modals',
                   icon: (
-                    <svg className="w-6 h-6 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#c2410c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                   )
@@ -495,7 +495,7 @@ export default function PricingDiagnosticRevenueBoost() {
                   title: 'Experiment Run Support (4 weeks)', 
                   desc: 'Stand-up tests, analyze, iterate',
                   icon: (
-                    <svg className="w-6 h-6 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#c2410c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                     </svg>
                   )
@@ -592,7 +592,7 @@ export default function PricingDiagnosticRevenueBoost() {
               Prefer email? Send a Message
             </h2>
             <p className="text-sm text-[#3b4652] text-center mb-4">
-              Expect a reply in 1–2 business days. Want a faster answer? <Link href="/book" className="text-[#ff5722] hover:underline font-medium">Book a 15-min call</Link>
+              Expect a reply in 1–2 business days. Want a faster answer? <Link href="/book" className="text-[#c2410c] hover:underline font-medium">Book a 15-min call</Link>
             </p>
             <ContactForm />
           </div>
@@ -605,13 +605,13 @@ export default function PricingDiagnosticRevenueBoost() {
         <div className="max-w-7xl mx-auto px-4 py-3 flex gap-3">
           <Link
             href="/book"
-            className="flex-1 bg-[#ff5722] hover:bg-[#e64a19] text-white font-bold px-4 py-3 rounded-lg text-center transition-colors shadow-sm"
+            className="flex-1 bg-[#ff5722] hover:bg-[#9a3412] text-white text-[19px] font-bold px-4 py-3 rounded-lg text-center transition-colors shadow-sm"
           >
             Book Free Consult
           </Link>
           <Link
             href="/contact"
-            className="flex-1 bg-transparent border-2 border-[#ff5722] text-[#ff5722] hover:bg-[#ff5722] hover:text-white font-bold px-4 py-3 rounded-lg text-center transition-colors"
+            className="flex-1 bg-transparent border-2 border-[#ff5722] text-[#c2410c] hover:bg-[#c2410c] hover:text-white font-bold px-4 py-3 rounded-lg text-center transition-colors"
           >
             Send a message
           </Link>

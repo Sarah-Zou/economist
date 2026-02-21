@@ -313,7 +313,7 @@ function SnapshotTopCard({ snapshot }: { snapshot: SnapshotData }) {
             <ul className="space-y-2">
               {snapshot.keyTakeaways.map((takeaway, index) => (
                 <li key={index} className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] flex items-start gap-2">
-                  <CheckCircle className="w-4 h-4 text-[#ff5722] mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#c2410c] mt-1 flex-shrink-0" />
                   <span>
                     <ReactMarkdown
                       remarkPlugins={[remarkGfm]}
@@ -608,7 +608,7 @@ function createMarkdownComponents() {
     
     return (
       <h2 id={id} className="group font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-[4.5rem] scroll-mt-24 flex items-center gap-3">
-        {Icon && <Icon className="w-6 h-6 text-[#ff5722] flex-shrink-0" />}
+        {Icon && <Icon className="w-6 h-6 text-[#c2410c] flex-shrink-0" />}
         <span>{text}</span>
         <a
           href={`#${id}`}
@@ -667,7 +667,7 @@ function createMarkdownComponents() {
     
     return (
       <h3 id={id} className="group font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-4 mt-8 scroll-mt-24 flex items-center gap-2">
-        {Icon && <Icon className="w-5 h-5 text-[#ff5722] flex-shrink-0" />}
+        {Icon && <Icon className="w-5 h-5 text-[#c2410c] flex-shrink-0" />}
         <span>{text}</span>
         <a
           href={`#${id}`}
@@ -685,7 +685,7 @@ function createMarkdownComponents() {
       return (
         <Link 
           href={href}
-          className="text-[#ff5722] hover:underline font-medium"
+          className="text-[#c2410c] hover:underline font-medium"
           {...props}
         />
       );
@@ -693,7 +693,7 @@ function createMarkdownComponents() {
     return (
       <a
         href={href}
-        className="text-[#ff5722] hover:underline"
+        className="text-[#c2410c] hover:underline"
         target={href?.startsWith('http') ? '_blank' : undefined}
         rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
         {...props}
@@ -1009,7 +1009,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                     {index > 0 && <span className="mx-2">/</span>}
                     <Link 
                       href={crumb.url}
-                      className="hover:text-[#ff5722] hover:underline"
+                      className="hover:text-[#c2410c] hover:underline"
                     >
                       {crumb.name}
                     </Link>
@@ -1057,7 +1057,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                           <p className="text-xs font-semibold text-[#3b4652] uppercase tracking-wide mb-2">Category</p>
                           <Link 
                             href={`/wiki/pricing/${category.slug}`}
-                            className="text-sm text-[#ff5722] hover:underline font-medium"
+                            className="text-sm text-[#c2410c] hover:underline font-medium"
                           >
                             {category.title}
                           </Link>
@@ -1121,7 +1121,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                       return (
                         <Link
                           href={href}
-                          className="text-[#ff5722] hover:underline font-medium not-italic"
+                          className="text-[#c2410c] hover:underline font-medium not-italic"
                           {...props}
                         />
                       );
@@ -1129,7 +1129,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                     return (
                       <a
                         href={href}
-                        className="text-[#ff5722] hover:underline not-italic"
+                        className="text-[#c2410c] hover:underline not-italic"
                         target={href?.startsWith('http') ? '_blank' : undefined}
                         rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                         {...props}
@@ -1220,7 +1220,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                 <div key={index} className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
                                   <div className="flex items-center gap-3 mb-4">
                                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#f6f7f9] flex-shrink-0">
-                                      <Icon className="w-6 h-6 text-[#ff5722]" />
+                                      <Icon className="w-6 h-6 text-[#c2410c]" />
                                     </div>
                                     {fact.title && (
                                       <h3 className="text-lg font-semibold text-[#1f2933]">
@@ -1243,7 +1243,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                           a: ({ node, href, ...props }) => (
                                             <a
                                               href={href}
-                                              className="text-[#ff5722] hover:underline font-medium"
+                                              className="text-[#c2410c] hover:underline font-medium"
                                               target={href?.startsWith('http') ? '_blank' : undefined}
                                               rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                                               {...props}
@@ -1257,7 +1257,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                     {fact.sourceUrl && (
                                       <a
                                         href={fact.sourceUrl}
-                                        className="text-[#ff5722] hover:underline font-medium text-sm mt-2 block"
+                                        className="text-[#c2410c] hover:underline font-medium text-sm mt-2 block"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                       >
@@ -1311,7 +1311,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                       return (
                                         <Link 
                                           href={href}
-                                          className="text-[#ff5722] hover:underline font-medium"
+                                          className="text-[#c2410c] hover:underline font-medium"
                                           {...props}
                                         />
                                       );
@@ -1319,7 +1319,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                     return (
                                       <a
                                         href={href}
-                                        className="text-[#ff5722] hover:underline"
+                                        className="text-[#c2410c] hover:underline"
                                         target={href?.startsWith('http') ? '_blank' : undefined}
                                         rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                                         {...props}
@@ -1373,7 +1373,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                               return (
                                                 <Link 
                                                   href={href}
-                                                  className="text-[#ff5722] hover:underline font-medium"
+                                                  className="text-[#c2410c] hover:underline font-medium"
                                                   {...props}
                                                 />
                                               );
@@ -1381,7 +1381,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                             return (
                                               <a
                                                 href={href}
-                                                className="text-[#ff5722] hover:underline"
+                                                className="text-[#c2410c] hover:underline"
                                                 target={href?.startsWith('http') ? '_blank' : undefined}
                                                 rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                                                 {...props}
@@ -1417,7 +1417,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                       return (
                                         <Link 
                                           href={href}
-                                          className="text-[#ff5722] hover:underline font-medium"
+                                          className="text-[#c2410c] hover:underline font-medium"
                                           {...props}
                                         />
                                       );
@@ -1425,7 +1425,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                     return (
                                       <a
                                         href={href}
-                                        className="text-[#ff5722] hover:underline"
+                                        className="text-[#c2410c] hover:underline"
                                         target={href?.startsWith('http') ? '_blank' : undefined}
                                         rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                                         {...props}
@@ -1515,7 +1515,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                               return (
                                 <div key={index} className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
                                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#f6f7f9] mb-4">
-                                    <Icon className="w-6 h-6 text-[#ff5722]" />
+                                    <Icon className="w-6 h-6 text-[#c2410c]" />
                                   </div>
                                   <h3 className="text-xl font-bold text-[#1f2933] mb-2">
                                     {metric.title}
@@ -1530,7 +1530,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                         a: ({ node, href, ...props }) => (
                                           <a
                                             href={href}
-                                            className="text-[#ff5722] hover:underline font-medium"
+                                            className="text-[#c2410c] hover:underline font-medium"
                                             target={href?.startsWith('http') ? '_blank' : undefined}
                                             rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                                             {...props}
@@ -1622,7 +1622,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                           return (
               <Link 
                                               href={href}
-                                              className="text-[#ff5722] hover:underline font-medium"
+                                              className="text-[#c2410c] hover:underline font-medium"
                                               {...props}
                                             />
                                           );
@@ -1630,7 +1630,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                         return (
                                           <a
                                             href={href}
-                                            className="text-[#ff5722] hover:underline"
+                                            className="text-[#c2410c] hover:underline"
                                             target={href?.startsWith('http') ? '_blank' : undefined}
                                             rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                                             {...props}
@@ -1674,7 +1674,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                               <li key={`${ref.url}-${index}`} className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
                                 <a
                                   href={ref.url}
-                                  className="text-[#ff5722] hover:underline font-medium"
+                                  className="text-[#c2410c] hover:underline font-medium"
                                   target="_blank"
                                   rel="noopener noreferrer"
                                 >
@@ -1739,13 +1739,13 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
         <div className="max-w-[90rem] mx-auto px-4 py-3 flex gap-3">
           <Link
             href="/book"
-            className="flex-1 bg-[#ff5722] hover:bg-[#e64a19] text-white font-bold px-4 py-3 rounded-lg text-center transition-colors shadow-sm"
+            className="flex-1 bg-[#ff5722] hover:bg-[#9a3412] text-white font-bold px-4 py-3 rounded-lg text-center transition-colors shadow-sm"
           >
             Book Free Consult
           </Link>
           <Link
             href="/contact"
-            className="flex-1 bg-transparent border-2 border-[#ff5722] text-[#ff5722] hover:bg-[#ff5722] hover:text-white font-bold px-4 py-3 rounded-lg text-center transition-colors"
+            className="flex-1 bg-transparent border-2 border-[#ff5722] text-[#c2410c] hover:bg-[#c2410c] hover:text-white font-bold px-4 py-3 rounded-lg text-center transition-colors"
           >
             Send a message
           </Link>

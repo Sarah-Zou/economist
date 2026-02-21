@@ -127,7 +127,7 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
           <Link
             href="/book"
             rel="noopener noreferrer"
-            className="inline-block bg-[#ff5722] text-white px-8 py-4 rounded-lg text-lg font-bold shadow hover:bg-[#e64a19] transition"
+            className="inline-block bg-[#c2410c] text-white px-8 py-4 rounded-lg text-lg font-bold shadow hover:bg-[#9a3412] transition"
           >
             Book a Free Consultation
           </Link>

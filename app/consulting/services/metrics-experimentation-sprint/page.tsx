@@ -67,25 +67,25 @@ export default function MetricsExperimentationSprint() {
         <div className="flex flex-wrap gap-3 mb-12 justify-center">
           <a
             href="#key-benefits"
-            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
+            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#c2410c] hover:text-[#c2410c] transition-colors cursor-pointer active:scale-95"
           >
             Outcomes
           </a>
           <a
             href="#cadence"
-            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
+            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#c2410c] hover:text-[#c2410c] transition-colors cursor-pointer active:scale-95"
           >
             How it works
           </a>
           <a
             href="#pricing"
-            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
+            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#c2410c] hover:text-[#c2410c] transition-colors cursor-pointer active:scale-95"
           >
             Pricing
           </a>
           <a
             href="#faq"
-            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#ff5722] hover:text-[#ff5722] transition-colors cursor-pointer active:scale-95"
+            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#c2410c] hover:text-[#c2410c] transition-colors cursor-pointer active:scale-95"
           >
             FAQ
           </a>
@@ -224,7 +224,7 @@ export default function MetricsExperimentationSprint() {
                 ].map((step, idx) => (
                   <div key={idx} className="relative z-10 flex flex-col items-center text-center">
                     <div className="bg-[#ff5722] rounded-full w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 flex items-center justify-center shadow-lg">
-                      <span className="text-xs sm:text-sm font-bold text-white text-center leading-tight px-2">
+                      <span className="text-[13px] sm:text-[14px] font-extrabold text-[#1f2933] text-center leading-tight px-2">
                         Day {step.day}<br/>{step.name}
                       </span>
                     </div>
@@ -258,13 +258,13 @@ export default function MetricsExperimentationSprint() {
                     <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Cost</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">$0 (but lost revenue)</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">$120k+ / yr</td>
-                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-[#ff5722] font-semibold text-sm sm:text-base md:text-[17px] text-center">$6k–$12k</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-[#c2410c] font-semibold text-sm sm:text-base md:text-[17px] text-center">$6k–$12k</td>
                   </tr>
                   <tr className="border-b border-[#e5e7eb]">
                     <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Time to Value</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">Never</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">2–3 months</td>
-                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-[#ff5722] font-semibold text-sm sm:text-base md:text-[17px] text-center">5–10 business days</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-[#c2410c] font-semibold text-sm sm:text-base md:text-[17px] text-center">5–10 business days</td>
                   </tr>
                   <tr className="border-b border-[#e5e7eb]">
                     <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Expertise</td>
@@ -312,7 +312,7 @@ export default function MetricsExperimentationSprint() {
                     <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Risk</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">High</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">High</td>
-                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-[#ff5722] font-semibold text-sm sm:text-base md:text-[17px] rounded-b-lg text-center">Zero (Guaranteed)</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-[#c2410c] font-semibold text-sm sm:text-base md:text-[17px] rounded-b-lg text-center">Zero (Guaranteed)</td>
                   </tr>
                 </tbody>
               </table>
@@ -348,7 +348,7 @@ export default function MetricsExperimentationSprint() {
                     duration: '/ 1 wk',
                     description: 'Early-revenue teams needing aligned metrics, two tests, and a weekly decision cadence.',
                     buttonText: 'Choose Plan',
-                    buttonStyle: 'bg-[#ff5722] text-white hover:bg-[#e44e1f]',
+                    buttonStyle: 'bg-[#ff5722] text-white hover:bg-[#e64a19]',
                     features: [
                       { text: <>2×60-min <strong>workshops</strong></>, included: true },
                       { text: <><strong>KPI tree + glossary + thresholds</strong></>, included: true },
@@ -382,7 +382,7 @@ export default function MetricsExperimentationSprint() {
                     className="bg-white rounded-lg border-2 border-[#e5e7eb] shadow-sm p-6 flex flex-col"
                   >
                     <div className="mb-6">
-                      <h4 className="font-serif-playfair text-2xl font-bold text-[#ff5722] mb-3 text-left">{tier.name}</h4>
+                      <h4 className="font-serif-playfair text-2xl font-bold text-[#c2410c] mb-3 text-left">{tier.name}</h4>
                       <div className="mb-2 text-left">
                         <span className="text-3xl font-bold text-[#1f2933]">{tier.price}</span>
                         <span className="text-sm text-[#3b4652] ml-1">{tier.duration}</span>
@@ -432,7 +432,7 @@ export default function MetricsExperimentationSprint() {
                   title: 'Light Instrumentation Support', 
                   desc: 'GTM/GA/Amplitude/Mixpanel tagging, QA',
                   icon: (
-                    <svg className="w-6 h-6 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#c2410c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
@@ -442,7 +442,7 @@ export default function MetricsExperimentationSprint() {
                   title: 'Survey / In-product Feedback Setup', 
                   desc: 'NPS, JTBD prompts, pricing probe',
                   icon: (
-                    <svg className="w-6 h-6 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#c2410c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                   )
@@ -451,7 +451,7 @@ export default function MetricsExperimentationSprint() {
                   title: 'Experiment Run Support (4 weeks)', 
                   desc: 'Launch, monitor, analyze, iterate',
                   icon: (
-                    <svg className="w-6 h-6 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#c2410c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                     </svg>
                   )
@@ -460,7 +460,7 @@ export default function MetricsExperimentationSprint() {
                   title: 'Pricing Variant Pack', 
                   desc: 'Price/pack/plan A/Bs aligned with Pricing & Monetization Sprint',
                   icon: (
-                    <svg className="w-6 h-6 text-[#ff5722]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#c2410c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   )
@@ -549,7 +549,7 @@ export default function MetricsExperimentationSprint() {
               Prefer email? Send a Message
             </h2>
             <p className="text-sm text-[#3b4652] text-center mb-4">
-              Expect a reply in 1–2 business days. Want a faster answer? <Link href="/book" className="text-[#ff5722] hover:underline font-medium">Book a 15-min call</Link> (no prep needed)
+              Expect a reply in 1–2 business days. Want a faster answer? <Link href="/book" className="text-[#c2410c] hover:underline font-medium">Book a 15-min call</Link> (no prep needed)
             </p>
             <ContactForm />
           </div>
@@ -562,13 +562,13 @@ export default function MetricsExperimentationSprint() {
         <div className="max-w-7xl mx-auto px-4 py-3 flex gap-3">
           <Link
             href="/book"
-            className="flex-1 bg-[#ff5722] hover:bg-[#e64a19] text-white font-bold px-4 py-3 rounded-lg text-center transition-colors shadow-sm"
+            className="flex-1 bg-[#ff5722] hover:bg-[#9a3412] text-white text-[19px] font-bold px-4 py-3 rounded-lg text-center transition-colors shadow-sm"
           >
             Book Free Consult
           </Link>
           <Link
             href="/contact"
-            className="flex-1 bg-transparent border-2 border-[#ff5722] text-[#ff5722] hover:bg-[#ff5722] hover:text-white font-bold px-4 py-3 rounded-lg text-center transition-colors"
+            className="flex-1 bg-transparent border-2 border-[#ff5722] text-[#c2410c] hover:bg-[#c2410c] hover:text-white font-bold px-4 py-3 rounded-lg text-center transition-colors"
           >
             Send a message
           </Link>

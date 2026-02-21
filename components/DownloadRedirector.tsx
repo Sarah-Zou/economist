@@ -45,7 +45,7 @@ export default function DownloadRedirector({ download, slug }: { download: Downl
           <p className="text-[#4b636e] mb-4">{error}</p>
           <a 
             href={`/downloads/${download.filename}`} 
-            className="bg-[#ff5722] text-white px-6 py-3 rounded-full hover:bg-[#e64a19] transition-colors"
+            className="bg-[#c2410c] text-white px-6 py-3 rounded-full hover:bg-[#9a3412] transition-colors"
           >
             Try Direct Download
           </a>
@@ -61,7 +61,7 @@ export default function DownloadRedirector({ download, slug }: { download: Downl
         <h1 className="text-xl font-semibold text-[#222] mb-2">Preparing your download...</h1>
         <p className="text-[#4b636e] mb-2">{download.title}</p>
         <p className="text-sm text-[#666] mb-4">Tracking download analytics...</p>
-        <p className="text-sm text-[#666]">If download doesn't start automatically, <a href={`/downloads/${download.filename}`} className="text-[#ff5722] hover:underline">click here</a></p>
+        <p className="text-sm text-[#666]">If download doesn't start automatically, <a href={`/downloads/${download.filename}`} className="text-[#c2410c] hover:underline">click here</a></p>
       </div>
     </div>
   );

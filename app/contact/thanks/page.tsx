@@ -30,7 +30,7 @@ export default function ContactThanksPage() {
         <div className="w-full max-w-2xl bg-white rounded-lg shadow-lg mx-auto p-8 md:p-16">
           <div className="flex flex-col items-center text-center">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-[#ff5722] flex-shrink-0" />
+              <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-[#c2410c] flex-shrink-0" />
               <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold text-[#1f2933]">
                 Thanks —message received
               </h1>

@@ -91,7 +91,7 @@ export default function NewsletterPagePagination({
                 <div className="flex-1 min-w-0">
                   <Link
                     href={`/newsletter/${post.slug}`}
-                    className="block font-bold text-lg text-[#1f2933] hover:text-[#ff5722] mb-1 leading-snug truncate"
+                    className="block font-bold text-lg text-[#1f2933] hover:text-[#c2410c] mb-1 leading-snug truncate"
                   >
                     {post.title}
                   </Link>
@@ -120,7 +120,7 @@ export default function NewsletterPagePagination({
               <div className="flex items-center justify-center gap-2">
                 <Link
                   href={page === 2 ? '/newsletter' : `/newsletter/page/${page - 1}`}
-                  className="px-3 py-1.5 rounded border text-sm bg-white text-[#1f2933] border-[#e2e6ea] hover:border-[#ff5722]"
+                  className="px-3 py-1.5 rounded border text-sm bg-white text-[#1f2933] border-[#e2e6ea] hover:border-[#c2410c]"
                 >
                   Prev
                 </Link>
@@ -130,8 +130,8 @@ export default function NewsletterPagePagination({
                     href={pageNum === 1 ? '/newsletter' : `/newsletter/page/${pageNum}`}
                     className={`px-3 py-1.5 rounded border text-sm ${
                       pageNum === page
-                        ? 'bg-[#ff5722] text-white border-[#ff5722]'
-                        : 'bg-white text-[#1f2933] border-[#e2e6ea] hover:border-[#ff5722]'
+                        ? 'bg-[#c2410c] text-white border-[#ff5722]'
+                        : 'bg-white text-[#1f2933] border-[#e2e6ea] hover:border-[#c2410c]'
                     }`}
                     aria-current={pageNum === page ? 'page' : undefined}
                   >
@@ -143,7 +143,7 @@ export default function NewsletterPagePagination({
                   className={`px-3 py-1.5 rounded border text-sm ${
                     page >= totalPages
                       ? 'bg-[#f6f7f9] text-[#3b4652] border-[#e2e6ea] pointer-events-none'
-                      : 'bg-white text-[#1f2933] border-[#e2e6ea] hover:border-[#ff5722]'
+                      : 'bg-white text-[#1f2933] border-[#e2e6ea] hover:border-[#c2410c]'
                   }`}
                   aria-disabled={page >= totalPages}
                 >

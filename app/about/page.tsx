@@ -640,7 +640,7 @@ export default function About() {
               <Link 
                 key={index} 
                 href={focus.link}
-                className="bg-white rounded-lg p-5 sm:p-6 border border-[#e2e6ea] shadow-sm space-y-3 sm:space-y-4 hover:shadow-md hover:border-[#ff5722] transition-all duration-200 block"
+                className="bg-white rounded-lg p-5 sm:p-6 border border-[#e2e6ea] shadow-sm space-y-3 sm:space-y-4 hover:shadow-md hover:border-[#c2410c] transition-all duration-200 block"
               >
                 <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mb-2">
                   {focus.icon}
@@ -699,7 +699,7 @@ export default function About() {
                 {howWeWork.principles.map((principle, index) => (
                   <div key={principle.number} className="space-y-2">
                     <div className="flex items-start space-x-3 sm:space-x-4">
-                      <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-[#ff5722] text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-semibold">
+                      <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-[#c2410c] text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-semibold">
                         {principle.number}
                       </div>
                       <div className="flex-1">

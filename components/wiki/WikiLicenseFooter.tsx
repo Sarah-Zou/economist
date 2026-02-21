@@ -11,7 +11,7 @@ export default function WikiLicenseFooter() {
             <p className="text-sm text-[#3b4652] leading-relaxed">
               This content is available for reuse with attribution. When referencing or republishing, 
               please credit{' '}
-              <Link href="/about" className="text-[#ff5722] hover:underline font-medium">
+              <Link href="/about" className="text-[#c2410c] hover:underline font-medium">
                 Dr. Sarah Zou
               </Link>
               {' '}and link back to the original source.
@@ -22,7 +22,7 @@ export default function WikiLicenseFooter() {
               href="https://creativecommons.org/licenses/by/4.0/"
               target="_blank"
               rel="noopener noreferrer license"
-              className="inline-flex items-center gap-2 text-sm text-[#3b4652] hover:text-[#ff5722] transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-[#3b4652] hover:text-[#c2410c] transition-colors"
               aria-label="Creative Commons Attribution 4.0 International License"
             >
               <span className="text-2xl" aria-hidden="true">CC</span>
@@ -37,7 +37,7 @@ export default function WikiLicenseFooter() {
             href="https://creativecommons.org/licenses/by/4.0/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#ff5722] hover:underline"
+            className="text-[#c2410c] hover:underline"
           >
             Creative Commons Attribution 4.0 International
           </a>

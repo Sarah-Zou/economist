@@ -38,7 +38,7 @@ export default function Process({ steps }: ProcessProps) {
               >
                 {/* Step Number */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-[#ff5722] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                  <div className="w-16 h-16 bg-[#c2410c] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                     {step.number}
                   </div>
                   {/* Connector Line (hidden on last item) */}

@@ -48,7 +48,7 @@ function ArticleList() {
           <div className="flex-1 min-w-0">
             <Link
               href={`/newsletter/${post.slug}`}
-              className="block font-bold text-lg text-[#1f2933] hover:text-[#ff5722] mb-1 leading-snug truncate"
+              className="block font-bold text-lg text-[#1f2933] hover:text-[#c2410c] mb-1 leading-snug truncate"
             >
               {post.title}
             </Link>
@@ -81,8 +81,8 @@ function ArticleList() {
                 href={pageNum === 1 ? '/newsletter' : `/newsletter/page/${pageNum}`}
                 className={`px-3 py-1.5 rounded border text-sm ${
                   pageNum === 1
-                    ? 'bg-[#ff5722] text-white border-[#ff5722]'
-                    : 'bg-white text-[#1f2933] border-[#e2e6ea] hover:border-[#ff5722]'
+                    ? 'bg-[#c2410c] text-white border-[#ff5722]'
+                    : 'bg-white text-[#1f2933] border-[#e2e6ea] hover:border-[#c2410c]'
                 }`}
                 aria-current={pageNum === 1 ? 'page' : undefined}
               >
@@ -106,7 +106,7 @@ export default function NewsletterPage() {
         </div>
         {/* Right: Signup Box */}
         <div className="flex flex-col items-center md:items-start w-full max-w-lg mx-auto md:sticky md:top-12 h-fit">
-          <h2 className="text-2xl sm:text-[28px] font-semibold text-center text-[#ff5722] mb-4 leading-tight w-full">Subscribe to my weekly newsletter where we deep dive into all things pricing and growth strategies.</h2>
+          <h2 className="text-2xl sm:text-[28px] font-semibold text-center text-[#c2410c] mb-4 leading-tight w-full">Subscribe to my weekly newsletter where we deep dive into all things pricing and growth strategies.</h2>
           <div className="bg-[#f6f7f9] rounded-lg p-6 mb-6 w-full">
             <h3 className="font-semibold text-[20px] mb-3 text-[#1f2933]">What you'll get:</h3>
             <p className="text-[#1f2933] mb-2 text-base sm:text-[17px] leading-[1.65]">• Pricing research, experiments, and benchmarks—1×/week</p>

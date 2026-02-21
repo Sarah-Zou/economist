@@ -76,7 +76,7 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
                         <div className="text-sm text-[#3b4652]">
                           {testimonial.title}
                         </div>
-                        <div className="text-sm text-[#ff5722] font-medium">
+                        <div className="text-sm text-[#c2410c] font-medium">
                           {testimonial.company}
                         </div>
                       </div>
