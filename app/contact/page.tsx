@@ -116,8 +116,9 @@ export default function ContactPage() {
               className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
             />
             <div>
-              <label className="block text-sm font-medium text-[#3b4652] mb-1">Stage & ARR band (optional)</label>
+              <label htmlFor="stage-select" className="block text-sm font-medium text-[#3b4652] mb-1">Stage & ARR band (optional)</label>
               <select
+                id="stage-select"
                 name="stage"
                 className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
               >
@@ -129,8 +130,9 @@ export default function ContactPage() {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-[#3b4652] mb-1">Current pricing model (optional)</label>
+              <label htmlFor="pricing-select" className="block text-sm font-medium text-[#3b4652] mb-1">Current pricing model (optional)</label>
               <select
+                id="pricing-select"
                 name="pricing"
                 className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
               >
@@ -142,8 +144,9 @@ export default function ContactPage() {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-[#3b4652] mb-1">Goal (optional)</label>
+              <label htmlFor="goal-select" className="block text-sm font-medium text-[#3b4652] mb-1">Goal (optional)</label>
               <select
+                id="goal-select"
                 name="goal"
                 className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
               >

@@ -4,6 +4,7 @@ import { getAllCategories } from '@/lib/mdx';
 import WikiLayout from '@/components/wiki/WikiLayout';
 import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter';
 import CategoryCard from '@/components/wiki/CategoryCard';
+import '@/app/prose.css';
 
 export const metadata: Metadata = {
   title: 'Pricing & Monetization Wiki for SaaS & Tech Startups | Sarah Zou',

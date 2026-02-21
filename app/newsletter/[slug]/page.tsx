@@ -6,6 +6,7 @@ import remarkGfm from 'remark-gfm'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Metadata } from 'next'
+import '@/app/prose.css'
 
 export async function generateStaticParams() {
   const posts = getAllPosts()

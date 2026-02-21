@@ -4,6 +4,7 @@ import Link from 'next/link'
 import HeroStackedImages from '@/components/HeroStackedImages'
 import Cta from '@/components/about/Cta'
 import FAQSection from '@/components/about/FAQSection'
+import '@/app/prose.css'
 
 export const metadata: Metadata = {
   title: "About Sarah Zou — Fractional Chief Economist for Tech Startups | Sarah Zou",

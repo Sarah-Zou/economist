@@ -17,6 +17,7 @@ import rehypeRaw from 'rehype-raw';
 import rehypeKatex from 'rehype-katex';
 import { Zap, Info, TrendingUp, Clock, CheckCircle, DollarSign, Users, AlertCircle, TrendingDown, XCircle, ArrowLeftRight, Target, ArrowRight, BarChart, Percent, FileWarning, Activity } from 'lucide-react';
 import Image from 'next/image';
+import '@/app/prose.css';
 
 interface ConceptPageProps {
   params: {

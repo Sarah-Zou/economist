@@ -11,6 +11,7 @@ import { Diamond, Settings, TrendingDown, Grid3x3, AlertTriangle, Lightbulb, Boo
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
+import '@/app/prose.css';
 
 interface CategoryPageProps {
   params: {
