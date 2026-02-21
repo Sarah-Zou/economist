@@ -1,6 +1,8 @@
 'use client'
 
 import React, { useState } from 'react'
+import { primaryButton } from '@/lib/brandStyles'
+import { cn } from '@/lib/utils'
 
 interface ContactFormProps {
   messagePlaceholder?: string
@@ -122,7 +124,7 @@ export default function ContactForm({
         type="submit"
         id="submit-btn"
         disabled={isSubmitting}
-        className="w-full bg-[#ff5722] text-white font-bold py-3 rounded transition-colors hover:bg-[#e44e1f] focus:outline-none focus:ring-2 focus:ring-[#ff5722] tracking-wider text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+        className={cn(primaryButton, 'w-full rounded tracking-wider disabled:opacity-50 disabled:cursor-not-allowed')}
       >
         {buttonText}
       </button>

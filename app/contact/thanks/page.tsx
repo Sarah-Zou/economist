@@ -2,6 +2,8 @@ import React from 'react'
 import { CheckCircle } from 'lucide-react'
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { brandLink, primaryButton } from '@/lib/brandStyles'
+import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: "Thank You | Message Received | Sarah Zou, PhD",
@@ -40,7 +42,7 @@ export default function ContactThanksPage() {
             <div className="w-full space-y-4 mb-8">
               <Link
                 href="/book"
-                className="inline-block bg-[#ff5722] hover:bg-[#e44e1f] text-white font-bold px-8 py-4 rounded-full text-lg transition-colors text-center w-full sm:w-auto"
+                className={cn(primaryButton, 'inline-block px-8 py-4 text-center w-full sm:w-auto')}
               >
                 Book free 15-min consult
               </Link>
@@ -56,7 +58,7 @@ export default function ContactThanksPage() {
             <div className="mt-6">
               <Link
                 href="/"
-                className="text-[#ff5722] hover:text-[#e44e1f] underline text-base"
+                className={cn(brandLink, 'text-base')}
               >
                 Return home
               </Link>

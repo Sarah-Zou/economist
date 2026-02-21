@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
+import { primaryButton } from '@/lib/brandStyles'
+import { cn } from '@/lib/utils'
 
 interface CtaProps {
   title: string
@@ -52,7 +54,7 @@ export default function Cta({ title, description, buttonText, buttonHref }: CtaP
             
             <Link
               href={buttonHref}
-              className="inline-flex items-center px-5 sm:px-6 py-2.5 sm:py-3 bg-[#ff5722] hover:bg-[#e44e1f] text-white font-semibold rounded-lg text-sm sm:text-base transition-all duration-200 hover:shadow-lg"
+              className={cn(primaryButton, 'inline-flex items-center rounded-lg px-5 sm:px-6 py-2.5 sm:py-3 transition-all duration-200 hover:shadow-lg')}
             >
               {buttonText}
               <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

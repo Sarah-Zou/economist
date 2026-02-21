@@ -4,6 +4,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import { cn } from '@/lib/utils'
+import { primaryButton } from '@/lib/brandStyles'
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -14,10 +16,10 @@ const Navbar = () => {
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center gap-4">
             <Image
-              src="/images/EconNova_logo.png"
+              src="/images/econnova-logo-240.webp"
               alt="EconNova Consulting Logo"
-              width={40}
-              height={40}
+              width={122}
+              height={43}
               className="h-10 w-auto"
               priority
             />
@@ -33,7 +35,7 @@ const Navbar = () => {
             <Link href="/contact" className="text-base text-[#3b4652] hover:text-[#1f2933] transition-colors">Contact</Link>
             <Link 
               href="/book"
-              className="bg-[#ff5722] hover:bg-[#e44e1f] text-white font-bold rounded-full px-6 py-3 transition-colors whitespace-nowrap"
+              className={cn(primaryButton, 'whitespace-nowrap')}
             >
               Book Free Consult
             </Link>
@@ -89,7 +91,7 @@ const Navbar = () => {
             </Link>
             <Link 
               href="/book"
-              className="block mx-4 mt-4 bg-[#ff5722] hover:bg-[#e44e1f] text-white font-bold rounded-full px-6 py-3 transition-colors text-center"
+              className={cn(primaryButton, 'block mx-4 mt-4 text-center')}
               onClick={() => setMobileMenuOpen(false)}
             >
               Book Free Consult

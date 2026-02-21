@@ -18,10 +18,10 @@ const Footer = () => {
         <div className="flex-1 flex flex-col items-center md:items-start mb-6 sm:mb-8 md:mb-0">
           <Link href="/" className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
             <Image
-              src="/images/EconNova_logo.png"
+              src="/images/econnova-logo-240.webp"
               alt="EconNova Consulting Logo"
-              width={40}
-              height={40}
+              width={122}
+              height={43}
               className="h-8 sm:h-10 w-auto"
             />
             <div className="flex flex-col">

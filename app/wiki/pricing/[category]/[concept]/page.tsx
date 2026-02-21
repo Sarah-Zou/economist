@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { unstable_noStore } from 'next/cache';
+import 'katex/dist/katex.min.css';
 import { generateTechArticleJsonLd, generateBreadcrumbJsonLd, generateFAQJsonLd } from '@/lib/generateJsonLd';
 import { getCategoryBySlug, getAllCategories, getConceptBySlug } from '@/lib/mdx';
 import { normalizeHeadingText, createUniqueHeadingId, extractNodeText } from '@/lib/wikiHeadingUtils';

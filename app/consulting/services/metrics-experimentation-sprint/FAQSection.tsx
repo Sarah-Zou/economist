@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { brandLink } from '@/lib/brandStyles';
 
 export default function FAQSection() {
   return (
@@ -26,7 +27,7 @@ export default function FAQSection() {
         <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
           <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">What exactly do we get?</h3>
           <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-            Founders + GTM/Product <strong>dashboards</strong>, <strong>KPI glossary + thresholds</strong>, <strong>experiment backlog</strong> and <strong>test briefs</strong>, and a 30-day plan with check-in. See <Link href="/consulting/services/metrics-experimentation-sprint" className="text-[#ff5722] hover:underline">deliverables</Link>.
+            Founders + GTM/Product <strong>dashboards</strong>, <strong>KPI glossary + thresholds</strong>, <strong>experiment backlog</strong> and <strong>test briefs</strong>, and a 30-day plan with check-in. See <Link href="/consulting/services/metrics-experimentation-sprint" className={brandLink}>deliverables</Link>.
           </p>
         </div>
       </div>

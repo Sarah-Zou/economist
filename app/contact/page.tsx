@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
+import { brandLink, outlineButton, primaryButton } from '@/lib/brandStyles'
+import { cn } from '@/lib/utils'
 
 export default function ContactPage() {
   const [status, setStatus] = useState({ message: '', show: false })
@@ -68,13 +70,13 @@ export default function ContactPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link 
               href="/book"
-              className="inline-block bg-[#ff5722] hover:bg-[#e44e1f] text-white font-bold px-8 py-4 rounded-full text-lg transition-colors shadow-lg hover:shadow-xl"
+              className={cn(primaryButton, 'inline-block px-8 py-4 shadow-lg hover:shadow-xl')}
             >
               Book Free Consult
             </Link>
             <button
               onClick={scrollToForm}
-              className="inline-block bg-transparent border-2 border-[#ff5722] text-[#ff5722] hover:bg-[#ff5722] hover:text-white font-bold px-8 py-4 rounded-full text-lg transition-colors"
+              className={cn(outlineButton, 'inline-block border-2 font-bold text-[19px] leading-none px-8 py-4 rounded-full')}
             >
               Send a message instead
             </button>
@@ -89,7 +91,7 @@ export default function ContactPage() {
             Prefer email? Send a Message
           </h2>
           <p className="text-sm text-[#3b4652] text-center mb-4">
-            Expect a reply in 1–2 business days. Want a faster answer? <Link href="/book" className="text-[#ff5722] hover:underline font-medium">Book a 15-min call</Link>
+            Expect a reply in 1–2 business days. Want a faster answer? <Link href="/book" className={cn(brandLink, 'font-medium')}>Book a 15-min call</Link>
           </p>
           <form id="contact-form" onSubmit={handleSubmit} className="space-y-4">
             <input
@@ -164,7 +166,7 @@ export default function ContactPage() {
               type="submit"
               id="submit-btn"
               disabled={isSubmitting}
-              className="w-full bg-[#ff5722] text-white font-bold py-3 rounded transition-colors hover:bg-[#e44e1f] focus:outline-none focus:ring-2 focus:ring-[#ff5722] tracking-wider text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className={cn(primaryButton, 'w-full rounded tracking-wider disabled:opacity-50 disabled:cursor-not-allowed')}
             >
               SUBMIT
             </button>

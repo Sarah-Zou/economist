@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { brandLink } from '@/lib/brandStyles';
 
 export default function FAQSection() {
   return (
@@ -8,7 +9,7 @@ export default function FAQSection() {
         <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
           <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">What's the difference between Starter, Growth, and Scale?</h3>
           <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-            Time/attention and depth. Starter (~0.5 d/wk, $4k/mo) focuses on guidance; Growth (~1 d/wk, $8k/mo) runs active experiments; Scale (~2 d/wk, $15k/mo) handles complex monetization and fundraise prep. See <Link href="/consulting/services/on-call-economist-retainer" className="text-[#ff5722] hover:underline">pricing tiers</Link>.
+            Time/attention and depth. Starter (~0.5 d/wk, $4k/mo) focuses on guidance; Growth (~1 d/wk, $8k/mo) runs active experiments; Scale (~2 d/wk, $15k/mo) handles complex monetization and fundraise prep. See <Link href="/consulting/services/on-call-economist-retainer" className={brandLink}>pricing tiers</Link>.
           </p>
         </div>
         <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">

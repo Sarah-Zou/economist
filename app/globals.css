@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* KaTeX styles for math formula rendering */
-@import 'katex/dist/katex.min.css';
-
 @layer base {
   :root {
     --background: 249 33% 98%; /* #f9f6f7 */
@@ -37,6 +34,7 @@
     font-size: 17px;
     line-height: 1.65;
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
   }
   h1, h2, h3, h4, .logo-serif {
     font-family: var(--font-playfair), Playfair Display, serif;
