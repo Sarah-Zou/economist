@@ -51,29 +51,29 @@ export default function CookieConsentBanner() {
 
   return (
     <aside
-      className="fixed inset-x-3 bottom-3 z-[60] rounded-xl border border-[#e2e6ea] bg-white p-4 shadow-xl sm:inset-x-6 sm:bottom-6 sm:p-5"
+      className="fixed bottom-4 right-4 z-[60] max-w-[320px] rounded-lg border border-[#e2e6ea] bg-white/95 p-3 shadow-lg backdrop-blur-sm sm:bottom-5 sm:right-5 sm:p-3"
       role="dialog"
       aria-label="Cookie consent"
       aria-live="polite"
     >
-      <p className="text-sm text-[#1f2933] sm:text-base">
-        This website uses cookies to analyze traffic and improve your browsing experience.
-        <Link href="/privacy" className="ml-1 text-[#ff5722] underline underline-offset-2">
-          Learn more
+      <p className="text-xs text-[#1f2933] leading-snug sm:text-sm">
+        This site uses cookies to analyze traffic.{' '}
+        <Link href="/privacy" className="text-[#ff5722] underline underline-offset-2 hover:text-[#e44e1f]">
+          View privacy policy
         </Link>
       </p>
-      <div className="mt-3 flex flex-wrap gap-2 sm:mt-4">
+      <div className="mt-2 flex flex-wrap gap-2">
         <button
           type="button"
           onClick={() => handleChoice('allow')}
-          className="rounded-md bg-[#ff5722] px-4 py-2 text-sm font-semibold text-white hover:bg-[#e44e1f]"
+          className="rounded bg-[#ff5722] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#e44e1f]"
         >
           Accept
         </button>
         <button
           type="button"
           onClick={() => handleChoice('deny')}
-          className="rounded-md border border-[#d1d5db] px-4 py-2 text-sm font-semibold text-[#1f2933] hover:bg-[#f6f7f9]"
+          className="rounded border border-[#d1d5db] px-3 py-1.5 text-xs font-semibold text-[#1f2933] hover:bg-[#f6f7f9]"
         >
           Decline
         </button>
