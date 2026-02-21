@@ -326,6 +326,7 @@ export default function FractionalChiefEconomistRetainer() {
               </ul>
                     <Link
                       href="/book"
+                      prefetch={false}
                       className={`${tier.buttonStyle} text-center py-3 px-6 rounded-lg font-bold transition-colors mt-auto`}
                     >
                       {tier.buttonText}
@@ -576,6 +577,7 @@ export default function FractionalChiefEconomistRetainer() {
             </p>
               <Link
                 href="/book"
+                prefetch={false}
               className="inline-block bg-brand text-brand-on px-8 py-4 rounded-lg text-[19px] font-bold leading-[1.2] hover:bg-brand-ink transition shadow-lg hover:shadow-xl mb-8"
               >
               Book a free call
@@ -591,7 +593,7 @@ export default function FractionalChiefEconomistRetainer() {
             </h2>
             <p className="text-sm text-[#3b4652] text-center mb-4">
               Expect a reply in 1–2 business days. 
-              Want a faster answer? <Link href="/book" className="text-brand-ink hover:underline font-medium">Book a 15-min call</Link> (no prep needed)
+              Want a faster answer? <Link href="/book" prefetch={false} className="text-brand-ink hover:underline font-medium">Book a 15-min call</Link> (no prep needed)
             </p>
             <ContactForm />
           </div>
@@ -604,6 +606,7 @@ export default function FractionalChiefEconomistRetainer() {
         <div className="max-w-7xl mx-auto px-4 py-3 flex gap-3">
           <Link
             href="/book"
+            prefetch={false}
             className="flex-1 bg-brand hover:bg-brand-ink text-brand-on text-[19px] font-bold leading-[1.2] px-4 py-3 rounded-lg text-center transition-colors shadow-sm"
           >
             Book Free Consult
