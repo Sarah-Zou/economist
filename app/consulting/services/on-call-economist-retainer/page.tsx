@@ -275,7 +275,7 @@ export default function FractionalChiefEconomistRetainer() {
                     timeCommitment: '≈1 d/wk',
                     description: 'Active experiments + investor cadence.',
                     buttonText: 'Choose Growth',
-                    buttonStyle: 'bg-brand text-brand-on hover:bg-brand-ink',
+                    buttonStyle: 'bg-brand text-brand-on text-[19px] font-bold leading-[1.2] hover:bg-brand-ink',
                     features: [
                       'Weekly Strategic Call',
                       'Deep-Dive Quarterly Report',
@@ -326,7 +326,7 @@ export default function FractionalChiefEconomistRetainer() {
               </ul>
                     <Link
                       href="/book"
-                      className={`${tier.buttonStyle} text-center py-3 px-6 rounded-lg font-semibold transition-colors mt-auto`}
+                      className={`${tier.buttonStyle} text-center py-3 px-6 rounded-lg font-bold transition-colors mt-auto`}
                     >
                       {tier.buttonText}
                     </Link>
@@ -576,7 +576,7 @@ export default function FractionalChiefEconomistRetainer() {
             </p>
               <Link
                 href="/book"
-              className="inline-block bg-brand text-brand-on px-8 py-4 rounded-lg font-semibold text-lg leading-[1.2] hover:bg-brand-ink transition shadow-lg hover:shadow-xl mb-8"
+              className="inline-block bg-brand text-brand-on px-8 py-4 rounded-lg text-[19px] font-bold leading-[1.2] hover:bg-brand-ink transition shadow-lg hover:shadow-xl mb-8"
               >
               Book a free call
               </Link>

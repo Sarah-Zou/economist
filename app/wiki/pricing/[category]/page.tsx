@@ -1263,7 +1263,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               </div>
               <Link
                 href="/book"
-                className="inline-block bg-brand text-brand-on px-8 py-4 rounded-lg font-semibold text-lg leading-[1.2] hover:bg-brand-ink transition shadow-lg hover:shadow-xl"
+                className="inline-block bg-brand text-brand-on px-8 py-4 rounded-lg text-[19px] font-bold leading-[1.2] hover:bg-brand-ink transition shadow-lg hover:shadow-xl"
               >
                 Book a 15-min intro call
               </Link>

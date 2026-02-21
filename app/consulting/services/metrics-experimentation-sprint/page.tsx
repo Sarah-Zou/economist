@@ -348,7 +348,7 @@ export default function MetricsExperimentationSprint() {
                     duration: '/ 1 wk',
                     description: 'Early-revenue teams needing aligned metrics, two tests, and a weekly decision cadence.',
                     buttonText: 'Choose Plan',
-                    buttonStyle: 'bg-brand text-brand-on hover:bg-brand-ink',
+                    buttonStyle: 'bg-brand text-brand-on text-[19px] font-bold leading-[1.2] hover:bg-brand-ink',
                     features: [
                       { text: <>2×60-min <strong>workshops</strong></>, included: true },
                       { text: <><strong>KPI tree + glossary + thresholds</strong></>, included: true },
@@ -413,7 +413,7 @@ export default function MetricsExperimentationSprint() {
               </ul>
                     <Link
                       href="/book"
-                      className={`${tier.buttonStyle} text-center py-3 px-6 rounded-lg font-semibold transition-colors mt-auto`}
+                      className={`${tier.buttonStyle} text-center py-3 px-6 rounded-lg font-bold transition-colors mt-auto`}
                     >
                       {tier.buttonText}
                     </Link>
@@ -535,7 +535,7 @@ export default function MetricsExperimentationSprint() {
             </p>
               <Link
                 href="/book"
-              className="inline-block bg-brand text-brand-on px-8 py-4 rounded-lg font-semibold text-lg leading-[1.2] hover:bg-brand-ink transition shadow-lg hover:shadow-xl mb-8"
+              className="inline-block bg-brand text-brand-on px-8 py-4 rounded-lg text-[19px] font-bold leading-[1.2] hover:bg-brand-ink transition shadow-lg hover:shadow-xl mb-8"
               >
               Book a free call
               </Link>
