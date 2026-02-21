@@ -165,7 +165,7 @@ export default function TableOfContents({ items, title }: TableOfContentsProps) 
                 className={`
                   flex items-center gap-2 px-3 py-2 rounded-md text-sm transition-colors
                   ${isActive 
-                    ? 'bg-[#f6f7f9] text-[#c2410c] font-medium' 
+                    ? 'bg-[#f6f7f9] text-brand-ink font-medium' 
                     : 'text-[#3b4652] hover:text-[#1f2933] hover:bg-[#f6f7f9]'
                   }
                 `}
@@ -184,7 +184,7 @@ export default function TableOfContents({ items, title }: TableOfContentsProps) 
                   }
                 }}
               >
-                <span className={`flex-shrink-0 ${isActive ? 'text-[#c2410c]' : 'text-[#3b4652]'}`}>
+                <span className={`flex-shrink-0 ${isActive ? 'text-brand-ink' : 'text-[#3b4652]'}`}>
                   {Icon}
                 </span>
                 <span className="truncate">{item.text}</span>

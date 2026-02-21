@@ -275,7 +275,7 @@ export default function FractionalChiefEconomistRetainer() {
                     timeCommitment: '≈1 d/wk',
                     description: 'Active experiments + investor cadence.',
                     buttonText: 'Choose Growth',
-                    buttonStyle: 'bg-[#ff5722] text-white hover:bg-[#e64a19]',
+                    buttonStyle: 'bg-brand text-brand-on hover:bg-brand-ink',
                     features: [
                       'Weekly Strategic Call',
                       'Deep-Dive Quarterly Report',
@@ -576,7 +576,7 @@ export default function FractionalChiefEconomistRetainer() {
             </p>
               <Link
                 href="/book"
-              className="inline-block bg-[#ff5722] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#e64a19] transition shadow-lg hover:shadow-xl mb-8"
+              className="inline-block bg-brand text-brand-on px-8 py-4 rounded-lg font-semibold text-lg leading-[1.2] hover:bg-brand-ink transition shadow-lg hover:shadow-xl mb-8"
               >
               Book a free call
               </Link>
@@ -591,7 +591,7 @@ export default function FractionalChiefEconomistRetainer() {
             </h2>
             <p className="text-sm text-[#3b4652] text-center mb-4">
               Expect a reply in 1–2 business days. 
-              Want a faster answer? <Link href="/book" className="text-[#c2410c] hover:underline font-medium">Book a 15-min call</Link> (no prep needed)
+              Want a faster answer? <Link href="/book" className="text-brand-ink hover:underline font-medium">Book a 15-min call</Link> (no prep needed)
             </p>
             <ContactForm />
           </div>
@@ -604,13 +604,13 @@ export default function FractionalChiefEconomistRetainer() {
         <div className="max-w-7xl mx-auto px-4 py-3 flex gap-3">
           <Link
             href="/book"
-            className="flex-1 bg-[#ff5722] hover:bg-[#9a3412] text-white text-[19px] font-bold px-4 py-3 rounded-lg text-center transition-colors shadow-sm"
+            className="flex-1 bg-brand hover:bg-brand-ink text-brand-on text-[19px] font-bold leading-[1.2] px-4 py-3 rounded-lg text-center transition-colors shadow-sm"
           >
             Book Free Consult
           </Link>
           <Link
             href="/contact"
-            className="flex-1 bg-transparent border-2 border-[#ff5722] text-[#c2410c] hover:bg-[#c2410c] hover:text-white font-bold px-4 py-3 rounded-lg text-center transition-colors"
+            className="flex-1 bg-transparent border-2 border-brand text-brand-ink hover:bg-brand-ink hover:text-brand-on font-bold px-4 py-3 rounded-lg text-center transition-colors"
           >
             Send a message
           </Link>

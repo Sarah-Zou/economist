@@ -11,8 +11,13 @@
     --muted: 0 0% 53%; /* #888 */
     
     /* Design system tokens */
-    --color-primary: #ff5722;
-    --color-primary-hover: #e44e1f;
+    --color-brand-default: #ff5722;
+    --color-brand-ink: #c2410c;
+    --color-brand-soft: #fff1eb;
+    --color-brand-on: #ffffff;
+    /* Backward-compatible aliases; prefer --color-brand-* in new code. */
+    --color-primary: var(--color-brand-default);
+    --color-primary-hover: var(--color-brand-ink);
     --color-text: #1f2933;
     --color-text-muted: #3b4652;
     --color-bg: #ffffff;
@@ -127,7 +132,7 @@
   .section-divider {
     width: 100%;
     height: 4px;
-    background: #ff5722;
+    background: var(--color-brand-default);
     border-radius: 2px;
     margin: 2rem 0;
   }
@@ -138,15 +143,35 @@
     -webkit-line-clamp: 2;
   }
   .btn-primary {
-    background: var(--color-primary);
-    color: #fff;
+    background: var(--color-brand-default);
+    color: var(--color-brand-on);
     padding: 0.7rem 1.4rem;
     border-radius: 9999px;
     border: none;
-    font-weight: 600;
+    font-size: 19px;
+    line-height: 1.2;
+    font-weight: 700;
   }
   .btn-primary:hover {
-    background: var(--color-primary-hover);
+    background: var(--color-brand-ink);
+  }
+  .orange-surface {
+    background: var(--color-brand-default);
+    color: var(--color-brand-on);
+  }
+  .orange-surface :is(h1, h2, h3, h4, h5, h6, p, span, strong, em, li, a) {
+    color: var(--color-brand-on);
+  }
+  .orange-surface a {
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.85);
+  }
+  .orange-surface svg {
+    color: var(--color-brand-on);
+  }
+  .orange-surface--ink {
+    background: var(--color-brand-ink);
+    color: var(--color-brand-on);
   }
   .card {
     background: var(--color-surface);

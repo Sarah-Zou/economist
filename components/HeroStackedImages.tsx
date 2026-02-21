@@ -88,7 +88,7 @@ export default function HeroStackedImages({
             </p>
 
             {/* Divider */}
-            <div className="w-16 sm:w-20 h-0.5 bg-orange-500" />
+            <div className="w-16 sm:w-20 h-0.5 bg-brand" />
 
             {/* CTAs */}
             {(primaryCta || secondaryCta) && (

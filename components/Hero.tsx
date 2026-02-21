@@ -19,7 +19,7 @@ const Hero = () => {
               Princeton, NJ · NYC · Philadelphia · Remote (US/EU)
             </p>
             <Link href="/contact">
-              <Button className="bg-[#c2410c] text-white font-bold rounded-full px-6 py-3 hover:bg-[#9a3412] focus:ring-2 focus:ring-[#ff5722]">
+              <Button className="bg-brand text-brand-on font-bold rounded-full px-6 py-3 hover:bg-brand-ink focus:ring-2 focus:ring-brand">
                 Get in touch
                 <span className="ml-2" aria-hidden>→</span>
               </Button>

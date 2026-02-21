@@ -48,10 +48,10 @@ const Footer = () => {
           <div className="max-w-md w-full flex flex-col items-center md:items-end">
             <div className="font-bold text-base sm:text-lg mb-3 text-[#111]">Connect with me</div>
             <div className="flex gap-3 sm:gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-2 text-[#c2410c] hover:text-[#9a3412] font-medium text-base sm:text-lg" aria-label="Contact Sarah Zou" title="Contact Sarah Zou">
+              <Link href="/contact" className="inline-flex items-center gap-2 text-brand-ink hover:text-brand-ink/90 font-medium text-base sm:text-lg" aria-label="Contact Sarah Zou" title="Contact Sarah Zou">
                 <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
               </Link>
-              <a href="https://www.linkedin.com/in/drsarahzou" className="inline-flex items-center gap-2 text-[#c2410c] hover:text-[#9a3412] font-medium text-base sm:text-lg" target="_blank" rel="noopener noreferrer" aria-label="Sarah Zou on LinkedIn" title="Sarah Zou on LinkedIn">
+              <a href="https://www.linkedin.com/in/drsarahzou" className="inline-flex items-center gap-2 text-brand-ink hover:text-brand-ink/90 font-medium text-base sm:text-lg" target="_blank" rel="noopener noreferrer" aria-label="Sarah Zou on LinkedIn" title="Sarah Zou on LinkedIn">
                 <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
               </a>
             </div>

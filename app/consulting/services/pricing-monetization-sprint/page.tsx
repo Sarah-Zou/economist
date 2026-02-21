@@ -293,7 +293,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     <th className="text-left py-3 sm:py-4 px-3 sm:px-4 font-semibold text-xs sm:text-sm text-[#1f2933] whitespace-nowrap">Feature</th>
                     <th className="text-center py-3 sm:py-4 px-3 sm:px-4 font-semibold text-xs sm:text-sm text-[#1f2933] whitespace-nowrap">Doing Nothing</th>
                     <th className="text-center py-3 sm:py-4 px-3 sm:px-4 font-semibold text-xs sm:text-sm text-[#1f2933] whitespace-nowrap">Hire Full-Time</th>
-                    <th className="text-center py-3 sm:py-4 px-3 sm:px-4 font-semibold text-xs sm:text-sm text-[#1f2933] bg-[#fff5f2] rounded-t-lg whitespace-nowrap">Pricing & Monetization Sprint</th>
+                    <th className="text-center py-3 sm:py-4 px-3 sm:px-4 font-semibold text-xs sm:text-sm text-[#1f2933] bg-brand-soft rounded-t-lg whitespace-nowrap">Pricing & Monetization Sprint</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -301,13 +301,13 @@ export default function PricingDiagnosticRevenueBoost() {
                     <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Cost</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">$0 (Lost Revenue)</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">$150k+/yr</td>
-                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-[#c2410c] font-semibold text-sm sm:text-base md:text-[17px] text-center">$5k-$18k</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-brand-soft text-brand-ink font-semibold text-sm sm:text-base md:text-[17px] text-center">$5k-$18k</td>
                   </tr>
                   <tr className="border-b border-[#e5e7eb]">
                     <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Time to Value</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">Never</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">3-6+ Months</td>
-                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-[#c2410c] font-semibold text-sm sm:text-base md:text-[17px] text-center">1-2 Weeks</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-brand-soft text-brand-ink font-semibold text-sm sm:text-base md:text-[17px] text-center">1-2 Weeks</td>
                   </tr>
                   <tr className="border-b border-[#e5e7eb]">
                     <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Expertise</td>
@@ -322,7 +322,7 @@ export default function PricingDiagnosticRevenueBoost() {
                       <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full border-2 border-[#ff5722] flex items-center justify-center mx-auto">
                       </div>
                     </td>
-                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-center">
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-brand-soft text-center">
                       <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-green-500 flex items-center justify-center mx-auto">
                         <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -343,7 +343,7 @@ export default function PricingDiagnosticRevenueBoost() {
                       <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full border-2 border-[#ff5722] flex items-center justify-center mx-auto">
                       </div>
                     </td>
-                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-center">
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-brand-soft text-center">
                       <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-green-500 flex items-center justify-center mx-auto">
                         <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -355,7 +355,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Risk</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">High</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">High</td>
-                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-[#fff5f2] text-[#c2410c] font-semibold text-sm sm:text-base md:text-[17px] rounded-b-lg text-center">Zero (Guaranteed)</td>
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 bg-brand-soft text-brand-ink font-semibold text-sm sm:text-base md:text-[17px] rounded-b-lg text-center">Zero (Guaranteed)</td>
                   </tr>
                 </tbody>
               </table>
@@ -393,7 +393,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     duration: '/ 1 wk',
                     description: 'Early-revenue startups (pilots to ~$1M ARR) with weak yield needing value metric validation, tier refinement, and first pricing experiment.',
                     buttonText: 'Get Started',
-                    buttonStyle: 'bg-[#ff5722] text-white hover:bg-[#e64a19]',
+                    buttonStyle: 'bg-brand text-brand-on hover:bg-brand-ink',
                     features: [
                       { text: <>2x60 min <strong>Workshops</strong></>, included: true },
                       { text: <>12-18 pp <strong>Strategy Report</strong></>, included: true },
@@ -578,7 +578,7 @@ export default function PricingDiagnosticRevenueBoost() {
             </p>
               <Link
                 href="/book"
-              className="inline-block bg-[#ff5722] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#e64a19] transition shadow-lg hover:shadow-xl mb-8"
+              className="inline-block bg-brand text-brand-on px-8 py-4 rounded-lg font-semibold text-lg leading-[1.2] hover:bg-brand-ink transition shadow-lg hover:shadow-xl mb-8"
               >
               Book a free 15-minute call
               </Link>
@@ -592,7 +592,7 @@ export default function PricingDiagnosticRevenueBoost() {
               Prefer email? Send a Message
             </h2>
             <p className="text-sm text-[#3b4652] text-center mb-4">
-              Expect a reply in 1–2 business days. Want a faster answer? <Link href="/book" className="text-[#c2410c] hover:underline font-medium">Book a 15-min call</Link>
+              Expect a reply in 1–2 business days. Want a faster answer? <Link href="/book" className="text-brand-ink hover:underline font-medium">Book a 15-min call</Link>
             </p>
             <ContactForm />
           </div>
@@ -605,13 +605,13 @@ export default function PricingDiagnosticRevenueBoost() {
         <div className="max-w-7xl mx-auto px-4 py-3 flex gap-3">
           <Link
             href="/book"
-            className="flex-1 bg-[#ff5722] hover:bg-[#9a3412] text-white text-[19px] font-bold px-4 py-3 rounded-lg text-center transition-colors shadow-sm"
+            className="flex-1 bg-brand hover:bg-brand-ink text-brand-on text-[19px] font-bold leading-[1.2] px-4 py-3 rounded-lg text-center transition-colors shadow-sm"
           >
             Book Free Consult
           </Link>
           <Link
             href="/contact"
-            className="flex-1 bg-transparent border-2 border-[#ff5722] text-[#c2410c] hover:bg-[#c2410c] hover:text-white font-bold px-4 py-3 rounded-lg text-center transition-colors"
+            className="flex-1 bg-transparent border-2 border-brand text-brand-ink hover:bg-brand-ink hover:text-brand-on font-bold px-4 py-3 rounded-lg text-center transition-colors"
           >
             Send a message
           </Link>

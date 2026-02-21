@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Check brand color drift
+        run: npm run check:color-drift
+
       - name: Build with Next.js
         run: npm run build
 

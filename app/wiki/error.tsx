@@ -27,13 +27,13 @@ export default function WikiError({
         <div className="flex gap-4 justify-center">
           <button
             onClick={reset}
-            className="bg-[#c2410c] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#9a3412] transition-colors"
+            className="bg-brand text-brand-on px-6 py-3 rounded-lg text-[18px] font-semibold leading-[1.2] hover:bg-brand-ink transition-colors"
           >
             Try again
           </button>
           <Link
             href="/wiki/pricing"
-            className="bg-white text-[#c2410c] border-2 border-[#ff5722] px-6 py-3 rounded-lg font-semibold hover:bg-[#f6f7f9] transition-colors"
+            className="bg-white text-brand-ink border-2 border-brand px-6 py-3 rounded-lg font-semibold hover:bg-[#f6f7f9] transition-colors"
           >
             Go to Pricing Wiki
           </Link>

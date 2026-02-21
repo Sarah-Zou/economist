@@ -34,7 +34,7 @@ export default function BookPage() {
                 Book a free 15-min consultation
               </h1>
               <p className="text-[#1f2933] text-sm sm:text-base lg:text-[17px] leading-[1.65] max-w-2xl px-2">
-                Pick a time below. After you book, you&apos;ll get a confirmation and calendar invite. If nothing works, <a href="mailto:hello@sarahzou.com" className="text-[#c2410c] hover:text-[#9a3412] underline">email me</a> and I&apos;ll suggest options.
+                Pick a time below. After you book, you&apos;ll get a confirmation and calendar invite. If nothing works, <a href="mailto:hello@sarahzou.com" className="text-brand-ink hover:text-brand-ink/90 underline">email me</a> and I&apos;ll suggest options.
               </p>
             </div>
 
@@ -42,7 +42,7 @@ export default function BookPage() {
             <p className="text-center mb-3 sm:mb-4">
               <a
                 href="https://calendly.com/sarahxzou/free-consult-15-min"
-                className="inline-flex items-center gap-2 text-[#c2410c] hover:text-[#9a3412] font-medium underline"
+                className="inline-flex items-center gap-2 text-brand-ink hover:text-brand-ink/90 font-medium underline"
               >
                 If the scheduler doesn&apos;t load, book here →
               </a>
@@ -57,7 +57,7 @@ export default function BookPage() {
               <p className="text-center mb-4 p-4 bg-[#f6f7f9] rounded-lg">
                 <a
                   href="https://calendly.com/sarahxzou/free-consult-15-min"
-                  className="text-[#c2410c] hover:text-[#9a3412] font-semibold underline text-lg"
+                  className="text-brand-ink hover:text-brand-ink/90 font-semibold underline text-lg"
                 >
                   Book a free 15-min consultation on Calendly →
                 </a>

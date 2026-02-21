@@ -99,28 +99,28 @@ export default function ContactPage() {
               type="text"
               name="name"
               placeholder="Your Name"
-              className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
+              className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
               required
             />
             <input
               type="email"
               name="email"
               placeholder="Email Address"
-              className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
+              className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
               required
             />
             <input
               type="text"
               name="company"
               placeholder="Company name or website (optional)"
-              className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
+              className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
             />
             <div>
               <label htmlFor="stage-select" className="block text-sm font-medium text-[#3b4652] mb-1">Stage & ARR band (optional)</label>
               <select
                 id="stage-select"
                 name="stage"
-                className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
+                className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
               >
                 <option value="">Select your stage</option>
                 <option value="pre-rev">Pre-revenue</option>
@@ -134,7 +134,7 @@ export default function ContactPage() {
               <select
                 id="pricing-select"
                 name="pricing"
-                className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
+                className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
               >
                 <option value="">Select your model</option>
                 <option value="seats">Seats</option>
@@ -148,7 +148,7 @@ export default function ContactPage() {
               <select
                 id="goal-select"
                 name="goal"
-                className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
+                className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
               >
                 <option value="">Select your goal</option>
                 <option value="raise-arpa">Raise ARPA</option>
@@ -162,7 +162,7 @@ export default function ContactPage() {
               name="message"
               placeholder="How can I help you?"
               rows={5}
-              className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-[#ff5722] text-[#1f2933]"
+              className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
               required
             />
             <button

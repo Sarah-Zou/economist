@@ -58,7 +58,7 @@ export default function CookieConsentBanner() {
     >
       <p className="text-xs text-[#1f2933] leading-snug sm:text-sm">
         This site uses cookies to analyze traffic.{' '}
-        <Link href="/privacy" className="text-[#ff5722] underline underline-offset-2 hover:text-[#e44e1f]">
+        <Link href="/privacy" className="text-brand-ink underline decoration-brand decoration-2 underline-offset-2 hover:text-brand-ink/90">
           View privacy policy
         </Link>
       </p>
@@ -66,7 +66,7 @@ export default function CookieConsentBanner() {
         <button
           type="button"
           onClick={() => handleChoice('allow')}
-          className="rounded bg-[#ff5722] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#e44e1f]"
+          className="rounded bg-brand-ink px-3 py-1.5 text-xs font-semibold leading-[1.2] text-brand-on hover:bg-brand"
         >
           Accept
         </button>

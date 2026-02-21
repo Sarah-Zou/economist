@@ -16,7 +16,7 @@ export default function AuthorCard() {
         </p>
         <Link
           href="/about"
-          className="text-[#c2410c] hover:text-[#9a3412] text-sm font-medium transition-colors"
+          className="text-brand-ink hover:text-brand-ink/90 text-sm font-medium transition-colors"
         >
           Learn more about Sarah →
         </Link>

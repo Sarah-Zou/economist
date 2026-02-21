@@ -6,7 +6,7 @@ export default function AreasFooter() {
           Need help with your pricing strategy? 
           <a 
             href="/book"
-            className="text-[#c2410c] hover:text-[#9a3412] ml-1 font-medium"
+            className="text-brand-ink hover:text-brand-ink/90 ml-1 font-medium"
           >
             Book a consultation →
           </a>

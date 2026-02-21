@@ -3,6 +3,7 @@ import TestimonialCard from '@/components/TestimonialCard'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Metadata } from 'next'
+import { brandLink, primaryButton } from '@/lib/brandStyles'
 
 export const metadata: Metadata = {
   title: "Pricing & Monetization Consulting for Seed–Series A Startups | Sarah Zou",
@@ -264,7 +265,7 @@ function ConsultingContent() {
                     </div>
                     <a
                       href={`/consulting/services/${service.slug}`}
-                      className="inline-block bg-[#ff5722] text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-[#e64a19] transition-colors text-center"
+                      className={`${primaryButton} inline-block text-center`}
                     >
                       {service.cta}
                     </a>
@@ -278,7 +279,7 @@ function ConsultingContent() {
           {/* Testimonials section commented out */}
           {false && (
           <div className="max-w-4xl mx-auto mb-24">
-            <h2 className="font-serif-playfair text-2xl font-bold mb-8 text-center text-[#c2410c]">Testimonials</h2>
+            <h2 className="font-serif-playfair text-2xl font-bold mb-8 text-center text-brand-ink">Testimonials</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {/* {testimonials.map((t, i) => (
                 <TestimonialCard key={i} name={t.name} title={t.title} quote={t.quote} />
@@ -309,7 +310,7 @@ function ConsultingContent() {
                   {/* Pricing & Monetization Sprint */}
                   <tr className="hover:bg-[#f6f7f9] transition-colors">
                     <td className="py-5 px-4">
-                      <Link href="/consulting/services/pricing-monetization-sprint" className="font-bold text-base text-[#c2410c] hover:text-[#9a3412] transition-colors">
+                      <Link href="/consulting/services/pricing-monetization-sprint" className={`${brandLink} font-bold text-base no-underline`}>
                         Pricing & Monetization Sprint
                       </Link>
                     </td>
@@ -339,7 +340,7 @@ function ConsultingContent() {
                   {/* Metrics & Experimentation Sprint */}
                   <tr className="hover:bg-[#f6f7f9] transition-colors">
                     <td className="py-5 px-4">
-                      <Link href="/consulting/services/metrics-experimentation-sprint" className="font-bold text-base text-[#c2410c] hover:text-[#9a3412] transition-colors">
+                      <Link href="/consulting/services/metrics-experimentation-sprint" className={`${brandLink} font-bold text-base no-underline`}>
                         Metrics & Experimentation Sprint
                       </Link>
                     </td>
@@ -369,7 +370,7 @@ function ConsultingContent() {
                   {/* Fractional Chief Economist (Retainer) */}
                   <tr className="hover:bg-[#f6f7f9] transition-colors">
                     <td className="py-5 px-4">
-                      <Link href="/consulting/services/on-call-economist-retainer" className="font-bold text-base text-[#c2410c] hover:text-[#9a3412] transition-colors">
+                      <Link href="/consulting/services/on-call-economist-retainer" className={`${brandLink} font-bold text-base no-underline`}>
                         Fractional Chief Economist (Retainer)
                       </Link>
                     </td>

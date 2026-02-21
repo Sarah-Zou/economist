@@ -7,21 +7,24 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        primary:
+          "bg-brand text-brand-on hover:bg-brand-ink focus-visible:ring-brand text-[19px] font-bold leading-[1.2] [&_svg]:text-brand-on",
+        default:
+          "bg-brand text-brand-on hover:bg-brand-ink focus-visible:ring-brand text-[19px] font-bold leading-[1.2] [&_svg]:text-brand-on",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input hover:bg-accent hover:text-accent-foreground",
+        outline: "border border-brand text-brand-ink hover:bg-brand-soft focus-visible:ring-brand",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "underline-offset-4 hover:underline text-primary",
+        link: "text-brand-ink underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-ink/90",
       },
       size: {
-        default: "h-10 py-2 px-4",
-        sm: "h-9 px-3 rounded-md",
-        lg: "h-11 px-8 rounded-md",
+        default: "h-auto px-6 py-3 rounded-full",
+        sm: "h-auto px-5 py-2.5 rounded-full",
+        lg: "h-auto px-8 py-4 rounded-full",
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: "primary",
       size: "default",
     },
   }

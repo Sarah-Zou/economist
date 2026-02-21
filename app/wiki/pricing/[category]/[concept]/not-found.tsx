@@ -13,7 +13,7 @@ export default function NotFound() {
         <div className="flex gap-4 justify-center">
           <Link
             href="/wiki/pricing"
-            className="bg-[#c2410c] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#9a3412] transition-colors"
+            className="bg-brand text-brand-on px-6 py-3 rounded-lg text-[18px] font-semibold leading-[1.2] hover:bg-brand-ink transition-colors"
           >
             Go to Pricing Wiki
           </Link>

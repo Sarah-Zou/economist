@@ -22,12 +22,15 @@ module.exports = {
         foreground: "hsl(var(--foreground))",
         accent: "hsl(var(--accent))",
         muted: "hsl(var(--muted))",
+        brand: {
+          DEFAULT: "var(--color-brand-default)",
+          ink: "var(--color-brand-ink)",
+          soft: "var(--color-brand-soft)",
+          on: "var(--color-brand-on)",
+        },
         gray: {
           700: '#222',
           600: '#444',
-        },
-        orange: {
-          500: '#ff5722',
         },
       },
       maxWidth: {

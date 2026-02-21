@@ -380,10 +380,10 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                       {/* Cost-Plus Pricing */}
                       <Link 
                         href="/wiki/pricing/foundations/cost-plus-pricing"
-                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-orange-500 no-underline"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-brand no-underline"
                       >
                         <div className="flex items-center gap-3 mb-0">
-                          <TrendingDown className="w-6 h-6 text-gray-700 group-hover:text-orange-500 transition-colors flex-shrink-0" />
+                          <TrendingDown className="w-6 h-6 text-gray-700 group-hover:text-brand transition-colors flex-shrink-0" />
                           <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
                             Cost-plus pricing
                           </h3>
@@ -504,9 +504,9 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                     href="/wiki/pricing/foundations/maximization"
                     className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm hover:shadow-md transition-all relative overflow-hidden no-underline block"
                   >
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-orange-200 rounded-full opacity-30 -mr-12 -mt-12"></div>
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-brand-soft rounded-full opacity-30 -mr-12 -mt-12"></div>
                     <div className="relative">
-                      <span className="inline-block bg-orange-600 text-white text-xs font-semibold px-3 py-1 rounded uppercase mb-4">
+                      <span className="inline-block bg-brand-ink text-brand-on text-xs font-semibold px-3 py-1 rounded uppercase mb-4">
                         MAXIMIZATION
                       </span>
                       <h3 className="font-semibold text-[#1f2933] text-lg mb-3">Cash Flow & Near-term Profit</h3>
@@ -988,7 +988,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             {params.category !== 'foundations' && params.category !== 'value-and-customers' && params.category !== 'packaging-and-bundling' && (
               <div className="mt-12 mb-12">
                 <div className="flex items-center mb-6">
-                  <div className="w-1 h-8 bg-[#ff5722] mr-3"></div>
+                  <div className="w-1 h-8 bg-brand mr-3"></div>
                   <h2 id="summary" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
                     Summary
                   </h2>
@@ -1012,7 +1012,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 )}
                 
                 <div className="flex items-center mb-6">
-                  <div className="w-1 h-8 bg-[#ff5722] mr-3"></div>
+                  <div className="w-1 h-8 bg-brand mr-3"></div>
                   <h2 id="whats-in-this-category" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
                     What's in this category
                   </h2>
@@ -1041,7 +1041,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             {howToUseContent && (
               <div className="mt-16 mb-12">
                 <div className="flex items-center mb-8">
-                  <div className="w-1 h-8 bg-[#ff5722] mr-3"></div>
+                  <div className="w-1 h-8 bg-brand mr-3"></div>
                   <h2 id="how-to-use-this" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
                     How to use this
                   </h2>
@@ -1066,8 +1066,8 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                     {/* Working on a live pricing problem */}
                     <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm hover:shadow-md transition-all">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                          <Briefcase className="w-6 h-6 text-orange-600" />
+                        <div className="w-12 h-12 bg-brand-soft rounded-lg flex items-center justify-center">
+                          <Briefcase className="w-6 h-6 text-brand-ink" />
                         </div>
                         <h3 className="font-semibold text-[#1f2933] text-lg">Working on a live pricing problem?</h3>
                       </div>
@@ -1232,7 +1232,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 <Link
                   key={related.slug}
                   href={`/wiki/pricing/${related.slug}`}
-                  className="block p-4 border border-[#e2e6ea] rounded-lg hover:border-[#c2410c] hover:shadow-md transition-all"
+                  className="block p-4 border border-[#e2e6ea] rounded-lg hover:border-brand-ink hover:shadow-md transition-all"
                 >
                   <h3 className="font-semibold text-[#1f2933] mb-2">
                     {related.title}
@@ -1263,7 +1263,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               </div>
               <Link
                 href="/book"
-                className="inline-block bg-[#ff5722] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#e64a19] transition shadow-lg hover:shadow-xl"
+                className="inline-block bg-brand text-brand-on px-8 py-4 rounded-lg font-semibold text-lg leading-[1.2] hover:bg-brand-ink transition shadow-lg hover:shadow-xl"
               >
                 Book a 15-min intro call
               </Link>

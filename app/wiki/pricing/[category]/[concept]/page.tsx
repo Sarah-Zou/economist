@@ -309,12 +309,12 @@ function SnapshotTopCard({ snapshot }: { snapshot: SnapshotData }) {
           </div>
         )}
         {snapshot.keyTakeaways && snapshot.keyTakeaways.length > 0 && (
-          <div className="rounded-xl border border-[#ffe0d6] bg-[#fff8f5] px-4 py-4 sm:px-5">
+          <div className="rounded-xl border border-brand/30 bg-brand-soft px-4 py-4 sm:px-5">
             <h3 className="font-semibold text-[20px] text-[#1f2933] mb-2">Key Takeaways</h3>
             <ul className="space-y-2">
               {snapshot.keyTakeaways.map((takeaway, index) => (
                 <li key={index} className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] flex items-start gap-2">
-                  <CheckCircle className="w-4 h-4 text-[#c2410c] mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-brand-ink mt-1 flex-shrink-0" />
                   <span>
                     <ReactMarkdown
                       remarkPlugins={[remarkGfm]}
@@ -702,7 +702,7 @@ function createMarkdownComponents() {
     );
   },
   blockquote: ({ node, ...props }: any) => (
-    <blockquote className="bg-white border-l-4 border-[#ff5722] pl-6 pr-4 py-4 my-6 rounded-r-lg shadow-sm" {...props} />
+    <blockquote className="bg-white border-l-4 border-brand pl-6 pr-4 py-4 my-6 rounded-r-lg shadow-sm" {...props} />
   ),
   pre: ({ node, ...props }: any) => (
     <pre
@@ -1304,7 +1304,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                     <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-6" {...props} />
                                   ),
                                   blockquote: ({ node, ...props }) => (
-                                    <blockquote className="bg-white border-l-4 border-[#ff5722] pl-6 pr-4 py-4 my-6 rounded-r-lg shadow-sm" {...props} />
+                                    <blockquote className="bg-white border-l-4 border-brand pl-6 pr-4 py-4 my-6 rounded-r-lg shadow-sm" {...props} />
                                   ),
                                   a: ({ node, href, ...props }: any) => {
                                     const isInternalLink = href?.startsWith('/');
@@ -1348,7 +1348,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                 <div key={index} className="relative flex gap-6">
                                   {/* Numbered circle */}
                                   <div className="flex-shrink-0 relative z-10">
-                                    <div className="w-12 h-12 rounded-full bg-[#ff5722] flex items-center justify-center">
+                                    <div className="w-12 h-12 rounded-full bg-brand text-brand-on flex items-center justify-center">
                                       <span className="text-white font-bold text-lg">{step.number}</span>
                                     </div>
                                   </div>
@@ -1410,7 +1410,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                     <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />
                                   ),
                                   blockquote: ({ node, ...props }) => (
-                                    <blockquote className="bg-white border-l-4 border-[#ff5722] pl-6 pr-4 py-4 my-6 rounded-r-lg shadow-sm" {...props} />
+                                    <blockquote className="bg-white border-l-4 border-brand pl-6 pr-4 py-4 my-6 rounded-r-lg shadow-sm" {...props} />
                                   ),
                                   a: ({ node, href, ...props }: any) => {
                                     const isInternalLink = href?.startsWith('/');
@@ -1705,7 +1705,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                           </div>
                           <Link
                             href="/book"
-                            className="inline-block bg-[#ff5722] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#e64a19] transition shadow-lg hover:shadow-xl"
+                            className="inline-block bg-brand text-brand-on px-8 py-4 rounded-lg font-bold text-[19px] leading-[1.2] hover:bg-brand-ink transition shadow-lg hover:shadow-xl"
                           >
                             Book a 15-min intro call
                           </Link>
@@ -1740,13 +1740,13 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
         <div className="max-w-[90rem] mx-auto px-4 py-3 flex gap-3">
           <Link
             href="/book"
-            className="flex-1 bg-[#ff5722] hover:bg-[#9a3412] text-white font-bold px-4 py-3 rounded-lg text-center transition-colors shadow-sm"
+            className="flex-1 bg-brand hover:bg-brand-ink text-brand-on text-[19px] font-bold leading-[1.2] px-4 py-3 rounded-lg text-center transition-colors shadow-sm"
           >
             Book Free Consult
           </Link>
           <Link
             href="/contact"
-            className="flex-1 bg-transparent border-2 border-[#ff5722] text-[#c2410c] hover:bg-[#c2410c] hover:text-white font-bold px-4 py-3 rounded-lg text-center transition-colors"
+            className="flex-1 bg-transparent border-2 border-brand text-brand-ink hover:bg-brand-ink hover:text-brand-on font-bold px-4 py-3 rounded-lg text-center transition-colors"
           >
             Send a message
           </Link>
