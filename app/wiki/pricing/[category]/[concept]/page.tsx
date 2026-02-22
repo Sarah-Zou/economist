@@ -260,6 +260,22 @@ function SnapshotTopCard({ snapshot }: { snapshot: SnapshotData }) {
             </div>
           </div>
         )}
+        {snapshot.whenToUse && (
+          <div className="rounded-xl border border-[#edf1f5] bg-[#fafbfc] px-4 py-4 sm:px-5">
+            <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2">When to use</h3>
+            <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />,
+                  strong: ({ node, ...props }) => <strong className="font-bold text-[#1f2933]" {...props} />,
+                }}
+              >
+                {snapshot.whenToUse}
+              </ReactMarkdown>
+            </div>
+          </div>
+        )}
         {conciseWhyItMatters && (
           <div className="rounded-xl border border-[#edf1f5] bg-[#fafbfc] px-4 py-4 sm:px-5">
             <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2">Why it matters</h3>
@@ -356,11 +372,14 @@ function parseKeyFacts(content: string): {
   const beforeKeyFacts = content.substring(0, keyFactsStartIndex).trim();
   const afterKeyFacts = content.substring(keyFactsStartIndex + match[0].length).trim();
 
-  // Parse bullet points (lines starting with -)
+  // Parse bullet points (lines starting with - or *)
   const factLines = keyFactsContent
     .split('\n')
-    .filter(line => line.trim().startsWith('-'))
-    .map(line => line.replace(/^-\s*/, '').trim());
+    .filter(line => {
+      const trimmed = line.trim();
+      return trimmed.startsWith('-') || trimmed.startsWith('*');
+    })
+    .map(line => line.replace(/^[-\*]\s*/, '').trim());
 
   const keyFacts: Array<{ title: string; description: string; sourceUrl?: string; sourceText?: string }> = [];
   
@@ -1160,8 +1179,8 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                         </ReactMarkdown>
                       )}
 
-                      {/* Content after Snapshot but before Key Facts */}
-                      {keyFacts && keyFacts.length > 0 && beforeKeyFacts && beforeKeyFacts.trim() && (
+                      {/* Content after Snapshot but before Key Facts (What, When, Why sections) */}
+                      {beforeKeyFacts && beforeKeyFacts.trim() && (
                         <ReactMarkdown
                           remarkPlugins={[remarkGfm, remarkMath]}
                           rehypePlugins={[rehypeRaw, rehypeKatex]}
