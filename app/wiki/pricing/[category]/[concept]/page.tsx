@@ -975,6 +975,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
     }
 
     const references = (conceptData?.references || []).filter((ref) => ref?.title && ref?.url);
+    const conceptBodyWidthClass = 'max-w-none 2xl:max-w-[96ch]';
     const breadcrumbs = [
       { name: 'Pricing', url: '/wiki/pricing' },
       { name: category.title, url: `/wiki/pricing/${category.slug}` },
@@ -1124,7 +1125,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                 }
               >
           {/* Header */}
-          <div className="mb-8 max-w-[78ch]">
+          <div className={`mb-8 ${conceptBodyWidthClass}`}>
             <h1 className="text-[32px] sm:text-[36px] font-serif-playfair font-bold text-[#1f2933] mb-4">
               {conceptName}
             </h1>
@@ -1165,7 +1166,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
           </div>
 
                 {/* Content */}
-                <div className="prose prose-lg max-w-[78ch] text-[#1f2933] text-base sm:text-[17px] leading-[1.7]">
+                <div className={`prose prose-lg ${conceptBodyWidthClass} text-[#1f2933] text-base sm:text-[17px] leading-[1.7]`}>
                   {hasContent && conceptData ? (
                     <>
                       {/* Content before Snapshot */}
