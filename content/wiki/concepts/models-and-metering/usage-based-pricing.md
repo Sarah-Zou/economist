@@ -159,7 +159,7 @@ In traditional [seat-based](/wiki/pricing/models-and-metering/seat-based-pricing
 
 **Q:** Can I combine subscription and usage pricing?
 
-**A:** Yes, this is the **Hybrid Model** (or 3-Part Tariff) and is the industry standard for B2B. You charge a platform fee ([subscription](/wiki/pricing/models-and-metering/subscription-model)) for access and a usage fee for volume. Large enterprises often prefer a predictable "Unlimited" tier or a "[Pre-paid Credit](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model)" model to satisfy their procurement departments.
+**A:** Yes, this is the [**Hybrid Model**](/wiki/pricing/models-and-metering/hybrid-pricing) (or 3-Part Tariff) and is the industry standard for B2B. You charge a platform fee ([subscription](/wiki/pricing/models-and-metering/subscription-model)) for access and a usage fee for volume. Large enterprises often prefer a predictable "Unlimited" tier or a "[Pre-paid Credit](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model)" model to satisfy their procurement departments.
 
 **Q:** Does usage-based pricing hurt company valuation?
 

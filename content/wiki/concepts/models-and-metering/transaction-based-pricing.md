@@ -118,7 +118,7 @@ When paired with reliable metering and good spend visibility, it can **simplify 
 2. **Choose the pricing structure (start simple):** Start with a percentage if the transaction value varies; use a flat fee if the effort/value is the same regardless of size.
    * **Flat fee per transaction** (best when transaction value is consistent).
    * **Take rate (% of value)** (best when you influence conversion, trust, or demand).
-   * **Hybrid:** minimum + per-transaction (+ optional take rate).
+   * **[Hybrid](/wiki/pricing/models-and-metering/hybrid-pricing):** minimum + per-transaction (+ optional take rate).
 
 3. **Model unit economics and set a floor:** Ensure the per-transaction price (or minimum) covers fixed + variable cost.
 
@@ -171,4 +171,4 @@ When paired with reliable metering and good spend visibility, it can **simplify 
 
 **Q:** Will enterprise buyers accept pure pay-as-you-go?
 
-**A:** Sometimes, but many want predictability—hybrids (minimums/committed spend) are often easier to procure. Or offer a "Credit-based" system where they buy a block of transactions upfront (e.g., Audible credits). This provides predictability for them and cash flow for you. (See [prepaid credits](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model).)
+**A:** Sometimes, but many want predictability—[hybrids](/wiki/pricing/models-and-metering/hybrid-pricing) (minimums/committed spend) are often easier to procure. Or offer a "Credit-based" system where they buy a block of transactions upfront (e.g., Audible credits). This provides predictability for them and cash flow for you. (See [prepaid credits](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model).)
