@@ -11,7 +11,7 @@ owner: "Dr. Sarah Zou"
 
 ## Snapshot (TL;DR)
 
-**What it is:** A pricing model (often called "pay-as-you-go") where customers pay based on their consumption of a specific metric (e.g., API calls, data stored, transactions processed) rather than a flat monthly fee per user.
+**What it is:** A pricing model (often called "pay-as-you-go") where customers pay based on their consumption of a specific metric (e.g., API calls, data stored, [transactions processed](/wiki/pricing/models-and-metering/transaction-based-pricing)) rather than a flat monthly fee per user.
 
 **Why it matters:** It lowers the barrier to entry for small users while providing an uncapped revenue ceiling as your customers grow and succeed.
 
@@ -71,7 +71,7 @@ Add predictability option: "Commit \$1,500/month for up to 8M events at an effec
 
 | If your product…                                        | Usage-based pricing is a good fit when…                        | Watch-outs                                       |
 | -------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------ |
-| Value grows with activity (compute, data, transactions) | More usage = more customer value                                | Bill shock; heavy-user discounts may be expected |
+| Value grows with activity (compute, data, [transactions](/wiki/pricing/models-and-metering/transaction-based-pricing)) | More usage = more customer value                                | Bill shock; heavy-user discounts may be expected |
 | Has measurable, auditable events                         | Metering is accurate and hard to spoof                          | Metering disputes; instrumentation gaps         |
 | Serves developers / automated workflows                  | Seats don't reflect value (APIs, agents, pipelines)             | Harder to sell "budget certainty"                |
 | Has significant variable cost                            | You need price to scale with cost and avoid margin compression  | Must model worst-case usage/margin               |
@@ -145,7 +145,7 @@ In traditional [seat-based](/wiki/pricing/models-and-metering/seat-based-pricing
 * Howatson, A. (2024). [*The usage economy: Strategies for growth, smart pricing, and effective technology management*](https://book.usageeconomy.com/). *Usage Economy Publishing*.
 * Ghuman, A. (2021). [*Price to scale: Practical pricing for your high-growth software startup*](https://www.pricetoscale.com/). *Independently published*.
 
-**Related pages:** [Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing) | [Minimum commitment + overage](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage) | [Prepaid credits](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing) | [Outcome/performance-based pricing](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) | [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Freemium](/wiki/pricing/models-and-metering/freemium-model)
+**Related pages:** [Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Transaction-based pricing](/wiki/pricing/models-and-metering/transaction-based-pricing) | [Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing) | [Minimum commitment + overage](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage) | [Prepaid credits](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing) | [Outcome/performance-based pricing](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) | [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Freemium](/wiki/pricing/models-and-metering/freemium-model)
 
 ## FAQ
 
