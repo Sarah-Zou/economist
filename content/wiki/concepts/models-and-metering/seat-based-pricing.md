@@ -58,7 +58,7 @@ Think of seat-based pricing like selling office chairs. A company buys 50 chairs
 | --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | **Value scales with # of users:** SoR workflows and/or strong team network effects; adding teammates materially increases outcomes | [Outcome-based](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) or workflow-based (per pipeline, per project) when value is not headcount-driven                            |
 | **Access is the natural unit:** every relevant employee needs an identity for permissioning, audit, or governance; “who can use it?” matters  | **Platform / org-based** fee + limited admin seats, or **per-asset / per-endpoint** when value scales with objects, not people    |
-| **Usage is hard to meter fairly:** collaboration, viewing, approvals—event counting would feel punitive or gameable  | [Tiered plans](/wiki/pricing/models-and-metering/tiered-graduated-block-pricing) or workspace-based; [usage-based](/wiki/pricing/models-and-metering/usage-based-pricing) only if value event is clear |
+| **Usage is hard to meter fairly:** collaboration, viewing, approvals—event counting would feel punitive or gameable  | Tiered plans or workspace-based; [usage-based](/wiki/pricing/models-and-metering/usage-based-pricing) only if value event is clear |
 | **Buyers demand predictable budgets:** spend should map to hiring plans; annual commits + true-ups are acceptable | [Hybrid](/wiki/pricing/models-and-metering/hybrid-pricing) (platform + seats + usage) so spend tracks headcount and volume       |
 
 ### Equations & rules of thumb
@@ -67,7 +67,7 @@ Think of seat-based pricing like selling office chairs. A company buys 50 chairs
 * **Monthly price (common hybrid):** MRR = Base_fee + (Price_per_seat × Billable_seats)
 * **Billable seats (with commit):** Billable_seats = max(Min_commit, Measured_seats)
 * **Seat utilization:** Utilization = Active_seats / Paid_seats
-* Prefer **annual [commits](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage) + quarterly true-ups** for mid-market/enterprise; prefer **monthly self-serve** for SMB.
+* Prefer **annual commits + quarterly true-ups** for mid-market/enterprise; prefer **monthly self-serve** for SMB.
 * In a healthy seat-based model, ~20–30% of New MRR should come from existing customers adding seats.
 * If **utilization < 60–70%** for a sustained period, expect renewal pressure ("we're paying for shelfware").
 * If your product has many occasional participants, define **2–3 user roles** (Admin / Full / Light) before raising list price.
@@ -144,7 +144,7 @@ The downside is the same coupling: customers may gate access to control costs (h
 * Ghuman, A. (2021). [*Price to scale: Practical pricing for your high-growth software startup*](https://www.pricetoscale.com/). *Independently published*.
 * Lehrskov-Schmidt, U. (2023). [*The pricing roadmap: How to design B2B SaaS pricing models that your customers will love*](https://www.thepricingroadmap.com/). *The Pricing Roadmap*.
 
-**Related pages:** [Value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing) | [Outcome/performance-based pricing](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) | [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Tiered/graduated/block pricing](/wiki/pricing/models-and-metering/tiered-graduated-block-pricing) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Add-ons & modular](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Minimum commitment + overage](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage) | [Willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Freemium](/wiki/pricing/models-and-metering/freemium-model)
+**Related pages:** [Value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing) | [Outcome/performance-based pricing](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) | [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Add-ons & modular](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Freemium](/wiki/pricing/models-and-metering/freemium-model)
 
 ## FAQ
 

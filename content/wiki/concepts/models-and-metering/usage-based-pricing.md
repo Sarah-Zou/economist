@@ -40,8 +40,8 @@ The emergence of UBP fits within the context of **The Usage Economy.**
 * **Allowance:** Included usage (free or bundled) before overage charges.
 * **Overage:** The variable bill above allowance.
 * **[Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing):** A base fee (platform access / SLA / minimum) plus usage charges.
-* **Commit-to-consume (committed spend):** Customer commits to a minimum spend/units for a discount; usage burns down the commitment. (See [minimum commitment + overage](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage) and [prepaid credits](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model).)
-* **Minimum Commit:** A floor price customers pay to ensure a baseline of revenue for the vendor. (See [minimum commitment + overage](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage).)
+* **Commit-to-consume (committed spend):** Customer commits to a minimum spend/units for a discount; usage burns down the commitment.
+* **Minimum Commit:** A floor price customers pay to ensure a baseline of revenue for the vendor.
 
 ### Worked example (generic)
 
@@ -128,7 +128,7 @@ In traditional [seat-based](/wiki/pricing/models-and-metering/seat-based-pricing
 
 | Pitfall | Fix |
 | ------- | --- |
-| **Unpredictable Revenue.** Investors hate revenue volatility. | Use the **Pre-paid Drawdown** or **Credit** model. Customers buy $10k worth of "credits" upfront (booking revenue today) and consume them over the year. (See [prepaid credits](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model).) |
+| **Unpredictable Revenue.** Investors hate revenue volatility. | Use the **Pre-paid Drawdown** or **Credit** model. Customers buy $10k worth of "credits" upfront (booking revenue today) and consume them over the year. |
 | **The "Adoption Tax":** Charging for things that discourage people from using the product (e.g., charging for logins). | Run a value-metric workshop; validate with 10–20 customer interviews. Only charge for "Success Outcomes," keep seats/logins free. |
 | **The "Bill Shock" Crisis.** Customers get a massive, unexpected invoice. | Implement **Circuit Breakers** and auto-alerts at 50%, 80%, and 100% of usage limits. Offer one-time forgiveness for accidental overages to build goodwill. Provide clear forecasting in-product. |
 | **Misaligned Incentives.** If you charge "per hour" but your software becomes faster (saving time), your revenue drops while value rises. | Price on **[Outcomes](/wiki/pricing/models-and-metering/outcome-performance-based-pricing)** (e.g., "per successful audit") rather than inputs (time/data). |
@@ -145,7 +145,7 @@ In traditional [seat-based](/wiki/pricing/models-and-metering/seat-based-pricing
 * Howatson, A. (2024). [*The usage economy: Strategies for growth, smart pricing, and effective technology management*](https://book.usageeconomy.com/). *Usage Economy Publishing*.
 * Ghuman, A. (2021). [*Price to scale: Practical pricing for your high-growth software startup*](https://www.pricetoscale.com/). *Independently published*.
 
-**Related pages:** [Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Transaction-based pricing](/wiki/pricing/models-and-metering/transaction-based-pricing) | [Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing) | [Minimum commitment + overage](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage) | [Prepaid credits](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing) | [Outcome/performance-based pricing](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) | [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Freemium](/wiki/pricing/models-and-metering/freemium-model)
+**Related pages:** [Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Transaction-based pricing](/wiki/pricing/models-and-metering/transaction-based-pricing) | [Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing) | [Outcome/performance-based pricing](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) | [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Freemium](/wiki/pricing/models-and-metering/freemium-model)
 
 ## FAQ
 
@@ -159,7 +159,7 @@ In traditional [seat-based](/wiki/pricing/models-and-metering/seat-based-pricing
 
 **Q:** Can I combine subscription and usage pricing?
 
-**A:** Yes, this is the [**Hybrid Model**](/wiki/pricing/models-and-metering/hybrid-pricing) (or 3-Part Tariff) and is the industry standard for B2B. You charge a platform fee ([subscription](/wiki/pricing/models-and-metering/subscription-model)) for access and a usage fee for volume. Large enterprises often prefer a predictable "Unlimited" tier or a "[Pre-paid Credit](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model)" model to satisfy their procurement departments.
+**A:** Yes, this is the [**Hybrid Model**](/wiki/pricing/models-and-metering/hybrid-pricing) (or 3-Part Tariff) and is the industry standard for B2B. You charge a platform fee ([subscription](/wiki/pricing/models-and-metering/subscription-model)) for access and a usage fee for volume. Large enterprises often prefer a predictable "Unlimited" tier or a pre-paid credit model to satisfy their procurement departments.
 
 **Q:** Does usage-based pricing hurt company valuation?
 

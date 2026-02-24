@@ -11,7 +11,7 @@ owner: "Dr. Sarah Zou"
 
 ## Snapshot (TL;DR)
 
-**What it is:** A pricing model that blends [Capability Pricing](/wiki/pricing/models-and-metering/capability-feature-based-pricing) (flat recurring fees) with [Consumption Pricing](/wiki/pricing/models-and-metering/usage-based-pricing) (variable fees based on usage)—typically customers pay a **base [subscription](/wiki/pricing/models-and-metering/subscription-model) fee** (for access/platform) plus a **variable fee** based on consumption (for value).
+**What it is:** A pricing model that blends capability pricing (flat recurring fees) with [Consumption Pricing](/wiki/pricing/models-and-metering/usage-based-pricing) (variable fees based on usage)—typically customers pay a **base [subscription](/wiki/pricing/models-and-metering/subscription-model) fee** (for access/platform) plus a **variable fee** based on consumption (for value).
 
 **Why it matters:** It solves the **"Predictability vs Upside"** dilemma: the fixed fee covers your costs and ensures steady cash flow, while the variable component allows you to capture revenue growth as your customer succeeds and scales.
 
@@ -32,10 +32,10 @@ Unlike pure [usage-based pricing](/wiki/pricing/models-and-metering/usage-based-
 
 * **Platform fee (base):** Fixed recurring charge for access + baseline value.
 * **Included allowance:** Usage bundled into the base fee.
-* **Overage (metered usage):** Per-unit (or [tiered](/wiki/pricing/models-and-metering/tiered-graduated-block-pricing)) charges **only** for usage above the allowance.
+* **Overage (metered usage):** Per-unit (or tiered) charges **only** for usage above the allowance.
 * **Variable component:** The usage-priced part of the bill (units like API calls, GB, [transactions](/wiki/pricing/models-and-metering/transaction-based-pricing), seats-as-usage).
-* **Commitment:** Contracted minimum spend or prepaid credits (often annual) that reduce buyer risk and improve predictability. (See [minimum commitment + overage](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage).)
-* **[Prepaid credits / drawdown](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model):** Customer prepays a "wallet"; usage burns down the balance (sometimes with volume discounts).
+* **Commitment:** Contracted minimum spend or prepaid credits (often annual) that reduce buyer risk and improve predictability.
+* **Prepaid credits / drawdown:** Customer prepays a "wallet"; usage burns down the balance (sometimes with volume discounts).
 
 ### Mental model
 
@@ -61,7 +61,7 @@ By separating the "right to use" from the "volume of use," you align your incent
 | Situation                                                        | Better default                                    | Why                                                         |
 | ---------------------------------------------------------------- | ------------------------------------------------- | ----------------------------------------------------------- |
 | Marginal costs scale per unit (AI/SMS/storage)                   | **Hybrid (base + usage)**                         | Pass-through variable costs; protect gross margin           |
-| Usage is highly seasonal/volatile                                | **Hybrid** or **[prepaid drawdown](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model)** | Handles peaks/troughs without contract churn                |
+| Usage is highly seasonal/volatile                                | **Hybrid** or **prepaid drawdown** | Handles peaks/troughs without contract churn                |
 | Baseline value is high, 10–100× value variance across customers  | **Hybrid** (base + usage)                         | Captures upside from heavy/value-rich users                 |
 | PLG motion (land small, expand)                                  | **Hybrid** or **pure [usage](/wiki/pricing/models-and-metering/usage-based-pricing)**               | Low adoption friction + natural expansion                   |
 | Usage is the only value driver (no baseline)                     | **Pure [usage](/wiki/pricing/models-and-metering/usage-based-pricing)**                              | Minimizes barrier to start; pay only when used              |
@@ -109,7 +109,7 @@ You avoid the "one size fits none" trap. Light users can start and stay without 
 
 2. **Define the base:** Price the base to at least cover fixed costs (and help recover CAC) and include a meaningful allowance buffer (often around p25–p50 baseline usage). Set the allowance high enough to cover the average user, pushing only heavy users into overage.
 
-3. **Design usage charges and upgrade paths:** Set overage rates (flat, [tiered](/wiki/pricing/models-and-metering/tiered-graduated-block-pricing), or credits) to protect margin; make overage intentionally less attractive than upgrading to the next tier.
+3. **Design usage charges and upgrade paths:** Set overage rates (flat, tiered, or credits) to protect margin; make overage intentionally less attractive than upgrading to the next tier.
 
 4. **Package for segments with 2–4 [tiers](/wiki/pricing/packaging-and-bundling/good-better-best):** Create tiers where the main differences are allowance, overage rate, and a small set of high-value features/[add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular) (e.g., SSO, advanced reporting, support).
 
@@ -125,7 +125,7 @@ You avoid the "one size fits none" trap. Light users can start and stay without 
 
 | Pitfall | Fix |
 | ------- | --- |
-| **Bill shock & distrust:** Unpredictable invoices create churn and disputes. | Included allowance, real-time dashboards, alerts (e.g., 50/80/90%), calculators/forecasts, and caps or [prepay](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model) options. |
+| **Bill shock & distrust:** Unpredictable invoices create churn and disputes. | Included allowance, real-time dashboards, alerts (e.g., 50/80/90%), calculators/forecasts, and caps or prepay options. |
 | **Complexity overload:** Charging for storage *and* API calls *and* seats simultaneously confuses buyers. | Pick one primary [value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) and bundle the rest. |
 | **"Double charge" perception:** A high base fee *and* a high unit price feels like double-dipping. | Position the base as a **membership discount** that lowers the unit rate; show effective blended rates by tier. |
 | **The "penalty" feeling:** If the overage fee is punitive, customers will actively suppress usage. | Implement "rollover" credits or "true-up" periods where customers can adjust their [tier](/wiki/pricing/packaging-and-bundling/good-better-best) retroactively without penalty. |
@@ -142,13 +142,13 @@ You avoid the "one size fits none" trap. Light users can start and stay without 
 * Poyar, K. (2023, February 2). [*The state of usage-based pricing: 2nd edition*](https://openviewpartners.com/blog/state-of-usage-based-pricing/). *OpenView Partners*.
 * Raju, J., & Zhang, Z. J. (2010). [*Smart pricing: How Google, Priceline, and leading businesses use pricing innovation for profitability*](https://www.pearson.com/en-us/subject-catalog/p/smart-pricing/P2000000032954). *Wharton School Publishing*.
 
-**Related pages:** [Capability/feature-based pricing](/wiki/pricing/models-and-metering/capability-feature-based-pricing) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Transaction-based pricing](/wiki/pricing/models-and-metering/transaction-based-pricing) | [Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing) | [Minimum commitment + overage](/wiki/pricing/models-and-metering/minimum-commitment-plus-overage) | [Prepaid credits](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model) | [Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Tiered/graduated/block pricing](/wiki/pricing/models-and-metering/tiered-graduated-block-pricing) | [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay)
+**Related pages:** [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Transaction-based pricing](/wiki/pricing/models-and-metering/transaction-based-pricing) | [Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing) | [Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Add-ons](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay)
 
 ## FAQ
 
 **Q:** How do I handle customers who hate variable costs?
 
-**A:** Offer a "[Prepaid Drawdown](/wiki/pricing/models-and-metering/prepaid-credits-drawdown-model)" model. They pay a fixed $50k/year budget upfront (predictable for them) and draw usage against it (variable for you).
+**A:** Offer a prepaid drawdown model. They pay a fixed $50k/year budget upfront (predictable for them) and draw usage against it (variable for you).
 
 **Q:** Can I use hybrid pricing if my costs are near zero?
 

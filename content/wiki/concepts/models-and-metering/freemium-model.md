@@ -27,7 +27,7 @@ owner: "Dr. Sarah Zou"
 
 **Freemium** is a portmanteau of "Free" and "Premium"—a business model where basic services are provided free of charge while more advanced features, functionality, or usage limits require a paid [subscription](/wiki/pricing/models-and-metering/subscription-model).
 
-Unlike a **free trial** (which is time-bound), freemium is **[feature-bound](/wiki/pricing/models-and-metering/capability-feature-based-pricing)** or **[usage-bound](/wiki/pricing/models-and-metering/usage-based-pricing)** indefinitely. The free tier is not a preview of the full product; it is a permanent, limited version designed to create value, build habit, and generate a natural upgrade trigger.
+Unlike a **free trial** (which is time-bound), freemium is **feature-bound** or **[usage-bound](/wiki/pricing/models-and-metering/usage-based-pricing)** indefinitely. The free tier is not a preview of the full product; it is a permanent, limited version designed to create value, build habit, and generate a natural upgrade trigger.
 
 ### Key definitions
 
@@ -148,7 +148,7 @@ Freemium leverages low marginal distribution cost to remove adoption friction: u
 * Rietveld, J. (2018). [*Creating and capturing value from freemium business models: A demand-side perspective*](https://doi.org/10.1002/sej.1279). *Strategic Entrepreneurship Journal, 12*(2), 171–193.
 * Seufert, E. B. (2014). *Freemium Economics: Leveraging Analytics and User Segmentation to Drive Revenue*. *Morgan Kaufmann*.
 
-**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Capability/feature-based pricing](/wiki/pricing/models-and-metering/capability-feature-based-pricing) | [Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing) | [Tiered/graduated/block pricing](/wiki/pricing/models-and-metering/tiered-graduated-block-pricing) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Jobs-to-be-done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Penetration pricing](/wiki/pricing/foundations/penetration-strategy)
+**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Jobs-to-be-done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Penetration pricing](/wiki/pricing/foundations/penetration-strategy)
 
 ## FAQ
 
