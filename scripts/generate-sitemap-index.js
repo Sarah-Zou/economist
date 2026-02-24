@@ -83,8 +83,14 @@ function generateWikiSitemap() {
         if (inConceptsSection && line.includes('<span id="')) {
           const match = line.match(/<span id="([^"]+)">/);
           if (match) {
+            const conceptId = match[1];
+            const conceptPath = path.join(process.cwd(), 'content', 'wiki', 'concepts', slug, `${conceptId}.md`);
+            if (!fs.existsSync(conceptPath)) {
+              // Skip placeholder concepts that do not have published content yet.
+              continue;
+            }
             conceptPages.push({
-              url: `${baseUrl}/wiki/pricing/${slug}/${match[1]}`,
+              url: `${baseUrl}/wiki/pricing/${slug}/${conceptId}`,
               lastModified: data.updated || currentDate,
               changeFrequency: 'monthly',
               priority: 0.7,

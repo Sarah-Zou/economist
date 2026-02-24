@@ -1,0 +1,51 @@
+legacy_path,recommended_status,target_path,reason,notes
+/wiki/pricing/research-and-metrics/van-westendorp,301,/wiki/pricing/research-and-experiments,legacy taxonomy renamed,research-and-metrics -> research-and-experiments
+/wiki/pricing/research-and-metrics/gabor-granger,301,/wiki/pricing/research-and-experiments,legacy taxonomy renamed,research-and-metrics -> research-and-experiments
+/wiki/pricing/research-and-metrics/conjoint-analysis,301,/wiki/pricing/research-and-experiments,legacy taxonomy renamed,research-and-metrics -> research-and-experiments
+/wiki/pricing/research-and-metrics/price-elasticity,301,/wiki/pricing/research-and-experiments,legacy taxonomy renamed,research-and-metrics -> research-and-experiments
+/wiki/pricing/policies-and-governance/discounting-and-realization,301,/wiki/pricing/governance-and-process,legacy governance path renamed,policy page no longer exists
+/wiki/pricing/foundations/price-led-product-design,301,/wiki/pricing/foundations/strategic-pricing,legacy concept consolidated,redirect to closest canonical concept
+/wiki/pricing/foundations/price-floors,301,/wiki/pricing/foundations/cost-plus-pricing,legacy concept consolidated,redirect to closest canonical concept
+/wiki/pricing/foundations/unit-economics,301,/wiki/pricing/economics-and-metrics,legacy concept consolidated,category-level canonical destination
+/wiki/pricing/foundations/markup-rule,301,/wiki/pricing/foundations/maximization,legacy concept consolidated,redirect to closest canonical concept
+/wiki/pricing/value-and-customers/price-elasticity,301,/wiki/pricing/research-and-experiments,legacy concept moved to research category,canonical is category page until concept is published
+/assets/images/newsletter/SaaS_Benchmark_Data_Sources_June_2025.jpg,410,,asset intentionally removed,no replacement asset exists
+/wiki/pricing/comms-and-deals/deal-structuring,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/comms-and-deals/discounting,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/comms-and-deals/price-change-communications,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/comms-and-deals/pricing-page,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/comms-and-deals/pricing-transparency,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/comms-and-deals/social-proof,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/comms-and-deals/value-selling,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/competitive-and-positioning/competitive-reference-price,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/competitive-and-positioning/price-positioning,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/competitive-and-positioning/price-signaling,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/competitive-and-positioning/price-wars,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/competitive-and-positioning/value-map,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/economics-and-metrics/break-even-analysis,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/economics-and-metrics/cltv-cac,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/economics-and-metrics/cohort-analysis,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/economics-and-metrics/contribution-margin,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/economics-and-metrics/cost-to-serve,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/economics-and-metrics/pocket-price,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/economics-and-metrics/price-waterfall,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/economics-and-metrics/realized-price-index,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/governance-and-process/behavioral-psychological-pricing,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/governance-and-process/cpq-rules,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/governance-and-process/global-pricing-billing-ops,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/governance-and-process/price-architecture,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/governance-and-process/pricing-calendar,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/governance-and-process/pricing-governance,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/governance-and-process/pricing-strategy-document,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/governance-and-process/raci-discounting,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/governance-and-process/raising-prices,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/research-and-experiments/ab-testing,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/research-and-experiments/churn-interviews,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/research-and-experiments/conjoint-analysis,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/research-and-experiments/discovery-sprint,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/research-and-experiments/gabor-granger,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/research-and-experiments/in-product-experiments,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/research-and-experiments/maxdiff,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/research-and-experiments/price-elasticity,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/research-and-experiments/van-westendorp,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/wiki/pricing/research-and-experiments/win-loss-interviews,410,,unpublished placeholder concept,soft-404 candidate from historical route generation

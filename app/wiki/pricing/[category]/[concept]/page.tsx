@@ -51,7 +51,13 @@ export async function generateStaticParams() {
           console.warn(`Invalid concept ID detected: ${concept.id}, skipping...`);
           return;
         }
-        
+
+        // Only generate pages for concepts that have actual content files.
+        // This prevents "Coming Soon" soft-404 pages from being indexed.
+        if (!getConceptBySlug(category.slug, concept.id)) {
+          return;
+        }
+
         params.push({
           category: category.slug,
           concept: concept.id
@@ -87,6 +93,15 @@ export async function generateMetadata({ params }: ConceptPageProps): Promise<Me
 
   // Try to get concept content for better metadata
   const conceptData = getConceptBySlug(params.category, params.concept);
+  if (!conceptData) {
+    return {
+      title: 'Concept Not Found',
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
   const conceptName = conceptData?.title || concept.text.split(':')[0].trim();
   const description = conceptData?.oneLiner || conceptData?.metaTitle || (concept.text.includes(':') 
     ? concept.text.split(':').slice(1).join(':').trim()
@@ -864,6 +879,9 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
     const description = conceptData?.oneLiner || (concept.text.includes(':') 
       ? concept.text.split(':').slice(1).join(':').trim()
       : '');
+    if (!conceptData) {
+      notFound();
+    }
     const hasContent = conceptData !== null;
     const markdownComponents = createMarkdownComponents();
     
