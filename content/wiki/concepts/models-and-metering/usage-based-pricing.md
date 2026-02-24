@@ -11,31 +11,28 @@ owner: "Dr. Sarah Zou"
 
 ## Snapshot (TL;DR)
 
-**What it is:** A pricing model (often called "pay-as-you-go") where customers pay based on their consumption of a specific metric (e.g., API calls, data stored, [transactions processed](/wiki/pricing/models-and-metering/transaction-based-pricing)) rather than a flat monthly fee per user.
+**What it is:** A pricing model (often called "pay-as-you-go") where customers pay based on their consumption of a specific metric (e.g., API calls, data stored, transactions processed) rather than a flat monthly fee.
 
-**Why it matters:** It lowers the barrier to entry for small users while providing an uncapped revenue ceiling as your customers grow and succeed.
-
-**When to use:** When value scales with usage, usage can be metered accurately, customers can predict/control consumption, and when [seat-based](/wiki/pricing/models-and-metering/seat-based-pricing) licensing discourages adoption.
+**Why it matters:** It lowers the barrier to entry for customers while ensuring the revenue scales with the value the customer receives.
 
 **Key Takeaways:**
 
-- **Value Alignment:** You win when your customer wins.
-- **The "Unit" is King:** Success depends entirely on choosing the right [value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric).
+- **Value Alignment:** Risk shift from customers to you, as they pay only when consumption happens. You win when your customer wins.
+- **The "Unit" is King:** Success depends entirely on choosing the right value metric.
 - **Low Friction:** UBP allows customers to start small with minimal upfront risk, ideal for PLG (Product-Led Growth).
 - **Net Retention Power:** UBP is the primary driver of 130%+ Net Revenue Retention (NRR).
 - **Audit for "The Taxi Meter Effect":** If customers are afraid to use your product because they see the "meter running," you will kill adoption.
 
 ## What is usage-based pricing?
 
-**Usage-Based Pricing (Consumption Pricing),** often called "pay-as-you-go", is a [monetization model](/wiki/pricing/models-and-metering/monetization-model) where customers are charged based on their consumption of a product or service (e.g., gigabytes stored, API calls made, messages sent) rather than a flat fee or per-user license. It aligns the price paid directly with the volume of value received.
+**Usage-Based Pricing,** often called "pay-as-you-go", is a [monetization model](/wiki/pricing/models-and-metering/monetization-model) where customers are charged based on their consumption of a product or service (e.g., gigabytes stored, API calls made, messages sent, transactions processed, bookings confirmed) rather than a flat fee or per-user license. It aligns the price paid directly with the volume of value received.
 
-The emergence of UBP fits within the context of **The Usage Economy.**
-
-**The Usage Economy:** The broader economic shift from ownership (buying an asset) to access (paying for the utility of an asset). It relies on atomic-level tracking of value delivery.
+The emergence of UBP fits within the context of **The Usage Economy,** which refers to the broader economic shift from ownership (buying an asset) to access (paying for the utility of an asset). It relies on atomic-level tracking of value delivery.
 
 ### Key definitions
 
-* **[Pricing Metric (Value Metric)](/wiki/pricing/models-and-metering/pricing-metric-value-metric):** The specific unit of measurement used to define usage (e.g., per "active user," per "resolution," per "compute hour"). Selecting the right metric is the **single most consequential** decision in UBP. In UBP, you *want* these to be the same (or very close).
+* **[Pricing Metric (Value Metric)](/wiki/pricing/models-and-metering/pricing-metric-value-metric):** The specific measurable action you charge for (e.g., per "active user," per "booking," per "compute hour," per "payment processed"). Selecting the right metric is the **single most consequential** decision in UBP. 
+* **Metric Density:** The degree to which the value is the same across all units of a given [pricing metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric). High density (e.g., payment processing) supports UBP.
 * **Rate card:** The price per unit (often tiered).
 * **Allowance:** Included usage (free or bundled) before overage charges.
 * **Overage:** The variable bill above allowance.
@@ -43,17 +40,6 @@ The emergence of UBP fits within the context of **The Usage Economy.**
 * **Commit-to-consume (committed spend):** Customer commits to a minimum spend/units for a discount; usage burns down the commitment.
 * **Minimum Commit:** A floor price customers pay to ensure a baseline of revenue for the vendor.
 
-### Worked example (generic)
-
-You sell an API that processes "events."
-
-* Base: \$200/month includes 1M events.
-* Overage: \$0.00025 per event (= \$250 per additional 1M).
-* Customer uses 3.4M events.
-
-Bill = \$200 + \$0.00025 × (3.4M − 1.0M) = \$200 + \$0.00025 × 2.4M = \$200 + \$600 = \$800/month
-
-Add predictability option: "Commit \$1,500/month for up to 8M events at an effective \$0.0001875/event."
 
 ### Mental model
 
@@ -65,13 +51,30 @@ Add predictability option: "Commit \$1,500/month for up to 8M events at an effec
 * **Usage-Based (The Taxi):** You pay only for the specific distance traveled. If you don't travel, you pay zero. The risk of asset utilization shifts from the buyer to the seller.
 * **[Hybrid](/wiki/pricing/models-and-metering/hybrid-pricing) (The Cell Phone Plan):** The most common successful B2B model. You pay a base fee for a "bucket" of usage (e.g., 5GB data), and pay extra (overage) only if you exceed it. This creates predictability while capturing upside.
 
+### Usage-based vs. transaction-based pricing
+
+Transaction-based pricing is a specific *subset* or *implementation* of usage-based pricing. Both sit under **consumption pricing** (pay for what you use), contrasted with **capability pricing** (pay a flat fee for the ability to use, like a [subscription](/wiki/pricing/models-and-metering/subscription-model)). In practice, the terms are often used interchangeably—but here we distinguish them by (1) whether the metric is **continuous vs. discrete** and (2) whether it prices an **input vs. an outcome**.
+
+Usage-based pricing is like an electric meter that runs in the background based on intensity/duration (GB stored, compute minutes), while transaction-based pricing is like a turnstile that charges each time a customer passes through a gate (payment processed, booking confirmed). Transaction metrics often feel fairer because they're closer to a business "win," but they only work when the unit is cleanly countable and customers can predict (or control) spend.
+
+| Dimension            | Usage-based pricing                                                                                                     | Transaction-based pricing                                                                                                                           |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Metric nature**    | **Continuous** flow / accumulation (minutes, GB, MAU, records processed)                                                    | **Countable** events (payments, bookings, rides, calls, downloads)                                                                                      |
+| **Value alignment**  | Often **input-oriented** (provider effort/cost proxy)                                                                   | Often [**outcome-oriented**](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) (charged when a result is delivered)                                                                               |
+| **Predictability**   | **Lower.** Customers may struggle to estimate how many GBs or minutes they will use, potentially leading to [bill shock](/wiki/pricing/models-and-metering/usage-based-pricing)  | **Higher (Per Unit).** The cost is tied to a specific business event (e.g., "I only pay if I make a sale"), making it easier to justify internally  |
+| **Barrier to Entry** | **Low.** Removes upfront costs (CapEx), shifting risk from buyer to seller.                                             | **Lowest.** Often zero cost until value is realized (e.g., no fee until a ride is booked or payment processed)                                      |
+| **Revenue model**    | Often a [**Hybrid Model**](/wiki/pricing/models-and-metering/hybrid-pricing): A base fee (committed usage) + overage fees for exceeding limits                         | Often a **Linear Model**: A flat fee or percentage per event (e.g., \$0.30 + 2.9% per transaction)                                                  |
+| **Churn Risk**       | If customers overbuy capacity/tier, value feels poor → churn                                                            | Spend naturally drops to near-zero if they stop transacting                                                                |
+
+
+
 ## When should you use usage-based pricing?
 
 ### Decision criteria
 
 | If your product…                                        | Usage-based pricing is a good fit when…                        | Watch-outs                                       |
 | -------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------ |
-| Value grows with activity (compute, data, [transactions](/wiki/pricing/models-and-metering/transaction-based-pricing)) | More usage = more customer value                                | Bill shock; heavy-user discounts may be expected |
+| Value grows with activity (compute, data, transactions) | More usage = more customer value                                | Bill shock; heavy-user discounts may be expected |
 | Has measurable, auditable events                         | Metering is accurate and hard to spoof                          | Metering disputes; instrumentation gaps         |
 | Serves developers / automated workflows                  | Seats don't reflect value (APIs, agents, pipelines)             | Harder to sell "budget certainty"                |
 | Has significant variable cost                            | You need price to scale with cost and avoid margin compression  | Must model worst-case usage/margin               |
@@ -109,13 +112,31 @@ In traditional [seat-based](/wiki/pricing/models-and-metering/seat-based-pricing
 
 ### Step-by-step
 
-1. **Select the Pricing Metric/Value Metric (and validate it):** List 3–5 potential metrics (e.g., Storage, API calls, Active Users). Score each on: value alignment (does it track with their success?), predictability (can they budget for it?), controllability, meterability, auditability, and risk of gaming. Choose 1 primary metric (pricing-page headline) + 0–2 secondary meters (only for major cost/value drivers).
+1. **Select the Pricing Metric/Value Metric (and validate it):** List 3–5 potential metrics (e.g., Storage, API calls, Active Users) and choose 1 primary metric (pricing-page headline) + 0–2 secondary meters (only for major cost/value drivers). 
+   * Must be: *value-aligned, measurable, predictable, controllable, non-gameable, and easy to explain.*
+   * Examples: "per payment captured," "per booking completed," "per shipment label purchased."
 
-2. **Build the commercial model (rate card + predictability):** Create a rate card with 2–4 volume bands (linear or volumetric discounts). Add at least 2 predictability controls: allowance, caps/limits, alerts, commits, or annual prepay drawdown.
+2. **Choose the pricing structure (start simple):** Create a rate card with 2–4 volume bands (linear or volumetric discounts). 
+   * Ensure the unit price (or minimum) covers marginal cost + target gross margin.
+   * Often use [Hybrid Model](/wiki/pricing/models-and-metering/hybrid-pricing): base fee (includes allowance) + overage fee
+   * Add at least 2 predictability controls: allowance, caps/limits, alerts, commits, or annual prepay drawdown.
 
 3. **Build the Billing Infrastructure:** Connect your product's telemetry to your billing system (e.g., Stripe, NetSuite). This "metering" plumbing is the #1 technical hurdle. Ensure customers have a dashboard to view their real-time usage (units, trend, forecast) with clear definitions (what counts, rounding rules, windows) + exportable audit logs.
 
 4. **Pilot, iterate, then launch:** Run a "Shadow Billing" period (pilot with one [segment](/wiki/pricing/value-and-customers/customer-segments); monitor churn/expansion and pricing-related support tickets). Show customers what they *would* have paid under UBP before switching them over (a simple narrative + calculator/example bills).
+
+### Worked example (generic)
+
+You sell an API that processes "events."
+
+* Base: \$200/month includes 1M events.
+* Overage: \$0.00025 per event (= \$250 per additional 1M).
+* Customer uses 3.4M events.
+
+Bill = \$200 + \$0.00025 × (3.4M − 1.0M) = \$200 + \$0.00025 × 2.4M = \$200 + \$600 = \$800/month
+
+Add predictability option: "Commit \$1,500/month for up to 8M events at an effective \$0.0001875/event."
+
 
 ## Metrics to monitor
 
@@ -128,11 +149,11 @@ In traditional [seat-based](/wiki/pricing/models-and-metering/seat-based-pricing
 
 | Pitfall | Fix |
 | ------- | --- |
-| **Unpredictable Revenue.** Investors hate revenue volatility. | Use the **Pre-paid Drawdown** or **Credit** model. Customers buy $10k worth of "credits" upfront (booking revenue today) and consume them over the year. |
-| **The "Adoption Tax":** Charging for things that discourage people from using the product (e.g., charging for logins). | Run a value-metric workshop; validate with 10–20 customer interviews. Only charge for "Success Outcomes," keep seats/logins free. |
+| **The "Taxi Meter" effect:** Customers feel punished for using the product, so they throttle usage or churn—even when usage creates value. | Try to reduce per-event pain: include a baseline (bundled units), price closer to [outcomes](/wiki/pricing/models-and-metering/outcome-performance-based-pricing), or add success-based components so "more value" doesn't feel like "more penalty." |
 | **The "Bill Shock" Crisis.** Customers get a massive, unexpected invoice. | Implement **Circuit Breakers** and auto-alerts at 50%, 80%, and 100% of usage limits. Offer one-time forgiveness for accidental overages to build goodwill. Provide clear forecasting in-product. |
 | **Misaligned Incentives.** If you charge "per hour" but your software becomes faster (saving time), your revenue drops while value rises. | Price on **[Outcomes](/wiki/pricing/models-and-metering/outcome-performance-based-pricing)** (e.g., "per successful audit") rather than inputs (time/data). |
-| **Sales Compensation Misalignment:** Salespeople hate UBP because they can't "close a big deal" upfront. | Pay commissions on "estimated first-year usage" or "committed spend." |
+| **Wrong value metric:** The value metric is not the customer's value moment, so the bill feels arbitrary (and gets gamed/disputed). | Bill on **completed value** (e.g., "successful payment processed"), publish crisp counting rules (retries/refunds/duplicates), and provide an auditable "what counted" log. |
+| **Unpredictable Revenue.** Investors hate revenue volatility. | Use the **Pre-paid Drawdown** or **Credit** model. Customers buy $10k worth of "credits" upfront (booking revenue today) and consume them over the year. |
 
 ## References & Links
 
@@ -145,7 +166,7 @@ In traditional [seat-based](/wiki/pricing/models-and-metering/seat-based-pricing
 * Howatson, A. (2024). [*The usage economy: Strategies for growth, smart pricing, and effective technology management*](https://book.usageeconomy.com/). *Usage Economy Publishing*.
 * Ghuman, A. (2021). [*Price to scale: Practical pricing for your high-growth software startup*](https://www.pricetoscale.com/). *Independently published*.
 
-**Related pages:** [Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Transaction-based pricing](/wiki/pricing/models-and-metering/transaction-based-pricing) | [Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing) | [Outcome/performance-based pricing](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) | [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Freemium](/wiki/pricing/models-and-metering/freemium-model)
+**Related pages:** [Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing) | [Outcome/performance-based pricing](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) | [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Freemium](/wiki/pricing/models-and-metering/freemium-model)
 
 ## FAQ
 
@@ -159,7 +180,7 @@ In traditional [seat-based](/wiki/pricing/models-and-metering/seat-based-pricing
 
 **Q:** Can I combine subscription and usage pricing?
 
-**A:** Yes, this is the [**Hybrid Model**](/wiki/pricing/models-and-metering/hybrid-pricing) (or 3-Part Tariff) and is the industry standard for B2B. You charge a platform fee ([subscription](/wiki/pricing/models-and-metering/subscription-model)) for access and a usage fee for volume. Large enterprises often prefer a predictable "Unlimited" tier or a pre-paid credit model to satisfy their procurement departments.
+**A:** Yes, this is the [**Hybrid Model**](/wiki/pricing/models-and-metering/hybrid-pricing) and is the industry standard for B2B. You charge a platform fee ([subscription](/wiki/pricing/models-and-metering/subscription-model)) for access and a usage fee for volume. Large enterprises often prefer a predictable "Unlimited" tier or a pre-paid credit model to satisfy their procurement departments.
 
 **Q:** Does usage-based pricing hurt company valuation?
 
@@ -176,3 +197,7 @@ In traditional [seat-based](/wiki/pricing/models-and-metering/seat-based-pricing
 **Q:** How do I transition existing customers to usage pricing?
 
 **A:** Do not force it overnight. Introduce the new model for *new* customers first. For existing customers, grandfather them for a set period (e.g., 12 months) or offer a "shadow bill" showing what they *would* pay under the new model to acclimate them before switching.
+
+**Q:** Is transaction-based pricing the same as usage-based pricing?
+
+**A:** Transaction-based pricing is usually a **subset of usage-based pricing**. Both charge based on utilization, but **usage-based** often meters *continuous/aggregate* consumption (e.g., GB stored, compute minutes), while **transaction-based** charges for *discrete, countable events* (e.g., payment captured, booking confirmed).

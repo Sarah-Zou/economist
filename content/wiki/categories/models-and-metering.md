@@ -17,7 +17,6 @@ canonical: "https://sarahzou.com/wiki/pricing/models-and-metering"
 - **<span id="outcome-performance-based-pricing">[Outcome / performance-based pricing](/wiki/pricing/models-and-metering/outcome-performance-based-pricing)</span>**: Pricing tied to results or performance (e.g. revenue share, cost savings)
 - **<span id="freemium-model">[Freemium model](/wiki/pricing/models-and-metering/freemium-model)</span>**: Free tier with limited capability or usage, with paid tiers for more features or usage
 - **<span id="seat-based-pricing">[Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing)</span>**: Pricing based on the number of users or seats with access
-- **<span id="transaction-based-pricing">[Transaction-based pricing](/wiki/pricing/models-and-metering/transaction-based-pricing)</span>**: Pricing based on the number or value of transactions processed
 - **<span id="hybrid-pricing">[Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing)</span>**: Combining a fixed component (base subscription or per-seat fee) with a variable component (usage or consumption)
 
 *I'm currently working on developing detailed content for these concepts. Check back soon for comprehensive guides, step-by-step instructions, and real-world examples.*
