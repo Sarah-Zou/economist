@@ -47,6 +47,22 @@ export default function RootLayout({
         <link rel="icon" href="/images/EconNova_icon.png" type="image/png" />
       </head>
       <body className="font-sans">
+        {/* Normalize trailing slash URLs to canonical non-trailing form on GitHub Pages. */}
+        <Script
+          id="canonical-trailing-slash-redirect"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                var pathname = window.location.pathname || '/';
+                if (pathname.length <= 1 || !pathname.endsWith('/')) return;
+                var canonicalPath = pathname.replace(/\\/+$/, '');
+                var target = canonicalPath + window.location.search + window.location.hash;
+                window.location.replace(target);
+              })();
+            `,
+          }}
+        />
         {/* Person Schema for SEO - added to all pages for disambiguation */}
         <script
           type="application/ld+json"
