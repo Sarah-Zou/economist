@@ -15,6 +15,7 @@
     "export": "next export",
     "postbuild": "node scripts/generate-sitemap-index.js",
     "validate-sitemap": "node scripts/validate-sitemap-urls.js",
+    "seo:audit-indexing": "node scripts/audit-crawled-not-indexed.js",
     "analyze": "ANALYZE=true npm run build",
     "check:color-drift": "node scripts/check-color-drift.js",
     "check-links": "node scripts/check-links.js",

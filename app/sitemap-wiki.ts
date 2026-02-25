@@ -27,17 +27,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     category.concepts
       .filter((concept) => concept.id)
       .map((concept) => {
-        // Try to get concept data to use its lastUpdated date
-        const conceptData = getConceptBySlug(category.slug, concept.id!)
-        const lastModified = conceptData?.lastUpdated || category.updated || currentDate
-        
+        const conceptId = concept.id as string
+        // Only include concept URLs that have a published markdown file.
+        const conceptData = getConceptBySlug(category.slug, conceptId)
+        if (!conceptData) {
+          return null
+        }
+
         return {
-          url: normalizeUrl(`/wiki/pricing/${category.slug}/${concept.id}`),
-          lastModified,
+          url: normalizeUrl(`/wiki/pricing/${category.slug}/${conceptId}`),
+          lastModified: conceptData.lastUpdated || category.updated || currentDate,
           changeFrequency: 'monthly' as const,
           priority: 0.7,
         }
       })
+      .filter((entry): entry is NonNullable<typeof entry> => entry !== null)
   )
 
   return [...wikiPages, ...conceptPages]

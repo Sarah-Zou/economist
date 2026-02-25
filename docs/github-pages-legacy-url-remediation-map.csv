@@ -3,6 +3,7 @@ legacy_path,recommended_status,target_path,reason,notes
 /wiki/pricing/research-and-metrics/gabor-granger,301,/wiki/pricing/research-and-experiments,legacy taxonomy renamed,research-and-metrics -> research-and-experiments
 /wiki/pricing/research-and-metrics/conjoint-analysis,301,/wiki/pricing/research-and-experiments,legacy taxonomy renamed,research-and-metrics -> research-and-experiments
 /wiki/pricing/research-and-metrics/price-elasticity,301,/wiki/pricing/research-and-experiments,legacy taxonomy renamed,research-and-metrics -> research-and-experiments
+/wiki/pricing/research-and-metrics/ab-testing,301,/wiki/pricing/research-and-experiments,legacy taxonomy renamed,research-and-metrics -> research-and-experiments
 /wiki/pricing/policies-and-governance/discounting-and-realization,301,/wiki/pricing/governance-and-process,legacy governance path renamed,policy page no longer exists
 /wiki/pricing/foundations/price-led-product-design,301,/wiki/pricing/foundations/strategic-pricing,legacy concept consolidated,redirect to closest canonical concept
 /wiki/pricing/foundations/price-floors,301,/wiki/pricing/foundations/cost-plus-pricing,legacy concept consolidated,redirect to closest canonical concept
@@ -49,3 +50,13 @@ legacy_path,recommended_status,target_path,reason,notes
 /wiki/pricing/research-and-experiments/price-elasticity,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
 /wiki/pricing/research-and-experiments/van-westendorp,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
 /wiki/pricing/research-and-experiments/win-loss-interviews,410,,unpublished placeholder concept,soft-404 candidate from historical route generation
+/consulting/services/rapid-pricing-experiment-toolkit,301,/consulting/services/pricing-monetization-sprint,service page consolidated,legacy consulting slug replaced by pricing sprint
+/consulting/services/investor-monetization-pitch-kit,301,/consulting/services/pricing-monetization-sprint,service page consolidated,legacy consulting slug replaced by pricing sprint
+/consulting/services/profitability-simulator,301,/consulting/services/on-call-economist-retainer,service page consolidated,legacy consulting slug replaced by retainer
+/consulting/services/investor-updates-automation-kit,301,/consulting/services/on-call-economist-retainer,service page consolidated,legacy consulting slug replaced by retainer
+/consulting/services/investor-deck-accelerator,301,/consulting/services/on-call-economist-retainer,service page consolidated,legacy consulting slug replaced by retainer
+/consulting/services/customer-value-research-pack,301,/consulting/services/pricing-monetization-sprint,service page consolidated,legacy consulting slug replaced by pricing sprint
+/consulting/services/value-based-monetization-design,301,/consulting/services/pricing-monetization-sprint,service page consolidated,legacy consulting slug replaced by pricing sprint
+/consulting/services/runway-scenario-model,301,/consulting/services/on-call-economist-retainer,service page consolidated,legacy consulting slug replaced by retainer
+/consulting/services/competitive-benchmark-insights,301,/consulting/services/metrics-experimentation-sprint,service page consolidated,legacy consulting slug replaced by metrics sprint
+/consulting/services/pricing-diagnostic-revenue-boost,301,/consulting/services/pricing-monetization-sprint,service page consolidated,legacy consulting slug replaced by pricing sprint

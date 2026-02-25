@@ -630,6 +630,22 @@ function parseFAQ(content: string): { beforeFAQ: string; faqItems: Array<{ quest
 function createMarkdownComponents() {
   const renderedHeadingIds = new Map<string, number>();
   return {
+  h1: ({ node, ...props }: any) => {
+    const text = normalizeHeadingText(extractNodeText(props.children))
+    const id = createUniqueHeadingId(text, renderedHeadingIds)
+    return (
+      <h2 id={id} className="group font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-[4.5rem] scroll-mt-24 flex items-center gap-3">
+        <span>{text}</span>
+        <a
+          href={`#${id}`}
+          className="text-sm text-[#3b4652] opacity-0 transition-opacity group-hover:opacity-100 focus:opacity-100"
+          aria-label={`Link to ${text}`}
+        >
+          #
+        </a>
+      </h2>
+    );
+  },
   h2: ({ node, ...props }: any) => {
     const text = normalizeHeadingText(extractNodeText(props.children))
     const id = createUniqueHeadingId(text, renderedHeadingIds)
@@ -993,6 +1009,31 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
     }
 
     const references = (conceptData?.references || []).filter((ref) => ref?.title && ref?.url);
+    const relatedConceptIdsFromFrontmatter = (conceptData?.relatedConcepts || [])
+      .filter((id) => id && id !== params.concept);
+    const fallbackRelatedIds = category.concepts
+      .filter((item) => item.id && item.id !== params.concept)
+      .map((item) => item.id as string);
+    const relatedConceptIds = Array.from(
+      new Set(
+        (relatedConceptIdsFromFrontmatter.length > 0
+          ? relatedConceptIdsFromFrontmatter
+          : fallbackRelatedIds).slice(0, 4)
+      )
+    );
+    const relatedConceptCards = relatedConceptIds
+      .map((relatedId) => {
+        const data = getConceptBySlug(params.category, relatedId);
+        if (!data) {
+          return null;
+        }
+        return {
+          id: relatedId,
+          title: data.title || relatedId,
+          summary: data.oneLiner || '',
+        };
+      })
+      .filter((item): item is NonNullable<typeof item> => item !== null);
     const conceptBodyWidthClass = 'max-w-none 2xl:max-w-[96ch]';
     const breadcrumbs = [
       { name: 'Pricing', url: '/wiki/pricing' },
@@ -1723,6 +1764,32 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                               </li>
                             ))}
                           </ol>
+                        </section>
+                      )}
+
+                      {relatedConceptCards.length > 0 && (
+                        <section className="mt-12 mb-12">
+                          <h2 id="related-concepts" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-[4.5rem] scroll-mt-24">
+                            Related concepts / Next steps
+                          </h2>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {relatedConceptCards.map((related) => (
+                              <Link
+                                key={related.id}
+                                href={`/wiki/pricing/${params.category}/${related.id}`}
+                                className="block p-4 border border-[#e2e6ea] rounded-lg hover:border-brand-ink hover:shadow-md transition-all no-underline"
+                              >
+                                <h3 className="font-semibold text-[#1f2933] mb-2">
+                                  {related.title}
+                                </h3>
+                                {related.summary && (
+                                  <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+                                    {related.summary}
+                                  </p>
+                                )}
+                              </Link>
+                            ))}
+                          </div>
                         </section>
                       )}
 

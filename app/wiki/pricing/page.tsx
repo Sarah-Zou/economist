@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { generateItemListJsonLd, generateWebPageJsonLd, generateCollectionPageJsonLd } from '@/lib/generateJsonLd';
-import { getAllCategories } from '@/lib/mdx';
+import { getAllCategories, getConceptBySlug } from '@/lib/mdx';
 import WikiLayout from '@/components/wiki/WikiLayout';
 import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter';
 import CategoryCard from '@/components/wiki/CategoryCard';
@@ -60,7 +60,13 @@ export default function WikiPricingPage() {
     const category = allCategories.find(cat => cat.slug === orderItem.slug);
     if (!category) return null;
     
-    const conceptCount = category.concepts.filter(c => c.id).length;
+    const conceptCount = category.concepts.filter((c) => {
+      if (!c.id) {
+        return false;
+      }
+      // Count only published concept pages so index stats match crawlable URLs.
+      return getConceptBySlug(category.slug, c.id) !== null;
+    }).length;
     const hasContent = conceptCount > 0;
     
     return { 

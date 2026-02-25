@@ -1,5 +1,4 @@
 import { MetadataRoute } from 'next'
-import { getAllCategories, getConceptBySlug } from '@/lib/mdx'
 import { getAllPosts } from '@/lib/api'
 
 const baseUrl = 'https://sarahzou.com'
@@ -82,33 +81,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  const categories = getAllCategories()
-  const wikiCategoryPages = categories.map((category) => ({
-    url: normalizeUrl(`/wiki/pricing/${category.slug}`),
-    lastModified: category.updated || currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }))
-
-  const wikiConceptPages = categories.flatMap((category) =>
-    category.concepts
-      .filter((concept) => concept.id)
-      .map((concept) => ({
-        url: normalizeUrl(`/wiki/pricing/${category.slug}/${concept.id}`),
-        lastModified: getConceptBySlug(category.slug, concept.id as string)?.lastUpdated || category.updated || currentDate,
-        changeFrequency: 'monthly' as const,
-        priority: 0.8,
-      }))
-  )
-
   const newsletterPosts = getAllPosts()
-  const newsletterPostPages = newsletterPosts.map((post) => ({
-    url: normalizeUrl(`/newsletter/${post.slug}`),
-    lastModified: post.date || currentDate,
-    changeFrequency: 'weekly' as const,
-    priority: 0.5,
-  }))
-
   const newsletterTotalPages = Math.ceil(newsletterPosts.length / POSTS_PER_PAGE)
   const newsletterPaginationPages = Array.from({ length: Math.max(newsletterTotalPages - 1, 0) }, (_, i) => ({
     url: normalizeUrl(`/newsletter/page/${i + 2}`),
@@ -117,5 +90,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  return [...corePages, ...wikiCategoryPages, ...wikiConceptPages, ...newsletterPostPages, ...newsletterPaginationPages]
+  // Keep this sitemap focused on core/static pages. Wiki and newsletter post URLs
+  // are emitted in dedicated sitemaps to avoid duplicate URLs in sitemap_index.xml.
+  return [...corePages, ...newsletterPaginationPages]
 }

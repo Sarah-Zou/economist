@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { unstable_noStore } from 'next/cache';
 import { generateCollectionPageJsonLd, generateBreadcrumbJsonLd } from '@/lib/generateJsonLd';
-import { getCategoryBySlug, getAllCategorySlugs } from '@/lib/mdx';
+import { getCategoryBySlug, getAllCategorySlugs, getConceptBySlug } from '@/lib/mdx';
 import WikiLayout from '@/components/wiki/WikiLayout';
 import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter';
 import Link from 'next/link';
@@ -198,6 +198,23 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
   const { content: whatsInCategoryContent, workingNote } = extractWhatsInCategorySection(category.content);
   const howToUseContent = extractHowToUseSection(category.content);
+  const publishedConcepts = category.concepts
+    .filter((concept) => concept.id)
+    .map((concept) => {
+      const conceptId = concept.id as string;
+      const conceptData = getConceptBySlug(params.category, conceptId);
+      if (!conceptData) {
+        return null;
+      }
+      return {
+        id: conceptId,
+        title: conceptData.title || concept.text.split(':')[0].trim(),
+        summary:
+          conceptData.oneLiner ||
+          (concept.text.includes(':') ? concept.text.split(':').slice(1).join(':').trim() : ''),
+      };
+    })
+    .filter((concept): concept is NonNullable<typeof concept> => concept !== null);
 
   return (
     <>
@@ -1217,6 +1234,35 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                     </ReactMarkdown>
                   </div>
                 )}
+              </div>
+            )}
+
+            {publishedConcepts.length > 0 && (
+              <div className="mt-16 mb-12">
+                <div className="flex items-center mb-6">
+                  <div className="w-1 h-8 bg-blue-600 mr-3"></div>
+                  <h2 id="published-concepts" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
+                    Published concepts in this category
+                  </h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {publishedConcepts.map((concept) => (
+                    <Link
+                      key={concept.id}
+                      href={`/wiki/pricing/${params.category}/${concept.id}`}
+                      className="block p-4 border border-[#e2e6ea] rounded-lg hover:border-brand-ink hover:shadow-md transition-all"
+                    >
+                      <h3 className="font-semibold text-[#1f2933] mb-2">
+                        {concept.title}
+                      </h3>
+                      {concept.summary && (
+                        <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+                          {concept.summary}
+                        </p>
+                      )}
+                    </Link>
+                  ))}
+                </div>
               </div>
             )}
 
