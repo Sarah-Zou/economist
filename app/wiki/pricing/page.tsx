@@ -118,7 +118,7 @@ export default function WikiPricingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd) }}
       />
       
-      <WikiLayout breadcrumbs={[]}>
+      <WikiLayout breadcrumbs={[]} showAreasFooter={false}>
         <div className="w-full">
           {/* Hero Section */}
           <div className="mb-12">

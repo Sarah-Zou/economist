@@ -52,11 +52,15 @@ Start with [ICP](/wiki/pricing/value-and-customers/ideal-customer-profile) to de
 
 ### Value Logic Insight
 
-Once you know who/why, you translate value into price logic. [Value Drivers](/wiki/pricing/value-and-customers/value-drivers) turn feature talk into a prioritized list of outcomes (economic, risk, emotional) that actually move WTP—and they're inherently relative to the substitute. From there, [EVE](/wiki/pricing/value-and-customers/economic-value-estimation) is your "smart-shopper" quantification engine: anchor on the next-best alternative (reference value) and stack your net differentiation value to compute a justifiable ceiling and a credible ROI narrative. [Value Decoder](/wiki/pricing/value-and-customers/value-decoder-framework) uses the same anchoring idea but is better when real-world perception and context matter (budget/income shifts, complements, environment). [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) research turns that logic into a measurable distribution so you can set price points and validate against unit economics.
+Once you know who/why, you translate value into price logic. [Value Drivers](/wiki/pricing/value-and-customers/value-drivers) turn feature talk into a prioritized list of outcomes (economic, risk, emotional) that actually move WTP—and they're inherently relative to the substitute. 
+
+From there, [EVE](/wiki/pricing/value-and-customers/economic-value-estimation) is your "smart-shopper" quantification engine: anchor on the next-best alternative (reference value) and stack your net differentiation value to compute a justifiable ceiling and a credible ROI narrative. [Value Decoder](/wiki/pricing/value-and-customers/value-decoder-framework) uses the same anchoring idea but is better when real-world perception and context matter (budget/income shifts, complements, environment). 
+
+[WTP](/wiki/pricing/value-and-customers/willingness-to-pay) research turns that logic into a measurable distribution so you can set price points and validate against unit economics.
 
 ### Capture Mechanism Insight
 
-Finally, you design capture mechanisms so you don't leave value on the table. [Segmentation by WTP / Use Case](/wiki/pricing/value-and-customers/customer-segments) is what you do when one price can't fit (hobbyists vs enterprise, low vs high urgency, low vs high intensity): partition by jobs/use cases and WTP, then align packages and price points so you're not averaging your market. [Price fences / price discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) is the implementation layer: don't discount blindly—fence. Use eligibility or self-selection fences (features, limits, support, contract terms, time/location rules) that are enforceable and minimize arbitrage, so high-WTP customers don't leak into low-price buckets.
+Finally, you design capture mechanisms so you don't leave value on the table. [Segmentation by WTP / Use Case](/wiki/pricing/value-and-customers/customer-segments) is what you do when one price can't fit: partition by jobs/use cases and WTP, then align packages and price points so you're not averaging your market. [Price fences / price discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) is the implementation layer: don't discount blindly—fence. Use eligibility or self-selection fences that are enforceable and minimize arbitrage, so high-WTP customers don't leak into low-price buckets.
 
 ## How to use this
 

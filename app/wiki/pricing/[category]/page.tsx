@@ -247,7 +247,9 @@ export default function CategoryPage({ params }: CategoryPageProps) {
       return null;
     }).filter((s): s is { number: string; title: string; subtitle: string } => s !== null);
     const descMatch = afterTitle.match(/^([\s\S]*?)(?=\n#### Steps)/);
-    const description = descMatch ? descMatch[1].replace(/\n+/g, ' ').trim() : '';
+    let description = descMatch ? descMatch[1].trim() : '';
+    // Strip the ### title line from description (it's rendered separately as h3)
+    description = description.replace(/^###\s+[^\n]+\n?/, '').replace(/\n+/g, ' ').trim();
     return { title, description, steps };
   };
 
@@ -321,45 +323,6 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                     {(summarySectionContent || `## Summary\n\n${category.summary}`).replace(/^## Summary\s*/i, '')}
                   </ReactMarkdown>
                 </div>
-              </div>
-            )}
-
-            {/* What's in this category Section - Only for foundations category */}
-            {params.category === 'foundations' && (whatsInCategoryContent || workingNote) && (
-              <div className="mt-12 mb-12">
-                {/* Working note - appears before the section */}
-                {workingNote && (
-                  <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                    <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] italic">
-                      {workingNote}
-                    </p>
-                  </div>
-                )}
-                
-                <div className="flex items-center mb-6">
-                  <div className="w-1 h-8 bg-blue-600 mr-3"></div>
-                  <h2 id="whats-in-this-category" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
-                    What's in this category
-                  </h2>
-                </div>
-                {whatsInCategoryContent && (
-                  <div className="prose prose-lg max-w-none text-[#1f2933]">
-                    <ReactMarkdown 
-                      remarkPlugins={[remarkGfm]}
-                      rehypePlugins={[rehypeRaw]}
-                      components={{
-                        p: ({node, ...props}: any) => <p className="text-base sm:text-[17px] leading-[1.65] mb-4" {...props} />,
-                        ul: ({node, ...props}: any) => <ul className="list-disc list-outside space-y-3 mb-4 ml-6" {...props} />,
-                        li: ({node, ...props}: any) => <li className="text-base sm:text-[17px] leading-[1.65] pl-2" {...props} />,
-                        strong: ({node, ...props}: any) => <strong className="font-semibold" {...props} />,
-                        em: ({node, ...props}: any) => <em className="italic" {...props} />,
-                        a: ({node, ...props}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...props} />,
-                      }}
-                    >
-                      {whatsInCategoryContent}
-                    </ReactMarkdown>
-                  </div>
-                )}
               </div>
             )}
 
@@ -621,45 +584,6 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                     {(summarySectionContent || `## Summary\n\n${category.summary}`).replace(/^## Summary\s*/i, '')}
                   </ReactMarkdown>
                 </div>
-              </div>
-            )}
-
-            {/* What's in this category Section - For value-and-customers, packaging-and-bundling, and models-and-metering categories */}
-            {(params.category === 'value-and-customers' || params.category === 'packaging-and-bundling' || params.category === 'models-and-metering') && (whatsInCategoryContent || workingNote) && (
-              <div className="mt-12 mb-12">
-                {/* Working note - appears before the section */}
-                {workingNote && (
-                  <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                    <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] italic">
-                      {workingNote}
-                    </p>
-                  </div>
-                )}
-                
-                <div className="flex items-center mb-6">
-                  <div className="w-1 h-8 bg-blue-600 mr-3"></div>
-                  <h2 id="whats-in-this-category" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
-                    What's in this category
-                  </h2>
-                </div>
-                {whatsInCategoryContent && (
-                  <div className="prose prose-lg max-w-none text-[#1f2933]">
-                    <ReactMarkdown 
-                      remarkPlugins={[remarkGfm]}
-                      rehypePlugins={[rehypeRaw]}
-                      components={{
-                        p: ({node, ...props}: any) => <p className="text-base sm:text-[17px] leading-[1.65] mb-4" {...props} />,
-                        ul: ({node, ...props}: any) => <ul className="list-disc list-outside space-y-3 mb-4 ml-6" {...props} />,
-                        li: ({node, ...props}: any) => <li className="text-base sm:text-[17px] leading-[1.65] pl-2" {...props} />,
-                        strong: ({node, ...props}: any) => <strong className="font-semibold" {...props} />,
-                        em: ({node, ...props}: any) => <em className="italic" {...props} />,
-                        a: ({node, ...props}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...props} />,
-                      }}
-                    >
-                      {whatsInCategoryContent}
-                    </ReactMarkdown>
-                  </div>
-                )}
               </div>
             )}
 
@@ -1271,44 +1195,6 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               </div>
             )}
 
-            {/* Render "What's in this category" section for other non-foundations categories */}
-            {params.category !== 'foundations' && params.category !== 'value-and-customers' && params.category !== 'packaging-and-bundling' && params.category !== 'models-and-metering' && (whatsInCategoryContent || workingNote) && (
-              <div className="mt-12 mb-12">
-                {/* Working note - appears before the section */}
-                {workingNote && (
-                  <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                    <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] italic">
-                      {workingNote}
-                    </p>
-                  </div>
-                )}
-                
-                <div className="flex items-center mb-6">
-                  <div className="w-1 h-8 bg-blue-600 mr-3"></div>
-                  <h2 id="whats-in-this-category" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
-                    What's in this category
-                  </h2>
-                </div>
-                {whatsInCategoryContent && (
-                  <div className="prose prose-lg max-w-none text-[#1f2933]">
-                    <ReactMarkdown 
-                      remarkPlugins={[remarkGfm]}
-                      rehypePlugins={[rehypeRaw]}
-                      components={{
-                        p: ({node, ...props}: any) => <p className="text-base sm:text-[17px] leading-[1.65] mb-4" {...props} />,
-                        ul: ({node, ...props}: any) => <ul className="list-disc list-inside space-y-2 mb-4" {...props} />,
-                        li: ({node, ...props}: any) => <li className="text-base sm:text-[17px] leading-[1.65]" {...props} />,
-                        strong: ({node, ...props}: any) => <strong className="font-semibold" {...props} />,
-                        em: ({node, ...props}: any) => <em className="italic" {...props} />,
-                      }}
-                    >
-                      {whatsInCategoryContent}
-                    </ReactMarkdown>
-                  </div>
-                )}
-              </div>
-            )}
-
             {/* Core Concepts - Markdown fallback for categories without card-based blocks */}
             {coreConceptsContent && !['foundations', 'value-and-customers', 'packaging-and-bundling', 'models-and-metering'].includes(params.category) && (
               <div className="mt-12 mb-12">
@@ -1386,19 +1272,19 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                   </div>
                 ) : params.category === 'value-and-customers' && howToUseWorkflow ? (
                   <div className="space-y-8">
-                    <div className="bg-[#eef0f3] rounded-2xl p-8 shadow-sm relative overflow-hidden">
+                    <div className="bg-[#eef0f3] rounded-2xl p-8 md:p-10 shadow-sm relative overflow-hidden">
                       <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -mr-32 -mt-32 opacity-30"></div>
                       <div className="relative z-10">
-                        <h3 className="text-[#1f2933] font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-3">{howToUseWorkflow.title}</h3>
-                        <p className="text-[#1f2933] text-base sm:text-[17px] opacity-80 mb-8 leading-[1.65]">{howToUseWorkflow.description}</p>
-                        <div className="flex flex-nowrap items-center justify-between gap-2 md:gap-3 lg:gap-4">
+                        <h3 className="text-[#1f2933] font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-4">{howToUseWorkflow.title}</h3>
+                        <p className="text-[#1f2933] text-base sm:text-[17px] leading-[1.65] mb-8">{howToUseWorkflow.description}</p>
+                        <div className="flex flex-nowrap items-stretch gap-3 md:gap-4 overflow-x-auto pb-2 -mx-1">
                           {howToUseWorkflow.steps.flatMap((step, i) => [
-                            <div key={`s-${i}`} className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm flex-shrink-0 flex-1 min-w-0">
-                              <div className="text-[#c2410c] text-xs font-semibold mb-1.5 tracking-wide">{step.number}</div>
-                              <h4 className="text-[#1f2933] font-bold text-sm mb-1">{step.title}</h4>
-                              <p className="text-[#1f2933] text-xs opacity-70 leading-tight">{step.subtitle}</p>
+                            <div key={`s-${i}`} className="bg-white rounded-xl p-4 md:p-5 border border-[#e5e7eb] shadow-md flex-shrink-0 flex-1 min-w-[7rem] md:min-w-0 flex flex-col">
+                              <div className="text-[#c2410c] text-sm font-bold mb-2 tracking-wider">{step.number}</div>
+                              <h4 className="text-[#1f2933] font-bold text-base mb-1.5">{step.title}</h4>
+                              <p className="text-[#1f2933] text-sm text-[#64748b] leading-snug mt-auto">{step.subtitle}</p>
                             </div>,
-                            ...(i < howToUseWorkflow.steps.length - 1 ? [<ArrowRight key={`a-${i}`} className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />] : [])
+                            ...(i < howToUseWorkflow.steps.length - 1 ? [<div key={`a-${i}`} className="flex items-center justify-center flex-shrink-0 self-stretch"><ArrowRight className="text-[#cbd5e1] w-5 h-5 md:w-6 md:h-6" /></div>] : [])
                           ])}
                         </div>
                       </div>
@@ -1465,6 +1351,43 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                       }}
                     >
                       {howToUseContent.replace(/^## How to use this\s*/i, '')}
+                    </ReactMarkdown>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* What's in this category Section - After How to use this for all categories */}
+            {(whatsInCategoryContent || workingNote) && (
+              <div className="mt-16 mb-12">
+                {workingNote && (
+                  <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                    <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] italic">
+                      {workingNote}
+                    </p>
+                  </div>
+                )}
+                <div className="flex items-center mb-6">
+                  <div className="w-1 h-8 bg-blue-600 mr-3"></div>
+                  <h2 id="whats-in-this-category" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
+                    What's in this category
+                  </h2>
+                </div>
+                {whatsInCategoryContent && (
+                  <div className="prose prose-lg max-w-none text-[#1f2933]">
+                    <ReactMarkdown 
+                      remarkPlugins={[remarkGfm]}
+                      rehypePlugins={[rehypeRaw]}
+                      components={{
+                        p: ({node, ...props}: any) => <p className="text-base sm:text-[17px] leading-[1.65] mb-4" {...props} />,
+                        ul: ({node, ...props}: any) => <ul className="list-disc list-outside space-y-3 mb-4 ml-6" {...props} />,
+                        li: ({node, ...props}: any) => <li className="text-base sm:text-[17px] leading-[1.65] pl-2" {...props} />,
+                        strong: ({node, ...props}: any) => <strong className="font-semibold" {...props} />,
+                        em: ({node, ...props}: any) => <em className="italic" {...props} />,
+                        a: ({node, ...props}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...props} />,
+                      }}
+                    >
+                      {whatsInCategoryContent}
                     </ReactMarkdown>
                   </div>
                 )}
