@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { unstable_noStore } from 'next/cache';
 import { generateCollectionPageJsonLd, generateBreadcrumbJsonLd } from '@/lib/generateJsonLd';
-import { getCategoryBySlug, getAllCategorySlugs, getConceptBySlug } from '@/lib/mdx';
+import { getCategoryBySlug, getAllCategorySlugs } from '@/lib/mdx';
 import WikiLayout from '@/components/wiki/WikiLayout';
 import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter';
 import Link from 'next/link';
@@ -151,7 +151,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
         inWhatsInSection = true;
         continue; // Skip the heading line
       }
-      if (line.includes('## How to use this') || line.includes('## Related categories')) {
+      if (inWhatsInSection && line.trim().startsWith('## ') && !line.includes("What's in this category")) {
         break; // Stop when we hit the next section
       }
       if (inWhatsInSection) {
@@ -172,49 +172,92 @@ export default function CategoryPage({ params }: CategoryPageProps) {
     };
   };
 
-  // Extract only the "How to use this" section from markdown content
-  // Skip "What's in this category" and "Related categories" as they're rendered manually
-  const extractHowToUseSection = (content: string): string => {
+  // Extract section between two ## headings
+  const extractSection = (content: string, startHeading: string, endHeadings?: string[]): string => {
     const lines = content.split('\n');
-    let inHowToUseSection = false;
-    const howToUseLines: string[] = [];
+    let inSection = false;
+    const sectionLines: string[] = [];
+    const stopAt = endHeadings || ['## '];
     
     for (const line of lines) {
-      if (line.includes('## How to use this')) {
-        inHowToUseSection = true;
-        howToUseLines.push(line);
+      if (line.includes(startHeading)) {
+        inSection = true;
+        sectionLines.push(line);
         continue;
       }
-      if (line.includes('## Related categories')) {
-        break; // Stop when we hit the next section
-      }
-      if (inHowToUseSection) {
-        howToUseLines.push(line);
+      if (inSection) {
+        const isStop = stopAt.some(h => line.trim().startsWith(h));
+        if (isStop) break;
+        sectionLines.push(line);
       }
     }
-    
-    return howToUseLines.join('\n');
+    return sectionLines.join('\n');
+  };
+
+  // Extract "How to use this" or "How startup founders can use these concepts"
+  const extractHowToUseSection = (content: string): string => {
+    const howToUse = extractSection(content, '## How to use this', ['## Related categories']);
+    if (howToUse.trim()) return howToUse;
+    return extractSection(content, '## How startup founders can use these concepts', ['## Related categories']);
+  };
+
+  // Extract insights as { title, content }[] from ## Insights section
+  const extractInsights = (content: string): { title: string; content: string }[] => {
+    const raw = extractSection(content, '## Insights', ['## How to use this', '## Related categories']);
+    if (!raw.trim()) return [];
+    const blocks = raw.replace(/^## Insights\s*\n?/, '').split(/\n### /).filter(Boolean);
+    return blocks.map((block) => {
+      const firstLine = block.split('\n')[0] || '';
+      const title = firstLine.replace(/^#+\s*/, '').trim();
+      const contentStart = block.indexOf('\n');
+      const content = contentStart >= 0 ? block.slice(contentStart).trim() : '';
+      return { title, content };
+    }).filter((i) => i.title && i.content);
+  };
+
+  // Extract How to use cards (### blocks) for foundations
+  const extractHowToUseCards = (content: string): { title: string; content: string }[] => {
+    const raw = extractHowToUseSection(content);
+    if (!raw.trim()) return [];
+    const withoutHeader = raw.replace(/^## How to use this\s*\n?/i, '').replace(/^## How startup founders can use these concepts\s*\n?/i, '');
+    const blocks = withoutHeader.split(/\n### /).filter(Boolean);
+    return blocks.map((block) => {
+      const firstLine = block.split('\n')[0] || '';
+      const title = firstLine.replace(/^#+\s*/, '').trim();
+      const contentStart = block.indexOf('\n');
+      const content = contentStart >= 0 ? block.slice(contentStart).trim() : '';
+      return { title, content };
+    }).filter((i) => i.title);
+  };
+
+  // Extract workflow (title, description, steps) for value-and-customers, packaging-and-bundling, models-and-metering
+  const extractHowToUseWorkflow = (content: string): { title: string; description: string; steps: { number: string; title: string; subtitle: string }[] } | null => {
+    const raw = extractHowToUseSection(content);
+    const titleMatch = raw.match(/### ([^\n]+)/);
+    if (!titleMatch) return null;
+    const title = titleMatch[1].trim();
+    const afterTitle = raw.slice(raw.indexOf('\n') + 1).trim();
+    const stepsMatch = afterTitle.match(/#### Steps\n([\s\S]*?)(?=\n## |\n### |$)/);
+    const stepsRaw = stepsMatch ? stepsMatch[1] : '';
+    if (!stepsRaw.trim()) return null;
+    const stepLines = stepsRaw.split('\n').filter((l) => /^\s*-\s*\d+/.test(l.trim()));
+    const steps = stepLines.map((line) => {
+      const m = line.trim().match(/^-\s*(\d+)\s*\|\s*([^|]+)\s*\|\s*(.+)$/);
+      if (m) return { number: m[1].padStart(2, '0'), title: m[2].trim(), subtitle: m[3].trim() };
+      return null;
+    }).filter((s): s is { number: string; title: string; subtitle: string } => s !== null);
+    const descMatch = afterTitle.match(/^([\s\S]*?)(?=\n#### Steps)/);
+    const description = descMatch ? descMatch[1].replace(/\n+/g, ' ').trim() : '';
+    return { title, description, steps };
   };
 
   const { content: whatsInCategoryContent, workingNote } = extractWhatsInCategorySection(category.content);
   const howToUseContent = extractHowToUseSection(category.content);
-  const publishedConcepts = category.concepts
-    .filter((concept) => concept.id)
-    .map((concept) => {
-      const conceptId = concept.id as string;
-      const conceptData = getConceptBySlug(params.category, conceptId);
-      if (!conceptData) {
-        return null;
-      }
-      return {
-        id: conceptId,
-        title: conceptData.title || concept.text.split(':')[0].trim(),
-        summary:
-          conceptData.oneLiner ||
-          (concept.text.includes(':') ? concept.text.split(':').slice(1).join(':').trim() : ''),
-      };
-    })
-    .filter((concept): concept is NonNullable<typeof concept> => concept !== null);
+  const summarySectionContent = extractSection(category.content, '## Summary', ["## What's in this category"]);
+  const coreConceptsContent = extractSection(category.content, '## Core Concepts', ['## How to use this', '## Related categories']);
+  const insights = extractInsights(category.content);
+  const howToUseCards = extractHowToUseCards(category.content);
+  const howToUseWorkflow = extractHowToUseWorkflow(category.content);
 
   return (
     <>
@@ -256,8 +299,8 @@ export default function CategoryPage({ params }: CategoryPageProps) {
           </div>
 
           <div className="prose prose-lg max-w-none">
-            {/* Summary Section - For foundations (above What's in this category) */}
-            {params.category === 'foundations' && (
+            {/* Summary Section - For foundations (from markdown) */}
+            {params.category === 'foundations' && (summarySectionContent || category.summary) && (
               <div className="mt-12 mb-12">
                 <div className="flex items-center mb-6">
                   <div className="w-1 h-8 bg-blue-600 mr-3"></div>
@@ -265,9 +308,19 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                     Summary
                   </h2>
                 </div>
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
-                  In practice, a healthy SaaS pricing system is <Link href="/wiki/pricing/foundations/value-based-pricing" className="text-[#c2410c] hover:underline font-medium">value‑based pricing</Link> at its core and implemented through <Link href="/wiki/pricing/foundations/strategic-pricing" className="text-[#c2410c] hover:underline font-medium">strategic pricing</Link> as an operating system. <Link href="/wiki/pricing/foundations/cost-plus-pricing" className="text-[#c2410c] hover:underline font-medium">Cost‑plus pricing</Link> and <Link href="/wiki/pricing/foundations/competition-based-pricing" className="text-[#c2410c] hover:underline font-medium">competition‑based pricing</Link> define your feasible range rather than your answer, and <Link href="/wiki/pricing/foundations/customer-driven-pricing" className="text-[#c2410c] hover:underline font-medium">customer‑driven pricing</Link> tactics mark the edge of what not to do if you care about fairness and relationship equity. Within that frame, you choose posture: <Link href="/wiki/pricing/foundations/skimming-strategy" className="text-[#c2410c] hover:underline font-medium">skimming strategy</Link> when you have strong differentiation and clear high‑WTP tiers, <Link href="/wiki/pricing/foundations/penetration-strategy" className="text-[#c2410c] hover:underline font-medium">penetration strategy</Link> when speed, scale, or network effects are the primary goal, and <Link href="/wiki/pricing/foundations/maximization" className="text-[#c2410c] hover:underline font-medium">maximization strategy</Link> when demand is well understood and near‑term cash or profit is the binding constraint.
-                </p>
+                <div className="prose prose-lg max-w-none text-[#1f2933]">
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    rehypePlugins={[rehypeRaw]}
+                    components={{
+                      p: ({node, ...props}: any) => <p className="text-base sm:text-[17px] leading-[1.65] mb-4 text-justify" {...props} />,
+                      strong: ({node, ...props}: any) => <strong className="font-semibold" {...props} />,
+                      a: ({node, ...props}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...props} />,
+                    }}
+                  >
+                    {(summarySectionContent || `## Summary\n\n${category.summary}`).replace(/^## Summary\s*/i, '')}
+                  </ReactMarkdown>
+                </div>
               </div>
             )}
 
@@ -310,13 +363,13 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               </div>
             )}
 
-            {/* The Core Concepts Section - Only for foundations category */}
+            {/* Concepts in Context Section - Only for foundations category */}
             {params.category === 'foundations' && (
               <div className="mt-12 mb-12">
                 <div className="flex items-center mb-6">
                   <div className="w-1 h-8 bg-blue-600 mr-3"></div>
                   <h2 id="the-core-concepts" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
-                    The Core Concepts
+                    Concepts in Context
                   </h2>
                 </div>
                 <div className="space-y-32">
@@ -368,11 +421,13 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                       <div className="bg-[#eef0f3] rounded-lg p-6 shadow-sm sticky top-24 w-full">
                         <div className="flex items-center gap-2 mb-1">
                           <Lightbulb className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-                          <h4 className="font-semibold text-[#1f2933] text-lg">Strategic Insight</h4>
+                          <h4 className="font-semibold text-[#1f2933] text-lg">{insights[0]?.title || 'Strategic Insight'}</h4>
                         </div>
-                        <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
-                          At the center of this category is <Link href="/wiki/pricing/foundations/strategic-pricing" className="text-[#c2410c] hover:underline font-medium">strategic pricing</Link>: a systematic, <Link href="/wiki/pricing/foundations/value-based-pricing" className="text-[#c2410c] hover:underline font-medium">value-based pricing</Link> way of deciding how you charge, what you charge, and how prices evolve so profit, growth, and positioning stay aligned. The underlying philosophy is <Link href="/wiki/pricing/foundations/value-based-pricing" className="text-[#c2410c] hover:underline font-medium">value-based pricing</Link>, which pegs price to the economic value you create and your customers' willingness to pay—not to your own costs or whatever rivals happen to charge.
-                        </p>
+                        <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify prose prose-sm max-w-none">
+                          {insights[0]?.content && (
+                            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={{ p: ({node, ...p}: any) => <p className="mb-0" {...p} />, a: ({node, ...p}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...p} /> }}>{insights[0].content}</ReactMarkdown>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -384,11 +439,13 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                       <div className="bg-[#eef0f3] rounded-lg p-6 shadow-sm sticky top-24 w-full">
                         <div className="flex items-center gap-2 mb-1">
                           <Lightbulb className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-                          <h4 className="font-semibold text-[#1f2933] text-lg">Pricing Insight</h4>
+                          <h4 className="font-semibold text-[#1f2933] text-lg">{insights[1]?.title || 'Pricing Insight'}</h4>
                         </div>
-                        <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
-                          <Link href="/wiki/pricing/foundations/cost-plus-pricing" className="text-[#c2410c] hover:underline font-medium">Cost-plus pricing</Link> and <Link href="/wiki/pricing/foundations/competition-based-pricing" className="text-[#c2410c] hover:underline font-medium">competition-based pricing</Link> still matter, but mainly as constraints and reference points: <Link href="/wiki/pricing/foundations/cost-plus-pricing" className="text-[#c2410c] hover:underline font-medium">cost-plus pricing</Link> defines your economic floor, while <Link href="/wiki/pricing/foundations/competition-based-pricing" className="text-[#c2410c] hover:underline font-medium">competition-based pricing</Link> shows where the market is today and how crowded it is. At the other end of the spectrum is <Link href="/wiki/pricing/foundations/customer-driven-pricing" className="text-[#c2410c] hover:underline font-medium">customer-driven pricing</Link>—haggling to extract the maximum from each buyer—which may look flexible but tends to train aggressive bargaining, punish loyal customers, and erode trust, so in this wiki it's treated as a failure pattern, not a strategy to emulate.
-                        </p>
+                        <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify prose prose-sm max-w-none">
+                          {insights[1]?.content && (
+                            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={{ p: ({node, ...p}: any) => <p className="mb-0" {...p} />, a: ({node, ...p}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...p} /> }}>{insights[1].content}</ReactMarkdown>
+                          )}
+                        </div>
                       </div>
                     </div>
 
@@ -542,8 +599,8 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               </div>
             )}
 
-            {/* Summary Section - For value-and-customers (above What's in this category) */}
-            {params.category === 'value-and-customers' && (
+            {/* Summary Section - Markdown-first for non-foundations categories */}
+            {params.category !== 'foundations' && (summarySectionContent || category.summary) && (
               <div className="mt-12 mb-12">
                 <div className="flex items-center mb-6">
                   <div className="w-1 h-8 bg-blue-600 mr-3"></div>
@@ -551,29 +608,24 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                     Summary
                   </h2>
                 </div>
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
-                  This category is the bridge between who you serve and what you can charge. Define <Link href="/wiki/pricing/value-and-customers/ideal-customer-profile" className="text-[#c2410c] hover:underline font-medium">ICP</Link> first, then ground it in real buying situations with <Link href="/wiki/pricing/value-and-customers/customer-use-cases" className="text-[#c2410c] hover:underline font-medium">Customer Use Cases</Link> and <Link href="/wiki/pricing/value-and-customers/jobs-to-be-done" className="text-[#c2410c] hover:underline font-medium">JTBD</Link> so you know who buys, why now, and compared to what. Next, map <Link href="/wiki/pricing/value-and-customers/value-drivers" className="text-[#c2410c] hover:underline font-medium">Value Drivers</Link> to translate features into outcomes that create utility, quantify the dollars with <Link href="/wiki/pricing/value-and-customers/economic-value-estimation" className="text-[#c2410c] hover:underline font-medium">EVE</Link>, and expand to real-world perception and context with the <Link href="/wiki/pricing/value-and-customers/value-decoder-framework" className="text-[#c2410c] hover:underline font-medium">Value Decoder</Link> to land a credible value-based price band. Validate that band with <Link href="/wiki/pricing/value-and-customers/willingness-to-pay" className="text-[#c2410c] hover:underline font-medium">WTP</Link> research to see the distribution of what customers will actually pay, then apply <Link href="/wiki/pricing/value-and-customers/customer-segments" className="text-[#c2410c] hover:underline font-medium">Segmentation by WTP / Use Case</Link> to avoid one-size-fits-all pricing. Finally, implement capture with <Link href="/wiki/pricing/value-and-customers/price-fences-price-discrimination" className="text-[#c2410c] hover:underline font-medium">Price Fences / price discrimination</Link> so different segments self-select into the right offer without leakage—then iterate as your product, market, and customer mix evolve.
-                </p>
-              </div>
-            )}
-
-            {/* Summary Section - For packaging-and-bundling (above What's in this category) */}
-            {params.category === 'packaging-and-bundling' && (
-              <div className="mt-12 mb-12">
-                <div className="flex items-center mb-6">
-                  <div className="w-1 h-8 bg-blue-600 mr-3"></div>
-                  <h2 id="summary" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
-                    Summary
-                  </h2>
+                <div className="prose prose-lg max-w-none text-[#1f2933]">
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    rehypePlugins={[rehypeRaw]}
+                    components={{
+                      p: ({node, ...props}: any) => <p className="text-base sm:text-[17px] leading-[1.65] mb-4 text-justify" {...props} />,
+                      strong: ({node, ...props}: any) => <strong className="font-semibold" {...props} />,
+                      a: ({node, ...props}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...props} />,
+                    }}
+                  >
+                    {(summarySectionContent || `## Summary\n\n${category.summary}`).replace(/^## Summary\s*/i, '')}
+                  </ReactMarkdown>
                 </div>
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
-                  Packaging is how you turn a product into an offer customers can choose and upgrade: start with <Link href="/wiki/pricing/packaging-and-bundling/packaging" className="text-[#c2410c] hover:underline font-medium">Packaging architecture</Link> to define your plan ladder, use <Link href="/wiki/pricing/packaging-and-bundling/leader-filler-killer-features" className="text-[#c2410c] hover:underline font-medium">Leader/Filler/Killer Features</Link> to decide what drives upgrades vs what's table-stakes, ship clear <Link href="/wiki/pricing/packaging-and-bundling/good-better-best" className="text-[#c2410c] hover:underline font-medium">Good–Better–Best</Link> tiers, then capture extra willingness-to-pay with <Link href="/wiki/pricing/packaging-and-bundling/add-ons-modular" className="text-[#c2410c] hover:underline font-medium">add-ons & modular packaging</Link>. If you have multiple products or offers, use <Link href="/wiki/pricing/packaging-and-bundling/bundling" className="text-[#c2410c] hover:underline font-medium">bundling</Link>—ideally mixed bundling—to sell a better workflow without forcing everyone into a suite.
-                </p>
               </div>
             )}
 
-            {/* What's in this category Section - For value-and-customers and packaging-and-bundling categories */}
-            {(params.category === 'value-and-customers' || params.category === 'packaging-and-bundling') && (whatsInCategoryContent || workingNote) && (
+            {/* What's in this category Section - For value-and-customers, packaging-and-bundling, and models-and-metering categories */}
+            {(params.category === 'value-and-customers' || params.category === 'packaging-and-bundling' || params.category === 'models-and-metering') && (whatsInCategoryContent || workingNote) && (
               <div className="mt-12 mb-12">
                 {/* Working note - appears before the section */}
                 {workingNote && (
@@ -611,13 +663,13 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               </div>
             )}
 
-            {/* The Core Concepts Section - For value-and-customers category */}
+            {/* Concepts in Context Section - For value-and-customers category */}
             {params.category === 'value-and-customers' && (
               <div className="mt-12 mb-12">
                 <div className="flex items-center mb-6">
                   <div className="w-1 h-8 bg-blue-600 mr-3"></div>
                   <h2 id="the-core-concepts" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
-                    The Core Concepts
+                    Concepts in Context
                   </h2>
                 </div>
                 <div className="space-y-32">
@@ -688,11 +740,13 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                       <div className="bg-[#eef0f3] rounded-lg p-6 shadow-sm sticky top-24 w-full">
                         <div className="flex items-center gap-2 mb-1">
                           <Lightbulb className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-                          <h4 className="font-semibold text-[#1f2933] text-lg">Foundation Insight</h4>
+                          <h4 className="font-semibold text-[#1f2933] text-lg">{insights[0]?.title || 'Foundation Insight'}</h4>
                         </div>
-                        <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
-                          Start with <Link href="/wiki/pricing/value-and-customers/ideal-customer-profile" className="text-[#c2410c] hover:underline font-medium">ICP</Link> to decide which accounts/segments you're optimizing for (because pricing power often depends more on the customer than the product). Then make that ICP concrete with <Link href="/wiki/pricing/value-and-customers/customer-use-cases" className="text-[#c2410c] hover:underline font-medium">Customer Use Cases</Link> and <Link href="/wiki/pricing/value-and-customers/jobs-to-be-done" className="text-[#c2410c] hover:underline font-medium">JTBD</Link>: use cases define the problem, context, and alternatives; JTBD sharpens it into the "progress" customers are trying to make. Together, they prevent "ICP drift," clarify why customers buy, and create the backbone for positioning, qualification, and packaging.
-                        </p>
+                        <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify prose prose-sm max-w-none">
+                          {insights[0]?.content && (
+                            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={{ p: ({node, ...p}: any) => <p className="mb-0" {...p} />, a: ({node, ...p}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...p} /> }}>{insights[0].content}</ReactMarkdown>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -704,11 +758,13 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                       <div className="bg-[#eef0f3] rounded-lg p-6 shadow-sm sticky top-24 w-full">
                         <div className="flex items-center gap-2 mb-1">
                           <Lightbulb className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-                          <h4 className="font-semibold text-[#1f2933] text-lg">Value Logic Insight</h4>
+                          <h4 className="font-semibold text-[#1f2933] text-lg">{insights[1]?.title || 'Value Logic Insight'}</h4>
                         </div>
-                        <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
-                          Once you know who/why, you translate value into price logic. <Link href="/wiki/pricing/value-and-customers/value-drivers" className="text-[#c2410c] hover:underline font-medium">Value Drivers</Link> turn feature talk into a prioritized list of outcomes (economic, risk, emotional) that actually move WTP—and they're inherently relative to the substitute. From there, <Link href="/wiki/pricing/value-and-customers/economic-value-estimation" className="text-[#c2410c] hover:underline font-medium">EVE</Link> is your "smart-shopper" quantification engine: anchor on the next-best alternative (reference value) and stack your net differentiation value to compute a justifiable ceiling and a credible ROI narrative. <Link href="/wiki/pricing/value-and-customers/value-decoder-framework" className="text-[#c2410c] hover:underline font-medium">Value Decoder</Link> uses the same anchoring idea but is better when real-world perception and context matter (budget/income shifts, complements, market environment, timing); it outputs a defendable price band and helps you spot where you can charge a premium (or must discount) as conditions change. <Link href="/wiki/pricing/value-and-customers/willingness-to-pay" className="text-[#c2410c] hover:underline font-medium">WTP</Link> research then validates the reality: it measures the WTP distribution so you can pick a range (not a guess), stress-test pricing against unit economics, and see which use cases and segments value you most.
-                        </p>
+                        <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify prose prose-sm max-w-none">
+                          {insights[1]?.content && (
+                            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={{ p: ({node, ...p}: any) => <p className="mb-0" {...p} />, a: ({node, ...p}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...p} /> }}>{insights[1].content}</ReactMarkdown>
+                          )}
+                        </div>
                       </div>
                     </div>
 
@@ -840,11 +896,13 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                       <div className="bg-[#eef0f3] rounded-lg p-6 shadow-sm sticky top-24 w-full">
                         <div className="flex items-center gap-2 mb-1">
                           <Lightbulb className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-                          <h4 className="font-semibold text-[#1f2933] text-lg">Capture Mechanism Insight</h4>
+                          <h4 className="font-semibold text-[#1f2933] text-lg">{insights[2]?.title || 'Capture Mechanism Insight'}</h4>
                         </div>
-                        <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
-                          Finally, you design capture mechanisms so you don't leave value on the table. <Link href="/wiki/pricing/value-and-customers/customer-segments" className="text-[#c2410c] hover:underline font-medium">Segmentation by WTP / Use Case</Link> is what you do when one price can't fit (hobbyists vs enterprise, low vs high urgency, low vs high intensity): partition by jobs/use cases and WTP, then align packages and price points so you're not averaging your market. <Link href="/wiki/pricing/value-and-customers/price-fences-price-discrimination" className="text-[#c2410c] hover:underline font-medium">Price fences / price discrimination</Link> is the implementation layer: don't discount blindly—fence. Use eligibility or self-selection fences (features, limits, support, contract terms, time/location rules) that are enforceable and minimize arbitrage, so high-WTP customers don't leak into low-price buckets.
-                        </p>
+                        <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify prose prose-sm max-w-none">
+                          {insights[2]?.content && (
+                            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={{ p: ({node, ...p}: any) => <p className="mb-0" {...p} />, a: ({node, ...p}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...p} /> }}>{insights[2].content}</ReactMarkdown>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -852,13 +910,13 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               </div>
             )}
 
-            {/* The Core Concepts Section - For packaging-and-bundling category */}
+            {/* Concepts in Context Section - For packaging-and-bundling category */}
             {params.category === 'packaging-and-bundling' && (
               <div className="mt-12 mb-12">
                 <div className="flex items-center mb-6">
                   <div className="w-1 h-8 bg-blue-600 mr-3"></div>
                   <h2 id="the-core-concepts" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
-                    The Core Concepts
+                    Concepts in Context
                   </h2>
                 </div>
                 <div className="space-y-32">
@@ -868,11 +926,13 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                       <div className="bg-[#eef0f3] rounded-lg p-6 shadow-sm sticky top-24 w-full">
                         <div className="flex items-center gap-2 mb-1">
                           <Lightbulb className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-                          <h4 className="font-semibold text-[#1f2933] text-lg">Blueprint Insight</h4>
+                          <h4 className="font-semibold text-[#1f2933] text-lg">{insights[0]?.title || 'Blueprint Insight'}</h4>
                         </div>
-                        <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
-                          Start with <Link href="/wiki/pricing/packaging-and-bundling/packaging" className="text-[#c2410c] hover:underline font-medium">Packaging architecture</Link> to define your offer structure (plans, modules, limits, upgrade paths) independent of the price numbers—because packaging precedes pricing. A good architecture reduces decision friction, prevents feature giveaways, and sets you up for clean upgrades as customers hit natural &quot;success triggers.&quot;
-                        </p>
+                        <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify prose prose-sm max-w-none">
+                          {insights[0]?.content && (
+                            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={{ p: ({node, ...p}: any) => <p className="mb-0" {...p} />, a: ({node, ...p}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...p} /> }}>{insights[0].content}</ReactMarkdown>
+                          )}
+                        </div>
                       </div>
                     </div>
                     <div className="lg:col-span-7 flex flex-col gap-4 order-1 lg:order-2">
@@ -938,11 +998,13 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                       <div className="bg-[#eef0f3] rounded-lg p-6 shadow-sm sticky top-24 w-full">
                         <div className="flex items-center gap-2 mb-1">
                           <Lightbulb className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-                          <h4 className="font-semibold text-[#1f2933] text-lg">Tier design Insight</h4>
+                          <h4 className="font-semibold text-[#1f2933] text-lg">{insights[1]?.title || 'Tier design Insight'}</h4>
                         </div>
-                        <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
-                          Next, use <Link href="/wiki/pricing/packaging-and-bundling/leader-filler-killer-features" className="text-[#c2410c] hover:underline font-medium">Leader/Filler/Killer Features</Link> to decide what belongs where. Leaders are the few capabilities that actually drive someone to buy; fillers are expected &quot;completeness&quot; items; killers are the clutter or cost drivers that lower willingness to pay for some segments and should be removed—or sold separately. With those classifications in hand, design <Link href="/wiki/pricing/packaging-and-bundling/good-better-best" className="text-[#c2410c] hover:underline font-medium">Good–Better–Best</Link> tiers so each plan targets a real segment: make &quot;Better&quot; the obvious default, fence premium value drivers so Good doesn't cannibalize upgrades, and make the Best tier meaningfully different (not just a longer checklist).
-                        </p>
+                        <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify prose prose-sm max-w-none">
+                          {insights[1]?.content && (
+                            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={{ p: ({node, ...p}: any) => <p className="mb-0" {...p} />, a: ({node, ...p}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...p} /> }}>{insights[1].content}</ReactMarkdown>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -953,11 +1015,13 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                       <div className="bg-[#eef0f3] rounded-lg p-6 shadow-sm sticky top-24 w-full">
                         <div className="flex items-center gap-2 mb-1">
                           <Lightbulb className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-                          <h4 className="font-semibold text-[#1f2933] text-lg">Expansion Insight</h4>
+                          <h4 className="font-semibold text-[#1f2933] text-lg">{insights[2]?.title || 'Expansion Insight'}</h4>
                         </div>
-                        <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
-                          Once your core ladder is clear, expand your revenue capture without bloating the base plans. Use <Link href="/wiki/pricing/packaging-and-bundling/add-ons-modular" className="text-[#c2410c] hover:underline font-medium">add‑ons & modular packaging</Link> when value is high but not universal: add‑ons work best as &quot;power/scale&quot; top‑ups, while modules work best when they map to distinct roles or use cases that can't fit neatly into one tier ladder. Use <Link href="/wiki/pricing/packaging-and-bundling/bundling" className="text-[#c2410c] hover:underline font-medium">bundling</Link> when you have multiple products (or distinct offers) and customers value the combination: mixed bundling is often a safer default because it preserves choice while encouraging larger purchases—bundle for workflow value (and sometimes charge a premium), not just for volume discounts.
-                        </p>
+                        <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify prose prose-sm max-w-none">
+                          {insights[2]?.content && (
+                            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={{ p: ({node, ...p}: any) => <p className="mb-0" {...p} />, a: ({node, ...p}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...p} /> }}>{insights[2].content}</ReactMarkdown>
+                          )}
+                        </div>
                       </div>
                     </div>
                     <div className="lg:col-span-7 flex flex-col gap-4">
@@ -1001,23 +1065,214 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               </div>
             )}
 
-            {/* Summary Section - For other categories (above What's in this category) */}
-            {params.category !== 'foundations' && params.category !== 'value-and-customers' && params.category !== 'packaging-and-bundling' && (
+            {/* Concepts in Context Section - For models-and-metering category */}
+            {params.category === 'models-and-metering' && (
               <div className="mt-12 mb-12">
                 <div className="flex items-center mb-6">
-                  <div className="w-1 h-8 bg-brand mr-3"></div>
-                  <h2 id="summary" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
-                    Summary
+                  <div className="w-1 h-8 bg-blue-600 mr-3"></div>
+                  <h2 id="the-core-concepts" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
+                    Concepts in Context
                   </h2>
                 </div>
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify">
-                  {category.summary}
-                </p>
+                <div className="space-y-32">
+                  {/* Foundation: Monetization model, Pricing metric / value metric */}
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    <div className="lg:col-span-7 flex flex-col gap-4">
+                      <Link 
+                        href="/wiki/pricing/models-and-metering/monetization-model"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-blue-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <Settings className="w-6 h-6 text-gray-700 group-hover:text-blue-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Monetization model
+                          </h3>
+                          <span className="bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Foundation
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          The overarching blueprint defining how your business captures value and generates cash flow. Use it to align product design, GTM motion, and unit economics before setting price points.
+                        </p>
+                      </Link>
+                      <Link 
+                        href="/wiki/pricing/models-and-metering/pricing-metric-value-metric"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-blue-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <Calculator className="w-6 h-6 text-gray-700 group-hover:text-blue-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Pricing metric / value metric
+                          </h3>
+                          <span className="bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Foundation
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          The specific unit you charge for (per user, per API call, per gigabyte) that should track customer value and your cost-to-serve. Use it to drive expansion revenue naturally and avoid ghost churn.
+                        </p>
+                      </Link>
+                    </div>
+                    <div className="lg:col-span-5 flex">
+                      <div className="bg-[#eef0f3] rounded-lg p-6 shadow-sm sticky top-24 w-full">
+                        <div className="flex items-center gap-2 mb-1">
+                          <Lightbulb className="w-5 h-5 text-yellow-500 fill-yellow-500" />
+                          <h4 className="font-semibold text-[#1f2933] text-lg">{insights[0]?.title || 'Foundation Insight'}</h4>
+                        </div>
+                        <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify prose prose-sm max-w-none">
+                          {insights[0]?.content && (
+                            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={{ p: ({node, ...p}: any) => <p className="mb-0" {...p} />, a: ({node, ...p}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...p} /> }}>{insights[0].content}</ReactMarkdown>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Revenue Engines: Subscription, Seat-based, Usage-based, Outcome-based */}
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    <div className="lg:col-span-5 flex">
+                      <div className="bg-[#eef0f3] rounded-lg p-6 shadow-sm sticky top-24 w-full">
+                        <div className="flex items-center gap-2 mb-1">
+                          <Lightbulb className="w-5 h-5 text-yellow-500 fill-yellow-500" />
+                          <h4 className="font-semibold text-[#1f2933] text-lg">{insights[1]?.title || 'Revenue Engines Insight'}</h4>
+                        </div>
+                        <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify prose prose-sm max-w-none">
+                          {insights[1]?.content && (
+                            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={{ p: ({node, ...p}: any) => <p className="mb-0" {...p} />, a: ({node, ...p}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...p} /> }}>{insights[1].content}</ReactMarkdown>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="lg:col-span-7 flex flex-col gap-4">
+                      <Link 
+                        href="/wiki/pricing/models-and-metering/subscription-model"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-green-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <TrendingUp className="w-6 h-6 text-gray-700 group-hover:text-green-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Subscription model
+                          </h3>
+                          <span className="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Revenue Engine
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          Recurring fee for ongoing access when value is continuous and usage is frequent. Use it to build predictable MRR and manage retention as the core growth lever.
+                        </p>
+                      </Link>
+                      <Link 
+                        href="/wiki/pricing/models-and-metering/seat-based-pricing"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-green-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <Users className="w-6 h-6 text-gray-700 group-hover:text-green-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Seat-based pricing
+                          </h3>
+                          <span className="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Revenue Engine
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          Flat recurring fee per user when value scales with headcount and buyers want budget predictability. Watch utilization to avoid shelfware and renewal pressure.
+                        </p>
+                      </Link>
+                      <Link 
+                        href="/wiki/pricing/models-and-metering/usage-based-pricing"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-green-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <Zap className="w-6 h-6 text-gray-700 group-hover:text-green-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Usage-based pricing
+                          </h3>
+                          <span className="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Revenue Engine
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          Charge by measured consumption when usage is the clearest proxy for value and costs scale with use. Add allowances, alerts, and caps to avoid bill-shock churn.
+                        </p>
+                      </Link>
+                      <Link 
+                        href="/wiki/pricing/models-and-metering/outcome-performance-based-pricing"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-green-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <Target className="w-6 h-6 text-gray-700 group-hover:text-green-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Outcome / performance-based pricing
+                          </h3>
+                          <span className="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Revenue Engine
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          Tie price to verified results when outcomes are measurable and attributable. Use it to share risk and capture a share of value created—requires clear metrics and attribution rules.
+                        </p>
+                      </Link>
+                    </div>
+                  </div>
+
+                  {/* Advanced & GTM: Hybrid pricing, Freemium */}
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    <div className="lg:col-span-7 flex flex-col gap-4">
+                      <Link 
+                        href="/wiki/pricing/models-and-metering/hybrid-pricing"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-purple-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <Layers className="w-6 h-6 text-gray-700 group-hover:text-purple-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Hybrid pricing
+                          </h3>
+                          <span className="bg-purple-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Advanced
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          Base subscription plus variable usage to balance predictability for buyers and upside capture for you. Mature startups almost always graduate to hybrid when pure seat-based limits growth and pure usage-based hurts predictability.
+                        </p>
+                      </Link>
+                      <Link 
+                        href="/wiki/pricing/models-and-metering/freemium-model"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-purple-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <Sparkles className="w-6 h-6 text-gray-700 group-hover:text-purple-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Freemium model
+                          </h3>
+                          <span className="bg-purple-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Go-To-Market
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          A customer acquisition strategy (not a true revenue model) that offers a perpetual free tier to lower entry barriers. Treat free as a marketing expense; design clear fences so users upgrade for meaningful reasons.
+                        </p>
+                      </Link>
+                    </div>
+                    <div className="lg:col-span-5 flex">
+                      <div className="bg-[#eef0f3] rounded-lg p-6 shadow-sm sticky top-24 w-full">
+                        <div className="flex items-center gap-2 mb-1">
+                          <Lightbulb className="w-5 h-5 text-yellow-500 fill-yellow-500" />
+                          <h4 className="font-semibold text-[#1f2933] text-lg">{insights[2]?.title || 'Advanced & GTM Insight'}</h4>
+                        </div>
+                        <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] text-justify prose prose-sm max-w-none">
+                          {insights[2]?.content && (
+                            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={{ p: ({node, ...p}: any) => <p className="mb-0" {...p} />, a: ({node, ...p}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...p} /> }}>{insights[2].content}</ReactMarkdown>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
 
             {/* Render "What's in this category" section for other non-foundations categories */}
-            {params.category !== 'foundations' && params.category !== 'value-and-customers' && params.category !== 'packaging-and-bundling' && (whatsInCategoryContent || workingNote) && (
+            {params.category !== 'foundations' && params.category !== 'value-and-customers' && params.category !== 'packaging-and-bundling' && params.category !== 'models-and-metering' && (whatsInCategoryContent || workingNote) && (
               <div className="mt-12 mb-12">
                 {/* Working note - appears before the section */}
                 {workingNote && (
@@ -1029,7 +1284,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 )}
                 
                 <div className="flex items-center mb-6">
-                  <div className="w-1 h-8 bg-brand mr-3"></div>
+                  <div className="w-1 h-8 bg-blue-600 mr-3"></div>
                   <h2 id="whats-in-this-category" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
                     What's in this category
                   </h2>
@@ -1054,164 +1309,142 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               </div>
             )}
 
-            {/* Render "How to use this" section */}
+            {/* Core Concepts - Markdown fallback for categories without card-based blocks */}
+            {coreConceptsContent && !['foundations', 'value-and-customers', 'packaging-and-bundling', 'models-and-metering'].includes(params.category) && (
+              <div className="mt-12 mb-12">
+                <div className="flex items-center mb-6">
+                  <div className="w-1 h-8 bg-blue-600 mr-3"></div>
+                  <h2 id="the-core-concepts" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
+                    Concepts in Context
+                  </h2>
+                </div>
+                <div className="prose prose-lg max-w-none text-[#1f2933]">
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    rehypePlugins={[rehypeRaw]}
+                    components={{
+                      p: ({node, ...props}: any) => <p className="text-base sm:text-[17px] leading-[1.65] mb-4 text-justify" {...props} />,
+                      ul: ({node, ...props}: any) => <ul className="list-disc list-outside space-y-2 mb-4 ml-6" {...props} />,
+                      li: ({node, ...props}: any) => <li className="text-base sm:text-[17px] leading-[1.65] pl-2" {...props} />,
+                      strong: ({node, ...props}: any) => <strong className="font-semibold" {...props} />,
+                      h3: ({node, ...props}: any) => <h3 className="text-lg font-semibold text-[#1f2933] mb-3 mt-6" {...props} />,
+                      a: ({node, ...props}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...props} />,
+                    }}
+                  >
+                    {coreConceptsContent.replace(/^## Core Concepts\s*/i, '')}
+                  </ReactMarkdown>
+                </div>
+              </div>
+            )}
+
+            {/* Render "How to use this" or "How startup founders can use these concepts" section */}
             {howToUseContent && (
               <div className="mt-16 mb-12">
                 <div className="flex items-center mb-8">
-                  <div className="w-1 h-8 bg-brand mr-3"></div>
+                  <div className="w-1 h-8 bg-blue-600 mr-3"></div>
                   <h2 id="how-to-use-this" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
                     How to use this
                   </h2>
                 </div>
                 
                 {/* Custom cards for foundations and value-and-customers categories */}
-                {params.category === 'foundations' ? (
+                {params.category === 'foundations' && howToUseCards.length >= 3 ? (
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {/* New to SaaS pricing */}
                     <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm hover:shadow-md transition-all">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                           <BookOpen className="w-6 h-6 text-blue-600" />
                         </div>
-                        <h3 className="font-semibold text-[#1f2933] text-lg">New to SaaS pricing?</h3>
+                        <h3 className="font-semibold text-[#1f2933] text-lg">{howToUseCards[0]?.title}</h3>
                       </div>
-                      <p className="text-[#1f2933] leading-relaxed text-base">
-                        Read this section first to get the big picture before touching discount ladders or feature matrices.
-                      </p>
+                      <div className="text-[#1f2933] leading-relaxed text-base prose prose-sm max-w-none">
+                        <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={{ p: ({node, ...p}: any) => <p className="mb-0" {...p} />, ol: ({node, ...p}: any) => <ol className="list-decimal list-inside space-y-2" {...p} />, li: ({node, ...p}: any) => <li {...p} />, a: ({node, ...p}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...p} /> }}>{howToUseCards[0]?.content || ''}</ReactMarkdown>
+                      </div>
                     </div>
-
-                    {/* Working on a live pricing problem */}
                     <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm hover:shadow-md transition-all">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="w-12 h-12 bg-brand-soft rounded-lg flex items-center justify-center">
                           <Briefcase className="w-6 h-6 text-brand-ink" />
                         </div>
-                        <h3 className="font-semibold text-[#1f2933] text-lg">Working on a live pricing problem?</h3>
+                        <h3 className="font-semibold text-[#1f2933] text-lg">{howToUseCards[1]?.title}</h3>
                       </div>
-                      <ol className="list-decimal list-inside space-y-2 text-[#1f2933] leading-relaxed text-base">
-                        <li>Skim the cards above.</li>
-                        <li>Pick the 1–2 strategies that match your situation.</li>
-                        <li><Link href="/cheat-sheets" className="text-[#c2410c] hover:underline font-medium">Go to the detailed guide and follow the steps.</Link></li>
-                      </ol>
+                      <div className="text-[#1f2933] leading-relaxed text-base prose prose-sm max-w-none">
+                        <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={{ p: ({node, ...p}: any) => <p className="mb-0" {...p} />, ol: ({node, ...p}: any) => <ol className="list-decimal list-inside space-y-2" {...p} />, li: ({node, ...p}: any) => <li {...p} />, a: ({node, ...p}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...p} /> }}>{howToUseCards[1]?.content || ''}</ReactMarkdown>
+                      </div>
                     </div>
-
-                    {/* Teaching / studying */}
                     <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm hover:shadow-md transition-all">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
                           <GraduationCap className="w-6 h-6 text-green-600" />
                         </div>
-                        <h3 className="font-semibold text-[#1f2933] text-lg">Teaching / studying?</h3>
+                        <h3 className="font-semibold text-[#1f2933] text-lg">{howToUseCards[2]?.title}</h3>
                       </div>
-                      <p className="text-[#1f2933] leading-relaxed text-base">
-                        Use the strategy cards as a syllabus for a 2–3 session MBA module.
-                      </p>
+                      <div className="text-[#1f2933] leading-relaxed text-base prose prose-sm max-w-none">
+                        <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={{ p: ({node, ...p}: any) => <p className="mb-0" {...p} />, a: ({node, ...p}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...p} /> }}>{howToUseCards[2]?.content || ''}</ReactMarkdown>
+                      </div>
                     </div>
                   </div>
-                ) : params.category === 'value-and-customers' ? (
+                ) : params.category === 'value-and-customers' && howToUseWorkflow ? (
                   <div className="space-y-8">
-                    {/* The Ideal Iterative Workflow */}
                     <div className="bg-[#eef0f3] rounded-2xl p-8 shadow-sm relative overflow-hidden">
-                      {/* Decorative circle in top right */}
                       <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -mr-32 -mt-32 opacity-30"></div>
-                      
                       <div className="relative z-10">
-                        <h3 className="text-[#1f2933] font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-3">The Ideal Iterative Workflow</h3>
-                        <p className="text-[#1f2933] text-base sm:text-[17px] opacity-80 mb-8 leading-[1.65]">
-                          Pricing isn't a one-time project. It's a continuous cycle of refining logic and capturing value as market conditions evolve.
-                        </p>
-                        
-                        {/* Workflow steps */}
+                        <h3 className="text-[#1f2933] font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-3">{howToUseWorkflow.title}</h3>
+                        <p className="text-[#1f2933] text-base sm:text-[17px] opacity-80 mb-8 leading-[1.65]">{howToUseWorkflow.description}</p>
                         <div className="flex flex-nowrap items-center justify-between gap-2 md:gap-3 lg:gap-4">
-                          {/* Step 01: Refine ICP */}
-                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm flex-shrink-0 flex-1 min-w-0">
-                            <div className="text-[#c2410c] text-xs font-semibold mb-1.5 tracking-wide">01</div>
-                            <h4 className="text-[#1f2933] font-bold text-sm mb-1">Refine ICP</h4>
-                            <p className="text-[#1f2933] text-xs opacity-70 leading-tight">Use Cases & JTBD</p>
-                          </div>
-                          
-                          <ArrowRight className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-                          
-                          {/* Step 02: Map Drivers */}
-                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm flex-shrink-0 flex-1 min-w-0">
-                            <div className="text-[#c2410c] text-xs font-semibold mb-1.5 tracking-wide">02</div>
-                            <h4 className="text-[#1f2933] font-bold text-sm mb-1">Map Drivers</h4>
-                            <p className="text-[#1f2933] text-xs opacity-70 leading-tight">Value Mapping</p>
-                          </div>
-                          
-                          <ArrowRight className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-                          
-                          {/* Step 03: Quantify */}
-                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm flex-shrink-0 flex-1 min-w-0">
-                            <div className="text-[#c2410c] text-xs font-semibold mb-1.5 tracking-wide">03</div>
-                            <h4 className="text-[#1f2933] font-bold text-sm mb-1">Quantify</h4>
-                            <p className="text-[#1f2933] text-xs opacity-70 leading-tight">EVE & Decoder</p>
-                          </div>
-                          
-                          <ArrowRight className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-                          
-                          {/* Step 04: Measure */}
-                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm flex-shrink-0 flex-1 min-w-0">
-                            <div className="text-[#c2410c] text-xs font-semibold mb-1.5 tracking-wide">04</div>
-                            <h4 className="text-[#1f2933] font-bold text-sm mb-1">Measure</h4>
-                            <p className="text-[#1f2933] text-xs opacity-70 leading-tight">WTP Research</p>
-                          </div>
-                          
-                          <ArrowRight className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-                          
-                          {/* Step 05: Capture */}
-                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm flex-shrink-0 flex-1 min-w-0">
-                            <div className="text-[#c2410c] text-xs font-semibold mb-1.5 tracking-wide">05</div>
-                            <h4 className="text-[#1f2933] font-bold text-sm mb-1">Capture</h4>
-                            <p className="text-[#1f2933] text-xs opacity-70 leading-tight">Segment & Fence</p>
-                          </div>
+                          {howToUseWorkflow.steps.flatMap((step, i) => [
+                            <div key={`s-${i}`} className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm flex-shrink-0 flex-1 min-w-0">
+                              <div className="text-[#c2410c] text-xs font-semibold mb-1.5 tracking-wide">{step.number}</div>
+                              <h4 className="text-[#1f2933] font-bold text-sm mb-1">{step.title}</h4>
+                              <p className="text-[#1f2933] text-xs opacity-70 leading-tight">{step.subtitle}</p>
+                            </div>,
+                            ...(i < howToUseWorkflow.steps.length - 1 ? [<ArrowRight key={`a-${i}`} className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />] : [])
+                          ])}
                         </div>
                       </div>
                     </div>
                   </div>
-                ) : params.category === 'packaging-and-bundling' ? (
+                ) : params.category === 'packaging-and-bundling' && howToUseWorkflow ? (
                   <div className="space-y-8">
-                    {/* Packaging & Bundling Workflow */}
                     <div className="bg-[#eef0f3] rounded-2xl p-8 shadow-sm relative overflow-hidden">
                       <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -mr-32 -mt-32 opacity-30"></div>
                       <div className="relative z-10">
-                        <h3 className="text-[#1f2933] font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-3">The Packaging Workflow</h3>
-                        <p className="text-[#1f2933] text-base sm:text-[17px] opacity-80 mb-8 leading-[1.65]">
-                          Package first, price second. A quarterly packaging check-in to keep tiers clean, upgrades obvious, and new features monetized..
-                        </p>
-                        <div className="grid gap-2 md:gap-3 lg:gap-4 items-stretch" style={{ gridTemplateColumns: '1fr auto 1fr auto 1fr auto 1fr' }}>
-                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm min-h-[5.5rem] flex flex-col">
-                            <div className="text-[#c2410c] text-xs font-semibold mb-1.5 tracking-wide">01</div>
-                            <h4 className="text-[#1f2933] font-bold text-sm mb-1">Define Architecture</h4>
-                            <p className="text-[#1f2933] text-xs opacity-70 leading-tight">Plans & Upgrade Paths</p>
-                          </div>
-                          <div className="flex items-center justify-center">
-                            <ArrowRight className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-                          </div>
-                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm min-h-[5.5rem] flex flex-col">
-                            <div className="text-[#c2410c] text-xs font-semibold mb-1.5 tracking-wide">02</div>
-                            <h4 className="text-[#1f2933] font-bold text-sm mb-1">Classify Features</h4>
-                            <p className="text-[#1f2933] text-xs opacity-70 leading-tight">Leader/Filler/Killer</p>
-                          </div>
-                          <div className="flex items-center justify-center">
-                            <ArrowRight className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-                          </div>
-                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm min-h-[5.5rem] flex flex-col">
-                            <div className="text-[#c2410c] text-xs font-semibold mb-1.5 tracking-wide">03</div>
-                            <h4 className="text-[#1f2933] font-bold text-sm mb-1">Set Tiers</h4>
-                            <p className="text-[#1f2933] text-xs opacity-70 leading-tight">Good–Better–Best</p>
-                          </div>
-                          <div className="flex items-center justify-center">
-                            <ArrowRight className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
-                          </div>
-                          <div className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm min-h-[5.5rem] flex flex-col">
-                            <div className="text-[#c2410c] text-xs font-semibold mb-1.5 tracking-wide">04</div>
-                            <h4 className="text-[#1f2933] font-bold text-sm mb-1">Expand</h4>
-                            <p className="text-[#1f2933] text-xs opacity-70 leading-tight">Add-ons & Bundling</p>
-                          </div>
+                        <h3 className="text-[#1f2933] font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-3">{howToUseWorkflow.title}</h3>
+                        <p className="text-[#1f2933] text-base sm:text-[17px] opacity-80 mb-8 leading-[1.65]">{howToUseWorkflow.description}</p>
+                        <div className="flex flex-nowrap items-center justify-between gap-2 md:gap-3 lg:gap-4">
+                          {howToUseWorkflow.steps.flatMap((step, i) => [
+                            <div key={`s-${i}`} className="bg-white rounded-lg p-3 md:p-4 border border-[#e5e7eb] shadow-sm min-h-[5.5rem] flex flex-col flex-shrink-0 flex-1 min-w-0">
+                              <div className="text-[#c2410c] text-xs font-semibold mb-1.5 tracking-wide">{step.number}</div>
+                              <h4 className="text-[#1f2933] font-bold text-sm mb-1">{step.title}</h4>
+                              <p className="text-[#1f2933] text-xs opacity-70 leading-tight">{step.subtitle}</p>
+                            </div>,
+                            ...(i < howToUseWorkflow.steps.length - 1 ? [<ArrowRight key={`a-${i}`} className="text-[#e5e7eb] w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />] : [])
+                          ])}
                         </div>
                       </div>
                     </div>
+                  </div>
+                ) : params.category === 'models-and-metering' && howToUseCards.length >= 1 ? (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {howToUseCards.map((card, i) => {
+                      const icons = [Zap, Target, TrendingUp, DollarSign, BarChart];
+                      const iconBg = ['bg-blue-100', 'bg-green-100', 'bg-amber-100', 'bg-purple-100', 'bg-teal-100'];
+                      const iconColor = ['text-blue-600', 'text-green-600', 'text-amber-600', 'text-purple-600', 'text-teal-600'];
+                      const Icon = icons[i % icons.length];
+                      return (
+                        <div key={i} className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm hover:shadow-md transition-all">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className={`w-12 h-12 ${iconBg[i % iconBg.length]} rounded-lg flex items-center justify-center`}>
+                              <Icon className={`w-6 h-6 ${iconColor[i % iconColor.length]}`} />
+                            </div>
+                            <h3 className="font-semibold text-[#1f2933] text-lg">{card.title}</h3>
+                          </div>
+                          <div className="text-[#1f2933] leading-relaxed text-base prose prose-sm max-w-none">
+                            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={{ p: ({node, ...p}: any) => <p className="mb-0" {...p} />, a: ({node, ...p}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...p} /> }}>{card.content || ''}</ReactMarkdown>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 ) : (
                   /* Render markdown content for all other categories */
@@ -1228,41 +1461,13 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                         em: ({node, ...props}: any) => <em className="italic" {...props} />,
                         h3: ({node, ...props}: any) => <h3 className="text-xl font-semibold text-[#1f2933] mb-3 mt-6" {...props} />,
                         h4: ({node, ...props}: any) => <h4 className="text-lg font-semibold text-[#1f2933] mb-2 mt-4" {...props} />,
+                        a: ({node, ...props}: any) => <a className="text-[#c2410c] hover:underline font-medium" {...props} />,
                       }}
                     >
                       {howToUseContent.replace(/^## How to use this\s*/i, '')}
                     </ReactMarkdown>
                   </div>
                 )}
-              </div>
-            )}
-
-            {publishedConcepts.length > 0 && (
-              <div className="mt-16 mb-12">
-                <div className="flex items-center mb-6">
-                  <div className="w-1 h-8 bg-blue-600 mr-3"></div>
-                  <h2 id="published-concepts" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-0">
-                    Published concepts in this category
-                  </h2>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {publishedConcepts.map((concept) => (
-                    <Link
-                      key={concept.id}
-                      href={`/wiki/pricing/${params.category}/${concept.id}`}
-                      className="block p-4 border border-[#e2e6ea] rounded-lg hover:border-brand-ink hover:shadow-md transition-all"
-                    >
-                      <h3 className="font-semibold text-[#1f2933] mb-2">
-                        {concept.title}
-                      </h3>
-                      {concept.summary && (
-                        <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                          {concept.summary}
-                        </p>
-                      )}
-                    </Link>
-                  ))}
-                </div>
               </div>
             )}
 
@@ -1274,7 +1479,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 </h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {category.relatedCategories.map((related) => (
+              {category.relatedCategories.slice(0, 2).map((related) => (
                 <Link
                   key={related.slug}
                   href={`/wiki/pricing/${related.slug}`}
