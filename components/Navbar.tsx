@@ -5,6 +5,7 @@ import { primaryButton } from '@/lib/brandStyles'
 const navLinks = [
   { href: '/consulting', label: 'Consulting' },
   { href: '/wiki/pricing', label: 'Wiki' },
+  { href: '/free-tools', label: 'Free Tool' },
   { href: '/cheat-sheets', label: 'Cheat Sheets' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
