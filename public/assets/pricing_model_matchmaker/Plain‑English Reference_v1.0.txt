@@ -1,0 +1,370 @@
+# Pricing Model Matchmaker — Plain‑English Reference (Beta)
+
+Use this doc to translate the quiz output into language that an early‑stage, technical founder can understand.
+
+---
+
+## Pricing Models
+
+### SUB_TIERED — Subscription (tiered plans)
+
+**What it means**
+
+* You sell 2–4 plans (e.g., Starter/Pro/Business) for a recurring fee. Customers pay for ongoing access and upgrade when they need more capability, scale, or risk controls.
+* The “meter” is mostly your **plan choice** (features + limits), not a constantly running usage bill.
+
+**Why this fits**
+
+* Based on your answers, customers will rely on your product on an ongoing basis — so a predictable recurring plan feels natural (and easy to budget).
+* You indicated your value is mainly about **capability + workflow**, not one perfect “thing to count.” Tiers communicate that value clearly without over‑metering.
+* You’re early enough that the “ideal” usage meter may still be evolving. Tiered plans let you ship a clean pricing story now and refine as you learn.
+
+**Watch‑outs**
+
+* If usage/costs vary wildly across customers, flat plans can create **cross‑subsidy** (small customers fund whales) and margin surprises.
+* If customers only use you occasionally, subscription can feel like **“paying for idle time”** → churn.
+* If “Starter” is too generous, upgrades stall.
+
+**Guardrails**
+
+* Start with **3 tiers (or 2 + Enterprise)** and make the middle tier the default.
+* Gate tiers by **outcome/complexity/risk** (e.g., security, compliance, scale), not random features.
+* Design 1–2 **clear upgrade triggers** (limits people naturally hit as they succeed).
+
+**Switch to X if…**
+
+* **Hybrid (base fee + overages)** if variable costs scale with usage (tokens/compute/SMS/storage) or usage variance is 10×+.
+* **Usage-based (pay-as-you-go)** or **Transaction-based (per event)** if you can point to a simple, auditable “value counter” customers already understand.
+* **Seat-based** if value scales mainly with the number of people collaborating and access/permissions are central.
+
+---
+
+### SEAT — Seat‑based subscription
+
+**What it means**
+
+* Customers pay a recurring amount based on how many people have access (“seats”). It’s the most familiar B2B SaaS pattern and maps neatly to headcount.
+* Some companies bill **active seats** (only people who used the product recently) to reduce “shelfware” frustration.
+
+**Why this fits**
+
+* Your answers suggest value grows as more teammates participate (collaboration, adoption, internal rollout). Seats track that growth directly.
+* You surfaced needs like access control, permissions, or accountability. Seat pricing maps cleanly to “who gets access” and is easy to manage.
+* You implied that metering every action could slow adoption. Seat pricing removes the “taxi‑meter” feeling so people use the product freely.
+
+**Watch‑outs**
+
+* **Seat‑tax trap:** customers restrict access to control cost, which reduces adoption and value.
+* For automation/AI products, seat pricing can shrink as the product succeeds (fewer humans needed).
+* Seat value can be uneven (one power user vs many light users) → pricing friction.
+
+**Guardrails**
+
+* Consider **active-seat billing** (charge only for seats that were used recently, with a clear definition) to avoid shelfware fights.
+* Define roles (Admin / Full / Light/Guest) if many users are occasional participants.
+* Offer annual commits + true‑ups for mid‑market/enterprise if budgeting predictability is key.
+
+**Switch to X if…**
+
+* **Workspace / account pricing** if value is tied to shared data/workflows more than individual logins.
+* **USAGE** or **Hybrid (base fee + overages)** if value scales with volume processed (tokens, events, runs) more than headcount.
+* **Tiered subscription** if metering is hard today and you need a simple, capability‑based tier ladder.
+
+---
+
+### USAGE — Usage‑based (pay‑as‑you‑go)
+
+**What it means**
+
+* Customers pay based on consumption of a measurable unit (API calls, tokens, GB, runs). When they use more and get more value, they pay more.
+* This shifts risk toward you: if they don’t use it, they don’t pay much.
+
+**Why this fits**
+
+* Your inputs point to a **clear, countable unit** customers can understand and verify — which makes pay‑for‑what‑you‑use feel fair.
+* You want customers to start small and scale as they succeed. Usage pricing grows automatically with adoption without renegotiation.
+* Your costs likely rise with usage (tokens/compute/storage/SMS). A usage meter protects margin and keeps pricing aligned with cost.
+
+**Watch‑outs**
+
+* **Taxi‑meter effect:** customers feel punished for using the product and throttle usage.
+* **Bill shock:** unpredictable invoices create distrust and churn.
+* Wrong metric → disputes, gaming, and “this bill feels arbitrary.”
+
+**Guardrails**
+
+* Add **allowances/bundles**, clear rate cards, and in‑product **forecasting**.
+* Implement “circuit breakers”: alerts at 50/80/100% and optional caps.
+* Publish counting rules (retries/refunds/duplicates) and provide an auditable “what counted” log.
+
+**Switch to X if…**
+
+* **Hybrid (base fee + overages)** if customers (or investors/FP&A) need more predictability, or your revenue becomes too volatile.
+* **Credits / drawdown** if enterprise buyers want annual PO/commit while keeping flexible consumption.
+* **Transaction-based (per event)** if your value moment is a discrete business event (booking confirmed, payment captured).
+
+---
+
+### HYBRID — Hybrid (base subscription + usage overage)
+
+**What it means**
+
+* Customers pay a predictable **base fee** (platform/access) that includes some usage, then pay **overages** when they exceed the included amount.
+* It aims to balance predictability (base) with upside and cost pass‑through (usage).
+
+**Why this fits**
+
+* Your answers suggest you need **predictable revenue** *and* you have meaningful variable costs. A base fee covers the platform value; overages pass through the variable part.
+* You described usage that can spike or be seasonal. Hybrid reduces the “overpay in slow months” problem while still capturing upside when usage grows.
+* You expect big differences between light and heavy customers. Overages prevent cross‑subsidy and make pricing feel proportional to value.
+
+**Watch‑outs**
+
+* Too many meters (seats + storage + API calls) creates billing confusion.
+* If overages are a large share of revenue, customers feel nickel‑and‑dimed.
+* If included usage is too small, customers hit overages immediately → churn.
+
+**Guardrails**
+
+* Use **one primary value metric** and bundle the rest.
+* Set included allowance around the p25–p50 baseline usage so most customers feel “covered.”
+* Aim for base revenue to cover ~60–80% of expected spend per customer (stability), leaving the rest for usage upside.
+
+**Switch to X if…**
+
+* **Usage-based (pay-as-you-go)** if baseline value is low and the base fee becomes the main adoption blocker.
+* **Credits / drawdown** if customers demand annual commits/prepay (procurement) or want hard spend control.
+* **Seat-based** if the real driver is team adoption and usage is too noisy to explain.
+
+---
+
+### CREDITS — Credits / drawdown (commit‑to‑consume)
+
+**What it means**
+
+* Customers pre‑purchase a bucket of credits (often annually). As they use the product, credits “burn down.”
+* It’s a way to keep usage flexibility while giving the vendor cash flow and the buyer budget certainty.
+
+**Why this fits**
+
+* Your answers signal a buyer who cares about **budget control** (procurement/annual planning). Credits turn usage into a pre‑approved spend envelope.
+* You indicated usage is variable and hard to forecast month‑to‑month. A credit bucket reduces invoice surprises while keeping flexibility.
+* You want usage‑style alignment without constantly negotiating. Credits let customers commit once and then scale consumption smoothly.
+
+**Watch‑outs**
+
+* Credits can be confusing if “1 credit” doesn’t map cleanly to something customers recognize.
+* If the conversion rate from credits to value isn’t transparent, customers worry they’re wasting money.
+* Accounting/revenue recognition and contract terms can add complexity.
+
+**Guardrails**
+
+* Define a simple exchange rate (e.g., 1 credit = 1,000 tokens / 1 run / 1 transaction) and show burn‑down in the product.
+* Offer clear options: pay‑as‑you‑go **or** credits (mixed model), especially early.
+* Set policies for expiration, rollovers, refunds, and what happens when credits run out.
+
+**Switch to X if…**
+
+* **Usage-based (pay-as-you-go)** if you’re mostly self‑serve and buyers prefer monthly variability over upfront commits.
+* **Hybrid (base fee + overages)** if you need a stable platform fee plus flexible consumption.
+* **Tiered subscription** if your buyers are overwhelmed by credits and you need a simpler story.
+
+---
+
+### TXN — Transaction‑based (per discrete event)
+
+**What it means**
+
+* Customers pay per **countable business event** (a “turnstile”): booking confirmed, payment captured, document submitted, ticket resolved.
+* It’s usually a subset of usage‑based pricing, but feels fairer because you charge when something concrete happens.
+
+**Why this fits**
+
+* Your product produces a **discrete, auditable value moment** (a completed event). Charging per transaction feels intuitive and fair.
+* Your answers imply customers can reason in unit economics (“we can pay $X per ___”). That makes adoption and internal justification easier.
+* You want low entry friction. Transaction pricing ties payment to value delivered, which reduces the risk for new customers.
+
+**Watch‑outs**
+
+* Edge cases create disputes (retries, duplicates, refunds, fraud) unless counting rules are explicit.
+* If the event is too far from value (e.g., charging per click when they care about revenue), trust erodes.
+* Some customers still want predictability; per‑event spend can spike.
+
+**Guardrails**
+
+* Publish exact counting rules and provide an auditable event log (“what counted”).
+* Add volume tiers/discounts for large customers to avoid sticker shock.
+* Consider a base/minimum or credits option for budget‑sensitive procurement teams.
+
+**Switch to X if…**
+
+* **Usage-based (pay-as-you-go)** if consumption is more continuous (GB, minutes, compute) than discrete.
+* **Hybrid (base fee + overages)** if customers want a predictable base plus per‑transaction overages.
+* **Outcome-based** if you can reliably price on a verified business result (not just the event).
+
+---
+
+### OUTCOME — Outcome / performance‑based
+
+**What it means**
+
+* You charge based on verified business results (e.g., dollars saved, revenue generated, uptime achieved) rather than inputs or raw usage.
+* Typically this is a **hybrid contract**: a base fee + a variable “gainshare” tied to measured outcomes.
+
+**Why this fits**
+
+* Your answers suggest success can be measured with a concrete business KPI (not just product usage). That’s the foundation for outcome pricing.
+* You indicated the result is attributable enough to your product (and you control key drivers) to avoid constant attribution debates.
+* Buyers in your motion likely want ROI confidence and aligned incentives. Outcome‑linked pricing makes the value story persuasive.
+
+**Watch‑outs**
+
+* Attribution fights: customers claim something else caused the improvement.
+* Control problem: customer execution is required for success, so you carry risk you can’t manage.
+* Cash‑flow volatility if pricing is fully variable.
+
+**Guardrails**
+
+* Define the unit of success (binary where possible), baseline, time window, and true‑up process.
+* Build the “attribution gate” (logging + auditability) before scaling this model.
+* Start with base fee + outcome upside, plus caps/floors and payout timing (monthly/quarterly).
+
+**Switch to X if…**
+
+* **Hybrid (base fee + overages)** if outcomes are promising but measurement/attribution is not yet airtight.
+* **Usage-based (pay-as-you-go)** or **Transaction-based (per event)** if you need a simpler, auditable proxy while you collect outcome data.
+* **Tiered subscription** or **Seat-based** if outcomes are too long‑cycle or too noisy to bill inside a normal billing period.
+
+---
+
+## GTM Wrappers (How customers start)
+
+### FREEMIUM — Freemium Model
+
+**What it means**
+
+* A free tier that users can stay on forever, with paid tiers for more value (features, limits, controls). It’s designed to be an acquisition engine.
+
+**Why this fits**
+
+* Your answers suggest users can reach value quickly and your cost to serve a free user is manageable — making free access a sustainable acquisition lever.
+* Growth likely depends on broad adoption, sharing, or inviting teammates. A free tier removes friction from those loops.
+* You have a believable “why pay” path as usage scales or customers need controls. That makes freemium convert, not just attract.
+
+**Watch‑outs**
+
+* “Santa Claus” free tier: too generous → no upgrades.
+* Free users create real costs (support/compute) and crush unit economics.
+* You accidentally paywall the viral action and kill the growth loop.
+
+**Guardrails**
+
+* Treat free as a marketing expense; design one primary upgrade reason (“why pay?”).
+* Keep the viral action free; fence on scale/controls (limits, governance, compliance).
+* Make upgrades one‑click and transparent.
+
+**Switch to X if…**
+
+* **Free trial** if you don’t have viral loops or free users are expensive to serve.
+* **No free tier / no self-serve trial** if your motion is sales‑led with long onboarding and enterprise requirements.
+
+---
+
+### FREE_TRIAL — Free Trial
+
+**What it means**
+
+* Users get time‑limited access (e.g., 7–14–30 days) and typically can try the full product. After the trial, they must pay to continue.
+
+**Why this fits**
+
+* Your answers imply prospects need to experience the product before committing — but an indefinite free tier would be too costly or risky for you.
+* You can likely deliver an “aha moment” within a short window (days/weeks). That makes a time‑boxed trial credible.
+* You want a cleaner conversion path than freemium while still reducing first‑purchase friction.
+
+**Watch‑outs**
+
+* Trials that don’t reach an “aha moment” → low conversion.
+* Long setup/onboarding means the trial expires before value is realized.
+* Sales teams treat trials as unqualified leads and don’t activate them.
+
+**Guardrails**
+
+* Design the trial around 1–2 activation goals (the shortest path to meaningful value).
+* Add in‑product guidance, templates, and a clear “next step” CTA before the trial ends.
+* For higher ACVs, offer a guided pilot instead of a pure self‑serve trial.
+
+**Switch to X if…**
+
+* **Freemium** if collaboration/virality is your growth engine and free users reliably bring more users.
+* **No free tier / no self-serve trial** if you’re consistently selling via demos/onboarding and buyers expect procurement anyway.
+
+---
+
+### NONE — No Wrapper
+
+**What it means**
+
+* No free tier and no trial by default. Customers pay to start (often after a demo/pilot), and you may offer a contractual pilot instead.
+
+**Why this fits**
+
+* Your answers point to higher‑touch selling (security/compliance, complex onboarding, or expensive compute). Open free access would create downside without real signal.
+* Time‑to‑value appears longer than a typical self‑serve trial window. A demo or paid pilot is a better risk‑managed entry.
+* Your target buyers likely expect procurement and defined success criteria. A paid‑first motion filters for serious prospects and protects your team’s time.
+
+**Watch‑outs**
+
+* Higher friction reduces self‑serve conversion and slows early learning.
+* Without a risk‑reversal, prospects may hesitate (“will this work?”).
+
+**Guardrails**
+
+* Offer a low‑risk entry: paid pilot, milestone‑based rollout, or limited‑scope starter plan.
+* Make the value story concrete (ROI, case studies, clear success criteria).
+* Keep the pricing model simple enough to explain in one breath.
+
+**Switch to X if…**
+
+* **Free trial** if you’re trying to move downmarket/PLG and you can demonstrate value fast.
+* **Outcome-based** (often as a hybrid: base fee + performance upside) if buyers demand performance guarantees and outcomes are measurable.
+
+---
+
+## Pricing Metrics (Value Meters) — 1–2 line explanations
+
+### Access / org metrics
+
+* **Seats** — Total paid user licenses (people who can log in). Best when value scales with team adoption and permissions.
+* **Active seats** — Seats that meet a clear activity threshold (e.g., used in last 30 days). Reduces “paying for unused seats” fights.
+* **Workspace / account** — Per account/org/workspace (shared environment). Good when value comes from shared data/workflows more than individual users.
+
+### API & AI consumption
+
+* **API calls** — Count of API requests. Good when customers understand “requests” and usage maps to value and cost.
+* **Tokens** — LLM input + output tokens consumed. Good when cost/value scales with model usage and you can show token dashboards.
+* **Compute** — Compute time/units (GPU‑seconds, CPU minutes). Good when infrastructure cost is the dominant driver.
+* **Agent actions** — Count of agent‑completed actions (tasks executed, steps completed). Good when the product “does work” on behalf of users.
+
+### Data platform
+
+* **Events** — Events/logs/messages ingested. Good when ingest volume is the main scaling driver.
+* **Records** — Rows/objects processed or stored. Good when value and cost scale with dataset size.
+* **Storage (GB)** — GB stored (often average over the month). Good when retention/storage is the core value driver.
+* **Queries** — Queries executed (or query units). Good when value is about analysis/compute and customers can predict query volume.
+
+### Automation / workflow
+
+* **Runs** — Workflow/automation runs executed. Good when customers pay for work completed by the system.
+* **Documents** — Documents processed/generated (pages, files, forms). Good for document AI and back‑office automation.
+* **Tasks / tickets** — Tasks/tickets processed or resolved. Strong when a “ticket resolved” is a clear, auditable value moment.
+
+### Transactions / commerce‑like
+
+* **Transactions** — Discrete transactions (payments, bookings, deliveries, verifications). Works when the event is cleanly countable.
+* **Take rate** — % of dollars processed / GMV / revenue influenced. Best for marketplaces or payment‑like flows where your value scales with volume.
+
+### Outcome metrics
+
+* **Outcome dollars** — Dollars saved or earned (verified incremental value). Best when attribution is strong and both sides agree on the math.
+* **Outcome time** — Time saved / uptime gained / cycle time reduced (verified). Best when the time metric is objective and linked to real economics.

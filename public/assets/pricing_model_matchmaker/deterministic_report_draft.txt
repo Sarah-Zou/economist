@@ -1,0 +1,502 @@
+\# Pricing Model Matchmaker — Your Free Customized Report
+
+
+
+This report is generated from your quiz answers and gives you a clear, practical starting point.  
+
+If you have any issues or feedback, email \*\*{{hello@sarahzou.com}}\*\*.
+
+
+
+---
+
+
+
+\## 0) Executive snapshot 
+
+
+
+\### Your recommended pricing setup
+
+\- \*\*Best-fit model:\*\* {{primary\_model}}
+
+\- \*\*Headline value metric:\*\* {{headline\_metric}}
+
+{{#if secondary\_meter}}
+
+\- \*\*Optional secondary meter:\*\* {{secondary\_meter}}
+
+{{/if}}
+
+
+
+\- \*\*Recommended wrapper:\*\* {{wrapper}}
+
+\- \*\*Confidence:\*\* {{confidence.tier}}
+
+
+
+\### What to do next (3 steps)
+
+1\) \*\*Ship a simple v1\*\* using {{launch\_now}} (details below)  
+
+2\) \*\*Use the metric definition\*\* in Section 3 so customers understand billing  
+
+3\) \*\*Add one predictability feature\*\* (alerts / cap / allowance) from Section 5
+
+
+
+> \*\*Important boundary (so you don’t overfit too early):\*\*  
+
+> This report intentionally does \*\*not\*\* set exact starting prices or tier limits. Those depend on buyer willingness-to-pay and your sales motion. If you want that finalized quickly, see Section 8.
+
+
+
+---
+
+
+
+\## 1) What this recommendation means 
+
+
+
+\### Model explanation (what it is)
+
+\*\*{{primary\_model}}\*\* means:  
+
+{{primary\_model\_plain\_english}}
+
+> \*(If you’re generating from a knowledge base: insert a 2–3 sentence “definition” block here.)\*
+
+
+
+\### Why this fits your situation (why)
+
+{{#if why\_this\_fits}}
+
+{{#each why\_this\_fits}}
+
+\- {{this}}
+
+{{/each}}
+
+{{else}}
+
+\- This model tends to fit when pricing can scale with customer value without creating surprise bills.
+
+{{/if}}
+
+
+
+\### Watch-outs to avoid (what to watch)
+
+{{#if watch\_outs}}
+
+{{#each watch\_outs}}
+
+\- {{this}}
+
+{{/each}}
+
+{{else}}
+
+\- Keep the billing explanation simple and avoid confusing customers with too many meters.
+
+{{/if}}
+
+
+
+---
+
+
+
+\## 2) Launch now → evolve later (your realistic path)
+
+
+
+\### Launch now (the simplest version to ship first)
+
+\*\*{{launch\_now}}\*\*  
+
+Why launch here:
+
+\- It’s easier to explain and sell early.
+
+\- It reduces risk while you learn usage patterns.
+
+\- It gives you clean signals for iteration.
+
+
+
+\### Evolve later (once you have usage + buyer data)
+
+\*\*{{evolve\_later}}\*\*  
+
+When you should consider evolving:
+
+\- After you have {{usage\_data\_threshold\_placeholder}} weeks of usage data \*\*or\*\* {{deal\_count\_threshold\_placeholder}} paid customers
+
+\- When you see one of these triggers: {{evolve\_trigger\_placeholder}}
+
+
+
+---
+
+
+
+\## 3) Your headline value metric (what it is + how to explain it)
+
+
+
+\### Metric definition (copy/paste)
+
+You are billed based on \*\*{{headline\_metric}}\*\*.
+
+
+
+\*\*A “{{headline\_metric}}” means:\*\*  
+
+{{headline\_metric\_definition}}
+
+
+
+\*\*Why this metric is a good match (in one paragraph):\*\*  
+
+{{headline\_metric\_why\_paragraph}}
+
+
+
+\### How to keep this metric “fair” (simple rules)
+
+Use these simple principles to reduce billing anxiety:
+
+\- \*\*Make it predictable:\*\* customers should be able to estimate usage before buying.
+
+\- \*\*Make it measurable:\*\* you can count it consistently per account.
+
+\- \*\*Make it visible:\*\* show usage in-product (or in invoices) so it’s not a surprise.
+
+
+
+---
+
+
+
+\## 4) Starter packaging you can ship (structure + placeholders)
+
+
+
+\### Recommended starter shape
+
+{{starter\_packaging\_suggestion}}
+
+
+
+\### Starter tier template (placeholders only — no final numbers yet)
+
+> Replace placeholders once you validate pricing and tier limits. Start simple.
+
+
+
+\*\*Plan 1 — Starter (for {{starter\_customer\_profile}})\*\*  
+
+\- Includes up to \*\*{{starter\_allowance}}\*\* {{headline\_metric}} / month  
+
+\- Overage (if any): \*\*{{starter\_overage}}\*\* per {{headline\_metric}}  
+
+\- Best for: {{starter\_best\_for}}
+
+
+
+\*\*Plan 2 — Pro (for {{pro\_customer\_profile}})\*\*  
+
+\- Includes up to \*\*{{pro\_allowance}}\*\* {{headline\_metric}} / month  
+
+\- Overage (if any): \*\*{{pro\_overage}}\*\* per {{headline\_metric}}  
+
+\- Best for: {{pro\_best\_for}}
+
+
+
+\*\*Plan 3 — Enterprise (for procurement / security / scale)\*\*  
+
+\- Custom terms, invoicing, security, procurement-friendly options  
+
+\- Best for: {{enterprise\_best\_for}}
+
+
+
+> If you prefer only \*\*2 plans\*\* early, combine Pro + Enterprise into one “Business” plan.
+
+
+
+---
+
+
+
+\## 5) Wrapper recommendation (how people start)
+
+
+
+\### Recommended wrapper: \*\*{{wrapper}}\*\*
+
+What this means:
+
+\- \*\*FREE\_TRIAL:\*\* people try the full product for a limited time  
+
+\- \*\*FREEMIUM:\*\* a permanent free tier with hard limits  
+
+\- \*\*NONE:\*\* you go paid-only (often when sales-led or very customized)
+
+
+
+Why this wrapper fits (1–2 points):
+
+\- {{wrapper\_reason\_1}}
+
+{{#if wrapper\_reason\_2}}
+
+\- {{wrapper\_reason\_2}}
+
+{{/if}}
+
+
+
+{{#if wrapper\_notes}}
+
+Notes / constraints:
+
+{{#each wrapper\_notes}}
+
+\- {{this}}
+
+{{/each}}
+
+{{/if}}
+
+
+
+---
+
+
+
+\## 6) Two alternatives (when to switch — and why)
+
+
+
+Even if {{primary\_model}} is the best default, these two options are close contenders.
+
+
+
+{{#if alt\_models}}
+
+\### Alternative 1: \*\*{{alt\_models.0}}\*\*
+
+\*\*Pick this instead if:\*\*
+
+\- {{alt\_0\_when\_1}}
+
+\- {{alt\_0\_when\_2}}
+
+
+
+\*\*Why it can be better in that case:\*\*  
+
+{{alt\_0\_why\_short}}
+
+
+
+\### Alternative 2: \*\*{{alt\_models.1}}\*\*
+
+\*\*Pick this instead if:\*\*
+
+\- {{alt\_1\_when\_1}}
+
+\- {{alt\_1\_when\_2}}
+
+
+
+\*\*Why it can be better in that case:\*\*  
+
+{{alt\_1\_why\_short}}
+
+{{else}}
+
+\### Alternative(s)
+
+\- \*\*Alternative model:\*\* {{secondary\_model}}
+
+\- Conditions to switch: {{alt\_when\_placeholder}}
+
+{{/if}}
+
+
+
+---
+
+
+
+\## 7) Other metric candidates (top 3)
+
+
+
+These are the top metric candidates the scorer considered for your scenario.
+
+
+
+{{#if metric\_candidates}}
+
+1\) \*\*{{metric\_candidates.0}}\*\* — {{metric\_candidate\_0\_1line}}  
+
+&nbsp;  Why it might fit: {{metric\_candidate\_0\_why}}
+
+
+
+2\) \*\*{{metric\_candidates.1}}\*\* — {{metric\_candidate\_1\_1line}}  
+
+&nbsp;  Why it might fit: {{metric\_candidate\_1\_why}}
+
+
+
+3\) \*\*{{metric\_candidates.2}}\*\* — {{metric\_candidate\_2\_1line}}  
+
+&nbsp;  Why it might fit: {{metric\_candidate\_2\_why}}
+
+{{else}}
+
+1\) \*\*{{headline\_metric}}\*\* — {{metric\_candidate\_0\_1line}}  
+
+2\) \*\*{{secondary\_meter}}\*\* — {{metric\_candidate\_1\_1line}}  
+
+3\) \*\*{{metric\_candidate\_2\_placeholder}}\*\* — {{metric\_candidate\_2\_1line}}
+
+{{/if}}
+
+
+
+\*\*How to pick the winner (simple rule):\*\*  
+
+Choose the metric that is easiest for customers to \*\*predict\*\*, easiest for you to \*\*measure\*\*, and most closely tracks \*\*customer value\*\*.
+
+
+
+---
+
+
+
+\## 8) Implementation checklist (practical “do this” items)
+
+
+
+Here are the most important implementation actions to avoid early pricing mistakes.
+
+
+
+{{#if implementation\_notes}}
+
+{{#each implementation\_notes}}
+
+\- {{this}}
+
+{{/each}}
+
+{{else}}
+
+\- Add an included allowance or clear limits so bills feel predictable.
+
+\- Show usage in-product or on invoices so customers aren’t surprised.
+
+\- Keep one primary growth lever; don’t stack too many meters.
+
+{{/if}}
+
+
+
+---
+
+
+
+\## 9) If confidence isn’t High: what to validate next
+
+
+
+\*\*Confidence:\*\* {{confidence.tier}}
+
+
+
+{{#if measure\_next\_checklist}}
+
+To make this recommendation even more precise, validate these next:
+
+{{#each measure\_next\_checklist}}
+
+\- {{this}}
+
+{{/each}}
+
+{{/if}}
+
+
+
+{{#if need\_followups}}
+
+\### Follow-up questions (quick wins)
+
+Answering these will sharpen your recommendation:
+
+{{#each need\_followups}}
+
+\- {{followup\_plain\_english this}}
+
+{{/each}}
+
+{{/if}}
+
+
+
+---
+
+
+
+\## 10) Next steps (and how we can help)
+
+
+
+\### If you want to DIY (good path for many founders)
+
+\- Ship the \*\*Launch now\*\* version
+
+\- Use the pricing-page copy blocks above
+
+\- Revisit in {{revisit\_timeframe\_placeholder}} weeks with real usage + sales signals
+
+
+
+\### If you want this finalized fast (recommended when you’re selling now)
+
+In a 5-day Sprint, we help you finalize:
+
+\- \*\*Final model + final metric\*\*
+
+\- \*\*Tier limits (allowances) + upgrade triggers\*\*
+
+\- \*\*Starting price points (with reasoning)\*\*
+
+\- \*\*Pricing page copy ready to publish\*\*
+
+\- \*\*Rollout plan (how to introduce pricing without backlash)\*\*
+
+
+
+\*\*Book a free consult:\*\* {{https://sarahzou.com/book}}  
+
+\*\*Pricing Sprint details:\*\* {{https://sarahzou.com/consulting/services/pricing-monetization-sprint}}
+
+
+
+Questions or feedback? Email \*\*{{hello@sarahzou.com}}\*\*.
+
+
+
+---
+

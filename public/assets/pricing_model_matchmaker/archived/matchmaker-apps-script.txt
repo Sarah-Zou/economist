@@ -1,0 +1,1444 @@
+/**
+ * Pricing Model Matchmaker — Apps Script (revised)
+ * - Accepts POST text/plain body containing JSON
+ * - Returns recommendation (snake_case keys for compatibility)
+ * - Optionally logs to a Google Sheet tab: "submissions"
+ */
+
+const SHEET_NAME = "submissions";
+const SHEET_COLUMNS = [
+  "timestamp",
+  "session_id",
+  "email",
+  "answers_json",
+  "result_json",
+  "utm_json",
+  "user_agent",
+  "referrer",
+  "report_status",
+  "report_id",
+  "report_token",
+  "report_draft_md",
+  "product_url",
+  "product_context",
+  "report_final_html",
+  "report_url",
+  "views",
+  "last_error",
+  "updated_at"
+];
+
+const MODELS = ["SUB_TIERED", "SEAT", "USAGE", "HYBRID", "CREDITS", "TXN", "OUTCOME"];
+const METRICS = [
+  "SEATS", "ACTIVE_SEATS", "WORKSPACE",
+  "API_CALLS", "TOKENS", "COMPUTE", "AGENT_ACTIONS",
+  "EVENTS", "RECORDS", "STORAGE_GB", "QUERIES",
+  "RUNS", "DOCS", "TASKS_TICKETS",
+  "TXN_UNITS", "TAKE_RATE",
+  "OUTCOME_$", "OUTCOME_TIME"
+];
+
+/**
+ * Serves the report page when rid and t (token) are present.
+ * If report_final_html exists → show it; else → "Report is being generated, check back soon".
+ */
+function doGet(e) {
+  var rid = (e && e.parameter && e.parameter.rid) ? String(e.parameter.rid).trim() : "";
+  var t = (e && e.parameter && e.parameter.t) ? String(e.parameter.t).trim() : "";
+  if (!rid || !t) {
+    return HtmlService.createHtmlOutput(
+      "<!DOCTYPE html><html><head><meta charset='utf-8'><title>Report</title></head><body><p>Missing report ID or token.</p></body></html>"
+    ).setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+  }
+  var sheet = getSubmissionSheet_();
+  var rowIndex = findRowByReportId_(sheet, rid);
+  if (rowIndex <= 0) {
+    return HtmlService.createHtmlOutput(
+      "<!DOCTYPE html><html><head><meta charset='utf-8'><title>Report not found</title></head><body><p>Report not found.</p></body></html>"
+    ).setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+  }
+  var tokenCol = SHEET_COLUMNS.indexOf("report_token") + 1;
+  var storedToken = sheet.getRange(rowIndex, tokenCol).getValue();
+  if (String(storedToken || "").trim() !== t) {
+    return HtmlService.createHtmlOutput(
+      "<!DOCTYPE html><html><head><meta charset='utf-8'><title>Invalid link</title></head><body><p>Invalid or expired report link.</p></body></html>"
+    ).setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+  }
+  incrementReportViews_(sheet, rowIndex);
+  var htmlCol = SHEET_COLUMNS.indexOf("report_final_html") + 1;
+  var reportHtml = sheet.getRange(rowIndex, htmlCol).getValue();
+  var htmlStr = reportHtml ? String(reportHtml).trim() : "";
+  if (htmlStr.length > 0) {
+    return HtmlService.createHtmlOutput(htmlStr).setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+  }
+  var pendingHtml = [
+    "<!DOCTYPE html>",
+    "<html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>",
+    "<title>Report in progress</title>",
+    "<style>body{font-family:system-ui,sans-serif;max-width:36em;margin:2em auto;padding:0 1em;}</style>",
+    "</head><body>",
+    "<h1>Report is being generated</h1>",
+    "<p>Check back soon. We'll email you when it's ready, or refresh this page later.</p>",
+    "</body></html>"
+  ].join("");
+  return HtmlService.createHtmlOutput(pendingHtml).setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+}
+
+function doPost(e) {
+  var payload = parsePayload_(e);
+
+  if (!payload) {
+    return json_(400, { error: "Invalid or missing JSON body" });
+  }
+  if (!payload.action) {
+    return json_(400, { error: "Missing payload.action" });
+  }
+
+  try {
+    if (payload.action === "score") {
+      var result = score_(payload);
+
+      // Log to sheet only when returning final recommendation (not when asking for follow-up answers)
+      if (!result.need_followups) {
+        try {
+          logSubmission_(payload, result);
+        } catch (logErr) {
+          result.debug = result.debug || {};
+          result.debug.logError = String(logErr);
+        }
+      }
+
+      return json_(200, result);
+    }
+
+    if (payload.action === "draft_report") {
+      if (!payload.email) {
+        return json_(400, { ok: false, error: "Missing email" });
+      }
+      if (!payload.answers) {
+        return json_(400, { ok: false, error: "Missing answers" });
+      }
+
+      var reportId = Utilities.getUuid();
+      var reportToken = Utilities.getUuid();
+      var baseUrl = ScriptApp.getService().getUrl();
+      var reportUrl = baseUrl + "?rid=" + encodeURIComponent(reportId) + "&t=" + encodeURIComponent(reportToken);
+
+      var reportResult = score_(payload);
+      var productContext = getProductContext_(payload.productUrl);
+      var reportMarkdown = generateDeterministicReportDraft_(payload, reportResult, productContext);
+      logReportDraftRequest_(payload, reportResult, reportMarkdown, productContext, reportId, reportToken, reportUrl);
+      return json_(200, { ok: true, report_url: reportUrl });
+    }
+
+    return json_(400, { error: "Unknown action: " + payload.action });
+  } catch (err) {
+    if (payload && payload.action === "draft_report") {
+      try {
+        logReportDraftError_(payload, String(err));
+      } catch (ignoreLogErr) {
+        // do not mask original error payload
+      }
+    }
+    var errPayload = { error: String(err) };
+    if (payload && payload.debug) {
+      errPayload.stack = (err && err.stack) ? String(err.stack) : "";
+    }
+    return json_(500, errPayload);
+  }
+}
+
+function parsePayload_(e) {
+  var raw = (e && e.postData && e.postData.contents) ? e.postData.contents : "";
+  if (!raw) return null;
+  try {
+    return JSON.parse(raw);
+  } catch (e) {
+    return null;
+  }
+}
+
+function json_(statusCode, obj) {
+  return ContentService
+    .createTextOutput(JSON.stringify(obj))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+function score_(payload) {
+  var answers = payload.answers || {};
+  var modelScore = initMap_(MODELS, 0);
+  var metricScore = initMap_(METRICS, 0);
+
+  var notSureCount = computeNotSureCount_(answers);
+  var confidenceScore = 0 - notSureCount;
+  var confidenceTier =
+    confidenceScore >= -1 ? "High" :
+    confidenceScore >= -3 ? "Medium" : "Low";
+
+  applyBaseScoring_(answers, modelScore, metricScore);
+  applyConditionalScoring_(answers, modelScore);
+  applyPathScoring_(answers, modelScore, metricScore);
+
+  var wrapperObj = selectWrapper_(answers, notSureCount, payload.wrapper);
+
+  // Draft model selection for sanity checks (which may mutate modelScore)
+  var selectModelResult = selectModels_(answers, modelScore, confidenceTier);
+  var primaryModel = selectModelResult.primaryModel;
+  var secondaryModel = selectModelResult.secondaryModel;
+  var rankedModels = selectModelResult.rankedModels;
+
+  var notes = [];
+  applySanityChecks_(answers, {
+    modelScore: modelScore,
+    metricScore: metricScore,
+    primaryModel: primaryModel,
+    secondaryModel: secondaryModel,
+    headlineMetric: null,
+    confidenceTier: confidenceTier,
+    notes: notes
+  });
+
+  // Final model selection after sanity checks; then metrics once
+  selectModelResult = selectModels_(answers, modelScore, confidenceTier);
+  primaryModel = selectModelResult.primaryModel;
+  secondaryModel = selectModelResult.secondaryModel;
+  rankedModels = selectModelResult.rankedModels;
+
+  var selectMetricResult = selectMetrics_(answers, primaryModel, secondaryModel, metricScore);
+  var headlineMetric = selectMetricResult.headlineMetric;
+  var secondaryMeter = selectMetricResult.secondaryMeter;
+  var rankedMetrics = selectMetricResult.rankedMetrics;
+
+  // Deterministic alternatives + metric candidates for normal response
+  var altModels = (rankedModels || [])
+    .map(function(x) { return x.key; })
+    .filter(function(k) { return k && k !== primaryModel; })
+    .slice(0, 2);
+
+  var metricCandidates = (rankedMetrics || [])
+    .map(function(x) { return x.key; })
+    .filter(function(k) { return k; })
+    .slice(0, 3);
+
+  var launchEvolve = selectLaunchEvolve_(answers, confidenceTier, rankedModels);
+
+  var whyThisFits = WHY_FITS_[primaryModel] ? WHY_FITS_[primaryModel].slice(0, 3) : [];
+  var watchOuts = WATCH_OUTS_[primaryModel] ? WATCH_OUTS_[primaryModel].slice(0, 2) : [];
+
+  var implementationNotes = buildImplementationNotes_(answers, primaryModel, secondaryModel, headlineMetric, notes, wrapperObj);
+  var starterPackagingSuggestion = buildStarterPackagingSuggestion_(primaryModel, secondaryModel, headlineMetric, secondaryMeter, wrapperObj);
+
+  var measureNextChecklist =
+    (confidenceTier === "Medium" || confidenceTier === "Low")
+      ? MEASURE_NEXT_.slice(0, 4)
+      : [];
+
+  var needFollowups = computeNeedFollowups_(answers, confidenceTier, rankedModels);
+
+  var result = {
+    primary_model: primaryModel,
+    secondary_model: secondaryModel || null,
+    alt_models: altModels,
+    metric_candidates: metricCandidates,
+
+    wrapper: wrapperObj.wrapper,
+    wrapper_notes: wrapperObj.notes,
+    headline_metric: headlineMetric,
+    secondary_meter: secondaryMeter || null,
+    launch_now: launchEvolve.launch_now,
+    evolve_later: launchEvolve.evolve_later,
+    why_this_fits: whyThisFits,
+    watch_outs: watchOuts,
+    starter_packaging_suggestion: starterPackagingSuggestion,
+    implementation_notes: implementationNotes,
+    measure_next_checklist: measureNextChecklist,
+    confidence_tier: confidenceTier,
+    confidence: {
+      not_sure_count: notSureCount,
+      confidence_score: confidenceScore,
+      tier: confidenceTier
+    },
+    need_followups: needFollowups.length > 0,
+    followup_question_ids: needFollowups
+  };
+
+  if (payload.debug === true) {
+    result.debug = {
+      model_score: modelScore,
+      metric_score: metricScore,
+      ranked_models: rankedModels,
+      ranked_metrics: rankedMetrics
+    };
+  }
+
+  return result;
+}
+
+function initMap_(keys, initialValue) {
+  var m = {};
+  keys.forEach(function(k) { m[k] = initialValue; });
+  return m;
+}
+
+function add_(map, key, delta) {
+  if (delta === 0 || delta === null || delta === undefined) return;
+  if (map[key] === undefined) map[key] = 0;
+  map[key] += delta;
+}
+
+function computeNotSureCount_(answers) {
+  var NS = ["NS", "NOT_SURE", "Not sure", "not_sure", ""];
+  var count = 0;
+  Object.keys(answers || {}).forEach(function(q) {
+    var v = answers[q];
+    if (v === null || v === undefined) return;
+    if (NS.indexOf(String(v)) !== -1) count += 1;
+  });
+  return count;
+}
+
+function applyBaseScoring_(answers, modelScore, metricScore) {
+  var P0 = answers.P0;
+  if (P0 === "A") { add_(modelScore,"SUB_TIERED",2); add_(modelScore,"USAGE",1); add_(modelScore,"HYBRID",1); add_(modelScore,"OUTCOME",-4); add_(modelScore,"CREDITS",-1); }
+  else if (P0 === "B") { add_(modelScore,"SUB_TIERED",1); add_(modelScore,"HYBRID",1); }
+  else if (P0 === "C") { add_(modelScore,"HYBRID",1); add_(modelScore,"CREDITS",1); add_(modelScore,"SUB_TIERED",1); }
+  else if (P0 === "D") { add_(modelScore,"CREDITS",2); add_(modelScore,"HYBRID",1); add_(modelScore,"SUB_TIERED",1); }
+
+  var P1 = answers.P1;
+  if (P1 === "A") { add_(modelScore,"SUB_TIERED",2); add_(modelScore,"USAGE",1); add_(modelScore,"CREDITS",-2); add_(modelScore,"SEAT",-1); }
+  else if (P1 === "B") { add_(modelScore,"USAGE",2); add_(modelScore,"SUB_TIERED",1); add_(modelScore,"SEAT",1); }
+  else if (P1 === "C") { add_(modelScore,"SUB_TIERED",2); add_(modelScore,"HYBRID",1); }
+  else if (P1 === "D") { add_(modelScore,"CREDITS",3); add_(modelScore,"HYBRID",2); add_(modelScore,"SUB_TIERED",1); }
+  else if (P1 === "E") { add_(modelScore,"HYBRID",1); }
+
+  var P4 = answers.P4;
+  if (P4 === "A") { add_(modelScore,"HYBRID",4); add_(modelScore,"USAGE",3); add_(modelScore,"CREDITS",2); add_(modelScore,"SUB_TIERED",-1); }
+  else if (P4 === "B") { add_(modelScore,"HYBRID",3); add_(modelScore,"USAGE",2); }
+  else if (P4 === "C") { add_(modelScore,"SUB_TIERED",2); add_(modelScore,"SEAT",1); }
+  else if (P4 === "D") { add_(modelScore,"HYBRID",2); }
+
+  var Q0 = answers.Q0;
+  if (Q0 === "A") { add_(modelScore,"USAGE",1); add_(modelScore,"HYBRID",1); }
+  else if (Q0 === "B") { add_(modelScore,"SUB_TIERED",1); add_(modelScore,"SEAT",1); }
+  else if (Q0 === "C") { add_(modelScore,"HYBRID",1); add_(modelScore,"CREDITS",1); }
+  else if (Q0 === "D") { add_(modelScore,"HYBRID",1); add_(modelScore,"TXN",1); }
+
+  var P3 = answers.P3;
+  if (P3 === "C") { add_(modelScore,"SUB_TIERED",1); add_(modelScore,"HYBRID",1); add_(modelScore,"CREDITS",1); }
+
+  var P5 = answers.P5;
+  if (P5 === "A") { add_(modelScore,"SEAT",3); add_(metricScore,"SEATS",2); add_(metricScore,"ACTIVE_SEATS",1); }
+  else if (P5 === "B") { add_(modelScore,"USAGE",3); add_(modelScore,"HYBRID",2); add_(metricScore,"API_CALLS",1); add_(metricScore,"TOKENS",1); add_(metricScore,"EVENTS",1); add_(metricScore,"RUNS",1); }
+  else if (P5 === "C") { add_(modelScore,"SUB_TIERED",2); add_(metricScore,"WORKSPACE",2); }
+  else if (P5 === "D") { add_(modelScore,"OUTCOME",2); add_(modelScore,"HYBRID",2); add_(metricScore,"OUTCOME_$",1); add_(metricScore,"OUTCOME_TIME",1); }
+  else if (P5 === "E") { add_(modelScore,"HYBRID",1); }
+
+  var P6 = answers.P6;
+  if (P6 === "A") { add_(modelScore,"USAGE",1); add_(modelScore,"HYBRID",1); }
+  else if (P6 === "B") { add_(modelScore,"HYBRID",1); }
+  else if (P6 === "C") { add_(modelScore,"SUB_TIERED",3); add_(modelScore,"SEAT",1); }
+  else if (P6 === "D") { add_(modelScore,"SUB_TIERED",1); add_(modelScore,"HYBRID",1); }
+}
+
+function applyConditionalScoring_(answers, modelScore) {
+  var P7 = answers.P7;
+  if (P7 === "SEATS") add_(modelScore,"SEAT",1);
+  if (P7 === "TIERS") add_(modelScore,"SUB_TIERED",1);
+  if (P7 === "USAGE") add_(modelScore,"USAGE",1);
+  if (P7 === "CREDITS") add_(modelScore,"CREDITS",1);
+  if (P7 === "TXN") add_(modelScore,"TXN",1);
+
+  var F3 = answers.F3;
+  if (F3 === "A") { add_(modelScore,"CREDITS",2); add_(modelScore,"HYBRID",1); }
+  else if (F3 === "B") { add_(modelScore,"HYBRID",1); }
+  else if (F3 === "C") { add_(modelScore,"USAGE",1); add_(modelScore,"SUB_TIERED",1); }
+  else if (F3 === "D") { add_(modelScore,"HYBRID",1); }
+
+  var F4 = answers.F4;
+  if (F4 === "A") { add_(modelScore,"HYBRID",2); add_(modelScore,"CREDITS",1); }
+  else if (F4 === "B") { add_(modelScore,"USAGE",2); add_(modelScore,"HYBRID",2); }
+  else if (F4 === "C") { add_(modelScore,"SUB_TIERED",2); }
+  else if (F4 === "D") { add_(modelScore,"HYBRID",1); }
+}
+
+function applyPathScoring_(answers, modelScore, metricScore) {
+  var Q0 = answers.Q0;
+
+  if (Q0 === "A") {
+    var A1 = answers.A1;
+    if (A1 === "A") add_(modelScore,"USAGE",2);
+    else if (A1 === "B") add_(modelScore,"HYBRID",2);
+    else if (A1 === "C") { add_(modelScore,"CREDITS",2); add_(modelScore,"HYBRID",2); }
+    else if (A1 === "D") add_(modelScore,"HYBRID",1);
+
+    var A2 = answers.A2;
+    if (A2 === "API_CALLS") add_(metricScore,"API_CALLS",5);
+    else if (A2 === "TOKENS") add_(metricScore,"TOKENS",5);
+    else if (A2 === "COMPUTE") add_(metricScore,"COMPUTE",5);
+    else if (A2 === "EVENTS") add_(metricScore,"EVENTS",5);
+    else if (!A2 || A2 === "NS") { add_(metricScore,"API_CALLS",2); add_(metricScore,"EVENTS",2); }
+
+    var A3 = answers.A3;
+    if (A3 === "A") { add_(modelScore,"HYBRID",2); add_(modelScore,"SUB_TIERED",1); }
+    else if (A3 === "B") add_(modelScore,"USAGE",2);
+    else if (A3 === "C") { add_(modelScore,"CREDITS",3); add_(modelScore,"HYBRID",1); }
+    else if (A3 === "D") add_(modelScore,"HYBRID",1);
+  }
+
+  if (Q0 === "B") {
+    var B1 = answers.B1;
+    if (B1 === "YES") add_(modelScore,"SEAT",4);
+    else if (B1 === "SOMETIMES") { add_(modelScore,"SEAT",2); add_(modelScore,"SUB_TIERED",2); }
+    else if (B1 === "NO") add_(modelScore,"SUB_TIERED",3);
+    else if (B1 === "NS") { add_(modelScore,"SUB_TIERED",1); add_(modelScore,"SEAT",1); }
+
+    var B2 = answers.B2;
+    if (B2 === "YES") add_(modelScore,"SEAT",3);
+    else if (B2 === "SOMEWHAT") { add_(modelScore,"SUB_TIERED",2); add_(modelScore,"SEAT",1); }
+    else if (B2 === "NO") { add_(modelScore,"SUB_TIERED",2); add_(modelScore,"HYBRID",1); }
+    else if (B2 === "NS") add_(modelScore,"SUB_TIERED",1);
+
+    var B5 = answers.B5;
+    if (B5 === "SEATS") add_(metricScore,"SEATS",5);
+    else if (B5 === "ACTIVE_SEATS") add_(metricScore,"ACTIVE_SEATS",5);
+    else if (B5 === "WORKSPACE") add_(metricScore,"WORKSPACE",5);
+    else if (!B5 || B5 === "NS") { add_(metricScore,"WORKSPACE",4); add_(metricScore,"SEATS",1); }
+  }
+
+  if (Q0 === "C") {
+    var C1 = answers.C1;
+    if (C1 === "INGEST") add_(metricScore,"EVENTS",5);
+    else if (C1 === "STORE") add_(metricScore,"STORAGE_GB",5);
+    else if (C1 === "QUERY") { add_(metricScore,"QUERIES",5); add_(metricScore,"COMPUTE",2); }
+    else { add_(metricScore,"EVENTS",2); add_(metricScore,"STORAGE_GB",2); add_(metricScore,"QUERIES",2); }
+
+    var C2 = answers.C2;
+    if (C2 === "STORAGE") { add_(modelScore,"HYBRID",3); add_(modelScore,"USAGE",2); }
+    else if (C2 === "COMPUTE") { add_(modelScore,"HYBRID",3); add_(modelScore,"USAGE",2); }
+    else if (C2 === "BOTH") { add_(modelScore,"HYBRID",4); add_(modelScore,"CREDITS",2); }
+    else if (C2 === "FIXED") add_(modelScore,"SUB_TIERED",2);
+    else if (C2 === "NS") add_(modelScore,"HYBRID",2);
+
+    var C4 = answers.C4;
+    if (C4 === "EVENTS") add_(metricScore,"EVENTS",5);
+    else if (C4 === "STORAGE_GB") add_(metricScore,"STORAGE_GB",5);
+    else if (C4 === "QUERIES") add_(metricScore,"QUERIES",5);
+    else { add_(metricScore,"EVENTS",2); add_(metricScore,"QUERIES",2); }
+  }
+
+  if (Q0 === "D") {
+    var D1 = answers.D1;
+    if (D1 === "RUNS") add_(metricScore,"RUNS",5);
+    else if (D1 === "DOCS") add_(metricScore,"DOCS",5);
+    else if (D1 === "TASKS_TICKETS") add_(metricScore,"TASKS_TICKETS",5);
+    else { add_(metricScore,"RUNS",2); add_(metricScore,"DOCS",2); }
+
+    var D2 = answers.D2;
+    if (D2 === "YES") { add_(modelScore,"SEAT",-3); add_(modelScore,"HYBRID",3); add_(modelScore,"TXN",2); add_(modelScore,"USAGE",2); }
+    else if (D2 === "SOMETIMES") { add_(modelScore,"SEAT",-1); add_(modelScore,"HYBRID",2); }
+    else if (D2 === "NO") add_(modelScore,"SEAT",1);
+    else add_(modelScore,"HYBRID",1);
+
+    var D3 = answers.D3;
+    if (D3 === "YES") add_(modelScore,"OUTCOME",5);
+    else if (D3 === "PARTLY") { add_(modelScore,"OUTCOME",2); add_(modelScore,"HYBRID",2); }
+    else if (D3 === "NO") { add_(modelScore,"TXN",3); add_(modelScore,"HYBRID",2); }
+    else add_(modelScore,"HYBRID",2);
+
+    var D3b = answers.D3b;
+    if (D3b === "WEEKS") add_(modelScore,"OUTCOME",2);
+    else if (D3b === "MONTHS") { add_(modelScore,"OUTCOME",-4); add_(modelScore,"HYBRID",1); }
+    else { add_(modelScore,"OUTCOME",-2); add_(modelScore,"HYBRID",1); }
+  }
+}
+
+/**
+ * Wrapper: use payload.wrapper when provided by frontend; else infer from W1, W2, P3, P4 (no F1).
+ */
+function selectWrapper_(answers, notSureCount, payloadWrapper) {
+  var notes = [];
+  var validWrappers = ["FREEMIUM", "FREE_TRIAL", "NONE"];
+  if (payloadWrapper && validWrappers.indexOf(payloadWrapper) !== -1) {
+    var w = payloadWrapper;
+    if (answers.P4 === "A" && w === "FREEMIUM") {
+      w = "FREE_TRIAL";
+      notes.push("Freemium can be risky with high variable costs; defaulting to a free trial unless you add strict caps/credits/hard stops.");
+    }
+    return { wrapper: w, notes: notes };
+  }
+
+  var P3 = answers.P3;
+  var P4 = answers.P4;
+  var W1 = answers.W1;
+  var W2 = answers.W2;
+
+  if (notSureCount >= 4 && P3 !== "C") {
+    return { wrapper: "FREE_TRIAL", notes: notes };
+  }
+  if (P3 === "C") {
+    return { wrapper: "NONE", notes: notes };
+  }
+  if (W1 === "C") {
+    return { wrapper: "FREE_TRIAL", notes: notes };
+  }
+
+  var freemiumEligible = (P3 === "A" && (W1 === "A" || W1 === "B") && W2 === "A");
+  if (freemiumEligible) {
+    if (P4 === "A" && W1 !== "B") {
+      notes.push("High variable cost requires strict freemium caps; wrapper is downgraded to Free trial unless caps are very tight.");
+      return { wrapper: "FREE_TRIAL", notes: notes };
+    }
+    return { wrapper: "FREEMIUM", notes: notes };
+  }
+
+  return { wrapper: "FREE_TRIAL", notes: notes };
+}
+
+function selectModels_(answers, modelScore, confidenceTier) {
+  if (!(answers.D3 === "YES" && answers.D3b === "WEEKS")) {
+    modelScore.OUTCOME -= 999;
+  }
+
+  var ranked = rankMap_(modelScore);
+  var primary = ranked[0].key;
+  var runner = ranked[1] ? ranked[1].key : null;
+
+  if (answers.P4 === "A" && primary === "SUB_TIERED") {
+    var hybridScore = modelScore.HYBRID;
+    var primaryScore = modelScore.SUB_TIERED;
+    if (primaryScore - hybridScore <= 2) {
+      primary = "HYBRID";
+      ranked = rankMap_(modelScore);
+      runner = ranked[1] ? ranked[1].key : null;
+    }
+  }
+
+  if (answers.D2 === "YES" && primary === "SEAT") {
+    modelScore.SEAT -= 3;
+    ranked = rankMap_(modelScore);
+    primary = ranked[0].key;
+    runner = ranked[1] ? ranked[1].key : null;
+  }
+
+  var secondary = null;
+  if (runner) {
+    var gap = ranked[0].val - ranked[1].val;
+    var complement = isComplementPair_(primary, runner);
+    if (gap <= 2 || complement) secondary = runner;
+  }
+
+  if (confidenceTier === "Low" && primary === "OUTCOME") {
+    modelScore.OUTCOME -= 10;
+    ranked = rankMap_(modelScore);
+    primary = ranked[0].key;
+    runner = ranked[1] ? ranked[1].key : null;
+    secondary = runner;
+  }
+
+  return { primaryModel: primary, secondaryModel: secondary, rankedModels: ranked };
+}
+
+function isComplementPair_(a, b) {
+  var pairs = ["USAGE|HYBRID", "HYBRID|USAGE", "HYBRID|CREDITS", "CREDITS|HYBRID", "TXN|HYBRID", "HYBRID|TXN"];
+  return pairs.indexOf(a + "|" + b) !== -1;
+}
+
+function rankMap_(m) {
+  return Object.keys(m)
+    .map(function(k) { return { key: k, val: m[k] }; })
+    .sort(function(x, y) { return y.val - x.val; });
+}
+
+function selectMetrics_(answers, primaryModel, secondaryModel, metricScore) {
+  var allowed = new Set(METRICS);
+  if (primaryModel === "SEAT") keepOnly_(allowed, ["SEATS","ACTIVE_SEATS","WORKSPACE"]);
+  if (primaryModel === "SUB_TIERED") keepOnly_(allowed, ["WORKSPACE","SEATS"]);
+  if (primaryModel === "TXN") keepOnly_(allowed, ["TXN_UNITS","TAKE_RATE"]);
+  if (primaryModel === "OUTCOME") keepOnly_(allowed, ["OUTCOME_$","OUTCOME_TIME"]);
+
+  var ranked = rankMap_(filterMap_(metricScore, allowed));
+  var headline = ranked[0] ? ranked[0].key : null;
+
+  var secondary = null;
+  if ((primaryModel === "HYBRID" || primaryModel === "CREDITS") && ranked.length >= 2) {
+    var gap = ranked[0].val - ranked[1].val;
+    if (gap <= 2) secondary = ranked[1].key;
+  }
+
+  if (primaryModel === "OUTCOME") {
+    var ok = (answers.D3 === "YES" && answers.D3b === "WEEKS");
+    if (!ok) {
+      return { headlineMetric: "OUTCOME_$", secondaryMeter: null, rankedMetrics: ranked };
+    }
+  }
+
+  return { headlineMetric: headline || "WORKSPACE", secondaryMeter: secondary, rankedMetrics: ranked };
+}
+
+function keepOnly_(set, allowList) {
+  var allowed = new Set(allowList);
+  Array.from(set).forEach(function(x) { if (!allowed.has(x)) set.delete(x); });
+}
+
+function filterMap_(m, allowedSet) {
+  var out = {};
+  Object.keys(m).forEach(function(k) { if (allowedSet.has(k)) out[k] = m[k]; });
+  return out;
+}
+
+function applySanityChecks_(answers, ctx) {
+  var predictabilityWeak =
+    (answers.A1 === "B" || answers.A1 === "C" || answers.A1 === "D") ||
+    (answers.F4 === "A");
+
+  if (predictabilityWeak) {
+    ctx.notes.push("Add alerts + a cap option + an included allowance/bundle to prevent bill shock.");
+    if (ctx.primaryModel === "USAGE") {
+      var gap = ctx.modelScore.USAGE - ctx.modelScore.HYBRID;
+      if (gap <= 1) ctx.modelScore.HYBRID += 1;
+    }
+  }
+
+  var measurableWeak = (answers.P6 === "C" || answers.P6 === "D");
+  if (measurableWeak) {
+    ctx.modelScore.TXN -= 1;
+    ctx.modelScore.OUTCOME -= 3;
+  }
+}
+
+function selectLaunchEvolve_(answers, confidenceTier, rankedModels) {
+  var P0 = answers.P0;
+  var primary = rankedModels[0] ? rankedModels[0].key : "SUB_TIERED";
+  var second = rankedModels[1] ? rankedModels[1].key : null;
+
+  var launchNow = primary;
+  var evolveLater = evolvePath_(primary);
+
+  if (P0 === "A" || confidenceTier === "Low") {
+    var top2 = [primary, second].filter(Boolean);
+    launchNow = pickSimplest_(top2, answers);
+    evolveLater = evolvePath_(launchNow);
+  }
+
+  return { launch_now: launchNow, evolve_later: evolveLater };
+}
+
+function pickSimplest_(models, answers) {
+  if (answers.P0 === "A" && answers.P4 !== "A") {
+    if (models.indexOf("SUB_TIERED") !== -1) return "SUB_TIERED";
+  }
+  var preference = ["SUB_TIERED", "USAGE", "HYBRID", "SEAT", "CREDITS", "TXN", "OUTCOME"];
+  for (var i = 0; i < preference.length; i++) {
+    if (models.indexOf(preference[i]) !== -1) return preference[i];
+  }
+  return models[0] || "SUB_TIERED";
+}
+
+function evolvePath_(model) {
+  if (model === "USAGE") return "HYBRID → CREDITS";
+  if (model === "HYBRID") return "CREDITS (annual commit/true-up)";
+  if (model === "SEAT") return "ACTIVE_SEATS or WORKSPACE (if seat tax risk)";
+  if (model === "TXN") return "OUTCOME (only if verifiable + within weeks)";
+  if (model === "SUB_TIERED") return "HYBRID (add overages/allowances when costs/usage demand it)";
+  return "Iterate once you have usage + buyer data";
+}
+
+var WHY_FITS_ = {
+  "USAGE": ["Aligns price to consumption; easy entry and expansion with customer growth."],
+  "HYBRID": ["Budgetable while protecting margins; best when there's baseline platform value + variable usage/cost."],
+  "CREDITS": ["Procurement-friendly annual commits with flexible consumption; reduces bill shock."],
+  "SEAT": ["Natural when access/identity/permissions drive value and collaboration is core."],
+  "SUB_TIERED": ["Best when you can fence features/limits across segments and create clear upgrade paths."],
+  "TXN": ["Best when discrete business events map to value and are easy to count."],
+  "OUTCOME": ["Best when KPI is verifiable, attributable, controllable, and fast enough to measure."]
+};
+
+var WATCH_OUTS_ = {
+  "USAGE": ["Bill shock; forecasting; requires instrumentation."],
+  "HYBRID": ["Complexity creep; pick one primary growth lever and keep the meter simple."],
+  "CREDITS": ["Credit-to-unit confusion; needs clear drawdown + true-up."],
+  "SEAT": ["Can discourage invites; breaks for automation that reduces headcount."],
+  "SUB_TIERED": ["Leakage across tiers; needs enforceable fences and honest plan differences."],
+  "TXN": ["Unit value variance; may need tiers/minimums."],
+  "OUTCOME": ["Disputes; long time-to-outcome; volatile results."]
+};
+
+var MEASURE_NEXT_ = [
+  "Track one clean usage counter (calls/events/runs/docs) and show it in-product.",
+  "Track a cost proxy per account (tokens/compute/storage).",
+  "Identify who buys (card vs procurement) and typical deal size.",
+  "Define the upgrade trigger (what causes the jump to a higher tier/plan)."
+];
+
+function buildImplementationNotes_(answers, primaryModel, secondaryModel, headlineMetric, notes, wrapperObj) {
+  var out = [];
+  (wrapperObj.notes || []).forEach(function(n) { out.push(n); });
+  var spiky = (answers.A1 === "B" || answers.A1 === "C" || answers.A1 === "D");
+  var billShockFear = (answers.F4 === "A");
+  if (["USAGE","HYBRID","TXN"].indexOf(primaryModel) !== -1 && (spiky || billShockFear)) {
+    out.push("Alerts + cap option (bill shock / spiky usage).");
+    out.push("Included allowance/bundle (reduce meter anxiety).");
+  }
+  if (answers.F3 === "A" && (primaryModel === "CREDITS" || secondaryModel === "CREDITS")) {
+    out.push("Annual commit/credits + clear drawdown + true-up language.");
+  }
+  if (headlineMetric === "ACTIVE_SEATS") {
+    out.push("Define 'active seat' clearly (e.g., weekly active) to avoid disputes.");
+  }
+  if (["USAGE","HYBRID","TXN","OUTCOME"].indexOf(primaryModel) !== -1) {
+    out.push("Metering checklist: counter per account, auditability, and in-product usage visibility.");
+  }
+  notes.forEach(function(n) { out.push(n); });
+  return unique_(out).slice(0, 4);
+}
+
+function buildStarterPackagingSuggestion_(primaryModel, secondaryModel, headlineMetric, secondaryMeter, wrapperObj) {
+  var w = wrapperObj.wrapper;
+  if (primaryModel === "SUB_TIERED") return "3 plans (Starter/Pro/Enterprise) with one clear limit tied to " + headlineMetric + ". Wrapper: " + w + ".";
+  if (primaryModel === "SEAT") return "Price per " + headlineMetric + " with an Enterprise plan for procurement. Wrapper: " + w + ".";
+  if (primaryModel === "USAGE") return "Pay-as-you-go on " + headlineMetric + ", plus volume discounts at higher tiers. Wrapper: " + w + ".";
+  if (primaryModel === "HYBRID") {
+    var second = secondaryMeter ? " + secondary meter " + secondaryMeter : "";
+    return "Base platform fee + included allowance of " + headlineMetric + second + ", then overage. Wrapper: " + w + ".";
+  }
+  if (primaryModel === "CREDITS") return "Annual commit credits that draw down with " + headlineMetric + "; true-up if exceeded. Wrapper: " + w + ".";
+  if (primaryModel === "TXN") return "Per-transaction pricing on " + headlineMetric + " with minimums/tiers if needed. Wrapper: " + w + ".";
+  if (primaryModel === "OUTCOME") return "Base fee + outcome fee on " + headlineMetric + "; define verification window. Wrapper: " + w + ".";
+  return "Simple tiered plans with a clear limit tied to " + headlineMetric + ". Wrapper: " + w + ".";
+}
+
+function unique_(arr) {
+  var seen = {};
+  var out = [];
+  (arr || []).forEach(function(x) {
+    var s = String(x || "").trim();
+    if (!s) return;
+    if (!seen[s]) { seen[s] = true; out.push(s); }
+  });
+  return out;
+}
+
+function computeNeedFollowups_(answers, confidenceTier, rankedModels) {
+  var need = [];
+  if (!answers.P7) {
+    var top = rankedModels[0], second = rankedModels[1];
+    var withinOne = top && second ? (top.val - second.val <= 1) : false;
+    if (confidenceTier !== "High" || withinOne) need.push("P7");
+  }
+  if (!answers.F3) {
+    var enterprise = (answers.P1 === "D");
+    var top2 = rankedModels.slice(0, 2).map(function(x) { return x.key; });
+    if (enterprise || top2.indexOf("HYBRID") !== -1 || top2.indexOf("CREDITS") !== -1) need.push("F3");
+  }
+  if (!answers.F4 && confidenceTier !== "High") {
+    need.push("F4");
+  }
+  return need;
+}
+
+function logSubmission_(payload, result) {
+  var sheet = getSubmissionSheet_();
+  var ts = new Date();
+  var sessionId = payload.sessionId || "";
+  var email = payload.email || "";
+  var answersJson = JSON.stringify(payload.answers || {});
+  var resultJson = JSON.stringify(result || {});
+  var utmJson = JSON.stringify(payload.utm || {});
+  var ua = (payload.meta && payload.meta.userAgent) ? payload.meta.userAgent : "";
+  var ref = (payload.meta && payload.meta.referrer) ? payload.meta.referrer : "";
+  appendSubmissionRow_(sheet, {
+    timestamp: ts,
+    session_id: sessionId,
+    email: email,
+    answers_json: answersJson,
+    result_json: resultJson,
+    utm_json: utmJson,
+    user_agent: ua,
+    referrer: ref,
+    report_status: "",
+    report_id: "",
+    report_token: "",
+    report_draft_md: "",
+    product_url: "",
+    product_context: "",
+    report_final_html: "",
+    report_url: "",
+    views: 0,
+    last_error: "",
+    updated_at: ts
+  });
+}
+
+var REPORT_MODEL_LABELS_ = {
+  SUB_TIERED: "Subscription with tiers/plans",
+  SEAT: "Seat-based subscription",
+  USAGE: "Usage-based",
+  HYBRID: "Hybrid (base + usage)",
+  CREDITS: "Credits / commit-to-consume",
+  TXN: "Transaction-based",
+  OUTCOME: "Outcome-based"
+};
+
+var REPORT_WRAPPER_LABELS_ = {
+  FREEMIUM: "Freemium",
+  FREE_TRIAL: "Free trial",
+  NONE: "No free entry (paid-only)"
+};
+
+var REPORT_METRIC_LABELS_ = {
+  SEATS: "Seats",
+  ACTIVE_SEATS: "Active seats",
+  WORKSPACE: "Workspace / org",
+  API_CALLS: "API calls",
+  TOKENS: "Tokens",
+  COMPUTE: "Compute time",
+  AGENT_ACTIONS: "Agent actions",
+  EVENTS: "Events",
+  RECORDS: "Records",
+  STORAGE_GB: "Storage (GB)",
+  QUERIES: "Queries",
+  RUNS: "Runs/workflows",
+  DOCS: "Documents processed",
+  TASKS_TICKETS: "Tasks/tickets completed",
+  TXN_UNITS: "Transaction units",
+  TAKE_RATE: "Take rate",
+  OUTCOME_$: "Outcome value ($)",
+  OUTCOME_TIME: "Outcome time saved"
+};
+
+var REPORT_PRIMARY_MODEL_PLAIN_ENGLISH_ = {
+  SUB_TIERED: "You offer fixed plans (e.g. Starter / Pro / Enterprise) with different limits and features. Customers choose a tier and pay a set price; upgrades happen when they need more.",
+  SEAT: "You charge per user or per seat (named or active). Value scales with team size; buyers expect per-seat pricing for collaboration tools.",
+  USAGE: "You charge based on how much customers use (calls, events, storage, etc.). Bills vary with consumption; good when cost and value scale with usage.",
+  HYBRID: "You combine a base fee (platform or seat) with usage-based overage or allowances. Customers get predictability plus flexibility when they grow.",
+  CREDITS: "Customers commit to a credit pool (e.g. annually) that draws down with use; true-up or rollover optional. Fits procurement and variable usage.",
+  TXN: "You charge per discrete transaction or event (e.g. per API call, per document, per run). Value maps to countable business events.",
+  OUTCOME: "You tie part of the fee to a result (e.g. revenue share, time saved, conversion). Fits when the outcome is verifiable and attributable."
+};
+
+var REPORT_METRIC_DEFINITION_ = {
+  SEATS: "A named seat is one user account (login) that has access. Count distinct users or licensed seats, depending on how you grant access.",
+  ACTIVE_SEATS: "An active seat is a user who used the product in a defined window (e.g. last 30 days). Often used to align price with actual usage of seats.",
+  WORKSPACE: "A workspace (or org) is one team or company instance. You bill per workspace; may include a cap on seats or usage inside it.",
+  API_CALLS: "One request to your API (e.g. one HTTP call to an endpoint). Count successful or billable calls per account per period.",
+  TOKENS: "Units of AI consumption (input + output tokens). Common for LLM APIs; customers understand token-based billing.",
+  COMPUTE: "Time or units of compute (e.g. GPU minutes, job minutes). Good when cost is driven by processing rather than simple request count.",
+  EVENTS: "One event ingested or processed (e.g. one log line, one user action). Fits data pipelines and event-driven products.",
+  RECORDS: "One record stored or processed (e.g. one row, one document). Use when value scales with data volume.",
+  STORAGE_GB: "Gigabytes of data stored per account. Simple for data-heavy products.",
+  QUERIES: "One query or search executed. Fits when the main cost is read/query load.",
+  RUNS: "One workflow run, job, or execution. Fits automation and pipeline products.",
+  DOCS: "One document processed (e.g. parsed, summarized). Fits document AI and processing.",
+  AGENT_ACTIONS: "One action taken by an agent or automation (e.g. one task completed, one step run). Fits agent and workflow products.",
+  TASKS_TICKETS: "One task or ticket completed (e.g. by an agent). Fits task-based and support automation.",
+  TXN_UNITS: "One billable transaction (e.g. payment, listing, lead). Use when value is per discrete business event.",
+  TAKE_RATE: "A percentage of transaction value (e.g. revenue share). Fits marketplaces and platforms.",
+  OUTCOME_$: "Dollar value of an outcome you help achieve (e.g. revenue attributed, savings). Requires clear attribution and verification.",
+  OUTCOME_TIME: "Time saved or similar outcome (e.g. hours saved). Good when the customer values time and you can measure it."
+};
+
+var REPORT_METRIC_WHY_ = {
+  SEATS: "Pricing per seat is easy to explain and matches how teams buy. It scales with team size and is familiar to buyers.",
+  ACTIVE_SEATS: "Active-seat pricing aligns cost with who actually uses the product, which can feel fairer than charging for unused seats.",
+  WORKSPACE: "Workspace pricing is simple and fits products where one team or org is the natural unit of sale.",
+  API_CALLS: "API calls are easy to count and align price with developer usage. Customers can estimate from integration scope.",
+  TOKENS: "Token-based billing matches AI cost and is standard in the market. Customers understand it for LLM and AI features.",
+  COMPUTE: "Compute-based billing matches your cost and is fair when usage intensity (not just request count) drives value.",
+  EVENTS: "Event-based billing fits data and pipeline products where value scales with volume ingested or processed.",
+  RECORDS: "Record-based billing is intuitive when value is tied to data volume. Easy to explain and measure.",
+  STORAGE_GB: "Storage is easy to measure and explain. Fits when storage is a primary cost and value driver.",
+  QUERIES: "Query-based billing fits when read load or search usage drives cost and value.",
+  RUNS: "Run-based billing fits automation and workflow products. One run = one execution; easy to count.",
+  DOCS: "Document-based billing fits when the unit of value is documents processed (e.g. parsing, summarization).",
+  AGENT_ACTIONS: "Agent-action billing fits when value is tied to discrete actions or tasks the agent completes.",
+  TASKS_TICKETS: "Task-based billing fits when value is tied to discrete tasks completed (e.g. by an agent).",
+  TXN_UNITS: "Transaction-based billing fits when value maps to discrete business events (payments, leads, etc.).",
+  TAKE_RATE: "Take rate aligns your revenue with customer success and is common in marketplaces.",
+  OUTCOME_$: "Outcome-based pricing aligns your fee with measurable business results when attribution is clear.",
+  OUTCOME_TIME: "Time-saved pricing fits when the customer’s main benefit is time or efficiency and you can measure it."
+};
+
+var REPORT_WRAPPER_REASON_ = {
+  FREE_TRIAL: "A time-limited trial lets users experience full value before paying, without the margin risk of a permanent free tier.",
+  FREEMIUM: "A permanent free tier with clear limits drives adoption; upgrade when users hit limits or need more.",
+  NONE: "Going paid-only fits when sales-led or when the product is highly customized; no free tier to support."
+};
+
+var REPORT_ALT_WHEN_ = {
+  SUB_TIERED: ["Customers expect predictable plans and clear tiers.", "You're not ready to meter usage yet."],
+  SEAT: ["Value scales with more users.", "Buyer expects per-user pricing."],
+  USAGE: ["Value tracks clear consumption.", "Variable costs scale with usage."],
+  HYBRID: ["You need budgetability plus overage protection.", "Both platform and usage drive value."],
+  CREDITS: ["Annual commit is common.", "Procurement prefers drawdown budgets."],
+  TXN: ["Value maps to discrete events.", "Transaction counting is simple and trusted."],
+  OUTCOME: ["Outcomes are fast to verify.", "Attribution is clear and uncontested."]
+};
+
+/**
+ * Deterministic markdown report draft — strictly follows:
+ * public/assets/pricing_model_matchmaker/deterministic_report_draft.md
+ */
+function generateDeterministicReportDraft_(payload, result, productContext) {
+  var confidenceTier = (result.confidence && result.confidence.tier) ? result.confidence.tier : (result.confidence_tier || "Medium");
+  var primaryKey = result.primary_model || "SUB_TIERED";
+  var primary = labelOrSelf_(REPORT_MODEL_LABELS_, primaryKey);
+  var secondaryKey = result.secondary_model;
+  var secondary = secondaryKey ? labelOrSelf_(REPORT_MODEL_LABELS_, secondaryKey) : "";
+  var wrapperKey = result.wrapper || "FREE_TRIAL";
+  var wrapper = labelOrSelf_(REPORT_WRAPPER_LABELS_, wrapperKey);
+  var headlineKey = result.headline_metric || "WORKSPACE";
+  var headlineMetric = labelOrSelf_(REPORT_METRIC_LABELS_, headlineKey);
+  var secondaryMeterKey = result.secondary_meter;
+  var secondaryMeter = secondaryMeterKey ? labelOrSelf_(REPORT_METRIC_LABELS_, secondaryMeterKey) : "";
+  var launchNow = labelOrSelf_(REPORT_MODEL_LABELS_, result.launch_now || primaryKey);
+  var evolveLater = result.evolve_later || "Iterate once you have usage + buyer data";
+
+  var why = arrayOrEmpty_(result.why_this_fits).slice(0, 3);
+  var watch = arrayOrEmpty_(result.watch_outs).slice(0, 2);
+  var impl = arrayOrEmpty_(result.implementation_notes).slice(0, 4);
+  var metricCandidateKeys = arrayOrEmpty_(result.metric_candidates).slice(0, 3);
+  var metricCandidates = metricCandidateKeys.map(function(m) { return labelOrSelf_(REPORT_METRIC_LABELS_, m); });
+  var altModelKeys = arrayOrEmpty_(result.alt_models).slice(0, 2);
+  var altModels = altModelKeys.map(function(m) { return labelOrSelf_(REPORT_MODEL_LABELS_, m); });
+  var wrapperNotes = arrayOrEmpty_(result.wrapper_notes).slice(0, 3);
+  var measureNext = arrayOrEmpty_(result.measure_next_checklist).slice(0, 4);
+  var needFollowups = arrayOrEmpty_(result.followup_question_ids);
+
+  var primaryPlain = REPORT_PRIMARY_MODEL_PLAIN_ENGLISH_[primaryKey] || "A pricing model that fits your current stage and value delivery.";
+  var metricDef = REPORT_METRIC_DEFINITION_[headlineKey] || "The unit you charge for; define it clearly so customers can predict their bill.";
+  var metricWhy = REPORT_METRIC_WHY_[headlineKey] || "This metric tracks customer value and is easy to explain and measure.";
+  var wrapperReason1 = REPORT_WRAPPER_REASON_[wrapperKey] || "It fits your go-to-market and margin constraints.";
+  var wrapperReason2 = wrapperNotes[0] || "";
+
+  var alt0When = REPORT_ALT_WHEN_[altModelKeys[0]] || ["It fits their situation better.", "Their usage pattern suits it."];
+  var alt1When = REPORT_ALT_WHEN_[altModelKeys[1]] || ["It fits their situation better.", "Their usage pattern suits it."];
+  var alt0Why = WHY_FITS_[altModelKeys[0]] ? WHY_FITS_[altModelKeys[0]][0] : "It can better match value to price in some cases.";
+  var alt1Why = WHY_FITS_[altModelKeys[1]] ? WHY_FITS_[altModelKeys[1]][0] : "It can better match value to price in some cases.";
+
+  var metric0Line = metricCandidates[0] ? (metricCandidates[0] + " — " + (REPORT_METRIC_DEFINITION_[metricCandidateKeys[0]] || "Top candidate for your scenario.")) : headlineMetric + " — primary recommendation.";
+  var metric1Line = metricCandidates[1] ? (metricCandidates[1] + " — " + (REPORT_METRIC_DEFINITION_[metricCandidateKeys[1]] || "Strong alternative.")) : (secondaryMeter || "Secondary option.");
+  var metric2Line = metricCandidates[2] ? (metricCandidates[2] + " — " + (REPORT_METRIC_DEFINITION_[metricCandidateKeys[2]] || "Worth considering.")) : "Another metric to validate with usage.";
+  var metric0Why = REPORT_METRIC_WHY_[metricCandidateKeys[0]] || REPORT_METRIC_WHY_[headlineKey] || metricWhy;
+  var metric1Why = REPORT_METRIC_WHY_[metricCandidateKeys[1]] || metricWhy;
+  var metric2Why = REPORT_METRIC_WHY_[metricCandidateKeys[2]] || metricWhy;
+
+  var L = [];
+  L.push("# Pricing Model Matchmaker — Your Free Customized Report");
+  L.push("");
+  L.push("This report is generated from your quiz answers and gives you a clear, practical starting point.");
+  L.push("");
+  L.push("If you have any issues or feedback, email **hello@sarahzou.com**.");
+  L.push("");
+  L.push("---");
+  L.push("");
+  L.push("## 0) Executive snapshot");
+  L.push("");
+  L.push("### Your recommended pricing setup");
+  L.push("");
+  L.push("- **Best-fit model:** " + primary);
+  L.push("- **Headline value metric:** " + headlineMetric);
+  if (secondaryMeter) {
+    L.push("- **Optional secondary meter:** " + secondaryMeter);
+    L.push("");
+  }
+  L.push("- **Recommended wrapper:** " + wrapper);
+  L.push("- **Confidence:** " + confidenceTier);
+  L.push("");
+  L.push("### What to do next (3 steps)");
+  L.push("");
+  L.push("1) **Ship a simple v1** using " + launchNow + " (details below)");
+  L.push("");
+  L.push("2) **Use the metric definition** in Section 3 so customers understand billing");
+  L.push("");
+  L.push("3) **Add one predictability feature** (alerts / cap / allowance) from Section 5");
+  L.push("");
+  L.push("> **Important boundary (so you don't overfit too early):**");
+  L.push("> This report intentionally does **not** set exact starting prices or tier limits. Those depend on buyer willingness-to-pay and your sales motion. If you want that finalized quickly, see Section 8.");
+  L.push("");
+  L.push("---");
+  L.push("");
+  L.push("## 1) What this recommendation means");
+  L.push("");
+  L.push("### Model explanation (what it is)");
+  L.push("");
+  L.push("**" + primary + "** means:");
+  L.push("");
+  L.push(primaryPlain);
+  L.push("");
+  L.push("*(If you're generating from a knowledge base: insert a 2–3 sentence \"definition\" block here.)*");
+  L.push("");
+  L.push("### Why this fits your situation (why)");
+  L.push("");
+  if (why.length > 0) {
+    for (var i = 0; i < why.length; i++) L.push("- " + why[i]);
+  } else {
+    L.push("- This model tends to fit when pricing can scale with customer value without creating surprise bills.");
+  }
+  L.push("");
+  L.push("### Watch-outs to avoid (what to watch)");
+  L.push("");
+  if (watch.length > 0) {
+    for (var w = 0; w < watch.length; w++) L.push("- " + watch[w]);
+  } else {
+    L.push("- Keep the billing explanation simple and avoid confusing customers with too many meters.");
+  }
+  L.push("");
+  L.push("---");
+  L.push("");
+  L.push("## 2) Launch now → evolve later (your realistic path)");
+  L.push("");
+  L.push("### Launch now (the simplest version to ship first)");
+  L.push("");
+  L.push("**" + launchNow + "**");
+  L.push("");
+  L.push("Why launch here:");
+  L.push("");
+  L.push("- It's easier to explain and sell early.");
+  L.push("- It reduces risk while you learn usage patterns.");
+  L.push("- It gives you clean signals for iteration.");
+  L.push("");
+  L.push("### Evolve later (once you have usage + buyer data)");
+  L.push("");
+  L.push("**" + evolveLater + "**");
+  L.push("");
+  L.push("When you should consider evolving:");
+  L.push("");
+  L.push("- After you have 4–6 weeks of usage data **or** 10–20 paid customers");
+  L.push("- When you see one of these triggers: usage doubles, enterprise asks for commit, or expansion revenue becomes predictable");
+  L.push("");
+  L.push("---");
+  L.push("");
+  L.push("## 3) Your headline value metric (what it is + how to explain it)");
+  L.push("");
+  L.push("### Metric definition (copy/paste)");
+  L.push("");
+  L.push("You are billed based on **" + headlineMetric + "**.");
+  L.push("");
+  L.push("**A \"" + headlineMetric + "\" means:**");
+  L.push("");
+  L.push(metricDef);
+  L.push("");
+  L.push("**Why this metric is a good match (in one paragraph):**");
+  L.push("");
+  L.push(metricWhy);
+  L.push("");
+  L.push("### How to keep this metric \"fair\" (simple rules)");
+  L.push("");
+  L.push("Use these simple principles to reduce billing anxiety:");
+  L.push("");
+  L.push("- **Make it predictable:** customers should be able to estimate usage before buying.");
+  L.push("- **Make it measurable:** you can count it consistently per account.");
+  L.push("- **Make it visible:** show usage in-product (or in invoices) so it's not a surprise.");
+  L.push("");
+  L.push("---");
+  L.push("");
+  L.push("## 4) Starter packaging you can ship (structure + placeholders)");
+  L.push("");
+  L.push("### Recommended starter shape");
+  L.push("");
+  L.push(result.starter_packaging_suggestion || "Simple tiered plans with a clear limit tied to " + headlineMetric + ". Wrapper: " + wrapper + ".");
+  L.push("");
+  L.push("### Starter tier template (placeholders only — no final numbers yet)");
+  L.push("");
+  L.push("> Replace placeholders once you validate pricing and tier limits. Start simple.");
+  L.push("");
+  L.push("**Plan 1 — Starter (for early adopters / small teams)**");
+  L.push("");
+  L.push("- Includes up to **[starter_allowance]** " + headlineMetric + " / month");
+  L.push("- Overage (if any): **[starter_overage]** per " + headlineMetric);
+  L.push("- Best for: teams getting started or evaluating");
+  L.push("");
+  L.push("**Plan 2 — Pro (for growing teams)**");
+  L.push("");
+  L.push("- Includes up to **[pro_allowance]** " + headlineMetric + " / month");
+  L.push("- Overage (if any): **[pro_overage]** per " + headlineMetric);
+  L.push("- Best for: teams with consistent usage and expansion needs");
+  L.push("");
+  L.push("**Plan 3 — Enterprise (for procurement / security / scale)**");
+  L.push("");
+  L.push("- Custom terms, invoicing, security, procurement-friendly options");
+  L.push("- Best for: larger orgs, compliance, and custom needs");
+  L.push("");
+  L.push("> If you prefer only **2 plans** early, combine Pro + Enterprise into one \"Business\" plan.");
+  L.push("");
+  L.push("---");
+  L.push("");
+  L.push("## 5) Wrapper recommendation (how people start)");
+  L.push("");
+  L.push("### Recommended wrapper: **" + wrapper + "**");
+  L.push("");
+  L.push("What this means:");
+  L.push("");
+  L.push("- **FREE_TRIAL:** people try the full product for a limited time");
+  L.push("- **FREEMIUM:** a permanent free tier with hard limits");
+  L.push("- **NONE:** you go paid-only (often when sales-led or very customized)");
+  L.push("");
+  L.push("Why this wrapper fits (1–2 points):");
+  L.push("");
+  L.push("- " + wrapperReason1);
+  if (wrapperReason2) L.push("- " + wrapperReason2);
+  L.push("");
+  if (wrapperNotes.length > 0) {
+    L.push("Notes / constraints:");
+    L.push("");
+    for (var n = 0; n < wrapperNotes.length; n++) L.push("- " + wrapperNotes[n]);
+    L.push("");
+  }
+  L.push("---");
+  L.push("");
+  L.push("## 6) Two alternatives (when to switch — and why)");
+  L.push("");
+  L.push("Even if " + primary + " is the best default, these two options are close contenders.");
+  L.push("");
+  if (altModels.length >= 2) {
+    L.push("### Alternative 1: **" + altModels[0] + "**");
+    L.push("");
+    L.push("**Pick this instead if:**");
+    L.push("");
+    L.push("- " + (alt0When[0] || "Value scales differently than assumed."));
+    L.push("- " + (alt0When[1] || "Buyer expects this model."));
+    L.push("");
+    L.push("**Why it can be better in that case:**");
+    L.push("");
+    L.push(alt0Why);
+    L.push("");
+    L.push("### Alternative 2: **" + altModels[1] + "**");
+    L.push("");
+    L.push("**Pick this instead if:**");
+    L.push("");
+    L.push("- " + (alt1When[0] || "Value scales differently than assumed."));
+    L.push("- " + (alt1When[1] || "Buyer expects this model."));
+    L.push("");
+    L.push("**Why it can be better in that case:**");
+    L.push("");
+    L.push(alt1Why);
+  } else {
+    L.push("### Alternative(s)");
+    L.push("");
+    if (secondary) L.push("- **Alternative model:** " + secondary);
+    L.push("- Conditions to switch: when usage patterns or buyer expectations point to a different model (e.g. more usage-based or more commit-based).");
+  }
+  L.push("");
+  L.push("---");
+  L.push("");
+  L.push("## 7) Other metric candidates (top 3)");
+  L.push("");
+  L.push("These are the top metric candidates the scorer considered for your scenario.");
+  L.push("");
+  if (metricCandidates.length >= 3) {
+    L.push("1) **" + metricCandidates[0] + "** — " + metric0Line);
+    L.push("");
+    L.push("   Why it might fit: " + metric0Why);
+    L.push("");
+    L.push("2) **" + metricCandidates[1] + "** — " + metric1Line);
+    L.push("");
+    L.push("   Why it might fit: " + metric1Why);
+    L.push("");
+    L.push("3) **" + metricCandidates[2] + "** — " + metric2Line);
+    L.push("");
+    L.push("   Why it might fit: " + metric2Why);
+  } else {
+    L.push("1) **" + headlineMetric + "** — " + metric0Line);
+    L.push("2) **" + (secondaryMeter || "Secondary meter") + "** — " + metric1Line);
+    L.push("3) **Other metric** — " + metric2Line);
+  }
+  L.push("");
+  L.push("**How to pick the winner (simple rule):**");
+  L.push("");
+  L.push("Choose the metric that is easiest for customers to **predict**, easiest for you to **measure**, and most closely tracks **customer value**.");
+  L.push("");
+  L.push("---");
+  L.push("");
+  L.push("## 8) Implementation checklist (practical \"do this\" items)");
+  L.push("");
+  L.push("Here are the most important implementation actions to avoid early pricing mistakes.");
+  L.push("");
+  if (impl.length > 0) {
+    for (var k = 0; k < impl.length; k++) L.push("- " + impl[k]);
+  } else {
+    L.push("- Add an included allowance or clear limits so bills feel predictable.");
+    L.push("- Show usage in-product or on invoices so customers aren't surprised.");
+    L.push("- Keep one primary growth lever; don't stack too many meters.");
+  }
+  L.push("");
+  L.push("---");
+  L.push("");
+  L.push("## 9) If confidence isn't High: what to validate next");
+  L.push("");
+  L.push("**Confidence:** " + confidenceTier);
+  L.push("");
+  if (measureNext.length > 0) {
+    L.push("To make this recommendation even more precise, validate these next:");
+    L.push("");
+    for (var q = 0; q < measureNext.length; q++) L.push("- " + measureNext[q]);
+  }
+  if (needFollowups.length > 0) {
+    L.push("");
+    L.push("### Follow-up questions (quick wins)");
+    L.push("");
+    L.push("Answering these will sharpen your recommendation:");
+    L.push("");
+    for (var f = 0; f < needFollowups.length; f++) L.push("- " + (needFollowups[f] || ""));
+  }
+  L.push("");
+  L.push("---");
+  L.push("");
+  L.push("## 10) Next steps (and how we can help)");
+  L.push("");
+  L.push("### If you want to DIY (good path for many founders)");
+  L.push("");
+  L.push("- Ship the **Launch now** version");
+  L.push("- Use the pricing-page copy blocks above");
+  L.push("- Revisit in 4–6 weeks with real usage + sales signals");
+  L.push("");
+  L.push("### If you want this finalized fast (recommended when you're selling now)");
+  L.push("");
+  L.push("In a 5-day Sprint, we help you finalize:");
+  L.push("");
+  L.push("- **Final model + final metric**");
+  L.push("- **Tier limits (allowances) + upgrade triggers**");
+  L.push("- **Starting price points (with reasoning)**");
+  L.push("- **Pricing page copy ready to publish**");
+  L.push("- **Rollout plan (how to introduce pricing without backlash)**");
+  L.push("");
+  L.push("**Book a free consult:** https://sarahzou.com/book");
+  L.push("");
+  L.push("**Pricing Sprint details:** https://sarahzou.com/consulting/services/pricing-monetization-sprint");
+  L.push("");
+  L.push("Questions or feedback? Email **hello@sarahzou.com**.");
+  L.push("");
+  L.push("---");
+
+  return L.join("\n");
+}
+
+function getProductContext_(productUrl) {
+  var out = { url: "", domain: "", title: "", description: "" };
+  if (!productUrl) return out;
+  var url = String(productUrl).trim();
+  if (!url) return out;
+  out.url = url;
+  out.domain = extractDomain_(url);
+  try {
+    var response = UrlFetchApp.fetch(url, {
+      muteHttpExceptions: true,
+      followRedirects: true,
+      headers: { "User-Agent": "Mozilla/5.0 (AppsScript Matchmaker Bot)" }
+    });
+    var html = response.getContentText();
+    out.title = stripHtml_(firstMatch_(html, /<title[^>]*>([\s\S]*?)<\/title>/i));
+    out.description = stripHtml_(
+      firstMatch_(html, /<meta[^>]*name=["']description["'][^>]*content=["']([^"']+)["'][^>]*>/i) ||
+      firstMatch_(html, /<meta[^>]*content=["']([^"']+)["'][^>]*name=["']description["'][^>]*>/i)
+    );
+  } catch (err) {
+    // optional enrichment; ignore fetch errors
+  }
+  return out;
+}
+
+function logReportDraftRequest_(payload, result, reportMarkdown, productContext, reportId, reportToken, reportUrl) {
+  var sheet = getSubmissionSheet_();
+  var ts = new Date();
+  var sessionId = payload.sessionId || "";
+  var email = payload.email || "";
+  var productUrl = (productContext && productContext.url) ? productContext.url : "";
+  var productContextJson = productUrl ? JSON.stringify({
+    domain: productContext.domain || "",
+    title: productContext.title || "",
+    description: productContext.description || ""
+  }) : "";
+
+  var existingRow = findRowBySessionId_(sheet, sessionId);
+  if (existingRow > 0) {
+    updateSubmissionRow_(sheet, existingRow, {
+      email: email,
+      report_status: "PENDING_POLISH",
+      report_id: reportId || "",
+      report_token: reportToken || "",
+      report_draft_md: reportMarkdown || "",
+      product_url: productUrl,
+      product_context: productContextJson,
+      report_url: reportUrl || "",
+      views: 0,
+      updated_at: ts
+    });
+    return;
+  }
+
+  var answersJson = JSON.stringify(payload.answers || {});
+  var resultJson = JSON.stringify(result || {});
+  var utmJson = JSON.stringify(payload.utm || {});
+  var ua = (payload.meta && payload.meta.userAgent) ? payload.meta.userAgent : "";
+  var ref = (payload.meta && payload.meta.referrer) ? payload.meta.referrer : "";
+
+  appendSubmissionRow_(sheet, {
+    timestamp: ts,
+    session_id: sessionId,
+    email: email,
+    answers_json: answersJson,
+    result_json: resultJson,
+    utm_json: utmJson,
+    user_agent: ua,
+    referrer: ref,
+    report_status: "PENDING_POLISH",
+    report_id: reportId || "",
+    report_token: reportToken || "",
+    report_draft_md: reportMarkdown || "",
+    product_url: productUrl,
+    product_context: productContextJson,
+    report_final_html: "",
+    report_url: reportUrl || "",
+    views: 0,
+    last_error: "",
+    updated_at: ts
+  });
+}
+
+function getSubmissionSheet_() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(SHEET_COLUMNS);
+  }
+  return sheet;
+}
+
+function appendSubmissionRow_(sheet, rowObj) {
+  var row = SHEET_COLUMNS.map(function(col) {
+    return rowObj[col] !== undefined ? rowObj[col] : "";
+  });
+  sheet.appendRow(row);
+}
+
+/**
+ * Returns 1-based row index of the last row where session_id matches, or 0 if not found.
+ */
+function findRowBySessionId_(sheet, sessionId) {
+  if (!sessionId) return 0;
+  var lastRow = sheet.getLastRow();
+  if (lastRow < 2) return 0;
+  var colIdx = SHEET_COLUMNS.indexOf("session_id");
+  if (colIdx < 0) return 0;
+  var col = colIdx + 1;
+  var data = sheet.getRange(2, col, lastRow, col).getValues();
+  for (var r = data.length - 1; r >= 0; r--) {
+    if (String(data[r][0] || "").trim() === String(sessionId).trim()) {
+      return r + 2;
+    }
+  }
+  return 0;
+}
+
+/**
+ * Returns 1-based row index of the first row where report_id matches, or 0 if not found.
+ */
+function findRowByReportId_(sheet, reportId) {
+  if (!reportId) return 0;
+  var lastRow = sheet.getLastRow();
+  if (lastRow < 2) return 0;
+  var colIdx = SHEET_COLUMNS.indexOf("report_id");
+  if (colIdx < 0) return 0;
+  var col = colIdx + 1;
+  var data = sheet.getRange(2, col, lastRow, col).getValues();
+  for (var r = 0; r < data.length; r++) {
+    if (String(data[r][0] || "").trim() === String(reportId).trim()) {
+      return r + 2;
+    }
+  }
+  return 0;
+}
+
+/**
+ * Increments the views count for the given 1-based row index.
+ */
+function incrementReportViews_(sheet, rowIndex) {
+  if (rowIndex < 2) return;
+  var colIdx = SHEET_COLUMNS.indexOf("views");
+  if (colIdx < 0) return;
+  var col = colIdx + 1;
+  var current = sheet.getRange(rowIndex, col).getValue();
+  var n = parseInt(current, 10);
+  if (isNaN(n)) n = 0;
+  sheet.getRange(rowIndex, col).setValue(n + 1);
+}
+
+/**
+ * Updates specific columns of an existing row. rowIndex is 1-based; updates is { colName: value }.
+ */
+function updateSubmissionRow_(sheet, rowIndex, updates) {
+  if (rowIndex < 2) return;
+  Object.keys(updates).forEach(function(colName) {
+    var colIdx = SHEET_COLUMNS.indexOf(colName);
+    if (colIdx < 0) return;
+    var col = colIdx + 1;
+    var val = updates[colName];
+    if (val === undefined) return;
+    sheet.getRange(rowIndex, col).setValue(val);
+  });
+}
+
+function logReportDraftError_(payload, errorText) {
+  var sheet = getSubmissionSheet_();
+  var ts = new Date();
+  var sessionId = payload.sessionId || "";
+  var existingRow = findRowBySessionId_(sheet, sessionId);
+  if (existingRow > 0) {
+    updateSubmissionRow_(sheet, existingRow, {
+      email: payload.email || "",
+      report_status: "ERROR",
+      last_error: errorText || "Unknown draft report error",
+      updated_at: ts
+    });
+    return;
+  }
+  appendSubmissionRow_(sheet, {
+    timestamp: ts,
+    session_id: sessionId,
+    email: payload.email || "",
+    answers_json: JSON.stringify(payload.answers || {}),
+    result_json: "",
+    utm_json: JSON.stringify(payload.utm || {}),
+    user_agent: (payload.meta && payload.meta.userAgent) ? payload.meta.userAgent : "",
+    referrer: (payload.meta && payload.meta.referrer) ? payload.meta.referrer : "",
+    report_status: "ERROR",
+    report_id: "",
+    report_token: "",
+    report_draft_md: "",
+    product_url: payload.productUrl || "",
+    product_context: "",
+    report_final_html: "",
+    report_url: "",
+    views: 0,
+    last_error: errorText || "Unknown draft report error",
+    updated_at: ts
+  });
+}
+
+function arrayOrEmpty_(value) {
+  return Array.isArray(value) ? value : [];
+}
+
+function labelOrSelf_(map, value) {
+  if (!value) return "";
+  return map[value] || String(value);
+}
+
+function extractDomain_(url) {
+  var m = String(url).match(/^https?:\/\/([^\/?#]+)/i);
+  return m && m[1] ? m[1].toLowerCase() : "";
+}
+
+function firstMatch_(text, regex) {
+  if (!text) return "";
+  var m = text.match(regex);
+  return m && m[1] ? m[1] : "";
+}
+
+function stripHtml_(text) {
+  var s = String(text || "");
+  s = s.replace(/<[^>]*>/g, " ");
+  s = s.replace(/\s+/g, " ").trim();
+  if (s.length > 500) return s.slice(0, 500) + "...";
+  return s;
+}
