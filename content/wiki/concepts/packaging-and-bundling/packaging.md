@@ -163,8 +163,6 @@ Well-designed packaging solves this by aligning offers with [willingness to pay]
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 * Lehrskov-Schmidt, U. (2023). *The Pricing Roadmap*. Independently published.
 
-**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Price Metrics / Value Metrics](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Freemium](/wiki/pricing/models-and-metering/freemium-model)
-
 ## FAQ
 
 **Q:** How many tiers should I have?
@@ -189,4 +187,4 @@ Well-designed packaging solves this by aligning offers with [willingness to pay]
 
 **Q:** How should AI features fit into packaging?
 
-**A:** Usually as (1) a [usage-based](/wiki/pricing/models-and-metering/usage-based-pricing) unit (credits) for variable cost, or (2) a premium [add-on](/wiki/pricing/packaging-and-bundling/add-ons-modular) for high [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) + predictable entitlements.
+**A:** Usually as (1) a [usage-based](/wiki/pricing/models-and-metering/usage-based-pricing) unit ([credits](/wiki/pricing/models-and-metering/credits-drawdown-model)) for variable cost, or (2) a premium [add-on](/wiki/pricing/packaging-and-bundling/add-ons-modular) for high [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) + predictable entitlements.

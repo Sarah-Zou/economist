@@ -119,7 +119,7 @@ In traditional [seat-based](/wiki/pricing/models-and-metering/seat-based-pricing
 2. **Choose the pricing structure (start simple):** Create a rate card with 2–4 volume bands (linear or volumetric discounts). 
    * Ensure the unit price (or minimum) covers marginal cost + target gross margin.
    * Often use [Hybrid Model](/wiki/pricing/models-and-metering/hybrid-pricing): base fee (includes allowance) + overage fee
-   * Add at least 2 predictability controls: allowance, caps/limits, alerts, commits, or annual prepay drawdown.
+   * Add at least 2 predictability controls: allowance, caps/limits, alerts, commits, or annual [prepay drawdown](/wiki/pricing/models-and-metering/credits-drawdown-model).
 
 3. **Build the Billing Infrastructure:** Connect your product's telemetry to your billing system (e.g., Stripe, NetSuite). This "metering" plumbing is the #1 technical hurdle. Ensure customers have a dashboard to view their real-time usage (units, trend, forecast) with clear definitions (what counts, rounding rules, windows) + exportable audit logs.
 
@@ -153,7 +153,7 @@ Add predictability option: "Commit \$1,500/month for up to 8M events at an effec
 | **The "Bill Shock" Crisis.** Customers get a massive, unexpected invoice. | Implement **Circuit Breakers** and auto-alerts at 50%, 80%, and 100% of usage limits. Offer one-time forgiveness for accidental overages to build goodwill. Provide clear forecasting in-product. |
 | **Misaligned Incentives.** If you charge "per hour" but your software becomes faster (saving time), your revenue drops while value rises. | Price on **[Outcomes](/wiki/pricing/models-and-metering/outcome-performance-based-pricing)** (e.g., "per successful audit") rather than inputs (time/data). |
 | **Wrong value metric:** The value metric is not the customer's value moment, so the bill feels arbitrary (and gets gamed/disputed). | Bill on **completed value** (e.g., "successful payment processed"), publish crisp counting rules (retries/refunds/duplicates), and provide an auditable "what counted" log. |
-| **Unpredictable Revenue.** Investors hate revenue volatility. | Use the **Pre-paid Drawdown** or **Credit** model. Customers buy $10k worth of "credits" upfront (booking revenue today) and consume them over the year. |
+| **Unpredictable Revenue.** Investors hate revenue volatility. | Use the [**credits / drawdown model**](/wiki/pricing/models-and-metering/credits-drawdown-model). Customers buy $10k worth of credits upfront (booking revenue today) and consume them over the year. |
 
 ## References & Links
 
@@ -165,8 +165,6 @@ Add predictability option: "Commit \$1,500/month for up to 8M events at an effec
 * Hinterhuber, A., & Liozu, S. M. (2020). [*Pricing strategy implementation: Translating pricing strategy into results*](https://www.routledge.com/Pricing-Strategy-Implementation-Translating-Pricing-Strategy-into-Results/Hinterhuber-Liozu/p/book/9780367441205). *Routledge*.
 * Howatson, A. (2024). [*The usage economy: Strategies for growth, smart pricing, and effective technology management*](https://book.usageeconomy.com/). *Usage Economy Publishing*.
 * Ghuman, A. (2021). [*Price to scale: Practical pricing for your high-growth software startup*](https://www.pricetoscale.com/). *Independently published*.
-
-**Related pages:** [Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing) | [Outcome/performance-based pricing](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) | [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Freemium](/wiki/pricing/models-and-metering/freemium-model)
 
 ## FAQ
 
@@ -180,7 +178,7 @@ Add predictability option: "Commit \$1,500/month for up to 8M events at an effec
 
 **Q:** Can I combine subscription and usage pricing?
 
-**A:** Yes, this is the [**Hybrid Model**](/wiki/pricing/models-and-metering/hybrid-pricing) and is the industry standard for B2B. You charge a platform fee ([subscription](/wiki/pricing/models-and-metering/subscription-model)) for access and a usage fee for volume. Large enterprises often prefer a predictable "Unlimited" tier or a pre-paid credit model to satisfy their procurement departments.
+**A:** Yes, this is the [**Hybrid Model**](/wiki/pricing/models-and-metering/hybrid-pricing) and is the industry standard for B2B. You charge a platform fee ([subscription](/wiki/pricing/models-and-metering/subscription-model)) for access and a usage fee for volume. Large enterprises often prefer a predictable "Unlimited" tier or a [credits / drawdown model](/wiki/pricing/models-and-metering/credits-drawdown-model) to satisfy their procurement departments.
 
 **Q:** Does usage-based pricing hurt company valuation?
 

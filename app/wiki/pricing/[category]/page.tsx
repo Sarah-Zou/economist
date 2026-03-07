@@ -1052,7 +1052,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                     </div>
                   </div>
 
-                  {/* Revenue Engines: Subscription, Seat-based, Usage-based, Outcome-based */}
+                  {/* Revenue Engines: Subscription, Seat-based, Usage-based, Transaction-based, Outcome-based */}
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                     <div className="lg:col-span-5 flex">
                       <div className="bg-[#eef0f3] rounded-lg p-6 shadow-sm sticky top-24 w-full">
@@ -1120,6 +1120,23 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                         </p>
                       </Link>
                       <Link 
+                        href="/wiki/pricing/models-and-metering/transaction-based-pricing"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-green-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <BarChart className="w-6 h-6 text-gray-700 group-hover:text-green-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Transaction-based pricing
+                          </h3>
+                          <span className="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Revenue Engine
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          Charge per auditable, discrete value event (for example, payment captured or booking completed). It aligns price with realized activity while preserving simple buyer logic.
+                        </p>
+                      </Link>
+                      <Link 
                         href="/wiki/pricing/models-and-metering/outcome-performance-based-pricing"
                         className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-green-600 no-underline"
                       >
@@ -1139,7 +1156,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                     </div>
                   </div>
 
-                  {/* Advanced & GTM: Hybrid pricing, Freemium */}
+                  {/* Advanced & GTM: Hybrid pricing, Credits / drawdown, Freemium */}
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                     <div className="lg:col-span-7 flex flex-col gap-4">
                       <Link 
@@ -1157,6 +1174,23 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                         </div>
                         <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
                           Base subscription plus variable usage to balance predictability for buyers and upside capture for you. Mature startups almost always graduate to hybrid when pure seat-based limits growth and pure usage-based hurts predictability.
+                        </p>
+                      </Link>
+                      <Link 
+                        href="/wiki/pricing/models-and-metering/credits-drawdown-model"
+                        className="group block bg-white rounded-lg px-4 py-1 hover:shadow-md transition-all shadow-sm border border-[#e5e7eb] hover:border-purple-600 no-underline"
+                      >
+                        <div className="flex items-center gap-3 mb-0">
+                          <Package className="w-6 h-6 text-gray-700 group-hover:text-purple-600 transition-colors flex-shrink-0" />
+                          <h3 className="font-semibold text-[#1f2933] text-lg no-underline">
+                            Credits / drawdown model
+                          </h3>
+                          <span className="bg-purple-500 text-white text-xs font-semibold px-2 py-1 rounded uppercase">
+                            Advanced
+                          </span>
+                        </div>
+                        <p className="text-[#1f2933] leading-tight text-sm ml-9 mt-0 text-justify">
+                          Customers pre-commit budget into a wallet and usage burns it down over time. This adds procurement-friendly predictability without giving up consumption-based fairness.
                         </p>
                       </Link>
                       <Link 

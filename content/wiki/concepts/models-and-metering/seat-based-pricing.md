@@ -144,8 +144,6 @@ The downside is the same coupling: customers may gate access to control costs (h
 * Ghuman, A. (2021). [*Price to scale: Practical pricing for your high-growth software startup*](https://www.pricetoscale.com/). *Independently published*.
 * Lehrskov-Schmidt, U. (2023). [*The pricing roadmap: How to design B2B SaaS pricing models that your customers will love*](https://www.thepricingroadmap.com/). *The Pricing Roadmap*.
 
-**Related pages:** [Value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing) | [Outcome/performance-based pricing](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) | [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) | [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Add-ons & modular](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Freemium](/wiki/pricing/models-and-metering/freemium-model)
-
 ## FAQ
 
 **Q:** Should I charge for "Read-Only" users?
@@ -154,11 +152,11 @@ The downside is the same coupling: customers may gate access to control costs (h
 
 **Q:** Can I combine Seat-Based with Usage-Based pricing?
 
-**A:** Yes, this is often the best model for AI/Tech startups. Charge a "Platform Fee" (which includes X seats) to cover fixed costs, and then charge "Consumption" (e.g., Credits, GBs, API calls) for the actual work done. (See [hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing).)
+**A:** Yes, this is often the best model for AI/Tech startups. Charge a "Platform Fee" (which includes X seats) to cover fixed costs, and then charge "Consumption" (e.g., [credits](/wiki/pricing/models-and-metering/credits-drawdown-model), GBs, API calls) for the actual work done. (See [hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing).)
 
 **Q:** How do I stop customers from churning unused seats?
 
-**A:** You can't stop them, but you can preempt the surprise. Monitor utilization rates. If a customer has 20 unused seats, proactively reach out *before* renewal to suggest swapping those seats for "Credits" or "Training"—keeping the revenue but changing the value delivery.
+**A:** You can't stop them, but you can preempt the surprise. Monitor utilization rates. If a customer has 20 unused seats, proactively reach out *before* renewal to suggest swapping those seats for [credits](/wiki/pricing/models-and-metering/credits-drawdown-model) or "Training"—keeping the revenue but changing the value delivery.
 
 **Q:** Should I offer a "Free Tier" with limited seats?
 
