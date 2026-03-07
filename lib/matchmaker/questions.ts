@@ -329,14 +329,15 @@ export function getPendingConditionalIds(answers: AnswersMap): QuestionId[] {
 
 export function buildMainSequence(answers: AnswersMap): QuestionId[] {
   const q0Answer = answers.Q0
-  const pathQuestions =
+  const pathQuestions: QuestionId[] =
     q0Answer && q0Answer in PATH_BY_Q0
       ? PATH_BY_Q0[q0Answer as 'A' | 'B' | 'C' | 'D']
       : q0Answer === 'E'
         ? PATH_BY_Q0.B
         : []
   const shouldAskWrapperInference = answers.P3 && answers.P3 !== 'C'
-  return [...CORE_SEQUENCE, ...pathQuestions, ...(shouldAskWrapperInference ? ['W1', 'W2'] : [])]
+  const wrapperIds: QuestionId[] = shouldAskWrapperInference ? ['W1', 'W2'] : []
+  return [...CORE_SEQUENCE, ...pathQuestions, ...wrapperIds]
 }
 
 export function isNotSureSelection(questionId: QuestionId, value?: AnswerValue) {
