@@ -1065,7 +1065,7 @@ export function MatchmakerQuiz({ onRestart }: MatchmakerQuizProps) {
         ) : null}
 
         {resolvedWrapper.safetyNote && flow !== 'followup' ? (
-          <p className="mt-3 rounded-md border border-orange-200 bg-orange-50 px-3 py-2 text-sm text-orange-900">
+          <p className="mt-3 rounded-md border border-[var(--color-border)] bg-[var(--color-brand-soft)] px-3 py-2 text-sm text-[var(--color-brand-ink)]">
             {resolvedWrapper.safetyNote}
           </p>
         ) : null}
