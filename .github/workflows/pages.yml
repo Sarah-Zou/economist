@@ -25,7 +25,18 @@ jobs:
           node-version: 22
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm config set fetch-retries 5
+          npm config set fetch-retry-mintimeout 20000
+          npm config set fetch-retry-maxtimeout 120000
+          attempts=0
+          until [ "$attempts" -ge 3 ]; do
+            npm ci --no-audit --no-fund && break
+            attempts=$((attempts + 1))
+            echo "npm ci failed (attempt ${attempts}/3). Retrying..."
+            sleep 15
+          done
+          [ "$attempts" -lt 3 ]
 
       - name: Check brand color drift
         run: npm run check:color-drift
