@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { getAllCategories, getConceptBySlug } from '@/lib/mdx'
+import { getAllCategories, getConceptBySlug, hasPublishedConceptContent } from '@/lib/mdx'
 
 const baseUrl = 'https://sarahzou.com'
 
@@ -11,7 +11,9 @@ function normalizeUrl(path: string): string {
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date().toISOString()
-  const categories = getAllCategories()
+  const categories = getAllCategories().filter((category) =>
+    hasPublishedConceptContent(category.slug)
+  )
 
   // Wiki pricing categories
   const wikiPages = categories.map((category) => ({

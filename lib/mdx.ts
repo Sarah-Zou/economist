@@ -161,6 +161,22 @@ export function getAllCategories(): CategoryData[] {
     .filter((category): category is CategoryData => category !== null);
 }
 
+export function getPublishedConceptIdsForCategory(categorySlug: string): string[] {
+  const category = getCategoryBySlug(categorySlug);
+  if (!category) {
+    return [];
+  }
+
+  return category.concepts
+    .filter((concept) => concept.id)
+    .map((concept) => concept.id as string)
+    .filter((conceptId) => getConceptBySlug(categorySlug, conceptId) !== null);
+}
+
+export function hasPublishedConceptContent(categorySlug: string): boolean {
+  return getPublishedConceptIdsForCategory(categorySlug).length > 0;
+}
+
 export interface ConceptFrontmatter {
   title: string;
   metaTitle?: string;

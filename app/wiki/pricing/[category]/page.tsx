@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { unstable_noStore } from 'next/cache';
 import { generateCollectionPageJsonLd, generateBreadcrumbJsonLd } from '@/lib/generateJsonLd';
-import { getCategoryBySlug, getAllCategorySlugs } from '@/lib/mdx';
+import { getCategoryBySlug, getAllCategorySlugs, hasPublishedConceptContent } from '@/lib/mdx';
 import WikiLayout from '@/components/wiki/WikiLayout';
 import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter';
 import Link from 'next/link';
@@ -46,20 +46,34 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     };
   }
 
+  const hasPublishedConcepts = hasPublishedConceptContent(params.category);
+
   return {
     title: `${category.title} | Pricing Wiki`,
     description: category.summary,
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
-    },
+    robots: hasPublishedConcepts
+      ? {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+          },
+        }
+      : {
+          index: false,
+          follow: true,
+          googleBot: {
+            index: false,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+          },
+        },
     alternates: {
       canonical: category.canonical
     },

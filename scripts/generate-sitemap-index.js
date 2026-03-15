@@ -53,15 +53,9 @@ function generateWikiSitemap() {
     
     const currentDate = new Date().toISOString();
 
-    const wikiPages = categories.map((category) => ({
-      url: `${baseUrl}/wiki/pricing/${category.slug}`,
-      lastModified: category.updated || currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    }));
-
     // Parse concepts from markdown files
     const conceptPages = [];
+    const categoryConceptCount = new Map();
     fileNames.forEach((fileName) => {
       const fullPath = path.join(contentDir, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -89,6 +83,7 @@ function generateWikiSitemap() {
               // Skip placeholder concepts that do not have published content yet.
               continue;
             }
+            categoryConceptCount.set(slug, (categoryConceptCount.get(slug) || 0) + 1);
             conceptPages.push({
               url: `${baseUrl}/wiki/pricing/${slug}/${conceptId}`,
               lastModified: data.updated || currentDate,
@@ -99,6 +94,16 @@ function generateWikiSitemap() {
         }
       }
     });
+
+    // Include category hubs in sitemap only when they have published concept pages.
+    const wikiPages = categories
+      .filter((category) => (categoryConceptCount.get(category.slug) || 0) > 0)
+      .map((category) => ({
+        url: `${baseUrl}/wiki/pricing/${category.slug}`,
+        lastModified: category.updated || currentDate,
+        changeFrequency: 'monthly',
+        priority: 0.8,
+      }));
 
     const sitemap = formatSitemap([...wikiPages, ...conceptPages]);
     const wikiPath = path.join(outDir, 'sitemap-wiki.xml');
