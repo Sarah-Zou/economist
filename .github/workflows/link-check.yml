@@ -25,6 +25,9 @@ jobs:
 
       - name: Install dependencies
         run: |
+          echo "Node: $(node -v)"
+          echo "npm: $(npm -v)"
+          npm config set registry https://registry.npmjs.org/
           npm config set fetch-retries 5
           npm config set fetch-retry-mintimeout 20000
           npm config set fetch-retry-maxtimeout 120000
@@ -35,7 +38,10 @@ jobs:
             echo "npm ci failed (attempt ${attempts}/3). Retrying..."
             sleep 15
           done
-          [ "$attempts" -lt 3 ]
+          if [ "$attempts" -ge 3 ]; then
+            echo "npm ci failed after retries. Falling back to npm install."
+            npm install --no-audit --no-fund
+          fi
 
       - name: Build with Next.js
         run: npm run build
