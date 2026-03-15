@@ -148,8 +148,6 @@ For startup founders, JTBD is the bridge between understanding customer demand a
 * Ulwick, A. W. (2005). [What customers want from your products](https://hbr.org/2005/01/what-customers-want-from-your-products). *Harvard Business Review, 83*(1), 70–82.
 * Ulwick, A. W. (2016). [*Jobs to be done: Theory to practice*](https://anthonyulwick.com/books/jobs-to-be-done-theory-to-practice/). Idea Bite Press.
 
-**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Segmentation by WTP/Use Case](/wiki/pricing/value-and-customers/customer-segments) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Willingness-to-Pay](/wiki/pricing/value-and-customers/willingness-to-pay)
-
 ## FAQ
 
 **Q:** How do I know if I have a "job" or just a "problem"?

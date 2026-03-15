@@ -155,8 +155,6 @@ For startup founders, penetration pricing is essential in markets **dominated by
 * Raju, J. G., & Zhang, Z. J. (2010). [*Smart pricing: How Google, Priceline, and leading businesses use pricing innovation for profitability*](https://www.pearson.com/us/higher-education/program/Raju-Smart-Pricing-How-Google-Priceline-and-Leading-Businesses-Use-Pricing-Innovation-for-Profitability/PGM113227.html). *Pearson*.
 * Ghuman, A. (2021). [*Price to scale: Practical pricing for your high-growth software startup*](https://www.pricetoscale.com/). *Independently published*.
 
-**Related pages:** [Maximization Strategy](/wiki/pricing/foundations/maximization) | [Skimming Strategy](/wiki/pricing/foundations/skimming-strategy) | [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Strategic Pricing](/wiki/pricing/foundations/strategic-pricing) | [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Van Westendorp](/wiki/pricing/research-and-experiments) | [Gabor‑Granger](/wiki/pricing/research-and-experiments) | [Conjoint Analysis](/wiki/pricing/research-and-experiments) | [Freemium](/wiki/pricing/models-and-metering/freemium-model)
-
 ## FAQ
 
 **Q:** Is penetration pricing the same as being "cheap"?

@@ -161,8 +161,6 @@ For founders, subscriptions move the needle on **Capital Efficiency**.
 * Reichheld, F. F., & Markey, R. (2001). [*The loyalty effect*](https://www.bain.com/contentassets/29f74ec417fa4e36a1d7d7e7479badc5/loyalty_rules_chapter_one.pdf). *Harvard Business School Press*.
 
 
-**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing) | [Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing) | [Freemium](/wiki/pricing/models-and-metering/freemium-model) | [Outcome/performance-based pricing](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) | [Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Good-Better-Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Customer segments](/wiki/pricing/value-and-customers/customer-segments) | [Jobs to be done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) | [Price fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination)
-
 ## FAQ
 
 **Q:** Monthly vs annual—what should I choose?

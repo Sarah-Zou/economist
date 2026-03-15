@@ -125,8 +125,6 @@ Without this distinction, founders fall into **"Kitchen Sink Syndrome"**: piling
 * Nagle, T. T., Hogan, J. E., & Zale, J. (2016). [*The strategy and tactics of pricing: A guide to growing more profitably*](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Hogan-Zale/p/book/9781138846774) (6th ed.). Routledge.
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing innovation: How smart companies design the product around the price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 
-**Related pages:** [Packaging](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Good–Better–Best](/wiki/pricing/packaging-and-bundling/good-better-best) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Customer Segments](/wiki/pricing/value-and-customers/customer-segments) | [Jobs-to-Be-Done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Willingness to Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Value Drivers](/wiki/pricing/value-and-customers/value-drivers) | [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) | [MaxDiff Analysis](/wiki/pricing/research-and-experiments#maxdiff)
-
 ## FAQ
 
 **Q:** How many leader features should a plan have?

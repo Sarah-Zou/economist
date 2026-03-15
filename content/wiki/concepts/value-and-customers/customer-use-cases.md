@@ -147,8 +147,6 @@ Use this flow to define a customer use case in a way that directly feeds your [m
 * Ghuman, A. (2021). [*Price to scale: Practical pricing for your high-growth SaaS startup*](https://www.goodreads.com/book/show/57850428-price-to-scale). Independently published.
 * Maurya, A. (2012). [*Running lean: Iterate from plan A to a plan that works*](https://books.google.com/books/about/Running_Lean.html?id=_RKbzgEACAAJ). O'Reilly Media.
 
-**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Jobs-to-be-Done (JTBD)](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Segmentation by WTP/Use Case](/wiki/pricing/value-and-customers/customer-segments) | [Willingness-to-Pay Research (Van Westendorp, Gabor-Granger, Conjoint)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing)
-
 ## FAQ
 
 **Q:** How many customer use cases do we actually need?

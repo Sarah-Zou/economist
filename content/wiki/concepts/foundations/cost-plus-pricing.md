@@ -100,8 +100,6 @@ It can lead companies to set consistently sub-par prices, often leading to foreg
 - Hinterhuber, A., & Liozu, S. M. (2017). [*Innovation in pricing: Contemporary theories and best practices*](https://www.routledge.com/Innovation-in-Pricing-Contemporary-Theories-and-Best-Practices/Hinterhuber-Liozu/p/book/9781138790089). *Routledge*.
 - Gourville, J. T. (2006, June). [*Eager sellers and stony buyers: Understanding the psychology of new-product adoption*](https://hbr.org/2006/06/eager-sellers-and-stony-buyers-understanding-the-psychology-of-new-product-adoption). *Harvard Business Review*.
 
-**Related pages:** [Value‑Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Ideal Customer Profile (ICP)](/wiki/pricing/value-and-customers/ideal-customer-profile) | [Price Floors & Guardrails](/wiki/pricing/economics-and-metrics) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Unit Economics](/wiki/pricing/economics-and-metrics) | [Van Westendorp](/wiki/pricing/research-and-experiments) | [Gabor‑Granger](/wiki/pricing/research-and-experiments) | [Conjoint Analysis](/wiki/pricing/research-and-experiments)
-
 ## FAQ
 
 **Q:** What overhead should I include?

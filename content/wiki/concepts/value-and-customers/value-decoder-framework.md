@@ -159,8 +159,6 @@ Founders often get the best results by **combining both**: use [EVE](/wiki/prici
 - Baker, W. L., Marn, M. V., & Zawada, C. C. (2010). [*The price advantage*](https://www.wiley.com/en-us/The+Price+Advantage%2C+2nd+Edition-p-9780470502250) (2nd ed.). *John Wiley & Sons*.
 - Raju, J. G., & Zhang, Z. J. (2010). [*Smart pricing: How Google, Priceline, and leading businesses use pricing innovation for profitability*](https://www.pearson.com/us/higher-education/program/Raju-Smart-Pricing-How-Google-Priceline-and-Leading-Businesses-Use-Pricing-Innovation-for-Profitability/PGM113227.html). *Pearson*.
 
-**Related pages:** [Value-based pricing](/wiki/pricing/foundations/value-based-pricing) | [Economic Value Estimation (EVE)](/wiki/pricing/value-and-customers/economic-value-estimation) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp) | [Gabor‑Granger price testing](/wiki/pricing/research-and-experiments/gabor-granger) | [Conjoint analysis / discrete choice experiments](/wiki/pricing/research-and-experiments/conjoint-analysis) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination)
-
 ## FAQ
 
 **Q:** How is the Value Decoder different from simple competitor benchmarking?

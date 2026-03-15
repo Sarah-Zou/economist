@@ -143,8 +143,6 @@ _"If we could only win 100 customers this year, which 100 should they be—and w
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 * Ghuman, A. (2021). [*Price to Scale: Practical Pricing for Your High Growth SaaS Startup*](https://www.amazon.com/Price-Scale-Practical-Pricing-Founders/dp/B0C1J7QZ8K). Independently published.
 
-**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Segmentation](/wiki/pricing/value-and-customers#customer-segments) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Jobs to Be Done](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Willingness-to-Pay](/wiki/pricing/value-and-customers/willingness-to-pay) | [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing)
-
 ## FAQ
 
 **Q:** Can I have more than one ICP?

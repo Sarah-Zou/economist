@@ -145,8 +145,6 @@ Early-stage startups often underprice because they fear rejection. GBB reduces t
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 * Ghuman, A. (2021). *Price to Scale*. Independently published.
 
-**Related pages:** [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Packaging Architecture](/wiki/pricing/packaging-and-bundling/packaging) | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) | [Price Fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [Customer Segments](/wiki/pricing/value-and-customers/customer-segments) | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) | [Willingness to Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) | [Jobs-to-Be-Done (JTBD)](/wiki/pricing/value-and-customers/jobs-to-be-done) | [Value Drivers](/wiki/pricing/value-and-customers/value-drivers) | [Value Metric (Seats vs Usage)](/wiki/pricing/models-and-metering/pricing-metric-value-metric) | [Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing) | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) | [Freemium](/wiki/pricing/models-and-metering/freemium-model) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp)
-
 ## FAQ
 
 **Q:** Should I always use exactly three tiers?

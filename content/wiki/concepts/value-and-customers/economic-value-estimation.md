@@ -210,8 +210,6 @@ Your actual list price might be slightly above this (to allow room for discounts
 - McKinsey & Company. (2014, June 1). [*Using big data to make better pricing decisions*](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/using-big-data-to-make-better-pricing-decisions). *McKinsey Quarterly*.
 - Nagle, T. T., Muller, G., & Gruyaert, E. (2023). [*The strategy and tactics of pricing: A guide to growing more profitably*](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Muller-Gruyaert/p/book/9780367763994) (7th ed.). *Routledge*.
 
-**Related pages:** [Value‑Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Monetization model](/wiki/pricing/models-and-metering/monetization-model) | [Customer Use Cases](/wiki/pricing/value-and-customers/customer-use-cases) | [Willingness to Pay (WTP) Measurement](/wiki/pricing/value-and-customers/willingness-to-pay) | [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments) | [Gabor‑Granger Price Testing](/wiki/pricing/research-and-experiments) | [Conjoint Analysis & Discrete Choice Experiments](/wiki/pricing/research-and-experiments) | [Price Fences / Price Discrimination](/wiki/pricing/value-and-customers/price-fences-price-discrimination) | [ROI Calculators and Value Selling](/wiki/pricing/value-and-customers)
-
 ## FAQ
 
 **Q:** Is EVE the same as value‑based pricing?

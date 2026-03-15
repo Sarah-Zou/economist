@@ -93,8 +93,6 @@ Prices can easily fall out of sync with current customer demand if every firm is
 - Raju, J. G., & Zhang, Z. J. (2010). [*Smart pricing: How Google, Priceline, and leading businesses use pricing innovation for profitability*](https://www.pearson.com/us/higher-education/program/Raju-Smart-Pricing-How-Google-Priceline-and-Leading-Businesses-Use-Pricing-Innovation-for-Profitability/PGM113227.html). *Pearson*.
 - Nagle, T. T., Muller, G., & Gruyaert, E. (2023). [*The strategy and tactics of pricing: A guide to growing more profitably*](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Muller-Gruyaert/p/book/9780367763994) (7th ed.). *Routledge*.
 
-**Related pages:** [Value-Based Pricing](/wiki/pricing/foundations/value-based-pricing) | [Strategic Pricing](/wiki/pricing/foundations/strategic-pricing) | [Customer-Driven Pricing](/wiki/pricing/foundations/customer-driven-pricing) | [Cost-Plus Pricing](/wiki/pricing/foundations/cost-plus-pricing) | [Willingness-to-Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay)
-
 ## FAQ
 
 **Q:** How is competition-based pricing different from value-based pricing?
