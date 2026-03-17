@@ -1,17 +1,12 @@
 'use client';
 
-/**
- * Form POSTs to Google Apps Script. The form action is taken from
- * NEXT_PUBLIC_PRICING_SESSION_FORM_URL, which is inlined at build time.
- * Set it in your hosting env (e.g. Vercel) before building so production gets the /exec URL.
- */
-import { useEffect, useState } from 'react';
+import { type FormEvent, useEffect, useState } from 'react';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
-const FORM_ACTION = process.env.NEXT_PUBLIC_PRICING_SESSION_FORM_URL ?? '';
+const FORM_ACTION = process.env.NEXT_PUBLIC_PRICING_SESSION_FORM_URL || '';
 const REDIRECT_URL = 'https://sarahzou.com/thanks/entry-offer';
-
-const hasFormUrl = FORM_ACTION.length > 0;
+const IS_VALID_FORM_ACTION = /^https:\/\/script\.google\.com\/macros\/s\/.+\/exec$/.test(FORM_ACTION);
 
 type UTMKeys = 'utm_source' | 'utm_medium' | 'utm_campaign' | 'utm_content' | 'utm_term';
 
@@ -26,6 +21,7 @@ export default function EntryOfferFormClient() {
 
   const [sourcePage, setSourcePage] = useState('');
   const [pageTitle, setPageTitle] = useState('');
+  const [configError, setConfigError] = useState('');
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -45,6 +41,15 @@ export default function EntryOfferFormClient() {
     setSourcePage(url.pathname + (url.search || ''));
     setPageTitle(document.title || '90-Minute Pricing Strategy Session Application');
   }, []);
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    if (IS_VALID_FORM_ACTION) return;
+
+    event.preventDefault();
+    setConfigError(
+      'Form is temporarily unavailable because the form endpoint is missing or invalid. Please refresh after updating NEXT_PUBLIC_PRICING_SESSION_FORM_URL and restarting the app.'
+    );
+  }
 
   return (
     <div className="min-h-screen bg-page selection:bg-brand-soft selection:text-brand-ink">
@@ -67,23 +72,24 @@ export default function EntryOfferFormClient() {
             Takes about 2 minutes. Only the first 4 fields are required.
           </p>
 
-          {!hasFormUrl && (
-            <div className="mb-6 p-4 rounded-xl bg-amber-50 border border-amber-200 text-[#1f2933] text-sm" role="alert">
-              <strong>Form URL not set.</strong> Submissions are disabled until <code className="bg-white/80 px-1 rounded">NEXT_PUBLIC_PRICING_SESSION_FORM_URL</code> is set.
-              <ul className="mt-2 ml-4 list-disc space-y-1">
-                <li><strong>Local/dev:</strong> Add it to <code className="bg-white/80 px-1 rounded">.env.local</code> (your Apps Script URL ending in <code className="bg-white/80 px-1 rounded">/exec</code>), then restart the dev server.</li>
-                <li><strong>Production:</strong> Set it in your hosting dashboard (e.g. Vercel → Project → Settings → Environment Variables) for the environment used at build time, then redeploy so the URL is inlined into the client bundle.</li>
-              </ul>
-            </div>
-          )}
-
-          {/* action must be the Apps Script /exec URL; when missing we use # and block submit so we never POST to same origin (405) */}
+          {/* Form card */}
           <form
-            action={hasFormUrl ? FORM_ACTION : '#'}
+            action={FORM_ACTION}
             method="POST"
-            onSubmit={!hasFormUrl ? (ev) => ev.preventDefault() : undefined}
+            onSubmit={handleSubmit}
             className="bg-white border border-[#e2e6ea] rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 space-y-4 shadow-sm"
           >
+            {!IS_VALID_FORM_ACTION && (
+              <div className="rounded-lg border border-[#fecaca] bg-[#fef2f2] px-3 py-2 text-sm text-[#991b1b]">
+                `NEXT_PUBLIC_PRICING_SESSION_FORM_URL` is missing or invalid. Update it to your Google Apps Script
+                `/exec` URL and restart Next.js.
+              </div>
+            )}
+            {configError && (
+              <div className="rounded-lg border border-[#fecaca] bg-[#fef2f2] px-3 py-2 text-sm text-[#991b1b]">
+                {configError}
+              </div>
+            )}
             <input type="hidden" name="offer" value="pricing_strategy_session_90" />
             <input type="hidden" name="source_page" value={sourcePage} />
             <input type="hidden" name="page_title" value={pageTitle} />
@@ -211,8 +217,13 @@ export default function EntryOfferFormClient() {
             <div className="pt-2">
               <button
                 type="submit"
-                disabled={!hasFormUrl}
-                className="w-full min-h-[48px] px-6 sm:px-8 py-3.5 sm:py-4 bg-brand hover:bg-brand-ink text-brand-on rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg transition-all shadow-sm hover:shadow-md disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:bg-brand"
+                disabled={!IS_VALID_FORM_ACTION}
+                className={cn(
+                  'w-full min-h-[48px] px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg transition-all shadow-sm',
+                  IS_VALID_FORM_ACTION
+                    ? 'bg-brand hover:bg-brand-ink text-brand-on hover:shadow-md'
+                    : 'bg-[#cbd5e1] text-white cursor-not-allowed'
+                )}
               >
                 Submit request
               </button>
