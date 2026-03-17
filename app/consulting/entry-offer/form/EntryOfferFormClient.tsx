@@ -4,9 +4,12 @@ import { type FormEvent, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
-const FORM_ACTION = process.env.NEXT_PUBLIC_PRICING_SESSION_FORM_URL || '';
+const DEFAULT_FORM_ACTION =
+  'https://script.google.com/macros/s/AKfycbx1ndwJyYb0zSBnun4OszCJrRMMopBDIrSY-B9855RKgnusPauxx0pVJT-4EvXLI5pACA/exec';
+const FORM_ACTION = (process.env.NEXT_PUBLIC_PRICING_SESSION_FORM_URL || '').trim();
+const RESOLVED_FORM_ACTION = FORM_ACTION || DEFAULT_FORM_ACTION;
 const REDIRECT_URL = 'https://sarahzou.com/thanks/entry-offer';
-const IS_VALID_FORM_ACTION = /^https:\/\/script\.google\.com\/macros\/s\/.+\/exec$/.test(FORM_ACTION);
+const IS_VALID_FORM_ACTION = /^https:\/\/script\.google\.com\/macros\/s\/.+\/exec$/.test(RESOLVED_FORM_ACTION);
 
 type UTMKeys = 'utm_source' | 'utm_medium' | 'utm_campaign' | 'utm_content' | 'utm_term';
 
@@ -74,7 +77,7 @@ export default function EntryOfferFormClient() {
 
           {/* Form card */}
           <form
-            action={FORM_ACTION}
+            action={RESOLVED_FORM_ACTION}
             method="POST"
             onSubmit={handleSubmit}
             className="bg-white border border-[#e2e6ea] rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 space-y-4 shadow-sm"
