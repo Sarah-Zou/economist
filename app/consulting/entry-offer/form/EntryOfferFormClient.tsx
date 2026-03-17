@@ -25,6 +25,7 @@ export default function EntryOfferFormClient() {
   const [sourcePage, setSourcePage] = useState('');
   const [pageTitle, setPageTitle] = useState('');
   const [configError, setConfigError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -45,13 +46,33 @@ export default function EntryOfferFormClient() {
     setPageTitle(document.title || '90-Minute Pricing Strategy Session Application');
   }, []);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    if (IS_VALID_FORM_ACTION) return;
-
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setConfigError(
-      'Form is temporarily unavailable because the form endpoint is missing or invalid. Please refresh after updating NEXT_PUBLIC_PRICING_SESSION_FORM_URL and restarting the app.'
-    );
+    if (!IS_VALID_FORM_ACTION) {
+      setConfigError(
+        'Form is temporarily unavailable because the form endpoint is missing or invalid. Please refresh after updating NEXT_PUBLIC_PRICING_SESSION_FORM_URL and restarting the app.'
+      );
+      return;
+    }
+
+    setConfigError('');
+    setIsSubmitting(true);
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      // no-cors keeps this simple for Apps Script and avoids leaving this domain.
+      await fetch(RESOLVED_FORM_ACTION, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData,
+      });
+    } catch {
+      // We still continue to the thank-you page to keep UX smooth.
+    } finally {
+      window.location.assign(REDIRECT_URL);
+    }
   }
 
   return (
@@ -220,15 +241,15 @@ export default function EntryOfferFormClient() {
             <div className="pt-2">
               <button
                 type="submit"
-                disabled={!IS_VALID_FORM_ACTION}
+                disabled={!IS_VALID_FORM_ACTION || isSubmitting}
                 className={cn(
                   'w-full min-h-[48px] px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg transition-all shadow-sm',
-                  IS_VALID_FORM_ACTION
+                  IS_VALID_FORM_ACTION && !isSubmitting
                     ? 'bg-brand hover:bg-brand-ink text-brand-on hover:shadow-md'
                     : 'bg-[#cbd5e1] text-white cursor-not-allowed'
                 )}
               >
-                Submit request
+                {isSubmitting ? 'Submitting...' : 'Submit request'}
               </button>
               <p className="mt-2 text-sm text-[#3b4652] text-center leading-[1.65]">
                 I read every application myself. If it’s a fit, I’ll reply with a couple of suggested times and any light
