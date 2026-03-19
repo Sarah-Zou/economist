@@ -81,9 +81,12 @@ export default function EntryOfferFormClient() {
         <div className="max-w-3xl mx-auto">
           {/* Hero */}
           <div className="mb-8 sm:mb-10">
-            <span className="inline-block py-2 px-4 sm:px-5 rounded-full bg-brand-soft text-brand-ink text-xs sm:text-sm font-bold mb-6 border border-brand/20 tracking-wide">
+            <Link
+              href="/consulting/entry-offer"
+              className="inline-block py-2 px-4 sm:px-5 rounded-full bg-brand-soft text-brand-ink text-xs sm:text-sm font-bold mb-6 border border-brand/20 tracking-wide hover:bg-[#f6ddd3] transition-colors"
+            >
               90-Minute Pricing Strategy Session
-            </span>
+            </Link>
             <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-semibold text-[#1f2933] leading-tight mb-3">
             Short application form
             </h1>
@@ -93,7 +96,7 @@ export default function EntryOfferFormClient() {
           </div>
 
           <p className="text-sm text-[#3b4652] mb-4">
-            Takes about 2 minutes. Only the first 4 fields are required.
+            Takes about 2 minutes. 
           </p>
 
           {/* Form card */}

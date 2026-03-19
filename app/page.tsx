@@ -25,8 +25,8 @@ const pathCards = [
   {
     title: '90-Minute Pricing Strategy Session',
     description: 'Best for a fast expert recommendation and clear next step.',
-    cta: 'Book the Session',
-    href: PRIMARY_CTA_HREF,
+    cta: 'Explore the Session',
+    href: '/consulting/entry-offer',
     highlighted: true,
   },
   {
@@ -403,7 +403,9 @@ export default function Home() {
             <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-brand" />
             <div className="mt-8 rounded-3xl bg-[#111827] p-5 text-white shadow-2xl ring-1 ring-white/10 sm:p-10">
               <p className="text-[24px] sm:text-[34px] font-bold leading-tight text-white">
-                90-Minute Pricing Strategy Session
+                <Link href="/consulting/entry-offer" className="underline-offset-4 hover:underline">
+                  90-Minute Pricing Strategy Session
+                </Link>
               </p>
               <p className="mt-4 text-lg leading-[1.7] text-[#e5e7eb]">
                 If you have one important pricing question, start here.
@@ -431,7 +433,7 @@ export default function Home() {
                 <li className="rounded-xl border border-[#334155] bg-[#1e293b] px-4 py-3 shadow-sm">
                   <span className="flex items-center gap-2.5">
                     <Clock3 className="h-4 w-4 text-[#fcb79a] flex-shrink-0" aria-hidden />
-                    <span>48-hour recommendation memo</span>
+                    <span>48-hour summary memo</span>
                   </span>
                 </li>
                 <li className="rounded-xl border border-[#334155] bg-[#1e293b] px-4 py-3 shadow-sm">
@@ -442,9 +444,17 @@ export default function Home() {
                 </li>
               </ul>
               <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-                <Link href={PRIMARY_CTA_HREF} className={`${primaryButton} w-full text-center sm:w-auto`}>
-                  Book the Session
-                </Link>
+                <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+                  <Link href={PRIMARY_CTA_HREF} className={`${primaryButton} w-full text-center sm:w-auto`}>
+                    Book the Session
+                  </Link>
+                  <Link
+                    href="/consulting/entry-offer"
+                    className={`${primaryButton} w-full bg-slate-500 text-center text-white hover:bg-slate-600 sm:w-auto`}
+                  >
+                    Explore the Session
+                  </Link>
+                </div>
                 <div className="sm:text-right">
                   <p className="text-3xl font-bold text-white">$600</p>
                   <p className="mt-1 max-w-sm text-xs leading-[1.6] text-[#cbd5e1] sm:ml-auto">
