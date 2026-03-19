@@ -49,7 +49,7 @@ const services = [
       'Unit-economics snapshot (GM%, CAC payback) + 30-day rollout plan.'
     ],
     cta: 'Explore Pricing Sprint',
-    image: '/images/S-4.webp',
+    image: '/images/S-4-v2.webp',
   },
   {
     id: 'economics-os',
@@ -75,7 +75,7 @@ const services = [
       'Quarterly pricing refresh and investor/fundraise support.'
     ],
     cta: 'Explore Retainer',
-    image: '/images/P-2.webp',
+    image: '/images/P-2-v2.webp',
   },
 ]
 

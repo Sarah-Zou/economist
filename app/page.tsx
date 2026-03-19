@@ -100,7 +100,7 @@ const deeperServices = [
       'For a fuller answer on pricing model, value metric, packaging, risks, and roadmap.',
     cta: 'View Pricing Sprint',
     href: '/consulting/services/pricing-monetization-sprint',
-    image: '/images/S-4.webp',
+    image: '/images/S-4-v2.webp',
   },
   {
     title: 'Metrics & Experimentation Sprint',
@@ -114,7 +114,7 @@ const deeperServices = [
     description: 'For ongoing strategic help.',
     cta: 'View Advisory Support',
     href: '/consulting/services/on-call-economist-retainer',
-    image: '/images/P-2.webp',
+    image: '/images/P-2-v2.webp',
   },
 ]
 
