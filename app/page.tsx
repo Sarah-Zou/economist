@@ -1,30 +1,204 @@
-import HeroStackedImages from '@/components/HeroStackedImages'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Metadata } from 'next'
-import { brandLink, outlineButton } from '@/lib/brandStyles'
+import type { Metadata } from 'next'
+import {
+  ArrowRight,
+  BookOpen,
+  CheckCircle2,
+  Clock3,
+  FileText,
+  FileSearch,
+  Layers,
+  LineChart,
+  Rocket,
+  ShieldCheck,
+  ChevronDown,
+  Video,
+  Zap,
+} from 'lucide-react'
+import { brandLink, outlineButton, primaryButton } from '@/lib/brandStyles'
 
-const homepageTestimonials = [
+const PRIMARY_CTA_HREF = '/consulting/entry-offer/form'
+const CONSULT_CTA_HREF = '/book'
+
+const pathCards = [
   {
-    name: "Maya Levin",
-    title: "CFO, CloudLoop",
-    quote: "Sarah reframed our pricing in one two-week sprint. We unlocked a 19% ARR lift and cut churn by a third—without touching the product roadmap."
+    title: '90-Minute Pricing Strategy Session',
+    description: 'Best for a fast expert recommendation and clear next step.',
+    cta: 'Book the Session',
+    href: PRIMARY_CTA_HREF,
+    highlighted: true,
   },
   {
-    name: "James O'Brien",
-    title: "Founder & CEO, Datamatic AI",
-    quote: "Her tech startup index pinpointed where we lagged peers. With the new dashboards, revenue beat plan by Q2."
+    title: 'Pricing & Monetization Sprint',
+    description: 'Best when you need a full pricing structure, packaging, and rollout plan.',
+    cta: 'Explore the Sprint',
+    href: '/consulting/services/pricing-monetization-sprint',
+    highlighted: false,
   },
   {
-    name: "Priya Shah",
-    title: "Partner, Vertex Ventures",
-    quote: "Sarah turned dense metrics into a compelling deck. Our portfolio company closed a $12M Series A in just six weeks."
-  }
+    title: 'Free Resources',
+    description: 'Not ready yet? Explore the free tools and guides.',
+    cta: 'Explore Free Resources',
+    href: '/free-tools',
+    highlighted: false,
+  },
+]
+
+const differentiators = [
+  {
+    title: 'Research-grade rigor',
+    description: 'Research-grade rigor without academic abstraction.',
+    icon: FileSearch,
+  },
+  {
+    title: 'Practical recommendations',
+    description: 'Practical founder-facing recommendations instead of vague strategy talk.',
+    icon: Layers,
+  },
+  {
+    title: 'Investor-ready',
+    description: 'Investor- and board-ready thinking behind the pricing story.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Startup speed',
+    description: 'Fast, testable outputs built for startup pace.',
+    icon: Zap,
+  },
+  {
+    title: 'Data to decision',
+    description: 'Clear translation from data to decision.',
+    icon: LineChart,
+  },
+  {
+    title: 'Prioritization',
+    description: 'Sharp prioritization on what matters most.',
+    icon: CheckCircle2,
+  },
+]
+
+const testimonials = [
+  {
+    quote:
+      'Honestly, we were just guessing on price and our sales team was discounting everything just to hit their numbers. Sarah simplified our tiers and our ACV shot up 40% in two months.',
+    author: 'Dayvon, B.',
+    role: 'Founder & CEO, Series A SaaS Platform',
+  },
+  {
+    quote:
+      "We were stuck on value metric, and Sarah's framework helped a lot. Highly recommend the 90-min session.",
+    author: 'Lisa, J.',
+    role: 'Co-Founder, Seed AI Developer Tool',
+  },
+]
+
+const deeperServices = [
+  {
+    title: 'Pricing & Monetization Sprint',
+    description:
+      'For a fuller answer on pricing model, value metric, packaging, risks, and roadmap.',
+    cta: 'View Pricing Sprint',
+    href: '/consulting/services/pricing-monetization-sprint',
+    image: '/images/S-4.webp',
+  },
+  {
+    title: 'Metrics & Experimentation Sprint',
+    description: 'For KPI, measurement, and experiment design work.',
+    cta: 'View Metrics Sprint',
+    href: '/consulting/services/metrics-experimentation-sprint',
+    image: '/images/metrics.webp',
+  },
+  {
+    title: 'Fractional Chief Economist Support',
+    description: 'For ongoing strategic help.',
+    cta: 'View Advisory Support',
+    href: '/consulting/services/on-call-economist-retainer',
+    image: '/images/P-2.webp',
+  },
+]
+
+const faqItems = [
+  {
+    q: 'What is a fractional chief economist?',
+    a: (
+      <>
+        A fractional chief economist is a part-time executive who designs your pricing
+        system, unit economics, and decision cadence-bringing PhD-level rigor without a
+        full-time hire. Learn more about{' '}
+        <Link href="/about" className={brandLink}>
+          fractional economics services
+        </Link>
+        .
+      </>
+    ),
+  },
+  {
+    q: 'How to decide which service to choose?',
+    a: (
+      <>
+        Start with the{' '}
+        <Link href="/consulting/entry-offer" className={brandLink}>
+          90-Minute Pricing Strategy Session
+        </Link>{' '}
+        if you need clarity on one important pricing decision. Choose the{' '}
+        <Link href="/consulting/services/pricing-monetization-sprint" className={brandLink}>
+          Pricing &amp; Monetization Sprint
+        </Link>{' '}
+        if you need a fuller pricing structure, packaging, and roadmap. Choose the{' '}
+        <Link href="/consulting/services/metrics-experimentation-sprint" className={brandLink}>
+          Metrics &amp; Experimentation Sprint
+        </Link>{' '}
+        if your challenge is more about KPIs, testing, and measurement. Choose{' '}
+        <Link href="/consulting/services/on-call-economist-retainer" className={brandLink}>
+          Fractional Chief Economist Support
+        </Link>{' '}
+        if you want ongoing strategic help.
+      </>
+    ),
+  },
+  {
+    q: 'What do engagements look like?',
+    a: (
+      <>
+        For most founders:{' '}
+        <Link href="/consulting/entry-offer" className={brandLink}>
+          90-Minute Pricing Strategy Session
+        </Link>{' '}
+        -&gt;{' '}
+        <Link href="/consulting/services/pricing-monetization-sprint" className={brandLink}>
+          Pricing &amp; Monetization Sprint
+        </Link>{' '}
+        or{' '}
+        <Link href="/consulting/services/metrics-experimentation-sprint" className={brandLink}>
+          Metrics &amp; Experimentation Sprint
+        </Link>{' '}
+        -&gt; optional{' '}
+        <Link href="/consulting/services/on-call-economist-retainer" className={brandLink}>
+          Fractional Chief Economist Support
+        </Link>
+        .
+      </>
+    ),
+  },
+  {
+    q: 'What does it cost?',
+    a: (
+      <>
+        The 90-Minute Pricing Strategy Session is $600 (if we move into a pricing sprint
+        within 14 days, this fee will be credited toward the project). Sprints are fixed-fee
+        ($5k-$18k for Monetization; $6k-$12k for Metrics) with defined deliverables and
+        timelines. Fractional Chief Economist Support starts at $4k/mo with tiered time
+        commitments.
+      </>
+    ),
+  },
 ]
 
 export const metadata: Metadata = {
-  title: "Pricing & Monetization Economist for Seed–Series A Startups | Sarah Zou, PhD",
-  description: "Value-based pricing, packaging, and experiments that lift ARR, NRR, and CAC payback. For SaaS, APIs & AI (Pre-Seed–Series A). Sprints and fractional chief economist retainer.",
+  title: 'Pricing Strategy for AI & SaaS Founders | Sarah Zou, PhD',
+  description:
+    'Not sure your pricing makes sense? Get sharper pricing, packaging, and monetization decisions through a 90-minute strategy session, sprints, or ongoing fractional chief economist support.',
   robots: {
     index: true,
     follow: true,
@@ -37,133 +211,115 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://sarahzou.com",
+    canonical: 'https://sarahzou.com',
   },
   openGraph: {
-    title: "Pricing & Monetization Economist for Seed–Series A Startups | Sarah Zou, PhD",
-    description: "Value-based pricing, packaging, and experiments that lift ARR, NRR, and CAC payback. For SaaS, APIs & AI (Pre-Seed–Series A). Sprints and fractional chief economist retainer.",
-    type: "website",
-    url: "https://sarahzou.com",
-    images: ["https://sarahzou.com/images/headshot_v2.webp"],
+    title: 'Pricing Strategy for AI & SaaS Founders | Sarah Zou, PhD',
+    description:
+      'Get sharper pricing, packaging, and monetization decisions without months of analysis or generic advice.',
+    type: 'website',
+    url: 'https://sarahzou.com',
+    images: ['https://sarahzou.com/images/headshot_v4.webp'],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Pricing & Monetization Economist for Seed–Series A Startups | Sarah Zou, PhD",
-    description: "Value-based pricing, packaging, and experiments that lift ARR, NRR, and CAC payback. For SaaS, APIs & AI (Pre-Seed–Series A). Sprints and fractional chief economist retainer.",
-    images: ["https://sarahzou.com/images/headshot_v2.webp"],
+    card: 'summary_large_image',
+    title: 'Pricing Strategy for AI & SaaS Founders | Sarah Zou, PhD',
+    description:
+      'Get sharper pricing, packaging, and monetization decisions without months of analysis or generic advice.',
+    images: ['https://sarahzou.com/images/headshot_v4.webp'],
   },
-};
+}
 
 export default function Home() {
   const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "EconNova Consulting",
-    "url": "https://sarahzou.com",
-    "logo": "https://sarahzou.com/images/EconNova_logo.png",
-    "description": "Fractional Chief Economist services for early-stage tech startups. Expert pricing strategy, metrics analysis, and economic storytelling to help startups optimize revenue and growth.",
-    "foundingDate": "2020",
-    "founder": {
-      "@type": "Person",
-      "name": "Dr. Sarah Zou",
-      "jobTitle": "Fractional Chief Economist"
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'EconNova Consulting',
+    url: 'https://sarahzou.com',
+    logo: 'https://sarahzou.com/images/EconNova_logo.png',
+    description:
+      'Fractional Chief Economist services for early-stage tech startups. Expert pricing strategy, metrics analysis, and economic storytelling to help startups optimize revenue and growth.',
+    founder: {
+      '@type': 'Person',
+      name: 'Dr. Sarah Zou',
+      jobTitle: 'Fractional Chief Economist',
     },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Princeton",
-      "addressRegion": "NJ",
-      "addressCountry": "US"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "Business Inquiries",
-      "email": "hello@sarahzou.com",
-      "availableLanguage": ["English"]
-    },
-    "sameAs": [
-      "https://www.linkedin.com/in/drsarahzou"
+    sameAs: ['https://www.linkedin.com/in/drsarahzou'],
+    serviceType: [
+      'Pricing Strategy Consulting',
+      'Monetization Strategy',
+      'Metrics and Experimentation Strategy',
+      'Fractional Chief Economist Services',
     ],
-    "areaServed": [
-      {
-        "@type": "Country",
-        "name": "United States"
-      },
-      {
-        "@type": "Country",
-        "name": "European Union"
-      }
-    ],
-    "serviceType": [
-      "Pricing Strategy Consulting",
-      "Tech Startup Metrics Analysis",
-      "Revenue Optimization",
-      "Fractional Chief Economist Services",
-      "Early-Stage Growth Strategy"
-    ]
-  };
+  }
 
   const personSchema = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Sarah Zou",
-    "honorificSuffix": "PhD",
-    "alternateName": "Dr. Sarah Zou",
-    "jobTitle": "Fractional Chief Economist",
-    "description": "PhD Economist specializing in pricing strategies, metrics analytics, and investor-ready storytelling for early-stage tech startups.",
-    "url": "https://sarahzou.com",
-    "image": "https://sarahzou.com/images/headshot_v2.webp",
-    "sameAs": [
-      "https://www.linkedin.com/in/drsarahzou/"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Princeton",
-      "addressRegion": "NJ",
-      "addressCountry": "US"
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Sarah Zou',
+    honorificSuffix: 'PhD',
+    alternateName: 'Dr. Sarah Zou',
+    jobTitle: 'Fractional Chief Economist',
+    description:
+      'PhD Economist specializing in pricing strategies, metrics analytics, and investor-ready storytelling for early-stage tech startups.',
+    url: 'https://sarahzou.com',
+    image: 'https://sarahzou.com/images/headshot_v4.webp',
+    sameAs: ['https://www.linkedin.com/in/drsarahzou/'],
+    worksFor: {
+      '@type': 'Organization',
+      name: 'EconNova Consulting',
+      url: 'https://sarahzou.com',
     },
-    "alumniOf": [
+    knowsAbout: [
+      'Pricing',
+      'Monetization',
+      'Unit Economics',
+      'Experimentation',
+      'Econometrics',
+      'Value-Based Pricing',
+      'Revenue Optimization',
+    ],
+  }
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    url: 'https://sarahzou.com',
+    mainEntity: [
       {
-        "@type": "EducationalOrganization",
-        "name": "Rutgers University",
-        "degree": "PhD in Economics"
+        '@type': 'Question',
+        name: 'What is a fractional chief economist?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'A fractional chief economist is a part-time executive who designs your pricing system, unit economics, and decision cadence, bringing PhD-level rigor without a full-time hire.',
+        },
       },
       {
-        "@type": "EducationalOrganization",
-        "name": "University of Illinois at Urbana-Champaign",
-        "degree": "MS in Finance & Statistics"
-      }
-    ],
-    "worksFor": {
-      "@type": "Organization",
-      "name": "EconNova Consulting",
-      "url": "https://sarahzou.com"
-    },
-    "knowsAbout": [
-      "Pricing",
-      "Monetization",
-      "Unit Economics",
-      "Experimentation",
-      "Econometrics",
-      "Tech Startup Pricing Strategy",
-      "Early-Stage Monetization",
-      "Value-Based Pricing",
-      "Revenue Optimization",
-      "Fractional Chief Economist",
-      "Investor Communications",
-      "Monetization Research"
-    ],
-    "hasCredential": [
-      {
-        "@type": "EducationalOccupationalCredential",
-        "credentialCategory": "Degree",
-        "recognizedBy": {
-          "@type": "Organization",
-          "name": "Rutgers University"
+        '@type': 'Question',
+        name: 'How to decide which service to choose?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Start with the 90-Minute Pricing Strategy Session for one important decision. Choose the Pricing & Monetization Sprint for fuller pricing structure and roadmap, the Metrics & Experimentation Sprint for KPI and testing work, and Advisory / On-Call Economist Support for ongoing strategic help.',
         },
-        "about": "PhD in Economics"
-      }
-    ]
-  };
+      },
+      {
+        '@type': 'Question',
+        name: 'What do engagements look like?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'For most founders: 90-Minute Pricing Strategy Session, then Pricing & Monetization Sprint or Metrics & Experimentation Sprint, then optional Fractional Chief Economist Support.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What does it cost?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The 90-Minute Pricing Strategy Session is $600 and can be credited toward a pricing sprint if started within 14 days. Sprints are fixed-fee at $5k-$18k for Monetization and $6k-$12k for Metrics. Advisory starts at $4k/month with tiered time commitments.',
+        },
+      },
+    ],
+  }
 
   return (
     <>
@@ -175,372 +331,376 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
-      <div>
-        <HeroStackedImages
-          photoSrc="/images/headshot_v2_520.webp"
-          bgSrc="/images/background_468.webp"
-          kicker="PHD ECONOMIST"
-          title="Fractional Chief Economist for Tech"
-          lede="Pricing, metrics, experiments, and economic storytelling for founders who need investor-grade decisions fast."
-          photoAlt="Dr. Sarah Zou, PhD economist for early-stage tech"
-          primaryCta={{
-            text: "Book a 15-min Free Consult",
-            href: "/book"
-          }}
-          secondaryCta={{
-            text: "Download the Monetization Roadmap",
-            href: "/cheat-sheets"
-          }}
-        />
 
-        {/* What Makes Me Different Section */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-white">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            {/* Section Heading */}
-            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-8 sm:mb-12 text-center text-[#1f2933]">
-              What Makes Me Different
-            </h2>
-
-            {/* Feature Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-              {/* Card 1: Rare blend */}
-              <div className="bg-[#f6f7f9] rounded-lg p-5 sm:p-6 border border-[#e2e6ea] hover:border-brand transition-colors">
-                <div className="mb-3 sm:mb-4">
-                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                  </svg>
+      <div className="bg-white text-[#1f2933]">
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#fff7f3] via-white to-white">
+          <div className="pointer-events-none absolute -left-10 top-8 h-56 w-56 rounded-full bg-brand/10 blur-3xl" />
+          <div className="pointer-events-none absolute -right-12 top-24 h-56 w-56 rounded-full bg-[#f59e0b]/10 blur-3xl" />
+          <div className="mx-auto max-w-7xl px-4 pb-10 pt-8 sm:px-6 sm:pb-16 sm:pt-16 lg:px-8 lg:pb-20 lg:pt-20">
+            <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-10">
+              <div className="relative lg:col-span-5 order-2 lg:order-1">
+                <div className="relative mx-auto w-full max-w-[420px] sm:max-w-[500px] aspect-[4/5] overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] bg-white/40 ring-1 ring-[#e2e6ea] shadow-none backdrop-blur-sm">
+                  {/* Edge tint + subtle vignette so it blends into the hero background */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-brand/18 via-transparent to-transparent" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-white/55 via-transparent to-transparent" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0f172a]/5" />
+                  <Image
+                    src="/images/headshot_v4.webp"
+                    alt="Sarah Zou, PhD economist"
+                    fill
+                    sizes="(min-width: 1024px) 30vw, 100vw"
+                    className="object-cover object-center"
+                    priority
+                  />
                 </div>
-                <h3 className="text-lg sm:text-[20px] font-semibold text-[#1f2933] mb-2 sm:mb-3">Rare blend</h3>
-                <p className="text-sm sm:text-base text-[#1f2933] leading-[1.65]">
-                  Pricing + unit economics + econometrics in one person. Most firms split this across CFO/RevOps/DS; I design the whole economic system end-to-end.
-                </p>
               </div>
 
-              {/* Card 2: Research-grade rigor */}
-              <div className="bg-[#f6f7f9] rounded-lg p-5 sm:p-6 border border-[#e2e6ea] hover:border-brand transition-colors">
-                <div className="mb-3 sm:mb-4">
-                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
+              <div className="lg:col-span-7 order-1 lg:order-2 lg:pl-8 xl:pl-10">
+                <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand-soft px-4 py-2">
+                  <span className="h-2 w-2 rounded-full bg-brand" aria-hidden />
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-brand-ink">PHD ECONOMIST</span>
                 </div>
-                <h3 className="text-lg sm:text-[20px] font-semibold text-[#1f2933] mb-2 sm:mb-3">Research-grade rigor</h3>
-                <p className="text-sm sm:text-base text-[#1f2933] leading-[1.65]">
-                  I treat each engagement like an academic study: hypotheses → models → experiments → decisions. Methods are documented; assumptions are explicit.
-                </p>
-              </div>
 
-              {/* Card 3: Funder-friendly outputs */}
-              <div className="bg-[#f6f7f9] rounded-lg p-5 sm:p-6 border border-[#e2e6ea] hover:border-brand transition-colors">
-                <div className="mb-3 sm:mb-4">
-                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg sm:text-[20px] font-semibold text-[#1f2933] mb-2 sm:mb-3">Funder-friendly outputs</h3>
-                <p className="text-sm sm:text-base text-[#1f2933] leading-[1.65]">
-                  Board-ready artifacts (GM waterfall, NRR/LTV bridges, payback guardrails, elasticity write-ups) that withstand diligence—not just pretty decks.
-                </p>
-              </div>
+                <h1 className="mt-4 font-black tracking-tight text-[#0f172a] text-[44px] leading-[0.98] sm:text-[56px] lg:text-[66px]">
+                  <span className="block">Not sure your</span>
+                  <span className="block">pricing makes</span>
+                  <span className="block text-brand">sense?</span>
+                </h1>
 
-              {/* Card 4: Fast, testable decisions */}
-              <div className="bg-[#f6f7f9] rounded-lg p-5 sm:p-6 border border-[#e2e6ea] hover:border-brand transition-colors">
-                <div className="mb-3 sm:mb-4">
-                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg sm:text-[20px] font-semibold text-[#1f2933] mb-2 sm:mb-3">Fast, testable decisions</h3>
-                <p className="text-sm sm:text-base text-[#1f2933] leading-[1.65]">
-                  Sprints ship answers in 1–2 weeks with a 90-day experiment plan. No "more analysis" stall; every recommendation is testable.
+                <p className="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-[#6b7280] sm:text-[18px]">
+                I help AI and SaaS founders fix pricing, unit economics, and monetization decisions with research-grade rigor and startup-speed execution.
                 </p>
+
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-6">
+                  <Link
+                    href={PRIMARY_CTA_HREF}
+                    className={`${primaryButton} inline-flex w-full max-w-[340px] items-center justify-center gap-3 bg-brand px-6 py-4 text-[15px] leading-[1.15] shadow-xl sm:w-auto sm:max-w-none sm:px-10 sm:text-[16px]`}
+                  >
+                    <span className="max-w-[230px] text-center sm:max-w-[240px]">
+                      Book the 90-Minute Pricing Strategy Session
+                    </span>
+                    <ArrowRight className="h-5 w-5 flex-shrink-0" aria-hidden />
+                  </Link>
+
+                  <Link
+                    href={CONSULT_CTA_HREF}
+                    className="text-sm leading-[1.3] font-medium text-[#6b7280] underline underline-offset-4 hover:text-brand-ink"
+                  >
+                    <span className="block">Already need broader support?</span>
+                    <span className="block">Start with a consult</span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="py-12 sm:py-16 lg:py-20 bg-white flex flex-col items-center text-center px-4">
-          <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-2 text-[#1f2933] relative inline-block">
-            How I Can Help
-          </h2>
-          <p className="max-w-2xl mx-auto text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-8 sm:mb-12">
-            Fractional Chief Economist for early-stage tech startups. I turn pricing + unit economics + rigorous modeling into investor-grade decisions.
-          </p>
-          <div className="max-w-6xl w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-4 mb-8 sm:mb-10">
-            {/* Card 1: Pricing & Monetization Sprint */}
-            <Link href="/consulting/services/pricing-monetization-sprint" className="block group">
-              <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]">
-                <Image
-                  src="/images/S-4.webp"
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 92vw"
-                  loading="lazy"
-                />
-                {/* Dark overlay for better text readability */}
-                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
-                
-                {/* Content */}
-                <div className="relative h-full flex flex-col justify-end p-6">
-                  {/* Title - positioned at mid-bottom, moves up on hover */}
-                  <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
-                    <h3 className="text-xl font-bold text-white drop-shadow-lg">
-                      Pricing & Monetization Sprint
-                    </h3>
-                    <p className="text-white text-xs font-medium mt-1 drop-shadow-md">
-                      1–2 weeks
-                    </p>
-                  </div>
-                  
-                  {/* Description - appears on hover */}
-                  <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                    <p className="text-white text-sm leading-relaxed mt-2 drop-shadow-md">
-                      Decide your pricing metric, 3-tier packaging & fences, GM floors/ceilings, monetization narratives, and a 90-day test plan.
-                    </p>
-                  </div>
+        <section className="border-y border-[#e2e6ea] bg-[#f8fafc] py-12 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-center font-serif-playfair text-2xl font-semibold sm:text-[32px]">
+              Best starting point for most founders
+            </h2>
+            <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-brand" />
+            <div className="mt-8 rounded-3xl bg-[#111827] p-5 text-white shadow-2xl ring-1 ring-white/10 sm:p-10">
+              <p className="text-[24px] sm:text-[34px] font-bold leading-tight text-white">
+                90-Minute Pricing Strategy Session
+              </p>
+              <p className="mt-4 text-lg leading-[1.7] text-[#e5e7eb]">
+                If you have one important pricing question, start here.
+              </p>
+              <p className="mt-4 text-base leading-[1.7] text-[#cbd5e1]">
+                Use this session to pressure-test your pricing direction, choose the right value
+                metric, compare usage vs. seat vs. hybrid, or clean up packaging.
+              </p>
+              <h3 className="mt-7 text-base font-semibold uppercase tracking-[0.08em] text-[#fcb79a]">
+                What you get
+              </h3>
+              <ul className="mt-3 grid gap-3 text-sm sm:grid-cols-2 sm:text-base">
+                <li className="rounded-xl border border-[#334155] bg-[#1e293b] px-4 py-3 shadow-sm">
+                  <span className="flex items-center gap-2.5">
+                    <FileText className="h-4 w-4 text-[#fcb79a] flex-shrink-0" aria-hidden />
+                    <span>Short intake review</span>
+                  </span>
+                </li>
+                <li className="rounded-xl border border-[#334155] bg-[#1e293b] px-4 py-3 shadow-sm">
+                  <span className="flex items-center gap-2.5">
+                    <Video className="h-4 w-4 text-[#fcb79a] flex-shrink-0" aria-hidden />
+                    <span>90-minute live session</span>
+                  </span>
+                </li>
+                <li className="rounded-xl border border-[#334155] bg-[#1e293b] px-4 py-3 shadow-sm">
+                  <span className="flex items-center gap-2.5">
+                    <Clock3 className="h-4 w-4 text-[#fcb79a] flex-shrink-0" aria-hidden />
+                    <span>48-hour recommendation memo</span>
+                  </span>
+                </li>
+                <li className="rounded-xl border border-[#334155] bg-[#1e293b] px-4 py-3 shadow-sm">
+                  <span className="flex items-center gap-2.5">
+                    <CheckCircle2 className="h-4 w-4 text-[#fcb79a] flex-shrink-0" aria-hidden />
+                    <span>Top 3 next actions</span>
+                  </span>
+                </li>
+              </ul>
+              <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                <Link href={PRIMARY_CTA_HREF} className={`${primaryButton} w-full text-center sm:w-auto`}>
+                  Book the Session
+                </Link>
+                <div className="sm:text-right">
+                  <p className="text-3xl font-bold text-white">$600</p>
+                  <p className="mt-1 max-w-sm text-xs leading-[1.6] text-[#cbd5e1] sm:ml-auto">
+                    If we move into a{' '}
+                    <Link
+                      href="/consulting/services/pricing-monetization-sprint"
+                      className="underline underline-offset-2 hover:text-white"
+                    >
+                      Pricing &amp; Monetization Sprint
+                    </Link>{' '}
+                    within 14 days,
+                    <br />
+                    I&apos;ll credit this fee toward the project.
+                  </p>
                 </div>
               </div>
-            </Link>
-
-            {/* Card 2: Metrics & Experimentation Sprint */}
-            <Link href="/consulting/services/metrics-experimentation-sprint" className="block group">
-              <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]">
-                <Image
-                  src="/images/metrics.webp"
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 92vw"
-                  loading="lazy"
-                />
-                {/* Dark overlay for better text readability */}
-                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
-                
-                {/* Content */}
-                <div className="relative h-full flex flex-col justify-end p-6">
-                  {/* Title - positioned at mid-bottom, moves up on hover */}
-                  <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
-                    <h3 className="text-xl font-bold text-white drop-shadow-lg">
-                      Metrics & Experimentation Sprint
-                    </h3>
-                    <p className="text-white text-xs font-medium mt-1 drop-shadow-md">
-                      1–2 weeks
-                    </p>
-                  </div>
-                  
-                  {/* Description - appears on hover */}
-                  <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                    <p className="text-white text-sm leading-relaxed mt-2 drop-shadow-md">
-                      In 5 days, install your KPI loop, live dashboards, and ready-to-run experiments—so decisions finally move at product speed.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-
-            {/* Card 3: Fractional Chief Economist */}
-            <Link href="/consulting/services/on-call-economist-retainer" className="block group">
-              <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02]">
-                <Image
-                  src="/images/P-2.webp"
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 92vw"
-                  loading="lazy"
-                />
-                {/* Dark overlay for better text readability */}
-                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
-                
-                {/* Content */}
-                <div className="relative h-full flex flex-col justify-end p-6">
-                  {/* Title - positioned at mid-bottom, moves up on hover */}
-                  <div className="transform group-hover:-translate-y-4 transition-transform duration-300">
-                    <h3 className="text-xl font-bold text-white drop-shadow-lg">
-                      Fractional Chief Economist
-                    </h3>
-                    <p className="text-white text-xs font-medium mt-1 drop-shadow-md">
-                      Monthly
-                    </p>
-                  </div>
-                  
-                  {/* Description - appears on hover */}
-                  <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                    <p className="text-white text-sm leading-relaxed mt-2 drop-shadow-md">
-                      Ongoing ownership of pricing, forward models, and the experiment cadence—so you ship decisions, not dashboards.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Link>
+            </div>
           </div>
-          <Link
-            href="/book"
-            className={`${outlineButton} inline-block border-2 font-bold rounded-lg px-6 sm:px-10 py-3 sm:py-4 text-[19px] leading-none tracking-widest mt-4`}
-          >
-            LET'S WORK TOGETHER
-          </Link>
         </section>
-        <section className="py-12 sm:py-16 lg:py-20 bg-white flex flex-col items-center px-4">
-          <div className="max-w-4xl w-full">
-            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold mb-6 sm:mb-8 text-center text-[#1f2933]">
+
+        <section className="py-12 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-center font-serif-playfair text-2xl font-semibold sm:text-[32px]">
+              Choose your path
+            </h2>
+            <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-brand" />
+            <div className="mx-auto mt-10 grid max-w-6xl gap-6 md:grid-cols-3">
+              {pathCards.map((card, index) => {
+                const icon =
+                  index === 0 ? (
+                    <Clock3 className="h-7 w-7 text-brand" aria-hidden />
+                  ) : index === 1 ? (
+                    <Rocket className="h-7 w-7 text-[#64748b]" aria-hidden />
+                  ) : (
+                    <BookOpen className="h-7 w-7 text-[#64748b]" aria-hidden />
+                  )
+
+                return (
+                <div
+                  key={card.title}
+                  className={`relative rounded-2xl border p-5 sm:p-7 transition-all ${
+                    card.highlighted
+                      ? 'border-[#edd8b5] bg-[#f8f1e8] shadow-md'
+                      : 'border-[#e2e6ea] bg-white shadow-sm hover:-translate-y-1 hover:shadow-lg'
+                  }`}
+                >
+                  {card.highlighted && (
+                    <span className="absolute right-0 top-0 rounded-bl-lg rounded-tr-2xl bg-brand px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white">
+                      Popular
+                    </span>
+                  )}
+                  <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-[#f1f5f9]">
+                    {icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-[#1f2933]">{card.title}</h3>
+                  <p className="mt-3 min-h-[72px] text-base leading-[1.65] text-[#3b4652]">
+                    {card.description}
+                  </p>
+                  <Link
+                    href={card.href}
+                    className={`mt-6 inline-flex items-center gap-2 font-semibold ${
+                      card.highlighted ? 'text-brand-ink hover:text-brand' : 'text-[#374151] hover:text-brand-ink'
+                    }`}
+                  >
+                    {card.cta} <ArrowRight className="h-4 w-4" aria-hidden />
+                  </Link>
+                </div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-[#e2e6ea] bg-[#f8fafc] py-12 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-center font-serif-playfair text-2xl font-semibold sm:text-[32px]">
+              What makes me different
+            </h2>
+            <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-brand" />
+            <div className="mx-auto mt-8 max-w-4xl text-center text-base leading-[1.75] text-[#3b4652] sm:text-[18px]">
+              <p>Most pricing consultants give you frameworks.</p>
+              <p className="mt-2">Most analysts give you rigor.</p>
+              <p className="mt-2">Most startup operators give you speed.</p>
+              <p className="mt-4 font-semibold text-[#1f2933]">I sit at the intersection.</p>
+              <p className="mt-4">
+                I do not just give pricing advice. I work more like a fractional Chief Economist
+                for startups making consequential monetization decisions.
+              </p>
+            </div>
+            <div className="mx-auto mt-10 h-px w-full bg-[#e2e6ea]" />
+            <h3 className="mt-10 text-center font-serif-playfair text-2xl font-semibold text-[#1f2933] sm:text-[32px]">
+              Why clients hire me
+            </h3>
+            <div className="mx-auto mt-8 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {differentiators.map((item) => {
+                const Icon = item.icon
+
+                return (
+                  <div key={item.title} className="text-left">
+                    <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[#e2e6ea] bg-white shadow-sm">
+                      <Icon className="h-5 w-5 text-brand" aria-hidden />
+                    </div>
+                    <h4 className="text-[20px] font-semibold leading-tight text-[#1f2933] sm:text-[22px]">
+                      {item.title}
+                    </h4>
+                    <p className="mt-2 text-base leading-[1.65] text-[#3b4652]">
+                      {item.description}
+                    </p>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-center font-serif-playfair text-2xl font-semibold sm:text-[32px]">
+              What founders say
+            </h2>
+            <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-brand" />
+            <div className="mt-9 grid gap-6 md:grid-cols-2">
+              {testimonials.map((item) => (
+                <figure
+                  key={item.author}
+                  className="rounded-2xl border border-[#e2e6ea] bg-white p-5 sm:p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
+                >
+                  <blockquote className="text-base italic leading-[1.75] text-[#1f2933] sm:text-[18px]">
+                    &quot;{item.quote}&quot;
+                  </blockquote>
+                  <figcaption className="mt-6 text-sm text-[#3b4652]">
+                    <p className="font-semibold text-[#1f2933]">{item.author}</p>
+                    <p>{item.role}</p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-[#e2e6ea] bg-gradient-to-b from-[#f8fafc] to-white py-12 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-center font-serif-playfair text-2xl font-semibold sm:text-[32px]">
+              Need more than one session?
+            </h2>
+            <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-brand" />
+            <div className="mx-auto mt-10 grid max-w-6xl gap-6 md:grid-cols-3">
+              {deeperServices.map((service) => (
+                <div
+                  key={service.title}
+                  className="group relative overflow-hidden rounded-2xl border border-[#e2e6ea] bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div className="relative h-[340px] w-full sm:h-[420px]">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b1228]/85 via-[#111827]/45 to-[#111827]/15" />
+                    <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7">
+                      <h3 className="text-xl font-semibold leading-tight text-white sm:text-[32px]">
+                        {service.title}
+                      </h3>
+                      <p className="mt-3 min-h-[72px] text-base leading-[1.65] text-[#d1d5db]">
+                        {service.description}
+                      </p>
+                      <Link
+                        href={service.href}
+                        className="mt-4 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-[#f97316] hover:text-[#fb923c]"
+                      >
+                        {service.cta} <ArrowRight className="h-4 w-4" aria-hidden />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#f8fafc] py-12 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-center font-serif-playfair text-2xl font-semibold sm:text-[32px]">
               Frequently Asked Questions
             </h2>
-            <div className="space-y-4 sm:space-y-6">
-              <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">What is a fractional chief economist?</h3>
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                  A fractional chief economist is a part-time executive who designs your pricing system, unit economics, and decision cadence—bringing PhD-level rigor without a full-time hire. Learn more about <Link href="/about" className={brandLink}>fractional economics services</Link>.
-                </p>
-              </div>
-              <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">How is a Fractional Chief Economist different from a Fractional CFO?</h3>
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                  A fractional CFO manages cash, reporting, controls, and fundraising mechanics. A fractional chief economist designs the engines that create cash—pricing, packaging, and the economic system that drives NRR, payback, and gross margin.
-                </p>
-              </div>
-              <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">How is a Fractional Chief Economist different from RevOps?</h3>
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                  RevOps optimizes the GTM machine (CRM hygiene, pipeline stages, handoffs, comp plans). A fractional chief economist defines what you sell and why it's worth the price (value metric, fences, monetization playbook) and then sets the economic guardrails RevOps executes against.
-                </p>
-              </div>
-              <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">Who do you work with?</h3>
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                  Pre-seed to Series A teams across SaaS, APIs, AI, OSS-commercial, operator-led marketplaces, and hardware-as-a-service that want rigor without enterprise bloat. See <Link href="/about" className={brandLink}>who I work with</Link>.
-                </p>
-              </div>
-              <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">How fast do we see impact?</h3>
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                  Decisions ship in 1–2 weeks via focused <Link href="/consulting/services/pricing-monetization-sprint" className={brandLink}>Monetization Sprints</Link> or <Link href="/consulting/services/metrics-experimentation-sprint" className={brandLink}>Metrics Sprints</Link>, with measurable effects typically within 2–4 weeks and a 90-day experiment plan to learn fast.
-                </p>
-              </div>
-              <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">What makes your approach different?</h3>
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                  Combine pricing + unit economics + econometrics in one person; every recommendation is hypothesis-driven, documented, and testable, producing board-ready artifacts like pricing strategy reports and unit-economics models.
-                </p>
-              </div>
-              <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">What do engagements look like?</h3>
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                  Start with a 15-min consult → choose a <Link href="/consulting/services/pricing-monetization-sprint" className={brandLink}>Monetization Sprint</Link> or <Link href="/consulting/services/metrics-experimentation-sprint" className={brandLink}>Metrics Sprint</Link> → optional <Link href="/consulting/services/on-call-economist-retainer" className={brandLink}>retainer</Link> for ongoing pricing, forward models, and the experiment cadence.
-                </p>
-              </div>
-              <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">What does it cost?</h3>
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                  Sprints are fixed-fee ($5k–$18k for <Link href="/consulting/services/pricing-monetization-sprint" className={brandLink}>Monetization</Link>; $6k–$12k for <Link href="/consulting/services/metrics-experimentation-sprint" className={brandLink}>Metrics</Link>) with defined deliverables and timelines. <Link href="/consulting/services/on-call-economist-retainer" className={brandLink}>Retainers</Link> start at $4k/mo with tiered time commitments.
-                </p>
-              </div>
-              <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">Do you work with our existing analytics stack?</h3>
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                  Yes—common tools include GTM, GA, Amplitude, and Mixpanel. I integrate with your stack and keep instrumentation "light but correct" so dashboards stay trustworthy.
-                </p>
-              </div>
-              <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">Where do you work from?</h3>
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                  Remote first; based in Princeton/NJ with on-site availability in the NYC and Philadelphia metros; US/EU coverage. See <Link href="/about" className={brandLink}>where I work</Link>.
-                </p>
-              </div>
+            <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-brand" />
+            <div className="mt-8 space-y-4">
+              {faqItems.map((item, index) => (
+                <details
+                  key={item.q}
+                  open={index === 0}
+                  className={`group rounded-2xl border bg-white shadow-sm transition-all ${
+                    index === 0 ? 'border-brand/60' : 'border-[#d6dce4]'
+                  }`}
+                >
+                  <summary className="flex cursor-pointer list-none items-center justify-between px-5 py-4 sm:px-7 sm:py-5">
+                    <h3 className="text-lg font-semibold text-[#0f172a] sm:text-xl">{item.q}</h3>
+                    <ChevronDown
+                      className="h-5 w-5 flex-shrink-0 text-[#64748b] transition-transform duration-200 group-open:rotate-180"
+                      aria-hidden
+                    />
+                  </summary>
+                  <div className="border-t border-[#e2e6ea] px-5 py-4 text-[15px] leading-[1.7] text-[#3b4652] sm:px-7 sm:py-5 sm:text-base sm:leading-[1.75]">
+                    {item.a}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="relative overflow-hidden bg-brand py-12 text-brand-on sm:py-16 lg:py-20">
+          <div className="pointer-events-none absolute -left-16 top-8 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
+          <div className="pointer-events-none absolute -right-12 bottom-4 h-72 w-72 rounded-full bg-black/10 blur-3xl" />
+          <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+            <h2 className="font-serif-playfair text-3xl font-bold leading-tight text-white sm:text-[42px]">
+              Need a sharper pricing decision before your next move?
+            </h2>
+            <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-[#fcb79a]" />
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-[1.75] text-brand-soft sm:text-[19px]">
+              Start with the 90-Minute Pricing Strategy Session.
+            </p>
+            <div className="mt-8">
+              <Link
+                href={PRIMARY_CTA_HREF}
+                className="inline-block rounded-full bg-white px-7 py-3 text-lg font-bold text-brand transition-colors hover:bg-brand-soft"
+              >
+                Book the 90-Minute Pricing Strategy Session
+              </Link>
+            </div>
+            <p className="mt-5 text-sm text-brand-soft sm:text-base">
+              <Link href={CONSULT_CTA_HREF} className="underline underline-offset-4 hover:text-white">
+                Need a broader conversation? Book a Free Consult
+              </Link>
+            </p>
+            <p className="mx-auto mt-3 max-w-2xl text-sm text-brand-soft sm:text-base">
+              Or explore a deeper sprint if you already know you need full pricing work.
+            </p>
+            <div className="mt-6">
+              <Link
+                href="/consulting/services/pricing-monetization-sprint"
+                className={`${outlineButton} border-white text-white hover:bg-white/10`}
+              >
+                Explore the Pricing &amp; Monetization Sprint
+              </Link>
             </div>
           </div>
         </section>
       </div>
+
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "url": "https://sarahzou.com",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What is a fractional chief economist?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "A fractional chief economist is a part-time executive who designs your pricing system, unit economics, and decision cadence—bringing PhD-level rigor without a full-time hire."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How is a Fractional Chief Economist different from a Fractional CFO?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "A fractional CFO manages cash, reporting, controls, and fundraising mechanics. A fractional chief economist designs the engines that create cash—pricing, packaging, and the economic system that drives NRR, payback, and gross margin."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How is a Fractional Chief Economist different from RevOps?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "RevOps optimizes the GTM machine (CRM hygiene, pipeline stages, handoffs, comp plans). A fractional chief economist defines what you sell and why it's worth the price (value metric, fences, monetization playbook) and then sets the economic guardrails RevOps executes against."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Who do you work with?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Pre-seed to Series A teams across SaaS, APIs, AI, OSS-commercial, operator-led marketplaces, and hardware-as-a-service that want rigor without enterprise bloat."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How fast do we see impact?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Decisions ship in 1–2 weeks via focused sprints, with measurable effects typically within 2–4 weeks and a 90-day experiment plan to learn fast."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What makes your approach different?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Combine pricing + unit economics + econometrics in one person; every recommendation is hypothesis-driven, documented, and testable, producing board-ready artifacts like pricing strategy reports and unit-economics models."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What do engagements look like?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Start with a 15-min consult → choose a Sprint (Monetization or Metrics) → optional retainer for ongoing pricing, forward models, and the experiment cadence."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What does it cost?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Sprints are fixed-fee ($5k–$18k Monetization; $6k–$12k Metrics) with defined deliverables and timelines. Retainers start at $4k/mo with tiered time commitments."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do you work with our existing analytics stack?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes—common tools include GTM, GA, Amplitude, and Mixpanel. I integrate with your stack and keep instrumentation \"light but correct\" so dashboards stay trustworthy."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Where do you work from?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Remote first; based in Princeton/NJ with on-site availability in the NYC and Philadelphia metros; US/EU coverage."
-              }
-            }
-          ]
-        }) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
     </>
   )
-} 
+}

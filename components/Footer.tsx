@@ -2,12 +2,17 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Linkedin, Mail } from 'lucide-react'
 
-const navLinks = [
-  { href: '/consulting', label: 'Consulting' },
-  { href: '/wiki/pricing', label: 'Wiki' },
-  { href: '/cheat-sheets', label: 'Cheat Sheets' },
+const workLinks = [
+  { href: '/consulting', label: 'Work With Me' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
+]
+
+const resourceLinks = [
+  { href: '/wiki/pricing', label: 'Pricing Wiki' },
+  { href: '/free-tools/pricing-model-matchmaker', label: 'Pricing Model Matchmaker' },
+  { href: '/cheat-sheets', label: 'Roadmap Download' },
+  { href: '/newsletter', label: 'Newsletter' },
 ]
 
 const Footer = () => {
@@ -29,8 +34,31 @@ const Footer = () => {
               <span className="text-xs text-[#3b4652] tracking-wide mt-0.5">EconNova Consulting</span>
             </div>
           </Link>
+          <div className="mb-3 text-xs uppercase tracking-[0.08em] text-[#3b4652] font-semibold">
+            Navigation
+          </div>
+          <div className="flex flex-wrap gap-2 sm:gap-3 mb-3 justify-center md:justify-start">
+            {workLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="bg-white text-[#111] px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-sm sm:text-base font-medium shadow-sm border border-[#eee] hover:bg-[#c2410c] hover:text-white transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              href="/consulting/entry-offer/form"
+              className="bg-brand text-white px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-sm sm:text-base font-medium shadow-sm border border-brand hover:bg-brand-ink transition-colors"
+            >
+              Book Session
+            </Link>
+          </div>
+          <div className="mb-3 text-xs uppercase tracking-[0.08em] text-[#3b4652] font-semibold">
+            Free Resources
+          </div>
           <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8 justify-center md:justify-start">
-            {navLinks.map((link) => (
+            {resourceLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}

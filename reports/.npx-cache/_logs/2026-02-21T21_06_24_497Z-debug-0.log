@@ -1,0 +1,22 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.2
+2 info using node@v22.16.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\Sarah-PC\Documents\ROOBA\EconNova\Personal_Website_6th\.npmrc
+5 silly config load:file:C:\Users\Sarah-PC\.npmrc
+6 silly config load:file:C:\Users\Sarah-PC\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm exec lighthouse http://localhost:3003/wiki/pricing/foundations/value-based-pricing --only-categories=accessibility --output=json --output-path=reports/lh-wiki-concept.json --chrome-flags=--headless --no-sandbox --quiet
+8 verbose argv "exec" "--cache" "reports/.npx-cache" "--yes" "--" "lighthouse" "http://localhost:3003/wiki/pricing/foundations/value-based-pricing" "--only-categories=accessibility" "--output=json" "--output-path=reports/lh-wiki-concept.json" "--chrome-flags=--headless --no-sandbox" "--quiet"
+9 verbose logfile logs-max:10 dir:C:\Users\Sarah-PC\Documents\ROOBA\EconNova\Personal_Website_6th\reports\.npx-cache\_logs\2026-02-21T21_06_24_497Z-
+10 verbose logfile C:\Users\Sarah-PC\Documents\ROOBA\EconNova\Personal_Website_6th\reports\.npx-cache\_logs\2026-02-21T21_06_24_497Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 http fetch GET 200 https://registry.npmjs.org/lighthouse 118ms (cache revalidated)
+14 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+15 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+16 verbose cwd C:\Users\Sarah-PC\Documents\ROOBA\EconNova\Personal_Website_6th
+17 verbose os Windows_NT 10.0.26200
+18 verbose node v22.16.0
+19 verbose npm  v10.9.2
+20 verbose exit 0
+21 info ok

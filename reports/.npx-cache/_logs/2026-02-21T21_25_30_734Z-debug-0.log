@@ -1,0 +1,23 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.2
+2 info using node@v22.16.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\Sarah-PC\Documents\ROOBA\EconNova\Personal_Website_6th\.npmrc
+5 silly config load:file:C:\Users\Sarah-PC\.npmrc
+6 silly config load:file:C:\Users\Sarah-PC\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm exec lighthouse http://localhost:3003/consulting/services/metrics-experimentation-sprint --only-categories=accessibility --output=json --output-path=reports/lh-metrics-sprint.json --chrome-flags=--headless --no-sandbox --quiet
+8 verbose argv "exec" "--cache" "reports/.npx-cache" "--yes" "--" "lighthouse" "http://localhost:3003/consulting/services/metrics-experimentation-sprint" "--only-categories=accessibility" "--output=json" "--output-path=reports/lh-metrics-sprint.json" "--chrome-flags=--headless --no-sandbox" "--quiet"
+9 verbose logfile logs-max:10 dir:C:\Users\Sarah-PC\Documents\ROOBA\EconNova\Personal_Website_6th\reports\.npx-cache\_logs\2026-02-21T21_25_30_734Z-
+10 verbose logfile C:\Users\Sarah-PC\Documents\ROOBA\EconNova\Personal_Website_6th\reports\.npx-cache\_logs\2026-02-21T21_25_30_734Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly logfile done cleaning log files
+13 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+14 http fetch GET 200 https://registry.npmjs.org/lighthouse 129ms (cache revalidated)
+15 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+16 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+17 verbose cwd C:\Users\Sarah-PC\Documents\ROOBA\EconNova\Personal_Website_6th
+18 verbose os Windows_NT 10.0.26200
+19 verbose node v22.16.0
+20 verbose npm  v10.9.2
+21 verbose exit 0
+22 info ok

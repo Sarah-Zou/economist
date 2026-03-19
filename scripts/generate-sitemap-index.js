@@ -124,6 +124,7 @@ function generatePostsSitemap() {
     const postsDir = path.join(process.cwd(), '_posts');
     const fileNames = fs.readdirSync(postsDir).filter(name => name.endsWith('.md'));
     
+    const baseUrlNorm = baseUrl.replace(/\/$/, '');
     const posts = fileNames.map((fileName) => {
       const fullPath = path.join(postsDir, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -132,10 +133,20 @@ function generatePostsSitemap() {
       return {
         slug,
         date: data.date || new Date().toISOString(),
+        draft: data.draft,
+        canonical: data.canonical,
       };
     });
 
-    const postPages = posts.map((post) => ({
+    const indexablePosts = posts.filter((post) => {
+      if (post.draft === true) return false;
+      const canon = post.canonical;
+      if (!canon) return true;
+      if (!/^https?:\/\//i.test(canon)) return true;
+      return canon.startsWith(baseUrlNorm);
+    });
+
+    const postPages = indexablePosts.map((post) => ({
       url: `${baseUrl}/newsletter/${post.slug}`,
       lastModified: post.date || new Date().toISOString(),
       changeFrequency: 'monthly',

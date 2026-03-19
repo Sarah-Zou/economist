@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { getAllPosts } from '@/lib/api'
+import { getIndexablePosts } from '@/lib/api'
 
 const baseUrl = 'https://sarahzou.com'
 const POSTS_PER_PAGE = 10
@@ -81,7 +81,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  const newsletterPosts = getAllPosts()
+  const newsletterPosts = getIndexablePosts()
   const newsletterTotalPages = Math.ceil(newsletterPosts.length / POSTS_PER_PAGE)
   const newsletterPaginationPages = Array.from({ length: Math.max(newsletterTotalPages - 1, 0) }, (_, i) => ({
     url: normalizeUrl(`/newsletter/page/${i + 2}`),

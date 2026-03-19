@@ -14,6 +14,7 @@ export interface Post {
   content: string
   tags: string[]
   canonical?: string
+  draft?: boolean
 }
 
 function getFileDate(filePath: string, frontmatterDate: string) {
@@ -52,10 +53,24 @@ export function getAllPosts(): Post[] {
       content,
       tags: data.tags || [],
       canonical: data.canonical,
+      draft: data.draft,
     }
   })
 
   return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1))
+}
+
+const SITE_BASE = 'https://sarahzou.com'
+
+/** Posts suitable for sitemap: not draft, no external canonical. */
+export function getIndexablePosts(): Post[] {
+  return getAllPosts().filter((post) => {
+    if (post.draft === true) return false
+    const canon = post.canonical
+    if (!canon) return true
+    if (!/^https?:\/\//i.test(canon)) return true
+    return canon.startsWith(SITE_BASE)
+  })
 }
 
 export function getPostBySlug(slug: string): Post | null {
@@ -79,6 +94,7 @@ export function getPostBySlug(slug: string): Post | null {
       content,
       tags: data.tags || [],
       canonical: data.canonical,
+      draft: data.draft,
     }
   } catch (error) {
     return null

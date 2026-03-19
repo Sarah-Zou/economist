@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { getAllPosts } from '@/lib/api'
+import { getIndexablePosts } from '@/lib/api'
 
 const baseUrl = 'https://sarahzou.com'
 
@@ -10,7 +10,7 @@ function normalizeUrl(path: string): string {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const posts = getAllPosts()
+  const posts = getIndexablePosts()
 
   // Newsletter posts
   const postPages = posts.map((post) => ({
