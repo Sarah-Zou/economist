@@ -1,43 +1,37 @@
-import Link from 'next/link';
-import { brandLink } from '@/lib/brandStyles';
-
 export default function FAQSection() {
+  const faqs = [
+    {
+      q: 'Should I start with the session or the sprint?',
+      a: 'Start with the session if you need clarity on one important pricing decision. Choose the sprint if you already know you need a fuller pricing structure, packaging, and rollout plan.',
+    },
+    {
+      q: 'Is the session fee credited toward the sprint?',
+      a: 'Yes. If we move into a Pricing & Monetization Sprint within 14 days, the $600 session fee is credited toward the project.',
+    },
+    {
+      q: 'Will this work if we are pre-revenue?',
+      a: 'Yes, in many cases this is the right time to design a first pricing structure before habits, discounting, and exceptions harden.',
+    },
+    {
+      q: 'What do you need from us to start?',
+      a: 'Usually a short intake, product context, current pricing if you have it, and focused founder input on goals, customers, and constraints.',
+    },
+    {
+      q: 'Can you help after the sprint?',
+      a: 'Yes. Some founders stop after the sprint and execute internally. Others continue into additional support for rollout, testing, or ongoing strategic work.',
+    },
+  ];
+
   return (
-    <section id="faq" className="scroll-mt-24">
-      <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-8 text-center">Frequently Asked Questions</h2>
+    <div className="scroll-mt-24">
       <div className="space-y-4 max-w-3xl mx-auto">
-        <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-          <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">Will this work if we're pre-revenue?</h3>
-          <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-            Yes. Pre-revenue or pre-MVP is the perfect timing to start designing your first pricing strategy. The sprint is designed for pre-launch through &lt;$3M ARR to make your first price investor-credible and testable.
-          </p>
-        </div>
-        <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-          <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">Will customers churn if we raise prices?</h3>
-          <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-            We pair guardrails with plan fences, run low-risk experiments, and read impact via unit-economics snapshots—minimizing exposure while learning.
-          </p>
-        </div>
-        <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-          <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">Can we switch to usage-based?</h3>
-          <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-            If a usage metric truly tracks value, we'll validate the metric, design hybrid fences, and ship a 30-day rollout plan with comms.
-          </p>
-        </div>
-        <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-          <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">What do you need from us to start?</h3>
-          <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-            Discovery inputs/data room and a current-state scan, followed by two focused workshops to lock positioning, customer segmentations, value metric, tiers, guardrails, and etc.
-          </p>
-        </div>
-        <div className="bg-white rounded-lg p-5 sm:p-6 border border-[#e5e7eb] shadow-sm">
-          <h3 className="font-semibold text-[20px] sm:text-[22px] mb-3 text-[#1f2933]">What exactly do we get?</h3>
-          <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-            A <strong>pricing strategy report</strong>, <strong>unit-economics model</strong>, <strong>pricing implementation roadmap</strong>, <strong>experiment briefs</strong>, and <strong>investor mini-pack</strong>—delivered in one to two weeks. See <Link href="/consulting/services/pricing-monetization-sprint" className={brandLink}>deliverables</Link>.
-          </p>
-        </div>
+        {faqs.map((item) => (
+          <div key={item.q} className="rounded-lg border border-[#e5e7eb] bg-white p-5 shadow-sm sm:p-6">
+            <h3 className="mb-3 text-[20px] font-semibold text-[#1f2933] sm:text-[22px]">{item.q}</h3>
+            <p className="text-base leading-[1.65] text-[#1f2933] sm:text-[17px]">{item.a}</p>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }
-
