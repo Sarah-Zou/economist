@@ -37,13 +37,13 @@ const Navbar = () => {
               Work With Me
             </Link>
             <div className="relative group">
-              <button
-                type="button"
+              <Link
+                href="/free-tools"
                 className="text-base text-[#3b4652] hover:text-[#1f2933] transition-colors"
                 aria-haspopup="menu"
               >
                 Free Resources
-              </button>
+              </Link>
               <div className="absolute left-0 top-full mt-2 w-64 rounded-lg border border-[#e2e6ea] bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all">
                 {freeResourceLinks.map((item) => (
                   <Link
@@ -80,9 +80,9 @@ const Navbar = () => {
               >
                 Work With Me
               </Link>
-              <div className="rounded-md px-4 py-2 text-base text-[#3b4652]">
+              <Link href="/free-tools" className="block rounded-md px-4 py-2 text-base text-[#3b4652] hover:text-[#1f2933] hover:bg-[#f6f7f9] transition-colors">
                 Free Resources
-              </div>
+              </Link>
               {freeResourceLinks.map((item) => (
                 <Link
                   key={item.href}

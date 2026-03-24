@@ -42,7 +42,7 @@ export function MatchmakerLanding() {
           </button>
 
           <p className="mt-8 text-sm text-[#7a7f88]">
-            Designed for Pre-seed to Series B founders.
+            Designed for Pre-seed to Series A founders.
           </p>
 
           <section className="mx-auto mt-16 w-full max-w-2xl" id="faq">
