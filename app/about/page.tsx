@@ -1,14 +1,104 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import HeroStackedImages from '@/components/HeroStackedImages'
-import Cta from '@/components/about/Cta'
-import FAQSection from '@/components/about/FAQSection'
-import '@/app/prose.css'
+import {
+  ArrowRight,
+  BarChart3,
+  Briefcase,
+  CheckCircle2,
+  LineChart,
+  Rocket,
+  ShieldCheck,
+  Zap,
+} from 'lucide-react'
+import { outlineButton, primaryButton } from '@/lib/brandStyles'
+
+const PRIMARY_CTA_HREF = '/book'
+const SECONDARY_CTA_HREF = '/consulting'
+const heroProofPoints = [
+  'PhD Economics',
+  'MS Finance & Statistics',
+  'NBER / World Bank research',
+  'Citigroup',
+  'Capgemini',
+  'Startup pricing & ops',
+]
+
+const companyTypes = [
+  'SaaS',
+  'AI products',
+  'API platforms',
+  'OSS-commercial products',
+  'operator-led marketplaces',
+  'hardware-enabled software businesses',
+]
+
+const bestUseCases = [
+  'You are unsure how to price v1',
+  'Your current pricing is not working',
+  'Your unit economics are blurry',
+  'Your team has data but not decision clarity',
+  'Investors or leadership need a stronger economic story',
+]
+
+const selectedOutcomes: { id: string; content: ReactNode }[] = [
+  {
+    id: 'cac-payback',
+    content: (
+      <>
+        Helped <strong>redesign pricing and packaging</strong> to support faster <strong>CAC payback</strong>
+      </>
+    ),
+  },
+  {
+    id: 'nrr',
+    content: (
+      <>
+        Improved <strong>monetization structure</strong> to support stronger <strong>expansion</strong> and{' '}
+        <strong>NRR</strong>
+      </>
+    ),
+  },
+  {
+    id: 'models-narratives',
+    content: (
+      <>
+        Built <strong>forward models</strong>, <strong>KPI logic</strong>, and{' '}
+        <strong>investor-facing economic narratives</strong> to support growth and fundraising
+      </>
+    ),
+  },
+  {
+    id: 'raises',
+    content: (
+      <>
+        Supported clients involved in <strong>$50M+</strong> in cumulative raises
+      </>
+    ),
+  },
+]
+
+const workPrinciples = [
+  {
+    title: 'Hypothesis-driven',
+    description:
+      'Focused on what is most likely to improve revenue, retention, or margin.',
+  },
+  {
+    title: 'Documented',
+    description: 'Clear about assumptions, tradeoffs, and decision logic.',
+  },
+  {
+    title: 'Testable',
+    description: 'Built to be launched, measured, and refined in the real business.',
+  },
+]
 
 export const metadata: Metadata = {
-  title: "About Sarah Zou — Fractional Chief Economist for Tech Startups | Sarah Zou",
-  description: "PhD economist. Pricing, metrics, and monetization for Seed–Series A SaaS, APIs & AI. NRR, payback, value metric, and investor-grade narrative—without big-company bloat.",
+  title: 'About | Fractional Chief Economist for Tech Startups',
+  description:
+    'Fractional Chief Economist support for pre-seed to Series A tech startups: pricing, monetization, and unit economics with research-grade rigor and startup-speed execution.',
   robots: {
     index: true,
     follow: true,
@@ -21,772 +111,442 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://sarahzou.com/about",
+    canonical: 'https://sarahzou.com/about',
   },
   openGraph: {
-    title: "About Sarah Zou — Fractional Chief Economist for Tech Startups | Sarah Zou",
-    description: "PhD economist. Pricing, metrics, and monetization for Seed–Series A SaaS, APIs & AI. NRR, payback, value metric, and investor-grade narrative—without big-company bloat.",
-    type: "website",
-    url: "https://sarahzou.com/about",
-    images: ["https://sarahzou.com/images/about_headshot.webp"],
+    title: 'About | Fractional Chief Economist for Tech Startups',
+    description:
+      'Pricing, monetization, and unit economics support for startup founders who need clear decisions and investor-defensible economics.',
+    type: 'website',
+    url: 'https://sarahzou.com/about',
+    images: ['https://sarahzou.com/images/about_headshot.webp'],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "About Sarah Zou — Fractional Chief Economist for Tech Startups | Sarah Zou",
-    description: "PhD economist. Pricing, metrics, and monetization for Seed–Series A SaaS, APIs & AI. NRR, payback, value metric, and investor-grade narrative—without big-company bloat.",
-    images: ["https://sarahzou.com/images/about_headshot.webp"],
+    card: 'summary_large_image',
+    title: 'About | Fractional Chief Economist for Tech Startups',
+    description:
+      'Pricing, monetization, and unit economics support for startup founders who need clear decisions and investor-defensible economics.',
+    images: ['https://sarahzou.com/images/about_headshot.webp'],
   },
-};
-
-// Content data
-const heroData = {
-  photoSrc: "/images/about_headshot.webp",
-  bgSrc: "/images/background.webp",
-  title: "Sarah Zou, PhD",
-  kicker: "--- Fractional Chief Economist for Tech ---",
-  lede: "I turn pricing into a growth system—linking value metrics to experiments (not debates) so your team ships decisions next week and your board sees a defensible economic narrative next month.",
-  photoAlt: "Dr. Sarah Zou, Fractional Chief Economist and Pricing Strategist"
 }
 
-const whoIWorkWith = {
-  title: "Who I work with & when to bring me in",
-  content: "I partner with",
-  contentBold: "pre-seed to Series A teams",
-  contentAfter: "that want rigor without big-company bloat.",
-  techTypes: [
-    {
-      name: "SaaS",
-      icon: (
-        <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="6" y="6" width="12" height="12" rx="2" stroke="#ff5722" strokeWidth="2" fill="none"/>
-          <path d="M9 12 L12 9 L15 12 M9 12 L12 15 L15 12" stroke="#ff5722" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      )
-    },
-    {
-      name: "API platforms",
-      icon: (
-        <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="6" stroke="#ff5722" strokeWidth="2" fill="none"/>
-          <path d="M12 6 L12 18 M6 12 L18 12" stroke="#ff5722" strokeWidth="2" strokeLinecap="round"/>
-          <circle cx="12" cy="12" r="2" fill="#ff5722"/>
-        </svg>
-      )
-    },
-    {
-      name: "AI products",
-      icon: (
-        <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 4 L8 8 L12 12 L16 8 Z" stroke="#ff5722" strokeWidth="2" fill="none"/>
-          <path d="M4 12 L8 16 L12 12 L8 8 Z" stroke="#ff5722" strokeWidth="2" fill="none"/>
-          <path d="M20 12 L16 16 L12 12 L16 8 Z" stroke="#ff5722" strokeWidth="2" fill="none"/>
-          <path d="M12 20 L8 16 L12 12 L16 16 Z" stroke="#ff5722" strokeWidth="2" fill="none"/>
-          <circle cx="12" cy="12" r="3" stroke="#ff5722" strokeWidth="2" fill="none"/>
-        </svg>
-      )
-    },
-    {
-      name: "OSS-commercial",
-      icon: (
-        <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2 L15 9 L22 9 L16 14 L18 21 L12 17 L6 21 L8 14 L2 9 L9 9 Z" stroke="#ff5722" strokeWidth="2" fill="none" strokeLinejoin="round"/>
-        </svg>
-      )
-    },
-    {
-      name: "Operator-led marketplaces",
-      icon: (
-        <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="4" y="6" width="6" height="6" rx="1" stroke="#ff5722" strokeWidth="2" fill="none"/>
-          <rect x="14" y="6" width="6" height="6" rx="1" stroke="#ff5722" strokeWidth="2" fill="none"/>
-          <rect x="4" y="14" width="6" height="6" rx="1" stroke="#ff5722" strokeWidth="2" fill="none"/>
-          <rect x="14" y="14" width="6" height="6" rx="1" stroke="#ff5722" strokeWidth="2" fill="none"/>
-        </svg>
-      )
-    },
-    {
-      name: "Hardware-as-a-service",
-      icon: (
-        <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="6" y="5" width="12" height="14" rx="2" stroke="#ff5722" strokeWidth="2" fill="none"/>
-          <rect x="9" y="8" width="6" height="4" rx="1" stroke="#ff5722" strokeWidth="1.5" fill="none"/>
-          <circle cx="10" cy="15" r="1" fill="#ff5722"/>
-          <circle cx="14" cy="15" r="1" fill="#ff5722"/>
-        </svg>
-      )
-    }
-  ],
-  triggers: [
-    {
-      text: "Unsure how to price v1, or current pricing isn't working.",
-      icon: (
-        <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="10" fill="#ec4899" opacity="0.2"/>
-          <text x="12" y="17" fontSize="24" fontWeight="bold" fill="#ec4899" textAnchor="middle" fontFamily="Arial, sans-serif">?</text>
-        </svg>
-      )
-    },
-    {
-      text: "Pre/Post-MVP and need monetization before GTM locks in bad habits.",
-      icon: (
-        <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="24" height="24" fill="#a78bfa" opacity="0.2" rx="4"/>
-          <path d="M3 18 L7 14 L11 16 L15 10 L19 12 L21 8" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-        </svg>
-      )
-    },
-    {
-      text: "Unit economics unclear; need CAC payback/NRR/GM targets and a path to hit them.",
-      icon: (
-        <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="6" y="4" width="12" height="16" rx="2" fill="#92400e" opacity="0.2"/>
-          <rect x="8" y="7" width="8" height="1" fill="#92400e"/>
-          <rect x="8" y="10" width="6" height="1" fill="#92400e"/>
-          <rect x="8" y="13" width="8" height="1" fill="#92400e"/>
-          <rect x="8" y="16" width="5" height="1" fill="#92400e"/>
-        </svg>
-      )
-    },
-    {
-      text: "Plenty of data, but the \"right\" KPIs and decision cadence aren't.",
-      icon: (
-        <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="24" height="24" fill="#3b82f6" opacity="0.2" rx="4"/>
-          <path d="M12 4 L12 20 M4 12 L20 12" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
-          <circle cx="12" cy="12" r="8" stroke="white" strokeWidth="2" fill="none"/>
-          <path d="M12 8 L16 12 L12 16 M8 12 L12 8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-        </svg>
-      )
-    },
-    {
-      text: "Board asks for a 3–5 year model and scenario pack yesterday.",
-      icon: (
-        <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2 L22 20 L2 20 Z" fill="#eab308" opacity="0.2"/>
-          <path d="M12 2 L22 20 L2 20 Z" stroke="#eab308" strokeWidth="2" fill="none"/>
-          <text x="12" y="16" fontSize="14" fontWeight="bold" fill="#000" textAnchor="middle" fontFamily="Arial, sans-serif">!</text>
-        </svg>
-      )
-    },
-    {
-      text: "You don't want to hire CFO + RevOps + Data Science to get one economic answer.",
-      icon: (
-        <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="24" height="24" fill="white" rx="2"/>
-          <circle cx="8" cy="8" r="1.5" fill="#a855f7"/>
-          <circle cx="12" cy="6" r="1.5" fill="#a855f7"/>
-          <circle cx="16" cy="8" r="1.5" fill="#a855f7"/>
-          <circle cx="10" cy="12" r="1.5" fill="#a855f7"/>
-          <circle cx="14" cy="12" r="1.5" fill="#a855f7"/>
-          <circle cx="12" cy="16" r="1.5" fill="#a855f7"/>
-        </svg>
-      )
-    }
-  ]
-}
-
-const whatIFocusOn = [
-  {
-    title: "Monetization & Pricing",
-    description: "Develop pricing strategies that align with your product's value and market position.",
-    link: "/consulting/services/pricing-monetization-sprint",
-    icon: (
-      <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="24" height="24" rx="4" fill="#ff5722" opacity="0.1"/>
-        <path d="M12 2 L15 9 L22 9 L16 14 L18 21 L12 17 L6 21 L8 14 L2 9 L9 9 Z" fill="#ff5722" opacity="0.3" stroke="#ff5722" strokeWidth="1.5"/>
-        <circle cx="12" cy="12" r="3" fill="#ff5722" opacity="0.5"/>
-      </svg>
-    )
-  },
-  {
-    title: "Metrics & Experimentation",
-    description: "Establish key metrics & dashboards and a framework for rigorous, data-informed decision-making.",
-    link: "/consulting/services/metrics-experimentation-sprint",
-    icon: (
-      <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="24" height="24" rx="4" fill="#ff5722" opacity="0.1"/>
-        <rect x="4" y="16" width="4" height="4" rx="1" fill="#ff5722" opacity="0.3"/>
-        <rect x="10" y="12" width="4" height="8" rx="1" fill="#ff5722" opacity="0.3"/>
-        <rect x="16" y="8" width="4" height="12" rx="1" fill="#ff5722" opacity="0.3"/>
-        <path d="M6 18 L10 14 L14 10 L18 6" stroke="#ff5722" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <circle cx="6" cy="18" r="1.5" fill="#ff5722"/>
-        <circle cx="12" cy="12" r="1.5" fill="#ff5722"/>
-        <circle cx="18" cy="6" r="1.5" fill="#ff5722"/>
-      </svg>
-    )
-  },
-  {
-    title: "Forward Models for Founders & Boards",
-    description: "Build clear, defensible forecasts and scenarios that map choices → outcomes.",
-    link: "/consulting/services/on-call-economist-retainer",
-    icon: (
-      <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="24" height="24" rx="4" fill="#ff5722" opacity="0.1"/>
-        <path d="M4 20 L8 16 L12 18 L16 12 L20 14" stroke="#ff5722" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-        <path d="M4 20 L8 16 L12 18 L16 12 L20 14" stroke="#ff5722" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.3"/>
-        <circle cx="4" cy="20" r="2" fill="#ff5722" opacity="0.3"/>
-        <circle cx="12" cy="18" r="2" fill="#ff5722" opacity="0.3"/>
-        <circle cx="20" cy="14" r="2" fill="#ff5722" opacity="0.3"/>
-        <path d="M4 4 L20 4 M4 8 L20 8 M4 12 L20 12" stroke="#ff5722" strokeWidth="1.5" strokeLinecap="round" opacity="0.4"/>
-      </svg>
-    )
+export default function AboutPage() {
+  const personSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Sarah Zou',
+    honorificSuffix: 'PhD',
+    alternateName: 'Dr. Sarah Zou',
+    jobTitle: 'Fractional Chief Economist',
+    description:
+      'PhD economist helping early-stage tech startups improve pricing, monetization, and unit economics with research-grade rigor and startup-speed execution.',
+    url: 'https://sarahzou.com/about',
+    image: 'https://sarahzou.com/images/about_headshot.webp',
+    sameAs: ['https://www.linkedin.com/in/drsarahzou/'],
+    knowsAbout: [
+      'Pricing',
+      'Monetization',
+      'Unit Economics',
+      'Econometrics',
+      'Startup Economics',
+      'Investor Storytelling',
+    ],
   }
-]
 
-const selectedOutcomes = [
-  {
-    title: "Dev-tools SaaS (Seed)",
-    description: "Re-designed tiers and value metric; <strong>40% faster CAC payback</strong> and <strong>cleaner upgrade paths</strong> within a quarter."
-  },
-  {
-    title: "Vertical SaaS (Series A)",
-    description: "Pricing fences + customer value study; <strong>25% NRR lift</strong> via <strong>expansion motions</strong> and <strong>usage-indexed add-ons</strong>."
-  },
-  {
-    title: "AI platform (Pre-seed)",
-    description: "Investor narrative + forward model + KPIs; supported <strong>$50M+ in cumulative raises</strong> across clients; enabled <strong>200+ GTM reps</strong> with price guides and calculators."
-  }
-]
-
-const outcomeNote = "(Sampled across clients; details available under NDA.)"
-
-const howWeWork = {
-  intro: "I bring an economist's rigor with an operator's speed. Every recommendation is:",
-  principles: [
-  {
-    number: 1,
-      title: "Hypothesis-driven",
-      description: "(what we believe will move revenue or retention)"
-  },
-  {
-    number: 2,
-      title: "Documented",
-      description: "(assumptions, inputs, and experiment plan)"
-  },
-  {
-    number: 3,
-      title: "Testable",
-      description: "(what to launch, when to read it, and what \"good\" looks like)"
-    }
-  ],
-  outcome: "That way your team gets decisions, not dashboards — and your board gets a clear economic narrative behind the numbers."
-}
-
-const myPathHere = {
-  title: "My path here",
-  content: [
-    "Academia and policy research taught me discipline and clarity (<strong>PhD Economics, Rutgers</strong>; <strong>MS Finance & Statistics, UIUC</strong>; work with <strong>NBER</strong> and the <strong>World Bank</strong>). I brought that rigor into industry—first at <strong>Citigroup</strong> building risk/forecasting models, then at <strong>Capgemini</strong> leading <strong>digital-transformation</strong> and <strong>GenAI</strong> initiatives where complex analysis had to become executive decisions.",
-    "From there I moved closer to the founder edge, owning <strong>pricing, market intel, and operations</strong> inside high-growth startups. I kept seeing the same gap: early-stage teams need <strong>research-grade thinking</strong> in a format they can ship this week. I started <strong>EconNova Consulting</strong> so founders could get <strong>pricing, metrics, unit economics, forecasting, and economic storytelling</strong> at a level usually reserved for later-stage companies—without the overhead."
-  ]
-}
-
-const whereIWork = {
-  title: "Where I work",
-  content: [
-    "Remote, serving founders globally.",
-    "Based in <strong>Princeton, NJ</strong> (Eastern Time). Available on-site in the <strong>NYC and Philadelphia</strong> metros."
-  ]
-}
-
-const ctaData = {
-  title: "Ready to turn pricing into your growth system?",
-  description: "Let's discuss how I can help you optimize your pricing strategy and create compelling investor narratives.",
-  buttonText: "Book a free consult",
-  buttonHref: "/book"
-}
-
-// JSON-LD Schema for SEO
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "EconNova Consulting",
-  "url": "https://sarahzou.com",
-  "logo": "https://sarahzou.com/images/econnova_logo.png",
-  "description": "Fractional Chief Economist services for early-stage tech startups. Expert pricing strategy, metrics analysis, and economic storytelling to help startups optimize revenue and growth.",
-  "foundingDate": "2020",
-  "founder": {
-    "@type": "Person",
-    "name": "Dr. Sarah Zou",
-    "jobTitle": "Fractional Chief Economist",
-    "url": "https://sarahzou.com/about"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Princeton",
-    "addressRegion": "NJ",
-    "addressCountry": "US"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "Business Inquiries",
-    "email": "hello@sarahzou.com",
-    "availableLanguage": ["English"]
-  },
-  "sameAs": [
-    "https://www.linkedin.com/in/drsarahzou"
-  ],
-  "areaServed": [
-    {
-      "@type": "Country",
-      "name": "United States"
-    },
-    {
-      "@type": "Country",
-      "name": "European Union"
-    }
-  ],
-  "serviceType": [
-    "Pricing Strategy Consulting",
-    "Tech Startup Metrics Analysis",
-    "Revenue Optimization",
-    "Fractional Chief Economist Services",
-    "Early-Stage Growth Strategy",
-    "Monetization Research",
-    "Investor Communications"
-  ]
-}
-
-const personSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Dr. Sarah Zou",
-  "alternateName": "Sarah Zou",
-  "jobTitle": "Fractional Chief Economist",
-  "description": "I turn pricing into a growth system—linking value metrics to experiments (not debates) so your team ships decisions next week and your board sees a defensible economic narrative next month.",
-  "url": "https://sarahzou.com/about",
-  "image": "https://sarahzou.com/images/about_headshot.webp",
-  "sameAs": [
-    "https://www.linkedin.com/in/drsarahzou"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Princeton",
-    "addressRegion": "NJ",
-    "addressCountry": "US"
-  },
-  "areaServed": [
-    {
-      "@type": "Country",
-      "name": "United States"
-    },
-    {
-      "@type": "Country",
-      "name": "European Union"
-    }
-  ],
-  "alumniOf": [
-    {
-      "@type": "EducationalOrganization",
-      "name": "Rutgers University",
-      "degree": "PhD in Economics"
-    },
-    {
-      "@type": "EducationalOrganization",
-      "name": "University of Illinois at Urbana-Champaign",
-      "degree": "MS in Finance & Statistics"
-    }
-  ],
-  "worksFor": {
-    "@type": "Organization",
-    "name": "EconNova Consulting",
-    "url": "https://sarahzou.com"
-  },
-  "hasOccupation": {
-    "@type": "Occupation",
-    "name": "Fractional Chief Economist",
-    "occupationLocation": {
-      "@type": "Country",
-      "name": "United States"
-    },
-    "skills": [
-      "Pricing Strategy",
-      "Monetization Research",
-      "Investor Communications",
-      "Value-Based Pricing",
-      "Unit Economics",
-      "Metrics Analysis",
-      "Economic Forecasting"
-    ]
-  },
-  "knowsAbout": [
-    "Tech Startup Pricing Strategy",
-    "Monetization Research",
-    "Investor Communications",
-    "Value-Based Pricing",
-    "Unit Economics",
-    "Early-Stage Monetization",
-    "Revenue Optimization",
-    "Economic Forecasting",
-    "Metrics Analytics"
-  ],
-  "hasCredential": [
-    {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "Degree",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "Rutgers University"
-      },
-      "about": "PhD in Economics"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "Degree",
-      "recognizedBy": {
-        "@type": "Organization",
-        "name": "University of Illinois at Urbana-Champaign"
-      },
-      "about": "MS in Finance & Statistics"
-    }
-  ],
-  "memberOf": [
-    {
-      "@type": "Organization",
-      "name": "NBER",
-      "description": "National Bureau of Economic Research"
-    }
-  ]
-}
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What problems do you solve most often?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "First price and packaging, price increases with minimal churn, usage vs. tiered model decisions, \"why us/why now\" economics for fundraising, and putting metrics into a weekly decision cadence."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Who do you work with?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Pre-seed to Series A SaaS/API/AI and operator-led marketplaces. I'm effective when a founder wants research-grade rigor without big-company bloat."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How are you different from a fractional CFO, data scientist, or RevOps?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "CFO manages cash and reporting; I design how you create cash (pricing, margins, NRR). Data science predicts/optimizes; I decide what economic questions matter and set guardrails. RevOps runs GTM processes; I define what you sell, to whom, and at what economics."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What's your working style?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Short, high-intensity sprints that ship decisions in 1–2 weeks, followed by a light operating cadence to learn and iterate. Everything is hypothesis-driven, documented, and testable."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What do engagements look like?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Start with a 15-min consult → pick a Monetization or Metrics Sprint → optional retainer for ongoing pricing moves, forward models, and experiment cadence. Fixed deliverables, clear timelines."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What deliverables should we expect?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A pricing/packaging strategy, unit-economics model, discount/fence policy, experiment briefs, KPI glossary and dashboards, and an Economist's Board Pack for narrative and tracking."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you work pre-product or pre-revenue?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. I'll define the value metric, design testable tiers, and set decision thresholds so you can launch with confidence and adjust with data."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Will you integrate with our stack?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes—common tools include GA/GTM, Amplitude/Mixpanel, spreadsheets, and your data warehouse. I keep instrumentation \"light but correct\" so dashboards stay trustworthy."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you handle confidentiality and IP?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "I sign MNDA/MSA; client data stays in your systems; work product is yours. I maintain a conflict log and never cross-pollinate proprietary details."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you train our team?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. I upskill founders and leads on pricing, experimentation, and metric reading, and I can coach a junior analyst to maintain the cadence after the sprint."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where are you based and when are you available?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "NYC/Princeton area, remote-first with on-site options. I cover US/EU time zones and typically start new sprints within 1–2 weeks."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What's your background?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "PhD economist with MS in Finance & Statistics; experience across research, enterprise transformation, and high-growth startups. My edge is combining academic rigor with operator pragmatism."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you take equity or flexible comp?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cash is standard for sprints; retainers can mix cash/equity when aligned with scope and stage."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do we start?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Share context, book a consult, and we'll scope a sprint with clear questions, inputs, and a day-by-day plan."
-      }
-    }
-  ]
-}
-
-export default function About() {
   return (
     <>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-        />
-      <HeroStackedImages {...heroData} />
-      
-      {/* Who I work with & Common triggers */}
-      <section className="py-12 sm:py-16 md:py-24 bg-white">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-              <div className="space-y-6 sm:space-y-8">
-            <div>
-              <h2 className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-4 sm:mb-6">
-                {whoIWorkWith.title}
-              </h2>
-              <div className="mb-6 sm:mb-8">
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-6 sm:mb-8">
-                  {whoIWorkWith.content} <strong className="font-semibold text-[#1f2933]">{whoIWorkWith.contentBold}</strong> {whoIWorkWith.contentAfter}
-                </p>
-                
-                {/* Tech Types as inline badges */}
-                <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 my-6 sm:my-8">
-                  {whoIWorkWith.techTypes.map((tech, index) => (
-                    <div key={index} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#f6f7f9] border border-[#e2e6ea]">
-                      <div className="flex-shrink-0 w-5 h-5 flex items-center justify-center">
-                        <div className="w-4 h-4">
-                          {tech.icon}
-                        </div>
-                      </div>
-                      <span className="text-sm text-[#1f2933] whitespace-nowrap">
-                        {tech.name}
-                      </span>
-                  </div>
-                ))}
-              </div>
-            </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
 
-              <div>
-                <h3 className="font-serif-playfair text-[20px] sm:text-[22px] font-semibold text-[#1f2933] mb-4 sm:mb-6">Common triggers</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                  {whoIWorkWith.triggers.map((trigger, index) => (
-                    <div key={index} className="bg-[#f6f7f9] rounded-lg p-5 sm:p-6 border border-[#e2e6ea] shadow-sm text-center flex flex-col items-center space-y-3 sm:space-y-4 hover:shadow-md transition-shadow">
-                      <div className="flex items-center justify-center">
-                        {trigger.icon}
-                      </div>
-                      <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                        {trigger.text}
-                      </p>
-                  </div>
-                ))}
+      <div className="bg-white text-[#1f2933]">
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#fff7f3] via-white to-white">
+          <div className="pointer-events-none absolute -left-10 top-8 h-56 w-56 rounded-full bg-brand/10 blur-3xl" />
+          <div className="pointer-events-none absolute -right-12 top-24 h-56 w-56 rounded-full bg-[#f59e0b]/10 blur-3xl" />
+          <div className="mx-auto max-w-7xl px-4 pb-10 pt-8 sm:px-6 sm:pb-16 sm:pt-16 lg:px-8 lg:pb-20 lg:pt-20">
+            <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-10">
+              <div className="order-2 relative lg:col-span-5 lg:order-1">
+                <div className="relative mx-auto aspect-[4/5] w-full max-w-[420px] overflow-hidden rounded-[1.5rem] bg-white/40 ring-1 ring-[#e2e6ea] shadow-none backdrop-blur-sm sm:max-w-[500px] sm:rounded-[2rem]">
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-brand/18 via-transparent to-transparent" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-white/55 via-transparent to-transparent" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0f172a]/5" />
+                  <Image
+                    src="/images/about_headshot.webp"
+                    alt="Sarah Zou, PhD economist"
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 30vw, 100vw"
+                    className="object-cover object-center"
+                  />
+                </div>
+              </div>
+
+              <div className="order-1 lg:col-span-7 lg:order-2 lg:pl-8 xl:pl-10">
+                <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand-soft px-4 py-2">
+                  <span className="h-2 w-2 rounded-full bg-brand" aria-hidden />
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-brand-ink">
+                    ABOUT
+                  </span>
+                </div>
+
+                <h1 className="mt-4 text-[42px] font-black leading-[0.98] tracking-tight text-[#0f172a] sm:text-[54px] lg:text-[62px]">
+                  Fractional Chief Economist for Tech Startups
+                </h1>
+
+                <p className="mt-4 max-w-[620px] text-[15px] leading-[1.7] text-[#6b7280] sm:text-[18px]">
+                  I help founders fix pricing, monetization, and unit economics with
+                  research-grade rigor and startup-speed execution. You get clear decisions, testable next steps, and a pricing story you can
+                  defend with leadership and investors.
+                </p>
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-6">
+                  <Link
+                    href={PRIMARY_CTA_HREF}
+                    className={`${primaryButton} inline-flex w-full max-w-[300px] items-center justify-center gap-3 bg-brand px-6 py-4 text-[15px] leading-[1.15] shadow-xl sm:w-auto sm:max-w-none sm:px-8 sm:text-[16px]`}
+                  >
+                    <span>Book a Free Consult</span>
+                    <ArrowRight className="h-5 w-5 flex-shrink-0" aria-hidden />
+                  </Link>
+
+                  <Link
+                    href={SECONDARY_CTA_HREF}
+                    className="text-sm font-medium leading-[1.3] text-[#6b7280] underline underline-offset-4 hover:text-brand-ink"
+                  >
+                    See Ways to Work With Me
+                  </Link>
+                </div>
+
+                <div className="mt-6">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#334155]">
+                    Background &amp; Experience
+                  </p>
+                  <ul className="mt-2.5 flex flex-wrap gap-x-4 gap-y-2">
+                    {heroProofPoints.map((item) => (
+                      <li
+                        key={item}
+                        className="inline-flex items-center gap-1.5 text-[13px] font-medium leading-[1.35] text-[#0f172a] sm:text-[14px]"
+                      >
+                        <CheckCircle2
+                          className="h-[13px] w-[13px] flex-shrink-0 text-brand"
+                          strokeWidth={2.25}
+                          aria-hidden
+                        />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* What I focus on */}
-      <section className="py-12 sm:py-16 md:py-24 bg-[#f6f7f9]">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-8 sm:mb-12 text-center">
-            What I focus on
-                    </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {whatIFocusOn.map((focus, index) => (
-              <Link 
-                key={index} 
-                href={focus.link}
-                className="bg-white rounded-lg p-5 sm:p-6 border border-[#e2e6ea] shadow-sm space-y-3 sm:space-y-4 hover:shadow-md hover:border-[#c2410c] transition-all duration-200 block"
-              >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mb-2">
-                  {focus.icon}
-                </div>
-                <h3 className="font-serif-playfair text-[20px] sm:text-[22px] font-semibold text-[#1f2933]">
-                  {focus.title}
-                </h3>
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                  {focus.description}
+        <section className="border-y border-[#e2e6ea] bg-[#f8fafc] py-12 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
+              <div className="lg:col-span-7">
+                <h2 className="font-serif-playfair text-2xl font-semibold text-[#0f172a] sm:text-[32px]">
+                  What makes me different
+                </h2>
+                <div className="mt-3 h-1 w-20 rounded-full bg-brand" />
+                <ul className="mt-6 space-y-3 text-base leading-[1.65] text-[#334155] sm:text-[17px]">
+                  <li className="flex items-start gap-2.5">
+                    <span className="mt-[10px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
+                    <span>Most pricing consultants give you frameworks.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="mt-[10px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
+                    <span>Most analysts give you rigor.</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <span className="mt-[10px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
+                    <span>Most startup operators give you speed.</span>
+                  </li>
+                </ul>
+                <p className="mt-4 text-[30px] font-semibold leading-[1.2] text-[#0f172a] sm:text-[34px]">
+                  I bring all three together.
                 </p>
-              </Link>
-            ))}
-          </div>
-            </div>
-      </section>
-
-      {/* Selected outcomes */}
-      <section className="py-12 sm:py-16 md:py-24 bg-white">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-8 sm:mb-12 text-center">
-            Selected outcomes
-          </h2>
-          <div className="space-y-6 sm:space-y-8">
-            {selectedOutcomes.map((outcome, index) => (
-              <div key={index} className="bg-[#f6f7f9] rounded-lg p-5 sm:p-6 border border-[#e2e6ea] space-y-2">
-                <h3 className="font-serif-playfair text-[20px] sm:text-[22px] font-semibold text-[#1f2933]">
-                  {outcome.title}
-                </h3>
-                <p 
-                  className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]"
-                  dangerouslySetInnerHTML={{ __html: outcome.description }}
-                />
+                <p className="mt-4 max-w-[720px] text-base leading-[1.75] text-[#334155] sm:text-[18px]">
+                  I combine pricing strategy, unit economics, and econometric rigor in one person,
+                  then turn that work into practical recommendations, fast testable next steps,
+                  and a monetization logic that can stand up to investor and board scrutiny.
+                </p>
               </div>
-            ))}
-            <p className="text-xs sm:text-sm text-[#3b4652] italic mt-4 sm:mt-6 text-center">
-              {outcomeNote}
-            </p>
-          </div>
-        </div>
-      </section>
 
-      {/* How we'll work */}
-      <section className="py-12 sm:py-16 md:py-24 bg-[#f6f7f9]">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left Column - Process Content */}
-            <div className="space-y-6 sm:space-y-8">
-              <h2 className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] leading-tight">
-                How we'll work
-              </h2>
-              <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                {howWeWork.intro}
-              </p>
-              
-              <div className="space-y-4 sm:space-y-6">
-                {howWeWork.principles.map((principle, index) => (
-                  <div key={principle.number} className="space-y-2">
-                    <div className="flex items-start space-x-3 sm:space-x-4">
-                      <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-[#c2410c] text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-semibold">
-                        {principle.number}
+              <div className="lg:col-span-5">
+                <div className="mx-auto max-w-[460px] rounded-2xl border border-[#e7ebf0] bg-white p-4 shadow-sm sm:p-5 lg:ml-auto">
+                  <div className="space-y-5">
+                    <div className="flex items-start gap-4">
+                      <div className="inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-brand-soft">
+                        <Briefcase className="h-[15px] w-[15px] text-brand" aria-hidden />
                       </div>
-                      <div className="flex-1">
-                        <h4 className="text-[18px] sm:text-[20px] font-medium text-[#1f2933] mb-1">
-                          {principle.title}
-                        </h4>
-                        <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-                          {principle.description}
+                      <div>
+                        <h3 className="text-[20px] font-semibold leading-tight text-[#0f172a] sm:text-[22px]">
+                          Strategy
+                        </h3>
+                        <p className="mt-1 text-[15px] leading-[1.65] text-[#475569] sm:text-base">
+                          Practical founder-facing recommendations instead of vague strategy talk.
                         </p>
                       </div>
                     </div>
-                    {index < howWeWork.principles.length - 1 && (
-                      <div className="ml-3.5 sm:ml-4 w-px h-4 sm:h-6 bg-[#e2e6ea]"></div>
-                    )}
+
+                    <div className="h-px bg-[#edf2f7]" />
+
+                    <div className="flex items-start gap-4">
+                      <div className="inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-brand-soft">
+                        <BarChart3 className="h-[15px] w-[15px] text-brand" aria-hidden />
+                      </div>
+                      <div>
+                        <h3 className="text-[20px] font-semibold leading-tight text-[#0f172a] sm:text-[22px]">
+                          Rigor
+                        </h3>
+                        <p className="mt-1 text-[15px] leading-[1.65] text-[#475569] sm:text-base">
+                        Research-grade quantitative analysis that removes guesswork from pricing.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="h-px bg-[#edf2f7]" />
+
+                    <div className="flex items-start gap-4">
+                      <div className="inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-brand-soft">
+                        <Zap className="h-[15px] w-[15px] text-brand" aria-hidden />
+                      </div>
+                      <div>
+                        <h3 className="text-[20px] font-semibold leading-tight text-[#0f172a] sm:text-[22px]">
+                          Speed
+                        </h3>
+                        <p className="mt-1 text-[15px] leading-[1.65] text-[#475569] sm:text-base">
+                          Actionable steps you can implement and test this week.
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                ))}
-              </div>
-              
-              <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] pt-4 border-t border-[#e2e6ea]">
-                {howWeWork.outcome}
-              </p>
-            </div>
-
-            {/* Right Column - Process Image */}
-            <div className="relative order-first lg:order-last">
-              <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] rounded-2xl overflow-hidden shadow-xl">
-                <Image
-                  src="/images/processsteps.webp"
-                  alt="Strategic pricing process and business meeting"
-                  fill
-                  className="object-cover"
-                  loading="lazy"
-                />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* My path here */}
-      <section className="py-12 sm:py-16 md:py-24 bg-white">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-6 sm:mb-8">
-            {myPathHere.title}
-          </h2>
-          <div className="space-y-4 sm:space-y-6">
-            {myPathHere.content.map((paragraph, index) => (
-              <p 
-                key={index} 
-                className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]"
-                dangerouslySetInnerHTML={{ __html: paragraph }}
-              />
-            ))}
+        <section className="border-y border-[#1f3548] bg-[#132233] py-12 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
+              <div className="lg:col-span-6">
+                <h2 className="font-serif-playfair text-2xl font-semibold leading-tight text-white sm:text-[32px]">
+                  Who I help
+                </h2>
+                <p className="mt-3 text-base leading-[1.75] text-[#d6dee8] sm:text-[18px]">
+                  I work with pre-seed to Series A teams building:
+                </p>
+
+                <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+                  {companyTypes.map((item) => (
+                    <li
+                      key={item}
+                      className="rounded-xl border border-[#263b4f] bg-[#1a2c3f] px-3.5 py-2.5 text-[14px] font-medium leading-[1.35] text-white sm:text-[15px] shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]"
+                    >
+                      <span className="inline-flex items-center gap-2">
+                        <span className="relative inline-flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-[#314557]">
+                          <span className="h-1.5 w-1.5 rounded-full bg-brand" />
+                          <span className="pointer-events-none absolute inset-[3px] rounded-full border border-brand/70" />
+                        </span>
+                        <span>{item}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="lg:col-span-6 lg:pl-6 xl:pl-10">
+                <h3 className="font-serif-playfair text-2xl font-semibold leading-tight text-white sm:text-[32px]">
+                  I am most useful when:
+                </h3>
+                <ul className="mt-5 space-y-3.5 text-base leading-[1.6] text-[#e6edf5] sm:text-[17px]">
+                  {bestUseCases.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5">
+                      <span className="relative mt-[7px] inline-flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-[#3a4f63]">
+                        <span className="h-1.5 w-1.5 rounded-full bg-brand" />
+                      </span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Where I work */}
-      <section className="py-12 sm:py-16 md:py-24 bg-[#f6f7f9]">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-4 sm:mb-6">
-            {whereIWork.title}
-          </h2>
-          <div className="space-y-2 sm:space-y-3">
-            {whereIWork.content.map((item, index) => (
-              <p 
-                key={index} 
-                className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]"
-                dangerouslySetInnerHTML={{ __html: item }}
-              />
-            ))}
+        <section className="border-y border-[#e2e6ea] bg-[#f8fafc] py-12 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-center font-serif-playfair text-2xl font-semibold sm:text-[32px]">
+              Selected outcomes
+            </h2>
+            <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-brand" />
+            <div className="mt-9 grid gap-6 md:grid-cols-2">
+              {selectedOutcomes.map((item, index) => (
+                <div
+                  key={item.id}
+                  className="rounded-2xl border border-[#e2e6ea] bg-white p-5 shadow-sm sm:p-7"
+                >
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-soft">
+                    {index === 0 && <Rocket className="h-5 w-5 text-brand" aria-hidden />}
+                    {index === 1 && <LineChart className="h-5 w-5 text-brand" aria-hidden />}
+                    {index === 2 && <BarChart3 className="h-5 w-5 text-brand" aria-hidden />}
+                    {index === 3 && <ShieldCheck className="h-5 w-5 text-brand" aria-hidden />}
+                  </div>
+                  <p className="mt-4 text-base leading-[1.75] text-[#1f2933] sm:text-[18px]">
+                    {item.content}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-center text-sm text-[#3b4652]">
+              Selected results are representative; details available under NDA.
+            </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQs Section */}
-      <FAQSection />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          ...faqSchema,
-          "url": "https://sarahzou.com/about"
-        }) }}
-      />
+        <section className="py-12 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
+              <div className="lg:col-span-6">
+                <h2 className="font-serif-playfair text-2xl font-semibold text-[#1f2933] sm:text-[32px]">
+                  How I work
+                </h2>
+                <div className="mt-3 h-1 w-20 rounded-full bg-brand" />
 
-      <Cta {...ctaData} />
+                <p className="mt-6 text-base leading-[1.75] text-[#3b4652] sm:text-[18px]">
+                  I bring an economist&apos;s rigor with an operator&apos;s speed. Every
+                  recommendation is:
+                </p>
+
+                <div className="mt-6 space-y-5">
+                  {workPrinciples.map((item, index) => (
+                    <div key={item.title} className="space-y-2">
+                      <div className="flex items-start gap-4">
+                        <span className="inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand text-sm font-semibold text-white">
+                          {index + 1}
+                        </span>
+                        <div>
+                          <h3 className="text-[24px] font-semibold leading-[1.2] text-[#1f2933] sm:text-[28px]">
+                            {item.title}
+                          </h3>
+                          <p className="text-base leading-[1.7] text-[#3b4652] sm:text-[17px]">
+                            {item.description}
+                          </p>
+                        </div>
+                      </div>
+                      {index < workPrinciples.length - 1 && (
+                        <div className="ml-4 h-6 w-px bg-[#d7dce2]" />
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-7 border-t border-[#e2e6ea] pt-6">
+                  <p className="text-base leading-[1.75] text-[#334155] sm:text-[18px]">
+                    That way your team gets decisions, not dashboards, and your board gets a clear
+                    economic narrative behind the numbers.
+                  </p>
+                </div>
+              </div>
+
+              <div className="lg:col-span-6">
+                <div className="relative overflow-hidden rounded-2xl border border-[#e2e6ea] shadow-xl">
+                  <div className="relative h-[320px] sm:h-[460px] lg:h-[620px]">
+                    <Image
+                      src="/images/processsteps.webp"
+                      alt="Team reviewing business metrics and growth strategy"
+                      fill
+                      sizes="(min-width: 1024px) 42vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-[#e2e6ea] bg-white py-12 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
+              <div className="lg:col-span-4">
+                <h2 className="font-serif-playfair text-[34px] font-semibold leading-[1.08] text-[#0f172a] sm:text-[42px]">
+                  Why I built this
+                  <br />
+                  practice
+                </h2>
+                <div className="mt-5 h-1 w-14 rounded-full bg-brand" />
+                <p className="mt-6 text-[23px] font-semibold leading-[1.25] text-[#b54717] sm:text-[28px]">
+                  Bridging the gap between academic rigor and startup speed.
+                </p>
+              </div>
+
+              <div className="lg:col-span-8">
+                <div className="space-y-6 text-base leading-[1.75] text-[#3b4652] sm:text-[18px]">
+                  <p>
+                    My background spans economics, statistical research, enterprise strategy, and
+                    startup work. I was trained to think carefully and rigorously-through a <strong>PhD</strong>{' '}
+                    in Economics at Rutgers, an <strong>MS</strong> in Finance and Statistics at UIUC,
+                    and research work with <strong>NBER</strong> and the <strong>World Bank</strong>.
+                  </p>
+                  <p>
+                    I brought that rigor into industry at <strong>Citigroup</strong> building
+                    risk/forecasting models, then at <strong>Capgemini</strong> leading
+                    digital-transformation and GenAI initiatives where complex analysis had to
+                    become executive decisions.
+                  </p>
+
+                  <div className="border-l-4 border-brand pl-5 sm:pl-6">
+                    <p className="text-[22px] font-semibold leading-[1.35] text-[#0f172a] sm:text-[28px]">
+                      Over time, I saw the same gap again and again: early-stage teams often need
+                      serious economic thinking, but in a form they can actually use this week.
+                    </p>
+                    <p className="mt-4 text-[21px] font-semibold leading-[1.25] text-[#b54717] sm:text-[25px]">
+                      That is the gap I fill.
+                    </p>
+                  </div>
+
+                  <p>
+                    I started <strong>EconNova Consulting</strong> to offer something different: rigorous economic thinking, 
+                    practical strategy, and clear decision support designed for founders who need to move quickly and get it right.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="relative overflow-hidden bg-brand py-12 text-brand-on sm:py-16 lg:py-20">
+          <div className="pointer-events-none absolute -left-16 top-8 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
+          <div className="pointer-events-none absolute -right-12 bottom-4 h-72 w-72 rounded-full bg-black/10 blur-3xl" />
+          <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+            <h2 className="font-serif-playfair text-3xl font-bold leading-tight text-white sm:text-[42px]">
+              Need sharper pricing, clearer economics, or a monetization decision you can defend?
+            </h2>
+            <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-[#fcb79a]" />
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-[1.75] text-brand-soft sm:text-[19px]">
+              Book a free consult and I&apos;ll help you identify the biggest pricing or
+              unit-economics risk in your business.
+            </p>
+            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <Link
+                href={PRIMARY_CTA_HREF}
+                className="inline-block rounded-full bg-white px-7 py-3 text-lg font-bold text-brand transition-colors hover:bg-brand-soft"
+              >
+                Book a Free Consult
+              </Link>
+              <Link
+                href={SECONDARY_CTA_HREF}
+                className={`${outlineButton} border-white text-white hover:bg-white/10`}
+              >
+                See Ways to Work With Me
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
     </>
   )
-} 
+}
