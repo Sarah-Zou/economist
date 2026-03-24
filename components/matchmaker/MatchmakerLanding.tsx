@@ -14,7 +14,7 @@ export function MatchmakerLanding() {
         <section className="flex min-h-[72svh] flex-col items-center justify-center py-10 text-center sm:min-h-[72vh] sm:py-20">
           <div className="mb-8 w-full max-w-2xl">
             <Image
-              src="/images/PMM_hero_image.png"
+              src="/images/pmm_hero_image.png"
               alt="Pricing Model Matchmaker hero illustration"
               width={1024}
               height={512}

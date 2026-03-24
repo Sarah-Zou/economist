@@ -301,7 +301,7 @@ const organizationSchema = {
   "@type": "Organization",
   "name": "EconNova Consulting",
   "url": "https://sarahzou.com",
-  "logo": "https://sarahzou.com/images/EconNova_logo.png",
+  "logo": "https://sarahzou.com/images/econnova_logo.png",
   "description": "Fractional Chief Economist services for early-stage tech startups. Expert pricing strategy, metrics analysis, and economic storytelling to help startups optimize revenue and growth.",
   "foundingDate": "2020",
   "founder": {
@@ -728,7 +728,7 @@ export default function About() {
             <div className="relative order-first lg:order-last">
               <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/processSteps.webp"
+                  src="/images/processsteps.webp"
                   alt="Strategic pricing process and business meeting"
                   fill
                   className="object-cover"

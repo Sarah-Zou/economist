@@ -53,7 +53,7 @@ Imagine a **Pyramid** divided into three horizontal slices:
 
 Goal: each step adds a *meaningful* outcome and a clear reason to upgrade.
 
-![Pyramid diagram showing Good-Better-Best framework with three horizontal tiers: Base (Good) focused on Basic Utility, Middle (Better) focused on Efficiency and Growth representing the target segment, and Top (Best) focused on Peace of Mind with highest ARPU but smallest customer volume](/images/wiki_GBB_mental.png)
+![Pyramid diagram showing Good-Better-Best framework with three horizontal tiers: Base (Good) focused on Basic Utility, Middle (Better) focused on Efficiency and Growth representing the target segment, and Top (Best) focused on Peace of Mind with highest ARPU but smallest customer volume](/images/wiki_gbb_mental.png)
 
 ## When should you use Good-Better-Best?
 

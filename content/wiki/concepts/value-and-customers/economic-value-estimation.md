@@ -53,7 +53,7 @@ The estimated value is called **Total Economic Value**, composed of two primary 
 
 Think of a vertical "Value Stack" chart:
 
-![EVE Mental Model showing a Value Stack chart with Reference Value ($100) at the base, Positive Differentiation Values ($70) stacked above, Negative Differentiation Value ($20) deducted, and Total Economic Value ($150) at the top](/images/wiki_EVE_mental.png)
+![EVE Mental Model showing a Value Stack chart with Reference Value ($100) at the base, Positive Differentiation Values ($70) stacked above, Negative Differentiation Value ($20) deducted, and Total Economic Value ($150) at the top](/images/wiki_eve_mental.png)
 
 1. **The Foundation:** The bottom block is the **Reference Value**, the price of the competitor's product, say $100.
 2. **The Value Add:** Above the foundation, you stack blocks representing **Positive Differentiation Values** (e.g., extra revenue, lower labor, lower risk, say $70 in total as shown in the chart).

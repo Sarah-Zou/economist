@@ -28,7 +28,7 @@ export default function Cta({ title, description, buttonText, buttonHref }: CtaP
           >
             <div className="relative h-[250px] sm:h-[350px] lg:h-[400px] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/readyToGrow.webp"
+                src="/images/readytogrow.webp"
                 alt="Business growth and analytics workspace"
                 fill
                 className="object-cover"

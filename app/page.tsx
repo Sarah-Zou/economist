@@ -100,7 +100,7 @@ const deeperServices = [
       'For a fuller answer on pricing model, value metric, packaging, risks, and roadmap.',
     cta: 'View Pricing Sprint',
     href: '/consulting/services/pricing-monetization-sprint',
-    image: '/images/S-4-v2.webp',
+    image: '/images/s-4-v2.webp',
   },
   {
     title: 'Metrics & Experimentation Sprint',
@@ -114,7 +114,7 @@ const deeperServices = [
     description: 'For ongoing strategic help.',
     cta: 'View Advisory Support',
     href: '/consulting/services/on-call-economist-retainer',
-    image: '/images/P-2-v2.webp',
+    image: '/images/p-2-v2.webp',
   },
 ]
 
@@ -236,7 +236,7 @@ export default function Home() {
     '@type': 'Organization',
     name: 'EconNova Consulting',
     url: 'https://sarahzou.com',
-    logo: 'https://sarahzou.com/images/EconNova_logo.png',
+    logo: 'https://sarahzou.com/images/econnova_logo.png',
     description:
       'Fractional Chief Economist services for early-stage tech startups. Expert pricing strategy, metrics analysis, and economic storytelling to help startups optimize revenue and growth.',
     founder: {

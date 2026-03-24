@@ -123,17 +123,17 @@ export default function CategoryPage({ params }: CategoryPageProps) {
   const categoryImages: Record<string, string> = {
     'foundations': '/images/pricing.webp',
     'value-and-customers': '/images/metrics.webp',
-    'packaging-and-bundling': '/images/P-1.webp',
-    'models-and-metering': '/images/P-2.webp',
-    'price-architecture': '/images/P-3.webp',
-    'behavioral-psychology': '/images/P-4.webp',
-    'competitive-and-positioning': '/images/P-5.webp',
-    'comms-and-deals': '/images/P-6.webp',
-    'research-and-experiments': '/images/S-1.webp',
-    'economics-and-metrics': '/images/S-5.webp',
-    'intl-channels-billing': '/images/S-2.webp',
-    'governance-and-process': '/images/S-3.webp',
-    'pitfalls-and-failures': '/images/S-4.webp'
+    'packaging-and-bundling': '/images/p-1.webp',
+    'models-and-metering': '/images/p-2.webp',
+    'price-architecture': '/images/p-3.webp',
+    'behavioral-psychology': '/images/p-4.webp',
+    'competitive-and-positioning': '/images/p-5.webp',
+    'comms-and-deals': '/images/p-6.webp',
+    'research-and-experiments': '/images/s-1.webp',
+    'economics-and-metrics': '/images/s-5.webp',
+    'intl-channels-billing': '/images/s-2.webp',
+    'governance-and-process': '/images/s-3.webp',
+    'pitfalls-and-failures': '/images/s-4.webp'
   };
 
   const categoryIcon = categoryIcons[params.category] || '📚';

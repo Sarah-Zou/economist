@@ -44,7 +44,7 @@ owner: "Dr. Sarah Zou"
 
 ### Mental model / diagram
 
-![Value drivers mental model: A visual diagram showing the value driver pipeline from features to pricing decisions. The diagram illustrates how product features enable specific capabilities, which produce measurable outcome KPIs (key performance indicators). These outcomes are then dollarized to quantify their economic impact, which increases customer willingness to pay (WTP) and ultimately informs pricing and packaging choices. This framework helps translate product features into quantifiable value that drives customer purchasing decisions and justifies price premiums.](/images/wiki_valueDriver_mental.png)
+![Value drivers mental model: A visual diagram showing the value driver pipeline from features to pricing decisions. The diagram illustrates how product features enable specific capabilities, which produce measurable outcome KPIs (key performance indicators). These outcomes are then dollarized to quantify their economic impact, which increases customer willingness to pay (WTP) and ultimately informs pricing and packaging choices. This framework helps translate product features into quantifiable value that drives customer purchasing decisions and justifies price premiums.](/images/wiki_valuedriver_mental.png)
 
 ## When should you use value drivers?
 

@@ -122,7 +122,7 @@ const OTHER_PATHS = [
     outcome: 'Full pricing structure and rollout plan.',
     cta: 'Explore the Pricing & Monetization Sprint',
     href: '/consulting/services/pricing-monetization-sprint',
-    image: '/images/S-4-v2.webp',
+    image: '/images/s-4-v2.webp',
     imageAlt: 'Pricing & Monetization Sprint',
   },
   {
@@ -146,7 +146,7 @@ const OTHER_PATHS = [
     outcome: 'Ongoing strategic support and an investor-ready economic narrative.',
     cta: 'Explore Fractional Support',
     href: '/consulting/services/on-call-economist-retainer',
-    image: '/images/P-2-v2.webp',
+    image: '/images/p-2-v2.webp',
     imageAlt: 'Fractional Chief Economist Support',
   },
 ];

@@ -44,7 +44,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <head>
         {/* Favicon */}
-        <link rel="icon" href="/images/EconNova_icon.png" type="image/png" />
+        <link rel="icon" href="/images/econnova_icon.png" type="image/png" />
       </head>
       <body className="font-sans">
         {/* Normalize trailing slash URLs to canonical non-trailing form on GitHub Pages. */}

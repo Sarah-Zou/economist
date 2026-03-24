@@ -45,14 +45,14 @@ export default function WikiPricingPage() {
   const categoryOrder = [
     { slug: 'foundations', image: '/images/pricing.webp' },
     { slug: 'value-and-customers', image: '/images/metrics.webp' },
-    { slug: 'packaging-and-bundling', image: '/images/P-1.webp' },
-    { slug: 'models-and-metering', image: '/images/P-2.webp' },
-    { slug: 'competitive-and-positioning', image: '/images/P-5.webp' },
-    { slug: 'comms-and-deals', image: '/images/P-6.webp' },
-    { slug: 'research-and-experiments', image: '/images/S-1.webp' },
-    { slug: 'economics-and-metrics', image: '/images/S-5.webp' },
-    { slug: 'governance-and-process', image: '/images/S-3.webp' },
-    { slug: 'pitfalls-and-failures', image: '/images/S-4.webp' }
+    { slug: 'packaging-and-bundling', image: '/images/p-1.webp' },
+    { slug: 'models-and-metering', image: '/images/p-2.webp' },
+    { slug: 'competitive-and-positioning', image: '/images/p-5.webp' },
+    { slug: 'comms-and-deals', image: '/images/p-6.webp' },
+    { slug: 'research-and-experiments', image: '/images/s-1.webp' },
+    { slug: 'economics-and-metrics', image: '/images/s-5.webp' },
+    { slug: 'governance-and-process', image: '/images/s-3.webp' },
+    { slug: 'pitfalls-and-failures', image: '/images/s-4.webp' }
   ];
   
   // Sort categories according to the specified order and add concept counts

@@ -184,7 +184,7 @@ export function generateOrganizationProfessionalServiceJsonLd() {
     "@type": "ProfessionalService",
     "name": "EconNova Consulting",
     "url": "https://sarahzou.com",
-    "logo": "https://sarahzou.com/images/EconNova_logo.png",
+    "logo": "https://sarahzou.com/images/econnova_logo.png",
     "description": "Fractional Chief Economist and pricing strategy for early-stage tech. Pricing, metrics, unit economics, and investor-grade economic storytelling.",
     "address": {
       "@type": "PostalAddress",
