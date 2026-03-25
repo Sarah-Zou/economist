@@ -8,6 +8,7 @@
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
+const { buildWikiRegistry } = require('./wiki-content-state');
 
 const baseUrl = 'https://sarahzou.com';
 const outDir = path.join(process.cwd(), 'out');
@@ -35,80 +36,63 @@ ${urls}
 // Generate wiki sitemap
 function generateWikiSitemap() {
   try {
-    // Read markdown files directly
-    
-    const contentDir = path.join(process.cwd(), 'content/wiki/categories');
-    const fileNames = fs.readdirSync(contentDir).filter(name => name.endsWith('.md'));
-    
-    const categories = fileNames.map((fileName) => {
-      const fullPath = path.join(contentDir, fileName);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data } = matter(fileContents);
-      return {
-        slug: data.slug || fileName.replace('.md', ''),
-        updated: data.updated,
-        concepts: [] // We'll parse concepts if needed, but for now just categories
-      };
-    });
-    
+    const registry = buildWikiRegistry();
     const currentDate = new Date().toISOString();
+    const entries = [];
 
-    // Parse concepts from markdown files
-    const conceptPages = [];
-    const categoryConceptCount = new Map();
-    fileNames.forEach((fileName) => {
-      const fullPath = path.join(contentDir, fileName);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data } = matter(fileContents);
-      const slug = data.slug || fileName.replace('.md', '');
-      
-      // Simple parsing of concepts (looking for span id patterns)
-      const lines = fileContents.split('\n');
-      let inConceptsSection = false;
-      for (const line of lines) {
-        if (line.includes("## What's in this category")) {
-          inConceptsSection = true;
-          continue;
-        }
-        if (line.includes('## ')) {
-          inConceptsSection = false;
-          continue;
-        }
-        if (inConceptsSection && line.includes('<span id="')) {
-          const match = line.match(/<span id="([^"]+)">/);
-          if (match) {
-            const conceptId = match[1];
-            const conceptPath = path.join(process.cwd(), 'content', 'wiki', 'concepts', slug, `${conceptId}.md`);
-            if (!fs.existsSync(conceptPath)) {
-              // Skip placeholder concepts that do not have published content yet.
-              continue;
-            }
-            categoryConceptCount.set(slug, (categoryConceptCount.get(slug) || 0) + 1);
-            conceptPages.push({
-              url: `${baseUrl}/wiki/pricing/${slug}/${conceptId}`,
-              lastModified: data.updated || currentDate,
-              changeFrequency: 'monthly',
-              priority: 0.7,
-            });
-          }
-        }
+    for (const category of registry.categories) {
+      const categoryPath = `/wiki/pricing/${category.slug}`;
+      if (!registry.publishedCategoryUrls.has(categoryPath)) {
+        continue;
       }
-    });
+      if (registry.redirects.has(categoryPath)) {
+        continue;
+      }
 
-    // Include category hubs in sitemap only when they have published concept pages.
-    const wikiPages = categories
-      .filter((category) => (categoryConceptCount.get(category.slug) || 0) > 0)
-      .map((category) => ({
-        url: `${baseUrl}/wiki/pricing/${category.slug}`,
+      entries.push({
+        url: `${baseUrl}${categoryPath}`,
         lastModified: category.updated || currentDate,
         changeFrequency: 'monthly',
         priority: 0.8,
-      }));
+      });
 
-    const sitemap = formatSitemap([...wikiPages, ...conceptPages]);
+      for (const conceptId of category.conceptIds) {
+        const conceptPath = `/wiki/pricing/${category.slug}/${conceptId}`;
+        if (!registry.publishedConceptUrls.has(conceptPath)) {
+          continue;
+        }
+        if (registry.redirects.has(conceptPath)) {
+          continue;
+        }
+
+        const conceptFile = path.join(
+          process.cwd(),
+          'content',
+          'wiki',
+          'concepts',
+          category.slug,
+          `${conceptId}.md`
+        );
+        let lastModified = category.updated || currentDate;
+        if (fs.existsSync(conceptFile)) {
+          const conceptMatter = matter(fs.readFileSync(conceptFile, 'utf8'));
+          lastModified = conceptMatter.data.lastUpdated || category.updated || currentDate;
+        }
+
+        entries.push({
+          url: `${baseUrl}${conceptPath}`,
+          lastModified,
+          changeFrequency: 'monthly',
+          priority: 0.7,
+        });
+      }
+    }
+
+    const uniqueByUrl = new Map(entries.map((entry) => [entry.url, entry]));
+    const sitemap = formatSitemap(Array.from(uniqueByUrl.values()));
     const wikiPath = path.join(outDir, 'sitemap-wiki.xml');
     fs.writeFileSync(wikiPath, sitemap, 'utf8');
-    console.log(`✓ Generated sitemap-wiki.xml (${wikiPages.length + conceptPages.length} URLs)`);
+    console.log(`✓ Generated sitemap-wiki.xml (${uniqueByUrl.size} URLs)`);
     return true;
   } catch (error) {
     console.error('❌ Error generating wiki sitemap:', error.message);

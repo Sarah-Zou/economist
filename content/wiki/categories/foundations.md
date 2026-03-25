@@ -6,6 +6,7 @@ updated: "2025-01-15"
 level: "101"
 tags: ["pricing","saas","monetization","strategy","foundations"]
 canonical: "https://sarahzou.com/wiki/pricing/foundations"
+status: "published"
 ---
 
 ## Summary
@@ -73,5 +74,3 @@ Use the strategy cards as a syllabus for a 2–3 session MBA module.
 - [Understanding Value & Customers](https://sarahzou.com/wiki/pricing/value-and-customers) - Understanding customer value and [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay)
 - [Monetization Models & Metering](https://sarahzou.com/wiki/pricing/models-and-metering) - Choosing the right pricing model for your business
 - [Product, Packaging & Bundling](https://sarahzou.com/wiki/pricing/packaging-and-bundling) - Designing offers that align with your pricing strategy
-- [Customer Research & Pricing Experiments](https://sarahzou.com/wiki/pricing/research-and-experiments) - Validating pricing strategies through research
-- [Governance, Process & Advanced Topics](https://sarahzou.com/wiki/pricing/governance-and-process) - Managing pricing decisions and changes

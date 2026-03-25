@@ -1,5 +1,10 @@
 import { MetadataRoute } from 'next'
-import { getAllCategories, getConceptBySlug, hasPublishedConceptContent } from '@/lib/mdx'
+import {
+  getAllCategories,
+  getConceptBySlug,
+  getPublishedConceptIdsForCategory,
+  getWikiRemediationMap,
+} from '@/lib/mdx'
 
 const baseUrl = 'https://sarahzou.com'
 
@@ -11,41 +16,54 @@ function normalizeUrl(path: string): string {
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date().toISOString()
-  const categories = getAllCategories().filter((category) =>
-    hasPublishedConceptContent(category.slug)
-  )
+  const categories = getAllCategories()
+  const { redirects } = getWikiRemediationMap()
+  const redirectSources = new Set(Array.from(redirects.keys()))
+  const entriesByUrl = new Map<string, MetadataRoute.Sitemap[number]>()
 
   // Wiki pricing categories
-  const wikiPages = categories.map((category) => ({
-    url: normalizeUrl(`/wiki/pricing/${category.slug}`),
-    lastModified: category.updated || currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }))
+  for (const category of categories) {
+    const conceptIds = getPublishedConceptIdsForCategory(category.slug)
+    if (conceptIds.length === 0) {
+      continue
+    }
+
+    const categoryPath = `/wiki/pricing/${category.slug}`
+    if (redirectSources.has(categoryPath)) {
+      continue
+    }
+
+    entriesByUrl.set(normalizeUrl(categoryPath), {
+      url: normalizeUrl(categoryPath),
+      lastModified: category.updated || currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })
+  }
 
   // Wiki concept pages (only include concepts with IDs)
   // Use concept's lastUpdated date if available, otherwise fall back to category.updated
-  const conceptPages = categories.flatMap((category) =>
-    category.concepts
-      .filter((concept) => concept.id)
-      .map((concept) => {
-        const conceptId = concept.id as string
-        // Only include concept URLs that have a published markdown file.
-        const conceptData = getConceptBySlug(category.slug, conceptId)
-        if (!conceptData) {
-          return null
-        }
+  for (const category of categories) {
+    for (const conceptId of getPublishedConceptIdsForCategory(category.slug)) {
+      const conceptPath = `/wiki/pricing/${category.slug}/${conceptId}`
+      if (redirectSources.has(conceptPath)) {
+        continue
+      }
 
-        return {
-          url: normalizeUrl(`/wiki/pricing/${category.slug}/${conceptId}`),
-          lastModified: conceptData.lastUpdated || category.updated || currentDate,
-          changeFrequency: 'monthly' as const,
-          priority: 0.7,
-        }
+      const conceptData = getConceptBySlug(category.slug, conceptId)
+      if (!conceptData) {
+        continue
+      }
+
+      entriesByUrl.set(normalizeUrl(conceptPath), {
+        url: normalizeUrl(conceptPath),
+        lastModified: conceptData.lastUpdated || category.updated || currentDate,
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
       })
-      .filter((entry): entry is NonNullable<typeof entry> => entry !== null)
-  )
+    }
+  }
 
-  return [...wikiPages, ...conceptPages]
+  return Array.from(entriesByUrl.values())
 }
 

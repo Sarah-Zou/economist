@@ -60,7 +60,7 @@ Think of the Value Decoder as a simple value equation pipeline:
 |-----------|-------------------|------------|
 | Clear, widely known competitors and prices | Very high | Works best when you can identify a realistic NBA. |
 | New-to-world product but replacing a current workaround (e.g., spreadsheets, agency) | High | Treat the workaround (incl. time cost) as the NBA. |
-| No obvious substitute, blue-ocean category | Lower | Use it to structure thinking, but rely more on [WTP research](/wiki/pricing/value-and-customers/willingness-to-pay) ([Gabor-Granger](/wiki/pricing/research-and-experiments/gabor-granger), [conjoint](/wiki/pricing/research-and-experiments/conjoint-analysis), etc.). |
+| No obvious substitute, blue-ocean category | Lower | Use it to structure thinking, but rely more on [WTP research](/wiki/pricing/value-and-customers/willingness-to-pay) (Gabor-Granger, conjoint, etc.). |
 | Highly negotiated enterprise deals | Critical | Decoder gives list price / walk-away floor; deal desks then manage discounts. |
 | Commodities with transparent market prices | Limited | Price is mostly set by market; focus on differentiation or other pricing tools. |
 
@@ -113,7 +113,7 @@ Founders often get the best results by **combining both**: use [EVE](/wiki/prici
 
 * **Competitive & NBCA:** Realistic alternatives (top 2–3 rivals, DIY, "do nothing"); their actual prices (transaction or street prices, not just list); simple attribute comparison plus win/loss and review insights.
 
-* **Value & WTP signals:** Customer interviews or surveys about what they value and why; any pricing research you have ([Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp), [Gabor‑Granger](/wiki/pricing/research-and-experiments/gabor-granger), [conjoint](/wiki/pricing/research-and-experiments/conjoint-analysis), A/B tests); rough ROI metrics (time saved, revenue uplift, cost savings) to anchor monetary value.
+* **Value & WTP signals:** Customer interviews or surveys about what they value and why; any pricing research you have (Van Westendorp, Gabor‑Granger, conjoint, A/B tests); rough ROI metrics (time saved, revenue uplift, cost savings) to anchor monetary value.
 
 * **Context & environment:** Income/budget trends, prices of key complements (accessories, services, usage‑based costs), and market signals (competitor price moves, new entrants, regulation, hype cycles, local events).
 

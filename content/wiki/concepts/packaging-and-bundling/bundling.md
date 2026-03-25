@@ -110,7 +110,7 @@ This scenario is common with [Leader (must-have)](/wiki/pricing/packaging-and-bu
 
 ### Inputs you need
 
-* **[Willingness to Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) Data:** Run [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) or [Conjoint Analysis](/wiki/pricing/research-and-experiments/conjoint-analysis) for individual features. You need to know how much different [segments](/wiki/pricing/value-and-customers/customer-segments) are willing to pay for Product A vs. Product B.
+* **[Willingness to Pay (WTP)](/wiki/pricing/value-and-customers/willingness-to-pay) Data:** Run Van Westendorp or conjoint analysis for individual features. You need to know how much different [segments](/wiki/pricing/value-and-customers/customer-segments) are willing to pay for Product A vs. Product B.
 * **Correlation Data:** Check **Feature Usage Logs** to find which features are used together (correlation analysis). Do customers who buy A usually buy B? Or are they mutually exclusive audiences?
 * **Marginal Cost Analysis:** For startups, this is usually near zero, but consider support and infrastructure costs.
 * **Competitive context:** Are rivals bundling, and do buyers expect modularity?
@@ -135,7 +135,7 @@ This scenario is common with [Leader (must-have)](/wiki/pricing/packaging-and-bu
 | Pitfall | Fix |
 |---------|-----|
 | **The "Generosity Trap":** Bundling items that customers would have bought anyway at full price. | Analyze purchase data. If 80% of customers already buy A and B together, do not discount the bundle. Only bundle if it changes behavior. |
-| **Cannibalization:** Customers switching from high-margin standalone purchases to the discounted bundle. | Use Mixed Bundling and ensure the standalone items are priced high enough to make the bundle look like a deal, but not so high that you lose the single-item buyer. Optimize via [Conjoint analysis](/wiki/pricing/research-and-experiments/conjoint-analysis). |
+| **Cannibalization:** Customers switching from high-margin standalone purchases to the discounted bundle. | Use Mixed Bundling and ensure the standalone items are priced high enough to make the bundle look like a deal, but not so high that you lose the single-item buyer. Optimize via conjoint analysis. |
 | **Hidden tying backlash:** Adding so many low-value features that the perceived value of the bundle drops. Customers feel forced to buy extras. | Keep standalone option; explain bundle benefit; improve transparency; periodically "prune" the bundle or offer a "Lite" version. |
 | **Revenue looks up, margin is down:** High-support or high-cost items slip into the bundle. | Separate high-cost items; cap usage; add fair-use limits. |
 

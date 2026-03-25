@@ -96,14 +96,14 @@ owner: "Dr. Sarah Zou"
 
 4. **Segment:** Different customers value different drivers. A startup values *speed*; an enterprise values *compliance*. Create ROI worksheets per [segment](/wiki/pricing/value-and-customers/customer-segments).
 
-5. **Quantify importance:** Use [MaxDiff](/wiki/pricing/research-and-experiments#maxdiff) or [conjoint](/wiki/pricing/research-and-experiments/conjoint-analysis) or [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) surveys; regress WTP on measured drivers.
+5. **Quantify importance:** Use MaxDiff, conjoint analysis, or [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) surveys; regress WTP on measured drivers.
 
 6. **Validate with "Evocative Anchoring":** In interviews, ask customers to compare your solution to other budget items to gauge perceived value. "Would you trade this software for one full-time junior employee?" This anchors the psychological value.
 
 ## Metrics to monitor
 
 - **Win/Loss Analysis:** If you are losing deals, is it because the price is too high relative to the perceived value drivers? Or did the customer not believe the value driver existed?
-- **[Price Elasticity](/wiki/pricing/research-and-experiments#price-elasticity):** If you raise prices 10% and churn stays flat, you have "Value headroom."
+- **Price elasticity:** If you raise prices 10% and churn stays flat, you have "Value headroom."
 - **Feature Adoption Rate:** Are the features you *think* drive value actually being used?
 - **LTV/CAC Ratio:** High ratios often indicate strong value drivers.
 
@@ -115,7 +115,7 @@ owner: "Dr. Sarah Zou"
 | **No dollarization:** Price debates devolve to cost or competitor quotes. | Build an ROI calculator using [Economic Value Estimation](/wiki/pricing/value-and-customers/economic-value-estimation) principles: (Δ time × loaded rate) + (Δ conversion × GM × volume) − Δ costs; show ranges and assumptions. |
 | **One‑size‑fits‑all drivers:** Generic [tiers](/wiki/pricing/packaging-and-bundling/packaging), heavy discounting across segments. | Create segment‑specific driver maps; [fence](/wiki/pricing/value-and-customers/price-fences-price-discrimination) premium drivers into [add‑ons](/wiki/pricing/packaging-and-bundling/add-ons-modular) or higher [tiers](/wiki/pricing/packaging-and-bundling/packaging). |
 | **Ignoring the [NBCA](/wiki/pricing/value-and-customers/economic-value-estimation#next-best-competitive-alternative-nbca) (incl. do‑nothing):** Inflated claims, low win rate. | Quantify value vs. [NBCA](/wiki/pricing/value-and-customers/economic-value-estimation#next-best-competitive-alternative-nbca) and inertia costs; show payback vs. status quo. |
-| **Over‑quantifying soft drivers:** Forced $ claims for "ease of use" erode trust. | Use [conjoint](/wiki/pricing/research-and-experiments/conjoint-analysis)/[MaxDiff](/wiki/pricing/research-and-experiments#maxdiff) or [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) surveys; support with qualitative proof and risk‑reduction proxies. |
+| **Over‑quantifying soft drivers:** Forced $ claims for "ease of use" erode trust. | Use conjoint analysis/MaxDiff or [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) surveys; support with qualitative proof and risk‑reduction proxies. |
 
 ## References & Links
 
@@ -136,7 +136,7 @@ owner: "Dr. Sarah Zou"
 
 **Q:** B2B vs. B2C—how should I measure value drivers?
 
-**A:** Same logic. B2B uses harder dollarization and SLAs such as ROI calculators, time‑motion studies, funnel lift A/B, deal‑level value proof (payback, NPV). B2C leans more on experience/emotion, such as Discrete‑choice/[conjoint](/wiki/pricing/research-and-experiments/conjoint-analysis) for brand & design utility, [price elasticity](/wiki/pricing/research-and-experiments#price-elasticity) from experiments, usage→retention models.
+**A:** Same logic. B2B uses harder dollarization and SLAs such as ROI calculators, time‑motion studies, funnel lift A/B, deal‑level value proof (payback, NPV). B2C leans more on experience/emotion, such as discrete-choice/conjoint for brand and design utility, price elasticity from experiments, usage→retention models.
 
 **Q:** What if segments value different things? Can I have different value drivers for different customers?
 
@@ -144,7 +144,7 @@ owner: "Dr. Sarah Zou"
 
 **Q:** What if I can't quantify the value (e.g., brand, design)?
 
-**A:** This is **Psychological Value**. You measure this using quantitative research techniques like **[Conjoint Analysis](/wiki/pricing/research-and-experiments/conjoint-analysis)**, which forces customers to trade off specific attributes (e.g., brand vs. price) to reveal their hidden utility for that driver.
+**A:** This is **Psychological Value**. You measure this using quantitative research techniques like **Conjoint Analysis**, which forces customers to trade off specific attributes (e.g., brand vs. price) to reveal their hidden utility for that driver.
 
 **Q:** Should I mention value drivers that competitors also have?
 

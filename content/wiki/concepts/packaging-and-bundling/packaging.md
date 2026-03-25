@@ -117,8 +117,8 @@ Well-designed packaging solves this by aligning offers with [willingness to pay]
 ### Inputs you need
 
 * **Usage telemetry:** Behavioral data showing which features are actually used by high-value versus low-value customers, informing which capabilities should move up or down tiers, paired with **cost-to-serve** data such as support load, infrastructure cost, and risk.
-* **[MaxDiff analysis](/wiki/pricing/research-and-experiments#maxdiff):** A survey method that forces customers to trade off features, helping you identify true [Leaders](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) (purchase drivers) versus [Fillers](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) (nice-to-haves).
-* **[Willingness-to-pay (WTP) data](/wiki/pricing/value-and-customers/willingness-to-pay):** Quantitative inputs (e.g., [Van Westendorp surveys](/wiki/pricing/research-and-experiments/van-westendorp)) that reveal price sensitivity and acceptable price ranges for different packages.
+* **MaxDiff analysis:** A survey method that forces customers to trade off features, helping you identify true [Leaders](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) (purchase drivers) versus [Fillers](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) (nice-to-haves).
+* **[Willingness-to-pay (WTP) data](/wiki/pricing/value-and-customers/willingness-to-pay):** Quantitative inputs (e.g., Van Westendorp surveys) that reveal price sensitivity and acceptable price ranges for different packages.
 * **[Jobs-to-be-Done (JTBD) research](/wiki/pricing/value-and-customers/jobs-to-be-done):** Qualitative interviews that clarify the specific "job" customers hire your product to do (e.g., Predictive Maintenance vs. Operational Reporting).
 * **Competitor benchmarks:** Visibility into competitors' tiers, add-ons, and usage limits—not to copy them, but to understand the pricing and packaging **mental anchors** your customers already bring to the decision.
 

@@ -6,6 +6,11 @@
  * - One-hop 301 redirects for known legacy URLs
  * - Explicit 410 responses for intentionally removed legacy URLs
  */
+import {
+  WIKI_EXACT_301,
+  WIKI_EXACT_410,
+  WIKI_410_PREFIXES,
+} from './wiki-url-remediation-map.js';
 
 const CANONICAL_HOST = 'sarahzou.com';
 const CANONICAL_ORIGIN = `https://${CANONICAL_HOST}`;
@@ -55,15 +60,7 @@ const CATEGORY_301 = new Map([
   ['/wiki/pricing/intl-channels-billing', '/wiki/pricing/governance-and-process'],
 ]);
 
-const CATEGORY_410_PREFIXES = [
-  '/wiki/pricing/behavioral-psychology',
-  '/wiki/pricing/research-and-experiments/',
-  '/wiki/pricing/economics-and-metrics/',
-  '/wiki/pricing/comms-and-deals/',
-  '/wiki/pricing/competitive-and-positioning/',
-  '/wiki/pricing/governance-and-process/',
-  '/wiki/pricing/pitfalls-and-failures/',
-];
+const CATEGORY_410_PREFIXES = ['/wiki/pricing/behavioral-psychology', ...WIKI_410_PREFIXES];
 
 function goneResponse(pathname) {
   return new Response(
@@ -113,13 +110,13 @@ export default {
     }
 
     // Exact 301 rules.
-    const mapped301 = EXACT_301.get(normalizedPath);
+    const mapped301 = WIKI_EXACT_301.get(normalizedPath) || EXACT_301.get(normalizedPath);
     if (mapped301 && mapped301 !== normalizedPath) {
       return redirect(mapped301);
     }
 
     // Exact 410 rules.
-    if (EXACT_410.has(normalizedPath)) {
+    if (WIKI_EXACT_410.has(normalizedPath) || EXACT_410.has(normalizedPath)) {
       return goneResponse(normalizedPath);
     }
 

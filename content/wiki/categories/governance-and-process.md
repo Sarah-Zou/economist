@@ -6,6 +6,7 @@ updated: "2025-01-15"
 level: "101"
 tags: ["pricing","saas","monetization","governance","process","management"]
 canonical: "https://sarahzou.com/wiki/pricing/governance-and-process"
+status: "retired"
 ---
 
 ## What's in this category

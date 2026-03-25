@@ -95,7 +95,7 @@ Early-stage startups often underprice because they fear rejection. GBB reduces t
 
 * **[Customer segments](/wiki/pricing/value-and-customers/customer-segments):** Top 2–4 personas (role, company size, use case, urgency).
 * **MaxDiff Analysis:** Survey data to identify which features are "Leaders" (high value) versus "Fillers". (Refer to page [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features))
-* **Willingness to Pay (WTP) Data:** Run [Van Westendorp Price Sensitivity surveys](/wiki/pricing/research-and-experiments/van-westendorp) to determine the acceptable price ranges for each tier.
+* **Willingness to Pay (WTP) Data:** Run Van Westendorp Price Sensitivity surveys to determine the acceptable price ranges for each tier.
 * **Jobs to be Done (JTBD):** Understanding the specific "job" each segment hires your product to do (e.g., "Maintenance" vs. "Optimization"). (Refer to page [Jobs-to-Be-Done](/wiki/pricing/value-and-customers/jobs-to-be-done))
 * **Competitor Benchmarking:** Map your competitors' tiers. Are they "feature-gating" (Best gets more features) or "usage-gating" (Best gets more seats)? (See [Value Metric / Pricing Metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) and [usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing).)
 

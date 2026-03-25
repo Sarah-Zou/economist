@@ -6,6 +6,7 @@ updated: "2025-01-15"
 level: "101"
 tags: ["pricing","saas","monetization","research","experiments","customer-research"]
 canonical: "https://sarahzou.com/wiki/pricing/research-and-experiments"
+status: "retired"
 ---
 
 ## What's in this category

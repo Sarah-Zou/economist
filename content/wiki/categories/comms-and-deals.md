@@ -6,6 +6,7 @@ updated: "2025-01-15"
 level: "101"
 tags: ["pricing","saas","monetization","communication","deals","sales"]
 canonical: "https://sarahzou.com/wiki/pricing/comms-and-deals"
+status: "retired"
 ---
 
 ## What's in this category

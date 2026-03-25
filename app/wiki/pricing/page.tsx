@@ -79,9 +79,7 @@ export default function WikiPricingPage() {
   
   // Separate categories with content from empty ones
   const categoriesWithContent = categories.filter(cat => cat.hasContent);
-  const emptyCategories = categories.filter(cat => !cat.hasContent);
-  
-  const itemListJsonLd = generateItemListJsonLd(categories.map(cat => ({
+  const itemListJsonLd = generateItemListJsonLd(categoriesWithContent.map(cat => ({
     name: cat.title,
     url: `https://sarahzou.com/wiki/pricing/${cat.slug}`,
     description: cat.summary

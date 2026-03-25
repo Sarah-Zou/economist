@@ -222,7 +222,7 @@ Your actual list price might be slightly above this (to allow room for discounts
 
 **Q:** Is EVE only for large enterprise deals?
 
-**A:** No, but EVE is especially powerful in **B2B and high‑ticket decisions** where buyers care about ROI. For high‑volume, low‑ticket B2C products, EVE is more useful for **internal pricing guidance** than for individual customer conversations. Founders must rely more on quantitative trade-off research (like [conjoint](/wiki/pricing/research-and-experiments/conjoint-analysis)) to estimate the high psychological values often present in B2C.
+**A:** No, but EVE is especially powerful in **B2B and high‑ticket decisions** where buyers care about ROI. For high‑volume, low‑ticket B2C products, EVE is more useful for **internal pricing guidance** than for individual customer conversations. Founders must rely more on quantitative trade-off research (like conjoint analysis) to estimate the high psychological values often present in B2C.
 
 **Q:** How often should we update our EVE models?
 

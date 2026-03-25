@@ -23,7 +23,7 @@ owner: "Dr. Sarah Zou"
 - **Have the "Talk" Early:** Discussing WTP with customers must happen *before* the product is fully engineered to prioritize features correctly.
 - **Value is Subjective:** WTP is not determined by your costs but by the customer's circumstances, alternatives, and perceived benefits.
 - WTP is a **distribution**; your job is to capture more of it with **segmentation + [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination)**.
-- Start simple with **[Van Westendorp PSM](/wiki/pricing/research-and-experiments/van-westendorp)**, then validate with behavior (pilots/A-B) as stakes rise.
+- Start simple with **Van Westendorp PSM**, then validate with behavior (pilots/A-B) as stakes rise.
 - **Kill "Undeads":** If WTP research shows customers won't pay a price that covers your costs, stop development immediately to save resources.
 
 ## What is Willingness to Pay (WTP)?
@@ -54,8 +54,8 @@ A practical mental model for WTP is the **"Reasonable Price Range"**.
 
 | Your decision                       | Best-fit WTP approach                                      | Use when                                    | Watch-outs                                          |
 | ----------------------------------- | ---------------------------------------------------------- | ------------------------------------------- | --------------------------------------------------- |
-| **Set a single price level**        | [Van Westendorp (PSM)](/wiki/pricing/research-and-experiments/van-westendorp), [Gabor–Granger](/wiki/pricing/research-and-experiments/gabor-granger), simple A/B price test | Early-stage, one offer, limited time        | PSM can be noisy; G-G can anchor; A/B needs traffic |
-| **Set [packages / tiers](/wiki/pricing/packaging-and-bundling/packaging)**            | [Conjoint / Discrete Choice (CBC)](/wiki/pricing/research-and-experiments/conjoint-analysis), menu-based experiments   | Multiple features/[tiers](/wiki/pricing/packaging-and-bundling/packaging); want tradeoffs     | Requires careful design; analysis skill             |
+| **Set a single price level**        | Van Westendorp (PSM), Gabor–Granger, simple A/B price test | Early-stage, one offer, limited time        | PSM can be noisy; G-G can anchor; A/B needs traffic |
+| **Set [packages / tiers](/wiki/pricing/packaging-and-bundling/packaging)**            | Conjoint / Discrete Choice (CBC), menu-based experiments   | Multiple features/[tiers](/wiki/pricing/packaging-and-bundling/packaging); want tradeoffs     | Requires careful design; analysis skill             |
 | **Enterprise / negotiated pricing** | [Value-based](/wiki/pricing/foundations/value-based-pricing) ROI model + win/loss + quote analysis          | Heterogeneous deals; sales-led motions      | Hard to isolate price from discounting/politics     |
 | **True incentive-compatible WTP**   | BDM / Vickrey auctions (field/lab)                         | Research context; can enforce real purchase | Participant comprehension + trust critical          |
 | **Competitor-heavy markets**        | Conjoint with competitive sets; market simulation          | Many close substitutes                      | Garbage-in if competitor set unrealistic            |
@@ -78,21 +78,21 @@ Approximately **72%** of new products fail because companies postpone pricing de
 
 ## How do you implement WTP research step-by-step?
 
-This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp)**, the recommended starting point for startups due to its ability to yield high-quality results without requiring a massive customer base or sophisticated infrastructure.
+This guidance utilizes the **Van Westendorp Price Sensitivity Meter**, the recommended starting point for startups due to its ability to yield high-quality results without requiring a massive customer base or sophisticated infrastructure.
 
 ### Inputs you need
 
 * **Offer + unit:** Crisp product description, [pricing metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric), and billing period (e.g., $/seat/month) used consistently.
 * **Segmentation schema:** The segments you'll cut by (persona/firmographics, usage intensity, [use-case](/wiki/pricing/value-and-customers/customer-use-cases) urgency).
 * **Sampling plan:** Who you'll survey (customers/prospects) and outreach math to reach **~150 responses per segment**.
-* **PSM survey draft:** The 4 [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) questions + a few segment questions + attention/comprehension check.
+* **PSM survey draft:** The 4 Van Westendorp questions + a few segment questions + attention/comprehension check.
 * **Validation constraints:** Growth-loop friction sensitivity + unit economics (cost-to-serve, CAC payback) + competitive reference point.
 
 ### Step-by-step
 
 1. **Conduct foundation qualitative research (before any survey):** Run 10–12 interviews per key segment to nail the [use case](/wiki/pricing/value-and-customers/customer-use-cases), persona, and current alternatives; identify the core "why" (time, money, risk, status); and lock a clear [pricing metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) and billing period (e.g., $/seat/month) so your survey is anchored to a real unit of value.
 
-2. **Draft the Van Westendorp survey (don't ask "How much would you pay?"):** Paste a short offer description (what's included, [pricing metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric), monthly vs annual) and then ask the four canonical questions: the price that's **too expensive** to consider, **too cheap** to trust, **expensive but still possible** (needs thought), and a **bargain** (great value), plus a few segment questions and a simple attention/comprehension check. See [Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp) for detailed guidance.
+2. **Draft the Van Westendorp survey (don't ask "How much would you pay?"):** Paste a short offer description (what's included, [pricing metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric), monthly vs annual) and then ask the four canonical questions: the price that's **too expensive** to consider, **too cheap** to trust, **expensive but still possible** (needs thought), and a **bargain** (great value), plus a few segment questions and a simple attention/comprehension check.
 
 3. **Define the audience and sample size:** If you're defending retention, survey current customers; if you're expanding or changing [packaging](/wiki/pricing/packaging-and-bundling/packaging), survey customers and prospects; if you're entering a new market, survey prospects only—then aim for about **150 responses per segment** (and plan outreach accordingly, e.g., ~1,500 invites per segment at a 10% response rate).
 
@@ -104,7 +104,7 @@ This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pric
 
 7. **Validate against growth and unit economics:** Pressure-test whether the chosen price will slow acquisition/virality/activation in your growth model and confirm it clears cost-to-serve and CAC payback constraints; then decide on a single price vs a [tier ladder](/wiki/pricing/packaging-and-bundling/packaging) and draft the rollout plan (grandfathering, discount policy, messaging).
 
-8. **(Optional) Add advanced validation:** For higher stakes or more complex [packaging](/wiki/pricing/packaging-and-bundling/packaging), use [conjoint/DCE](/wiki/pricing/research-and-experiments/conjoint-analysis) to simulate [bundle](/wiki/pricing/packaging-and-bundling/bundling) choices and estimate feature-level WTP, and/or run live testing (A/B price tests, sales pilots, controlled rollouts) to calibrate stated WTP against observed behavior.
+8. **(Optional) Add advanced validation:** For higher stakes or more complex [packaging](/wiki/pricing/packaging-and-bundling/packaging), use conjoint/DCE to simulate [bundle](/wiki/pricing/packaging-and-bundling/bundling) choices and estimate feature-level WTP, and/or run live testing (A/B price tests, sales pilots, controlled rollouts) to calibrate stated WTP against observed behavior.
 
 ## Metrics to monitor
 
@@ -112,7 +112,7 @@ This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pric
 
 - **Discounting Percentage:** The amount of revenue leaked between list price and pocket price.
 
-- **Price Elasticity:** After launch, track how volume changes with small price tweaks to find the profit-maximizing point. See [Price Elasticity](/wiki/pricing/research-and-experiments/price-elasticity) for more details.
+- **Price Elasticity:** After launch, track how volume changes with small price tweaks to find the profit-maximizing point.
 
 ## Risks & anti‑patterns (and how to fix them)
 
@@ -153,7 +153,7 @@ This guidance utilizes the **[Van Westendorp Price Sensitivity Meter](/wiki/pric
 
 **Q:** Can I just ask "What would you pay?"
 
-**A:** No. Direct questioning usually results in low-balling or "guesswork" answers. Use indirect methods like [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) or [Conjoint](/wiki/pricing/research-and-experiments/conjoint-analysis) instead.
+**A:** No. Direct questioning usually results in low-balling or "guesswork" answers. Use indirect methods like Van Westendorp or conjoint analysis instead.
 
 **Q:** How big should my sample be?
 

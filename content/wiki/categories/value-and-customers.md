@@ -6,6 +6,7 @@ updated: "2025-01-15"
 level: "101"
 tags: ["pricing","saas","monetization","value","customers","segmentation"]
 canonical: "https://sarahzou.com/wiki/pricing/value-and-customers"
+status: "published"
 ---
 
 ## Summary
@@ -81,6 +82,3 @@ Pricing isn't a one-time project. It's a continuous cycle of refining logic and 
 - [Core Philosophies & Strategy](https://sarahzou.com/wiki/pricing/foundations) - Core pricing philosophy and strategic alignment
 - [Product, Packaging & Bundling](https://sarahzou.com/wiki/pricing/packaging-and-bundling) - Designing offers that match customer value
 - [Monetization Models & Metering](https://sarahzou.com/wiki/pricing/models-and-metering) - Choosing the right pricing model for your business
-- [Customer Research & Pricing Experiments](https://sarahzou.com/wiki/pricing/research-and-experiments) - Data-driven approaches to understanding value
-- [Sales/Marketing Comms & Deal Structuring](https://sarahzou.com/wiki/pricing/comms-and-deals) - Communicating value to customers
-- [Unit Economics & Pricing Performance](https://sarahzou.com/wiki/pricing/economics-and-metrics) - Measuring customer value and economics

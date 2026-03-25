@@ -6,6 +6,7 @@ updated: "2026-01-27"
 level: "101"
 tags: ["pricing","saas","monetization","packaging","bundling","offers"]
 canonical: "https://sarahzou.com/wiki/pricing/packaging-and-bundling"
+status: "published"
 ---
 
 ## Summary
@@ -68,5 +69,3 @@ Package first, price second. A quarterly packaging check-in to keep tiers clean,
 - [Core Philosophies & Strategy](https://sarahzou.com/wiki/pricing/foundations) - Core pricing philosophy that guides packaging decisions
 - [Understanding Value & Customers](https://sarahzou.com/wiki/pricing/value-and-customers) - Understanding what customers value most
 - [Monetization Models & Metering](https://sarahzou.com/wiki/pricing/models-and-metering) - Choosing the right pricing model for your packages
-- [Sales/Marketing Comms & Deal Structuring](https://sarahzou.com/wiki/pricing/comms-and-deals) - Communicating your packages effectively
-- [Customer Research & Pricing Experiments](https://sarahzou.com/wiki/pricing/research-and-experiments) - Testing package designs and pricing

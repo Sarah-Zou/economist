@@ -78,8 +78,8 @@ Without this distinction, founders fall into **"Kitchen Sink Syndrome"**: piling
 
 * **[Customer segmentation](/wiki/pricing/value-and-customers/customer-segments):** 2–4 segments with distinct [jobs-to-be-done](/wiki/pricing/value-and-customers/jobs-to-be-done) and budgets.
 * **Feature list:** current + near-term roadmap.
-* **[MaxDiff Analysis](/wiki/pricing/research-and-experiments#maxdiff) (Maximum Difference Scaling):** A survey method where customers are forced to choose the "Most Preferred" and "Least Preferred" features from a list. This forces trade-offs and clearly identifies Leaders vs. Killers.
-* **Willingness to Pay (WTP) Data:** Data from [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) surveys to correlate feature preference with price sensitivity.
+* **MaxDiff analysis (Maximum Difference Scaling):** A survey method where customers are forced to choose the "Most Preferred" and "Least Preferred" features from a list. This forces trade-offs and clearly identifies Leaders vs. Killers.
+* **Willingness to Pay (WTP) Data:** Data from Van Westendorp surveys to correlate feature preference with price sensitivity.
 * **Competitive context:** common "table stakes" and typical [tier](/wiki/pricing/packaging-and-bundling/good-better-best) [fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination).
 
 ### Step-by-step

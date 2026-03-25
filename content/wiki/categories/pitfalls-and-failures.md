@@ -6,6 +6,7 @@ updated: "2025-01-15"
 level: "101"
 tags: ["pricing","saas","monetization","pitfalls","failures","mistakes"]
 canonical: "https://sarahzou.com/wiki/pricing/pitfalls-and-failures"
+status: "retired"
 ---
 
 ## What's in this category

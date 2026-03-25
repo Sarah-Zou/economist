@@ -71,8 +71,8 @@ owner: "Dr. Sarah Zou"
 ### Inputs you need
 
 * **[JTBD/use-case map](/wiki/pricing/value-and-customers/customer-use-cases)** from interviews and shadowing (n≈15–30 per persona is often enough to pattern): Qualitative discussions to uncover *why* customers hire your product. (e.g., Is it for "safety" or "compliance"? These are different values with different WTP).
-* **[Max-Diff Analysis](/wiki/pricing/research-and-experiments#maxdiff):** A survey method to determine which features different segments value most and least. This helps you bundle the right features into the right tiers.
-* **[Van Westendorp Price Sensitivity Meter](/wiki/pricing/research-and-experiments/van-westendorp):** A survey technique asking four questions (too cheap, cheap, expensive, too expensive) to map the acceptable price range for different segments.
+* **Max-Diff analysis:** A survey method to determine which features different segments value most and least. This helps you bundle the right features into the right tiers.
+* **Van Westendorp Price Sensitivity Meter:** A survey technique asking four questions (too cheap, cheap, expensive, too expensive) to map the acceptable price range for different segments.
 * **Usage telemetry:** frequency, intensity, seat counts, API calls, workspace size, time-to-value.
 * **Competitor Benchmarking:** Analyzing where competitors draw their "[fences](/wiki/pricing/value-and-customers/price-fences-price-discrimination)" and their reference prices.
 
@@ -80,7 +80,7 @@ owner: "Dr. Sarah Zou"
 
 1. **Define target outcomes and use cases (2–4 max):** 15–30 interviews/persona; write JTBD statements; define success metrics & acceptance tests.
 
-2. **Measure WTP by persona/use case:** [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) + [Gabor‑Granger](/wiki/pricing/research-and-experiments/gabor-granger) (4–6 prices) + small A/B price tests.
+2. **Measure WTP by persona/use case:** Van Westendorp + Gabor‑Granger (4–6 prices) + small A/B price tests.
 
 3. **Cluster customers into actionable segments:** Features to cluster on: normalized usage (seats, API calls, projects), capability needs (SSO, audit, SLA), firmographics, WTP metrics (OPP/elasticity).
 
@@ -96,7 +96,7 @@ owner: "Dr. Sarah Zou"
 
 Create tiered packages where the "Good" plan meets the minimum needs of price-sensitive buyers ([Killers](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features)/[Fillers](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) removed), and the "Best" plan includes the high-value features ([Leaders](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features)) that insensitive buyers demand.
 
-6. **Validate with Data:** Use [Max-Diff](/wiki/pricing/research-and-experiments#maxdiff) and [Van Westendorp](/wiki/pricing/research-and-experiments/van-westendorp) surveys to confirm that the features in your "Pro" plan are actually the ones valued by high-WTP customers. If low-WTP customers care more about a feature than high-WTP customers, that feature belongs in the base plan or as an [add-on](/wiki/pricing/packaging-and-bundling/add-ons-modular).
+6. **Validate with Data:** Use Max-Diff and Van Westendorp surveys to confirm that the features in your "Pro" plan are actually the ones valued by high-WTP customers. If low-WTP customers care more about a feature than high-WTP customers, that feature belongs in the base plan or as an [add-on](/wiki/pricing/packaging-and-bundling/add-ons-modular).
 
 ## Metrics to monitor
 

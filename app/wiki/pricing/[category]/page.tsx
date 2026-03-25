@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { unstable_noStore } from 'next/cache';
 import { generateCollectionPageJsonLd, generateBreadcrumbJsonLd } from '@/lib/generateJsonLd';
-import { getCategoryBySlug, getAllCategorySlugs, hasPublishedConceptContent } from '@/lib/mdx';
+import { getCategoryBySlug, getAllCategorySlugs } from '@/lib/mdx';
 import WikiLayout from '@/components/wiki/WikiLayout';
 import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter';
 import Link from 'next/link';
@@ -43,44 +43,32 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   if (!category) {
     return {
       title: 'Category Not Found',
+      robots: { index: false, follow: false },
     };
   }
-
-  const hasPublishedConcepts = hasPublishedConceptContent(params.category);
+  const canonicalUrl = `https://sarahzou.com/wiki/pricing/${category.slug}`;
 
   return {
     title: `${category.title} | Pricing Wiki`,
     description: category.summary,
-    robots: hasPublishedConcepts
-      ? {
-          index: true,
-          follow: true,
-          googleBot: {
-            index: true,
-            follow: true,
-            'max-video-preview': -1,
-            'max-image-preview': 'large',
-            'max-snippet': -1,
-          },
-        }
-      : {
-          index: false,
-          follow: true,
-          googleBot: {
-            index: false,
-            follow: true,
-            'max-video-preview': -1,
-            'max-image-preview': 'large',
-            'max-snippet': -1,
-          },
-        },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
     alternates: {
-      canonical: category.canonical
+      canonical: canonicalUrl
     },
     openGraph: {
       title: category.title,
       description: category.summary,
-      url: category.canonical,
+      url: canonicalUrl,
       siteName: 'Sarah Zou',
       type: 'article'
     },
@@ -138,6 +126,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
   const categoryIcon = categoryIcons[params.category] || '📚';
   const categoryImage = categoryImages[params.category] || '/images/pricing.webp';
+  const canonicalUrl = `https://sarahzou.com/wiki/pricing/${category.slug}`;
 
   const breadcrumbs = [
     { name: 'Pricing', url: '/wiki/pricing' },
@@ -147,7 +136,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
   const collectionPageJsonLd = generateCollectionPageJsonLd({
     title: category.title,
     description: category.summary,
-    url: category.canonical,
+    url: canonicalUrl,
     dateModified: category.updated,
   });
 

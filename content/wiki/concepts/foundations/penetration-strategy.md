@@ -87,7 +87,7 @@ Penetration pricing works when the scale, network, and lock-in you gain from the
 **Penetration vs. skimming rule-of-thumb:**
 
 Use penetration pricing when:
-- [Price elasticity](/wiki/pricing/research-and-experiments#price-elasticity) of demand is high (small price cuts drive big volume gains).
+- Price elasticity of demand is high (small price cuts drive big volume gains).
 - Economies of scale are strong (unit cost drops significantly with volume).
 - Lifetime value (LTV) grows with user base (network effects, data, ecosystem).
 
@@ -116,7 +116,7 @@ For startup founders, penetration pricing is essential in markets **dominated by
 
 ### Inputs you need
 
-- **[Price elasticity](/wiki/pricing/research-and-experiments#price-elasticity) and switching behavior:** Evidence that enough customers will switch or adopt at a lower price (experiments, past launches, or survey-based elasticity).
+- **Price elasticity and switching behavior:** Evidence that enough customers will switch or adopt at a lower price (experiments, past launches, or survey-based elasticity).
 - **Cost structure and economic floor:** Clear view of variable costs, incremental fixed costs, and how unit cost falls with scale so you know how low you can go without destroying long-run economics.
 - **Competitor cost and pricing benchmarks:** Estimates of rivals' cost positions, current price levels, and likely responses so you can judge the risk and payoff of a price war.
 - **Runway, CAC, and payback constraints:** Explicit limits on margin sacrifice, acceptable CAC, and maximum payback period for penetration cohorts.

@@ -6,6 +6,7 @@ updated: "2026-02-26"
 level: "101"
 tags: ["pricing","saas","monetization","models","metering","subscription"]
 canonical: "https://sarahzou.com/wiki/pricing/models-and-metering"
+status: "published"
 ---
 
 ## Summary
