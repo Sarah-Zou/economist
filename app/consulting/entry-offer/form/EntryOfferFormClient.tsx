@@ -14,6 +14,7 @@ const IS_VALID_FORM_ACTION = /^https:\/\/script\.google\.com\/macros\/s\/.+\/exe
 type UTMKeys = 'utm_source' | 'utm_medium' | 'utm_campaign' | 'utm_content' | 'utm_term';
 
 export default function EntryOfferFormClient() {
+  const PRODUCT_SUMMARY_MIN_LENGTH = 25;
   const [utm, setUtm] = useState<Record<UTMKeys, string>>({
     utm_source: '',
     utm_medium: '',
@@ -26,6 +27,8 @@ export default function EntryOfferFormClient() {
   const [pageTitle, setPageTitle] = useState('');
   const [configError, setConfigError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [productSummary, setProductSummary] = useState('');
+  const [productSummaryTouched, setProductSummaryTouched] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -48,6 +51,12 @@ export default function EntryOfferFormClient() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setProductSummaryTouched(true);
+
+    if (productSummary.trim().length < PRODUCT_SUMMARY_MIN_LENGTH) {
+      return;
+    }
+
     if (!IS_VALID_FORM_ACTION) {
       setConfigError(
         'Form is temporarily unavailable because the form endpoint is missing or invalid. Please refresh after updating NEXT_PUBLIC_PRICING_SESSION_FORM_URL and restarting the app.'
@@ -75,6 +84,9 @@ export default function EntryOfferFormClient() {
     }
   }
 
+  const isProductSummaryTooShort =
+    productSummaryTouched && productSummary.trim().length < PRODUCT_SUMMARY_MIN_LENGTH;
+
   return (
     <div className="min-h-screen bg-page selection:bg-brand-soft selection:text-brand-ink">
       <main className="py-12 sm:py-16 md:py-24 px-4 sm:px-6">
@@ -88,10 +100,11 @@ export default function EntryOfferFormClient() {
               90-Minute Pricing Strategy Session
             </Link>
             <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-semibold text-[#1f2933] leading-tight mb-3">
-            Short application form
+              Request the 90-Minute Pricing Strategy Session
             </h1>
             <p className="text-base sm:text-[17px] text-[#3b4652] leading-[1.65]">
-            Share a few details so we can make the session as useful as possible.
+              Share a few details so I can quickly tell whether this session is the right fit and make it useful from
+              the start.
             </p>
           </div>
 
@@ -127,6 +140,10 @@ export default function EntryOfferFormClient() {
             <input type="hidden" name="utm_content" value={utm.utm_content} />
             <input type="hidden" name="utm_term" value={utm.utm_term} />
 
+            <p className="text-sm text-[#516170] leading-[1.55]">
+              Best fit for founders with a live product, clear offer, or active pricing decision in motion.
+            </p>
+
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-[#1f2933] mb-1">Name *</label>
               <input
@@ -159,10 +176,22 @@ export default function EntryOfferFormClient() {
                 id="product-summary"
                 name="product_summary"
                 required
+                minLength={PRODUCT_SUMMARY_MIN_LENGTH}
                 rows={3}
-                className="w-full px-3.5 py-2.5 border border-[#e2e6ea] bg-surface rounded-lg text-base sm:text-[17px] text-[#1f2933] leading-[1.65] focus:outline-none focus:ring-2 focus:ring-brand"
-                placeholder="What you sell and who it’s for, in 1–2 sentences."
+                value={productSummary}
+                onChange={(event) => setProductSummary(event.target.value)}
+                onBlur={() => setProductSummaryTouched(true)}
+                className={cn(
+                  'w-full px-3.5 py-2.5 border bg-surface rounded-lg text-base sm:text-[17px] text-[#1f2933] leading-[1.65] focus:outline-none focus:ring-2 focus:ring-brand',
+                  isProductSummaryTooShort ? 'border-[#ef4444]' : 'border-[#e2e6ea]'
+                )}
+                placeholder="What you sell, who it is for, and what stage you’re at in 1–2 sentences."
               />
+              {isProductSummaryTooShort && (
+                <p className="mt-1 text-sm text-[#b91c1c]">
+                  Please add a bit more detail so I can understand the product and context.
+                </p>
+              )}
             </div>
 
             <div>
@@ -186,13 +215,14 @@ export default function EntryOfferFormClient() {
             </div>
 
             <div>
-              <label htmlFor="target-customer" className="block text-sm font-medium text-[#1f2933] mb-1">Target customer (optional)</label>
+              <label htmlFor="target-customer" className="block text-sm font-medium text-[#1f2933] mb-1">Company name *</label>
               <input
                 id="target-customer"
                 name="target_customer"
                 type="text"
+                required
                 className="w-full px-3.5 py-2.5 border border-[#e2e6ea] bg-surface rounded-lg text-base sm:text-[17px] text-[#1f2933] focus:outline-none focus:ring-2 focus:ring-brand"
-                placeholder="e.g., Seed-stage B2B SaaS, GTM leaders, data teams"
+                placeholder="Your company name"
               />
             </div>
 
@@ -214,12 +244,12 @@ export default function EntryOfferFormClient() {
                 name="uncertainty"
                 rows={2}
                 className="w-full px-3.5 py-2.5 border border-[#e2e6ea] bg-surface rounded-lg text-base sm:text-[17px] text-[#1f2933] focus:outline-none focus:ring-2 focus:ring-brand"
-                placeholder="What feels most unclear or risky about your pricing decision?"
+                placeholder="What feels hardest, riskiest, or most unclear right now?"
               />
             </div>
 
             <div>
-              <label htmlFor="website" className="block text-sm font-medium text-[#1f2933] mb-1">Website (optional)</label>
+              <label htmlFor="website" className="block text-sm font-medium text-[#1f2933] mb-1">Website, product page, demo, LinkedIn company page, or short deck link (recommended)</label>
               <input
                 id="website"
                 name="website_url"
@@ -255,8 +285,8 @@ export default function EntryOfferFormClient() {
                 {isSubmitting ? 'Submitting...' : 'Submit request'}
               </button>
               <p className="mt-2 text-sm text-[#3b4652] text-center leading-[1.65]">
-                I read every application myself. If it’s a fit, I’ll reply with a couple of suggested times and any light
-                pre-work so we can use the 90 minutes well.
+                I read every request myself. If it looks like a fit, I’ll reply with the next step to choose a time.
+                Your session is confirmed once payment is completed.
               </p>
             </div>
           </form>

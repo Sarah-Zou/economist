@@ -4,7 +4,7 @@ import EntryOfferFormClient from './EntryOfferFormClient';
 export const metadata: Metadata = {
   title: 'Apply for 90-Minute Pricing Strategy Session | Sarah Zou',
   description:
-    'Short application form for the 90-minute pricing strategy session for AI and SaaS founders. Share a few details so we can make the session as useful as possible.',
+    'Request the 90-minute pricing strategy session. Share a few details so I can quickly assess fit and make the session useful from the start.',
   robots: {
     index: false,
     follow: true,
