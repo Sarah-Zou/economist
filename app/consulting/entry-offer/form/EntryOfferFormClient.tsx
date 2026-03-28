@@ -108,8 +108,11 @@ export default function EntryOfferFormClient() {
             </p>
           </div>
 
-          <p className="text-sm text-[#3b4652] mb-4">
-            Takes about 2 minutes. 
+          <p className="text-sm text-[#3b4652] mb-2">
+            Takes about 2 minutes.
+          </p>
+          <p className="text-sm text-[#516170] leading-[1.55] mb-4">
+            Best fit for founders with a live product, clear offer, or active pricing decision in motion.
           </p>
 
           {/* Form card */}
@@ -139,10 +142,6 @@ export default function EntryOfferFormClient() {
             <input type="hidden" name="utm_campaign" value={utm.utm_campaign} />
             <input type="hidden" name="utm_content" value={utm.utm_content} />
             <input type="hidden" name="utm_term" value={utm.utm_term} />
-
-            <p className="text-sm text-[#516170] leading-[1.55]">
-              Best fit for founders with a live product, clear offer, or active pricing decision in motion.
-            </p>
 
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-[#1f2933] mb-1">Name *</label>
@@ -227,6 +226,18 @@ export default function EntryOfferFormClient() {
             </div>
 
             <div>
+              <label htmlFor="website" className="block text-sm font-medium text-[#1f2933] mb-1">Website, product page, demo, LinkedIn company page, or short deck link (recommended)</label>
+              <input
+                id="website"
+                name="website_url"
+                type="url"
+                autoComplete="url"
+                className="w-full px-3.5 py-2.5 border border-[#e2e6ea] bg-surface rounded-lg text-base sm:text-[17px] text-[#1f2933] focus:outline-none focus:ring-2 focus:ring-brand"
+                placeholder="https://yourproduct.com"
+              />
+            </div>
+
+            <div>
               <label htmlFor="current-pricing" className="block text-sm font-medium text-[#1f2933] mb-1">Current pricing (optional)</label>
               <textarea
                 id="current-pricing"
@@ -245,18 +256,6 @@ export default function EntryOfferFormClient() {
                 rows={2}
                 className="w-full px-3.5 py-2.5 border border-[#e2e6ea] bg-surface rounded-lg text-base sm:text-[17px] text-[#1f2933] focus:outline-none focus:ring-2 focus:ring-brand"
                 placeholder="What feels hardest, riskiest, or most unclear right now?"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="website" className="block text-sm font-medium text-[#1f2933] mb-1">Website, product page, demo, LinkedIn company page, or short deck link (recommended)</label>
-              <input
-                id="website"
-                name="website_url"
-                type="url"
-                autoComplete="url"
-                className="w-full px-3.5 py-2.5 border border-[#e2e6ea] bg-surface rounded-lg text-base sm:text-[17px] text-[#1f2933] focus:outline-none focus:ring-2 focus:ring-brand"
-                placeholder="https://yourproduct.com"
               />
             </div>
 
