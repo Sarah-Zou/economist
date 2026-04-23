@@ -1,80 +1,41 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import {
-  ArrowRight,
-  BookOpen,
-  CheckCircle2,
-  Clock3,
-  FileText,
-  FileSearch,
-  Layers,
-  LineChart,
-  Rocket,
-  ShieldCheck,
-  ChevronDown,
-  Video,
-  Zap,
-} from 'lucide-react'
-import { brandLink, outlineButton, primaryButton, primaryButtonLg } from '@/lib/brandStyles'
+import { ArrowRight, CheckCircle2, Clock3, FileText, ChevronDown, Video } from 'lucide-react'
+import { brandLink, primaryButton, primaryButtonLg } from '@/lib/brandStyles'
 
 const PRIMARY_CTA_HREF = '/consulting/entry-offer/form'
 const CONSULT_CTA_HREF = '/book'
 
-const pathCards = [
-  {
-    title: '90-Minute Pricing Strategy Session',
-    description: 'Best for a fast expert recommendation and clear next step.',
-    cta: 'Explore the Session',
-    href: '/consulting/entry-offer',
-    highlighted: true,
-  },
-  {
-    title: 'Pricing & Monetization Sprint',
-    description: 'Best when you need a full pricing structure, packaging, and rollout plan.',
-    cta: 'Explore the Sprint',
-    href: '/consulting/services/pricing-monetization-sprint',
-    highlighted: false,
-  },
-  {
-    title: 'Free Resources',
-    description: 'Not ready yet? Explore the free tools and guides.',
-    cta: 'Explore Free Resources',
-    href: '/free-tools',
-    highlighted: false,
-  },
+const decisionFocus = [
+  'Pricing model',
+  'Value metric',
+  'Packaging',
+  'Unit economics',
+  'Monetization risk',
 ]
 
-const differentiators = [
+const credentials = [
+  'PhD Economics, Rutgers',
+  'MS Finance & Statistics, UIUC',
+  'NBER & World Bank research',
+  'Former Citigroup & Capgemini',
+]
+
+const pillars = [
   {
-    title: 'Research-grade rigor',
-    description: 'Research-grade rigor without academic abstraction.',
-    icon: FileSearch,
+    title: 'Rigor, not frameworks',
+    description:
+      'Econometrics and pricing research applied to the revenue decisions actually in front of you.',
   },
   {
-    title: 'Practical recommendations',
-    description: 'Practical founder-facing recommendations instead of vague strategy talk.',
-    icon: Layers,
-  },
-  {
-    title: 'Investor-ready',
-    description: 'Investor- and board-ready thinking behind the pricing story.',
-    icon: ShieldCheck,
+    title: 'Decisions, not dashboards',
+    description:
+      'Clear recommendations with tradeoffs named — not long reports that avoid a point of view.',
   },
   {
     title: 'Startup speed',
-    description: 'Fast, testable outputs built for startup pace.',
-    icon: Zap,
-  },
-  {
-    title: 'Data to decision',
-    description: 'Clear translation from data to decision.',
-    icon: LineChart,
-  },
-  {
-    title: 'Prioritization',
-    description: 'Sharp prioritization on what matters most.',
-    icon: CheckCircle2,
+    description: 'Fast, testable outputs built to ship and defend, not to be admired on a shelf.',
   },
 ]
 
@@ -93,91 +54,52 @@ const testimonials = [
   },
 ]
 
-const deeperServices = [
+const otherEngagements = [
   {
-    title: 'Pricing & Monetization Sprint',
-    description:
-      'For a fuller answer on pricing model, value metric, packaging, risks, and roadmap.',
-    cta: 'View Pricing Sprint',
+    label: 'Pricing & Monetization Sprint',
+    sub: 'Full pricing structure, packaging, and rollout plan',
     href: '/consulting/services/pricing-monetization-sprint',
-    image: '/images/s-4-v2.webp',
   },
   {
-    title: 'Metrics & Experimentation Sprint',
-    description: 'For KPI, measurement, and experiment design work.',
-    cta: 'View Metrics Sprint',
+    label: 'Metrics & Experimentation Sprint',
+    sub: 'KPI design, measurement, and experiment priorities',
     href: '/consulting/services/metrics-experimentation-sprint',
-    image: '/images/metrics.webp',
   },
   {
-    title: 'Fractional Chief Economist Support',
-    description: 'For ongoing strategic help.',
-    cta: 'View Advisory Support',
+    label: 'Fractional Chief Economist Retainer',
+    sub: 'Ongoing strategic support for monetization and board-facing economics',
     href: '/consulting/services/on-call-economist-retainer',
-    image: '/images/p-2-v2.webp',
   },
 ]
 
 const faqItems = [
   {
-    q: 'What is a fractional chief economist?',
+    q: 'What is a fractional Chief Economist?',
     a: (
       <>
-        A fractional chief economist is a part-time executive who designs your pricing
-        system, unit economics, and decision cadence-bringing PhD-level rigor without a
-        full-time hire. Learn more about{' '}
+        A part-time executive who designs your pricing system, unit economics, and monetization
+        cadence — bringing PhD-level rigor without a full-time hire. Read more{' '}
         <Link href="/about" className={brandLink}>
-          fractional economics services
+          about the practice
         </Link>
         .
       </>
     ),
   },
   {
-    q: 'How to decide which service to choose?',
+    q: 'How do I know if the 90-minute session is the right first step?',
     a: (
       <>
         Start with the{' '}
         <Link href="/consulting/entry-offer" className={brandLink}>
-          90-Minute Pricing Strategy Session
+          90-minute session
         </Link>{' '}
-        if you need clarity on one important pricing decision. Choose the{' '}
+        if you have one important pricing decision in motion — model, value metric, packaging, or
+        pre-launch structure. If you already know the work is broader, a{' '}
         <Link href="/consulting/services/pricing-monetization-sprint" className={brandLink}>
-          Pricing &amp; Monetization Sprint
+          sprint
         </Link>{' '}
-        if you need a fuller pricing structure, packaging, and roadmap. Choose the{' '}
-        <Link href="/consulting/services/metrics-experimentation-sprint" className={brandLink}>
-          Metrics &amp; Experimentation Sprint
-        </Link>{' '}
-        if your challenge is more about KPIs, testing, and measurement. Choose{' '}
-        <Link href="/consulting/services/on-call-economist-retainer" className={brandLink}>
-          Fractional Chief Economist Support
-        </Link>{' '}
-        if you want ongoing strategic help.
-      </>
-    ),
-  },
-  {
-    q: 'What do engagements look like?',
-    a: (
-      <>
-        For most founders:{' '}
-        <Link href="/consulting/entry-offer" className={brandLink}>
-          90-Minute Pricing Strategy Session
-        </Link>{' '}
-        -&gt;{' '}
-        <Link href="/consulting/services/pricing-monetization-sprint" className={brandLink}>
-          Pricing &amp; Monetization Sprint
-        </Link>{' '}
-        or{' '}
-        <Link href="/consulting/services/metrics-experimentation-sprint" className={brandLink}>
-          Metrics &amp; Experimentation Sprint
-        </Link>{' '}
-        -&gt; optional{' '}
-        <Link href="/consulting/services/on-call-economist-retainer" className={brandLink}>
-          Fractional Chief Economist Support
-        </Link>
-        .
+        is a better fit.
       </>
     ),
   },
@@ -185,20 +107,17 @@ const faqItems = [
     q: 'What does it cost?',
     a: (
       <>
-        The 90-Minute Pricing Strategy Session is $600 (if we move into a pricing sprint
-        within 14 days, this fee will be credited toward the project). Sprints are fixed-fee
-        ($5k-$18k for Monetization; $6k-$12k for Metrics) with defined deliverables and
-        timelines. Fractional Chief Economist Support starts at $4k/mo with tiered time
-        commitments.
+        The 90-minute session is $600, credited toward a sprint if you move into one within 14 days.
+        Sprints are fixed-fee ($5K–$18K). A retainer starts at $4K/month.
       </>
     ),
   },
 ]
 
 export const metadata: Metadata = {
-  title: 'Pricing Strategy for AI & SaaS Founders | Sarah Zou, PhD',
+  title: 'Fractional Chief Economist for AI & SaaS Founders | Sarah Zou, PhD',
   description:
-    'Not sure your pricing makes sense? Get sharper pricing, packaging, and monetization decisions through a 90-minute strategy session, sprints, or ongoing fractional chief economist support.',
+    'A fractional Chief Economist for AI and SaaS founders. PhD-level pricing, unit economics, and monetization decisions — delivered at startup speed. Start with a 90-minute strategy session.',
   robots: {
     index: true,
     follow: true,
@@ -214,18 +133,18 @@ export const metadata: Metadata = {
     canonical: 'https://sarahzou.com',
   },
   openGraph: {
-    title: 'Pricing Strategy for AI & SaaS Founders | Sarah Zou, PhD',
+    title: 'Fractional Chief Economist for AI & SaaS Founders | Sarah Zou, PhD',
     description:
-      'Get sharper pricing, packaging, and monetization decisions without months of analysis or generic advice.',
+      'PhD-level pricing, unit economics, and monetization decisions for AI and SaaS founders — delivered at startup speed.',
     type: 'website',
     url: 'https://sarahzou.com',
     images: ['https://sarahzou.com/images/headshot_v4.webp'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing Strategy for AI & SaaS Founders | Sarah Zou, PhD',
+    title: 'Fractional Chief Economist for AI & SaaS Founders | Sarah Zou, PhD',
     description:
-      'Get sharper pricing, packaging, and monetization decisions without months of analysis or generic advice.',
+      'PhD-level pricing, unit economics, and monetization decisions for AI and SaaS founders — delivered at startup speed.',
     images: ['https://sarahzou.com/images/headshot_v4.webp'],
   },
 }
@@ -288,26 +207,18 @@ export default function Home() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'What is a fractional chief economist?',
+        name: 'What is a fractional Chief Economist?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'A fractional chief economist is a part-time executive who designs your pricing system, unit economics, and decision cadence, bringing PhD-level rigor without a full-time hire.',
+          text: 'A part-time executive who designs your pricing system, unit economics, and monetization cadence, bringing PhD-level rigor without a full-time hire.',
         },
       },
       {
         '@type': 'Question',
-        name: 'How to decide which service to choose?',
+        name: 'How do I know if the 90-minute session is the right first step?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Start with the 90-Minute Pricing Strategy Session for one important decision. Choose the Pricing & Monetization Sprint for fuller pricing structure and roadmap, the Metrics & Experimentation Sprint for KPI and testing work, and Advisory / On-Call Economist Support for ongoing strategic help.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What do engagements look like?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'For most founders: 90-Minute Pricing Strategy Session, then Pricing & Monetization Sprint or Metrics & Experimentation Sprint, then optional Fractional Chief Economist Support.',
+          text: 'Start with the 90-minute session if you have one important pricing decision in motion — pricing model, value metric, packaging, or pre-launch structure. If the work is broader, a sprint is a better fit.',
         },
       },
       {
@@ -315,7 +226,7 @@ export default function Home() {
         name: 'What does it cost?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'The 90-Minute Pricing Strategy Session is $600 and can be credited toward a pricing sprint if started within 14 days. Sprints are fixed-fee at $5k-$18k for Monetization and $6k-$12k for Metrics. Advisory starts at $4k/month with tiered time commitments.',
+          text: 'The 90-minute session is $600, credited toward a sprint if you move into one within 14 days. Sprints are fixed-fee ($5K–$18K). A retainer starts at $4K/month.',
         },
       },
     ],
@@ -335,76 +246,112 @@ export default function Home() {
       <div className="bg-page text-text">
         {/* Hero */}
         <section className="bg-hero-tint">
-          <div className="mx-auto w-full max-w-container px-4 pb-16 pt-12 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8 lg:pb-24 lg:pt-24">
-            <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
-              <div className="lg:col-span-5 order-2 lg:order-1">
-                <div className="relative mx-auto aspect-[4/5] w-full max-w-[440px] overflow-hidden rounded-card ring-1 ring-border-soft">
-                  <Image
-                    src="/images/headshot_v4.webp"
-                    alt="Sarah Zou, PhD economist"
-                    fill
-                    sizes="(min-width: 1024px) 30vw, 100vw"
-                    className="object-cover object-center"
-                    priority
-                  />
+          <div className="section-shell pb-20 pt-10 sm:pb-24 sm:pt-16 lg:pb-28 lg:pt-20">
+            <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16 xl:gap-20">
+              <div className="order-2 lg:order-1">
+                <div className="portrait-shell mx-auto aspect-[4/5] w-full max-w-[380px] lg:max-w-[400px]">
+                  <div className="portrait-inner">
+                    <Image
+                      src="/images/headshot_v4.webp"
+                      alt="Sarah Zou, PhD economist"
+                      fill
+                      sizes="(min-width: 1024px) 34vw, 100vw"
+                      className="object-cover object-center"
+                      priority
+                    />
+                  </div>
+                </div>
+                <div className="media-rule mx-auto max-w-[380px] text-center lg:max-w-[400px]">
+                  <p className="media-caption">For AI, SaaS, and API founders</p>
                 </div>
               </div>
 
-              <div className="lg:col-span-7 order-1 lg:order-2">
-                <span className="kicker">PhD Economist · Fractional Chief Economist</span>
+              <div className="order-1 lg:order-2">
+                <span className="kicker-accent">Fractional Chief Economist for Tech</span>
 
                 <h1 className="mt-5 font-serif-playfair text-ink">
-                  Not sure your pricing{' '}
-                  <span className="text-brand">makes sense?</span>
+                  Investor-grade economic judgment for technical founders.
                 </h1>
 
-                <p className="mt-5 max-w-xl text-[17px] leading-[1.7] text-text-muted sm:text-[19px]">
-                  I help AI and SaaS founders fix pricing, unit economics, and monetization
-                  decisions with research-grade rigor and startup-speed execution.
+                <p className="lede mt-6 max-w-[34rem]">
+                  I help AI, SaaS, and API founders make sharper decisions on pricing, unit
+                  economics, and monetization &mdash; with research-grade rigor and startup-speed
+                  execution.
+                </p>
+
+                <p className="meta-note mt-5">
+                  Most founders start with one live pricing decision.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
                   <Link
                     href={PRIMARY_CTA_HREF}
-                    className={`${primaryButtonLg} w-full max-w-[420px] sm:w-auto`}
+                    className={`${primaryButtonLg} w-full max-w-[360px] sm:w-auto`}
                   >
-                    Book the 90-Minute Pricing Strategy Session
+                    Book the 90-Minute Session
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
 
-                  <Link
-                    href={CONSULT_CTA_HREF}
-                    className="text-[14px] font-medium text-text-muted underline underline-offset-4 hover:text-ink"
-                  >
-                    Or start with a free consult
+                  <Link href={CONSULT_CTA_HREF} className="display-link">
+                    Or start with a free 15-min consult
                   </Link>
+                </div>
+
+                <div className="mt-12 border-t border-border-soft pt-6">
+                  <p className="text-[12px] uppercase tracking-[0.14em] text-text-subtle">
+                    Background
+                  </p>
+                  <div className="mt-3 grid gap-x-8 gap-y-2 sm:grid-cols-2">
+                    {credentials.map((item) => (
+                      <span key={item} className="text-[13.5px] leading-[1.65] text-text-muted">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Featured offer */}
+        {/* Focus strip — answers "what decisions" in one glance */}
+        <section className="editorial-band">
+          <div className="section-shell py-9 sm:py-10">
+            <p className="text-center text-[12px] uppercase tracking-[0.18em] text-text-subtle">
+              I help founders decide
+            </p>
+            <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:gap-x-7">
+              {decisionFocus.map((item, idx) => (
+                <li key={item} className="flex items-center gap-5 sm:gap-7">
+                  <span className="font-serif-playfair text-[18px] leading-none text-ink sm:text-[20px]">
+                    {item}
+                  </span>
+                  {idx < decisionFocus.length - 1 && (
+                    <span aria-hidden className="hidden h-px w-6 bg-border sm:inline-block" />
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* The Session — single offer block */}
         <section className="section section-alt">
-          <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <span className="kicker">Best starting point</span>
-              <h2 className="mt-3 font-serif-playfair">
-                The 90-Minute Pricing Strategy Session
-              </h2>
+          <div className="section-shell max-w-4xl">
+            <div className="section-header">
+              <span className="kicker">Start here</span>
+              <h2 className="section-title">The 90-Minute Pricing Strategy Session</h2>
+              <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
+                One focused working session to pressure-test your direction, choose the right value
+                metric, or clean up packaging — with a 48-hour follow-up memo.
+              </p>
             </div>
 
-            <div className="card-dark mt-10">
-              <p className="text-[17px] leading-[1.75] text-white/90 sm:text-[18px]">
-                If you have one important pricing question, start here. Use this session to
-                pressure-test your direction, choose the right value metric, compare usage
-                vs. seat vs. hybrid, or clean up packaging.
-              </p>
-
-              <p className="mt-8 text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-soft">
+            <div className="card-dark mt-12">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-soft">
                 What you get
               </p>
-              <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+              <ul className="mt-6 grid gap-4 sm:grid-cols-2">
                 {[
                   { icon: FileText, label: 'Short intake review' },
                   { icon: Video, label: '90-minute live session' },
@@ -413,7 +360,7 @@ export default function Home() {
                 ].map(({ icon: Icon, label }) => (
                   <li
                     key={label}
-                    className="flex items-center gap-3 rounded-control border border-white/10 bg-white/5 px-4 py-3 text-[15px] text-white/90"
+                    className="flex items-center gap-3 border-b border-white/10 pb-4 text-[15px] text-white/90"
                   >
                     <Icon className="h-4 w-4 text-brand-soft" aria-hidden />
                     <span>{label}</span>
@@ -422,28 +369,31 @@ export default function Home() {
               </ul>
 
               <div className="mt-10 flex flex-col gap-5 border-t border-white/10 pt-8 sm:flex-row sm:items-end sm:justify-between">
-                <div className="flex flex-col gap-3 sm:flex-row">
-                  <Link href={PRIMARY_CTA_HREF} className={`${primaryButton} w-full sm:w-auto`}>
+                <div className="flex flex-col items-start gap-3">
+                  <Link href={PRIMARY_CTA_HREF} className={primaryButton}>
                     Book the Session
+                    <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
                   <Link
                     href="/consulting/entry-offer"
-                    className="inline-flex h-11 items-center justify-center rounded-full border border-white/25 px-6 text-[15px] font-semibold text-white transition-colors hover:bg-white/10"
+                    className="text-[13px] font-medium text-white/70 underline underline-offset-4 hover:text-white"
                   >
-                    Explore the Session
+                    See full session details →
                   </Link>
                 </div>
                 <div className="sm:text-right">
-                  <p className="font-serif-playfair text-[32px] font-semibold text-white">$600</p>
-                  <p className="mt-1 max-w-sm text-[13px] leading-[1.6] text-white/60 sm:ml-auto">
-                    If we move into a{' '}
+                  <p className="font-serif-playfair text-[32px] font-semibold leading-none text-white">
+                    $600
+                  </p>
+                  <p className="mt-2 max-w-sm text-[13px] leading-[1.6] text-white/60 sm:ml-auto">
+                    Fully credited toward a{' '}
                     <Link
                       href="/consulting/services/pricing-monetization-sprint"
                       className="text-white underline decoration-white/30 underline-offset-2 hover:decoration-white/80"
                     >
                       Pricing &amp; Monetization Sprint
                     </Link>{' '}
-                    within 14 days, I&apos;ll credit this fee toward the project.
+                    if booked within 14 days.
                   </p>
                 </div>
               </div>
@@ -451,179 +401,125 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Paths */}
+        {/* How I'm different — 3 pillars */}
         <section className="section">
-          <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <span className="kicker">Paths</span>
-              <h2 className="mt-3 font-serif-playfair">Choose your path</h2>
-            </div>
-
-            <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
-              {pathCards.map((card, index) => {
-                const Icon = index === 0 ? Clock3 : index === 1 ? Rocket : BookOpen
-                return (
-                  <div
-                    key={card.title}
-                    className={`relative rounded-card border p-7 transition-colors ${
-                      card.highlighted
-                        ? 'border-brand/40 bg-brand-soft/40'
-                        : 'border-border-subtle bg-white hover:border-ink/20'
-                    }`}
-                  >
-                    {card.highlighted && (
-                      <span className="absolute right-5 top-5 rounded-full bg-brand px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-on">
-                        Popular
-                      </span>
-                    )}
-                    <div className="mb-6 inline-flex h-11 w-11 items-center justify-center rounded-full border border-border-subtle bg-white">
-                      <Icon
-                        className={`h-5 w-5 ${card.highlighted ? 'text-brand-ink' : 'text-text-muted'}`}
-                        aria-hidden
-                      />
-                    </div>
-                    <h3 className="text-[20px] font-semibold text-ink">{card.title}</h3>
-                    <p className="mt-3 text-[15px] leading-[1.65] text-text-muted">
-                      {card.description}
-                    </p>
-                    <Link
-                      href={card.href}
-                      className="mt-6 inline-flex items-center gap-1.5 text-[14px] font-semibold text-brand-ink hover:text-brand-dark"
-                    >
-                      {card.cta} <ArrowRight className="h-4 w-4" aria-hidden />
-                    </Link>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Differentiators */}
-        <section className="section section-alt">
-          <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <span className="kicker">What makes me different</span>
-              <h2 className="mt-3 font-serif-playfair">
-                Rigor, pragmatism, and startup speed
-              </h2>
-              <p className="mt-5 text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
-                Most pricing consultants give you frameworks. Most analysts give you rigor.
-                Most operators give you speed. I sit at the intersection — less a consultant,
-                more a fractional Chief Economist for founders making consequential decisions.
+          <div className="section-shell">
+            <div className="section-header">
+              <span className="kicker">Approach</span>
+              <h2 className="section-title">Rigor, decisions, and startup speed</h2>
+              <p className="mt-5 text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
+                Most consultants give you frameworks. Most analysts give you rigor. Most operators
+                give you speed. I combine all three — for founders making consequential monetization
+                decisions.
               </p>
             </div>
 
-            <div className="mx-auto mt-14 grid max-w-5xl gap-10 sm:grid-cols-2 lg:grid-cols-3">
-              {differentiators.map((item) => {
-                const Icon = item.icon
-                return (
-                  <div key={item.title}>
-                    <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-border-subtle bg-white">
-                      <Icon className="h-4 w-4 text-brand" aria-hidden />
-                    </div>
-                    <h4 className="text-[17px] font-semibold text-ink">{item.title}</h4>
-                    <p className="mt-2 text-[15px] leading-[1.65] text-text-muted">
-                      {item.description}
-                    </p>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonials */}
-        <section className="section">
-          <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <span className="kicker">Proof</span>
-              <h2 className="mt-3 font-serif-playfair">What founders say</h2>
-            </div>
-
-            <div className="mx-auto mt-12 grid max-w-4xl gap-6 md:grid-cols-2">
-              {testimonials.map((item) => (
-                <figure key={item.author} className="card">
-                  <blockquote className="font-serif-playfair text-[19px] leading-[1.55] text-ink">
-                    &ldquo;{item.quote}&rdquo;
-                  </blockquote>
-                  <figcaption className="mt-6 text-[13px] text-text-muted">
-                    <p className="font-semibold text-ink">{item.author}</p>
-                    <p>{item.role}</p>
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Deeper services */}
-        <section className="section section-alt">
-          <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <span className="kicker">Other ways to work together</span>
-              <h2 className="mt-3 font-serif-playfair">Need more than one session?</h2>
-            </div>
-
-            <div className="mx-auto mt-12 grid max-w-6xl gap-6 md:grid-cols-3">
-              {deeperServices.map((service) => (
+            <div className="mx-auto mt-16 grid max-w-5xl gap-10 sm:grid-cols-3">
+              {pillars.map((pillar, idx) => (
                 <div
-                  key={service.title}
-                  className="group relative overflow-hidden rounded-card border border-border-subtle bg-white"
+                  key={pillar.title}
+                  className={
+                    idx === 1 ? 'border-t border-brand/35 pt-6' : 'border-t border-border pt-6'
+                  }
                 >
-                  <div className="relative aspect-[4/5] w-full">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                      sizes="(min-width: 768px) 33vw, 100vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent" />
-                    <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7">
-                      <h3 className="font-serif-playfair text-[22px] leading-[1.2] text-white sm:text-[26px]">
-                        {service.title}
-                      </h3>
-                      <p className="mt-3 text-[14px] leading-[1.65] text-white/80">
-                        {service.description}
-                      </p>
-                      <Link
-                        href={service.href}
-                        className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-[0.15em] text-brand-soft hover:text-white"
-                      >
-                        {service.cta} <ArrowRight className="h-3.5 w-3.5" aria-hidden />
-                      </Link>
-                    </div>
-                  </div>
+                  <p className="font-serif-playfair text-[28px] font-semibold leading-none text-brand/30">
+                    {String(idx + 1).padStart(2, '0')}
+                  </p>
+                  <h3 className="mt-4 text-[18px] font-semibold text-ink">{pillar.title}</h3>
+                  <p className="mt-3 text-[15px] leading-[1.75] text-text-muted">
+                    {pillar.description}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* FAQ */}
-        <section className="section">
-          <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <span className="kicker">FAQ</span>
-              <h2 className="mt-3 font-serif-playfair">Frequently asked questions</h2>
+        {/* Proof */}
+        <section className="section section-alt">
+          <div className="section-shell">
+            <div className="section-header">
+              <span className="kicker">Proof</span>
+              <h2 className="section-title">What founders say</h2>
             </div>
 
-            <div className="mt-10 space-y-3">
+            <div className="mx-auto mt-12 grid max-w-5xl gap-12 md:grid-cols-[1.25fr_0.95fr]">
+              <figure className="quote-block">
+                <blockquote className="font-serif-playfair text-[22px] leading-[1.65] text-ink sm:text-[24px]">
+                  &ldquo;{testimonials[0].quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-5 text-[13px] text-text-muted">
+                  <p className="font-semibold text-ink">{testimonials[0].author}</p>
+                  <p>{testimonials[0].role}</p>
+                </figcaption>
+              </figure>
+              <div className="border-t border-border pt-6">
+                <p className="text-[12px] uppercase tracking-[0.12em] text-text-subtle">
+                  Also heard from
+                </p>
+                <blockquote className="mt-4 font-serif-playfair text-[18px] leading-[1.7] text-ink">
+                  &ldquo;{testimonials[1].quote}&rdquo;
+                </blockquote>
+                <div className="mt-5 text-[13px] text-text-muted">
+                  <p className="font-semibold text-ink">{testimonials[1].author}</p>
+                  <p>{testimonials[1].role}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Other engagements — quiet text-only list */}
+        <section className="section">
+          <div className="section-shell max-w-3xl">
+            <div className="section-header">
+              <span className="kicker">Other ways to work together</span>
+              <h2 className="section-title">Need more than one session?</h2>
+            </div>
+
+            <ul className="mt-10 divide-y divide-border-soft border-y border-border-soft">
+              {otherEngagements.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="group flex items-start justify-between gap-6 py-6 transition-colors"
+                  >
+                    <div>
+                      <p className="text-[17px] font-semibold text-ink">{item.label}</p>
+                      <p className="mt-1.5 text-[14px] leading-[1.75] text-text-muted">
+                        {item.sub}
+                      </p>
+                    </div>
+                    <ArrowRight
+                      className="mt-1 h-4 w-4 flex-shrink-0 text-text-subtle transition-transform group-hover:translate-x-0.5 group-hover:text-brand-ink"
+                      aria-hidden
+                    />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* FAQ — 3 items */}
+        <section className="section section-alt">
+          <div className="section-shell max-w-3xl">
+            <div className="section-header">
+              <span className="kicker">FAQ</span>
+              <h2 className="section-title">Frequently asked questions</h2>
+            </div>
+
+            <div className="mt-10 divide-y divide-border-soft border-y border-border-soft">
               {faqItems.map((item, index) => (
-                <details
-                  key={item.q}
-                  open={index === 0}
-                  className="group rounded-card border border-border-subtle bg-white"
-                >
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5">
+                <details key={item.q} open={index === 0} className="group">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5">
                     <h3 className="text-[17px] font-semibold text-ink">{item.q}</h3>
                     <ChevronDown
-                      className="h-4 w-4 flex-shrink-0 text-text-subtle transition-transform group-open:rotate-180"
+                      className="h-4 w-4 flex-shrink-0 text-text-subtle transition-transform duration-200 group-open:rotate-180"
                       aria-hidden
                     />
                   </summary>
-                  <div className="border-t border-border-soft px-6 py-5 text-[15px] leading-[1.75] text-text-muted">
+                  <div className="pb-5 pr-8 text-[15px] leading-[1.85] text-text-muted">
                     {item.a}
                   </div>
                 </details>
@@ -632,35 +528,32 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Closing CTA */}
-        <section className="orange-surface section-sm">
-          <div className="mx-auto w-full max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-            <h2 className="font-serif-playfair text-white">
-              Need a sharper pricing decision before your next move?
-            </h2>
-            <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.7] text-white/85 sm:text-[17px]">
-              Start with the 90-Minute Pricing Strategy Session — or explore a deeper sprint
-              if you already know you need full pricing work.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href={PRIMARY_CTA_HREF}
-                className="inline-flex h-12 items-center justify-center rounded-full bg-white px-7 text-[16px] font-semibold text-brand-ink transition-colors hover:bg-brand-soft"
-              >
-                Book the Session
-              </Link>
-              <Link
-                href="/consulting/services/pricing-monetization-sprint"
-                className={`${outlineButton} border-white bg-transparent text-white hover:bg-white/10 hover:text-white`}
-              >
-                Explore the Sprint
-              </Link>
+        {/* Closing CTA — single button */}
+        <section className="section-sm">
+          <div className="section-shell max-w-4xl">
+            <div className="cta-panel">
+              <h2 className="font-serif-playfair text-ink">
+                Ready for a sharper pricing decision?
+              </h2>
+              <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
+                Start with the 90-minute session. You&apos;ll leave with a clear recommendation and
+                a concrete next step.
+              </p>
+              <div className="mt-8">
+                <Link href={PRIMARY_CTA_HREF} className={primaryButtonLg}>
+                  Book the Session
+                  <ArrowRight className="h-4 w-4" aria-hidden />
+                </Link>
+              </div>
+              <p className="mt-6 text-[13px] text-text-muted">
+                <Link
+                  href={CONSULT_CTA_HREF}
+                  className="underline underline-offset-4 hover:text-ink"
+                >
+                  Or start with a free 15-min consult
+                </Link>
+              </p>
             </div>
-            <p className="mt-6 text-[13px] text-white/80">
-              <Link href={CONSULT_CTA_HREF} className="underline underline-offset-4 hover:text-white">
-                Need a broader conversation? Book a free consult
-              </Link>
-            </p>
           </div>
         </section>
       </div>

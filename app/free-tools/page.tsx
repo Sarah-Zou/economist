@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   title: 'Free Resources | EconNova',
   description: 'Free pricing tools and guides for AI and SaaS founders.',
   alternates: {
-    canonical: 'https://sarahzou.com/free-tools'
-  }
+    canonical: 'https://sarahzou.com/free-tools',
+  },
 }
 
 export default function FreeToolsPage() {
@@ -144,225 +144,288 @@ export default function FreeToolsPage() {
     },
   ]
 
+  const resourceStats = [
+    { value: '4', label: 'Core resources' },
+    { value: '1', label: 'Interactive tool' },
+    { value: '32+', label: 'Wiki concepts' },
+  ]
+
   const visualPanels: Record<string, JSX.Element> = {
     matchmaker: (
-      <div className="relative h-full overflow-hidden rounded-2xl border border-[#eef1f4] bg-white shadow-sm">
-        <Image
-          src="/images/pmm_hero_image.png"
-          alt="Pricing Model Matchmaker interface preview"
-          fill
-          className="object-cover object-left-top"
-        />
+      <div className="media-shell h-full bg-[#f2ece5] p-3">
+        <div className="media-inner">
+          <Image
+            src="/images/pmm_hero_image.png"
+            alt="Pricing Model Matchmaker interface preview"
+            fill
+            className="object-cover object-left-top"
+          />
+        </div>
       </div>
     ),
     roadmap: (
-      <div className="relative h-full overflow-hidden rounded-2xl border border-[#eef1f4] bg-white shadow-sm">
-        <Image
-          src="/images/roadmap_stacked.webp"
-          alt="Startup Monetization Roadmap preview"
-          fill
-          className="object-contain p-4"
-        />
+      <div className="media-shell h-full bg-[#f2ece5] p-3">
+        <div className="media-inner">
+          <Image
+            src="/images/roadmap_stacked.webp"
+            alt="Startup Monetization Roadmap preview"
+            fill
+            className="object-contain p-6"
+          />
+        </div>
       </div>
     ),
     wiki: (
-      <div className="relative h-full overflow-hidden rounded-2xl border border-[#eef1f4] bg-white shadow-sm">
-        <Image
-          src="/images/pricing.webp"
-          alt="Pricing Wiki category visual"
-          fill
-          className="object-cover"
-        />
+      <div className="media-shell h-full bg-[#f2ece5] p-3">
+        <div className="media-inner">
+          <Image
+            src="/images/pricing.webp"
+            alt="Pricing Wiki category visual"
+            fill
+            className="object-cover object-center"
+          />
+        </div>
       </div>
     ),
     newsletter: (
-      <div className="relative h-full overflow-hidden rounded-2xl border border-[#eef1f4] bg-white shadow-sm">
-        <Image
-          src="/images/metrics.webp"
-          alt="Newsletter article cover preview"
-          fill
-          className="object-cover"
-        />
+      <div className="media-shell h-full bg-[#f2ece5] p-3">
+        <div className="media-inner">
+          <Image
+            src="/images/metrics.webp"
+            alt="Newsletter article cover preview"
+            fill
+            className="object-cover object-center"
+          />
+        </div>
       </div>
     ),
   }
 
   return (
     <main className="min-h-screen bg-page">
-      <section className="border-b border-border-subtle bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.12em] text-brand-ink">
-            Free Resources
-          </p>
-          <h1 className="mt-3 font-serif-playfair text-[34px] font-bold leading-tight text-text sm:text-[42px]">
+      <section className="bg-white/70">
+        <div className="section-shell py-16 sm:py-20">
+          <p className="kicker-accent">Free Resources</p>
+          <h1 className="mt-4 max-w-[13ch] font-serif-playfair text-[34px] font-bold leading-tight text-text sm:text-[46px]">
             Free pricing tools and guides for AI and SaaS founders
           </h1>
-          <p className="mt-4 max-w-3xl text-base leading-[1.65] text-text-muted sm:text-[17px]">
-            Use these resources to choose a pricing model, improve monetization decisions, build a stronger pricing foundation, and keep learning as you grow.
+          <p className="mt-6 max-w-[44rem] text-base leading-[1.85] text-text-muted sm:text-[18px]">
+            Use these resources to choose a pricing model, improve monetization decisions, build a
+            stronger pricing foundation, and keep learning as you grow.
           </p>
-          <p className="mt-4 max-w-3xl text-base leading-[1.65] text-text-muted sm:text-[17px]">
+          <p className="mt-4 max-w-[42rem] text-base leading-[1.85] text-text-muted sm:text-[17px]">
             Not ready to hire yet? Start here. Need a sharper answer faster?{' '}
             <Link href="/consulting/entry-offer/form" className={`${brandLink} font-medium`}>
               Book the 90-minute session.
             </Link>
           </p>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
-        <h2 className="text-center font-serif-playfair text-3xl font-semibold leading-tight text-text sm:text-[34px]">
-          Start with the right resource
-        </h2>
-        <p className="mx-auto mt-4 max-w-3xl text-center text-base leading-[1.65] text-text-muted sm:text-[17px]">
-          Each resource is built for a different kind of need. Start with the one that matches where you are right now.
-        </p>
-
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {quickChooser.map((item) => (
-            <Link
-              key={item.startWith}
-              href={item.href}
-              className="rounded-xl border border-border-subtle bg-white p-5 transition-colors hover:border-brand hover:bg-surface"
-            >
-              <div className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand-soft">
-                <item.icon className="h-4 w-4 text-brand" />
-              </div>
-              <p className="mt-4 text-sm font-semibold text-text-muted">{item.heading}</p>
-              <p className="mt-2 font-serif-playfair text-lg font-semibold leading-snug text-text sm:text-xl">
-                Start with: {item.startWith}
-              </p>
-              <p className="mt-2 text-base leading-[1.65] text-text-muted sm:text-[17px]">{item.copy}</p>
-              <p className="mt-4 inline-flex items-center text-base font-semibold text-brand">
-                {item.cta} <ArrowRight className="ml-1 h-4 w-4" />
-              </p>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 pb-10 sm:px-6 sm:pb-12 lg:px-8">
-        <h2 className="font-serif-playfair text-3xl font-semibold leading-tight text-text sm:text-[34px]">
-          Explore the free resources
-        </h2>
-
-        <div className="mt-8 space-y-8">
-          {featuredResources.map((resource, index) => (
-            <article key={resource.title} className="grid items-stretch gap-7 md:grid-cols-2">
-              <div className={index % 2 === 0 ? 'order-1' : 'order-1 md:order-2'}>
-                <p className="inline-flex items-center rounded-full bg-[#ecf0f3] px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-[#4d5a69]">
-                  {resource.label}
+          <p className="meta-note mt-6">Start with one resource, not all of them at once.</p>
+          <div className="mt-10 flex flex-wrap gap-8 border-t border-border-soft pt-5">
+            {resourceStats.map((item) => (
+              <div key={item.label}>
+                <p className="font-serif-playfair text-[26px] leading-none text-ink">
+                  {item.value}
                 </p>
-                <h3 className="mt-5 font-serif-playfair text-2xl font-semibold leading-tight text-text sm:text-3xl">
-                  {resource.id}) {resource.name}
-                </h3>
-                <h4 className="mt-3 font-serif-playfair text-xl font-semibold leading-tight text-text sm:text-2xl">
-                  {resource.title}
-                </h4>
-                <p className="mt-4 max-w-[590px] text-base leading-[1.65] text-text-muted sm:text-[17px]">
-                  {resource.copy}
+                <p className="mt-1 text-[12px] uppercase tracking-[0.12em] text-text-subtle">
+                  {item.label}
                 </p>
-
-                <p className="mt-6 text-base font-semibold text-text sm:text-[17px]">{resource.pointsHeading}</p>
-                <ul className="mt-3 space-y-2.5">
-                  {resource.points.map((point) => (
-                    <li key={point} className="flex items-start gap-2.5 text-base text-text-muted sm:text-[17px]">
-                      <CheckCircle2 className="mt-1 h-4 w-4 flex-shrink-0 text-brand" />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-7 flex flex-wrap items-center gap-5">
-                  <Link href={resource.primaryHref} className={primaryButtonSm}>
-                    {resource.primaryCta}
-                  </Link>
-                  {resource.secondaryCta && resource.secondaryHref ? (
-                    <Link href={resource.secondaryHref} className={`${brandLink} inline-flex items-center`}>
-                      {resource.secondaryCta} <ArrowUpRight className="ml-1 h-4 w-4" />
-                    </Link>
-                  ) : null}
-                </div>
               </div>
-              <div className={index % 2 === 0 ? 'order-2 min-h-[380px]' : 'order-2 min-h-[380px] md:order-1'}>
-                {visualPanels[resource.visual]}
-              </div>
-            </article>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="bg-[#162334]">
-        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
-          <h2 className="text-center font-serif-playfair text-3xl font-semibold leading-tight text-white sm:text-[34px]">
-            A simple path through the free resources
+      <section className="section-sm">
+        <div className="section-shell">
+          <h2 className="text-center font-serif-playfair text-3xl font-semibold leading-tight text-text sm:text-[34px]">
+            Start with the right resource
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-[1.65] text-[#d1dae4] sm:text-[17px]">
-            This section matters because it turns four separate pages into one connected system.
+          <p className="mx-auto mt-4 max-w-3xl text-center text-base leading-[1.65] text-text-muted sm:text-[17px]">
+            Each resource is built for a different kind of need. Start with the one that matches
+            where you are right now.
           </p>
 
-          <div className="relative mt-10 grid gap-8 md:grid-cols-4">
-            <div className="absolute left-[12.5%] right-[12.5%] top-[18px] hidden h-px bg-[#31465d] md:block" />
-            {resourcePath.map((step) => (
-              <Link key={step.title} href={step.href} className="relative text-center">
-                <span className="mx-auto inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#31465d] bg-[#1f3247] text-sm font-semibold text-brand">
-                  {step.title.split(' - ')[0].replace('Step ', '')}
-                </span>
-                <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-brand">Step {step.title.split(' - ')[0].replace('Step ', '')}</p>
-                <p className="mt-2 font-serif-playfair text-lg font-semibold leading-snug text-white sm:text-xl">
-                  {step.title.split(' - ')[1]}
+          <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+            {quickChooser.map((item) => (
+              <Link
+                key={item.startWith}
+                href={item.href}
+                className="border-t border-border pt-5 transition-colors hover:border-brand/40"
+              >
+                <div className="inline-flex h-10 w-10 items-center justify-center rounded-[14px] bg-brand-soft">
+                  <item.icon className="h-4 w-4 text-brand" />
+                </div>
+                <p className="mt-4 text-[12px] font-semibold uppercase tracking-[0.12em] text-text-subtle">
+                  {item.heading}
                 </p>
-                <p className="mt-2 text-sm leading-[1.6] text-[#d1dae4] sm:text-[15px]">{step.copy}</p>
+                <p className="mt-2 font-serif-playfair text-lg font-semibold leading-snug text-text sm:text-xl">
+                  Start with: {item.startWith}
+                </p>
+                <p className="mt-3 text-[15px] leading-[1.8] text-text-muted sm:text-[16px]">
+                  {item.copy}
+                </p>
+                <p className="mt-4 inline-flex items-center text-[14px] font-semibold text-brand-ink">
+                  {item.cta} <ArrowRight className="ml-1 h-4 w-4" />
+                </p>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
-        <h2 className="text-center font-serif-playfair text-3xl font-semibold leading-tight text-text sm:text-[34px]">
-          Who these are built for
-        </h2>
-        <p className="mx-auto mt-4 max-w-4xl text-center text-base leading-[1.65] text-text-muted sm:text-[17px]">
-          These resources are best for:
-        </p>
+      <section className="pb-10 sm:pb-12">
+        <div className="section-shell">
+          <h2 className="font-serif-playfair text-3xl font-semibold leading-tight text-text sm:text-[34px]">
+            Explore the free resources
+          </h2>
 
-        <ul className="mx-auto mt-8 grid max-w-4xl gap-3 sm:grid-cols-2">
-          {[
-            'AI, SaaS, and API founders',
-            'pre-seed to Series A teams',
-            'product and GTM leads working through pricing questions',
-            'operators who need sharper monetization decisions before hiring outside help',
-          ].map((audience) => (
-            <li key={audience} className="flex items-center gap-2.5 rounded-xl border border-border-subtle bg-white px-4 py-3 text-base leading-[1.65] text-text sm:text-[17px]">
-              <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-brand" />
-              <span>{audience}</span>
-            </li>
-          ))}
-        </ul>
-        <p className="mx-auto mt-5 max-w-4xl text-center text-base leading-[1.65] text-text-muted sm:text-[17px]">
-          That audience matches the current positioning of the Matchmaker, Roadmap, and broader site.
-        </p>
+          <div className="mt-10 space-y-14">
+            {featuredResources.map((resource, index) => (
+              <article
+                key={resource.title}
+                className="grid items-stretch gap-10 border-t border-border pt-8 md:grid-cols-2"
+              >
+                <div className={index % 2 === 0 ? 'order-1' : 'order-1 md:order-2'}>
+                  <p className="inline-flex items-center text-[11px] font-semibold uppercase tracking-[0.14em] text-text-subtle">
+                    {resource.label}
+                  </p>
+                  <h3 className="mt-5 font-serif-playfair text-2xl font-semibold leading-tight text-text sm:text-3xl">
+                    {resource.name}
+                  </h3>
+                  <h4 className="mt-3 font-serif-playfair text-xl font-semibold leading-tight text-text sm:text-2xl">
+                    {resource.title}
+                  </h4>
+                  <p className="mt-5 max-w-[38rem] text-base leading-[1.85] text-text-muted sm:text-[17px]">
+                    {resource.copy}
+                  </p>
+
+                  <p className="mt-6 text-[13px] font-semibold uppercase tracking-[0.12em] text-text-subtle">
+                    {resource.pointsHeading}
+                  </p>
+                  <ul className="mt-4 space-y-3">
+                    {resource.points.map((point) => (
+                      <li
+                        key={point}
+                        className="flex items-start gap-2.5 text-base text-text-muted sm:text-[17px]"
+                      >
+                        <CheckCircle2 className="mt-1 h-4 w-4 flex-shrink-0 text-brand" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-7 flex flex-wrap items-center gap-5">
+                    <Link href={resource.primaryHref} className={primaryButtonSm}>
+                      {resource.primaryCta}
+                    </Link>
+                    {resource.secondaryCta && resource.secondaryHref ? (
+                      <Link
+                        href={resource.secondaryHref}
+                        className={`${brandLink} inline-flex items-center`}
+                      >
+                        {resource.secondaryCta} <ArrowUpRight className="ml-1 h-4 w-4" />
+                      </Link>
+                    ) : null}
+                  </div>
+                </div>
+                <div
+                  className={
+                    index % 2 === 0 ? 'order-2 min-h-[380px]' : 'order-2 min-h-[380px] md:order-1'
+                  }
+                >
+                  {visualPanels[resource.visual]}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
 
-      <section className="relative z-10 bg-[#fff7f0] pb-6 pt-12 sm:pb-8 sm:pt-14 -mb-12 sm:-mb-20">
-        <div className="mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="mx-auto max-w-4xl font-serif-playfair text-3xl font-semibold leading-tight text-text sm:text-[34px]">
-            Need a sharper answer than a free resource can give you?
+      <section className="bg-ink">
+        <div className="section-shell py-16 sm:py-18">
+          <h2 className="text-center font-serif-playfair text-3xl font-semibold leading-tight text-white sm:text-[34px]">
+            A simple path through the free resources
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-base leading-[1.65] text-text-muted sm:text-[17px]">
-            The free resources are built to help you self-serve. But if you need a faster recommendation, clearer tradeoffs, or direct help with a live pricing decision, start with the 90-minute Pricing Strategy Session.
+          <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-[1.75] text-white/72 sm:text-[17px]">
+            This section matters because it turns four separate pages into one connected system.
           </p>
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
-            <Link href="/consulting/entry-offer/form" className={primaryButtonSm}>
-              Book the 90-Minute Session <ArrowRight className="ml-1 inline h-4 w-4" />
-            </Link>
-            <Link href="/consulting" className={`${outlineButton} rounded-full px-5 py-2.5 text-[17px]`}>
-              Explore Work With Me
-            </Link>
+
+          <div className="relative mt-12 grid gap-10 md:grid-cols-4">
+            <div className="absolute left-[12.5%] right-[12.5%] top-[18px] hidden h-px bg-white/12 md:block" />
+            {resourcePath.map((step) => (
+              <Link key={step.title} href={step.href} className="relative text-center">
+                <span className="mx-auto inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/14 bg-white/6 text-sm font-semibold text-brand-soft">
+                  {step.title.split(' - ')[0].replace('Step ', '')}
+                </span>
+                <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-brand-soft">
+                  Step {step.title.split(' - ')[0].replace('Step ', '')}
+                </p>
+                <p className="mt-2 font-serif-playfair text-lg font-semibold leading-snug text-white sm:text-xl">
+                  {step.title.split(' - ')[1]}
+                </p>
+                <p className="mt-2 text-sm leading-[1.7] text-white/70 sm:text-[15px]">
+                  {step.copy}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-sm">
+        <div className="section-shell">
+          <h2 className="text-center font-serif-playfair text-3xl font-semibold leading-tight text-text sm:text-[34px]">
+            Who these are built for
+          </h2>
+          <p className="mx-auto mt-4 max-w-4xl text-center text-base leading-[1.65] text-text-muted sm:text-[17px]">
+            These resources are best for:
+          </p>
+
+          <ul className="mx-auto mt-10 grid max-w-4xl gap-x-8 gap-y-5 sm:grid-cols-2">
+            {[
+              'AI, SaaS, and API founders',
+              'pre-seed to Series A teams',
+              'product and GTM leads working through pricing questions',
+              'operators who need sharper monetization decisions before hiring outside help',
+            ].map((audience) => (
+              <li
+                key={audience}
+                className="flex items-center gap-2.5 border-t border-border pt-4 text-base leading-[1.75] text-text sm:text-[17px]"
+              >
+                <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-brand" />
+                <span>{audience}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mx-auto mt-5 max-w-4xl text-center text-base leading-[1.65] text-text-muted sm:text-[17px]">
+            That audience matches the current positioning of the Matchmaker, Roadmap, and broader
+            site.
+          </p>
+        </div>
+      </section>
+
+      <section className="relative z-10 -mb-12 pb-6 pt-12 sm:-mb-20 sm:pb-8 sm:pt-14">
+        <div className="section-shell text-center">
+          <div className="cta-panel">
+            <h2 className="mx-auto max-w-4xl font-serif-playfair text-3xl font-semibold leading-tight text-text sm:text-[34px]">
+              Need a sharper answer than a free resource can give you?
+            </h2>
+            <p className="mx-auto mt-4 max-w-3xl text-base leading-[1.65] text-text-muted sm:text-[17px]">
+              The free resources are built to help you self-serve. But if you need a faster
+              recommendation, clearer tradeoffs, or direct help with a live pricing decision, start
+              with the 90-minute Pricing Strategy Session.
+            </p>
+            <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
+              <Link href="/consulting/entry-offer/form" className={primaryButtonSm}>
+                Book the 90-Minute Session <ArrowRight className="ml-1 inline h-4 w-4" />
+              </Link>
+              <Link href="/consulting" className={outlineButton}>
+                Explore Work With Me
+              </Link>
+            </div>
           </div>
         </div>
       </section>
     </main>
   )
 }
-

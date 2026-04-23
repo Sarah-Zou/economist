@@ -27,16 +27,14 @@ export const metadata: Metadata = {
 export default function BookPage() {
   return (
     <>
-      <section className="bg-page px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
-        <div className="mx-auto w-full max-w-4xl">
-          <div className="text-center">
-            <span className="kicker">Free 15-min consult</span>
-            <h1 className="mt-4 font-serif-playfair text-ink">
-              Book a free 15-min consultation
-            </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.7] text-text-muted sm:text-[17px]">
-              Pick a time below. After you book, you&apos;ll get a confirmation and
-              calendar invite. If nothing works,{' '}
+      <section className="bg-page py-14 sm:py-20 lg:py-24">
+        <div className="section-shell max-w-4xl">
+          <div className="section-header max-w-[42rem]">
+            <span className="kicker-accent">Free 15-min consult</span>
+            <h1 className="mt-4 font-serif-playfair text-ink">Book a free 15-min consultation</h1>
+            <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
+              Pick a time below. After you book, you&apos;ll get a confirmation and calendar invite.
+              If nothing works,{' '}
               <a
                 href="mailto:hello@sarahzou.com"
                 className="font-medium text-brand-ink underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-dark"
@@ -44,6 +42,9 @@ export default function BookPage() {
                 email me
               </a>{' '}
               and I&apos;ll suggest options.
+            </p>
+            <p className="meta-note mt-6">
+              Best for a fast first conversation, not a full work session.
             </p>
           </div>
 
@@ -56,7 +57,7 @@ export default function BookPage() {
             </a>
           </p>
 
-          <div className="mt-8 overflow-hidden rounded-card border border-border-subtle bg-white">
+          <div className="mt-10 overflow-hidden rounded-card border border-border-soft bg-white/94 shadow-card">
             <CalendlyEmbed url="https://calendly.com/sarahxzou/free-consult-15-min?embed_domain=sarahzou.com&embed_type=Inline" />
           </div>
 
@@ -71,22 +72,22 @@ export default function BookPage() {
             </p>
           </noscript>
 
-          <div className="mx-auto mt-10 flex max-w-2xl items-start gap-3 rounded-card border border-border-soft bg-surface p-5 sm:p-6">
+          <div className="mx-auto mt-12 flex max-w-2xl items-start gap-3 border-t border-border pt-5 sm:pt-6">
             <Calendar className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand" aria-hidden />
             <div className="flex-1 text-left">
               <h3 className="text-[15px] font-semibold text-ink">What to expect</h3>
               <ul className="mt-3 space-y-2 text-[14px] leading-[1.65] text-text-muted">
                 <li>
-                  <span className="font-semibold text-ink">Bring:</span> a quick overview
-                  of your product + current pricing (or your latest experiment idea).
+                  <span className="font-semibold text-ink">Bring:</span> a quick overview of your
+                  product + current pricing (or your latest experiment idea).
                 </li>
                 <li>
-                  <span className="font-semibold text-ink">I&apos;ll help:</span> sharpen
-                  the problem, outline options, and suggest next steps.
+                  <span className="font-semibold text-ink">I&apos;ll help:</span> sharpen the
+                  problem, outline options, and suggest next steps.
                 </li>
                 <li>
-                  <span className="font-semibold text-ink">If we&apos;re a fit:</span>{' '}
-                  I&apos;ll recommend the best engagement (or point you to resources).
+                  <span className="font-semibold text-ink">If we&apos;re a fit:</span> I&apos;ll
+                  recommend the best engagement (or point you to resources).
                 </li>
               </ul>
             </div>

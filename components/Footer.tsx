@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Linkedin, Mail } from 'lucide-react'
-import { primaryButtonSm } from '@/lib/brandStyles'
-
 const workLinks = [
   { href: '/consulting', label: 'Work With Me' },
   { href: '/about', label: 'About' },
@@ -17,13 +15,13 @@ const resourceLinks = [
 ]
 
 const footerLink =
-  'text-[14px] text-text-muted transition-colors hover:text-ink'
+  'text-[13px] uppercase tracking-[0.08em] leading-[1.6] text-text-muted transition-colors hover:text-ink'
 
 const Footer = () => {
   return (
-    <footer className="mt-20 border-t border-border-soft bg-page">
-      <div className="mx-auto w-full max-w-container px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-[1.3fr_1fr_1fr_auto] md:gap-12">
+    <footer className="mt-28 bg-page">
+      <div className="section-shell py-16 sm:py-18">
+        <div className="grid gap-12 border-t border-border-soft pt-10 md:grid-cols-[1.45fr_1fr_1fr_auto] md:gap-10">
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-3">
@@ -35,30 +33,30 @@ const Footer = () => {
                 className="h-9 w-auto"
               />
               <div className="flex flex-col">
-                <span className="font-serif-playfair text-lg font-semibold leading-tight text-ink">
+                <span className="font-serif-playfair text-[1.12rem] font-semibold leading-tight text-ink">
                   Sarah Zou, PhD
                 </span>
-                <span className="text-[12px] text-text-subtle tracking-wide">
+                <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-text-subtle">
                   EconNova Consulting
                 </span>
               </div>
             </Link>
-            <p className="mt-5 max-w-sm text-[14px] leading-[1.7] text-text-muted">
-              Fractional Chief Economist for AI and SaaS founders. Pricing, unit economics,
-              and monetization decisions with research-grade rigor.
+            <p className="mt-6 max-w-sm text-[15px] leading-[1.8] text-text-muted">
+              Fractional Chief Economist for AI and SaaS founders. Pricing, unit economics, and
+              monetization decisions with research-grade rigor and operator-speed execution.
             </p>
             <Link
               href="/consulting/entry-offer/form"
-              className={`${primaryButtonSm} mt-6`}
+              className="mt-7 inline-flex items-center gap-1.5 text-[14px] font-semibold text-brand-ink transition-colors hover:text-brand-dark"
             >
-              Book the Session
+              Book the 90-minute session
             </Link>
           </div>
 
           {/* Navigation */}
           <div>
             <p className="kicker-muted mb-4">Navigation</p>
-            <ul className="space-y-2.5">
+            <ul className="space-y-3">
               {workLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className={footerLink}>
@@ -72,7 +70,7 @@ const Footer = () => {
           {/* Resources */}
           <div>
             <p className="kicker-muted mb-4">Free resources</p>
-            <ul className="space-y-2.5">
+            <ul className="space-y-3">
               {resourceLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className={footerLink}>
@@ -86,12 +84,15 @@ const Footer = () => {
           {/* Contact */}
           <div className="md:text-right">
             <p className="kicker-muted mb-4 md:text-right">Contact</p>
+            <p className="mb-5 text-[14px] leading-[1.7] text-text-muted md:ml-auto md:max-w-[14rem]">
+              For live pricing decisions, the fastest path is the 90-minute strategy session.
+            </p>
             <div className="flex items-center gap-3 md:justify-end">
               <Link
                 href="/contact"
                 aria-label="Contact Sarah Zou"
                 title="Contact Sarah Zou"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border-subtle text-text-muted transition-colors hover:border-ink/30 hover:text-ink"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-[12px] bg-white text-text-muted transition-colors hover:bg-surface hover:text-ink"
               >
                 <Mail className="h-4 w-4" />
               </Link>
@@ -101,7 +102,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 aria-label="Sarah Zou on LinkedIn"
                 title="Sarah Zou on LinkedIn"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border-subtle text-text-muted transition-colors hover:border-ink/30 hover:text-ink"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-[12px] bg-white text-text-muted transition-colors hover:bg-surface hover:text-ink"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
@@ -109,7 +110,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-2 border-t border-border-soft pt-6 text-[13px] text-text-subtle sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-2 border-t border-border-soft pt-6 text-[13px] text-text-subtle sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 EconNova Consulting · All rights reserved</p>
           <p>Princeton, NJ · NYC · Philadelphia · Remote (US/EU)</p>
         </div>

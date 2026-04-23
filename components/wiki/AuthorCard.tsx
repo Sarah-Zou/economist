@@ -1,26 +1,23 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
 export default function AuthorCard() {
   return (
-    <div className="bg-surface rounded-2xl p-6 border border-border-subtle">
+    <div className="border-t border-border pt-6">
       <div>
-        <h3 className="text-lg font-semibold text-text mb-1">
-          Dr. Sarah Zou
-        </h3>
-        <p className="text-sm text-text-muted mb-3">
-          EconNova Consulting
-        </p>
-        <p className="text-sm text-text mb-4 leading-[1.65]">
-          PhD economist specializing in pricing and monetization strategy for tech startups. 
-          Helping startups and scale-ups optimize their pricing for maximum growth.
+        <p className="kicker-muted mb-3">Author</p>
+        <h3 className="mb-1 text-lg font-semibold text-text">Dr. Sarah Zou</h3>
+        <p className="mb-3 text-sm text-text-muted">EconNova Consulting</p>
+        <p className="mb-4 text-sm leading-[1.75] text-text">
+          PhD economist specializing in pricing and monetization strategy for tech startups. Helping
+          startups and scale-ups optimize their pricing for maximum growth.
         </p>
         <Link
           href="/about"
-          className="text-brand-ink hover:text-brand-ink/90 text-sm font-medium transition-colors"
+          className="text-sm font-medium text-brand-ink transition-colors hover:text-brand-dark"
         >
           Learn more about Sarah →
         </Link>
       </div>
     </div>
-  );
+  )
 }

@@ -1,48 +1,11 @@
 'use client'
 
-import React, { useState } from 'react'
 import Link from 'next/link'
-import { brandLink, outlineButton, primaryButton } from '@/lib/brandStyles'
+import ContactForm from '@/components/ContactForm'
+import { brandLink, outlineButton, primaryButtonLg } from '@/lib/brandStyles'
 import { cn } from '@/lib/utils'
 
 export default function ContactPage() {
-  const [status, setStatus] = useState({ message: '', show: false })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setStatus({ message: 'Sending...', show: true })
-
-    const form = e.currentTarget
-    const scriptURL = process.env.NEXT_PUBLIC_GOOGLE_WEB_APP_URL || 'https://script.google.com/macros/s/AKfycbyM_r8F368DURM5BPZliHGh1cx5NSAijtxWpH98MvVuv9vNBnQpuW9HlygUjz4j2zU7/exec'
-
-    try {
-      const formData = new FormData(form)
-      
-      // Google Apps Script web apps often return redirects, so we use no-cors mode
-      // This means we can't read the response, but the data is still sent
-      await fetch(scriptURL, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: formData
-      })
-
-      // Since we can't read the response in no-cors mode, assume success
-      // The form data was sent to Google Apps Script
-      // Redirect to thank you page (using window.location for static export compatibility)
-      window.location.href = '/contact/thanks'
-    } catch (error) {
-      setStatus({ 
-        message: "Error! Please try again or email me directly at hello@sarahzou.com", 
-        show: true 
-      })
-      console.error('Error!', error)
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
   const scrollToForm = () => {
     const nameInput = document.getElementById('name-input')
     if (nameInput) {
@@ -56,131 +19,64 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* Hero Section - Above the Fold */}
-      <section className="min-h-[70vh] flex flex-col items-center justify-center bg-surface py-20 px-4">
-        <div className="w-full max-w-3xl mx-auto text-center">
-          <h1 className="font-serif-playfair text-[36px] sm:text-[42px] lg:text-[48px] font-bold mb-6 text-text">
-            Contact Sarah
-          </h1>
-          <p className="mb-8 text-text text-lg sm:text-xl lg:text-[22px] leading-[1.65] max-w-2xl mx-auto">
-            Pick what's easiest—book a free 15-min consult, or send 2 lines.
-          </p>
-          
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link 
-              href="/book"
-              className={cn(primaryButton, 'inline-block px-8 py-4 shadow-lg hover:shadow-xl')}
-            >
-              Book Free Consult
-            </Link>
-            <button
-              onClick={scrollToForm}
-              className={cn(outlineButton, 'inline-block border-2 font-bold text-[19px] leading-none px-8 py-4 rounded-full')}
-            >
-              Send a message instead
-            </button>
+      <section className="bg-hero-tint">
+        <div className="section-shell py-16 sm:py-20 lg:py-24">
+          <div className="mx-auto max-w-[44rem] text-center">
+            <span className="kicker-accent">Contact</span>
+            <h1 className="mt-5 font-serif-playfair text-[36px] font-bold text-text sm:text-[42px] lg:text-[52px]">
+              Contact Sarah
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-[1.75] text-text-muted sm:text-xl lg:text-[22px]">
+              Pick the fastest path for your situation: book a free consult, or send a short note
+              about the decision you&apos;re working through.
+            </p>
+
+            <p className="meta-note mt-6">
+              Primary action: book the consult if the decision is live.
+            </p>
+            <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Link href="/book" className={primaryButtonLg}>
+                Book Free Consult
+              </Link>
+              <button onClick={scrollToForm} className={cn(outlineButton, 'w-full sm:w-auto')}>
+                Send a message instead
+              </button>
+            </div>
+
+            <p className="mx-auto mt-8 max-w-xl text-[14px] leading-[1.75] text-text-subtle">
+              Expect a reply in 1-2 business days. If your question is urgent, booking the consult
+              is usually the fastest path.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="bg-surface py-12 px-4">
-        <div className="w-full max-w-2xl bg-white rounded-lg shadow-lg mx-auto p-6 md:p-10">
-          <h2 className="font-serif-playfair text-[28px] sm:text-[32px] font-bold mb-4 text-text text-center">
-            Prefer email? Send a Message
-          </h2>
-          <p className="text-sm text-text-muted text-center mb-4">
-            Expect a reply in 1–2 business days. Want a faster answer? <Link href="/book" className={cn(brandLink, 'font-medium')}>Book a 15-min call</Link>
-          </p>
-          <form id="contact-form" onSubmit={handleSubmit} className="space-y-4">
-            <input
-              id="name-input"
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              className="w-full px-4 py-3 border border-border-subtle bg-surface rounded focus:outline-none focus:ring-2 focus:ring-brand text-text"
-              required
+      <section className="section section-alt">
+        <div className="section-shell max-w-3xl">
+          <div className="border-t border-border-soft pt-8 sm:pt-10">
+            <h2 className="text-center font-serif-playfair text-[28px] font-bold text-text sm:text-[32px]">
+              Prefer email? Send a Message
+            </h2>
+            <p className="mb-8 mt-4 text-center text-[15px] leading-[1.8] text-text-muted">
+              Give me the short version of the problem, pricing question, or decision in motion.
+              Want a faster answer?{' '}
+              <Link href="/book" className={cn(brandLink, 'font-medium')}>
+                Book a 15-min call
+              </Link>
+            </p>
+            <ContactForm
+              messagePlaceholder="Share the context, current pricing question, and what outcome you want."
+              buttonText="Send message"
             />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              className="w-full px-4 py-3 border border-border-subtle bg-surface rounded focus:outline-none focus:ring-2 focus:ring-brand text-text"
-              required
-            />
-            <input
-              type="text"
-              name="company"
-              placeholder="Company name or website (optional)"
-              className="w-full px-4 py-3 border border-border-subtle bg-surface rounded focus:outline-none focus:ring-2 focus:ring-brand text-text"
-            />
-            <div>
-              <label htmlFor="stage-select" className="block text-sm font-medium text-text-muted mb-1">Stage & ARR band (optional)</label>
-              <select
-                id="stage-select"
-                name="stage"
-                className="w-full px-4 py-3 border border-border-subtle bg-surface rounded focus:outline-none focus:ring-2 focus:ring-brand text-text"
-              >
-                <option value="">Select your stage</option>
-                <option value="pre-rev">Pre-revenue</option>
-                <option value="under-1m">Under $1M ARR</option>
-                <option value="1-5m">$1M - $5M ARR</option>
-                <option value="5m-plus">$5M+ ARR</option>
-              </select>
-            </div>
-            <div>
-              <label htmlFor="pricing-select" className="block text-sm font-medium text-text-muted mb-1">Current pricing model (optional)</label>
-              <select
-                id="pricing-select"
-                name="pricing"
-                className="w-full px-4 py-3 border border-border-subtle bg-surface rounded focus:outline-none focus:ring-2 focus:ring-brand text-text"
-              >
-                <option value="">Select your model</option>
-                <option value="seats">Seats</option>
-                <option value="usage">Usage</option>
-                <option value="hybrid">Hybrid</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div>
-              <label htmlFor="goal-select" className="block text-sm font-medium text-text-muted mb-1">Goal (optional)</label>
-              <select
-                id="goal-select"
-                name="goal"
-                className="w-full px-4 py-3 border border-border-subtle bg-surface rounded focus:outline-none focus:ring-2 focus:ring-brand text-text"
-              >
-                <option value="">Select your goal</option>
-                <option value="raise-arpa">Raise ARPA</option>
-                <option value="improve-nrr">Improve NRR</option>
-                <option value="faster-payback">Faster payback</option>
-                <option value="new-market">New market</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <textarea
-              name="message"
-              placeholder="How can I help you?"
-              rows={5}
-              className="w-full px-4 py-3 border border-border-subtle bg-surface rounded focus:outline-none focus:ring-2 focus:ring-brand text-text"
-              required
-            />
-            <button
-              type="submit"
-              id="submit-btn"
-              disabled={isSubmitting}
-              className={cn(primaryButton, 'w-full rounded tracking-wider disabled:opacity-50 disabled:cursor-not-allowed')}
-            >
-              SUBMIT
-            </button>
-            {status.show && (
-              <div id="form-status" className="mt-2 text-center text-text">
-                {status.message}
-              </div>
-            )}
-          </form>
+            <p className="mt-6 text-center text-[13px] leading-[1.7] text-text-subtle">
+              Prefer direct email?{' '}
+              <Link href="mailto:hello@sarahzou.com" className={brandLink}>
+                hello@sarahzou.com
+              </Link>
+            </p>
+          </div>
         </div>
       </section>
     </>
   )
-} 
+}

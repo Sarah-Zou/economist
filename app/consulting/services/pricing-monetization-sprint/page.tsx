@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import { Metadata } from 'next';
-import { ArrowRight, ArrowUpRight, CheckCircle2, ShieldCheck } from 'lucide-react';
-import FAQSection from './FAQSection';
-import { generateServiceJsonLd } from '@/lib/generateJsonLd';
-import { outlineButton, primaryButtonLg } from '@/lib/brandStyles';
+import Link from 'next/link'
+import { Metadata } from 'next'
+import { ArrowRight, ArrowUpRight, CheckCircle2 } from 'lucide-react'
+import FAQSection from './FAQSection'
+import { generateServiceJsonLd } from '@/lib/generateJsonLd'
+import { outlineButton, primaryButtonLg } from '@/lib/brandStyles'
 
 export const metadata: Metadata = {
   title: 'Pricing & Monetization Sprint for Seed–Series A Startups | Sarah Zou',
@@ -36,11 +36,11 @@ export const metadata: Metadata = {
     description:
       'Build a pricing structure you can take to market. For AI and SaaS founders needing model, value metric, packaging, price logic, and rollout guidance in one focused sprint.',
   },
-};
+}
 
-const SERVICE_URL = 'https://sarahzou.com/consulting/services/pricing-monetization-sprint';
-const PRIMARY_CTA_HREF = '/consulting/entry-offer/form';
-const SECONDARY_CTA_HREF = '#pricing';
+const SERVICE_URL = 'https://sarahzou.com/consulting/services/pricing-monetization-sprint'
+const PRIMARY_CTA_HREF = '/consulting/entry-offer/form'
+const SECONDARY_CTA_HREF = '#pricing'
 
 const WHAT_YOU_GET = [
   { lead: 'A pricing model recommendation', rest: 'and the logic behind it' },
@@ -49,7 +49,7 @@ const WHAT_YOU_GET = [
   { lead: 'Initial price-point guidance', rest: 'and discount guardrails' },
   { lead: 'A rollout plan', rest: 'with priorities, risks, and next actions' },
   { lead: 'A stronger pricing story', rest: 'for customers, investors, or your team' },
-];
+]
 
 const DELIVERABLES = [
   'Pricing recommendation report',
@@ -58,7 +58,7 @@ const DELIVERABLES = [
   'Initial price-point guidance',
   'Rollout and experiment plan',
   'Readout with decisions, tradeoffs, and next steps',
-];
+]
 
 const WHEN_FOUNDERS_HIRE = [
   { lead: 'You are launching', rest: 'and need a first pricing structure' },
@@ -70,7 +70,7 @@ const WHEN_FOUNDERS_HIRE = [
     lead: 'You need clearer pricing logic',
     rest: 'for investors, leadership, or internal alignment',
   },
-];
+]
 
 const WORKSTREAMS = [
   {
@@ -127,7 +127,7 @@ const WORKSTREAMS = [
     href: '/wiki/pricing/value-and-customers/economic-value-estimation',
     linkLabel: 'economic value logic',
   },
-];
+]
 
 const INVESTMENT_TIERS = [
   {
@@ -148,7 +148,7 @@ const INVESTMENT_TIERS = [
     desc: 'For complex or investor-critical cases that require deeper analysis, more research, multiple segments, or broader rollout planning.',
     featured: false,
   },
-];
+]
 
 const TESTIMONIALS = [
   {
@@ -163,7 +163,7 @@ const TESTIMONIALS = [
     author: 'Lisa, J.',
     role: 'Co-Founder, Seed AI Developer Tool',
   },
-];
+]
 
 const PROCESS_STEPS = [
   {
@@ -186,7 +186,7 @@ const PROCESS_STEPS = [
     title: 'Hand off the plan',
     desc: 'You leave with clear recommendations, implementation priorities, and a practical roadmap for what to do next.',
   },
-];
+]
 
 export default function PricingDiagnosticRevenueBoost() {
   const serviceJsonLd = generateServiceJsonLd({
@@ -194,7 +194,7 @@ export default function PricingDiagnosticRevenueBoost() {
     description:
       'Build a pricing structure you can take to market across model, value metric, packaging, price logic, and rollout in 1–2 weeks.',
     url: SERVICE_URL,
-  });
+  })
 
   return (
     <>
@@ -207,61 +207,51 @@ export default function PricingDiagnosticRevenueBoost() {
         <main>
           {/* Hero */}
           <section className="bg-hero-tint">
-            <div className="mx-auto w-full max-w-container px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8 lg:pb-24 lg:pt-24">
-              <div className="mx-auto max-w-3xl text-center">
-                <span className="kicker">Pricing &amp; Monetization Sprint</span>
+            <div className="section-shell pb-20 pt-12 sm:pb-24 sm:pt-16 lg:pb-28 lg:pt-24">
+              <div className="section-header max-w-[44rem]">
+                <span className="kicker-accent">Pricing &amp; Monetization Sprint</span>
                 <h1 className="mt-5 font-serif-playfair text-ink">
-                  Build a pricing structure you can{' '}
-                  <span className="text-brand">take to market</span>
+                  Build a pricing structure you can take to market
                 </h1>
-                <p className="mx-auto mt-5 max-w-2xl text-[17px] leading-[1.7] text-text-muted sm:text-[19px]">
-                  For AI and SaaS founders who need more than a quick opinion. We work
-                  across pricing model, value metric, packaging, price logic, and rollout
-                  so your monetization system works together.
+                <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
+                  For AI and SaaS founders who need more than a quick opinion. We work across
+                  pricing model, value metric, packaging, price logic, and rollout so your
+                  monetization system works together.
                 </p>
-
-                <div className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-6 rounded-card border border-border-subtle bg-white px-6 py-6 text-left sm:grid-cols-3 sm:gap-8">
-                  <div>
-                    <p className="kicker-muted">Best for</p>
-                    <p className="mt-2 text-[15px] font-semibold leading-[1.4] text-ink">
-                      Launch, re-pricing, weak monetization, or investor decisions
-                    </p>
-                  </div>
-                  <div>
-                    <p className="kicker-muted">Typical scope</p>
-                    <p className="mt-2 text-[15px] font-semibold leading-[1.4] text-ink">
-                      1–2 weeks
-                    </p>
-                  </div>
-                  <div>
-                    <p className="kicker-muted">Starting at</p>
-                    <p className="mt-2 text-[15px] font-semibold leading-[1.4] text-ink">
-                      $5K
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+                <p className="meta-note mt-6">
+                  Most founders start with the 90-minute session. The $600 fee is credited toward
+                  the sprint within 14 days.
+                </p>
+                <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
                   <Link
                     href={PRIMARY_CTA_HREF}
-                    className={`${primaryButtonLg} w-full max-w-[420px] sm:w-auto`}
+                    className={`${primaryButtonLg} w-full max-w-[360px] sm:w-auto`}
                   >
                     Book the 90-Minute Session
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
-                  <Link
-                    href={SECONDARY_CTA_HREF}
-                    className={`${outlineButton} h-12 px-7 text-[16px] w-full max-w-[420px] sm:w-auto`}
-                  >
-                    See pricing &amp; scope
+                  <Link href={SECONDARY_CTA_HREF} className="display-link">
+                    See pricing and scope
                   </Link>
                 </div>
-
-                <p className="mx-auto mt-8 inline-flex max-w-2xl items-center gap-2 rounded-full border border-border-subtle bg-white px-4 py-2 text-[13px] text-text-muted">
-                  <ShieldCheck className="h-4 w-4 flex-shrink-0 text-brand" aria-hidden />
-                  Most founders start with the 90-minute session. The $600 fee is credited
-                  toward the sprint if booked within 14 days.
-                </p>
+                <dl className="mx-auto mt-14 grid max-w-3xl grid-cols-1 gap-x-10 gap-y-6 border-t border-border-soft pt-8 text-left sm:grid-cols-3">
+                  <div>
+                    <dt className="kicker-muted">Best for</dt>
+                    <dd className="mt-2 text-[15px] leading-[1.55] text-ink">
+                      Launch, re-pricing, weak monetization, or investor decisions
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="kicker-muted">Typical scope</dt>
+                    <dd className="mt-2 text-[15px] leading-[1.55] text-ink">1–2 weeks</dd>
+                  </div>
+                  <div>
+                    <dt className="kicker-muted">Starting at</dt>
+                    <dd className="mt-2 text-[15px] font-semibold leading-[1.55] text-brand-ink">
+                      $5K
+                    </dd>
+                  </div>
+                </dl>
               </div>
             </div>
           </section>
@@ -284,7 +274,10 @@ export default function PricingDiagnosticRevenueBoost() {
                   <ul className="mt-5 space-y-3">
                     {WHAT_YOU_GET.map((item) => (
                       <li key={item.lead} className="flex items-start gap-3">
-                        <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand" aria-hidden />
+                        <CheckCircle2
+                          className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand"
+                          aria-hidden
+                        />
                         <span className="text-[15px] leading-[1.65] text-text">
                           <strong className="text-ink">{item.lead}</strong> {item.rest}
                         </span>
@@ -300,7 +293,10 @@ export default function PricingDiagnosticRevenueBoost() {
                   <ul className="mt-5 space-y-3">
                     {DELIVERABLES.map((item) => (
                       <li key={item} className="flex items-start gap-3">
-                        <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" aria-hidden />
+                        <span
+                          className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand"
+                          aria-hidden
+                        />
                         <span className="text-[15px] font-semibold leading-[1.6] text-ink">
                           {item}
                         </span>
@@ -308,8 +304,8 @@ export default function PricingDiagnosticRevenueBoost() {
                     ))}
                   </ul>
                   <p className="mt-6 border-t border-border-soft pt-5 text-[13px] leading-[1.7] text-text-muted">
-                    <strong className="text-ink">Note:</strong> Exact deliverables depend on
-                    scope. Some projects are narrower. Some require deeper research.
+                    <strong className="text-ink">Note:</strong> Exact deliverables depend on scope.
+                    Some projects are narrower. Some require deeper research.
                   </p>
                 </div>
               </div>
@@ -325,8 +321,8 @@ export default function PricingDiagnosticRevenueBoost() {
                   Most founders start with the 90-minute session
                 </h2>
                 <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.7] text-text-muted sm:text-[17px]">
-                  Usually the fastest way to tell whether you need one sharp recommendation
-                  or a broader pricing reset.
+                  Usually the fastest way to tell whether you need one sharp recommendation or a
+                  broader pricing reset.
                 </p>
               </div>
 
@@ -370,8 +366,8 @@ export default function PricingDiagnosticRevenueBoost() {
               </div>
 
               <p className="mx-auto mt-10 max-w-3xl rounded-card border border-brand/20 bg-brand-soft p-5 text-center text-[14px] font-medium leading-[1.65] text-brand-ink">
-                If we move into a Pricing &amp; Monetization Sprint within 14 days, the
-                $600 session fee is credited toward the project.
+                If we move into a Pricing &amp; Monetization Sprint within 14 days, the $600 session
+                fee is credited toward the project.
               </p>
             </div>
           </section>
@@ -388,14 +384,7 @@ export default function PricingDiagnosticRevenueBoost() {
 
               <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
                 {INVESTMENT_TIERS.map((tier) => (
-                  <div
-                    key={tier.name}
-                    className={
-                      tier.featured
-                        ? 'card-dark relative'
-                        : 'card'
-                    }
-                  >
+                  <div key={tier.name} className={tier.featured ? 'card-dark relative' : 'card'}>
                     {tier.featured && (
                       <span className="absolute right-5 top-5 rounded-full bg-brand px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-on">
                         Most popular
@@ -423,8 +412,8 @@ export default function PricingDiagnosticRevenueBoost() {
               </div>
 
               <p className="mx-auto mt-10 max-w-2xl text-center text-[15px] leading-[1.7] text-text-muted">
-                Not sure which scope fits? Start with the 90-minute session. I&apos;ll tell
-                you honestly whether you need the sprint at all.
+                Not sure which scope fits? Start with the 90-minute session. I&apos;ll tell you
+                honestly whether you need the sprint at all.
               </p>
               <div className="mt-5 text-center">
                 <Link href={PRIMARY_CTA_HREF} className={outlineButton}>
@@ -440,13 +429,11 @@ export default function PricingDiagnosticRevenueBoost() {
               <div className="grid items-start gap-12 md:grid-cols-[1fr_1.4fr] lg:gap-16">
                 <div>
                   <span className="kicker">The trigger</span>
-                  <h2 className="mt-3 font-serif-playfair">
-                    When founders hire me for this
-                  </h2>
+                  <h2 className="mt-3 font-serif-playfair">When founders hire me for this</h2>
                   <p className="mt-5 max-w-md text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
-                    Pricing problems usually show up in one of two ways: the structure was
-                    never strong to begin with, or the company has outgrown something that
-                    used to be good enough.
+                    Pricing problems usually show up in one of two ways: the structure was never
+                    strong to begin with, or the company has outgrown something that used to be good
+                    enough.
                   </p>
                 </div>
                 <div>
@@ -474,8 +461,8 @@ export default function PricingDiagnosticRevenueBoost() {
                   <span className="kicker">Scope</span>
                   <h2 className="mt-3 font-serif-playfair">What we can work on</h2>
                   <p className="mt-5 max-w-md text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
-                    The sprint is flexible, but usually focuses on the highest-leverage
-                    monetization decisions.
+                    The sprint is flexible, but usually focuses on the highest-leverage monetization
+                    decisions.
                   </p>
                 </div>
                 <ul className="grid gap-x-8 gap-y-0 sm:grid-cols-2">
@@ -520,9 +507,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     <h3 className="mt-4 text-[17px] font-semibold leading-[1.3] text-ink">
                       {step.title}
                     </h3>
-                    <p className="mt-2 text-[14px] leading-[1.65] text-text-muted">
-                      {step.desc}
-                    </p>
+                    <p className="mt-2 text-[14px] leading-[1.65] text-text-muted">{step.desc}</p>
                   </div>
                 ))}
               </div>
@@ -538,18 +523,15 @@ export default function PricingDiagnosticRevenueBoost() {
               <div className="grid items-start gap-12 md:grid-cols-2 lg:gap-16">
                 <div>
                   <span className="kicker">The approach</span>
-                  <h2 className="mt-3 font-serif-playfair">
-                    Why founders hire me for this work
-                  </h2>
+                  <h2 className="mt-3 font-serif-playfair">Why founders hire me for this work</h2>
                   <p className="mt-6 max-w-lg text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
-                    I work more like a <strong className="text-ink">fractional Chief
-                    Economist</strong> for startups making consequential monetization
-                    decisions.
+                    I work more like a{' '}
+                    <strong className="text-ink">fractional Chief Economist</strong> for startups
+                    making consequential monetization decisions.
                   </p>
                   <p className="mt-5 max-w-lg text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
                     That means rigorous thinking without academic abstraction, practical
-                    founder-facing recommendations, and outputs designed to be used — not
-                    admired.
+                    founder-facing recommendations, and outputs designed to be used — not admired.
                   </p>
                 </div>
                 <div>
@@ -586,30 +568,24 @@ export default function PricingDiagnosticRevenueBoost() {
           </section>
 
           {/* Closing CTA */}
-          <section className="orange-surface section-sm">
-            <div className="mx-auto w-full max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-              <h2 className="font-serif-playfair text-white">
-                Need more than one pricing answer?
-              </h2>
-              <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.7] text-white/85 sm:text-[17px]">
-                Start with the 90-Minute Pricing Strategy Session. It&apos;s the fastest
-                way to get a sharp recommendation and move into the sprint intelligently
-                if the problem is broader.
-              </p>
-              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <Link
-                  href={PRIMARY_CTA_HREF}
-                  className="inline-flex h-12 items-center justify-center rounded-full bg-white px-7 text-[16px] font-semibold text-brand-ink transition-colors hover:bg-brand-soft"
-                >
-                  Book the Session
-                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
-                </Link>
-                <Link
-                  href="/book"
-                  className={`${outlineButton} border-white bg-transparent text-white hover:bg-white/10 hover:text-white`}
-                >
-                  Book a free consult
-                </Link>
+          <section className="section-sm">
+            <div className="section-shell max-w-4xl">
+              <div className="cta-panel">
+                <h2 className="font-serif-playfair text-ink">Need more than one pricing answer?</h2>
+                <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
+                  Start with the 90-Minute Pricing Strategy Session. It&apos;s the fastest way to
+                  get a sharp recommendation and move into the sprint intelligently if the problem
+                  is broader.
+                </p>
+                <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                  <Link href={PRIMARY_CTA_HREF} className={primaryButtonLg}>
+                    Book the Session
+                    <ArrowRight className="h-4 w-4" aria-hidden />
+                  </Link>
+                  <Link href="/book" className={outlineButton}>
+                    Book a free consult
+                  </Link>
+                </div>
               </div>
             </div>
           </section>
@@ -669,5 +645,5 @@ export default function PricingDiagnosticRevenueBoost() {
         }}
       />
     </>
-  );
+  )
 }

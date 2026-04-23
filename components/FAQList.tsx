@@ -11,21 +11,21 @@ type Props = {
 
 export default function FAQList({ items, openFirst = true, className = '' }: Props) {
   return (
-    <div className={`space-y-3 ${className}`.trim()}>
+    <div className={`divide-y divide-border-soft border-y border-border-soft ${className}`.trim()}>
       {items.map((item, index) => (
         <details
           key={typeof item.q === 'string' ? item.q : index}
           open={openFirst && index === 0}
-          className="group rounded-card border border-border-subtle bg-white"
+          className="group"
         >
-          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5">
-            <h3 className="text-[17px] font-semibold text-ink">{item.q}</h3>
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 transition-colors hover:text-ink">
+            <h3 className="text-[17px] font-semibold leading-[1.35] text-ink">{item.q}</h3>
             <ChevronDown
-              className="h-4 w-4 flex-shrink-0 text-text-subtle transition-transform group-open:rotate-180"
+              className="h-4 w-4 flex-shrink-0 text-text-subtle transition-[transform,color] duration-200 group-open:rotate-180 group-hover:text-ink"
               aria-hidden
             />
           </summary>
-          <div className="border-t border-border-soft px-6 py-5 text-[15px] leading-[1.75] text-text-muted">
+          <div className="max-w-[62ch] pb-5 pr-8 text-[15px] leading-[1.8] text-text-muted">
             {item.a}
           </div>
         </details>

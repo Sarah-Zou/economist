@@ -36,8 +36,7 @@ export default function ContactForm({
       window.location.href = '/contact/thanks'
     } catch (error) {
       setStatus({
-        message:
-          'Error! Please try again or email me directly at hello@sarahzou.com',
+        message: 'Error! Please try again or email me directly at hello@sarahzou.com',
         show: true,
       })
       console.error('Error!', error)
@@ -47,8 +46,8 @@ export default function ContactForm({
   }
 
   return (
-    <form id="contact-form" onSubmit={handleSubmit} className="space-y-4">
-      <div>
+    <form id="contact-form" onSubmit={handleSubmit} className="space-y-5">
+      <div className="field-group">
         <label htmlFor="name-input" className="label">
           Name
         </label>
@@ -62,7 +61,7 @@ export default function ContactForm({
         />
       </div>
 
-      <div>
+      <div className="field-group">
         <label htmlFor="email-input" className="label">
           Email
         </label>
@@ -76,7 +75,7 @@ export default function ContactForm({
         />
       </div>
 
-      <div>
+      <div className="field-group">
         <label htmlFor="company-input" className="label">
           Company name or website (optional)
         </label>
@@ -89,7 +88,7 @@ export default function ContactForm({
         />
       </div>
 
-      <div>
+      <div className="field-group">
         <label htmlFor="stage-select" className="label">
           Stage &amp; ARR band (optional)
         </label>
@@ -102,7 +101,7 @@ export default function ContactForm({
         </select>
       </div>
 
-      <div>
+      <div className="field-group">
         <label htmlFor="pricing-select" className="label">
           Current pricing model (optional)
         </label>
@@ -115,7 +114,7 @@ export default function ContactForm({
         </select>
       </div>
 
-      <div>
+      <div className="field-group">
         <label htmlFor="goal-select" className="label">
           Goal (optional)
         </label>
@@ -129,7 +128,7 @@ export default function ContactForm({
         </select>
       </div>
 
-      <div>
+      <div className="field-group">
         <label htmlFor="message-textarea" className="label">
           Message
         </label>
@@ -147,7 +146,7 @@ export default function ContactForm({
         type="submit"
         id="submit-btn"
         disabled={isSubmitting}
-        className={cn(primaryButton, 'w-full')}
+        className={cn(primaryButton, 'mt-2 w-full sm:w-auto')}
       >
         {isSubmitting ? 'Sending…' : buttonText}
       </button>
@@ -155,7 +154,7 @@ export default function ContactForm({
       {status.show && (
         <div
           id="form-status"
-          className="mt-2 text-center text-[14px] text-text-muted"
+          className="rounded-control bg-surface px-4 py-3 text-[14px] leading-[1.7] text-text-muted"
         >
           {status.message}
         </div>

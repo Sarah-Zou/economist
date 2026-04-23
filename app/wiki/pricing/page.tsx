@@ -1,14 +1,19 @@
-import { Metadata } from 'next';
-import { generateItemListJsonLd, generateWebPageJsonLd, generateCollectionPageJsonLd } from '@/lib/generateJsonLd';
-import { getAllCategories, getConceptBySlug } from '@/lib/mdx';
-import WikiLayout from '@/components/wiki/WikiLayout';
-import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter';
-import CategoryCard from '@/components/wiki/CategoryCard';
-import '@/app/prose.css';
+import { Metadata } from 'next'
+import {
+  generateItemListJsonLd,
+  generateWebPageJsonLd,
+  generateCollectionPageJsonLd,
+} from '@/lib/generateJsonLd'
+import { getAllCategories, getConceptBySlug } from '@/lib/mdx'
+import WikiLayout from '@/components/wiki/WikiLayout'
+import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter'
+import CategoryCard from '@/components/wiki/CategoryCard'
+import '@/app/prose.css'
 
 export const metadata: Metadata = {
   title: 'Pricing & Monetization Wiki for SaaS & Tech Startups | Sarah Zou',
-  description: 'Evidence-based concepts: value metric, packaging, NRR, payback, usage-based pricing. For Seed–Series A SaaS, APIs & AI. Definitions, applications, pitfalls, metrics.',
+  description:
+    'Evidence-based concepts: value metric, packaging, NRR, payback, usage-based pricing. For Seed–Series A SaaS, APIs & AI. Definitions, applications, pitfalls, metrics.',
   robots: {
     index: true,
     follow: true,
@@ -21,26 +26,27 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://sarahzou.com/wiki/pricing'
+    canonical: 'https://sarahzou.com/wiki/pricing',
   },
   openGraph: {
     title: 'Pricing & Monetization Wiki for SaaS & Tech Startups | Sarah Zou',
-    description: 'Evidence-based concepts: value metric, packaging, NRR, payback, usage-based pricing. For Seed–Series A SaaS, APIs & AI. Definitions, applications, pitfalls, metrics.',
+    description:
+      'Evidence-based concepts: value metric, packaging, NRR, payback, usage-based pricing. For Seed–Series A SaaS, APIs & AI. Definitions, applications, pitfalls, metrics.',
     url: 'https://sarahzou.com/wiki/pricing',
     siteName: 'Sarah Zou',
-    type: 'website'
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Pricing & Monetization Wiki for SaaS & Tech Startups | Sarah Zou',
-    description: 'Evidence-based concepts: value metric, packaging, NRR, payback, usage-based pricing. For Seed–Series A SaaS, APIs & AI. Definitions, applications, pitfalls, metrics.',
+    description:
+      'Evidence-based concepts: value metric, packaging, NRR, payback, usage-based pricing. For Seed–Series A SaaS, APIs & AI. Definitions, applications, pitfalls, metrics.',
   },
-};
-
+}
 
 export default function WikiPricingPage() {
-  const allCategories = getAllCategories();
-  
+  const allCategories = getAllCategories()
+
   // Define the specific order and images for categories
   const categoryOrder = [
     { slug: 'foundations', image: '/images/pricing.webp' },
@@ -52,54 +58,60 @@ export default function WikiPricingPage() {
     { slug: 'research-and-experiments', image: '/images/s-1.webp' },
     { slug: 'economics-and-metrics', image: '/images/s-5.webp' },
     { slug: 'governance-and-process', image: '/images/s-3.webp' },
-    { slug: 'pitfalls-and-failures', image: '/images/s-4.webp' }
-  ];
-  
+    { slug: 'pitfalls-and-failures', image: '/images/s-4.webp' },
+  ]
+
   // Sort categories according to the specified order and add concept counts
-  const categories = categoryOrder.map(orderItem => {
-    const category = allCategories.find(cat => cat.slug === orderItem.slug);
-    if (!category) return null;
-    
-    const conceptCount = category.concepts.filter((c) => {
-      if (!c.id) {
-        return false;
+  const categories = categoryOrder
+    .map((orderItem) => {
+      const category = allCategories.find((cat) => cat.slug === orderItem.slug)
+      if (!category) return null
+
+      const conceptCount = category.concepts.filter((c) => {
+        if (!c.id) {
+          return false
+        }
+        // Count only published concept pages so index stats match crawlable URLs.
+        return getConceptBySlug(category.slug, c.id) !== null
+      }).length
+      const hasContent = conceptCount > 0
+
+      return {
+        ...category,
+        image: orderItem.image,
+        conceptCount,
+        hasContent,
       }
-      // Count only published concept pages so index stats match crawlable URLs.
-      return getConceptBySlug(category.slug, c.id) !== null;
-    }).length;
-    const hasContent = conceptCount > 0;
-    
-    return { 
-      ...category, 
-      image: orderItem.image,
-      conceptCount,
-      hasContent
-    };
-  }).filter((cat): cat is NonNullable<typeof cat> => cat !== null);
-  
+    })
+    .filter((cat): cat is NonNullable<typeof cat> => cat !== null)
+
   // Separate categories with content from empty ones
-  const categoriesWithContent = categories.filter(cat => cat.hasContent);
-  const itemListJsonLd = generateItemListJsonLd(categoriesWithContent.map(cat => ({
-    name: cat.title,
-    url: `https://sarahzou.com/wiki/pricing/${cat.slug}`,
-    description: cat.summary
-  })));
+  const categoriesWithContent = categories.filter((cat) => cat.hasContent)
+  const itemListJsonLd = generateItemListJsonLd(
+    categoriesWithContent.map((cat) => ({
+      name: cat.title,
+      url: `https://sarahzou.com/wiki/pricing/${cat.slug}`,
+      description: cat.summary,
+    }))
+  )
 
   const webPageJsonLd = generateWebPageJsonLd({
     title: 'Pricing & Monetization Wiki',
-    description: 'An evidence-based encyclopedia of pricing & monetization concepts for tech startups—definitions, applications, pitfalls, and metrics.',
+    description:
+      'An evidence-based encyclopedia of pricing & monetization concepts for tech startups—definitions, applications, pitfalls, and metrics.',
     url: 'https://sarahzou.com/wiki/pricing',
-    dateModified: '2025-01-02'
-  });
+    dateModified: '2025-01-02',
+  })
 
   const collectionPageJsonLd = generateCollectionPageJsonLd({
     title: 'Pricing & Monetization Wiki',
-    description: 'An evidence-based encyclopedia of pricing & monetization concepts for tech startups—definitions, applications, pitfalls, and metrics.',
+    description:
+      'An evidence-based encyclopedia of pricing & monetization concepts for tech startups—definitions, applications, pitfalls, and metrics.',
     url: 'https://sarahzou.com/wiki/pricing',
     dateModified: '2025-01-02',
-  });
+  })
 
-  const totalConcepts = categories.reduce((sum, cat) => sum + cat.conceptCount, 0);
+  const totalConcepts = categories.reduce((sum, cat) => sum + cat.conceptCount, 0)
 
   return (
     <>
@@ -115,31 +127,40 @@ export default function WikiPricingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd) }}
       />
-      
+
       <WikiLayout breadcrumbs={[]} showAreasFooter={false}>
         <div className="w-full">
           {/* Hero Section */}
-          <div className="mb-12">
-            <h1 className="font-serif-playfair text-[40px] sm:text-[48px] font-bold text-text mb-4">
+          <div className="mb-14">
+            <p className="kicker-accent">Reference library</p>
+            <h1 className="mt-4 mb-4 font-serif-playfair text-[40px] sm:text-[48px] font-bold text-text">
               Pricing & Monetization Wiki
             </h1>
-            
-            <div className="prose prose-lg text-text text-base sm:text-[17px] leading-[1.65] mb-6">
-              <p className="text-xl sm:text-2xl text-text-muted font-light">
-                A comprehensive, evidence-based guide to pricing and monetization strategies for tech startups. 
-                From foundational concepts to advanced tactics, learn how to optimize your pricing for maximum growth.
+
+            <div className="prose prose-lg mb-6 text-base text-text sm:text-[17px] leading-[1.75]">
+              <p className="text-xl font-light text-text-muted sm:text-2xl">
+                A comprehensive, evidence-based guide to pricing and monetization strategies for
+                tech startups. From foundational concepts to advanced tactics, learn how to optimize
+                your pricing for maximum growth.
               </p>
             </div>
+            <p className="meta-note">Start with a category, then go one concept at a time.</p>
 
             {/* Stats */}
-            <div className="flex flex-wrap gap-6 mt-8">
-              <div className="bg-white rounded-lg px-6 py-4 border border-border-subtle shadow-sm hover:border-brand-ink transition-colors">
-                <div className="text-2xl font-bold text-brand-ink">{categoriesWithContent.length}</div>
-                <div className="text-sm text-text-muted">Active Categories</div>
+            <div className="mt-8 flex flex-wrap gap-10 border-t border-border-soft pt-5">
+              <div>
+                <div className="text-2xl font-bold text-brand-ink">
+                  {categoriesWithContent.length}
+                </div>
+                <div className="text-[12px] uppercase tracking-[0.12em] text-text-subtle">
+                  Active Categories
+                </div>
               </div>
-              <div className="bg-white rounded-lg px-6 py-4 border border-border-subtle shadow-sm hover:border-brand-ink transition-colors">
+              <div>
                 <div className="text-2xl font-bold text-brand-ink">{totalConcepts}</div>
-                <div className="text-sm text-text-muted">Concepts Available</div>
+                <div className="text-[12px] uppercase tracking-[0.12em] text-text-subtle">
+                  Concepts Available
+                </div>
               </div>
             </div>
           </div>
@@ -150,25 +171,33 @@ export default function WikiPricingPage() {
               <input
                 type="text"
                 placeholder="Search pricing concepts..."
-                className="w-full px-4 py-3 border border-border-subtle rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent bg-white hover:border-brand-ink transition-colors"
+                className="input pr-12"
                 disabled
               />
               <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                <svg className="w-5 h-5 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                <svg
+                  className="w-5 h-5 text-text-muted"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
                 </svg>
               </div>
             </div>
-            <p className="text-sm text-text-muted mt-2">
-              Search functionality coming soon
-            </p>
+            <p className="text-sm text-text-muted mt-2">Search functionality coming soon</p>
           </div>
 
           {/* Category Grid - Active Categories */}
           {categoriesWithContent.length > 0 && (
             <div className="mb-12">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-1 h-8 bg-brand"></div>
+                <div className="h-8 w-px bg-brand"></div>
                 <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text">
                   Explore Categories
                 </h2>
@@ -186,7 +215,8 @@ export default function WikiPricingPage() {
                     />
                     {category.conceptCount > 0 && (
                       <div className="absolute top-3 right-3 bg-brand-ink text-brand-on text-xs font-semibold px-2 py-1 rounded-full">
-                        {category.conceptCount} {category.conceptCount === 1 ? 'concept' : 'concepts'}
+                        {category.conceptCount}{' '}
+                        {category.conceptCount === 1 ? 'concept' : 'concepts'}
                       </div>
                     )}
                   </div>
@@ -195,26 +225,35 @@ export default function WikiPricingPage() {
             </div>
           )}
 
-
           {/* Quick Reference Section */}
-          <div className="border-t border-border-subtle pt-10 mt-12">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-1 h-8 bg-brand"></div>
+          <div className="mt-12 border-t border-border-subtle pt-10">
+            <div className="mb-6 flex items-center gap-3">
+              <div className="h-8 w-px bg-brand"></div>
               <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text">
                 Quick Reference
               </h2>
             </div>
             <div className="text-text">
-              <p className="mb-4 text-base sm:text-[17px] leading-[1.65]">
-                Browse concepts alphabetically or by topic area. 
-                This section will be expanded as we add more detailed content to each category.
+              <p className="mb-4 text-base sm:text-[17px] leading-[1.75]">
+                Browse concepts alphabetically or by topic area. This section will be expanded as we
+                add more detailed content to each category.
               </p>
-              <div className="bg-surface rounded-lg p-6 border border-border-subtle hover:border-brand-ink transition-colors">
+              <div className="border-t border-border pt-5">
                 <div className="flex items-center gap-3">
-                  <svg className="w-6 h-6 text-brand-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <svg
+                    className="w-6 h-6 text-brand-ink"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
                   </svg>
-                  <p className="text-sm text-text-muted font-medium">
+                  <p className="text-sm font-medium text-text-muted">
                     A-Z index and advanced filtering coming soon
                   </p>
                 </div>
@@ -229,5 +268,5 @@ export default function WikiPricingPage() {
         </div>
       </WikiLayout>
     </>
-  );
+  )
 }
