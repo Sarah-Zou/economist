@@ -43,16 +43,16 @@ export default function PricingStrategySessionThanksPage() {
           __html: `window.dataLayer = window.dataLayer || []; if (typeof gtag === 'function') { gtag('event', 'lead', { event_category: 'consulting', event_label: 'pricing_strategy_session_90' }); }`,
         }}
       />
-      <section className="min-h-screen flex flex-col items-center justify-center bg-[#f6f7f9] py-20">
+      <section className="min-h-screen flex flex-col items-center justify-center bg-surface py-20">
         <div className="w-full max-w-2xl bg-white rounded-lg shadow-lg mx-auto p-8 md:p-16">
           <div className="flex flex-col items-center text-center">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-[#c2410c] flex-shrink-0" />
-              <h1 className="font-serif-playfair text-[28px] sm:text-[32px] font-bold text-[#1f2933]">
+              <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-brand-ink flex-shrink-0" />
+              <h1 className="font-serif-playfair text-[28px] sm:text-[32px] font-bold text-text">
                 Thanks—your request is in
               </h1>
             </div>
-            <p className="mb-6 text-[#1f2933] text-base sm:text-[17px] leading-[1.65] max-w-lg">
+            <p className="mb-6 text-text text-base sm:text-[17px] leading-[1.65] max-w-lg">
               I’ve received your request for the 90-minute pricing strategy session. I’ll review what you shared and
               reply by email with next steps and proposed times.
             </p>
@@ -64,7 +64,7 @@ export default function PricingStrategySessionThanksPage() {
               >
                 Prefer live scheduling? Book a free 15-min consult
               </Link>
-              <div className="text-sm text-[#3b4652] max-w-lg mx-auto text-left">
+              <div className="text-sm text-text-muted max-w-lg mx-auto text-left">
                 <p className="mb-2">From here you can:</p>
                 <ul className="list-disc list-inside space-y-1">
                   <li>wait for my email reply with suggested times, or</li>
@@ -83,7 +83,7 @@ export default function PricingStrategySessionThanksPage() {
               </Link>
             </div>
 
-            <p className="mt-8 text-xs text-[#3b4652] max-w-lg mx-auto">
+            <p className="mt-8 text-xs text-text-muted max-w-lg mx-auto">
               I usually reply within 24–48 hours on weekdays. If you don’t see a note from me, please check spam or
               promotions.
             </p>

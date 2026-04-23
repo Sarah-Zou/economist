@@ -150,9 +150,9 @@ export default function TableOfContents({ items, title }: TableOfContentsProps) 
   }
 
   return (
-    <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
-      <h2 className="text-lg font-serif-playfair font-semibold text-[#1f2933] mb-2">{title}</h2>
-      <p className="text-xs text-[#3b4652] mb-4">On this page</p>
+    <div className="bg-white rounded-lg p-6 border border-border-subtle shadow-sm">
+      <h2 className="text-lg font-serif-playfair font-semibold text-text mb-2">{title}</h2>
+      <p className="text-xs text-text-muted mb-4">On this page</p>
       <nav className="space-y-1">
           {items.map((item) => {
             const isActive = activeId === item.id
@@ -165,8 +165,8 @@ export default function TableOfContents({ items, title }: TableOfContentsProps) 
                 className={`
                   flex items-center gap-2 px-3 py-2 rounded-md text-sm transition-colors
                   ${isActive 
-                    ? 'bg-[#f6f7f9] text-brand-ink font-medium' 
-                    : 'text-[#3b4652] hover:text-[#1f2933] hover:bg-[#f6f7f9]'
+                    ? 'bg-surface text-brand-ink font-medium' 
+                    : 'text-text-muted hover:text-text hover:bg-surface'
                   }
                 `}
                 onClick={(e) => {
@@ -184,7 +184,7 @@ export default function TableOfContents({ items, title }: TableOfContentsProps) 
                   }
                 }}
               >
-                <span className={`flex-shrink-0 ${isActive ? 'text-brand-ink' : 'text-[#3b4652]'}`}>
+                <span className={`flex-shrink-0 ${isActive ? 'text-brand-ink' : 'text-text-muted'}`}>
                   {Icon}
                 </span>
                 <span className="truncate">{item.text}</span>

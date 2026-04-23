@@ -106,10 +106,10 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
 
         {/* Article Header */}
         <header className="mb-12">
-          <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold text-[#1f2933] mb-4">
+          <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold text-text mb-4">
             {post.title}
           </h1>
-          <div className="flex items-center text-[#3b4652]">
+          <div className="flex items-center text-text-muted">
             <time dateTime={post.date}>
               {format(new Date(post.date), 'MMMM d, yyyy')}
             </time>
@@ -119,7 +119,7 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
         </header>
 
         {/* Article Content */}
-        <div className="prose prose-lg max-w-none mb-12 text-[#1f2933] text-base sm:text-[17px] leading-[1.65]">
+        <div className="prose prose-lg max-w-none mb-12 text-text text-base sm:text-[17px] leading-[1.65]">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
         </div>
 

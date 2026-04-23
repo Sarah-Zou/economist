@@ -5,86 +5,95 @@ import Script from 'next/script'
 import CalendlyEmbed from '@/components/CalendlyEmbed'
 
 export const metadata: Metadata = {
-  title: "Book a Free 15-Min Consultation | Pricing & Metrics for Seed–Series A | Sarah Zou",
-  description: "Book a free 15-min call. For Seed–Series A SaaS, APIs & AI: pricing, value metric, NRR, payback, and monetization. No prep needed—get tailored next steps.",
+  title: 'Book a Free 15-Min Consultation | Pricing & Metrics for Seed–Series A | Sarah Zou',
+  description:
+    'Book a free 15-min call. For Seed–Series A SaaS, APIs & AI: pricing, value metric, NRR, payback, and monetization. No prep needed — get tailored next steps.',
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: "https://sarahzou.com/book",
+    canonical: 'https://sarahzou.com/book',
   },
   openGraph: {
-    title: "Book a Free 15-Min Consultation | Pricing & Metrics for Seed–Series A | Sarah Zou",
-    description: "Book a free 15-min call. For Seed–Series A SaaS, APIs & AI: pricing, value metric, NRR, payback, and monetization. No prep needed—get tailored next steps.",
-    type: "website",
-    url: "https://sarahzou.com/book",
+    title: 'Book a Free 15-Min Consultation | Pricing & Metrics for Seed–Series A | Sarah Zou',
+    description:
+      'Book a free 15-min call. For Seed–Series A SaaS, APIs & AI: pricing, value metric, NRR, payback, and monetization. No prep needed — get tailored next steps.',
+    type: 'website',
+    url: 'https://sarahzou.com/book',
   },
-};
+}
 
 export default function BookPage() {
   return (
     <>
-      <section className="min-h-screen flex flex-col bg-[#f6f7f9] py-4 sm:py-8 lg:py-12">
-        <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
-          <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8 lg:p-12">
-            {/* Booking page header — clear intent for SERPs and users */}
-            <div className="flex flex-col items-center text-center mb-4 sm:mb-6">
-              <h1 className="font-serif-playfair text-[28px] sm:text-[32px] lg:text-[36px] font-bold text-[#1f2933] mb-2 sm:mb-4">
-                Book a free 15-min consultation
-              </h1>
-              <p className="text-[#1f2933] text-sm sm:text-base lg:text-[17px] leading-[1.65] max-w-2xl px-2">
-                Pick a time below. After you book, you&apos;ll get a confirmation and calendar invite. If nothing works, <a href="mailto:hello@sarahzou.com" className="text-brand-ink hover:text-brand-ink/90 underline">email me</a> and I&apos;ll suggest options.
-              </p>
-            </div>
+      <section className="bg-page px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
+        <div className="mx-auto w-full max-w-4xl">
+          <div className="text-center">
+            <span className="kicker">Free 15-min consult</span>
+            <h1 className="mt-4 font-serif-playfair text-ink">
+              Book a free 15-min consultation
+            </h1>
+            <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.7] text-text-muted sm:text-[17px]">
+              Pick a time below. After you book, you&apos;ll get a confirmation and
+              calendar invite. If nothing works,{' '}
+              <a
+                href="mailto:hello@sarahzou.com"
+                className="font-medium text-brand-ink underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-dark"
+              >
+                email me
+              </a>{' '}
+              and I&apos;ll suggest options.
+            </p>
+          </div>
 
-            {/* Fallback link: visible in HTML for bots and when embed fails to load */}
-            <p className="text-center mb-3 sm:mb-4">
+          <p className="mt-6 text-center text-[14px]">
+            <a
+              href="https://calendly.com/sarahxzou/free-consult-15-min"
+              className="inline-flex items-center gap-1.5 font-medium text-brand-ink underline underline-offset-4 hover:text-brand-dark"
+            >
+              If the scheduler doesn&apos;t load, book here →
+            </a>
+          </p>
+
+          <div className="mt-8 overflow-hidden rounded-card border border-border-subtle bg-white">
+            <CalendlyEmbed url="https://calendly.com/sarahxzou/free-consult-15-min?embed_domain=sarahzou.com&embed_type=Inline" />
+          </div>
+
+          <noscript>
+            <p className="mt-6 rounded-card bg-surface p-5 text-center">
               <a
                 href="https://calendly.com/sarahxzou/free-consult-15-min"
-                className="inline-flex items-center gap-2 text-brand-ink hover:text-brand-ink/90 font-medium underline"
+                className="text-[17px] font-semibold text-brand-ink underline underline-offset-4 hover:text-brand-dark"
               >
-                If the scheduler doesn&apos;t load, book here →
+                Book a free 15-min consultation on Calendly →
               </a>
             </p>
+          </noscript>
 
-            {/* Calendly Inline Widget */}
-            <div className="overflow-hidden mb-4 sm:mb-6 -mx-2 sm:-mx-4 md:mx-0">
-              <CalendlyEmbed url="https://calendly.com/sarahxzou/free-consult-15-min?embed_domain=sarahzou.com&embed_type=Inline" />
-            </div>
-
-            <noscript>
-              <p className="text-center mb-4 p-4 bg-[#f6f7f9] rounded-lg">
-                <a
-                  href="https://calendly.com/sarahxzou/free-consult-15-min"
-                  className="text-brand-ink hover:text-brand-ink/90 font-semibold underline text-lg"
-                >
-                  Book a free 15-min consultation on Calendly →
-                </a>
-              </p>
-            </noscript>
-
-            {/* What to Expect */}
-            <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-[#f6f7f9] rounded-lg max-w-2xl mx-auto">
-              <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-[#c2410c] mt-1 flex-shrink-0" />
-              <div className="text-left flex-1">
-                <h3 className="font-semibold text-[#1f2933] mb-2 sm:mb-3 text-sm sm:text-base">What to expect:</h3>
-                <ul className="space-y-2 text-xs sm:text-sm text-[#3b4652]">
-                  <li>
-                    <span className="font-semibold text-[#1f2933]">Bring:</span> a quick overview of your product + current pricing (or your latest experiment idea)
-                  </li>
-                  <li>
-                    <span className="font-semibold text-[#1f2933]">I'll help:</span> sharpen the problem, outline options, and suggest next steps
-                  </li>
-                  <li>
-                    <span className="font-semibold text-[#1f2933]">If we're a fit:</span> I'll recommend the best engagement (or point you to resources)
-                  </li>
-                </ul>
-              </div>
+          <div className="mx-auto mt-10 flex max-w-2xl items-start gap-3 rounded-card border border-border-soft bg-surface p-5 sm:p-6">
+            <Calendar className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand" aria-hidden />
+            <div className="flex-1 text-left">
+              <h3 className="text-[15px] font-semibold text-ink">What to expect</h3>
+              <ul className="mt-3 space-y-2 text-[14px] leading-[1.65] text-text-muted">
+                <li>
+                  <span className="font-semibold text-ink">Bring:</span> a quick overview
+                  of your product + current pricing (or your latest experiment idea).
+                </li>
+                <li>
+                  <span className="font-semibold text-ink">I&apos;ll help:</span> sharpen
+                  the problem, outline options, and suggest next steps.
+                </li>
+                <li>
+                  <span className="font-semibold text-ink">If we&apos;re a fit:</span>{' '}
+                  I&apos;ll recommend the best engagement (or point you to resources).
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
+
       <Script
         id="calendly-ga4-tracking"
         strategy="afterInteractive"
@@ -96,29 +105,22 @@ export default function BookPage() {
               }
 
               window.addEventListener("message", function (e) {
-                // Security: only accept Calendly as sender
                 if (e.origin !== "https://calendly.com") return;
                 if (!isCalendlyMessage(e)) return;
 
-                const calendlyEvent = e.data.event; // e.g. "calendly.event_scheduled"
+                const calendlyEvent = e.data.event;
                 const payload = e.data.payload || {};
+                const ga4EventName = calendlyEvent.replaceAll(".", "_");
 
-                // GA4 event names must use only letters/numbers/underscores (no dots)
-                const ga4EventName = calendlyEvent.replaceAll(".", "_"); // "calendly_event_scheduled"
-
-                // Option A: send the raw calendly event name mapped to underscores
                 if (typeof gtag === "function") {
                   gtag("event", ga4EventName, {
                     calendly_event: calendlyEvent,
-                    // keep parameters small/simple (GA4 will drop complex objects)
                     event_uri: payload.event?.uri || undefined,
                     invitee_uri: payload.invitee?.uri || undefined
                   });
                 }
 
-                // Option B (recommended): also send a clean "business" conversion event
                 if (calendlyEvent === "calendly.event_scheduled" && typeof gtag === "function") {
-                  // dedupe (prevents double counting on refresh/back)
                   if (sessionStorage.getItem("book_intro_call_sent")) return;
                   sessionStorage.setItem("book_intro_call_sent", "1");
 
@@ -128,9 +130,6 @@ export default function BookPage() {
                     invitee_uri: payload.invitee?.uri || undefined
                   });
                 }
-
-                // Helpful for debugging in browser console
-                // console.log("Calendly message:", calendlyEvent, payload);
               });
             })();
           `,
@@ -139,4 +138,3 @@ export default function BookPage() {
     </>
   )
 }
-

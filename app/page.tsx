@@ -16,7 +16,7 @@ import {
   Video,
   Zap,
 } from 'lucide-react'
-import { brandLink, outlineButton, primaryButton } from '@/lib/brandStyles'
+import { brandLink, outlineButton, primaryButton, primaryButtonLg } from '@/lib/brandStyles'
 
 const PRIMARY_CTA_HREF = '/consulting/entry-offer/form'
 const CONSULT_CTA_HREF = '/book'
@@ -332,18 +332,13 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
 
-      <div className="bg-white text-[#1f2933]">
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#fff7f3] via-white to-white">
-          <div className="pointer-events-none absolute -left-10 top-8 h-56 w-56 rounded-full bg-brand/10 blur-3xl" />
-          <div className="pointer-events-none absolute -right-12 top-24 h-56 w-56 rounded-full bg-[#f59e0b]/10 blur-3xl" />
-          <div className="mx-auto max-w-7xl px-4 pb-10 pt-8 sm:px-6 sm:pb-16 sm:pt-16 lg:px-8 lg:pb-20 lg:pt-20">
-            <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-10">
-              <div className="relative lg:col-span-5 order-2 lg:order-1">
-                <div className="relative mx-auto w-full max-w-[420px] sm:max-w-[500px] aspect-[4/5] overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] bg-white/40 ring-1 ring-[#e2e6ea] shadow-none backdrop-blur-sm">
-                  {/* Edge tint + subtle vignette so it blends into the hero background */}
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-brand/18 via-transparent to-transparent" />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-white/55 via-transparent to-transparent" />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0f172a]/5" />
+      <div className="bg-page text-text">
+        {/* Hero */}
+        <section className="bg-hero-tint">
+          <div className="mx-auto w-full max-w-container px-4 pb-16 pt-12 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8 lg:pb-24 lg:pt-24">
+            <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
+              <div className="lg:col-span-5 order-2 lg:order-1">
+                <div className="relative mx-auto aspect-[4/5] w-full max-w-[440px] overflow-hidden rounded-card ring-1 ring-border-soft">
                   <Image
                     src="/images/headshot_v4.webp"
                     alt="Sarah Zou, PhD economist"
@@ -355,39 +350,33 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="lg:col-span-7 order-1 lg:order-2 lg:pl-8 xl:pl-10">
-                <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand-soft px-4 py-2">
-                  <span className="h-2 w-2 rounded-full bg-brand" aria-hidden />
-                  <span className="text-[11px] font-bold uppercase tracking-widest text-brand-ink">PHD ECONOMIST</span>
-                </div>
+              <div className="lg:col-span-7 order-1 lg:order-2">
+                <span className="kicker">PhD Economist · Fractional Chief Economist</span>
 
-                <h1 className="mt-4 font-black tracking-tight text-[#0f172a] text-[44px] leading-[0.98] sm:text-[56px] lg:text-[66px]">
-                  <span className="block">Not sure your</span>
-                  <span className="block">pricing makes</span>
-                  <span className="block text-brand">sense?</span>
+                <h1 className="mt-5 font-serif-playfair text-ink">
+                  Not sure your pricing{' '}
+                  <span className="text-brand">makes sense?</span>
                 </h1>
 
-                <p className="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-[#6b7280] sm:text-[18px]">
-                I help AI and SaaS founders fix pricing, unit economics, and monetization decisions with research-grade rigor and startup-speed execution.
+                <p className="mt-5 max-w-xl text-[17px] leading-[1.7] text-text-muted sm:text-[19px]">
+                  I help AI and SaaS founders fix pricing, unit economics, and monetization
+                  decisions with research-grade rigor and startup-speed execution.
                 </p>
 
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-6">
+                <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
                   <Link
                     href={PRIMARY_CTA_HREF}
-                    className={`${primaryButton} inline-flex w-full max-w-[340px] items-center justify-center gap-3 bg-brand px-6 py-4 text-[15px] leading-[1.15] shadow-xl sm:w-auto sm:max-w-none sm:px-10 sm:text-[16px]`}
+                    className={`${primaryButtonLg} w-full max-w-[420px] sm:w-auto`}
                   >
-                    <span className="max-w-[230px] text-center sm:max-w-[240px]">
-                      Book the 90-Minute Pricing Strategy Session
-                    </span>
-                    <ArrowRight className="h-5 w-5 flex-shrink-0" aria-hidden />
+                    Book the 90-Minute Pricing Strategy Session
+                    <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
 
                   <Link
                     href={CONSULT_CTA_HREF}
-                    className="text-sm leading-[1.3] font-medium text-[#6b7280] underline underline-offset-4 hover:text-brand-ink"
+                    className="text-[14px] font-medium text-text-muted underline underline-offset-4 hover:text-ink"
                   >
-                    <span className="block">Already need broader support?</span>
-                    <span className="block">Start with a consult</span>
+                    Or start with a free consult
                   </Link>
                 </div>
               </div>
@@ -395,79 +384,66 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-y border-[#e2e6ea] bg-[#f8fafc] py-12 sm:py-16 lg:py-20">
-          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-center font-serif-playfair text-2xl font-semibold sm:text-[32px]">
-              Best starting point for most founders
-            </h2>
-            <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-brand" />
-            <div className="mt-8 rounded-3xl bg-[#111827] p-5 text-white shadow-2xl ring-1 ring-white/10 sm:p-10">
-              <p className="text-[24px] sm:text-[34px] font-bold leading-tight text-white">
-                <Link href="/consulting/entry-offer" className="underline-offset-4 hover:underline">
-                  90-Minute Pricing Strategy Session
-                </Link>
+        {/* Featured offer */}
+        <section className="section section-alt">
+          <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <span className="kicker">Best starting point</span>
+              <h2 className="mt-3 font-serif-playfair">
+                The 90-Minute Pricing Strategy Session
+              </h2>
+            </div>
+
+            <div className="card-dark mt-10">
+              <p className="text-[17px] leading-[1.75] text-white/90 sm:text-[18px]">
+                If you have one important pricing question, start here. Use this session to
+                pressure-test your direction, choose the right value metric, compare usage
+                vs. seat vs. hybrid, or clean up packaging.
               </p>
-              <p className="mt-4 text-lg leading-[1.7] text-[#e5e7eb]">
-                If you have one important pricing question, start here.
-              </p>
-              <p className="mt-4 text-base leading-[1.7] text-[#cbd5e1]">
-                Use this session to pressure-test your pricing direction, choose the right value
-                metric, compare usage vs. seat vs. hybrid, or clean up packaging.
-              </p>
-              <h3 className="mt-7 text-base font-semibold uppercase tracking-[0.08em] text-[#fcb79a]">
+
+              <p className="mt-8 text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-soft">
                 What you get
-              </h3>
-              <ul className="mt-3 grid gap-3 text-sm sm:grid-cols-2 sm:text-base">
-                <li className="rounded-xl border border-[#334155] bg-[#1e293b] px-4 py-3 shadow-sm">
-                  <span className="flex items-center gap-2.5">
-                    <FileText className="h-4 w-4 text-[#fcb79a] flex-shrink-0" aria-hidden />
-                    <span>Short intake review</span>
-                  </span>
-                </li>
-                <li className="rounded-xl border border-[#334155] bg-[#1e293b] px-4 py-3 shadow-sm">
-                  <span className="flex items-center gap-2.5">
-                    <Video className="h-4 w-4 text-[#fcb79a] flex-shrink-0" aria-hidden />
-                    <span>90-minute live session</span>
-                  </span>
-                </li>
-                <li className="rounded-xl border border-[#334155] bg-[#1e293b] px-4 py-3 shadow-sm">
-                  <span className="flex items-center gap-2.5">
-                    <Clock3 className="h-4 w-4 text-[#fcb79a] flex-shrink-0" aria-hidden />
-                    <span>48-hour summary memo</span>
-                  </span>
-                </li>
-                <li className="rounded-xl border border-[#334155] bg-[#1e293b] px-4 py-3 shadow-sm">
-                  <span className="flex items-center gap-2.5">
-                    <CheckCircle2 className="h-4 w-4 text-[#fcb79a] flex-shrink-0" aria-hidden />
-                    <span>Top 3 next actions</span>
-                  </span>
-                </li>
+              </p>
+              <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+                {[
+                  { icon: FileText, label: 'Short intake review' },
+                  { icon: Video, label: '90-minute live session' },
+                  { icon: Clock3, label: '48-hour summary memo' },
+                  { icon: CheckCircle2, label: 'Top 3 next actions' },
+                ].map(({ icon: Icon, label }) => (
+                  <li
+                    key={label}
+                    className="flex items-center gap-3 rounded-control border border-white/10 bg-white/5 px-4 py-3 text-[15px] text-white/90"
+                  >
+                    <Icon className="h-4 w-4 text-brand-soft" aria-hidden />
+                    <span>{label}</span>
+                  </li>
+                ))}
               </ul>
-              <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-                <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-                  <Link href={PRIMARY_CTA_HREF} className={`${primaryButton} w-full text-center sm:w-auto`}>
+
+              <div className="mt-10 flex flex-col gap-5 border-t border-white/10 pt-8 sm:flex-row sm:items-end sm:justify-between">
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <Link href={PRIMARY_CTA_HREF} className={`${primaryButton} w-full sm:w-auto`}>
                     Book the Session
                   </Link>
                   <Link
                     href="/consulting/entry-offer"
-                    className={`${primaryButton} w-full bg-slate-500 text-center text-white hover:bg-slate-600 sm:w-auto`}
+                    className="inline-flex h-11 items-center justify-center rounded-full border border-white/25 px-6 text-[15px] font-semibold text-white transition-colors hover:bg-white/10"
                   >
                     Explore the Session
                   </Link>
                 </div>
                 <div className="sm:text-right">
-                  <p className="text-3xl font-bold text-white">$600</p>
-                  <p className="mt-1 max-w-sm text-xs leading-[1.6] text-[#cbd5e1] sm:ml-auto">
+                  <p className="font-serif-playfair text-[32px] font-semibold text-white">$600</p>
+                  <p className="mt-1 max-w-sm text-[13px] leading-[1.6] text-white/60 sm:ml-auto">
                     If we move into a{' '}
                     <Link
                       href="/consulting/services/pricing-monetization-sprint"
-                      className="underline underline-offset-2 hover:text-white"
+                      className="text-white underline decoration-white/30 underline-offset-2 hover:decoration-white/80"
                     >
                       Pricing &amp; Monetization Sprint
                     </Link>{' '}
-                    within 14 days,
-                    <br />
-                    I&apos;ll credit this fee toward the project.
+                    within 14 days, I&apos;ll credit this fee toward the project.
                   </p>
                 </div>
               </div>
@@ -475,92 +451,79 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-12 sm:py-16 lg:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-center font-serif-playfair text-2xl font-semibold sm:text-[32px]">
-              Choose your path
-            </h2>
-            <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-brand" />
-            <div className="mx-auto mt-10 grid max-w-6xl gap-6 md:grid-cols-3">
-              {pathCards.map((card, index) => {
-                const icon =
-                  index === 0 ? (
-                    <Clock3 className="h-7 w-7 text-brand" aria-hidden />
-                  ) : index === 1 ? (
-                    <Rocket className="h-7 w-7 text-[#64748b]" aria-hidden />
-                  ) : (
-                    <BookOpen className="h-7 w-7 text-[#64748b]" aria-hidden />
-                  )
+        {/* Paths */}
+        <section className="section">
+          <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <span className="kicker">Paths</span>
+              <h2 className="mt-3 font-serif-playfair">Choose your path</h2>
+            </div>
 
+            <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
+              {pathCards.map((card, index) => {
+                const Icon = index === 0 ? Clock3 : index === 1 ? Rocket : BookOpen
                 return (
-                <div
-                  key={card.title}
-                  className={`relative rounded-2xl border p-5 sm:p-7 transition-all ${
-                    card.highlighted
-                      ? 'border-[#edd8b5] bg-[#f8f1e8] shadow-md'
-                      : 'border-[#e2e6ea] bg-white shadow-sm hover:-translate-y-1 hover:shadow-lg'
-                  }`}
-                >
-                  {card.highlighted && (
-                    <span className="absolute right-0 top-0 rounded-bl-lg rounded-tr-2xl bg-brand px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white">
-                      Popular
-                    </span>
-                  )}
-                  <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-[#f1f5f9]">
-                    {icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-[#1f2933]">{card.title}</h3>
-                  <p className="mt-3 min-h-[72px] text-base leading-[1.65] text-[#3b4652]">
-                    {card.description}
-                  </p>
-                  <Link
-                    href={card.href}
-                    className={`mt-6 inline-flex items-center gap-2 font-semibold ${
-                      card.highlighted ? 'text-brand-ink hover:text-brand' : 'text-[#374151] hover:text-brand-ink'
+                  <div
+                    key={card.title}
+                    className={`relative rounded-card border p-7 transition-colors ${
+                      card.highlighted
+                        ? 'border-brand/40 bg-brand-soft/40'
+                        : 'border-border-subtle bg-white hover:border-ink/20'
                     }`}
                   >
-                    {card.cta} <ArrowRight className="h-4 w-4" aria-hidden />
-                  </Link>
-                </div>
+                    {card.highlighted && (
+                      <span className="absolute right-5 top-5 rounded-full bg-brand px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-on">
+                        Popular
+                      </span>
+                    )}
+                    <div className="mb-6 inline-flex h-11 w-11 items-center justify-center rounded-full border border-border-subtle bg-white">
+                      <Icon
+                        className={`h-5 w-5 ${card.highlighted ? 'text-brand-ink' : 'text-text-muted'}`}
+                        aria-hidden
+                      />
+                    </div>
+                    <h3 className="text-[20px] font-semibold text-ink">{card.title}</h3>
+                    <p className="mt-3 text-[15px] leading-[1.65] text-text-muted">
+                      {card.description}
+                    </p>
+                    <Link
+                      href={card.href}
+                      className="mt-6 inline-flex items-center gap-1.5 text-[14px] font-semibold text-brand-ink hover:text-brand-dark"
+                    >
+                      {card.cta} <ArrowRight className="h-4 w-4" aria-hidden />
+                    </Link>
+                  </div>
                 )
               })}
             </div>
           </div>
         </section>
 
-        <section className="border-y border-[#e2e6ea] bg-[#f8fafc] py-12 sm:py-16 lg:py-20">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-center font-serif-playfair text-2xl font-semibold sm:text-[32px]">
-              What makes me different
-            </h2>
-            <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-brand" />
-            <div className="mx-auto mt-8 max-w-4xl text-center text-base leading-[1.75] text-[#3b4652] sm:text-[18px]">
-              <p>Most pricing consultants give you frameworks.</p>
-              <p className="mt-2">Most analysts give you rigor.</p>
-              <p className="mt-2">Most startup operators give you speed.</p>
-              <p className="mt-4 font-semibold text-[#1f2933]">I sit at the intersection.</p>
-              <p className="mt-4">
-                I do not just give pricing advice. I work more like a fractional Chief Economist
-                for startups making consequential monetization decisions.
+        {/* Differentiators */}
+        <section className="section section-alt">
+          <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-3xl text-center">
+              <span className="kicker">What makes me different</span>
+              <h2 className="mt-3 font-serif-playfair">
+                Rigor, pragmatism, and startup speed
+              </h2>
+              <p className="mt-5 text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
+                Most pricing consultants give you frameworks. Most analysts give you rigor.
+                Most operators give you speed. I sit at the intersection — less a consultant,
+                more a fractional Chief Economist for founders making consequential decisions.
               </p>
             </div>
-            <div className="mx-auto mt-10 h-px w-full bg-[#e2e6ea]" />
-            <h3 className="mt-10 text-center font-serif-playfair text-2xl font-semibold text-[#1f2933] sm:text-[32px]">
-              Why clients hire me
-            </h3>
-            <div className="mx-auto mt-8 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+            <div className="mx-auto mt-14 grid max-w-5xl gap-10 sm:grid-cols-2 lg:grid-cols-3">
               {differentiators.map((item) => {
                 const Icon = item.icon
-
                 return (
-                  <div key={item.title} className="text-left">
-                    <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[#e2e6ea] bg-white shadow-sm">
-                      <Icon className="h-5 w-5 text-brand" aria-hidden />
+                  <div key={item.title}>
+                    <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-border-subtle bg-white">
+                      <Icon className="h-4 w-4 text-brand" aria-hidden />
                     </div>
-                    <h4 className="text-[20px] font-semibold leading-tight text-[#1f2933] sm:text-[22px]">
-                      {item.title}
-                    </h4>
-                    <p className="mt-2 text-base leading-[1.65] text-[#3b4652]">
+                    <h4 className="text-[17px] font-semibold text-ink">{item.title}</h4>
+                    <p className="mt-2 text-[15px] leading-[1.65] text-text-muted">
                       {item.description}
                     </p>
                   </div>
@@ -570,23 +533,22 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-12 sm:py-16 lg:py-20">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-center font-serif-playfair text-2xl font-semibold sm:text-[32px]">
-              What founders say
-            </h2>
-            <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-brand" />
-            <div className="mt-9 grid gap-6 md:grid-cols-2">
+        {/* Testimonials */}
+        <section className="section">
+          <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <span className="kicker">Proof</span>
+              <h2 className="mt-3 font-serif-playfair">What founders say</h2>
+            </div>
+
+            <div className="mx-auto mt-12 grid max-w-4xl gap-6 md:grid-cols-2">
               {testimonials.map((item) => (
-                <figure
-                  key={item.author}
-                  className="rounded-2xl border border-[#e2e6ea] bg-white p-5 sm:p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
-                >
-                  <blockquote className="text-base italic leading-[1.75] text-[#1f2933] sm:text-[18px]">
-                    &quot;{item.quote}&quot;
+                <figure key={item.author} className="card">
+                  <blockquote className="font-serif-playfair text-[19px] leading-[1.55] text-ink">
+                    &ldquo;{item.quote}&rdquo;
                   </blockquote>
-                  <figcaption className="mt-6 text-sm text-[#3b4652]">
-                    <p className="font-semibold text-[#1f2933]">{item.author}</p>
+                  <figcaption className="mt-6 text-[13px] text-text-muted">
+                    <p className="font-semibold text-ink">{item.author}</p>
                     <p>{item.role}</p>
                   </figcaption>
                 </figure>
@@ -595,39 +557,41 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-y border-[#e2e6ea] bg-gradient-to-b from-[#f8fafc] to-white py-12 sm:py-16 lg:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-center font-serif-playfair text-2xl font-semibold sm:text-[32px]">
-              Need more than one session?
-            </h2>
-            <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-brand" />
-            <div className="mx-auto mt-10 grid max-w-6xl gap-6 md:grid-cols-3">
+        {/* Deeper services */}
+        <section className="section section-alt">
+          <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <span className="kicker">Other ways to work together</span>
+              <h2 className="mt-3 font-serif-playfair">Need more than one session?</h2>
+            </div>
+
+            <div className="mx-auto mt-12 grid max-w-6xl gap-6 md:grid-cols-3">
               {deeperServices.map((service) => (
                 <div
                   key={service.title}
-                  className="group relative overflow-hidden rounded-2xl border border-[#e2e6ea] bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+                  className="group relative overflow-hidden rounded-card border border-border-subtle bg-white"
                 >
-                  <div className="relative h-[340px] w-full sm:h-[420px]">
+                  <div className="relative aspect-[4/5] w-full">
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                       sizes="(min-width: 768px) 33vw, 100vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b1228]/85 via-[#111827]/45 to-[#111827]/15" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent" />
                     <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7">
-                      <h3 className="text-xl font-semibold leading-tight text-white sm:text-[32px]">
+                      <h3 className="font-serif-playfair text-[22px] leading-[1.2] text-white sm:text-[26px]">
                         {service.title}
                       </h3>
-                      <p className="mt-3 min-h-[72px] text-base leading-[1.65] text-[#d1d5db]">
+                      <p className="mt-3 text-[14px] leading-[1.65] text-white/80">
                         {service.description}
                       </p>
                       <Link
                         href={service.href}
-                        className="mt-4 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-[#f97316] hover:text-[#fb923c]"
+                        className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-[0.15em] text-brand-soft hover:text-white"
                       >
-                        {service.cta} <ArrowRight className="h-4 w-4" aria-hidden />
+                        {service.cta} <ArrowRight className="h-3.5 w-3.5" aria-hidden />
                       </Link>
                     </div>
                   </div>
@@ -637,29 +601,29 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-[#f8fafc] py-12 sm:py-16 lg:py-20">
-          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-center font-serif-playfair text-2xl font-semibold sm:text-[32px]">
-              Frequently Asked Questions
-            </h2>
-            <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-brand" />
-            <div className="mt-8 space-y-4">
+        {/* FAQ */}
+        <section className="section">
+          <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <span className="kicker">FAQ</span>
+              <h2 className="mt-3 font-serif-playfair">Frequently asked questions</h2>
+            </div>
+
+            <div className="mt-10 space-y-3">
               {faqItems.map((item, index) => (
                 <details
                   key={item.q}
                   open={index === 0}
-                  className={`group rounded-2xl border bg-white shadow-sm transition-all ${
-                    index === 0 ? 'border-brand/60' : 'border-[#d6dce4]'
-                  }`}
+                  className="group rounded-card border border-border-subtle bg-white"
                 >
-                  <summary className="flex cursor-pointer list-none items-center justify-between px-5 py-4 sm:px-7 sm:py-5">
-                    <h3 className="text-lg font-semibold text-[#0f172a] sm:text-xl">{item.q}</h3>
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5">
+                    <h3 className="text-[17px] font-semibold text-ink">{item.q}</h3>
                     <ChevronDown
-                      className="h-5 w-5 flex-shrink-0 text-[#64748b] transition-transform duration-200 group-open:rotate-180"
+                      className="h-4 w-4 flex-shrink-0 text-text-subtle transition-transform group-open:rotate-180"
                       aria-hidden
                     />
                   </summary>
-                  <div className="border-t border-[#e2e6ea] px-5 py-4 text-[15px] leading-[1.7] text-[#3b4652] sm:px-7 sm:py-5 sm:text-base sm:leading-[1.75]">
+                  <div className="border-t border-border-soft px-6 py-5 text-[15px] leading-[1.75] text-text-muted">
                     {item.a}
                   </div>
                 </details>
@@ -668,41 +632,35 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-brand py-12 text-brand-on sm:py-16 lg:py-20">
-          <div className="pointer-events-none absolute -left-16 top-8 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
-          <div className="pointer-events-none absolute -right-12 bottom-4 h-72 w-72 rounded-full bg-black/10 blur-3xl" />
-          <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-            <h2 className="font-serif-playfair text-3xl font-bold leading-tight text-white sm:text-[42px]">
+        {/* Closing CTA */}
+        <section className="orange-surface section-sm">
+          <div className="mx-auto w-full max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+            <h2 className="font-serif-playfair text-white">
               Need a sharper pricing decision before your next move?
             </h2>
-            <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-[#fcb79a]" />
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-[1.75] text-brand-soft sm:text-[19px]">
-              Start with the 90-Minute Pricing Strategy Session.
+            <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.7] text-white/85 sm:text-[17px]">
+              Start with the 90-Minute Pricing Strategy Session — or explore a deeper sprint
+              if you already know you need full pricing work.
             </p>
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
                 href={PRIMARY_CTA_HREF}
-                className="inline-block rounded-full bg-white px-7 py-3 text-lg font-bold text-brand transition-colors hover:bg-brand-soft"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-white px-7 text-[16px] font-semibold text-brand-ink transition-colors hover:bg-brand-soft"
               >
-                Book the 90-Minute Pricing Strategy Session
+                Book the Session
               </Link>
-            </div>
-            <p className="mt-5 text-sm text-brand-soft sm:text-base">
-              <Link href={CONSULT_CTA_HREF} className="underline underline-offset-4 hover:text-white">
-                Need a broader conversation? Book a Free Consult
-              </Link>
-            </p>
-            <p className="mx-auto mt-3 max-w-2xl text-sm text-brand-soft sm:text-base">
-              Or explore a deeper sprint if you already know you need full pricing work.
-            </p>
-            <div className="mt-6">
               <Link
                 href="/consulting/services/pricing-monetization-sprint"
-                className={`${outlineButton} border-white text-white hover:bg-white/10`}
+                className={`${outlineButton} border-white bg-transparent text-white hover:bg-white/10 hover:text-white`}
               >
-                Explore the Pricing &amp; Monetization Sprint
+                Explore the Sprint
               </Link>
             </div>
+            <p className="mt-6 text-[13px] text-white/80">
+              <Link href={CONSULT_CTA_HREF} className="underline underline-offset-4 hover:text-white">
+                Need a broader conversation? Book a free consult
+              </Link>
+            </p>
           </div>
         </section>
       </div>

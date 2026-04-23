@@ -1,16 +1,21 @@
-import { ChevronDown } from 'lucide-react';
+import type { ReactNode } from 'react'
+import { ChevronDown } from 'lucide-react'
 
-export default function EntryOfferFAQ({
-  items,
-}: {
-  items: { q: string; a: string }[];
-}) {
+export type FAQItem = { q: string; a: ReactNode }
+
+type Props = {
+  items: FAQItem[]
+  openFirst?: boolean
+  className?: string
+}
+
+export default function FAQList({ items, openFirst = true, className = '' }: Props) {
   return (
-    <div className="space-y-3">
+    <div className={`space-y-3 ${className}`.trim()}>
       {items.map((item, index) => (
         <details
-          key={item.q}
-          open={index === 0}
+          key={typeof item.q === 'string' ? item.q : index}
+          open={openFirst && index === 0}
           className="group rounded-card border border-border-subtle bg-white"
         >
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5">
@@ -26,5 +31,5 @@ export default function EntryOfferFAQ({
         </details>
       ))}
     </div>
-  );
+  )
 }

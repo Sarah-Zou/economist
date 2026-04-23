@@ -188,19 +188,19 @@ export default function FreeToolsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#f9f6f7]">
-      <section className="border-b border-[#e2e6ea] bg-white">
+    <main className="min-h-screen bg-page">
+      <section className="border-b border-border-subtle bg-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
           <p className="text-sm font-semibold uppercase tracking-[0.12em] text-brand-ink">
             Free Resources
           </p>
-          <h1 className="mt-3 font-serif-playfair text-[34px] font-bold leading-tight text-[#1f2933] sm:text-[42px]">
+          <h1 className="mt-3 font-serif-playfair text-[34px] font-bold leading-tight text-text sm:text-[42px]">
             Free pricing tools and guides for AI and SaaS founders
           </h1>
-          <p className="mt-4 max-w-3xl text-base leading-[1.65] text-[#3b4652] sm:text-[17px]">
+          <p className="mt-4 max-w-3xl text-base leading-[1.65] text-text-muted sm:text-[17px]">
             Use these resources to choose a pricing model, improve monetization decisions, build a stronger pricing foundation, and keep learning as you grow.
           </p>
-          <p className="mt-4 max-w-3xl text-base leading-[1.65] text-[#3b4652] sm:text-[17px]">
+          <p className="mt-4 max-w-3xl text-base leading-[1.65] text-text-muted sm:text-[17px]">
             Not ready to hire yet? Start here. Need a sharper answer faster?{' '}
             <Link href="/consulting/entry-offer/form" className={`${brandLink} font-medium`}>
               Book the 90-minute session.
@@ -210,10 +210,10 @@ export default function FreeToolsPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
-        <h2 className="text-center font-serif-playfair text-3xl font-semibold leading-tight text-[#1f2933] sm:text-[34px]">
+        <h2 className="text-center font-serif-playfair text-3xl font-semibold leading-tight text-text sm:text-[34px]">
           Start with the right resource
         </h2>
-        <p className="mx-auto mt-4 max-w-3xl text-center text-base leading-[1.65] text-[#3b4652] sm:text-[17px]">
+        <p className="mx-auto mt-4 max-w-3xl text-center text-base leading-[1.65] text-text-muted sm:text-[17px]">
           Each resource is built for a different kind of need. Start with the one that matches where you are right now.
         </p>
 
@@ -222,16 +222,16 @@ export default function FreeToolsPage() {
             <Link
               key={item.startWith}
               href={item.href}
-              className="rounded-xl border border-[#e2e6ea] bg-white p-5 transition-colors hover:border-brand hover:bg-[#fcfbfc]"
+              className="rounded-xl border border-border-subtle bg-white p-5 transition-colors hover:border-brand hover:bg-surface"
             >
               <div className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand-soft">
                 <item.icon className="h-4 w-4 text-brand" />
               </div>
-              <p className="mt-4 text-sm font-semibold text-[#3b4652]">{item.heading}</p>
-              <p className="mt-2 font-serif-playfair text-lg font-semibold leading-snug text-[#1f2933] sm:text-xl">
+              <p className="mt-4 text-sm font-semibold text-text-muted">{item.heading}</p>
+              <p className="mt-2 font-serif-playfair text-lg font-semibold leading-snug text-text sm:text-xl">
                 Start with: {item.startWith}
               </p>
-              <p className="mt-2 text-base leading-[1.65] text-[#3b4652] sm:text-[17px]">{item.copy}</p>
+              <p className="mt-2 text-base leading-[1.65] text-text-muted sm:text-[17px]">{item.copy}</p>
               <p className="mt-4 inline-flex items-center text-base font-semibold text-brand">
                 {item.cta} <ArrowRight className="ml-1 h-4 w-4" />
               </p>
@@ -241,7 +241,7 @@ export default function FreeToolsPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-10 sm:px-6 sm:pb-12 lg:px-8">
-        <h2 className="font-serif-playfair text-3xl font-semibold leading-tight text-[#1f2933] sm:text-[34px]">
+        <h2 className="font-serif-playfair text-3xl font-semibold leading-tight text-text sm:text-[34px]">
           Explore the free resources
         </h2>
 
@@ -252,20 +252,20 @@ export default function FreeToolsPage() {
                 <p className="inline-flex items-center rounded-full bg-[#ecf0f3] px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-[#4d5a69]">
                   {resource.label}
                 </p>
-                <h3 className="mt-5 font-serif-playfair text-2xl font-semibold leading-tight text-[#1f2933] sm:text-3xl">
+                <h3 className="mt-5 font-serif-playfair text-2xl font-semibold leading-tight text-text sm:text-3xl">
                   {resource.id}) {resource.name}
                 </h3>
-                <h4 className="mt-3 font-serif-playfair text-xl font-semibold leading-tight text-[#1f2933] sm:text-2xl">
+                <h4 className="mt-3 font-serif-playfair text-xl font-semibold leading-tight text-text sm:text-2xl">
                   {resource.title}
                 </h4>
-                <p className="mt-4 max-w-[590px] text-base leading-[1.65] text-[#3b4652] sm:text-[17px]">
+                <p className="mt-4 max-w-[590px] text-base leading-[1.65] text-text-muted sm:text-[17px]">
                   {resource.copy}
                 </p>
 
-                <p className="mt-6 text-base font-semibold text-[#1f2933] sm:text-[17px]">{resource.pointsHeading}</p>
+                <p className="mt-6 text-base font-semibold text-text sm:text-[17px]">{resource.pointsHeading}</p>
                 <ul className="mt-3 space-y-2.5">
                   {resource.points.map((point) => (
-                    <li key={point} className="flex items-start gap-2.5 text-base text-[#3b4652] sm:text-[17px]">
+                    <li key={point} className="flex items-start gap-2.5 text-base text-text-muted sm:text-[17px]">
                       <CheckCircle2 className="mt-1 h-4 w-4 flex-shrink-0 text-brand" />
                       <span>{point}</span>
                     </li>
@@ -319,10 +319,10 @@ export default function FreeToolsPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
-        <h2 className="text-center font-serif-playfair text-3xl font-semibold leading-tight text-[#1f2933] sm:text-[34px]">
+        <h2 className="text-center font-serif-playfair text-3xl font-semibold leading-tight text-text sm:text-[34px]">
           Who these are built for
         </h2>
-        <p className="mx-auto mt-4 max-w-4xl text-center text-base leading-[1.65] text-[#3b4652] sm:text-[17px]">
+        <p className="mx-auto mt-4 max-w-4xl text-center text-base leading-[1.65] text-text-muted sm:text-[17px]">
           These resources are best for:
         </p>
 
@@ -333,23 +333,23 @@ export default function FreeToolsPage() {
             'product and GTM leads working through pricing questions',
             'operators who need sharper monetization decisions before hiring outside help',
           ].map((audience) => (
-            <li key={audience} className="flex items-center gap-2.5 rounded-xl border border-[#e2e6ea] bg-white px-4 py-3 text-base leading-[1.65] text-[#1f2933] sm:text-[17px]">
+            <li key={audience} className="flex items-center gap-2.5 rounded-xl border border-border-subtle bg-white px-4 py-3 text-base leading-[1.65] text-text sm:text-[17px]">
               <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-brand" />
               <span>{audience}</span>
             </li>
           ))}
         </ul>
-        <p className="mx-auto mt-5 max-w-4xl text-center text-base leading-[1.65] text-[#3b4652] sm:text-[17px]">
+        <p className="mx-auto mt-5 max-w-4xl text-center text-base leading-[1.65] text-text-muted sm:text-[17px]">
           That audience matches the current positioning of the Matchmaker, Roadmap, and broader site.
         </p>
       </section>
 
       <section className="relative z-10 bg-[#fff7f0] pb-6 pt-12 sm:pb-8 sm:pt-14 -mb-12 sm:-mb-20">
         <div className="mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="mx-auto max-w-4xl font-serif-playfair text-3xl font-semibold leading-tight text-[#1f2933] sm:text-[34px]">
+          <h2 className="mx-auto max-w-4xl font-serif-playfair text-3xl font-semibold leading-tight text-text sm:text-[34px]">
             Need a sharper answer than a free resource can give you?
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-base leading-[1.65] text-[#3b4652] sm:text-[17px]">
+          <p className="mx-auto mt-4 max-w-3xl text-base leading-[1.65] text-text-muted sm:text-[17px]">
             The free resources are built to help you self-serve. But if you need a faster recommendation, clearer tradeoffs, or direct help with a live pricing decision, start with the 90-minute Pricing Strategy Session.
           </p>
           <div className="mt-7 flex flex-wrap items-center justify-center gap-4">

@@ -26,16 +26,16 @@ export const metadata: Metadata = {
 export default function ContactThanksPage() {
   return (
     <>
-      <section className="min-h-screen flex flex-col items-center justify-center bg-[#f6f7f9] py-20">
+      <section className="min-h-screen flex flex-col items-center justify-center bg-surface py-20">
         <div className="w-full max-w-2xl bg-white rounded-lg shadow-lg mx-auto p-8 md:p-16">
           <div className="flex flex-col items-center text-center">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-[#c2410c] flex-shrink-0" />
-              <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold text-[#1f2933]">
+              <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-brand-ink flex-shrink-0" />
+              <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold text-text">
                 Thanks —message received
               </h1>
             </div>
-            <p className="mb-8 text-[#1f2933] text-base sm:text-[17px] leading-[1.65] max-w-lg">
+            <p className="mb-8 text-text text-base sm:text-[17px] leading-[1.65] max-w-lg">
               Want the fastest next step? Book a free 15-minute consult now to skip email back-and-forth.
             </p>
             
@@ -46,7 +46,7 @@ export default function ContactThanksPage() {
               >
                 Book free 15-min consult
               </Link>
-              <div className="text-sm text-[#3b4652] max-w-lg mx-auto text-left">
+              <div className="text-sm text-text-muted max-w-lg mx-auto text-left">
                 <p className="mb-2">You'll leave with:</p>
                 <ul className="list-disc list-inside space-y-1">
                   <li>2–3 tailored <strong>recommendations</strong>, and</li>
@@ -64,7 +64,7 @@ export default function ContactThanksPage() {
               </Link>
             </div>
 
-            <p className="mt-8 text-xs text-[#3b4652] max-w-lg mx-auto">
+            <p className="mt-8 text-xs text-text-muted max-w-lg mx-auto">
               I'll reply by email within 24–48 hours. If you don’t see it, please check spam/promotions.
             </p>
           </div>

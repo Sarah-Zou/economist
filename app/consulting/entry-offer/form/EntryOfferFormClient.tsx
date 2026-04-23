@@ -3,6 +3,7 @@
 import { type FormEvent, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { primaryButtonLg } from '@/lib/brandStyles';
 
 const DEFAULT_FORM_ACTION =
   'https://script.google.com/macros/s/AKfycbx1ndwJyYb0zSBnun4OszCJrRMMopBDIrSY-B9855RKgnusPauxx0pVJT-4EvXLI5pACA/exec';
@@ -88,31 +89,30 @@ export default function EntryOfferFormClient() {
     productSummaryTouched && productSummary.trim().length < PRODUCT_SUMMARY_MIN_LENGTH;
 
   return (
-    <div className="min-h-screen bg-page selection:bg-brand-soft selection:text-brand-ink">
-      <main className="py-12 sm:py-16 md:py-24 px-4 sm:px-6">
-        <div className="max-w-3xl mx-auto">
+    <div className="min-h-screen bg-page text-text">
+      <main className="px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-2xl">
           {/* Hero */}
-          <div className="mb-8 sm:mb-10">
+          <div className="mb-8">
             <Link
               href="/consulting/entry-offer"
-              className="inline-block py-2 px-4 sm:px-5 rounded-full bg-brand-soft text-brand-ink text-xs sm:text-sm font-bold mb-6 border border-brand/20 tracking-wide hover:bg-[#f6ddd3] transition-colors"
+              className="inline-flex items-center rounded-full border border-border-subtle bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-ink transition-colors hover:border-brand/40 hover:bg-brand-soft"
             >
               90-Minute Pricing Strategy Session
             </Link>
-            <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-semibold text-[#1f2933] leading-tight mb-3">
+            <h1 className="mt-5 font-serif-playfair text-ink">
               Request the 90-Minute Pricing Strategy Session
             </h1>
-            <p className="text-base sm:text-[17px] text-[#3b4652] leading-[1.65]">
-              Share a few details so I can quickly tell whether this session is the right fit and make it useful from
-              the start.
+            <p className="mt-4 text-[16px] leading-[1.7] text-text-muted sm:text-[17px]">
+              Share a few details so I can quickly tell whether this session is the right
+              fit and make it useful from the start.
             </p>
           </div>
 
-          <p className="text-sm text-[#3b4652] mb-2">
-            Takes about 2 minutes.
-          </p>
-          <p className="text-sm text-[#516170] leading-[1.55] mb-4">
-            Best fit for founders with a live product, clear offer, or active pricing decision in motion.
+          <p className="text-[14px] text-text-muted">Takes about 2 minutes.</p>
+          <p className="mt-1 text-[14px] leading-[1.55] text-text-subtle">
+            Best fit for founders with a live product, clear offer, or active pricing
+            decision in motion.
           </p>
 
           {/* Form card */}
@@ -120,16 +120,16 @@ export default function EntryOfferFormClient() {
             action={RESOLVED_FORM_ACTION}
             method="POST"
             onSubmit={handleSubmit}
-            className="bg-white border border-[#e2e6ea] rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 space-y-4 shadow-sm"
+            className="mt-6 space-y-4 rounded-card border border-border-subtle bg-white p-6 sm:p-8"
           >
             {!IS_VALID_FORM_ACTION && (
-              <div className="rounded-lg border border-[#fecaca] bg-[#fef2f2] px-3 py-2 text-sm text-[#991b1b]">
-                `NEXT_PUBLIC_PRICING_SESSION_FORM_URL` is missing or invalid. Update it to your Google Apps Script
-                `/exec` URL and restart Next.js.
+              <div className="rounded-control border border-[#fecaca] bg-[#fef2f2] px-3 py-2 text-[13px] text-[#991b1b]">
+                `NEXT_PUBLIC_PRICING_SESSION_FORM_URL` is missing or invalid. Update it to
+                your Google Apps Script `/exec` URL and restart Next.js.
               </div>
             )}
             {configError && (
-              <div className="rounded-lg border border-[#fecaca] bg-[#fef2f2] px-3 py-2 text-sm text-[#991b1b]">
+              <div className="rounded-control border border-[#fecaca] bg-[#fef2f2] px-3 py-2 text-[13px] text-[#991b1b]">
                 {configError}
               </div>
             )}
@@ -144,33 +144,33 @@ export default function EntryOfferFormClient() {
             <input type="hidden" name="utm_term" value={utm.utm_term} />
 
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-[#1f2933] mb-1">Name *</label>
+              <label htmlFor="name" className="label">Name *</label>
               <input
                 id="name"
                 name="name"
                 type="text"
                 autoComplete="name"
                 required
-                className="w-full px-3.5 py-2.5 border border-[#e2e6ea] bg-surface rounded-lg text-base sm:text-[17px] text-[#1f2933] leading-[1.65] focus:outline-none focus:ring-2 focus:ring-brand"
+                className="input"
                 placeholder="Your name"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-[#1f2933] mb-1">Work email *</label>
+              <label htmlFor="email" className="label">Work email *</label>
               <input
                 id="email"
                 name="email"
                 type="email"
                 autoComplete="email"
                 required
-                className="w-full px-3.5 py-2.5 border border-[#e2e6ea] bg-surface rounded-lg text-base sm:text-[17px] text-[#1f2933] leading-[1.65] focus:outline-none focus:ring-2 focus:ring-brand"
+                className="input"
                 placeholder="you@company.com"
               />
             </div>
 
             <div>
-              <label htmlFor="product-summary" className="block text-sm font-medium text-[#1f2933] mb-1">Product summary (1–2 sentences) *</label>
+              <label htmlFor="product-summary" className="label">Product summary (1–2 sentences) *</label>
               <textarea
                 id="product-summary"
                 name="product_summary"
@@ -180,26 +180,23 @@ export default function EntryOfferFormClient() {
                 value={productSummary}
                 onChange={(event) => setProductSummary(event.target.value)}
                 onBlur={() => setProductSummaryTouched(true)}
-                className={cn(
-                  'w-full px-3.5 py-2.5 border bg-surface rounded-lg text-base sm:text-[17px] text-[#1f2933] leading-[1.65] focus:outline-none focus:ring-2 focus:ring-brand',
-                  isProductSummaryTooShort ? 'border-[#ef4444]' : 'border-[#e2e6ea]'
-                )}
+                className={cn('textarea', isProductSummaryTooShort && 'textarea-invalid')}
                 placeholder="What you sell, who it is for, and what stage you’re at in 1–2 sentences."
               />
               {isProductSummaryTooShort && (
-                <p className="mt-1 text-sm text-[#b91c1c]">
+                <p className="form-error">
                   Please add a bit more detail so I can understand the product and context.
                 </p>
               )}
             </div>
 
             <div>
-              <label htmlFor="decision-type" className="block text-sm font-medium text-[#1f2933] mb-1">What decision are you trying to make? *</label>
+              <label htmlFor="decision-type" className="label">What decision are you trying to make? *</label>
               <select
                 id="decision-type"
                 name="decision_type"
                 required
-                className="w-full px-3.5 py-2.5 border border-[#e2e6ea] bg-surface rounded-lg text-base sm:text-[17px] text-[#1f2933] focus:outline-none focus:ring-2 focus:ring-brand"
+                className="select-input"
                 defaultValue=""
               >
                 <option value="" disabled>Select one</option>
@@ -214,58 +211,60 @@ export default function EntryOfferFormClient() {
             </div>
 
             <div>
-              <label htmlFor="target-customer" className="block text-sm font-medium text-[#1f2933] mb-1">Company name *</label>
+              <label htmlFor="target-customer" className="label">Company name *</label>
               <input
                 id="target-customer"
                 name="target_customer"
                 type="text"
                 required
-                className="w-full px-3.5 py-2.5 border border-[#e2e6ea] bg-surface rounded-lg text-base sm:text-[17px] text-[#1f2933] focus:outline-none focus:ring-2 focus:ring-brand"
+                className="input"
                 placeholder="Your company name"
               />
             </div>
 
             <div>
-              <label htmlFor="website" className="block text-sm font-medium text-[#1f2933] mb-1">Website, product page, demo, LinkedIn company page, or short deck link (recommended)</label>
+              <label htmlFor="website" className="label">
+                Website, product page, demo, LinkedIn company page, or short deck link (recommended)
+              </label>
               <input
                 id="website"
                 name="website_url"
                 type="url"
                 autoComplete="url"
-                className="w-full px-3.5 py-2.5 border border-[#e2e6ea] bg-surface rounded-lg text-base sm:text-[17px] text-[#1f2933] focus:outline-none focus:ring-2 focus:ring-brand"
+                className="input"
                 placeholder="https://yourproduct.com"
               />
             </div>
 
             <div>
-              <label htmlFor="current-pricing" className="block text-sm font-medium text-[#1f2933] mb-1">Current pricing (optional)</label>
+              <label htmlFor="current-pricing" className="label">Current pricing (optional)</label>
               <textarea
                 id="current-pricing"
                 name="current_pricing"
                 rows={2}
-                className="w-full px-3.5 py-2.5 border border-[#e2e6ea] bg-surface rounded-lg text-base sm:text-[17px] text-[#1f2933] focus:outline-none focus:ring-2 focus:ring-brand"
+                className="textarea"
                 placeholder="How do you charge today, if at all?"
               />
             </div>
 
             <div>
-              <label htmlFor="uncertainty" className="block text-sm font-medium text-[#1f2933] mb-1">Biggest uncertainty (optional)</label>
+              <label htmlFor="uncertainty" className="label">Biggest uncertainty (optional)</label>
               <textarea
                 id="uncertainty"
                 name="uncertainty"
                 rows={2}
-                className="w-full px-3.5 py-2.5 border border-[#e2e6ea] bg-surface rounded-lg text-base sm:text-[17px] text-[#1f2933] focus:outline-none focus:ring-2 focus:ring-brand"
+                className="textarea"
                 placeholder="What feels hardest, riskiest, or most unclear right now?"
               />
             </div>
 
             <div>
-              <label htmlFor="deadline" className="block text-sm font-medium text-[#1f2933] mb-1">Deadline or timing (optional)</label>
+              <label htmlFor="deadline" className="label">Deadline or timing (optional)</label>
               <input
                 id="deadline"
                 name="deadline"
                 type="text"
-                className="w-full px-3.5 py-2.5 border border-[#e2e6ea] bg-surface rounded-lg text-base sm:text-[17px] text-[#1f2933] focus:outline-none focus:ring-2 focus:ring-brand"
+                className="input"
                 placeholder="e.g., before launch in May, before next fundraise"
               />
             </div>
@@ -274,53 +273,44 @@ export default function EntryOfferFormClient() {
               <button
                 type="submit"
                 disabled={!IS_VALID_FORM_ACTION || isSubmitting}
-                className={cn(
-                  'w-full min-h-[48px] px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg transition-all shadow-sm',
-                  IS_VALID_FORM_ACTION && !isSubmitting
-                    ? 'bg-brand hover:bg-brand-ink text-brand-on hover:shadow-md'
-                    : 'bg-[#cbd5e1] text-white cursor-not-allowed'
-                )}
+                className={cn(primaryButtonLg, 'w-full')}
               >
-                {isSubmitting ? 'Submitting...' : 'Submit request'}
+                {isSubmitting ? 'Submitting…' : 'Submit request'}
               </button>
-              <p className="mt-2 text-sm text-[#3b4652] text-center leading-[1.65]">
-                I read every request myself. If it looks like a fit, I’ll reply with the next step to choose a time.
-                Your session is confirmed once payment is completed.
+              <p className="mt-3 text-center text-[13px] leading-[1.65] text-text-muted">
+                I read every request myself. If it looks like a fit, I&apos;ll reply with
+                the next step to choose a time. Your session is confirmed once payment is
+                completed.
               </p>
             </div>
           </form>
 
           {/* Benefits card */}
-          <div className="mt-6 sm:mt-8 bg-surface border border-[#e2e6ea] rounded-xl sm:rounded-2xl p-5 sm:p-6 shadow-sm">
-            <h2 className="font-serif-playfair text-xl sm:text-[22px] font-semibold text-[#1f2933] mb-3">
-              In this session, you’ll get:
+          <div className="mt-8 rounded-card border border-border-soft bg-surface p-6 sm:p-7">
+            <h2 className="font-serif-playfair text-[20px] font-semibold text-ink">
+              In this session, you&apos;ll get:
             </h2>
-            <ul className="space-y-2 text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
-              <li className="flex gap-2">
-                <span className="mt-1.5 h-2 w-2 rounded-full bg-brand shrink-0" aria-hidden />
-                <span>a clearer recommendation on pricing model and value metric</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-1.5 h-2 w-2 rounded-full bg-brand shrink-0" aria-hidden />
-                <span>concrete guidance on packages, tiers, and entry offer</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-1.5 h-2 w-2 rounded-full bg-brand shrink-0" aria-hidden />
-                <span>a short memo within 48 hours with risks and next steps</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-1.5 h-2 w-2 rounded-full bg-brand shrink-0" aria-hidden />
-                <span>a chance to pressure-test your current or planned pricing</span>
-              </li>
+            <ul className="mt-4 space-y-2.5 text-[15px] leading-[1.6] text-text">
+              {[
+                'A clearer recommendation on pricing model and value metric',
+                'Concrete guidance on packages, tiers, and entry offer',
+                'A short memo within 48 hours with risks and next steps',
+                'A chance to pressure-test your current or planned pricing',
+              ].map((item) => (
+                <li key={item} className="flex gap-2.5">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" aria-hidden />
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Secondary CTA */}
-          <div className="mt-6 sm:mt-8 text-center text-base sm:text-[17px] text-[#3b4652] leading-[1.65]">
+          <div className="mt-10 text-center text-[15px] leading-[1.65] text-text-muted">
             <p className="mb-2">Not ready to apply yet?</p>
             <Link
               href="/book"
-              className="text-brand-ink underline decoration-2 underline-offset-2 hover:text-brand-ink/90 font-medium"
+              className="font-medium text-brand-ink underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-dark"
             >
               Start with a free 15-minute consult instead
             </Link>

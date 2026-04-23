@@ -9,7 +9,7 @@ import {
   ShieldCheck,
   Target,
 } from 'lucide-react';
-import { brandLink, primaryButton } from '@/lib/brandStyles';
+import { brandLink, outlineButton, primaryButtonLg } from '@/lib/brandStyles';
 
 const SESSION_INFO_HREF = '/consulting/entry-offer';
 const PRICING_SPRINT_HREF = '/consulting/services/pricing-monetization-sprint';
@@ -98,10 +98,10 @@ const CHALLENGES = [
 ];
 
 const SESSION_OUTPUTS = [
-  'short intake review',
+  'Short intake review',
   '90-minute live working session',
   '48-hour summary memo',
-  'top 3 next actions',
+  'Top 3 next actions',
 ];
 
 const SESSION_QUESTIONS = [
@@ -118,7 +118,7 @@ const OTHER_PATHS = [
     forLine: 'For teams that need more than one pricing answer.',
     summary:
       'A focused sprint to work through pricing model, value metric, packaging, price logic, and rollout priorities as a system.',
-    typicalScope: '2-4 weeks. Deep dive into model, value metric, and packaging.',
+    typicalScope: '2–4 weeks. Deep dive into model, value metric, and packaging.',
     outcome: 'Full pricing structure and rollout plan.',
     cta: 'Explore the Pricing & Monetization Sprint',
     href: '/consulting/services/pricing-monetization-sprint',
@@ -130,7 +130,7 @@ const OTHER_PATHS = [
     forLine: 'For founders who need a clearer decision system.',
     summary:
       'We define the metrics that matter, identify what to test, and turn scattered data into a practical operating framework.',
-    typicalScope: '2-3 weeks. KPI definition and testing framework.',
+    typicalScope: '2–3 weeks. KPI definition and testing framework.',
     outcome: 'A robust KPI and testing system you can run internally.',
     cta: 'Explore the Metrics & Experimentation Sprint',
     href: '/consulting/services/metrics-experimentation-sprint',
@@ -141,7 +141,7 @@ const OTHER_PATHS = [
     title: 'Fractional Chief Economist Retainer',
     forLine: 'For teams that want ongoing strategic support.',
     summary:
-      'This is for founders who need recurring help on monetization, metrics, tradeoffs, and investor-facing decision support without a full-time hire.',
+      'For founders who need recurring help on monetization, metrics, tradeoffs, and investor-facing decision support without a full-time hire.',
     typicalScope: 'Retainer. Weekly advisory, board prep, strategic reviews.',
     outcome: 'Ongoing strategic support and an investor-ready economic narrative.',
     cta: 'Explore Fractional Support',
@@ -152,9 +152,9 @@ const OTHER_PATHS = [
 ];
 
 const WHY_HIRE_ME = [
-  { bold: 'research-grade rigor', rest: ' without academic abstraction' },
-  { bold: 'practical recommendations', rest: ' instead of vague strategy talk' },
-  { bold: 'investor- and board-ready', rest: ' thinking behind the numbers' },
+  { bold: 'Research-grade rigor', rest: ' without academic abstraction' },
+  { bold: 'Practical recommendations', rest: ' instead of vague strategy talk' },
+  { bold: 'Investor- and board-ready', rest: ' thinking behind the numbers' },
 ];
 
 const WORK_STEPS = [
@@ -184,7 +184,8 @@ const TESTIMONIALS = [
     role: 'Founder & CEO, Series A SaaS Platform',
   },
   {
-    quote: 'We were stuck on value metric, and Sarah’s framework helped a lot. Highly recommend the 90-min session.',
+    quote:
+      'We were stuck on value metric, and Sarah’s framework helped a lot. Highly recommend the 90-min session.',
     name: 'Lisa, J.',
     role: 'Co-Founder, Seed AI Developer Tool',
   },
@@ -197,11 +198,7 @@ const FAQ_ITEMS: Array<{
 }> = [
   {
     qSchema: 'Should I start with the 90-minute session or a sprint?',
-    question: (
-      <>
-        Should I start with the 90-minute session or a sprint?
-      </>
-    ),
+    question: 'Should I start with the 90-minute session or a sprint?',
     a: 'Start with the session if you need clarity on one important decision or want a lower-risk first step. Choose a sprint if you already know the work is broader.',
   },
   {
@@ -224,151 +221,124 @@ const FAQ_ITEMS: Array<{
 export default function ConsultingPage() {
   return (
     <>
-      <div className="bg-white text-[#1f2933] selection:bg-brand-soft selection:text-brand-ink">
+      <div className="bg-page text-text">
         <main>
-          <section className="relative overflow-hidden bg-gradient-to-b from-[#fff7f3] via-white to-white">
-            <div className="pointer-events-none absolute -left-10 top-8 h-56 w-56 rounded-full bg-brand/10 blur-3xl" />
-            <div className="pointer-events-none absolute -right-12 top-24 h-56 w-56 rounded-full bg-[#f59e0b]/10 blur-3xl" />
-            <div className="mx-auto max-w-7xl px-4 pb-12 pt-10 sm:px-6 sm:pb-16 sm:pt-16 lg:px-8 lg:pb-20 lg:pt-20">
-              <div className="mx-auto max-w-4xl text-center">
-                <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand-soft px-4 py-2">
-                  <span className="h-2 w-2 rounded-full bg-brand" aria-hidden />
-                  <span className="text-[11px] font-bold uppercase tracking-widest text-brand-ink">
-                    WORK WITH ME
-                  </span>
-                </div>
-                <h1 className="mt-4 font-black tracking-tight text-[38px] leading-[1.08] sm:text-[52px] lg:text-[62px]">
-                  <span className="text-brand">Pricing, Metrics, and Growth</span>
-                  <span className="text-[#0f172a]"> Support for AI and SaaS Founders</span>
+          {/* Hero */}
+          <section className="bg-hero-tint">
+            <div className="mx-auto w-full max-w-container px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8 lg:pb-24 lg:pt-24">
+              <div className="mx-auto max-w-3xl text-center">
+                <span className="kicker">Work with me</span>
+                <h1 className="mt-5 font-serif-playfair text-ink">
+                  Pricing, metrics, and growth support for{' '}
+                  <span className="text-brand">AI and SaaS founders</span>
                 </h1>
-                <p className="mx-auto mt-5 max-w-3xl text-[15px] leading-[1.7] text-[#6b7280] sm:text-[18px]">
-                  Whether you are pre-launch, revisiting pricing, or trying to fix weak conversion or
-                  expansion, I help you get to a clearer next move. I help founders make sharper decisions on pricing, packaging, unit economics, and
-                  experimentation without months of vague consulting.
+                <p className="mx-auto mt-5 max-w-2xl text-[17px] leading-[1.7] text-text-muted sm:text-[19px]">
+                  Whether you&apos;re pre-launch, revisiting pricing, or trying to fix weak
+                  conversion or expansion, I help you get to a clearer next move — without
+                  months of vague consulting.
                 </p>
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center sm:gap-4">
-                  <Link
-                    href={PRIMARY_CTA_HREF}
-                    className={`${primaryButton} inline-flex w-full max-w-[420px] items-center justify-center gap-2 bg-brand px-6 py-4 sm:w-auto sm:max-w-none`}
-                  >
-                    Book the 90-Minute Pricing Strategy Session
-                    <ArrowRight className="h-5 w-5 shrink-0" aria-hidden />
+                <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+                  <Link href={PRIMARY_CTA_HREF} className={`${primaryButtonLg} w-full max-w-[420px] sm:w-auto`}>
+                    Book the 90-Minute Session
+                    <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
                   <Link
                     href={SECONDARY_CTA_HREF}
-                    className="inline-flex w-full max-w-[420px] items-center justify-center rounded-full border border-[#d6dce4] bg-white px-6 py-4 text-center font-semibold text-[#1f2933] shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md sm:w-auto sm:max-w-none"
+                    className={`${outlineButton} h-12 px-7 text-[16px] w-full max-w-[420px] sm:w-auto`}
                   >
-                    Book a consult
+                    Book a free consult
                   </Link>
                 </div>
-                <p className="mx-auto mt-7 inline-flex max-w-3xl items-start gap-2 rounded-full border border-[#e2e6ea] bg-white/80 px-4 py-2 text-left text-sm text-[#3b4652]">
-                  <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
-                  <span>
-                    Most founders start with the 90-minute session.
-                    If we move into a Pricing &amp; Monetization Sprint within 14 days, I&apos;ll
-                    credit the session fee toward the project.
-                  </span>
+                <p className="mx-auto mt-8 inline-flex max-w-2xl items-center gap-2 rounded-full border border-border-subtle bg-white px-4 py-2 text-[13px] text-text-muted">
+                  <ShieldCheck className="h-4 w-4 flex-shrink-0 text-brand" aria-hidden />
+                  If we move into a Pricing &amp; Monetization Sprint within 14 days, I&apos;ll
+                  credit the session fee toward the project.
                 </p>
               </div>
             </div>
           </section>
 
-          <section className="bg-[#f6f8fb] py-14 sm:py-16 lg:py-20">
-            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          {/* Challenges */}
+          <section className="section section-alt">
+            <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
               <div className="text-center">
-                <p className="text-[12px] font-semibold uppercase tracking-[0.25em] text-[#c5663b]">
-                  Common reasons founders reach out
-                </p>
-                <h2 className="mx-auto mt-4 max-w-4xl font-serif-playfair text-3xl font-semibold leading-[1.2] text-[#0f172a] sm:text-[46px]">
-                  Founders usually come to me when:
-                </h2>
+                <span className="kicker">Common reasons founders reach out</span>
+                <h2 className="mt-3 font-serif-playfair">Founders usually come to me when:</h2>
               </div>
-              <div className="mx-auto mt-10 max-w-5xl">
-                <ul className="grid gap-4 sm:grid-cols-2">
-                  {CHALLENGES.map((item) => (
-                    <li
-                      key={item.title}
-                      className="rounded-2xl border border-[#dfe5eb] bg-white p-5 shadow-sm sm:p-6"
-                    >
-                      <div className="flex items-start gap-3">
-                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#e68f74]" aria-hidden />
-                        <div>
-                          <p className="text-base font-semibold leading-[1.45] text-[#1f2933]">
-                            {item.title}
-                          </p>
-                          <p className="mt-1 text-sm leading-[1.6] text-[#3b4652] sm:text-[15px]">
-                            {item.detail}
-                          </p>
-                          <Link
-                            href={item.href}
-                            className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-brand transition-colors hover:text-brand-dark"
-                          >
-                            {item.linkLabel}
-                            <ArrowUpRight className="h-3.5 w-3.5 shrink-0" aria-hidden />
-                          </Link>
-                        </div>
+              <ul className="mx-auto mt-12 grid max-w-5xl gap-4 sm:grid-cols-2">
+                {CHALLENGES.map((item) => (
+                  <li key={item.title} className="card-quiet">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand" aria-hidden />
+                      <div>
+                        <p className="text-[16px] font-semibold leading-[1.45] text-ink">
+                          {item.title}
+                        </p>
+                        <p className="mt-1.5 text-[14px] leading-[1.65] text-text-muted">
+                          {item.detail}
+                        </p>
+                        <Link
+                          href={item.href}
+                          className="mt-3 inline-flex items-center gap-1 text-[13px] font-semibold text-brand-ink hover:text-brand-dark"
+                        >
+                          {item.linkLabel}
+                          <ArrowUpRight className="h-3.5 w-3.5 flex-shrink-0" aria-hidden />
+                        </Link>
                       </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <p className="mx-auto mt-6 max-w-3xl text-center text-base leading-[1.7] text-[#3b4652] sm:text-[17px]">
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <p className="mx-auto mt-8 max-w-2xl text-center text-[15px] leading-[1.7] text-text-muted">
                 If one of these sounds familiar, the{' '}
-                <SessionEmbedLink>90-minute session</SessionEmbedLink> is usually the best place to
-                start.
+                <SessionEmbedLink>90-minute session</SessionEmbedLink> is usually the best
+                place to start.
               </p>
             </div>
           </section>
 
-          <section className="bg-white py-14 sm:py-16 lg:py-20">
-            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-              <div className="relative overflow-hidden rounded-[28px] border border-[#334155]/60 bg-[#132130] px-6 py-8 text-white shadow-xl sm:px-10 sm:py-12 lg:px-12 lg:py-14">
-                <div className="pointer-events-none absolute -right-10 top-0 h-64 w-64 rounded-full bg-[#f97316]/10 blur-3xl" />
-                <div className="pointer-events-none absolute -left-16 -top-10 h-64 w-64 rounded-full bg-[#1d4ed8]/10 blur-3xl" />
-                <div className="relative">
-                  <p className="inline-flex rounded-full bg-[#f8eee8] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#c5663b]">
-                    The best way to start
-                  </p>
-                  <h2 className="mt-5 font-serif-playfair text-3xl font-semibold leading-[1.18] text-white sm:text-[46px]">
-                    The 90-Minute Pricing Strategy Session
-                  </h2>
-                  <p className="mt-5 max-w-3xl text-base leading-[1.75] text-[#d4dde7] sm:text-[18px]">
-                    A high-intensity working session to unblock your most pressing pricing or
-                    monetization decision.
-                  </p>
-                  <Link
-                    href={SESSION_INFO_HREF}
-                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#fcb79a] underline decoration-[#fcb79a]/50 underline-offset-2 transition-colors hover:text-white"
-                  >
-                    See full 90-minute session details
-                    <ArrowRight className="h-4 w-4 shrink-0" aria-hidden />
-                  </Link>
-                </div>
+          {/* Featured session */}
+          <section className="section">
+            <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
+              <div className="card-dark">
+                <span className="inline-flex rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-soft">
+                  The best way to start
+                </span>
+                <h2 className="mt-5 font-serif-playfair text-white">
+                  The 90-Minute Pricing Strategy Session
+                </h2>
+                <p className="mt-4 max-w-2xl text-[16px] leading-[1.75] text-white/80 sm:text-[18px]">
+                  A high-intensity working session to unblock your most pressing pricing or
+                  monetization decision.
+                </p>
+                <Link
+                  href={SESSION_INFO_HREF}
+                  className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-brand-soft underline decoration-brand-soft/40 underline-offset-4 hover:text-white"
+                >
+                  See full session details
+                  <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+                </Link>
 
-                <div className="relative mt-10 grid gap-8 lg:grid-cols-[1.12fr_1fr] lg:gap-10">
+                <div className="mt-10 grid gap-10 lg:grid-cols-[1.1fr_1fr]">
                   <div>
                     <div className="flex items-center gap-3">
-                      <Target className="h-5 w-5 text-[#ff6a2a]" aria-hidden />
-                      <h3 className="text-2xl font-semibold leading-[1.25] text-white sm:text-[30px]">
-                        Who it&apos;s for
-                      </h3>
+                      <Target className="h-4 w-4 text-brand" aria-hidden />
+                      <h3 className="text-[18px] font-semibold text-white">Who it&apos;s for</h3>
                     </div>
-                    <p className="mt-4 max-w-xl text-base leading-[1.75] text-[#d4dde7] sm:text-[18px]">
-                      Founders facing a specific pricing hurdle who need immediate clarity and a
-                      recommended path forward, without committing to a multi-week project.
+                    <p className="mt-3 max-w-xl text-[15px] leading-[1.7] text-white/75">
+                      Founders facing a specific pricing hurdle who need immediate clarity
+                      and a recommended path forward, without committing to a multi-week project.
                     </p>
 
                     <div className="mt-8 flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-[#ff6a2a]" aria-hidden />
-                      <h3 className="text-2xl font-semibold leading-[1.25] text-white sm:text-[30px]">
-                        What you get
-                      </h3>
+                      <CheckCircle2 className="h-4 w-4 text-brand" aria-hidden />
+                      <h3 className="text-[18px] font-semibold text-white">What you get</h3>
                     </div>
-                    <ul className="mt-5 space-y-3">
+                    <ul className="mt-4 space-y-2.5">
                       {SESSION_OUTPUTS.map((item) => (
-                        <li key={item} className="flex items-start gap-3">
-                          <span className="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#ff6a2a]" />
-                          <span className="text-base leading-[1.65] text-[#d4dde7] sm:text-[17px]">
+                        <li key={item} className="flex items-start gap-2.5">
+                          <span className="mt-2 inline-block h-1 w-1 flex-shrink-0 rounded-full bg-brand" />
+                          <span className="text-[15px] leading-[1.6] text-white/80">
                             {item}
                           </span>
                         </li>
@@ -377,13 +347,13 @@ export default function ConsultingPage() {
                   </div>
 
                   <div>
-                    <div className="rounded-2xl border border-white/15 bg-[#ffffff14] p-6 sm:p-8">
-                      <h3 className="text-2xl font-semibold leading-[1.3] text-[#f8fbff] sm:text-[30px]">
-                        Example Questions We Tackle:
+                    <div className="rounded-card border border-white/10 bg-white/5 p-6 sm:p-7">
+                      <h3 className="text-[15px] font-semibold uppercase tracking-[0.15em] text-brand-soft">
+                        Example questions
                       </h3>
-                      <ul className="mt-4 space-y-4">
+                      <ul className="mt-4 space-y-3">
                         {SESSION_QUESTIONS.map((item) => (
-                          <li key={item} className="text-base italic leading-[1.7] text-[#d6dee8] sm:text-[18px]">
+                          <li key={item} className="font-serif-playfair text-[17px] italic leading-[1.5] text-white/85">
                             &ldquo;{item}&rdquo;
                           </li>
                         ))}
@@ -393,15 +363,15 @@ export default function ConsultingPage() {
                     <div className="mt-8 flex flex-wrap items-center gap-4">
                       <Link
                         href={PRIMARY_CTA_HREF}
-                        className={`${primaryButton} inline-flex items-center justify-center rounded-full bg-[#ff5d26] px-8 py-3 text-base font-bold text-white hover:bg-[#f14f1a]`}
+                        className="inline-flex h-12 items-center justify-center rounded-full bg-brand px-7 text-[16px] font-semibold text-brand-on transition-colors hover:bg-brand-ink"
                       >
-                        Book the 90-Minute Session
+                        Book the Session
                       </Link>
-                      <p className="max-w-xs text-sm leading-[1.6] text-[#c8d3df]">
+                      <p className="max-w-[220px] text-[12px] leading-[1.55] text-white/60">
                         Fee fully credited toward{' '}
                         <Link
                           href={PRICING_SPRINT_HREF}
-                          className="font-semibold text-[#fcb79a] underline decoration-[#fcb79a]/45 underline-offset-2 hover:text-white"
+                          className="font-semibold text-brand-soft underline decoration-brand-soft/40 underline-offset-2 hover:text-white"
                         >
                           a sprint
                         </Link>{' '}
@@ -411,134 +381,125 @@ export default function ConsultingPage() {
                   </div>
                 </div>
 
-                <div className="relative mt-10 border-t border-white/10 pt-6">
-                  <p className="text-center text-sm leading-[1.7] text-[#aab7c5]">
-                    <strong>What it is not for:</strong> still at pure idea stage, mainly need branding/GTM help, or want a full consulting project inside a one-off session.
+                <div className="mt-10 border-t border-white/10 pt-6">
+                  <p className="text-center text-[13px] leading-[1.7] text-white/55">
+                    <strong className="text-white/75">What it is not for:</strong> pure idea
+                    stage, branding/GTM help, or fitting a full consulting project into a
+                    one-off session.
                   </p>
                 </div>
               </div>
             </div>
           </section>
 
-          <section className="bg-[#f6f8fb] py-14 sm:py-16 lg:py-20">
-            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          {/* Other paths */}
+          <section className="section section-alt">
+            <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
               <div className="text-center">
-                <p className="text-[12px] font-semibold uppercase tracking-[0.25em] text-[#c5663b]">
-                  Other ways to work together
-                </p>
-                <h2 className="mx-auto mt-4 max-w-4xl font-serif-playfair text-3xl font-semibold leading-[1.2] text-[#0f172a] sm:text-[46px]">
-                  Need broader support?
-                </h2>
+                <span className="kicker">Other ways to work together</span>
+                <h2 className="mt-3 font-serif-playfair">Need broader support?</h2>
               </div>
-              <div className="mt-10 grid gap-6 md:grid-cols-3">
+              <div className="mt-12 grid gap-6 md:grid-cols-3">
                 {OTHER_PATHS.map((item) => (
                   <article
                     key={item.title}
-                    className="overflow-hidden rounded-2xl border border-[#dfe5eb] bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+                    className="group overflow-hidden rounded-card border border-border-subtle bg-white"
                   >
-                    <div className="relative isolate min-h-[220px]">
+                    <div className="relative aspect-[4/3]">
                       <Image
                         src={item.image}
                         alt={item.imageAlt}
                         fill
-                        className="object-cover"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                         sizes="(min-width: 768px) 33vw, 100vw"
                       />
-                      <div
-                        className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/35 via-[#0f172a]/55 to-[#0f172a]/85"
-                        aria-hidden
-                      />
-                      <div className="relative z-10 space-y-3 p-7 sm:p-8">
-                        <h3 className="font-serif-playfair text-[30px] font-semibold leading-[1.1] text-white sm:text-[34px]">
+                      <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/40 to-transparent" />
+                      <div className="absolute inset-x-0 bottom-0 space-y-2 p-6">
+                        <h3 className="font-serif-playfair text-[22px] leading-[1.2] text-white sm:text-[24px]">
                           {item.title}
                         </h3>
-                        <p className="text-base font-medium leading-[1.65] text-white/95">{item.forLine}</p>
-                        <p className="text-base leading-[1.7] text-white/85">{item.summary}</p>
+                        <p className="text-[14px] font-medium leading-[1.5] text-white/90">
+                          {item.forLine}
+                        </p>
                       </div>
                     </div>
-                    <div className="border-t border-[#e8ecf1] bg-white p-7 pt-6 sm:p-8 sm:pt-7">
-                      <div>
-                        <p className="text-[12px] font-medium uppercase tracking-[0.22em] text-[#64748b]">
-                          Typical scope
-                        </p>
-                        <p className="mt-2 text-base leading-[1.65] text-[#1f2933]">
-                          {item.typicalScope}
-                        </p>
-                      </div>
-                      <div className="mt-4">
-                        <p className="text-[12px] font-medium uppercase tracking-[0.22em] text-[#64748b]">
-                          Outcome
-                        </p>
-                        <p className="mt-2 text-base font-semibold leading-[1.65] text-brand">
-                          {item.outcome}
-                        </p>
-                      </div>
+                    <div className="p-6 sm:p-7">
+                      <p className="text-[14px] leading-[1.65] text-text-muted">
+                        {item.summary}
+                      </p>
+                      <dl className="mt-5 space-y-3 border-t border-border-soft pt-5">
+                        <div>
+                          <dt className="kicker-muted">Typical scope</dt>
+                          <dd className="mt-1 text-[14px] leading-[1.55] text-ink">
+                            {item.typicalScope}
+                          </dd>
+                        </div>
+                        <div>
+                          <dt className="kicker-muted">Outcome</dt>
+                          <dd className="mt-1 text-[14px] font-semibold leading-[1.55] text-brand-ink">
+                            {item.outcome}
+                          </dd>
+                        </div>
+                      </dl>
                       <Link
                         href={item.href}
-                        className="mt-7 inline-flex w-full items-center justify-center rounded-full border border-[#d6dce4] bg-white px-5 py-3 text-center text-sm font-semibold text-[#1f2933] shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+                        className="mt-6 inline-flex w-full items-center justify-center gap-1.5 rounded-full border border-border-subtle bg-white px-5 py-2.5 text-[14px] font-semibold text-ink transition-colors hover:border-ink/30 hover:bg-surface"
                       >
                         {item.cta}
-                        <ArrowRight className="ml-2 h-4 w-4 shrink-0" aria-hidden />
+                        <ArrowRight className="h-4 w-4" aria-hidden />
                       </Link>
                     </div>
                   </article>
                 ))}
               </div>
-              <p className="mx-auto mt-8 max-w-3xl rounded-2xl border border-[#f0d3c7] bg-[#fff3ed] p-5 text-center text-base font-medium leading-[1.6] text-[#9a4d2d]">
+              <p className="mx-auto mt-10 max-w-2xl rounded-card border border-brand/20 bg-brand-soft p-5 text-center text-[15px] font-medium leading-[1.6] text-brand-ink">
                 Not sure which path fits? Start with the{' '}
                 <SessionEmbedLink>90-minute session</SessionEmbedLink>.
               </p>
             </div>
           </section>
 
-          <section className="bg-white py-14 sm:py-16 lg:py-20">
-            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-              <div className="grid items-start gap-10 md:grid-cols-[1fr_1.15fr]">
+          {/* Why hire + testimonials */}
+          <section className="section">
+            <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
+              <div className="grid items-start gap-12 md:grid-cols-2 lg:gap-16">
                 <div>
-                  <p className="text-[12px] font-semibold uppercase tracking-[0.25em] text-[#c5663b]">
-                    Why founders hire me
-                  </p>
-                  <h2 className="mt-4 font-serif-playfair text-3xl font-semibold leading-[1.2] text-[#0f172a] sm:text-[46px]">
-                    When pricing gets{' '}
-                    <span className="whitespace-nowrap">high-stakes,</span>{' '}
-                    bring in <span className="whitespace-nowrap">a PhD economist</span>
+                  <span className="kicker">Why founders hire me</span>
+                  <h2 className="mt-3 font-serif-playfair">
+                    When pricing gets high-stakes, bring in a PhD economist
                   </h2>
-                  <p className="mt-6 max-w-lg text-base leading-[1.75] text-[#3b4652] sm:text-[18px]">
+                  <p className="mt-6 max-w-lg text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
                     I combine three things founders rarely get in one place:
                   </p>
                   <ul className="mt-5 space-y-4">
                     {WHY_HIRE_ME.map((item) => (
                       <li key={item.bold} className="flex items-start gap-3">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
-                        <span className="text-base leading-[1.6] text-[#1f2933]">
-                          <strong>{item.bold}</strong>
+                        <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
+                        <span className="text-[15px] leading-[1.6] text-text">
+                          <strong className="text-ink">{item.bold}</strong>
                           {item.rest}
                         </span>
                       </li>
                     ))}
                   </ul>
-                  <p className="mt-6 max-w-lg text-base leading-[1.75] text-[#3b4652] sm:text-[18px]">
-                    You get clear priorities, clear tradeoffs, and outputs built for startup pace.
+                  <p className="mt-6 max-w-lg text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
+                    You get clear priorities, clear tradeoffs, and outputs built for startup
+                    pace.
                   </p>
                 </div>
                 <div>
-                  <p className="text-[12px] font-semibold uppercase tracking-[0.25em] text-[#c5663b]">
-                    Proof
-                  </p>
-                  <h3 className="mt-4 text-3xl font-semibold leading-[1.2] text-[#1f2933]">
+                  <span className="kicker">Proof</span>
+                  <h3 className="mt-3 font-serif-playfair text-[26px] sm:text-[30px]">
                     What founders say
                   </h3>
-                  <div className="mt-5 space-y-5">
+                  <div className="mt-6 space-y-5">
                     {TESTIMONIALS.map((item) => (
-                      <figure
-                        key={item.name}
-                        className="rounded-2xl border border-[#e2e6ea] bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg sm:p-7"
-                      >
-                        <blockquote className="text-base italic leading-[1.75] text-[#1f2933] sm:text-[18px]">
+                      <figure key={item.name} className="card">
+                        <blockquote className="font-serif-playfair text-[18px] italic leading-[1.55] text-ink">
                           &ldquo;{item.quote}&rdquo;
                         </blockquote>
-                        <figcaption className="mt-6 text-sm text-[#3b4652]">
-                          <p className="font-semibold text-[#1f2933]">{item.name}</p>
+                        <figcaption className="mt-5 text-[13px] text-text-muted">
+                          <p className="font-semibold text-ink">{item.name}</p>
                           <p>{item.role}</p>
                         </figcaption>
                       </figure>
@@ -549,77 +510,80 @@ export default function ConsultingPage() {
             </div>
           </section>
 
-          <section className="bg-[#f6f8fb] py-14 sm:py-16 lg:py-20">
-            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          {/* Process */}
+          <section className="section section-alt">
+            <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
               <div className="text-center">
-                <p className="text-[12px] font-semibold uppercase tracking-[0.25em] text-[#c5663b]">
-                  What working together looks like
-                </p>
+                <span className="kicker">What working together looks like</span>
+                <h2 className="mt-3 font-serif-playfair">A simple process</h2>
               </div>
-              <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
                 {WORK_STEPS.map((item, idx) => (
                   <div key={item.title}>
-                    <p className="text-5xl font-semibold tracking-wide text-[#f2c8ba]">
+                    <p className="font-serif-playfair text-[44px] font-semibold leading-none text-brand/30">
                       {String(idx + 1).padStart(2, '0')}
                     </p>
-                    <h3 className="mt-3 text-2xl font-semibold leading-[1.3] text-[#1f2933]">
+                    <h3 className="mt-4 text-[17px] font-semibold leading-[1.3] text-ink">
                       {item.title}
                     </h3>
-                    <p className="mt-3 text-base leading-[1.65] text-[#3b4652]">{item.copy}</p>
+                    <p className="mt-2 text-[14px] leading-[1.65] text-text-muted">
+                      {item.copy}
+                    </p>
                   </div>
                 ))}
               </div>
             </div>
           </section>
 
-          <section id="faq" className="bg-white py-12 sm:py-16 lg:py-20">
-            <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-              <h2 className="text-center font-serif-playfair text-2xl font-semibold text-[#1f2933] sm:text-[32px]">
-                Frequently Asked Questions
-              </h2>
-              <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-brand" />
-              <div className="mt-8 space-y-4">
+          {/* FAQ */}
+          <section id="faq" className="section">
+            <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+              <div className="text-center">
+                <span className="kicker">FAQ</span>
+                <h2 className="mt-3 font-serif-playfair">Frequently asked questions</h2>
+              </div>
+              <div className="mt-10 space-y-4">
                 {FAQ_ITEMS.map((item) => (
-                  <article key={item.qSchema} className="rounded-xl border border-[#e2e6ea] bg-white p-6 shadow-sm">
-                    <h3 className="text-xl font-semibold leading-[1.35] text-[#1f2933]">{item.question}</h3>
-                    <p className="mt-3 text-base leading-[1.7] text-[#3b4652]">{item.a}</p>
+                  <article key={item.qSchema} className="card">
+                    <h3 className="text-[17px] font-semibold leading-[1.35] text-ink">
+                      {item.question}
+                    </h3>
+                    <p className="mt-3 text-[15px] leading-[1.7] text-text-muted">{item.a}</p>
                   </article>
                 ))}
               </div>
             </div>
           </section>
 
-          <section className="relative overflow-hidden bg-brand py-12 text-brand-on sm:py-16 lg:py-20">
-            <div className="pointer-events-none absolute -left-16 top-8 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
-            <div className="pointer-events-none absolute -right-12 bottom-4 h-72 w-72 rounded-full bg-black/10 blur-3xl" />
-            <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-              <h2 className="font-serif-playfair text-3xl font-bold leading-tight text-white sm:text-[42px]">
+          {/* Closing CTA */}
+          <section className="orange-surface section-sm">
+            <div className="mx-auto w-full max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+              <h2 className="font-serif-playfair text-white">
                 Need a sharper pricing decision before your next move?
               </h2>
-              <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-[#fcb79a]" />
-              <p className="mx-auto mt-5 max-w-2xl text-base leading-[1.75] text-brand-soft sm:text-[19px]">
+              <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.7] text-white/85 sm:text-[17px]">
                 Start with the{' '}
                 <Link
                   href={SESSION_INFO_HREF}
-                  className="font-semibold text-white underline decoration-white/40 underline-offset-2 hover:decoration-white/70"
+                  className="font-semibold text-white underline decoration-white/40 underline-offset-2 hover:decoration-white/80"
                 >
                   90-Minute Pricing Strategy Session
                 </Link>{' '}
                 for a focused recommendation and a clear next step.
               </p>
-              <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link
                   href={PRIMARY_CTA_HREF}
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-lg font-bold text-brand transition-colors hover:bg-brand-soft"
+                  className="inline-flex h-12 items-center justify-center rounded-full bg-white px-7 text-[16px] font-semibold text-brand-ink transition-colors hover:bg-brand-soft"
                 >
-                  Book the 90-Minute Pricing Strategy Session
-                  <ArrowRight className="h-5 w-5 shrink-0" aria-hidden />
+                  Book the Session
+                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
                 </Link>
                 <Link
                   href={SECONDARY_CTA_HREF}
-                  className="inline-flex items-center justify-center rounded-full border border-white/70 px-7 py-3 text-lg font-semibold text-white transition-colors hover:bg-white/10"
+                  className={`${outlineButton} border-white bg-transparent text-white hover:bg-white/10 hover:text-white`}
                 >
-                  Book a consult
+                  Book a free consult
                 </Link>
               </div>
             </div>

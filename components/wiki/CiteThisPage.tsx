@@ -59,15 +59,15 @@ export default function CiteThisPage({ canonicalUrl, title, categoryTitle, lastU
   const bibTeX = formatBibTeX(title, categoryTitle, canonicalUrl, lastUpdated, conceptSlug);
 
   return (
-    <div className="border border-[#e5e7eb] rounded-lg bg-[#fafafa] p-4 mt-6 overflow-hidden">
-      <h3 className="text-sm font-semibold text-[#1f2933] uppercase tracking-wide mb-3 flex items-center gap-2">
+    <div className="border border-border-subtle rounded-lg bg-[#fafafa] p-4 mt-6 overflow-hidden">
+      <h3 className="text-sm font-semibold text-text uppercase tracking-wide mb-3 flex items-center gap-2">
         <Quote className="w-4 h-4 text-brand-ink" />
         How to cite this page
       </h3>
 
       <div className="space-y-3 text-sm">
         <div>
-          <p className="text-xs font-medium text-[#3b4652] mb-1">Canonical URL</p>
+          <p className="text-xs font-medium text-text-muted mb-1">Canonical URL</p>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-3 min-w-0">
             <a
               href={canonicalUrl}
@@ -82,9 +82,9 @@ export default function CiteThisPage({ canonicalUrl, title, categoryTitle, lastU
         </div>
 
         <div>
-          <p className="text-xs font-medium text-[#3b4652] mb-1">Suggested citation</p>
+          <p className="text-xs font-medium text-text-muted mb-1">Suggested citation</p>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-3 min-w-0">
-            <p className="text-[#1f2933] leading-snug break-words min-w-0">{suggestedCitation}</p>
+            <p className="text-text leading-snug break-words min-w-0">{suggestedCitation}</p>
             <CopyButton text={suggestedCitation} label="Copy citation" />
           </div>
         </div>
@@ -100,7 +100,7 @@ export default function CiteThisPage({ canonicalUrl, title, categoryTitle, lastU
           </button>
           {showBibTeX && (
             <div className="mt-2">
-              <pre className="p-3 bg-white border border-[#e5e7eb] rounded text-xs text-[#1f2933] overflow-x-auto whitespace-pre-wrap font-mono">
+              <pre className="p-3 bg-white border border-border-subtle rounded text-xs text-text overflow-x-auto whitespace-pre-wrap font-mono">
                 {bibTeX}
               </pre>
               <div className="mt-1.5">

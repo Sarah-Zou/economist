@@ -3,24 +3,30 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-semibold leading-none transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand disabled:opacity-50 disabled:pointer-events-none",
   {
     variants: {
       variant: {
         primary:
-          "bg-brand text-brand-on hover:bg-brand-ink focus-visible:ring-brand text-[19px] font-bold leading-[1.2] [&_svg]:text-brand-on",
+          "bg-brand text-brand-on hover:bg-brand-ink [&_svg]:text-brand-on",
         default:
-          "bg-brand text-brand-on hover:bg-brand-ink focus-visible:ring-brand text-[19px] font-bold leading-[1.2] [&_svg]:text-brand-on",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-brand text-brand-ink hover:bg-brand-soft focus-visible:ring-brand",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-brand-ink underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-ink/90",
+          "bg-brand text-brand-on hover:bg-brand-ink [&_svg]:text-brand-on",
+        secondary:
+          "bg-ink text-white hover:bg-ink/90 [&_svg]:text-white",
+        outline:
+          "border border-border-subtle bg-white text-text hover:border-ink/30 hover:bg-surface [&_svg]:text-text",
+        ghost:
+          "text-text hover:bg-surface",
+        destructive:
+          "bg-[#dc2626] text-white hover:bg-[#b91c1c]",
+        link:
+          "rounded-none px-0 h-auto text-brand-ink underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-dark",
       },
       size: {
-        default: "h-auto px-6 py-3 rounded-full",
-        sm: "h-auto px-5 py-2.5 rounded-full",
-        lg: "h-auto px-8 py-4 rounded-full",
+        sm: "h-10 px-5 text-[14px]",
+        md: "h-11 px-6 text-[15px]",
+        default: "h-11 px-6 text-[15px]",
+        lg: "h-12 px-7 text-[16px]",
       },
     },
     defaultVariants: {
@@ -49,4 +55,4 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 )
 Button.displayName = "Button"
 
-export { Button, buttonVariants } 
+export { Button, buttonVariants }

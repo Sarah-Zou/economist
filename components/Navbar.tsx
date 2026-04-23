@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { primaryButton } from '@/lib/brandStyles'
+import { primaryButtonSm } from '@/lib/brandStyles'
 
 const navLinks = [
   { href: '/consulting', label: 'Work With Me' },
@@ -15,41 +15,46 @@ const freeResourceLinks = [
   { href: '/newsletter', label: 'Newsletter' },
 ]
 
+const navLinkClass =
+  'text-[15px] text-text-muted hover:text-ink transition-colors'
+
 const Navbar = () => {
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative flex h-20 items-center justify-between">
-          <Link href="/" className="flex items-center gap-4">
+    <nav className="sticky top-0 z-50 border-b border-border-soft bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+      <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
+        <div className="relative flex h-16 items-center justify-between md:h-[72px]">
+          <Link href="/" className="flex items-center gap-3">
             <Image
               src="/images/econnova-logo-240.webp"
               alt="EconNova Consulting Logo"
               width={122}
               height={43}
-              className="h-10 w-auto"
+              className="h-9 w-auto"
             />
-            <span className="font-serif-playfair text-lg sm:text-xl md:text-2xl font-bold leading-tight">Sarah Zou, PhD</span>
+            <span className="font-serif-playfair text-lg font-semibold leading-tight text-ink sm:text-xl">
+              Sarah Zou, PhD
+            </span>
           </Link>
-          
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
-            <Link href="/consulting" className="text-base text-[#3b4652] hover:text-[#1f2933] transition-colors">
+
+          {/* Desktop nav */}
+          <div className="hidden items-center gap-7 md:flex">
+            <Link href="/consulting" className={navLinkClass}>
               Work With Me
             </Link>
             <div className="relative group">
               <Link
                 href="/free-tools"
-                className="text-base text-[#3b4652] hover:text-[#1f2933] transition-colors"
+                className={navLinkClass}
                 aria-haspopup="menu"
               >
                 Free Resources
               </Link>
-              <div className="absolute left-0 top-full mt-2 w-64 rounded-lg border border-[#e2e6ea] bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all">
+              <div className="invisible absolute left-0 top-full mt-3 w-64 rounded-card border border-border-subtle bg-white opacity-0 shadow-elevated transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                 {freeResourceLinks.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block px-4 py-2.5 text-sm text-[#3b4652] hover:bg-[#f6f7f9] hover:text-[#1f2933] transition-colors"
+                    className="block px-4 py-2.5 text-[14px] text-text-muted transition-colors first:rounded-t-card last:rounded-b-card hover:bg-surface hover:text-ink"
                   >
                     {item.label}
                   </Link>
@@ -57,53 +62,59 @@ const Navbar = () => {
               </div>
             </div>
             {navLinks.slice(1).map((link) => (
-              <Link key={link.href} href={link.href} className="text-base text-[#3b4652] hover:text-[#1f2933] transition-colors">
+              <Link key={link.href} href={link.href} className={navLinkClass}>
                 {link.label}
               </Link>
             ))}
-            <Link href="/consulting/entry-offer/form" className={`${primaryButton} whitespace-nowrap`}>
+            <Link href="/consulting/entry-offer/form" className={primaryButtonSm}>
               Book Session
             </Link>
           </div>
 
+          {/* Mobile toggle */}
           <details className="md:hidden group">
             <summary
-              className="list-none cursor-pointer rounded-md px-3 py-2 text-sm font-semibold text-[#3b4652] hover:text-[#1f2933] hover:bg-[#f6f7f9] transition-colors"
+              className="list-none cursor-pointer rounded-control px-3 py-2 text-[14px] font-semibold text-text-muted transition-colors hover:bg-surface hover:text-ink"
               aria-label="Toggle menu"
             >
               Menu
             </summary>
-            <div className="absolute left-0 right-0 top-20 border-t border-[#e2e6ea] bg-white px-4 py-4 space-y-3 shadow-md">
-              <Link
-                href="/consulting"
-                className="block rounded-md px-4 py-2 text-base text-[#3b4652] hover:text-[#1f2933] hover:bg-[#f6f7f9] transition-colors"
-              >
-                Work With Me
-              </Link>
-              <Link href="/free-tools" className="block rounded-md px-4 py-2 text-base text-[#3b4652] hover:text-[#1f2933] hover:bg-[#f6f7f9] transition-colors">
-                Free Resources
-              </Link>
-              {freeResourceLinks.map((item) => (
+            <div className="absolute inset-x-0 top-16 border-t border-border-soft bg-white px-4 py-4 shadow-card md:top-[72px]">
+              <div className="space-y-1">
                 <Link
-                  key={item.href}
-                  href={item.href}
-                  className="block rounded-md px-8 py-2 text-base text-[#3b4652] hover:text-[#1f2933] hover:bg-[#f6f7f9] transition-colors"
+                  href="/consulting"
+                  className="block rounded-control px-4 py-2 text-[15px] text-text-muted hover:bg-surface hover:text-ink"
                 >
-                  {item.label}
+                  Work With Me
                 </Link>
-              ))}
-              {navLinks.slice(1).map((link) => (
                 <Link
-                  key={link.href}
-                  href={link.href}
-                  className="block rounded-md px-4 py-2 text-base text-[#3b4652] hover:text-[#1f2933] hover:bg-[#f6f7f9] transition-colors"
+                  href="/free-tools"
+                  className="block rounded-control px-4 py-2 text-[15px] text-text-muted hover:bg-surface hover:text-ink"
                 >
-                  {link.label}
+                  Free Resources
                 </Link>
-              ))}
+                {freeResourceLinks.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block rounded-control px-8 py-2 text-[14px] text-text-muted hover:bg-surface hover:text-ink"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+                {navLinks.slice(1).map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block rounded-control px-4 py-2 text-[15px] text-text-muted hover:bg-surface hover:text-ink"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
               <Link
                 href="/consulting/entry-offer/form"
-                className={`${primaryButton} block mx-4 mt-4 text-center`}
+                className={`${primaryButtonSm} mt-4 block w-full text-center`}
               >
                 Book Session
               </Link>
@@ -115,4 +126,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar 
+export default Navbar

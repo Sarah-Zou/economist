@@ -10,8 +10,8 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({
-  messagePlaceholder = "How can I help you?",
-  buttonText = "SUBMIT"
+  messagePlaceholder = 'How can I help you?',
+  buttonText = 'Submit',
 }: ContactFormProps) {
   const [status, setStatus] = useState({ message: '', show: false })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -22,27 +22,23 @@ export default function ContactForm({
     setStatus({ message: 'Sending...', show: true })
 
     const form = e.currentTarget
-    const scriptURL = process.env.NEXT_PUBLIC_GOOGLE_WEB_APP_URL || 'https://script.google.com/macros/s/AKfycbyM_r8F368DURM5BPZliHGh1cx5NSAijtxWpH98MvVuv9vNBnQpuW9HlygUjz4j2zU7/exec'
+    const scriptURL =
+      process.env.NEXT_PUBLIC_GOOGLE_WEB_APP_URL ||
+      'https://script.google.com/macros/s/AKfycbyM_r8F368DURM5BPZliHGh1cx5NSAijtxWpH98MvVuv9vNBnQpuW9HlygUjz4j2zU7/exec'
 
     try {
       const formData = new FormData(form)
-      
-      // Google Apps Script web apps often return redirects, so we use no-cors mode
-      // This means we can't read the response, but the data is still sent
       await fetch(scriptURL, {
         method: 'POST',
         mode: 'no-cors',
-        body: formData
+        body: formData,
       })
-
-      // Since we can't read the response in no-cors mode, assume success
-      // The form data was sent to Google Apps Script
-      // Redirect to thank you page (using window.location for static export compatibility)
       window.location.href = '/contact/thanks'
     } catch (error) {
-      setStatus({ 
-        message: "Error! Please try again or email me directly at hello@sarahzou.com", 
-        show: true 
+      setStatus({
+        message:
+          'Error! Please try again or email me directly at hello@sarahzou.com',
+        show: true,
       })
       console.error('Error!', error)
     } finally {
@@ -52,48 +48,65 @@ export default function ContactForm({
 
   return (
     <form id="contact-form" onSubmit={handleSubmit} className="space-y-4">
-      <input
-        id="name-input"
-        type="text"
-        name="name"
-        placeholder="Your Name"
-        className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
-        required
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Email Address"
-        className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
-        required
-      />
-      <input
-        type="text"
-        name="company"
-        placeholder="Company name or website (optional)"
-        className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
-      />
       <div>
-        <label htmlFor="stage-select" className="block text-sm font-medium text-[#3b4652] mb-1">Stage & ARR band (optional)</label>
-        <select
-          id="stage-select"
-          name="stage"
-          className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
-        >
+        <label htmlFor="name-input" className="label">
+          Name
+        </label>
+        <input
+          id="name-input"
+          type="text"
+          name="name"
+          placeholder="Your name"
+          className="input"
+          required
+        />
+      </div>
+
+      <div>
+        <label htmlFor="email-input" className="label">
+          Email
+        </label>
+        <input
+          id="email-input"
+          type="email"
+          name="email"
+          placeholder="you@company.com"
+          className="input"
+          required
+        />
+      </div>
+
+      <div>
+        <label htmlFor="company-input" className="label">
+          Company name or website (optional)
+        </label>
+        <input
+          id="company-input"
+          type="text"
+          name="company"
+          placeholder="Acme Inc. or acme.com"
+          className="input"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="stage-select" className="label">
+          Stage &amp; ARR band (optional)
+        </label>
+        <select id="stage-select" name="stage" className="select-input">
           <option value="">Select your stage</option>
           <option value="pre-rev">Pre-revenue</option>
           <option value="under-1m">Under $1M ARR</option>
-          <option value="1-5m">$1M - $5M ARR</option>
+          <option value="1-5m">$1M – $5M ARR</option>
           <option value="5m-plus">$5M+ ARR</option>
         </select>
       </div>
+
       <div>
-        <label htmlFor="pricing-select" className="block text-sm font-medium text-[#3b4652] mb-1">Current pricing model (optional)</label>
-        <select
-          id="pricing-select"
-          name="pricing"
-          className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
-        >
+        <label htmlFor="pricing-select" className="label">
+          Current pricing model (optional)
+        </label>
+        <select id="pricing-select" name="pricing" className="select-input">
           <option value="">Select your model</option>
           <option value="seats">Seats</option>
           <option value="usage">Usage</option>
@@ -101,13 +114,12 @@ export default function ContactForm({
           <option value="other">Other</option>
         </select>
       </div>
+
       <div>
-        <label htmlFor="goal-select" className="block text-sm font-medium text-[#3b4652] mb-1">Goal (optional)</label>
-        <select
-          id="goal-select"
-          name="goal"
-          className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
-        >
+        <label htmlFor="goal-select" className="label">
+          Goal (optional)
+        </label>
+        <select id="goal-select" name="goal" className="select-input">
           <option value="">Select your goal</option>
           <option value="raise-arpa">Raise ARPA</option>
           <option value="improve-nrr">Improve NRR</option>
@@ -116,27 +128,38 @@ export default function ContactForm({
           <option value="other">Other</option>
         </select>
       </div>
-      <textarea
-        name="message"
-        placeholder={messagePlaceholder}
-        rows={5}
-        className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
-        required
-      />
+
+      <div>
+        <label htmlFor="message-textarea" className="label">
+          Message
+        </label>
+        <textarea
+          id="message-textarea"
+          name="message"
+          placeholder={messagePlaceholder}
+          rows={5}
+          className="textarea"
+          required
+        />
+      </div>
+
       <button
         type="submit"
         id="submit-btn"
         disabled={isSubmitting}
-        className={cn(primaryButton, 'w-full rounded tracking-wider disabled:opacity-50 disabled:cursor-not-allowed')}
+        className={cn(primaryButton, 'w-full')}
       >
-        {buttonText}
+        {isSubmitting ? 'Sending…' : buttonText}
       </button>
+
       {status.show && (
-        <div id="form-status" className="mt-2 text-center text-[#1f2933]">
+        <div
+          id="form-status"
+          className="mt-2 text-center text-[14px] text-text-muted"
+        >
           {status.message}
         </div>
       )}
     </form>
   )
 }
-

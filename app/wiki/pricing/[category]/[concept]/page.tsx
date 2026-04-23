@@ -251,23 +251,23 @@ function SnapshotTopCard({ snapshot }: { snapshot: SnapshotData }) {
     : undefined;
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-[#e5e7eb] bg-white shadow-sm mb-8">
+    <div className="relative overflow-hidden rounded-2xl border border-border-subtle bg-white shadow-sm mb-8">
       <div className="px-5 py-5 sm:px-7 sm:py-7">
       <div className="mb-4">
-        <h2 id="snapshot" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] scroll-mt-24">
+        <h2 id="snapshot" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-text scroll-mt-24">
           Snapshot (TL;DR)
         </h2>
       </div>
       <div className="space-y-4">
         {snapshot.whatItIs && (
           <div className="rounded-xl border border-[#edf1f5] bg-[#fafbfc] px-4 py-4 sm:px-5">
-            <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2">What it is</h3>
-            <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+            <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-text mb-2">What it is</h3>
+            <div className="text-base sm:text-[17px] text-text leading-[1.65]">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
-                  p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />,
-                  strong: ({ node, ...props }) => <strong className="font-bold text-[#1f2933]" {...props} />,
+                  p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-text leading-[1.65]" {...props} />,
+                  strong: ({ node, ...props }) => <strong className="font-bold text-text" {...props} />,
                 }}
               >
                 {snapshot.whatItIs}
@@ -277,13 +277,13 @@ function SnapshotTopCard({ snapshot }: { snapshot: SnapshotData }) {
         )}
         {snapshot.whenToUse && (
           <div className="rounded-xl border border-[#edf1f5] bg-[#fafbfc] px-4 py-4 sm:px-5">
-            <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2">When to use</h3>
-            <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+            <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-text mb-2">When to use</h3>
+            <div className="text-base sm:text-[17px] text-text leading-[1.65]">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
-                  p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />,
-                  strong: ({ node, ...props }) => <strong className="font-bold text-[#1f2933]" {...props} />,
+                  p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-text leading-[1.65]" {...props} />,
+                  strong: ({ node, ...props }) => <strong className="font-bold text-text" {...props} />,
                 }}
               >
                 {snapshot.whenToUse}
@@ -293,13 +293,13 @@ function SnapshotTopCard({ snapshot }: { snapshot: SnapshotData }) {
         )}
         {conciseWhyItMatters && (
           <div className="rounded-xl border border-[#edf1f5] bg-[#fafbfc] px-4 py-4 sm:px-5">
-            <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2">Why it matters</h3>
-            <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+            <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-text mb-2">Why it matters</h3>
+            <div className="text-base sm:text-[17px] text-text leading-[1.65]">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
-                  p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />,
-                  strong: ({ node, ...props }) => <strong className="font-bold text-[#1f2933]" {...props} />,
+                  p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-text leading-[1.65]" {...props} />,
+                  strong: ({ node, ...props }) => <strong className="font-bold text-text" {...props} />,
                 }}
               >
                   {conciseWhyItMatters}
@@ -309,13 +309,13 @@ function SnapshotTopCard({ snapshot }: { snapshot: SnapshotData }) {
         )}
         {snapshot.whyItsTempting && (
           <div className="rounded-xl border border-[#edf1f5] bg-[#fafbfc] px-4 py-4 sm:px-5">
-            <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2">Why it's tempting</h3>
-            <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+            <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-text mb-2">Why it's tempting</h3>
+            <div className="text-base sm:text-[17px] text-text leading-[1.65]">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
-                  p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />,
-                  strong: ({ node, ...props }) => <strong className="font-bold text-[#1f2933]" {...props} />,
+                  p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-text leading-[1.65]" {...props} />,
+                  strong: ({ node, ...props }) => <strong className="font-bold text-text" {...props} />,
                 }}
               >
                 {snapshot.whyItsTempting}
@@ -325,13 +325,13 @@ function SnapshotTopCard({ snapshot }: { snapshot: SnapshotData }) {
         )}
         {snapshot.whereItFails && (
           <div className="rounded-xl border border-[#edf1f5] bg-[#fafbfc] px-4 py-4 sm:px-5">
-            <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-2">Where it fails</h3>
-            <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+            <h3 className="font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-text mb-2">Where it fails</h3>
+            <div className="text-base sm:text-[17px] text-text leading-[1.65]">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
-                  p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />,
-                  strong: ({ node, ...props }) => <strong className="font-bold text-[#1f2933]" {...props} />,
+                  p: ({ node, ...props }) => <p className="text-base sm:text-[17px] text-text leading-[1.65]" {...props} />,
+                  strong: ({ node, ...props }) => <strong className="font-bold text-text" {...props} />,
                 }}
               >
                 {snapshot.whereItFails}
@@ -341,17 +341,17 @@ function SnapshotTopCard({ snapshot }: { snapshot: SnapshotData }) {
         )}
         {snapshot.keyTakeaways && snapshot.keyTakeaways.length > 0 && (
           <div className="rounded-xl border border-brand/30 bg-brand-soft px-4 py-4 sm:px-5">
-            <h3 className="font-semibold text-[20px] text-[#1f2933] mb-2">Key Takeaways</h3>
+            <h3 className="font-semibold text-[20px] text-text mb-2">Key Takeaways</h3>
             <ul className="space-y-2">
               {snapshot.keyTakeaways.map((takeaway, index) => (
-                <li key={index} className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] flex items-start gap-2">
+                <li key={index} className="text-base sm:text-[17px] text-text leading-[1.65] flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-brand-ink mt-1 flex-shrink-0" />
                   <span>
                     <ReactMarkdown
                       remarkPlugins={[remarkGfm]}
                       components={{
                         strong: ({ node, ...props }) => (
-                          <strong className="font-bold text-[#1f2933]" {...props} />
+                          <strong className="font-bold text-text" {...props} />
                         ),
                       }}
                     >
@@ -634,11 +634,11 @@ function createMarkdownComponents() {
     const text = normalizeHeadingText(extractNodeText(props.children))
     const id = createUniqueHeadingId(text, renderedHeadingIds)
     return (
-      <h2 id={id} className="group font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-[4.5rem] scroll-mt-24 flex items-center gap-3">
+      <h2 id={id} className="group font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-4 mt-[4.5rem] scroll-mt-24 flex items-center gap-3">
         <span>{text}</span>
         <a
           href={`#${id}`}
-          className="text-sm text-[#3b4652] opacity-0 transition-opacity group-hover:opacity-100 focus:opacity-100"
+          className="text-sm text-text-muted opacity-0 transition-opacity group-hover:opacity-100 focus:opacity-100"
           aria-label={`Link to ${text}`}
         >
           #
@@ -658,12 +658,12 @@ function createMarkdownComponents() {
     }
     
     return (
-      <h2 id={id} className="group font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-[4.5rem] scroll-mt-24 flex items-center gap-3">
-        {Icon && <Icon className="w-6 h-6 text-[#c2410c] flex-shrink-0" />}
+      <h2 id={id} className="group font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-4 mt-[4.5rem] scroll-mt-24 flex items-center gap-3">
+        {Icon && <Icon className="w-6 h-6 text-brand-ink flex-shrink-0" />}
         <span>{text}</span>
         <a
           href={`#${id}`}
-          className="text-sm text-[#3b4652] opacity-0 transition-opacity group-hover:opacity-100 focus:opacity-100"
+          className="text-sm text-text-muted opacity-0 transition-opacity group-hover:opacity-100 focus:opacity-100"
           aria-label={`Link to ${text}`}
         >
           #
@@ -717,12 +717,12 @@ function createMarkdownComponents() {
     }
     
     return (
-      <h3 id={id} className="group font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-[#1f2933] mb-4 mt-8 scroll-mt-24 flex items-center gap-2">
-        {Icon && <Icon className="w-5 h-5 text-[#c2410c] flex-shrink-0" />}
+      <h3 id={id} className="group font-serif-playfair font-semibold text-[20px] sm:text-[22px] text-text mb-4 mt-8 scroll-mt-24 flex items-center gap-2">
+        {Icon && <Icon className="w-5 h-5 text-brand-ink flex-shrink-0" />}
         <span>{text}</span>
         <a
           href={`#${id}`}
-          className="text-xs text-[#3b4652] opacity-0 transition-opacity group-hover:opacity-100 focus:opacity-100"
+          className="text-xs text-text-muted opacity-0 transition-opacity group-hover:opacity-100 focus:opacity-100"
           aria-label={`Link to ${text}`}
         >
           #
@@ -736,7 +736,7 @@ function createMarkdownComponents() {
       return (
         <Link 
           href={href}
-          className="text-[#c2410c] hover:underline font-medium"
+          className="text-brand-ink hover:underline font-medium"
           {...props}
         />
       );
@@ -744,7 +744,7 @@ function createMarkdownComponents() {
     return (
       <a
         href={href}
-        className="text-[#c2410c] hover:underline"
+        className="text-brand-ink hover:underline"
         target={href?.startsWith('http') ? '_blank' : undefined}
         rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
         {...props}
@@ -764,7 +764,7 @@ function createMarkdownComponents() {
     if (inline) {
       return (
         <code
-          className="bg-[#f3f4f6] text-[#1f2933] px-1.5 py-0.5 rounded text-[0.9em]"
+          className="bg-[#f3f4f6] text-text px-1.5 py-0.5 rounded text-[0.9em]"
           {...props}
         />
       );
@@ -777,15 +777,15 @@ function createMarkdownComponents() {
     );
   },
   table: ({ node, ...props }: any) => (
-    <div className="my-8 w-full max-w-full overflow-x-auto rounded-xl border border-[#e5e7eb] bg-white shadow-sm" role="region" aria-label="Data table" tabIndex={0}>
+    <div className="my-8 w-full max-w-full overflow-x-auto rounded-xl border border-border-subtle bg-white shadow-sm" role="region" aria-label="Data table" tabIndex={0}>
       <table className="w-full border-separate border-spacing-0 min-w-[620px]" {...props} />
     </div>
   ),
   thead: ({ node, ...props }: any) => (
-    <thead className="bg-[#f6f7f9]" {...props} />
+    <thead className="bg-surface" {...props} />
   ),
   th: ({ node, ...props }: any) => (
-    <th className="text-left py-3.5 sm:py-4 px-4 sm:px-6 font-semibold text-sm text-[#1f2933] border-b border-[#dfe5eb] first:pl-4 sm:first:pl-6 last:pr-4 sm:last:pr-6 whitespace-nowrap" {...props} />
+    <th className="text-left py-3.5 sm:py-4 px-4 sm:px-6 font-semibold text-sm text-text border-b border-border-subtle first:pl-4 sm:first:pl-6 last:pr-4 sm:last:pr-6 whitespace-nowrap" {...props} />
   ),
   td: ({ node, ...props }: any) => {
     // Check if this is a "Decision criteria" table cell with fit level
@@ -817,7 +817,7 @@ function createMarkdownComponents() {
     }
     
     return (
-      <td className="py-4 sm:py-4.5 px-4 sm:px-6 text-[15px] sm:text-base text-[#1f2933] leading-[1.6] border-b border-[#e5e7eb] align-top first:pl-4 sm:first:pl-6 last:pr-4 sm:last:pr-6 min-w-[140px]" {...props}>
+      <td className="py-4 sm:py-4.5 px-4 sm:px-6 text-[15px] sm:text-base text-text leading-[1.6] border-b border-border-subtle align-top first:pl-4 sm:first:pl-6 last:pr-4 sm:last:pr-6 min-w-[140px]" {...props}>
         {Icon ? (
           <div className="flex items-center gap-2">
             <Icon className={`w-4 h-4 sm:w-5 sm:h-5 ${iconColor} flex-shrink-0`} />
@@ -833,7 +833,7 @@ function createMarkdownComponents() {
     <tbody className="divide-y divide-[#e5e7eb]" {...props} />
   ),
   tr: ({ node, ...props }: any) => (
-    <tr className="even:bg-[#fafbfc] hover:bg-[#f6f7f9] transition-colors duration-150 last:border-b-0" {...props} />
+    <tr className="even:bg-[#fafbfc] hover:bg-surface transition-colors duration-150 last:border-b-0" {...props} />
   ),
   div: ({ node, ...props }: any) => {
     // Preserve all props including className for nested divs
@@ -1079,17 +1079,17 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
         />
       )}
       
-      <div className="min-h-screen bg-[#f9f6f7] pb-20 md:pb-8">
+      <div className="min-h-screen bg-page pb-20 md:pb-8">
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {breadcrumbs.length > 0 && (
             <div className="mb-6">
-              <nav className="flex items-center space-x-2 text-sm text-[#3b4652]">
+              <nav className="flex items-center space-x-2 text-sm text-text-muted">
                 {breadcrumbs.map((crumb, index) => (
                   <span key={index} className="flex items-center">
                     {index > 0 && <span className="mx-2">/</span>}
                     <Link 
                       href={crumb.url}
-                      className="hover:text-[#c2410c] hover:underline"
+                      className="hover:text-brand-ink hover:underline"
                     >
                       {crumb.name}
                     </Link>
@@ -1101,8 +1101,8 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
 
           {tocItems.length > 0 && (
             <div className="xl:hidden mb-6">
-              <details className="bg-white rounded-lg border border-[#e5e7eb] shadow-sm">
-                <summary className="cursor-pointer list-none px-4 py-3 text-sm font-semibold text-[#1f2933] border-b border-[#e5e7eb]">
+              <details className="bg-white rounded-lg border border-border-subtle shadow-sm">
+                <summary className="cursor-pointer list-none px-4 py-3 text-sm font-semibold text-text border-b border-border-subtle">
                   On this page
                 </summary>
                 <div className="p-4">
@@ -1131,39 +1131,39 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                 showAreasFooter={false}
                 rightSidebarContent={
                   <div className="space-y-6">
-                    <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
+                    <div className="bg-white rounded-lg p-6 border border-border-subtle shadow-sm">
                       <div className="space-y-4">
                         <div>
-                          <p className="text-xs font-semibold text-[#3b4652] uppercase tracking-wide mb-2">Category</p>
+                          <p className="text-xs font-semibold text-text-muted uppercase tracking-wide mb-2">Category</p>
                           <Link 
                             href={`/wiki/pricing/${category.slug}`}
-                            className="text-sm text-[#c2410c] hover:underline font-medium"
+                            className="text-sm text-brand-ink hover:underline font-medium"
                           >
                             {category.title}
                           </Link>
                         </div>
                         {conceptData?.lastUpdated && (
                           <div>
-                            <p className="text-xs font-semibold text-[#3b4652] uppercase tracking-wide mb-2">Last Updated</p>
-                            <p className="text-sm text-[#1f2933]">
+                            <p className="text-xs font-semibold text-text-muted uppercase tracking-wide mb-2">Last Updated</p>
+                            <p className="text-sm text-text">
                               {new Date(conceptData.lastUpdated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                             </p>
                           </div>
                         )}
                         {conceptData?.readingTime && (
                           <div>
-                            <p className="text-xs font-semibold text-[#3b4652] uppercase tracking-wide mb-2">Reading Time</p>
-                            <p className="text-sm text-[#1f2933]">{conceptData.readingTime} minutes</p>
+                            <p className="text-xs font-semibold text-text-muted uppercase tracking-wide mb-2">Reading Time</p>
+                            <p className="text-sm text-text">{conceptData.readingTime} minutes</p>
                           </div>
                         )}
                         {conceptData?.tags && conceptData.tags.length > 0 && (
                           <div>
-                            <p className="text-xs font-semibold text-[#3b4652] uppercase tracking-wide mb-2">Tags</p>
+                            <p className="text-xs font-semibold text-text-muted uppercase tracking-wide mb-2">Tags</p>
                             <div className="flex flex-wrap gap-2">
                               {conceptData.tags.map((tag, index) => (
                                 <span
                                   key={index}
-                                  className="text-xs text-[#3b4652] bg-[#f6f7f9] px-2 py-1 rounded-full border border-[#e5e7eb]"
+                                  className="text-xs text-text-muted bg-surface px-2 py-1 rounded-full border border-border-subtle"
                                 >
                                   {tag}
                                 </span>
@@ -1185,7 +1185,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
               >
           {/* Header */}
           <div className={`mb-8 ${conceptBodyWidthClass}`}>
-            <h1 className="text-[32px] sm:text-[36px] font-serif-playfair font-bold text-[#1f2933] mb-4">
+            <h1 className="text-[32px] sm:text-[36px] font-serif-playfair font-bold text-text mb-4">
               {conceptName}
             </h1>
             {description && (
@@ -1193,7 +1193,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                 remarkPlugins={[remarkGfm]}
                 components={{
                   p: ({ node, ...props }) => (
-                    <p className="text-lg sm:text-xl text-[#1f2933] leading-relaxed italic mb-0" {...props} />
+                    <p className="text-lg sm:text-xl text-text leading-relaxed italic mb-0" {...props} />
                   ),
                   a: ({ node, href, ...props }: any) => {
                     const isInternalLink = href?.startsWith('/');
@@ -1201,7 +1201,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                       return (
                         <Link
                           href={href}
-                          className="text-[#c2410c] hover:underline font-medium not-italic"
+                          className="text-brand-ink hover:underline font-medium not-italic"
                           {...props}
                         />
                       );
@@ -1209,7 +1209,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                     return (
                       <a
                         href={href}
-                        className="text-[#c2410c] hover:underline not-italic"
+                        className="text-brand-ink hover:underline not-italic"
                         target={href?.startsWith('http') ? '_blank' : undefined}
                         rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                         {...props}
@@ -1225,7 +1225,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
           </div>
 
                 {/* Content */}
-                <div className={`prose prose-lg ${conceptBodyWidthClass} text-[#1f2933] text-base sm:text-[17px] leading-[1.7]`}>
+                <div className={`prose prose-lg ${conceptBodyWidthClass} text-text text-base sm:text-[17px] leading-[1.7]`}>
                   {hasContent && conceptData ? (
                     <>
                       {/* Content before Snapshot */}
@@ -1270,7 +1270,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                       {/* Key Facts Section */}
                       {keyFacts && keyFacts.length > 0 && (
                         <div className="mb-8">
-                          <h2 id="key-facts" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-4 mt-[4.5rem] scroll-mt-24">
+                          <h2 id="key-facts" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-text mb-4 mt-[4.5rem] scroll-mt-24">
                             Key Facts
                           </h2>
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -1297,18 +1297,18 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                               }
 
                               return (
-                                <div key={index} className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
+                                <div key={index} className="bg-white rounded-lg p-6 border border-border-subtle shadow-sm">
                                   <div className="flex items-center gap-3 mb-4">
-                                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#f6f7f9] flex-shrink-0">
-                                      <Icon className="w-6 h-6 text-[#c2410c]" />
+                                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-surface flex-shrink-0">
+                                      <Icon className="w-6 h-6 text-brand-ink" />
                                     </div>
                                     {fact.title && (
-                                      <h3 className="text-lg font-semibold text-[#1f2933]">
+                                      <h3 className="text-lg font-semibold text-text">
                                         <strong>{fact.title}</strong>
                                       </h3>
                                     )}
                                   </div>
-                                  <div className="text-sm sm:text-base text-[#1f2933] leading-[1.65] text-left">
+                                  <div className="text-sm sm:text-base text-text leading-[1.65] text-left">
                                     {fact.description && (
                                       <ReactMarkdown
                                         remarkPlugins={[remarkGfm]}
@@ -1318,12 +1318,12 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                             <p className="mb-0 text-left" {...props} />
                                           ),
                                           strong: ({ node, ...props }) => (
-                                            <strong className="font-bold text-[#1f2933]" {...props} />
+                                            <strong className="font-bold text-text" {...props} />
                                           ),
                                           a: ({ node, href, ...props }) => (
                                             <a
                                               href={href}
-                                              className="text-[#c2410c] hover:underline font-medium"
+                                              className="text-brand-ink hover:underline font-medium"
                                               target={href?.startsWith('http') ? '_blank' : undefined}
                                               rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                                               {...props}
@@ -1337,7 +1337,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                     {fact.sourceUrl && (
                                       <a
                                         href={fact.sourceUrl}
-                                        className="text-[#c2410c] hover:underline font-medium text-sm mt-2 block"
+                                        className="text-brand-ink hover:underline font-medium text-sm mt-2 block"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                       >
@@ -1369,7 +1369,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                       })()}
                       {steps && steps.length > 0 && (
                         <div className="mb-8">
-                          <h2 id="step-by-step" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-4 mt-[4.5rem] scroll-mt-24">
+                          <h2 id="step-by-step" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-text mb-4 mt-[4.5rem] scroll-mt-24">
                             Step-by-step
                           </h2>
                           {/* Content above steps */}
@@ -1380,7 +1380,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                 rehypePlugins={[rehypeKatex]}
                                 components={{
                                   p: ({ node, ...props }) => (
-                                    <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-6" {...props} />
+                                    <p className="text-base sm:text-[17px] text-text leading-[1.65] mb-6" {...props} />
                                   ),
                                   blockquote: ({ node, ...props }) => (
                                     <blockquote className="bg-white border-l-4 border-brand pl-6 pr-4 py-4 my-6 rounded-r-lg shadow-sm" {...props} />
@@ -1391,7 +1391,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                       return (
                                         <Link 
                                           href={href}
-                                          className="text-[#c2410c] hover:underline font-medium"
+                                          className="text-brand-ink hover:underline font-medium"
                                           {...props}
                                         />
                                       );
@@ -1399,7 +1399,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                     return (
                                       <a
                                         href={href}
-                                        className="text-[#c2410c] hover:underline"
+                                        className="text-brand-ink hover:underline"
                                         target={href?.startsWith('http') ? '_blank' : undefined}
                                         rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                                         {...props}
@@ -1407,7 +1407,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                     );
                                   },
                                   strong: ({ node, ...props }) => (
-                                    <strong className="font-bold text-[#1f2933]" {...props} />
+                                    <strong className="font-bold text-text" {...props} />
                                   ),
                                 }}
                               >
@@ -1434,10 +1434,10 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                   
                                   {/* Content */}
                                   <div className="flex-1">
-                                    <h3 className="font-semibold text-[20px] text-[#1f2933] mb-1.5">
+                                    <h3 className="font-semibold text-[20px] text-text mb-1.5">
                                       {step.title}
                                     </h3>
-                                    <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+                                    <div className="text-base sm:text-[17px] text-text leading-[1.65]">
                                       <ReactMarkdown
                                         remarkPlugins={[remarkGfm]}
                                         components={{
@@ -1445,7 +1445,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                             <p className="mb-0" {...props} />
                                           ),
                                           strong: ({ node, ...props }) => (
-                                            <strong className="font-bold text-[#1f2933]" {...props} />
+                                            <strong className="font-bold text-text" {...props} />
                                           ),
                                           a: ({ node, href, ...props }: any) => {
                                             const isInternalLink = href?.startsWith('/');
@@ -1453,7 +1453,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                               return (
                                                 <Link 
                                                   href={href}
-                                                  className="text-[#c2410c] hover:underline font-medium"
+                                                  className="text-brand-ink hover:underline font-medium"
                                                   {...props}
                                                 />
                                               );
@@ -1461,7 +1461,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                             return (
                                               <a
                                                 href={href}
-                                                className="text-[#c2410c] hover:underline"
+                                                className="text-brand-ink hover:underline"
                                                 target={href?.startsWith('http') ? '_blank' : undefined}
                                                 rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                                                 {...props}
@@ -1486,7 +1486,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                 rehypePlugins={[rehypeKatex]}
                                 components={{
                                   p: ({ node, ...props }) => (
-                                    <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]" {...props} />
+                                    <p className="text-base sm:text-[17px] text-text leading-[1.65]" {...props} />
                                   ),
                                   blockquote: ({ node, ...props }) => (
                                     <blockquote className="bg-white border-l-4 border-brand pl-6 pr-4 py-4 my-6 rounded-r-lg shadow-sm" {...props} />
@@ -1497,7 +1497,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                       return (
                                         <Link 
                                           href={href}
-                                          className="text-[#c2410c] hover:underline font-medium"
+                                          className="text-brand-ink hover:underline font-medium"
                                           {...props}
                                         />
                                       );
@@ -1505,7 +1505,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                     return (
                                       <a
                                         href={href}
-                                        className="text-[#c2410c] hover:underline"
+                                        className="text-brand-ink hover:underline"
                                         target={href?.startsWith('http') ? '_blank' : undefined}
                                         rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                                         {...props}
@@ -1513,7 +1513,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                     );
                                   },
                                   strong: ({ node, ...props }) => (
-                                    <strong className="font-bold text-[#1f2933]" {...props} />
+                                    <strong className="font-bold text-text" {...props} />
                                   ),
                                 }}
                               >
@@ -1560,7 +1560,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                       {/* Metrics to monitor Section */}
                       {metrics && metrics.length > 0 && (
                         <div className="mb-8">
-                          <h2 id="metrics-to-monitor" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-[#1f2933] mb-4 mt-[4.5rem] scroll-mt-24">
+                          <h2 id="metrics-to-monitor" className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-text mb-4 mt-[4.5rem] scroll-mt-24">
                             Metrics to monitor
                           </h2>
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -1593,14 +1593,14 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                               }
 
                               return (
-                                <div key={index} className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
-                                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#f6f7f9] mb-4">
-                                    <Icon className="w-6 h-6 text-[#c2410c]" />
+                                <div key={index} className="bg-white rounded-lg p-6 border border-border-subtle shadow-sm">
+                                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-surface mb-4">
+                                    <Icon className="w-6 h-6 text-brand-ink" />
                                   </div>
-                                  <h3 className="text-xl font-bold text-[#1f2933] mb-2">
+                                  <h3 className="text-xl font-bold text-text mb-2">
                                     {metric.title}
                                   </h3>
-                                  <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+                                  <div className="text-base sm:text-[17px] text-text leading-[1.65]">
                                     <ReactMarkdown
                                       remarkPlugins={[remarkGfm]}
                                       components={{
@@ -1610,7 +1610,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                         a: ({ node, href, ...props }) => (
                                           <a
                                             href={href}
-                                            className="text-[#c2410c] hover:underline font-medium"
+                                            className="text-brand-ink hover:underline font-medium"
                                             target={href?.startsWith('http') ? '_blank' : undefined}
                                             rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                                             {...props}
@@ -1676,16 +1676,16 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                       {/* FAQ Section */}
                       {faqItems.length > 0 && (
                         <section className="mt-12 mb-12">
-                          <h2 id="faq" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-[4.5rem] text-center scroll-mt-24">
+                          <h2 id="faq" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-4 mt-[4.5rem] text-center scroll-mt-24">
                             Frequently Asked Questions
                           </h2>
                           <div className="space-y-4 sm:space-y-6 max-w-3xl mx-auto">
                             {faqItems.map((item, index) => (
-                              <div key={index} className="bg-white rounded-lg px-5 pt-[10px] pb-5 sm:px-6 sm:pt-3 sm:pb-6 border border-[#e5e7eb] shadow-sm">
-                                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-1.5 text-[#1f2933]">
+                              <div key={index} className="bg-white rounded-lg px-5 pt-[10px] pb-5 sm:px-6 sm:pt-3 sm:pb-6 border border-border-subtle shadow-sm">
+                                <h3 className="font-semibold text-[20px] sm:text-[22px] mb-1.5 text-text">
                                   {item.question}
                                 </h3>
-                                <div className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+                                <div className="text-base sm:text-[17px] text-text leading-[1.65]">
                                   <ReactMarkdown
                                     remarkPlugins={[remarkGfm]}
                                     rehypePlugins={[rehypeRaw]}
@@ -1694,7 +1694,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                         <p className="mb-3 last:mb-0" {...props} />
                                       ),
                                       strong: ({ node, ...props }) => (
-                                        <strong className="font-bold text-[#1f2933]" {...props} />
+                                        <strong className="font-bold text-text" {...props} />
                                       ),
                                       a: ({ node, href, ...props }) => {
                                         const isInternalLink = href?.startsWith('/');
@@ -1702,7 +1702,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                           return (
               <Link 
                                               href={href}
-                                              className="text-[#c2410c] hover:underline font-medium"
+                                              className="text-brand-ink hover:underline font-medium"
                                               {...props}
                                             />
                                           );
@@ -1710,7 +1710,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                                         return (
                                           <a
                                             href={href}
-                                            className="text-[#c2410c] hover:underline"
+                                            className="text-brand-ink hover:underline"
                                             target={href?.startsWith('http') ? '_blank' : undefined}
                                             rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                                             {...props}
@@ -1746,21 +1746,21 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
 
                       {references.length > 0 && (
                         <section className="mt-12 mb-12">
-                          <h2 id="references" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-[4.5rem] scroll-mt-24">
+                          <h2 id="references" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-4 mt-[4.5rem] scroll-mt-24">
                             References / Further reading
                           </h2>
                           <ol className="list-decimal pl-5 space-y-3">
                             {references.map((ref, index) => (
-                              <li key={`${ref.url}-${index}`} className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+                              <li key={`${ref.url}-${index}`} className="text-base sm:text-[17px] text-text leading-[1.65]">
                                 <a
                                   href={ref.url}
-                                  className="text-[#c2410c] hover:underline font-medium"
+                                  className="text-brand-ink hover:underline font-medium"
                                   target="_blank"
                                   rel="noopener noreferrer"
                                 >
                                   {ref.title}
                                 </a>
-                                {ref.source && <span className="text-[#3b4652]"> - {ref.source}</span>}
+                                {ref.source && <span className="text-text-muted"> - {ref.source}</span>}
                               </li>
                             ))}
                           </ol>
@@ -1769,7 +1769,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
 
                       {relatedConceptCards.length > 0 && (
                         <section className="mt-12 mb-12">
-                          <h2 id="related-concepts" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4 mt-[4.5rem] scroll-mt-24">
+                          <h2 id="related-concepts" className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-4 mt-[4.5rem] scroll-mt-24">
                             Related concepts / Next steps
                           </h2>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1777,13 +1777,13 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                               <Link
                                 key={related.id}
                                 href={`/wiki/pricing/${params.category}/${related.id}`}
-                                className="block p-4 border border-[#e2e6ea] rounded-lg hover:border-brand-ink hover:shadow-md transition-all no-underline"
+                                className="block p-4 border border-border-subtle rounded-lg hover:border-brand-ink hover:shadow-md transition-all no-underline"
                               >
-                                <h3 className="font-semibold text-[#1f2933] mb-2">
+                                <h3 className="font-semibold text-text mb-2">
                                   {related.title}
                                 </h3>
                                 {related.summary && (
-                                  <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+                                  <p className="text-base sm:text-[17px] text-text leading-[1.65]">
                                     {related.summary}
                                   </p>
                                 )}
@@ -1795,7 +1795,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
 
                       {/* CTA Section */}
                       <div className="max-w-4xl mx-auto mt-16 mb-8">
-                        <div className="bg-white rounded-lg p-8 md:p-12 border border-[#e5e7eb] shadow-lg text-center">
+                        <div className="bg-white rounded-lg p-8 md:p-12 border border-border-subtle shadow-lg text-center">
                           <div className="flex items-center justify-center gap-4 mb-6">
                             <Image 
                               src="/images/headshot_v2.jpg" 
@@ -1804,7 +1804,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                               height={80} 
                               className="rounded-full object-cover flex-shrink-0" 
                             />
-                            <h2 className="font-serif-playfair text-2xl md:text-[28px] font-semibold text-[#1f2933]">
+                            <h2 className="font-serif-playfair text-2xl md:text-[28px] font-semibold text-text">
                               If you want help applying this to your business…
                             </h2>
                           </div>
@@ -1841,7 +1841,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
       </div>
 
       {/* Mobile Sticky Bottom Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-[#e5e7eb] shadow-lg z-50 md:hidden">
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-border-subtle shadow-lg z-50 md:hidden">
         <div className="max-w-[90rem] mx-auto px-4 py-3 flex gap-3">
           <Link
             href="/book"

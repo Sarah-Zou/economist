@@ -12,10 +12,11 @@ import {
   ShieldCheck,
   Zap,
 } from 'lucide-react'
-import { outlineButton, primaryButton } from '@/lib/brandStyles'
+import { outlineButton, primaryButtonLg } from '@/lib/brandStyles'
 
 const PRIMARY_CTA_HREF = '/book'
 const SECONDARY_CTA_HREF = '/consulting'
+
 const heroProofPoints = [
   'PhD Economics',
   'MS Finance & Statistics',
@@ -30,8 +31,8 @@ const companyTypes = [
   'AI products',
   'API platforms',
   'OSS-commercial products',
-  'operator-led marketplaces',
-  'hardware-enabled software businesses',
+  'Operator-led marketplaces',
+  'Hardware-enabled software',
 ]
 
 const bestUseCases = [
@@ -42,38 +43,44 @@ const bestUseCases = [
   'Investors or leadership need a stronger economic story',
 ]
 
-const selectedOutcomes: { id: string; content: ReactNode }[] = [
+const selectedOutcomes: { id: string; icon: typeof Rocket; content: ReactNode }[] = [
   {
     id: 'cac-payback',
+    icon: Rocket,
     content: (
       <>
-        Helped <strong>redesign pricing and packaging</strong> to support faster <strong>CAC payback</strong>
+        Helped <strong>redesign pricing and packaging</strong> to support faster{' '}
+        <strong>CAC payback</strong>.
       </>
     ),
   },
   {
     id: 'nrr',
+    icon: LineChart,
     content: (
       <>
-        Improved <strong>monetization structure</strong> to support stronger <strong>expansion</strong> and{' '}
-        <strong>NRR</strong>
+        Improved <strong>monetization structure</strong> to support stronger{' '}
+        <strong>expansion</strong> and <strong>NRR</strong>.
       </>
     ),
   },
   {
     id: 'models-narratives',
+    icon: BarChart3,
     content: (
       <>
         Built <strong>forward models</strong>, <strong>KPI logic</strong>, and{' '}
-        <strong>investor-facing economic narratives</strong> to support growth and fundraising
+        <strong>investor-facing economic narratives</strong> to support growth and
+        fundraising.
       </>
     ),
   },
   {
     id: 'raises',
+    icon: ShieldCheck,
     content: (
       <>
-        Supported clients involved in <strong>$50M+</strong> in cumulative raises
+        Supported clients involved in <strong>$50M+</strong> in cumulative raises.
       </>
     ),
   },
@@ -92,6 +99,24 @@ const workPrinciples = [
   {
     title: 'Testable',
     description: 'Built to be launched, measured, and refined in the real business.',
+  },
+]
+
+const pillars = [
+  {
+    icon: Briefcase,
+    title: 'Strategy',
+    desc: 'Practical founder-facing recommendations instead of vague strategy talk.',
+  },
+  {
+    icon: BarChart3,
+    title: 'Rigor',
+    desc: 'Research-grade quantitative analysis that removes guesswork from pricing.',
+  },
+  {
+    icon: Zap,
+    title: 'Speed',
+    desc: 'Actionable steps you can implement and test this week.',
   },
 ]
 
@@ -160,17 +185,13 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
 
-      <div className="bg-white text-[#1f2933]">
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#fff7f3] via-white to-white">
-          <div className="pointer-events-none absolute -left-10 top-8 h-56 w-56 rounded-full bg-brand/10 blur-3xl" />
-          <div className="pointer-events-none absolute -right-12 top-24 h-56 w-56 rounded-full bg-[#f59e0b]/10 blur-3xl" />
-          <div className="mx-auto max-w-7xl px-4 pb-10 pt-8 sm:px-6 sm:pb-16 sm:pt-16 lg:px-8 lg:pb-20 lg:pt-20">
-            <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-10">
-              <div className="order-2 relative lg:col-span-5 lg:order-1">
-                <div className="relative mx-auto aspect-[4/5] w-full max-w-[420px] overflow-hidden rounded-[1.5rem] bg-white/40 ring-1 ring-[#e2e6ea] shadow-none backdrop-blur-sm sm:max-w-[500px] sm:rounded-[2rem]">
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-brand/18 via-transparent to-transparent" />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-white/55 via-transparent to-transparent" />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0f172a]/5" />
+      <div className="bg-page text-text">
+        {/* Hero */}
+        <section className="bg-hero-tint">
+          <div className="mx-auto w-full max-w-container px-4 pb-16 pt-12 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8 lg:pb-24 lg:pt-24">
+            <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
+              <div className="order-2 lg:order-1 lg:col-span-5">
+                <div className="relative mx-auto aspect-[4/5] w-full max-w-[440px] overflow-hidden rounded-card ring-1 ring-border-soft">
                   <Image
                     src="/images/about_headshot.webp"
                     alt="Sarah Zou, PhD economist"
@@ -182,52 +203,44 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="order-1 lg:col-span-7 lg:order-2 lg:pl-8 xl:pl-10">
-                <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand-soft px-4 py-2">
-                  <span className="h-2 w-2 rounded-full bg-brand" aria-hidden />
-                  <span className="text-[11px] font-bold uppercase tracking-widest text-brand-ink">
-                    ABOUT
-                  </span>
-                </div>
-
-                <h1 className="mt-4 text-[42px] font-black leading-[0.98] tracking-tight text-[#0f172a] sm:text-[54px] lg:text-[62px]">
-                  Fractional Chief Economist for Tech Startups
+              <div className="order-1 lg:order-2 lg:col-span-7">
+                <span className="kicker">About</span>
+                <h1 className="mt-5 font-serif-playfair text-ink">
+                  Fractional Chief Economist for{' '}
+                  <span className="text-brand">tech startups</span>
                 </h1>
-
-                <p className="mt-4 max-w-[620px] text-[15px] leading-[1.7] text-[#6b7280] sm:text-[18px]">
+                <p className="mt-5 max-w-xl text-[17px] leading-[1.7] text-text-muted sm:text-[19px]">
                   I help founders fix pricing, monetization, and unit economics with
-                  research-grade rigor and startup-speed execution. You get clear decisions, testable next steps, and a pricing story you can
-                  defend with leadership and investors.
+                  research-grade rigor and startup-speed execution — clear decisions,
+                  testable next steps, and a pricing story you can defend with leadership
+                  and investors.
                 </p>
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-6">
+                <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
                   <Link
                     href={PRIMARY_CTA_HREF}
-                    className={`${primaryButton} inline-flex w-full max-w-[300px] items-center justify-center gap-3 bg-brand px-6 py-4 text-[15px] leading-[1.15] shadow-xl sm:w-auto sm:max-w-none sm:px-8 sm:text-[16px]`}
+                    className={`${primaryButtonLg} w-full max-w-[360px] sm:w-auto`}
                   >
-                    <span>Book a Free Consult</span>
-                    <ArrowRight className="h-5 w-5 flex-shrink-0" aria-hidden />
+                    Book a free consult
+                    <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
-
                   <Link
                     href={SECONDARY_CTA_HREF}
-                    className="text-sm font-medium leading-[1.3] text-[#6b7280] underline underline-offset-4 hover:text-brand-ink"
+                    className="text-[14px] font-medium text-text-muted underline underline-offset-4 hover:text-ink"
                   >
-                    See Ways to Work With Me
+                    See ways to work with me
                   </Link>
                 </div>
 
-                <div className="mt-6">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#334155]">
-                    Background &amp; Experience
-                  </p>
-                  <ul className="mt-2.5 flex flex-wrap gap-x-4 gap-y-2">
+                <div className="mt-10 border-t border-border-soft pt-6">
+                  <p className="kicker-muted mb-3">Background &amp; experience</p>
+                  <ul className="flex flex-wrap gap-x-5 gap-y-2">
                     {heroProofPoints.map((item) => (
                       <li
                         key={item}
-                        className="inline-flex items-center gap-1.5 text-[13px] font-medium leading-[1.35] text-[#0f172a] sm:text-[14px]"
+                        className="inline-flex items-center gap-1.5 text-[13px] font-medium text-ink"
                       >
                         <CheckCircle2
-                          className="h-[13px] w-[13px] flex-shrink-0 text-brand"
+                          className="h-3.5 w-3.5 flex-shrink-0 text-brand"
                           strokeWidth={2.25}
                           aria-hidden
                         />
@@ -241,276 +254,246 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="border-y border-[#e2e6ea] bg-[#f8fafc] py-12 sm:py-16 lg:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
+        {/* What makes me different */}
+        <section className="section section-alt">
+          <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-7">
-                <h2 className="font-serif-playfair text-2xl font-semibold text-[#0f172a] sm:text-[32px]">
-                  What makes me different
+                <span className="kicker">What makes me different</span>
+                <h2 className="mt-3 font-serif-playfair">
+                  Strategy, rigor, and speed in one person
                 </h2>
-                <div className="mt-3 h-1 w-20 rounded-full bg-brand" />
-                <ul className="mt-6 space-y-3 text-base leading-[1.65] text-[#334155] sm:text-[17px]">
-                  <li className="flex items-start gap-2.5">
-                    <span className="mt-[10px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
-                    <span>Most pricing consultants give you frameworks.</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="mt-[10px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
-                    <span>Most analysts give you rigor.</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="mt-[10px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
-                    <span>Most startup operators give you speed.</span>
-                  </li>
+                <ul className="mt-6 space-y-3 text-[16px] leading-[1.7] text-text sm:text-[17px]">
+                  {[
+                    'Most pricing consultants give you frameworks.',
+                    'Most analysts give you rigor.',
+                    'Most startup operators give you speed.',
+                  ].map((line) => (
+                    <li key={line} className="flex items-start gap-2.5">
+                      <span className="mt-[10px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
+                      <span>{line}</span>
+                    </li>
+                  ))}
                 </ul>
-                <p className="mt-4 text-[30px] font-semibold leading-[1.2] text-[#0f172a] sm:text-[34px]">
+                <p className="mt-6 font-serif-playfair text-[24px] leading-[1.25] text-ink sm:text-[28px]">
                   I bring all three together.
                 </p>
-                <p className="mt-4 max-w-[720px] text-base leading-[1.75] text-[#334155] sm:text-[18px]">
-                  I combine pricing strategy, unit economics, and econometric rigor in one person,
-                  then turn that work into practical recommendations, fast testable next steps,
-                  and a monetization logic that can stand up to investor and board scrutiny.
+                <p className="mt-5 max-w-2xl text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
+                  I combine pricing strategy, unit economics, and econometric rigor in one
+                  person — then turn that work into practical recommendations, fast testable
+                  next steps, and a monetization logic that can stand up to investor and
+                  board scrutiny.
                 </p>
               </div>
 
               <div className="lg:col-span-5">
-                <div className="mx-auto max-w-[460px] rounded-2xl border border-[#e7ebf0] bg-white p-4 shadow-sm sm:p-5 lg:ml-auto">
-                  <div className="space-y-5">
-                    <div className="flex items-start gap-4">
-                      <div className="inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-brand-soft">
-                        <Briefcase className="h-[15px] w-[15px] text-brand" aria-hidden />
+                <div className="card space-y-5">
+                  {pillars.map((pillar, idx) => {
+                    const Icon = pillar.icon
+                    return (
+                      <div key={pillar.title}>
+                        <div className="flex items-start gap-4">
+                          <div className="inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-brand-soft">
+                            <Icon className="h-4 w-4 text-brand" aria-hidden />
+                          </div>
+                          <div>
+                            <h3 className="text-[17px] font-semibold leading-tight text-ink">
+                              {pillar.title}
+                            </h3>
+                            <p className="mt-1 text-[14px] leading-[1.65] text-text-muted">
+                              {pillar.desc}
+                            </p>
+                          </div>
+                        </div>
+                        {idx < pillars.length - 1 && (
+                          <div className="mt-5 h-px bg-border-soft" />
+                        )}
                       </div>
-                      <div>
-                        <h3 className="text-[20px] font-semibold leading-tight text-[#0f172a] sm:text-[22px]">
-                          Strategy
-                        </h3>
-                        <p className="mt-1 text-[15px] leading-[1.65] text-[#475569] sm:text-base">
-                          Practical founder-facing recommendations instead of vague strategy talk.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="h-px bg-[#edf2f7]" />
-
-                    <div className="flex items-start gap-4">
-                      <div className="inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-brand-soft">
-                        <BarChart3 className="h-[15px] w-[15px] text-brand" aria-hidden />
-                      </div>
-                      <div>
-                        <h3 className="text-[20px] font-semibold leading-tight text-[#0f172a] sm:text-[22px]">
-                          Rigor
-                        </h3>
-                        <p className="mt-1 text-[15px] leading-[1.65] text-[#475569] sm:text-base">
-                        Research-grade quantitative analysis that removes guesswork from pricing.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="h-px bg-[#edf2f7]" />
-
-                    <div className="flex items-start gap-4">
-                      <div className="inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-brand-soft">
-                        <Zap className="h-[15px] w-[15px] text-brand" aria-hidden />
-                      </div>
-                      <div>
-                        <h3 className="text-[20px] font-semibold leading-tight text-[#0f172a] sm:text-[22px]">
-                          Speed
-                        </h3>
-                        <p className="mt-1 text-[15px] leading-[1.65] text-[#475569] sm:text-base">
-                          Actionable steps you can implement and test this week.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                    )
+                  })}
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="border-y border-[#1f3548] bg-[#132233] py-12 sm:py-16 lg:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
-              <div className="lg:col-span-6">
-                <h2 className="font-serif-playfair text-2xl font-semibold leading-tight text-white sm:text-[32px]">
-                  Who I help
-                </h2>
-                <p className="mt-3 text-base leading-[1.75] text-[#d6dee8] sm:text-[18px]">
-                  I work with pre-seed to Series A teams building:
-                </p>
-
-                <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-                  {companyTypes.map((item) => (
-                    <li
-                      key={item}
-                      className="rounded-xl border border-[#263b4f] bg-[#1a2c3f] px-3.5 py-2.5 text-[14px] font-medium leading-[1.35] text-white sm:text-[15px] shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]"
-                    >
-                      <span className="inline-flex items-center gap-2">
-                        <span className="relative inline-flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-[#314557]">
-                          <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-                          <span className="pointer-events-none absolute inset-[3px] rounded-full border border-brand/70" />
+        {/* Who I help */}
+        <section className="section">
+          <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
+            <div className="card-dark">
+              <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+                <div>
+                  <span className="inline-flex rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-soft">
+                    Who I help
+                  </span>
+                  <h2 className="mt-4 font-serif-playfair text-white">
+                    Pre-seed to Series A teams building:
+                  </h2>
+                  <ul className="mt-6 grid gap-2 sm:grid-cols-2">
+                    {companyTypes.map((item) => (
+                      <li
+                        key={item}
+                        className="rounded-control border border-white/10 bg-white/5 px-3.5 py-2.5 text-[14px] font-medium text-white"
+                      >
+                        <span className="inline-flex items-center gap-2">
+                          <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
+                          <span>{item}</span>
                         </span>
-                        <span>{item}</span>
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-              <div className="lg:col-span-6 lg:pl-6 xl:pl-10">
-                <h3 className="font-serif-playfair text-2xl font-semibold leading-tight text-white sm:text-[32px]">
-                  I am most useful when:
-                </h3>
-                <ul className="mt-5 space-y-3.5 text-base leading-[1.6] text-[#e6edf5] sm:text-[17px]">
-                  {bestUseCases.map((item) => (
-                    <li key={item} className="flex items-start gap-2.5">
-                      <span className="relative mt-[7px] inline-flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-[#3a4f63]">
-                        <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-                      </span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div>
+                  <span className="inline-flex rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-soft">
+                    Best fit
+                  </span>
+                  <h3 className="mt-4 font-serif-playfair text-white">
+                    I&apos;m most useful when:
+                  </h3>
+                  <ul className="mt-6 space-y-3 text-[15px] leading-[1.6] text-white/85">
+                    {bestUseCases.map((item) => (
+                      <li key={item} className="flex items-start gap-2.5">
+                        <span className="mt-[8px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="border-y border-[#e2e6ea] bg-[#f8fafc] py-12 sm:py-16 lg:py-20">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-center font-serif-playfair text-2xl font-semibold sm:text-[32px]">
-              Selected outcomes
-            </h2>
-            <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-brand" />
-            <div className="mt-9 grid gap-6 md:grid-cols-2">
-              {selectedOutcomes.map((item, index) => (
-                <div
-                  key={item.id}
-                  className="rounded-2xl border border-[#e2e6ea] bg-white p-5 shadow-sm sm:p-7"
-                >
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-soft">
-                    {index === 0 && <Rocket className="h-5 w-5 text-brand" aria-hidden />}
-                    {index === 1 && <LineChart className="h-5 w-5 text-brand" aria-hidden />}
-                    {index === 2 && <BarChart3 className="h-5 w-5 text-brand" aria-hidden />}
-                    {index === 3 && <ShieldCheck className="h-5 w-5 text-brand" aria-hidden />}
-                  </div>
-                  <p className="mt-4 text-base leading-[1.75] text-[#1f2933] sm:text-[18px]">
-                    {item.content}
-                  </p>
-                </div>
-              ))}
+        {/* Selected outcomes */}
+        <section className="section section-alt">
+          <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <span className="kicker">Selected outcomes</span>
+              <h2 className="mt-3 font-serif-playfair">What the work has looked like</h2>
             </div>
-            <p className="mt-6 text-center text-sm text-[#3b4652]">
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
+              {selectedOutcomes.map((item) => {
+                const Icon = item.icon
+                return (
+                  <div key={item.id} className="card">
+                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-soft">
+                      <Icon className="h-4 w-4 text-brand" aria-hidden />
+                    </div>
+                    <p className="mt-4 text-[16px] leading-[1.7] text-text sm:text-[17px]">
+                      {item.content}
+                    </p>
+                  </div>
+                )
+              })}
+            </div>
+            <p className="mt-8 text-center text-[13px] text-text-muted">
               Selected results are representative; details available under NDA.
             </p>
           </div>
         </section>
 
-        <section className="py-12 sm:py-16 lg:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
+        {/* How I work + image */}
+        <section className="section">
+          <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-6">
-                <h2 className="font-serif-playfair text-2xl font-semibold text-[#1f2933] sm:text-[32px]">
-                  How I work
-                </h2>
-                <div className="mt-3 h-1 w-20 rounded-full bg-brand" />
-
-                <p className="mt-6 text-base leading-[1.75] text-[#3b4652] sm:text-[18px]">
+                <span className="kicker">How I work</span>
+                <h2 className="mt-3 font-serif-playfair">Rigor, operated like a startup</h2>
+                <p className="mt-5 text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
                   I bring an economist&apos;s rigor with an operator&apos;s speed. Every
                   recommendation is:
                 </p>
 
-                <div className="mt-6 space-y-5">
+                <div className="mt-8 space-y-6">
                   {workPrinciples.map((item, index) => (
-                    <div key={item.title} className="space-y-2">
-                      <div className="flex items-start gap-4">
-                        <span className="inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand text-sm font-semibold text-white">
-                          {index + 1}
-                        </span>
-                        <div>
-                          <h3 className="text-[24px] font-semibold leading-[1.2] text-[#1f2933] sm:text-[28px]">
-                            {item.title}
-                          </h3>
-                          <p className="text-base leading-[1.7] text-[#3b4652] sm:text-[17px]">
-                            {item.description}
-                          </p>
-                        </div>
+                    <div key={item.title} className="flex items-start gap-4">
+                      <span className="inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border border-border-subtle bg-white text-[13px] font-semibold text-ink">
+                        {index + 1}
+                      </span>
+                      <div>
+                        <h3 className="text-[18px] font-semibold leading-[1.25] text-ink">
+                          {item.title}
+                        </h3>
+                        <p className="mt-1 text-[15px] leading-[1.7] text-text-muted">
+                          {item.description}
+                        </p>
                       </div>
-                      {index < workPrinciples.length - 1 && (
-                        <div className="ml-4 h-6 w-px bg-[#d7dce2]" />
-                      )}
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-7 border-t border-[#e2e6ea] pt-6">
-                  <p className="text-base leading-[1.75] text-[#334155] sm:text-[18px]">
-                    That way your team gets decisions, not dashboards, and your board gets a clear
+                <div className="mt-8 border-t border-border-soft pt-6">
+                  <p className="text-[15px] leading-[1.75] text-text-muted sm:text-[16px]">
+                    Your team gets decisions, not dashboards — and your board gets a clear
                     economic narrative behind the numbers.
                   </p>
                 </div>
               </div>
 
               <div className="lg:col-span-6">
-                <div className="relative overflow-hidden rounded-2xl border border-[#e2e6ea] shadow-xl">
-                  <div className="relative h-[320px] sm:h-[460px] lg:h-[620px]">
-                    <Image
-                      src="/images/processsteps.webp"
-                      alt="Team reviewing business metrics and growth strategy"
-                      fill
-                      sizes="(min-width: 1024px) 42vw, 100vw"
-                      className="object-cover"
-                    />
-                  </div>
+                <div className="relative aspect-[4/5] overflow-hidden rounded-card border border-border-subtle">
+                  <Image
+                    src="/images/processsteps.webp"
+                    alt="Team reviewing business metrics and growth strategy"
+                    fill
+                    sizes="(min-width: 1024px) 42vw, 100vw"
+                    className="object-cover"
+                  />
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="border-y border-[#e2e6ea] bg-white py-12 sm:py-16 lg:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
-              <div className="lg:col-span-4">
-                <h2 className="font-serif-playfair text-[34px] font-semibold leading-[1.08] text-[#0f172a] sm:text-[42px]">
-                  Why I built this
-                  <br />
-                  practice
-                </h2>
-                <div className="mt-5 h-1 w-14 rounded-full bg-brand" />
-                <p className="mt-6 text-[23px] font-semibold leading-[1.25] text-[#b54717] sm:text-[28px]">
+        {/* Why I built this */}
+        <section className="section section-alt">
+          <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+              <div className="lg:col-span-5">
+                <span className="kicker">Story</span>
+                <h2 className="mt-3 font-serif-playfair">Why I built this practice</h2>
+                <p className="mt-6 font-serif-playfair text-[22px] italic leading-[1.3] text-brand-ink sm:text-[24px]">
                   Bridging the gap between academic rigor and startup speed.
                 </p>
               </div>
 
-              <div className="lg:col-span-8">
-                <div className="space-y-6 text-base leading-[1.75] text-[#3b4652] sm:text-[18px]">
+              <div className="lg:col-span-7">
+                <div className="space-y-6 text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
                   <p>
-                    My background spans economics, statistical research, enterprise strategy, and
-                    startup work. I was trained to think carefully and rigorously-through a <strong>PhD</strong>{' '}
-                    in Economics at Rutgers, an <strong>MS</strong> in Finance and Statistics at UIUC,
-                    and research work with <strong>NBER</strong> and the <strong>World Bank</strong>.
+                    My background spans economics, statistical research, enterprise
+                    strategy, and startup work. I was trained to think carefully and
+                    rigorously — through a <strong className="text-ink">PhD</strong> in
+                    Economics at Rutgers, an <strong className="text-ink">MS</strong> in
+                    Finance and Statistics at UIUC, and research work with{' '}
+                    <strong className="text-ink">NBER</strong> and the{' '}
+                    <strong className="text-ink">World Bank</strong>.
                   </p>
                   <p>
-                    I brought that rigor into industry at <strong>Citigroup</strong> building
-                    risk/forecasting models, then at <strong>Capgemini</strong> leading
-                    digital-transformation and GenAI initiatives where complex analysis had to
-                    become executive decisions.
+                    I brought that rigor into industry at{' '}
+                    <strong className="text-ink">Citigroup</strong> building risk and
+                    forecasting models, then at{' '}
+                    <strong className="text-ink">Capgemini</strong> leading
+                    digital-transformation and GenAI initiatives where complex analysis
+                    had to become executive decisions.
                   </p>
 
-                  <div className="border-l-4 border-brand pl-5 sm:pl-6">
-                    <p className="text-[22px] font-semibold leading-[1.35] text-[#0f172a] sm:text-[28px]">
-                      Over time, I saw the same gap again and again: early-stage teams often need
-                      serious economic thinking, but in a form they can actually use this week.
+                  <blockquote className="border-l-2 border-brand pl-6">
+                    <p className="font-serif-playfair text-[20px] leading-[1.4] text-ink sm:text-[22px]">
+                      Over time, I saw the same gap again and again: early-stage teams
+                      need serious economic thinking, but in a form they can actually use
+                      this week.
                     </p>
-                    <p className="mt-4 text-[21px] font-semibold leading-[1.25] text-[#b54717] sm:text-[25px]">
+                    <p className="mt-4 text-[15px] font-semibold text-brand-ink">
                       That is the gap I fill.
                     </p>
-                  </div>
+                  </blockquote>
 
                   <p>
-                    I started <strong>EconNova Consulting</strong> to offer something different: rigorous economic thinking, 
-                    practical strategy, and clear decision support designed for founders who need to move quickly and get it right.
+                    I started <strong className="text-ink">EconNova Consulting</strong> to
+                    offer something different: rigorous economic thinking, practical
+                    strategy, and clear decision support designed for founders who need to
+                    move quickly and get it right.
                   </p>
                 </div>
               </div>
@@ -518,30 +501,29 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-brand py-12 text-brand-on sm:py-16 lg:py-20">
-          <div className="pointer-events-none absolute -left-16 top-8 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
-          <div className="pointer-events-none absolute -right-12 bottom-4 h-72 w-72 rounded-full bg-black/10 blur-3xl" />
-          <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-            <h2 className="font-serif-playfair text-3xl font-bold leading-tight text-white sm:text-[42px]">
-              Need sharper pricing, clearer economics, or a monetization decision you can defend?
+        {/* Closing CTA */}
+        <section className="orange-surface section-sm">
+          <div className="mx-auto w-full max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+            <h2 className="font-serif-playfair text-white">
+              Need sharper pricing, clearer economics, or a monetization decision you can
+              defend?
             </h2>
-            <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-[#fcb79a]" />
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-[1.75] text-brand-soft sm:text-[19px]">
+            <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.7] text-white/85 sm:text-[17px]">
               Book a free consult and I&apos;ll help you identify the biggest pricing or
               unit-economics risk in your business.
             </p>
-            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
                 href={PRIMARY_CTA_HREF}
-                className="inline-block rounded-full bg-white px-7 py-3 text-lg font-bold text-brand transition-colors hover:bg-brand-soft"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-white px-7 text-[16px] font-semibold text-brand-ink transition-colors hover:bg-brand-soft"
               >
-                Book a Free Consult
+                Book a free consult
               </Link>
               <Link
                 href={SECONDARY_CTA_HREF}
-                className={`${outlineButton} border-white text-white hover:bg-white/10`}
+                className={`${outlineButton} border-white bg-transparent text-white hover:bg-white/10 hover:text-white`}
               >
-                See Ways to Work With Me
+                See ways to work with me
               </Link>
             </div>
           </div>

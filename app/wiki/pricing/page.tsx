@@ -120,12 +120,12 @@ export default function WikiPricingPage() {
         <div className="w-full">
           {/* Hero Section */}
           <div className="mb-12">
-            <h1 className="font-serif-playfair text-[40px] sm:text-[48px] font-bold text-[#1f2933] mb-4">
+            <h1 className="font-serif-playfair text-[40px] sm:text-[48px] font-bold text-text mb-4">
               Pricing & Monetization Wiki
             </h1>
             
-            <div className="prose prose-lg text-[#1f2933] text-base sm:text-[17px] leading-[1.65] mb-6">
-              <p className="text-xl sm:text-2xl text-[#3b4652] font-light">
+            <div className="prose prose-lg text-text text-base sm:text-[17px] leading-[1.65] mb-6">
+              <p className="text-xl sm:text-2xl text-text-muted font-light">
                 A comprehensive, evidence-based guide to pricing and monetization strategies for tech startups. 
                 From foundational concepts to advanced tactics, learn how to optimize your pricing for maximum growth.
               </p>
@@ -133,13 +133,13 @@ export default function WikiPricingPage() {
 
             {/* Stats */}
             <div className="flex flex-wrap gap-6 mt-8">
-              <div className="bg-white rounded-lg px-6 py-4 border border-[#e2e6ea] shadow-sm hover:border-brand-ink transition-colors">
+              <div className="bg-white rounded-lg px-6 py-4 border border-border-subtle shadow-sm hover:border-brand-ink transition-colors">
                 <div className="text-2xl font-bold text-brand-ink">{categoriesWithContent.length}</div>
-                <div className="text-sm text-[#3b4652]">Active Categories</div>
+                <div className="text-sm text-text-muted">Active Categories</div>
               </div>
-              <div className="bg-white rounded-lg px-6 py-4 border border-[#e2e6ea] shadow-sm hover:border-brand-ink transition-colors">
+              <div className="bg-white rounded-lg px-6 py-4 border border-border-subtle shadow-sm hover:border-brand-ink transition-colors">
                 <div className="text-2xl font-bold text-brand-ink">{totalConcepts}</div>
-                <div className="text-sm text-[#3b4652]">Concepts Available</div>
+                <div className="text-sm text-text-muted">Concepts Available</div>
               </div>
             </div>
           </div>
@@ -150,16 +150,16 @@ export default function WikiPricingPage() {
               <input
                 type="text"
                 placeholder="Search pricing concepts..."
-                className="w-full px-4 py-3 border border-[#e2e6ea] rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent bg-white hover:border-brand-ink transition-colors"
+                className="w-full px-4 py-3 border border-border-subtle rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent bg-white hover:border-brand-ink transition-colors"
                 disabled
               />
               <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                <svg className="w-5 h-5 text-[#3b4652]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
             </div>
-            <p className="text-sm text-[#3b4652] mt-2">
+            <p className="text-sm text-text-muted mt-2">
               Search functionality coming soon
             </p>
           </div>
@@ -169,7 +169,7 @@ export default function WikiPricingPage() {
             <div className="mb-12">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-1 h-8 bg-brand"></div>
-                <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933]">
+                <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text">
                   Explore Categories
                 </h2>
               </div>
@@ -197,24 +197,24 @@ export default function WikiPricingPage() {
 
 
           {/* Quick Reference Section */}
-          <div className="border-t border-[#e2e6ea] pt-10 mt-12">
+          <div className="border-t border-border-subtle pt-10 mt-12">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-1 h-8 bg-brand"></div>
-              <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933]">
+              <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text">
                 Quick Reference
               </h2>
             </div>
-            <div className="text-[#1f2933]">
+            <div className="text-text">
               <p className="mb-4 text-base sm:text-[17px] leading-[1.65]">
                 Browse concepts alphabetically or by topic area. 
                 This section will be expanded as we add more detailed content to each category.
               </p>
-              <div className="bg-[#f6f7f9] rounded-lg p-6 border border-[#e2e6ea] hover:border-brand-ink transition-colors">
+              <div className="bg-surface rounded-lg p-6 border border-border-subtle hover:border-brand-ink transition-colors">
                 <div className="flex items-center gap-3">
                   <svg className="w-6 h-6 text-brand-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
-                  <p className="text-sm text-[#3b4652] font-medium">
+                  <p className="text-sm text-text-muted font-medium">
                     A-Z index and advanced filtering coming soon
                   </p>
                 </div>

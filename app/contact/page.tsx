@@ -57,12 +57,12 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section - Above the Fold */}
-      <section className="min-h-[70vh] flex flex-col items-center justify-center bg-[#f6f7f9] py-20 px-4">
+      <section className="min-h-[70vh] flex flex-col items-center justify-center bg-surface py-20 px-4">
         <div className="w-full max-w-3xl mx-auto text-center">
-          <h1 className="font-serif-playfair text-[36px] sm:text-[42px] lg:text-[48px] font-bold mb-6 text-[#1f2933]">
+          <h1 className="font-serif-playfair text-[36px] sm:text-[42px] lg:text-[48px] font-bold mb-6 text-text">
             Contact Sarah
           </h1>
-          <p className="mb-8 text-[#1f2933] text-lg sm:text-xl lg:text-[22px] leading-[1.65] max-w-2xl mx-auto">
+          <p className="mb-8 text-text text-lg sm:text-xl lg:text-[22px] leading-[1.65] max-w-2xl mx-auto">
             Pick what's easiest—book a free 15-min consult, or send 2 lines.
           </p>
           
@@ -85,12 +85,12 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="bg-[#f6f7f9] py-12 px-4">
+      <section className="bg-surface py-12 px-4">
         <div className="w-full max-w-2xl bg-white rounded-lg shadow-lg mx-auto p-6 md:p-10">
-          <h2 className="font-serif-playfair text-[28px] sm:text-[32px] font-bold mb-4 text-[#1f2933] text-center">
+          <h2 className="font-serif-playfair text-[28px] sm:text-[32px] font-bold mb-4 text-text text-center">
             Prefer email? Send a Message
           </h2>
-          <p className="text-sm text-[#3b4652] text-center mb-4">
+          <p className="text-sm text-text-muted text-center mb-4">
             Expect a reply in 1–2 business days. Want a faster answer? <Link href="/book" className={cn(brandLink, 'font-medium')}>Book a 15-min call</Link>
           </p>
           <form id="contact-form" onSubmit={handleSubmit} className="space-y-4">
@@ -99,28 +99,28 @@ export default function ContactPage() {
               type="text"
               name="name"
               placeholder="Your Name"
-              className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
+              className="w-full px-4 py-3 border border-border-subtle bg-surface rounded focus:outline-none focus:ring-2 focus:ring-brand text-text"
               required
             />
             <input
               type="email"
               name="email"
               placeholder="Email Address"
-              className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
+              className="w-full px-4 py-3 border border-border-subtle bg-surface rounded focus:outline-none focus:ring-2 focus:ring-brand text-text"
               required
             />
             <input
               type="text"
               name="company"
               placeholder="Company name or website (optional)"
-              className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
+              className="w-full px-4 py-3 border border-border-subtle bg-surface rounded focus:outline-none focus:ring-2 focus:ring-brand text-text"
             />
             <div>
-              <label htmlFor="stage-select" className="block text-sm font-medium text-[#3b4652] mb-1">Stage & ARR band (optional)</label>
+              <label htmlFor="stage-select" className="block text-sm font-medium text-text-muted mb-1">Stage & ARR band (optional)</label>
               <select
                 id="stage-select"
                 name="stage"
-                className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
+                className="w-full px-4 py-3 border border-border-subtle bg-surface rounded focus:outline-none focus:ring-2 focus:ring-brand text-text"
               >
                 <option value="">Select your stage</option>
                 <option value="pre-rev">Pre-revenue</option>
@@ -130,11 +130,11 @@ export default function ContactPage() {
               </select>
             </div>
             <div>
-              <label htmlFor="pricing-select" className="block text-sm font-medium text-[#3b4652] mb-1">Current pricing model (optional)</label>
+              <label htmlFor="pricing-select" className="block text-sm font-medium text-text-muted mb-1">Current pricing model (optional)</label>
               <select
                 id="pricing-select"
                 name="pricing"
-                className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
+                className="w-full px-4 py-3 border border-border-subtle bg-surface rounded focus:outline-none focus:ring-2 focus:ring-brand text-text"
               >
                 <option value="">Select your model</option>
                 <option value="seats">Seats</option>
@@ -144,11 +144,11 @@ export default function ContactPage() {
               </select>
             </div>
             <div>
-              <label htmlFor="goal-select" className="block text-sm font-medium text-[#3b4652] mb-1">Goal (optional)</label>
+              <label htmlFor="goal-select" className="block text-sm font-medium text-text-muted mb-1">Goal (optional)</label>
               <select
                 id="goal-select"
                 name="goal"
-                className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
+                className="w-full px-4 py-3 border border-border-subtle bg-surface rounded focus:outline-none focus:ring-2 focus:ring-brand text-text"
               >
                 <option value="">Select your goal</option>
                 <option value="raise-arpa">Raise ARPA</option>
@@ -162,7 +162,7 @@ export default function ContactPage() {
               name="message"
               placeholder="How can I help you?"
               rows={5}
-              className="w-full px-4 py-3 border border-[#e2e6ea] bg-[#f6f7f9] rounded focus:outline-none focus:ring-2 focus:ring-brand text-[#1f2933]"
+              className="w-full px-4 py-3 border border-border-subtle bg-surface rounded focus:outline-none focus:ring-2 focus:ring-brand text-text"
               required
             />
             <button
@@ -174,7 +174,7 @@ export default function ContactPage() {
               SUBMIT
             </button>
             {status.show && (
-              <div id="form-status" className="mt-2 text-center text-[#1f2933]">
+              <div id="form-status" className="mt-2 text-center text-text">
                 {status.message}
               </div>
             )}

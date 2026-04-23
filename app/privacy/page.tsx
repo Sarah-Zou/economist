@@ -20,11 +20,11 @@ export default function PrivacyPage() {
   return (
     <section className="py-16 sm:py-20 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold text-[#1f2933] mb-8">
+        <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold text-text mb-8">
           Privacy Policy
         </h1>
 
-        <div className="prose prose-lg max-w-none text-[#1f2933] text-base sm:text-[17px] leading-[1.65] space-y-6">
+        <div className="prose prose-lg max-w-none text-text text-base sm:text-[17px] leading-[1.65] space-y-6">
           <p>
             <strong>Effective date:</strong> February 21, 2026
           </p>
@@ -120,9 +120,9 @@ export default function PrivacyPage() {
             updated effective date at the top of this page.
           </p>
 
-          <hr className="my-8 border-[#e2e6ea]" />
+          <hr className="my-8 border-border-subtle" />
 
-          <p className="text-sm text-[#3b4652]">
+          <p className="text-sm text-text-muted">
             Questions? Email{' '}
             <a
               href="mailto:hello@sarahzou.com"

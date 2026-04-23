@@ -42,15 +42,15 @@ export default function EntryOfferThanksPage() {
       />
       <div className="min-h-screen bg-page selection:bg-brand-soft selection:text-brand-ink">
         <main className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 flex flex-col items-center justify-center">
-          <div className="w-full max-w-2xl bg-white border border-[#e2e6ea] rounded-xl sm:rounded-2xl shadow-sm p-6 sm:p-8 md:p-12">
+          <div className="w-full max-w-2xl bg-white border border-border-subtle rounded-xl sm:rounded-2xl shadow-sm p-6 sm:p-8 md:p-12">
             <div className="flex flex-col items-center text-center">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-brand flex-shrink-0" aria-hidden />
-                <h1 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933]">
+                <h1 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text">
                   Thanks—your request is in
                 </h1>
               </div>
-              <p className="mb-6 text-base sm:text-[17px] text-[#1f2933] leading-[1.65] max-w-lg">
+              <p className="mb-6 text-base sm:text-[17px] text-text leading-[1.65] max-w-lg">
                 I’ve received your request for the 90-minute pricing strategy session. I’ll review what you shared and
                 reply by email with next steps and proposed times.
               </p>
@@ -62,7 +62,7 @@ export default function EntryOfferThanksPage() {
                 >
                   Prefer live scheduling? Book a free 15-min consult
                 </Link>
-                <div className="text-sm text-[#3b4652] max-w-lg mx-auto text-left leading-[1.65]">
+                <div className="text-sm text-text-muted max-w-lg mx-auto text-left leading-[1.65]">
                   <p className="mb-2">From here you can:</p>
                   <ul className="list-disc list-inside space-y-1">
                     <li>wait for my email reply with suggested times, or</li>
@@ -94,7 +94,7 @@ export default function EntryOfferThanksPage() {
                 </Link>
               </div>
 
-              <p className="mt-8 text-sm text-[#3b4652] max-w-lg mx-auto leading-[1.65]">
+              <p className="mt-8 text-sm text-text-muted max-w-lg mx-auto leading-[1.65]">
                 I usually reply within 24–48 hours on weekdays. If you don’t see a note from me, please check spam or
                 promotions.
               </p>

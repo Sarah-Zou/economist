@@ -1,7 +1,7 @@
 export default function AreasFooter() {
   return (
-    <div className="mt-8 pt-6 border-t border-[#e2e6ea]">
-      <div className="text-sm text-[#3b4652]">
+    <div className="mt-8 pt-6 border-t border-border-subtle">
+      <div className="text-sm text-text-muted">
         <p>
           Need help with your pricing strategy? 
           <a 

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Linkedin, Mail } from 'lucide-react'
+import { primaryButtonSm } from '@/lib/brandStyles'
 
 const workLinks = [
   { href: '/consulting', label: 'Work With Me' },
@@ -15,75 +16,102 @@ const resourceLinks = [
   { href: '/newsletter', label: 'Newsletter' },
 ]
 
+const footerLink =
+  'text-[14px] text-text-muted transition-colors hover:text-ink'
+
 const Footer = () => {
   return (
-    <footer className="bg-[#f9f6f7] pt-12 sm:pt-16 pb-6 sm:pb-8 mt-16 sm:mt-24 border-t-0">
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 sm:gap-12">
-        {/* Left: Logo, nav, copyright */}
-        <div className="flex-1 flex flex-col items-center md:items-start mb-6 sm:mb-8 md:mb-0">
-          <Link href="/" className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-            <Image
-              src="/images/econnova-logo-240.webp"
-              alt="EconNova Consulting Logo"
-              width={122}
-              height={43}
-              className="h-8 sm:h-10 w-auto"
-            />
-            <div className="flex flex-col">
-              <span className="font-serif-playfair text-xl sm:text-2xl font-bold text-[#111] leading-tight">Sarah Zou, PhD</span>
-              <span className="text-xs text-[#3b4652] tracking-wide mt-0.5">EconNova Consulting</span>
-            </div>
-          </Link>
-          <div className="mb-3 text-xs uppercase tracking-[0.08em] text-[#3b4652] font-semibold">
-            Navigation
-          </div>
-          <div className="flex flex-wrap gap-2 sm:gap-3 mb-3 justify-center md:justify-start">
-            {workLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="bg-white text-[#111] px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-sm sm:text-base font-medium shadow-sm border border-[#eee] hover:bg-[#c2410c] hover:text-white transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
+    <footer className="mt-20 border-t border-border-soft bg-page">
+      <div className="mx-auto w-full max-w-container px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+        <div className="grid gap-10 md:grid-cols-[1.3fr_1fr_1fr_auto] md:gap-12">
+          {/* Brand */}
+          <div>
+            <Link href="/" className="flex items-center gap-3">
+              <Image
+                src="/images/econnova-logo-240.webp"
+                alt="EconNova Consulting Logo"
+                width={122}
+                height={43}
+                className="h-9 w-auto"
+              />
+              <div className="flex flex-col">
+                <span className="font-serif-playfair text-lg font-semibold leading-tight text-ink">
+                  Sarah Zou, PhD
+                </span>
+                <span className="text-[12px] text-text-subtle tracking-wide">
+                  EconNova Consulting
+                </span>
+              </div>
+            </Link>
+            <p className="mt-5 max-w-sm text-[14px] leading-[1.7] text-text-muted">
+              Fractional Chief Economist for AI and SaaS founders. Pricing, unit economics,
+              and monetization decisions with research-grade rigor.
+            </p>
             <Link
               href="/consulting/entry-offer/form"
-              className="bg-brand text-white px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-sm sm:text-base font-medium shadow-sm border border-brand hover:bg-brand-ink transition-colors"
+              className={`${primaryButtonSm} mt-6`}
             >
-              Book Session
+              Book the Session
             </Link>
           </div>
-          <div className="mb-3 text-xs uppercase tracking-[0.08em] text-[#3b4652] font-semibold">
-            Free Resources
+
+          {/* Navigation */}
+          <div>
+            <p className="kicker-muted mb-4">Navigation</p>
+            <ul className="space-y-2.5">
+              {workLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className={footerLink}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8 justify-center md:justify-start">
-            {resourceLinks.map((link) => (
+
+          {/* Resources */}
+          <div>
+            <p className="kicker-muted mb-4">Free resources</p>
+            <ul className="space-y-2.5">
+              {resourceLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className={footerLink}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="md:text-right">
+            <p className="kicker-muted mb-4 md:text-right">Contact</p>
+            <div className="flex items-center gap-3 md:justify-end">
               <Link
-                key={link.href}
-                href={link.href}
-                className="bg-white text-[#111] px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-sm sm:text-base font-medium shadow-sm border border-[#eee] hover:bg-[#c2410c] hover:text-white transition-colors"
+                href="/contact"
+                aria-label="Contact Sarah Zou"
+                title="Contact Sarah Zou"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border-subtle text-text-muted transition-colors hover:border-ink/30 hover:text-ink"
               >
-                {link.label}
+                <Mail className="h-4 w-4" />
               </Link>
-            ))}
-          </div>
-          <div className="text-xs sm:text-sm text-[#3b4652] mt-2 sm:mt-4 text-center md:text-left">© 2026 EconNova Consulting · All rights reserved</div>
-          <div className="text-xs sm:text-sm text-[#3b4652] mt-1 text-center md:text-left">Princeton, NJ · NYC · Philadelphia · Remote (US/EU)</div>
-        </div>
-        {/* Right: Newsletter subscription */}
-        <div className="flex-1 flex flex-col items-center md:items-end w-full">
-          <div className="max-w-md w-full flex flex-col items-center md:items-end">
-            <div className="font-bold text-base sm:text-lg mb-3 text-[#111]">Connect with me</div>
-            <div className="flex gap-3 sm:gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-2 text-brand-ink hover:text-brand-ink/90 font-medium text-base sm:text-lg" aria-label="Contact Sarah Zou" title="Contact Sarah Zou">
-                <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
-              </Link>
-              <a href="https://www.linkedin.com/in/drsarahzou" className="inline-flex items-center gap-2 text-brand-ink hover:text-brand-ink/90 font-medium text-base sm:text-lg" target="_blank" rel="noopener noreferrer" aria-label="Sarah Zou on LinkedIn" title="Sarah Zou on LinkedIn">
-                <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
+              <a
+                href="https://www.linkedin.com/in/drsarahzou"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Sarah Zou on LinkedIn"
+                title="Sarah Zou on LinkedIn"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border-subtle text-text-muted transition-colors hover:border-ink/30 hover:text-ink"
+              >
+                <Linkedin className="h-4 w-4" />
               </a>
             </div>
           </div>
+        </div>
+
+        <div className="mt-12 flex flex-col gap-2 border-t border-border-soft pt-6 text-[13px] text-text-subtle sm:flex-row sm:items-center sm:justify-between">
+          <p>© 2026 EconNova Consulting · All rights reserved</p>
+          <p>Princeton, NJ · NYC · Philadelphia · Remote (US/EU)</p>
         </div>
       </div>
     </footer>

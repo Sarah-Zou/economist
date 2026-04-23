@@ -1,3 +1,5 @@
+import FAQList from '@/components/FAQList'
+
 export default function FAQSection() {
   const faqs = [
     {
@@ -10,7 +12,7 @@ export default function FAQSection() {
     },
     {
       q: 'Will this work if we are pre-revenue?',
-      a: 'Yes, in many cases this is the right time to design a first pricing structure before habits, discounting, and exceptions harden.',
+      a: 'Yes. In many cases this is the right time to design a first pricing structure before habits, discounting, and exceptions harden.',
     },
     {
       q: 'What do you need from us to start?',
@@ -20,18 +22,11 @@ export default function FAQSection() {
       q: 'Can you help after the sprint?',
       a: 'Yes. Some founders stop after the sprint and execute internally. Others continue into additional support for rollout, testing, or ongoing strategic work.',
     },
-  ];
+  ]
 
   return (
     <div className="scroll-mt-24">
-      <div className="space-y-4 max-w-3xl mx-auto">
-        {faqs.map((item) => (
-          <div key={item.q} className="rounded-lg border border-[#e5e7eb] bg-white p-5 shadow-sm sm:p-6">
-            <h3 className="mb-3 text-[20px] font-semibold text-[#1f2933] sm:text-[22px]">{item.q}</h3>
-            <p className="text-base leading-[1.65] text-[#1f2933] sm:text-[17px]">{item.a}</p>
-          </div>
-        ))}
-      </div>
+      <FAQList items={faqs} />
     </div>
-  );
+  )
 }

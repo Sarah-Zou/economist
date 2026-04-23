@@ -50,15 +50,15 @@ export default function MetricsExperimentationSprint() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
-      <section className="bg-[#f5f8f7] min-h-screen py-0 pb-20 md:pb-0">
+      <section className="bg-page min-h-screen py-0 pb-20 md:pb-0">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <span className="uppercase tracking-widest text-xs text-[#3b4652] font-semibold mb-4 block">Consulting Service</span>
-          <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold text-[#1f2933] mb-4 leading-tight max-w-4xl mx-auto">
+          <span className="uppercase tracking-widest text-xs text-text-muted font-semibold mb-4 block">Consulting Service</span>
+          <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold text-text mb-4 leading-tight max-w-4xl mx-auto">
             Unlock Growth with Metrics & Experimentation Sprint
           </h1>
-          <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-8 max-w-3xl mx-auto">
+          <p className="text-base sm:text-[17px] text-text leading-[1.65] mb-8 max-w-3xl mx-auto">
             A one-week intensive sprint for early-stage teams to stand up a working KPI system and a repeatable experimentation loop that lifts conversion and ARPU.
           </p>
         </div>
@@ -67,25 +67,25 @@ export default function MetricsExperimentationSprint() {
         <div className="flex flex-wrap gap-3 mb-12 justify-center">
           <a
             href="#key-benefits"
-            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#c2410c] hover:text-[#c2410c] transition-colors cursor-pointer active:scale-95"
+            className="inline-flex items-center px-4 py-2 bg-white border border-border-subtle rounded-full text-sm font-medium text-text hover:bg-surface hover:border-brand/40 hover:text-brand-ink transition-colors cursor-pointer active:scale-95"
           >
             Outcomes
           </a>
           <a
             href="#cadence"
-            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#c2410c] hover:text-[#c2410c] transition-colors cursor-pointer active:scale-95"
+            className="inline-flex items-center px-4 py-2 bg-white border border-border-subtle rounded-full text-sm font-medium text-text hover:bg-surface hover:border-brand/40 hover:text-brand-ink transition-colors cursor-pointer active:scale-95"
           >
             How it works
           </a>
           <a
             href="#pricing"
-            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#c2410c] hover:text-[#c2410c] transition-colors cursor-pointer active:scale-95"
+            className="inline-flex items-center px-4 py-2 bg-white border border-border-subtle rounded-full text-sm font-medium text-text hover:bg-surface hover:border-brand/40 hover:text-brand-ink transition-colors cursor-pointer active:scale-95"
           >
             Pricing
           </a>
           <a
             href="#faq"
-            className="inline-flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full text-sm font-medium text-[#1f2933] hover:bg-[#f6f7f9] hover:border-[#c2410c] hover:text-[#c2410c] transition-colors cursor-pointer active:scale-95"
+            className="inline-flex items-center px-4 py-2 bg-white border border-border-subtle rounded-full text-sm font-medium text-text hover:bg-surface hover:border-brand/40 hover:text-brand-ink transition-colors cursor-pointer active:scale-95"
           >
             FAQ
           </a>
@@ -95,41 +95,41 @@ export default function MetricsExperimentationSprint() {
         <div className="max-w-7xl mx-auto space-y-24">
           {/* Key Benefits Section */}
           <section id="key-benefits" className="text-center scroll-mt-24">
-            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4">Key Benefits of the Sprint</h2>
-            <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-12 max-w-3xl mx-auto">
+            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-4">Key Benefits of the Sprint</h2>
+            <p className="text-base sm:text-[17px] text-text leading-[1.65] mb-12 max-w-3xl mx-auto">
               Gain the capabilities and confidence to make smarter, faster decisions backed by data.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm text-left">
+              <div className="bg-white rounded-lg p-6 border border-border-subtle shadow-sm text-left">
                 <div className="mb-4">
-                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 </div>
-                <h3 className="font-semibold text-[20px] text-[#1f2933] mb-3">Data-Driven Decisions</h3>
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+                <h3 className="font-semibold text-[20px] text-text mb-3">Data-Driven Decisions</h3>
+                <p className="text-base sm:text-[17px] text-text leading-[1.65]">
                   Learn to identify, track, and analyze the metrics that truly matter for your business.
                 </p>
               </div>
-              <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm text-left">
+              <div className="bg-white rounded-lg p-6 border border-border-subtle shadow-sm text-left">
                 <div className="mb-4">
-                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 className="font-semibold text-[20px] text-[#1f2933] mb-3">Faster Growth Cycles</h3>
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+                <h3 className="font-semibold text-[20px] text-text mb-3">Faster Growth Cycles</h3>
+                <p className="text-base sm:text-[17px] text-text leading-[1.65]">
                   Implement a repeatable process for rapidly testing hypotheses and iterating on your product.
                 </p>
               </div>
-              <div className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm text-left">
+              <div className="bg-white rounded-lg p-6 border border-border-subtle shadow-sm text-left">
                 <div className="mb-4">
-                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 </div>
-                <h3 className="font-semibold text-[20px] text-[#1f2933] mb-3">Build a Culture of Experimentation</h3>
-                <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">
+                <h3 className="font-semibold text-[20px] text-text mb-3">Build a Culture of Experimentation</h3>
+                <p className="text-base sm:text-[17px] text-text leading-[1.65]">
                   Embed a mindset of continuous learning and improvement across your entire team.
                 </p>
               </div>
@@ -138,8 +138,8 @@ export default function MetricsExperimentationSprint() {
 
           {/* Common Triggers Section */}
           <section className="text-center">
-            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-4">Common triggers</h2>
-            <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-8">If any of these sound familiar, this sprint is designed for you.</p>
+            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-4">Common triggers</h2>
+            <p className="text-base sm:text-[17px] text-text leading-[1.65] mb-8">If any of these sound familiar, this sprint is designed for you.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {[
                 { icon: '🎯', text: 'No shared North Star or conflicting KPI definitions' },
@@ -149,9 +149,9 @@ export default function MetricsExperimentationSprint() {
                 { icon: '📈', text: 'Investor pressure for "efficient growth" metrics' },
                 { icon: '💸', text: 'Metrics chaos after first funding' }
               ].map((trigger, idx) => (
-                <div key={idx} className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm hover:shadow-md transition-shadow">
+                <div key={idx} className="bg-white rounded-lg p-6 border border-border-subtle shadow-sm hover:shadow-md transition-shadow">
                   <div className="text-4xl mb-3">{trigger.icon}</div>
-                  <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">{trigger.text}</p>
+                  <p className="text-base sm:text-[17px] text-text leading-[1.65]">{trigger.text}</p>
                 </div>
               ))}
           </div>
@@ -162,7 +162,7 @@ export default function MetricsExperimentationSprint() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Is This Sprint For You */}
               <div>
-                <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-6">Is This Sprint For You?</h2>
+                <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-6">Is This Sprint For You?</h2>
                 <ul className="space-y-4">
                   {[
                     <><strong>Early-Stage Founders</strong> who need a minimal KPI loop before scaling GTM.</>,
@@ -170,12 +170,12 @@ export default function MetricsExperimentationSprint() {
                     <><strong>Lean Teams</strong> under investor pressure to show payback/NRR and move from ad-hoc reports to a system.</>
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-6 h-6 rounded-full bg-brand-soft flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg className="w-4 h-4 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">{item}</span>
+                      <span className="text-base sm:text-[17px] text-text leading-[1.65]">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -183,7 +183,7 @@ export default function MetricsExperimentationSprint() {
 
               {/* What You'll Get */}
               <div>
-                <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-6">What You'll Get</h2>
+                <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-6">What You'll Get</h2>
                 <ul className="space-y-4">
                   {[
                     <>A clear <strong>Live Metrics Dashboard</strong> for tracking your <strong>North Star + Metric Tree</strong>.</>,
@@ -191,12 +191,12 @@ export default function MetricsExperimentationSprint() {
                     <>Readout + 30-day plan and a check-in at 30 days.</>
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-6 h-6 rounded-full bg-brand-soft flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg className="w-4 h-4 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">{item}</span>
+                      <span className="text-base sm:text-[17px] text-text leading-[1.65]">{item}</span>
                     </li>
                   ))}
               </ul>
@@ -206,14 +206,14 @@ export default function MetricsExperimentationSprint() {
 
           {/* Cadence Section */}
           <section id="cadence" className="text-center scroll-mt-24">
-            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-3">The 1-Week Sprint Cadence</h2>
-            <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-12 max-w-2xl mx-auto">
+            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-3">The 1-Week Sprint Cadence</h2>
+            <p className="text-base sm:text-[17px] text-text leading-[1.65] mb-12 max-w-2xl mx-auto">
               A structured, collaborative process designed for maximum impact in minimum time.
             </p>
             <div className="max-w-6xl mx-auto px-4">
               <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-2 relative">
                 {/* Connecting line for desktop */}
-                <div className="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-[#e5e7eb] z-0" style={{ left: '2rem', right: '2rem' }}></div>
+                <div className="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-border-subtle z-0" style={{ left: '2rem', right: '2rem' }}></div>
                 {[
                   { day: 0, name: 'Discovery', desc: 'Data room review and stack analysis' },
                   { day: 1, name: 'Workshop #1', desc: 'Define North Star and metric tree' },
@@ -223,12 +223,12 @@ export default function MetricsExperimentationSprint() {
                   { day: 5, name: 'Handoff', desc: 'Readout and ownership assignment' }
                 ].map((step, idx) => (
                   <div key={idx} className="relative z-10 flex flex-col items-center text-center">
-                    <div className="bg-[#ff5722] rounded-full w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 flex items-center justify-center shadow-lg">
-                      <span className="text-[13px] sm:text-[14px] font-extrabold text-[#1f2933] text-center leading-tight px-2">
+                    <div className="bg-brand rounded-full w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 flex items-center justify-center shadow-lg">
+                      <span className="text-[13px] sm:text-[14px] font-extrabold text-text text-center leading-tight px-2">
                         Day {step.day}<br/>{step.name}
                       </span>
                     </div>
-                    <p className="text-sm sm:text-base text-[#1f2933] leading-[1.65] max-w-[120px]">{step.desc}</p>
+                    <p className="text-sm sm:text-base text-text leading-[1.65] max-w-[120px]">{step.desc}</p>
                   </div>
                 ))}
               </div>
@@ -237,37 +237,37 @@ export default function MetricsExperimentationSprint() {
 
           {/* Pricing Section */}
           <section id="pricing" className="text-center scroll-mt-24">
-            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-3">A Clear Investment in Your Growth</h2>
-            <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-8 max-w-2xl mx-auto">
+            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-3">A Clear Investment in Your Growth</h2>
+            <p className="text-base sm:text-[17px] text-text leading-[1.65] mb-8 max-w-2xl mx-auto">
               Get an expert metrics system for a fraction of the cost and time of hiring full-time.
             </p>
             
             {/* Comparison Table */}
-            <div className="bg-white rounded-lg p-4 sm:p-8 border border-[#e5e7eb] shadow-sm overflow-x-auto mb-8 max-w-5xl mx-auto -mx-4 sm:mx-auto" role="region" aria-label="Service comparison table">
+            <div className="bg-white rounded-lg p-4 sm:p-8 border border-border-subtle shadow-sm overflow-x-auto mb-8 max-w-5xl mx-auto -mx-4 sm:mx-auto" role="region" aria-label="Service comparison table">
               <table className="w-full border-collapse min-w-[600px]">
                 <thead>
-                  <tr className="border-b-2 border-[#1f2933]">
-                    <th className="text-left py-3 sm:py-4 px-3 sm:px-4 font-semibold text-xs sm:text-sm text-[#1f2933] whitespace-nowrap">Feature</th>
-                    <th className="text-center py-3 sm:py-4 px-3 sm:px-4 font-semibold text-xs sm:text-sm text-[#1f2933] whitespace-nowrap">Doing Nothing</th>
-                    <th className="text-center py-3 sm:py-4 px-3 sm:px-4 font-semibold text-xs sm:text-sm text-[#1f2933] bg-brand-soft rounded-t-lg whitespace-nowrap">Hire Full-Time Analytics/Growth</th>
-                    <th className="text-center py-3 sm:py-4 px-3 sm:px-4 font-semibold text-xs sm:text-sm text-[#1f2933] bg-brand-soft rounded-t-lg whitespace-nowrap">Metrics & Experimentation Sprint</th>
+                  <tr className="border-b-2 border-ink">
+                    <th className="text-left py-3 sm:py-4 px-3 sm:px-4 font-semibold text-xs sm:text-sm text-text whitespace-nowrap">Feature</th>
+                    <th className="text-center py-3 sm:py-4 px-3 sm:px-4 font-semibold text-xs sm:text-sm text-text whitespace-nowrap">Doing Nothing</th>
+                    <th className="text-center py-3 sm:py-4 px-3 sm:px-4 font-semibold text-xs sm:text-sm text-text bg-brand-soft rounded-t-lg whitespace-nowrap">Hire Full-Time Analytics/Growth</th>
+                    <th className="text-center py-3 sm:py-4 px-3 sm:px-4 font-semibold text-xs sm:text-sm text-text bg-brand-soft rounded-t-lg whitespace-nowrap">Metrics & Experimentation Sprint</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-[#e5e7eb]">
-                    <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Cost</td>
+                  <tr className="border-b border-border-subtle">
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-text text-left min-w-[120px]">Cost</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">$0 (but lost revenue)</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">$120k+ / yr</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 bg-brand-soft text-brand-ink font-semibold text-sm sm:text-base md:text-[17px] text-center">$6k–$12k</td>
                   </tr>
-                  <tr className="border-b border-[#e5e7eb]">
-                    <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Time to Value</td>
+                  <tr className="border-b border-border-subtle">
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-text text-left min-w-[120px]">Time to Value</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">Never</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">2–3 months</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 bg-brand-soft text-brand-ink font-semibold text-sm sm:text-base md:text-[17px] text-center">5–10 business days</td>
                   </tr>
-                  <tr className="border-b border-[#e5e7eb]">
-                    <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Expertise</td>
+                  <tr className="border-b border-border-subtle">
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-text text-left min-w-[120px]">Expertise</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-center">
                       <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-red-100 flex items-center justify-center mx-auto">
                         <svg className="w-3 h-3 sm:w-4 sm:h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -276,7 +276,7 @@ export default function MetricsExperimentationSprint() {
                       </div>
                     </td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-center">
-                      <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full border-2 border-[#ff5722] flex items-center justify-center mx-auto">
+                      <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full border-2 border-brand flex items-center justify-center mx-auto">
                       </div>
                     </td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 bg-brand-soft text-center">
@@ -287,8 +287,8 @@ export default function MetricsExperimentationSprint() {
                       </div>
                     </td>
                   </tr>
-                  <tr className="border-b border-[#e5e7eb]">
-                    <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Actionable System</td>
+                  <tr className="border-b border-border-subtle">
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-text text-left min-w-[120px]">Actionable System</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-center">
                       <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-red-100 flex items-center justify-center mx-auto">
                         <svg className="w-3 h-3 sm:w-4 sm:h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -297,7 +297,7 @@ export default function MetricsExperimentationSprint() {
                       </div>
                     </td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-center">
-                      <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full border-2 border-[#ff5722] flex items-center justify-center mx-auto">
+                      <div className="w-4 h-4 sm:w-6 sm:h-6 rounded-full border-2 border-brand flex items-center justify-center mx-auto">
                       </div>
                     </td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 bg-brand-soft text-center">
@@ -308,8 +308,8 @@ export default function MetricsExperimentationSprint() {
                       </div>
                     </td>
                   </tr>
-                  <tr className="border-b border-[#e5e7eb]">
-                    <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-[#1f2933] text-left min-w-[120px]">Risk</td>
+                  <tr className="border-b border-border-subtle">
+                    <td className="py-4 sm:py-5 px-3 sm:px-4 font-medium text-sm sm:text-base md:text-[17px] text-text text-left min-w-[120px]">Risk</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">High</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 text-sm sm:text-base md:text-[17px] text-center">High</td>
                     <td className="py-4 sm:py-5 px-3 sm:px-4 bg-brand-soft text-brand-ink font-semibold text-sm sm:text-base md:text-[17px] rounded-b-lg text-center">Zero (Guaranteed)</td>
@@ -319,8 +319,8 @@ export default function MetricsExperimentationSprint() {
             </div>
 
             <div className="max-w-6xl mx-auto mt-20">
-              <h3 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-3 text-center">Choose the Right Sprint for Your Team</h3>
-              <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-12 text-center max-w-2xl mx-auto">
+              <h3 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-3 text-center">Choose the Right Sprint for Your Team</h3>
+              <p className="text-base sm:text-[17px] text-text leading-[1.65] mb-12 text-center max-w-2xl mx-auto">
                 Find the perfect plan to unlock your metrics and experimentation potential.
               </p>
               
@@ -333,7 +333,7 @@ export default function MetricsExperimentationSprint() {
                     duration: '/ 1 wk',
                     description: 'Pre-MVP or just-launched teams needing a minimal KPI loop and one high-impact test.',
                     buttonText: 'Get Started',
-                    buttonStyle: 'bg-[#f6f7f9] text-[#1f2933] hover:bg-[#e2e6ea]',
+                    buttonStyle: 'bg-surface text-text hover:bg-surface-muted',
                     features: [
                       { text: <>1×60-min <strong>workshop</strong></>, included: true },
                       { text: <><strong>KPI tree + glossary</strong> (v1)</>, included: true },
@@ -365,7 +365,7 @@ export default function MetricsExperimentationSprint() {
                     duration: '/ 2 wks',
                     description: 'Complex funnels or multiple ICPs needing deeper analysis and test velocity.',
                     buttonText: 'Choose Plan',
-                    buttonStyle: 'bg-[#f6f7f9] text-[#1f2933] hover:bg-[#e2e6ea]',
+                    buttonStyle: 'bg-surface text-text hover:bg-surface-muted',
                     features: [
                       { text: <>3×60-min <strong>workshops</strong></>, included: true },
                       { text: <><strong>KPI tree + governance + threshold doc</strong></>, included: true },
@@ -379,33 +379,33 @@ export default function MetricsExperimentationSprint() {
                 ].map((tier, tierIdx) => (
                   <div 
                     key={tierIdx} 
-                    className="bg-white rounded-lg border-2 border-[#e5e7eb] shadow-sm p-6 flex flex-col"
+                    className="bg-white rounded-lg border-2 border-border-subtle shadow-sm p-6 flex flex-col"
                   >
                     <div className="mb-6">
-                      <h4 className="font-serif-playfair text-2xl font-bold text-[#c2410c] mb-3 text-left">{tier.name}</h4>
+                      <h4 className="font-serif-playfair text-2xl font-bold text-brand mb-3 text-left">{tier.name}</h4>
                       <div className="mb-2 text-left">
-                        <span className="text-3xl font-bold text-[#1f2933]">{tier.price}</span>
-                        <span className="text-sm text-[#3b4652] ml-1">{tier.duration}</span>
+                        <span className="text-3xl font-bold text-text">{tier.price}</span>
+                        <span className="text-sm text-text-muted ml-1">{tier.duration}</span>
                       </div>
-                      <p className="text-base sm:text-[17px] text-[#1f2933] text-left leading-[1.65] mt-2">{tier.description}</p>
+                      <p className="text-base sm:text-[17px] text-text text-left leading-[1.65] mt-2">{tier.description}</p>
                     </div>
                     <ul className="space-y-3 flex-grow mb-6">
                       {tier.features.map((feature, featIdx) => (
                         <li key={featIdx} className="flex items-start gap-3 text-left">
                           {feature.included ? (
-                            <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                              <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="w-5 h-5 rounded-full bg-brand-soft flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <svg className="w-3 h-3 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                               </svg>
                             </div>
                           ) : (
-                            <div className="w-5 h-5 rounded-full bg-[#f6f7f9] flex items-center justify-center flex-shrink-0 mt-0.5">
-                              <svg className="w-3 h-3 text-[#3b4652]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="w-5 h-5 rounded-full bg-surface flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <svg className="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                               </svg>
                             </div>
                           )}
-                          <span className={`text-sm ${feature.included ? 'text-[#1f2933]' : 'text-[#3b4652]'}`}>
+                          <span className={`text-sm ${feature.included ? 'text-text' : 'text-text-muted'}`}>
                             {feature.text}
                           </span>
                         </li>
@@ -425,14 +425,14 @@ export default function MetricsExperimentationSprint() {
 
           {/* Add-ons Section */}
             <section>
-            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933] mb-6 text-center">Add-ons</h2>
+            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-6 text-center">Add-ons</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {[
                 { 
                   title: 'Light Instrumentation Support', 
                   desc: 'GTM/GA/Amplitude/Mixpanel tagging, QA',
                   icon: (
-                    <svg className="w-6 h-6 text-[#c2410c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
@@ -442,7 +442,7 @@ export default function MetricsExperimentationSprint() {
                   title: 'Survey / In-product Feedback Setup', 
                   desc: 'NPS, JTBD prompts, pricing probe',
                   icon: (
-                    <svg className="w-6 h-6 text-[#c2410c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                   )
@@ -451,7 +451,7 @@ export default function MetricsExperimentationSprint() {
                   title: 'Experiment Run Support (4 weeks)', 
                   desc: 'Launch, monitor, analyze, iterate',
                   icon: (
-                    <svg className="w-6 h-6 text-[#c2410c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                     </svg>
                   )
@@ -460,18 +460,18 @@ export default function MetricsExperimentationSprint() {
                   title: 'Pricing Variant Pack', 
                   desc: 'Price/pack/plan A/Bs aligned with Pricing & Monetization Sprint',
                   icon: (
-                    <svg className="w-6 h-6 text-[#c2410c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   )
                 }
               ].map((addon, idx) => (
-                <div key={idx} className="bg-white rounded-lg p-6 border border-[#e5e7eb] shadow-sm">
+                <div key={idx} className="bg-white rounded-lg p-6 border border-border-subtle shadow-sm">
                   <div className="mb-4">
                     {addon.icon}
                   </div>
-                  <h3 className="font-semibold text-[20px] text-[#1f2933] mb-2">{addon.title}</h3>
-                  <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65]">{addon.desc}</p>
+                  <h3 className="font-semibold text-[20px] text-text mb-2">{addon.title}</h3>
+                  <p className="text-base sm:text-[17px] text-text leading-[1.65]">{addon.desc}</p>
                 </div>
               ))}
             </div>
@@ -525,12 +525,12 @@ export default function MetricsExperimentationSprint() {
 
         {/* CTA Section */}
         <div className="max-w-4xl mx-auto mt-16">
-          <div className="bg-white rounded-lg p-8 md:p-12 border border-[#e5e7eb] shadow-lg text-center">
+          <div className="bg-white rounded-lg p-8 md:p-12 border border-border-subtle shadow-lg text-center">
             <div className="flex items-center justify-center gap-4 mb-6">
               <Image src="/images/headshot_v2.jpg" alt="Sarah Zou headshot" width={80} height={80} className="rounded-full object-cover flex-shrink-0" />
-              <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-[#1f2933]">Considering an Experimentation Sprint?</h2>
+              <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text">Considering an Experimentation Sprint?</h2>
             </div>
-            <p className="text-base sm:text-[17px] text-[#1f2933] leading-[1.65] mb-6 max-w-2xl mx-auto">
+            <p className="text-base sm:text-[17px] text-text leading-[1.65] mb-6 max-w-2xl mx-auto">
               Book a free call to review your current experiments (or lack of them) and see whether a structured sprint would materially improve decision speed and confidence.
             </p>
               <Link
@@ -545,10 +545,10 @@ export default function MetricsExperimentationSprint() {
           {/* Contact Form */}
         <div className="max-w-2xl mx-auto mt-16 mb-16">
           <div className="bg-white rounded-lg shadow-lg p-6 md:p-10">
-            <h2 className="font-serif-playfair text-[28px] sm:text-[32px] font-bold mb-4 text-[#1f2933] text-center">
+            <h2 className="font-serif-playfair text-[28px] sm:text-[32px] font-bold mb-4 text-text text-center">
               Prefer email? Send a Message
             </h2>
-            <p className="text-sm text-[#3b4652] text-center mb-4">
+            <p className="text-sm text-text-muted text-center mb-4">
               Expect a reply in 1–2 business days. Want a faster answer? <Link href="/book" className="text-brand-ink hover:underline font-medium">Book a 15-min call</Link> (no prep needed)
             </p>
             <ContactForm />
@@ -558,7 +558,7 @@ export default function MetricsExperimentationSprint() {
     </section>
 
       {/* Mobile Sticky Bottom Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-[#e5e7eb] shadow-lg z-50 md:hidden">
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-border-subtle shadow-lg z-50 md:hidden">
         <div className="max-w-7xl mx-auto px-4 py-3 flex gap-3">
           <Link
             href="/book"

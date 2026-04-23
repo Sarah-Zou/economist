@@ -3,12 +3,12 @@ import { ExternalLink } from 'lucide-react';
 
 export default function WikiLicenseFooter() {
   return (
-    <div className="mt-16 pt-8 border-t border-[#e2e6ea]">
-      <div className="bg-[#f6f7f9] rounded-lg p-6 border border-[#e2e6ea]">
+    <div className="mt-16 pt-8 border-t border-border-subtle">
+      <div className="bg-surface rounded-lg p-6 border border-border-subtle">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
           <div className="flex-1">
-            <h3 className="font-semibold text-[#1f2933] text-sm mb-2">Reuse & Attribution</h3>
-            <p className="text-sm text-[#3b4652] leading-relaxed">
+            <h3 className="font-semibold text-text text-sm mb-2">Reuse & Attribution</h3>
+            <p className="text-sm text-text-muted leading-relaxed">
               This content is available for reuse with attribution. When referencing or republishing, 
               please credit{' '}
               <Link href="/about" className="text-brand-ink hover:underline font-medium">
@@ -22,7 +22,7 @@ export default function WikiLicenseFooter() {
               href="https://creativecommons.org/licenses/by/4.0/"
               target="_blank"
               rel="noopener noreferrer license"
-              className="inline-flex items-center gap-2 text-sm text-[#3b4652] hover:text-brand-ink transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-text-muted hover:text-brand-ink transition-colors"
               aria-label="Creative Commons Attribution 4.0 International License"
             >
               <span className="text-2xl" aria-hidden="true">CC</span>
@@ -31,7 +31,7 @@ export default function WikiLicenseFooter() {
             </a>
           </div>
         </div>
-        <p className="text-xs text-[#3b4652] leading-relaxed">
+        <p className="text-xs text-text-muted leading-relaxed">
           Licensed under{' '}
           <a
             href="https://creativecommons.org/licenses/by/4.0/"
