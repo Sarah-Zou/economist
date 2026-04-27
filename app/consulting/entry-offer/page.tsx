@@ -5,9 +5,9 @@ import { outlineButton, primaryButton, primaryButtonLg } from '@/lib/brandStyles
 import EntryOfferFAQ from './EntryOfferFAQ'
 
 export const metadata: Metadata = {
-  title: '90-Minute Pricing Strategy Session for AI & SaaS Founders | Sarah Zou',
+  title: '90-Minute Commercial Strategy Session for AI-Native B2B SaaS | Sarah Zou',
   description:
-    'A flat-fee 90-minute pricing strategy session for AI and SaaS founders. Get a clear pricing direction on model, value metric, packaging, risks, and next steps—with a 48-hour follow-up memo.',
+    'A focused 90-minute working session for AI-native B2B SaaS founders and operators. Get a clear recommendation on pricing model, value metric, GTM structure, revenue logic, or packaging — with a 48-hour follow-up memo.',
   robots: {
     index: true,
     follow: true,
@@ -23,17 +23,17 @@ export const metadata: Metadata = {
     canonical: 'https://sarahzou.com/consulting/entry-offer',
   },
   openGraph: {
-    title: '90-Minute Pricing Strategy Session for AI & SaaS Founders | Sarah Zou',
+    title: '90-Minute Commercial Strategy Session for AI-Native B2B SaaS | Sarah Zou',
     description:
-      'A focused, flat-fee pricing strategy session for AI and SaaS founders who need a clearer pricing direction on model, value metric, and package structure.',
+      'A focused, flat-fee working session for AI-native B2B SaaS founders and operators who need a clearer direction on pricing model, value metric, GTM structure, revenue logic, or packaging.',
     type: 'website',
     url: 'https://sarahzou.com/consulting/entry-offer',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '90-Minute Pricing Strategy Session for AI & SaaS Founders | Sarah Zou',
+    title: '90-Minute Commercial Strategy Session for AI-Native B2B SaaS | Sarah Zou',
     description:
-      'A 90-minute working session plus a 48-hour follow-up memo covering pricing model, value metric, packages, risks, and next steps.',
+      'A 90-minute working session plus a 48-hour follow-up memo covering pricing model, value metric, GTM structure, revenue logic, packaging, risks, and next steps.',
   },
 }
 
@@ -44,8 +44,8 @@ const QUESTIONS = [
   'Should we use subscription, usage-based, or hybrid pricing?',
   'What should we actually charge for?',
   'Are our plans too complicated or too weak?',
-  'Is our current pricing leaving money on the table?',
-  'What should we fix before we launch or raise prices?',
+  'Does our pricing align with how we sell and how customers actually use the product?',
+  'What should we fix before we launch, raise prices, or go into a fundraise?',
 ]
 
 const FAQ_ITEMS = [
@@ -75,6 +75,8 @@ const SESSION_TOPICS = [
   'Pricing model choice',
   'Usage vs seat vs hybrid logic',
   'Plan and package structure',
+  'GTM and pricing alignment',
+  'Revenue model and unit economics logic',
   'Trial / freemium / entry offer decisions',
   'Pricing risks before launch or changes',
   'What to test next',
@@ -105,11 +107,12 @@ export default function EntryOfferPage() {
             <div className="section-header max-w-[44rem]">
               <span className="kicker-accent">90-Minute Session</span>
               <h1 className="mt-5 font-serif-playfair text-ink">
-                Get a clear pricing direction in one focused session
+                Get a clear commercial direction on one live decision
               </h1>
               <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
-                A 90-minute working session for AI and SaaS founders who need expert help choosing
-                the right pricing model, value metric, or package structure.
+                A 90-minute working session for AI-native B2B SaaS founders and operators who need
+                expert help with pricing model, value metric, GTM structure, revenue logic, or
+                package design.
               </p>
               <p className="meta-note mt-6">
                 If we move into a sprint within 14 days, the fee is credited toward the project.
@@ -148,8 +151,8 @@ export default function EntryOfferPage() {
               ))}
             </ul>
             <p className="mt-8 text-center text-[15px] leading-[1.75] text-text-muted">
-              If you need a fast, expert second brain before making a pricing decision, this session
-              is built for that.
+              If you need a fast, expert second brain before making a consequential commercial
+              decision, this session is built for that.
             </p>
           </div>
         </section>
@@ -161,7 +164,8 @@ export default function EntryOfferPage() {
               <span className="kicker">Included</span>
               <h2 className="section-title">What you get</h2>
               <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
-                Everything you need to get clarity on your pricing, structured to respect your time.
+                Everything you need to work through your most important commercial decision,
+                structured to respect your time.
               </p>
             </div>
             <div className="mx-auto mt-16 grid max-w-5xl gap-10 sm:grid-cols-3">
@@ -235,9 +239,9 @@ export default function EntryOfferPage() {
                   <XCircle className="h-4 w-4 flex-shrink-0 text-text-subtle" aria-hidden />
                   <p className="kicker-muted">Not the right fit if</p>
                 </div>
-                <p className="text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
-                  You&apos;re still at pure idea stage, mainly need branding/GTM help, or want a
-                  full consulting project inside a one-off session.
+                  <p className="text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
+                  You&apos;re still at pure idea stage, mainly need brand positioning or
+                  demand-gen execution, or want a full consulting project inside a one-off session.
                 </p>
               </div>
             </div>
@@ -251,8 +255,8 @@ export default function EntryOfferPage() {
               <span className="kicker">Why founders book me</span>
               <h2 className="section-title">At the intersection of three things</h2>
               <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
-                Most pricing consultants give you frameworks. Most analysts give you rigor. Most
-                operators give you speed. I sit at the intersection.
+                Most commercial consultants give you frameworks. Most analysts give you rigor. Most
+                operators give you speed. I sit at the intersection of all three.
               </p>
             </div>
             <div className="mx-auto mt-16 grid max-w-5xl gap-10 sm:grid-cols-3">
@@ -296,7 +300,7 @@ export default function EntryOfferPage() {
               <div className="grid gap-10 lg:grid-cols-[1.25fr_auto] lg:items-start">
                 <div>
                   <h3 className="font-serif-playfair text-[24px] font-semibold text-ink sm:text-[28px]">
-                    90-Minute Pricing Strategy Session
+                    90-Minute Commercial Strategy Session
                   </h3>
                   <div className="mt-4 flex items-baseline gap-3">
                     <span className="font-serif-playfair text-[56px] font-semibold leading-none text-ink">
@@ -360,7 +364,7 @@ export default function EntryOfferPage() {
           <div className="section-shell max-w-4xl">
             <div className="cta-panel">
               <h2 className="font-serif-playfair text-ink">
-                Need a clearer pricing direction before your next move?
+                Need a clearer direction on your most important commercial decision?
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
                 Book a focused session and leave with a sharper recommendation, clearer tradeoffs,

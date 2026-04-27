@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils';
 export const metadata: Metadata = {
   title: 'Thank You | Pricing Strategy Session Request Received | Sarah Zou',
   description:
-    'Thank you for applying for the 90-minute pricing strategy session. Your request has been received and will be reviewed shortly.',
+    'Thank you for applying for the 90-minute commercial strategy session. Your request has been received and will be reviewed shortly.',
   robots: {
     index: false,
     follow: false,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Thank You | Pricing Strategy Session Request Received | Sarah Zou',
     description:
-      'Thank you for applying for the 90-minute pricing strategy session. Your request has been received and will be reviewed shortly.',
+      'Thank you for applying for the 90-minute commercial strategy session. Your request has been received and will be reviewed shortly.',
     type: 'website',
     url: 'https://sarahzou.com/thanks/pricing-strategy-session',
   },
@@ -53,7 +53,7 @@ export default function PricingStrategySessionThanksPage() {
               </h1>
             </div>
             <p className="mb-6 text-text text-base sm:text-[17px] leading-[1.65] max-w-lg">
-              I’ve received your request for the 90-minute pricing strategy session. I’ll review what you shared and
+              I’ve received your request for the 90-minute commercial strategy session. I’ll review what you shared and
               reply by email with next steps and proposed times.
             </p>
 

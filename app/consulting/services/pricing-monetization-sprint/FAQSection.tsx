@@ -8,7 +8,7 @@ export default function FAQSection() {
     },
     {
       q: 'Is the session fee credited toward the sprint?',
-      a: 'Yes. If we move into a Pricing & Monetization Sprint within 14 days, the $600 session fee is credited toward the project.',
+      a: 'Yes. If we move into either the Pricing & Monetization Sprint or the Growth Economics Sprint within 14 days, the $600 session fee is credited toward the project.',
     },
     {
       q: 'Will this work if we are pre-revenue?',

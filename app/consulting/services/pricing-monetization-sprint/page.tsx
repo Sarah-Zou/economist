@@ -220,7 +220,7 @@ export default function PricingDiagnosticRevenueBoost() {
                 </p>
                 <p className="meta-note mt-6">
                   Most founders start with the 90-minute session. The $600 fee is credited toward
-                  the sprint within 14 days.
+                  either sprint within 14 days.
                 </p>
                 <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
                   <Link
@@ -366,8 +366,8 @@ export default function PricingDiagnosticRevenueBoost() {
               </div>
 
               <p className="mx-auto mt-10 max-w-3xl rounded-card border border-brand/20 bg-brand-soft p-5 text-center text-[14px] font-medium leading-[1.65] text-brand-ink">
-                If we move into a Pricing &amp; Monetization Sprint within 14 days, the $600 session
-                fee is credited toward the project.
+                If we move into either sprint (Pricing &amp; Monetization or Growth Economics) within
+                14 days, the $600 session fee is credited toward the project.
               </p>
             </div>
           </section>
@@ -613,7 +613,7 @@ export default function PricingDiagnosticRevenueBoost() {
                 name: 'Is the session fee credited toward the sprint?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Yes. If we move into a Pricing & Monetization Sprint within 14 days, the $600 session fee is credited toward the project.',
+                  text: 'Yes. If we move into either the Pricing & Monetization Sprint or the Growth Economics Sprint within 14 days, the $600 session fee is credited toward the project.',
                 },
               },
               {

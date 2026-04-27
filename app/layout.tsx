@@ -26,11 +26,11 @@ const CookieConsentBanner = dynamic(() => import('@/components/CookieConsentBann
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sarahzou.com'),
-  title: 'Fractional Chief Economist for Seed–Series A Tech | Sarah Zou',
-  description: 'Pricing, value metric, and metrics strategy for SaaS, APIs & AI. Lift NRR, improve payback, and ship investor-grade monetization. PhD economist for early-stage startups.',
+  title: 'Commercial Strategy, Pricing & Growth Economics for AI SaaS | Sarah Zou',
+  description: 'Commercial strategy, pricing, monetization, forecasting, and growth economics for AI-native B2B SaaS founders and operators. Fractional chief economist and commercial advisor.',
   openGraph: {
-    title: 'Fractional Chief Economist for Seed–Series A Tech | Sarah Zou',
-    description: 'Pricing, value metric, and metrics strategy for SaaS, APIs & AI. Lift NRR, improve payback, and ship investor-grade monetization. PhD economist for early-stage startups.',
+    title: 'Commercial Strategy, Pricing & Growth Economics for AI SaaS | Sarah Zou',
+    description: 'Commercial strategy, pricing, monetization, forecasting, and growth economics for AI-native B2B SaaS founders and operators. Fractional chief economist and commercial advisor.',
     type: 'website',
   },
 }
@@ -72,7 +72,7 @@ export default function RootLayout({
               "@type": "Person",
               "name": "Sarah Zou",
               "honorificSuffix": "PhD",
-              "jobTitle": "Fractional Chief Economist",
+              "jobTitle": "Commercial Strategy Advisor & Fractional Chief Economist",
               "url": "https://sarahzou.com/about",
               "sameAs": ["https://www.linkedin.com/in/drsarahzou"],
               "worksFor": {
@@ -80,7 +80,7 @@ export default function RootLayout({
                 "name": "EconNova Consulting",
                 "url": "https://sarahzou.com"
               },
-              "knowsAbout": ["Pricing", "Monetization", "Unit Economics", "Experimentation", "Econometrics"]
+              "knowsAbout": ["Pricing", "Monetization", "Commercial Strategy", "GTM Strategy", "Unit Economics", "Revenue Model", "Forecasting", "Growth Economics", "Experimentation", "Econometrics", "BizOps"]
             })
           }}
         />

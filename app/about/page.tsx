@@ -36,11 +36,12 @@ const companyTypes = [
 ]
 
 const bestUseCases = [
-  'You are unsure how to price v1',
-  'Your current pricing is not working',
-  'Your unit economics are blurry',
+  'You need sharper pricing, packaging, or monetization decisions',
+  'Your GTM motion and pricing structure are out of alignment',
+  'Your unit economics or revenue model assumptions need rigorous grounding',
   'Your team has data but not decision clarity',
-  'Investors or leadership need a stronger economic story',
+  'You need investor- or board-ready commercial narratives that hold up under scrutiny',
+  'You need embedded or fractional commercial strategy, finance, or BizOps support',
 ]
 
 const selectedOutcomes: { id: string; icon: typeof Rocket; content: ReactNode }[] = [
@@ -119,9 +120,9 @@ const pillars = [
 ]
 
 export const metadata: Metadata = {
-  title: 'About | Fractional Chief Economist for Tech Startups',
+  title: 'About Sarah Zou | Commercial Strategy Advisor & Economist for AI-Native B2B SaaS',
   description:
-    'Fractional Chief Economist support for pre-seed to Series A tech startups: pricing, monetization, and unit economics with research-grade rigor and startup-speed execution.',
+    'Economist and commercial strategy advisor for AI-native B2B SaaS teams. Pricing, monetization, GTM economics, forecasting, and unit economics — with openness to consulting, fractional, or select full-time roles.',
   robots: {
     index: true,
     follow: true,
@@ -137,18 +138,18 @@ export const metadata: Metadata = {
     canonical: 'https://sarahzou.com/about',
   },
   openGraph: {
-    title: 'About | Fractional Chief Economist for Tech Startups',
+    title: 'About Sarah Zou | Commercial Strategy Advisor & Economist for AI-Native B2B SaaS',
     description:
-      'Pricing, monetization, and unit economics support for startup founders who need clear decisions and investor-defensible economics.',
+      'Commercial strategy, pricing, monetization, GTM economics, and unit economics support for AI-native B2B SaaS founders and operators.',
     type: 'website',
     url: 'https://sarahzou.com/about',
     images: ['https://sarahzou.com/images/about_headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About | Fractional Chief Economist for Tech Startups',
+    title: 'About Sarah Zou | Commercial Strategy Advisor & Economist for AI-Native B2B SaaS',
     description:
-      'Pricing, monetization, and unit economics support for startup founders who need clear decisions and investor-defensible economics.',
+      'Commercial strategy, pricing, monetization, GTM economics, and unit economics support for AI-native B2B SaaS founders and operators.',
     images: ['https://sarahzou.com/images/about_headshot.webp'],
   },
 }
@@ -160,19 +161,24 @@ export default function AboutPage() {
     name: 'Sarah Zou',
     honorificSuffix: 'PhD',
     alternateName: 'Dr. Sarah Zou',
-    jobTitle: 'Fractional Chief Economist',
+    jobTitle: 'Commercial Strategy Advisor & Fractional Chief Economist',
     description:
-      'PhD economist helping early-stage tech startups improve pricing, monetization, and unit economics with research-grade rigor and startup-speed execution.',
+      'PhD economist and commercial strategy advisor helping AI-native B2B SaaS teams make sharper decisions on pricing, monetization, GTM economics, revenue models, forecasting, and unit economics.',
     url: 'https://sarahzou.com/about',
     image: 'https://sarahzou.com/images/about_headshot.webp',
     sameAs: ['https://www.linkedin.com/in/drsarahzou/'],
     knowsAbout: [
+      'Commercial Strategy',
       'Pricing',
       'Monetization',
+      'GTM Strategy',
       'Unit Economics',
+      'Revenue Model',
+      'Forecasting',
+      'Growth Economics',
       'Econometrics',
-      'Startup Economics',
-      'Investor Storytelling',
+      'BizOps',
+      'Investor Narratives',
     ],
   }
 
@@ -202,19 +208,20 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <div className="media-rule mx-auto max-w-[380px] text-center lg:max-w-[400px]">
-                  <p className="media-caption">Economist. Operator. Advisor.</p>
+                  <p className="media-caption">Economist. Strategist. Advisor.</p>
                 </div>
               </div>
 
               <div className="order-1 lg:order-2">
                 <span className="kicker-accent">About</span>
                 <h1 className="mt-5 font-serif-playfair text-ink">
-                  Fractional Chief Economist for technical founders.
+                  Commercial strategy advisor and economist for AI-native B2B SaaS teams.
                 </h1>
                 <p className="lede mt-6 max-w-[34rem]">
-                  I help founders fix pricing, monetization, and unit economics with research-grade
-                  rigor and startup-speed execution &mdash; clear decisions, testable next steps,
-                  and a pricing story you can defend with leadership and investors.
+                  I help founders and operators make better commercial decisions &mdash; on pricing,
+                  monetization, GTM economics, revenue models, forecasting, and unit economics &mdash;
+                  with research-grade rigor and the clarity to defend those decisions with leadership,
+                  investors, and boards.
                 </p>
                 <p className="meta-note mt-5">
                   Best fit for technical teams making consequential commercial decisions.
@@ -243,7 +250,7 @@ export default function AboutPage() {
                         className="inline-flex items-center gap-2 text-[13px] text-text-muted"
                       >
                         <CheckCircle2
-                          className="h-3.5 w-3.5 flex-shrink-0 text-brand"
+                          className="h-3.5 w-3.5 flex-shrink-0 text-text-subtle"
                           strokeWidth={2.25}
                           aria-hidden
                         />
@@ -263,7 +270,7 @@ export default function AboutPage() {
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-7">
                 <span className="kicker">What makes me different</span>
-                <h2 className="section-title">Strategy, rigor, and speed in one person</h2>
+                <h2 className="section-title">Commercial strategy, rigor, and speed in one person</h2>
                 <ul className="mt-6 space-y-3 text-[16px] leading-[1.7] text-text sm:text-[17px]">
                   {[
                     'Most pricing consultants give you frameworks.',
@@ -280,9 +287,10 @@ export default function AboutPage() {
                   I bring all three together.
                 </p>
                 <p className="mt-5 max-w-2xl text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
-                  I combine pricing strategy, unit economics, and econometric rigor in one person —
-                  then turn that work into practical recommendations, fast testable next steps, and
-                  a monetization logic that can stand up to investor and board scrutiny.
+                  I combine commercial strategy, pricing expertise, unit economics, and econometric
+                  rigor in one person — then turn that work into practical recommendations, fast
+                  testable next steps, and a commercial logic that can stand up to investor and
+                  board scrutiny.
                 </p>
               </div>
 
@@ -293,8 +301,8 @@ export default function AboutPage() {
                     return (
                       <div key={pillar.title}>
                         <div className="flex items-start gap-4">
-                          <div className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-[14px] bg-brand-soft">
-                            <Icon className="h-4 w-4 text-brand" aria-hidden />
+                          <div className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-[14px] bg-surface">
+                            <Icon className="h-4 w-4 text-text" aria-hidden />
                           </div>
                           <div>
                             <h3 className="text-[17px] font-semibold leading-tight text-ink">
@@ -325,7 +333,7 @@ export default function AboutPage() {
                     Who I help
                   </span>
                   <h2 className="mt-4 font-serif-playfair text-white">
-                    Pre-seed to Series A teams building:
+                    AI-native B2B SaaS teams — pre-seed to Series A:
                   </h2>
                   <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                     {companyTypes.map((item) => (
@@ -372,14 +380,14 @@ export default function AboutPage() {
             </div>
             <div className="mt-12 divide-y divide-border-soft border-y border-border-soft">
               {selectedOutcomes.map((item) => {
-                const Icon = item.icon
+                  const Icon = item.icon
                 return (
                   <div
                     key={item.id}
                     className="grid gap-4 py-5 md:grid-cols-[auto_1fr] md:items-start md:gap-5"
                   >
-                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-[14px] bg-brand-soft">
-                      <Icon className="h-4 w-4 text-brand" aria-hidden />
+                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-[14px] bg-surface">
+                      <Icon className="h-4 w-4 text-text-subtle" aria-hidden />
                     </div>
                     <p className="text-[16px] leading-[1.8] text-text sm:text-[17px]">
                       {item.content}
@@ -460,7 +468,7 @@ export default function AboutPage() {
               <div className="lg:col-span-5">
                 <span className="kicker">Story</span>
                 <h2 className="section-title">Why I built this practice</h2>
-                <p className="mt-6 font-serif-playfair text-[22px] italic leading-[1.3] text-brand-ink sm:text-[24px]">
+                <p className="mt-6 font-serif-playfair text-[22px] italic leading-[1.3] text-ink sm:text-[24px]">
                   Bridging the gap between academic rigor and startup speed.
                 </p>
               </div>
@@ -488,16 +496,18 @@ export default function AboutPage() {
                       Over time, I saw the same gap again and again: early-stage teams need serious
                       economic thinking, but in a form they can actually use this week.
                     </p>
-                    <p className="mt-4 text-[15px] font-semibold text-brand-ink">
+                    <p className="mt-4 text-[15px] font-semibold text-ink">
                       That is the gap I fill.
                     </p>
                   </blockquote>
 
                   <p>
                     I started <strong className="text-ink">EconNova Consulting</strong> to offer
-                    something different: rigorous economic thinking, practical strategy, and clear
-                    decision support designed for founders who need to move quickly and get it
-                    right.
+                    something different: rigorous economic thinking, practical commercial strategy,
+                    and clear decision support designed for founders and operators who need to move
+                    quickly and get it right. I work as a consultant, fractional advisor, or
+                    embedded strategist — and for the right team, I am open to select full-time
+                    roles in commercial strategy, finance, or BizOps.
                   </p>
                 </div>
               </div>
@@ -510,11 +520,11 @@ export default function AboutPage() {
           <div className="section-shell max-w-4xl">
             <div className="cta-panel">
               <h2 className="font-serif-playfair text-ink">
-                Need sharper pricing, clearer economics, or a monetization decision you can defend?
+                Need sharper commercial strategy, clearer economics, or a pricing decision you can defend?
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
-                Book a free consult and I&apos;ll help you identify the biggest pricing or
-                unit-economics risk in your business.
+                Book a free consult and I&apos;ll help you identify the most important commercial or
+                unit-economics question in your business — and what to do about it.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link href={PRIMARY_CTA_HREF} className={primaryButtonLg}>

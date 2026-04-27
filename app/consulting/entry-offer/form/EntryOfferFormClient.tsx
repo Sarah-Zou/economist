@@ -47,7 +47,7 @@ export default function EntryOfferFormClient() {
 
     setUtm(nextUtm);
     setSourcePage(url.pathname + (url.search || ''));
-    setPageTitle(document.title || '90-Minute Pricing Strategy Session Application');
+    setPageTitle(document.title || '90-Minute Commercial Strategy Session Application');
   }, []);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -98,10 +98,10 @@ export default function EntryOfferFormClient() {
               href="/consulting/entry-offer"
               className="inline-flex items-center rounded-full border border-border-subtle bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-ink transition-colors hover:border-brand/40 hover:bg-brand-soft"
             >
-              90-Minute Pricing Strategy Session
+              90-Minute Commercial Strategy Session
             </Link>
             <h1 className="mt-5 font-serif-playfair text-ink">
-              Request the 90-Minute Pricing Strategy Session
+              Request the 90-Minute Commercial Strategy Session
             </h1>
             <p className="mt-4 text-[16px] leading-[1.7] text-text-muted sm:text-[17px]">
               Share a few details so I can quickly tell whether this session is the right
@@ -204,8 +204,11 @@ export default function EntryOfferFormClient() {
                 <option value="Packaging / tiers">Packaging / tiers</option>
                 <option value="Value metric">Value metric</option>
                 <option value="Price level">Price level</option>
+                <option value="GTM structure / pricing alignment">GTM structure / pricing alignment</option>
+                <option value="Revenue model / unit economics">Revenue model / unit economics</option>
+                <option value="Forecasting / forward model">Forecasting / forward model</option>
+                <option value="Investor-ready commercial narrative">Investor-ready commercial narrative</option>
                 <option value="Experiment / test design">Experiment / test design</option>
-                <option value="Investor-ready pricing story">Investor-ready pricing story</option>
                 <option value="Not sure yet">Not sure yet</option>
               </select>
             </div>
@@ -292,10 +295,10 @@ export default function EntryOfferFormClient() {
             </h2>
             <ul className="mt-4 space-y-2.5 text-[15px] leading-[1.6] text-text">
               {[
-                'A clearer recommendation on pricing model and value metric',
+                'A clear recommendation on pricing model, value metric, GTM structure, or revenue logic',
                 'Concrete guidance on packages, tiers, and entry offer',
                 'A short memo within 48 hours with risks and next steps',
-                'A chance to pressure-test your current or planned pricing',
+                'A chance to pressure-test your current or planned commercial model',
               ].map((item) => (
                 <li key={item} className="flex gap-2.5">
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" aria-hidden />

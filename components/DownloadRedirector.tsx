@@ -45,7 +45,7 @@ export default function DownloadRedirector({ download, slug }: { download: Downl
           <p className="text-[#4b636e] mb-4">{error}</p>
           <a 
             href={`/downloads/${download.filename}`} 
-            className="bg-brand text-brand-on px-6 py-3 rounded-full text-[19px] font-bold leading-[1.2] hover:bg-brand-ink transition-colors"
+            className="bg-brand text-brand-on px-6 py-3 rounded-full text-[19px] font-bold leading-[1.2] hover:bg-brand transition-colors"
           >
             Try Direct Download
           </a>

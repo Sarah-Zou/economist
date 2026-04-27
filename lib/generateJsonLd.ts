@@ -185,7 +185,7 @@ export function generateOrganizationProfessionalServiceJsonLd() {
     "name": "EconNova Consulting",
     "url": "https://sarahzou.com",
     "logo": "https://sarahzou.com/images/econnova_logo.png",
-    "description": "Fractional Chief Economist and pricing strategy for early-stage tech. Pricing, metrics, unit economics, and investor-grade economic storytelling.",
+    "description": "Commercial strategy, pricing, and growth economics for AI-native B2B SaaS teams. Pricing, monetization, GTM economics, forecasting, unit economics, and investor-ready commercial narratives.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Princeton",

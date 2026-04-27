@@ -5,9 +5,9 @@ import Script from 'next/script'
 import CalendlyEmbed from '@/components/CalendlyEmbed'
 
 export const metadata: Metadata = {
-  title: 'Book a Free 15-Min Consultation | Pricing & Metrics for Seed–Series A | Sarah Zou',
+  title: 'Book a Free Consult | Commercial Strategy & Pricing for AI-Native B2B SaaS | Sarah Zou',
   description:
-    'Book a free 15-min call. For Seed–Series A SaaS, APIs & AI: pricing, value metric, NRR, payback, and monetization. No prep needed — get tailored next steps.',
+    'Book a free 15-min call with Sarah Zou — commercial strategy, pricing, monetization, GTM economics, and unit economics for AI-native B2B SaaS founders and operators. No prep needed.',
   robots: {
     index: true,
     follow: true,
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     canonical: 'https://sarahzou.com/book',
   },
   openGraph: {
-    title: 'Book a Free 15-Min Consultation | Pricing & Metrics for Seed–Series A | Sarah Zou',
+    title: 'Book a Free Consult | Commercial Strategy & Pricing for AI-Native B2B SaaS | Sarah Zou',
     description:
-      'Book a free 15-min call. For Seed–Series A SaaS, APIs & AI: pricing, value metric, NRR, payback, and monetization. No prep needed — get tailored next steps.',
+      'Book a free 15-min call — commercial strategy, pricing, monetization, GTM economics, and unit economics for AI-native B2B SaaS founders and operators.',
     type: 'website',
     url: 'https://sarahzou.com/book',
   },
@@ -33,8 +33,10 @@ export default function BookPage() {
             <span className="kicker-accent">Free 15-min consult</span>
             <h1 className="mt-4 font-serif-playfair text-ink">Book a free 15-min consultation</h1>
             <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
-              Pick a time below. After you book, you&apos;ll get a confirmation and calendar invite.
-              If nothing works,{' '}
+              Pick a time below. We&apos;ll use the 15 minutes to sharpen the commercial question
+              — pricing, GTM economics, revenue model, or unit economics — and figure out the right
+              next step. After you book, you&apos;ll get a confirmation and calendar invite. If
+              nothing works,{' '}
               <a
                 href="mailto:hello@sarahzou.com"
                 className="font-medium text-brand-ink underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-dark"
@@ -79,15 +81,17 @@ export default function BookPage() {
               <ul className="mt-3 space-y-2 text-[14px] leading-[1.65] text-text-muted">
                 <li>
                   <span className="font-semibold text-ink">Bring:</span> a quick overview of your
-                  product + current pricing (or your latest experiment idea).
+                  product, commercial model, or the decision you&apos;re working through.
                 </li>
                 <li>
                   <span className="font-semibold text-ink">I&apos;ll help:</span> sharpen the
-                  problem, outline options, and suggest next steps.
+                  commercial problem — pricing, GTM, revenue model, or unit economics — outline
+                  options, and suggest next steps.
                 </li>
                 <li>
                   <span className="font-semibold text-ink">If we&apos;re a fit:</span> I&apos;ll
-                  recommend the best engagement (or point you to resources).
+                  recommend the best engagement — session, sprint, fractional support, or point you
+                  to resources.
                 </li>
               </ul>
             </div>

@@ -5,7 +5,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Thank You | Entry Offer Request Received | Sarah Zou',
   description:
-    'Thank you for applying for the 90-minute pricing strategy session. Your request has been received and will be reviewed shortly.',
+    'Thank you for applying for the 90-minute commercial strategy session. Your request has been received and will be reviewed shortly.',
   robots: {
     index: false,
     follow: false,
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Thank You | Entry Offer Request Received | Sarah Zou',
     description:
-      'Thank you for applying for the 90-minute pricing strategy session. Your request has been received and will be reviewed shortly.',
+      'Thank you for applying for the 90-minute commercial strategy session. Your request has been received and will be reviewed shortly.',
     type: 'website',
     url: 'https://sarahzou.com/thanks/entry-offer',
   },
@@ -51,14 +51,14 @@ export default function EntryOfferThanksPage() {
                 </h1>
               </div>
               <p className="mb-6 text-base sm:text-[17px] text-text leading-[1.65] max-w-lg">
-                I’ve received your request for the 90-minute pricing strategy session. I’ll review what you shared and
+                I’ve received your request for the 90-minute commercial strategy session. I’ll review what you shared and
                 reply by email with next steps and proposed times.
               </p>
 
               <div className="w-full space-y-4 mb-8">
                 <Link
                   href="/book"
-                  className="inline-flex items-center justify-center w-full sm:w-auto min-h-[48px] px-6 sm:px-8 py-3.5 sm:py-4 bg-brand hover:bg-brand-ink text-brand-on rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg transition-all shadow-sm hover:shadow-md"
+                  className="inline-flex items-center justify-center w-full sm:w-auto min-h-[48px] px-6 sm:px-8 py-3.5 sm:py-4 bg-brand hover:bg-brand text-brand-on rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg transition-all shadow-sm hover:shadow-md"
                 >
                   Prefer live scheduling? Book a free 15-min consult
                 </Link>

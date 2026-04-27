@@ -412,8 +412,8 @@ export default function FreeToolsPage() {
             </h2>
             <p className="mx-auto mt-4 max-w-3xl text-base leading-[1.65] text-text-muted sm:text-[17px]">
               The free resources are built to help you self-serve. But if you need a faster
-              recommendation, clearer tradeoffs, or direct help with a live pricing decision, start
-              with the 90-minute Pricing Strategy Session.
+              recommendation, clearer tradeoffs, or direct help with a live commercial decision, start
+              with the 90-minute commercial strategy session.
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
               <Link href="/consulting/entry-offer/form" className={primaryButtonSm}>

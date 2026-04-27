@@ -42,14 +42,15 @@ const Footer = () => {
               </div>
             </Link>
             <p className="mt-6 max-w-sm text-[15px] leading-[1.8] text-text-muted">
-              Fractional Chief Economist for AI and SaaS founders. Pricing, unit economics, and
-              monetization decisions with research-grade rigor and operator-speed execution.
+              Commercial strategy, pricing, and growth economics for AI-native B2B SaaS teams.
+              Fractional chief economist and commercial advisor — from pricing and GTM decisions to
+              unit economics, forecasting, and investor-ready narratives.
             </p>
             <Link
               href="/consulting/entry-offer/form"
               className="mt-7 inline-flex items-center gap-1.5 text-[14px] font-semibold text-brand-ink transition-colors hover:text-brand-dark"
             >
-              Book the 90-minute session
+              Book the 90-minute strategy session
             </Link>
           </div>
 
@@ -85,7 +86,7 @@ const Footer = () => {
           <div className="md:text-right">
             <p className="kicker-muted mb-4 md:text-right">Contact</p>
             <p className="mb-5 text-[14px] leading-[1.7] text-text-muted md:ml-auto md:max-w-[14rem]">
-              For live pricing decisions, the fastest path is the 90-minute strategy session.
+              For commercial strategy, pricing, or GTM questions, the fastest path is the free consult.
             </p>
             <div className="flex items-center gap-3 md:justify-end">
               <Link

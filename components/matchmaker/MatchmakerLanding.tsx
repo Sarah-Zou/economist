@@ -40,7 +40,7 @@ export function MatchmakerLanding() {
           <button
             type="button"
             onClick={() => setStarted(true)}
-            className="mt-7 inline-flex min-h-12 w-full max-w-xs items-center justify-center gap-2 rounded-[14px] bg-brand px-6 py-3 text-base font-semibold text-white shadow-card transition hover:-translate-y-px hover:bg-brand-ink hover:shadow-card-hover sm:mt-8 sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
+            className="mt-7 inline-flex min-h-12 w-full max-w-xs items-center justify-center gap-2 rounded-[14px] bg-brand px-6 py-3 text-base font-semibold text-white shadow-card transition hover:bg-brand  sm:mt-8 sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
           >
             Start the Matchmaker
             <ArrowRight className="h-5 w-5" />

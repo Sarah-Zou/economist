@@ -1990,7 +1990,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                   <Link
                     key={related.slug}
                     href={`/wiki/pricing/${related.slug}`}
-                    className="block rounded-card border border-border-soft bg-white/88 p-4 shadow-card transition-all hover:-translate-y-px hover:border-brand/30 hover:shadow-card-hover"
+                    className="block rounded-card border border-border-soft bg-white/88 p-4 shadow-card transition-all hover:border-brand/30 "
                   >
                     <h3 className="font-semibold text-text mb-2">{related.title}</h3>
                     <p className="text-base sm:text-[17px] text-text leading-[1.65]">
@@ -2019,7 +2019,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               </div>
               <Link
                 href="/book"
-                className="inline-flex h-12 items-center justify-center rounded-[14px] bg-brand px-6.5 text-[16px] font-semibold leading-none text-brand-on shadow-card transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-px hover:bg-brand-ink hover:shadow-card-hover"
+                className="inline-flex h-[3.25rem] min-w-[220px] items-center justify-center rounded-[12px] bg-brand px-8 text-[16px] font-semibold leading-none text-brand-on shadow-card transition-[background-color,box-shadow] duration-200 hover:bg-brand"
               >
                 Book a 15-min intro call
               </Link>

@@ -998,8 +998,34 @@ function createMarkdownComponents() {
           </span>
         )
       }
-      // Fallback for external images
+
+      // Use next/image for configured remote hosts to keep lint clean and preserve static-export safety.
+      const isConfiguredRemoteImage = /^https:\/\/(?:assets\.calendly\.com|cdn\.jsdelivr\.net)\//.test(
+        src || ''
+      )
+      if (isConfiguredRemoteImage) {
+        const explicitWidth = Number(props.width)
+        const explicitHeight = Number(props.height)
+        const width = Number.isFinite(explicitWidth) && explicitWidth > 0 ? explicitWidth : 800
+        const height = Number.isFinite(explicitHeight) && explicitHeight > 0 ? explicitHeight : 600
+
+        return (
+          <span className="my-8 block text-center">
+            <Image
+              src={src}
+              alt={alt || ''}
+              width={width}
+              height={height}
+              className="inline-block rounded-lg shadow-card h-auto max-w-full"
+              {...props}
+            />
+          </span>
+        )
+      }
+
+      // Fallback for unconfigured external images from markdown.
       return (
+        // eslint-disable-next-line @next/next/no-img-element
         <img
           src={src}
           alt={alt}
@@ -2168,7 +2194,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
                             </div>
                             <Link
                               href="/book"
-                              className="inline-flex h-12 items-center justify-center rounded-[14px] bg-brand px-6.5 text-[16px] font-semibold leading-none text-brand-on shadow-card transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-px hover:bg-brand-ink hover:shadow-card-hover"
+                              className="inline-flex h-[3.25rem] min-w-[220px] items-center justify-center rounded-[12px] bg-brand px-8 text-[16px] font-semibold leading-none text-brand-on shadow-card transition-[background-color,box-shadow] duration-200 hover:bg-brand"
                             >
                               Book a 15-min intro call
                             </Link>
@@ -2204,7 +2230,7 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
           <div className="mx-auto flex max-w-[90rem] gap-3 px-4 py-3">
             <Link
               href="/book"
-              className="flex-1 rounded-[14px] bg-brand px-4 py-3 text-center text-[16px] font-semibold leading-none text-brand-on transition-colors shadow-card hover:bg-brand-ink"
+              className="flex-1 rounded-[14px] bg-brand px-4 py-3 text-center text-[16px] font-semibold leading-none text-brand-on transition-colors shadow-card hover:bg-brand"
             >
               Book Free Consult
             </Link>

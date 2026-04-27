@@ -27,7 +27,7 @@ export default function WikiError({
         <div className="flex gap-4 justify-center">
           <button
             onClick={reset}
-            className="bg-brand text-brand-on px-6 py-3 rounded-lg text-[18px] font-semibold leading-[1.2] hover:bg-brand-ink transition-colors"
+            className="bg-brand text-brand-on px-6 py-3 rounded-lg text-[18px] font-semibold leading-[1.2] hover:bg-brand transition-colors"
           >
             Try again
           </button>

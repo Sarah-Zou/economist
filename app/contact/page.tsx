@@ -31,9 +31,6 @@ export default function ContactPage() {
               about the decision you&apos;re working through.
             </p>
 
-            <p className="meta-note mt-6">
-              Primary action: book the consult if the decision is live.
-            </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link href="/book" className={primaryButtonLg}>
                 Book Free Consult
@@ -43,7 +40,11 @@ export default function ContactPage() {
               </button>
             </div>
 
-            <p className="mx-auto mt-8 max-w-xl text-[14px] leading-[1.75] text-text-subtle">
+            <p className="meta-note mt-6">
+              Primary action: book the consult if the decision is live.
+            </p>
+
+            <p className="mx-auto mt-6 max-w-xl text-[14px] leading-[1.75] text-text-subtle">
               Expect a reply in 1-2 business days. If your question is urgent, booking the consult
               is usually the fastest path.
             </p>
@@ -58,14 +59,14 @@ export default function ContactPage() {
               Prefer email? Send a Message
             </h2>
             <p className="mb-8 mt-4 text-center text-[15px] leading-[1.8] text-text-muted">
-              Give me the short version of the problem, pricing question, or decision in motion.
-              Want a faster answer?{' '}
+              Give me the short version of the commercial question, pricing issue, or decision in
+              motion. Want a faster answer?{' '}
               <Link href="/book" className={cn(brandLink, 'font-medium')}>
                 Book a 15-min call
               </Link>
             </p>
             <ContactForm
-              messagePlaceholder="Share the context, current pricing question, and what outcome you want."
+              messagePlaceholder="Share the context, commercial question, current pricing or revenue model if relevant, and what outcome you want."
               buttonText="Send message"
             />
             <p className="mt-6 text-center text-[13px] leading-[1.7] text-text-subtle">

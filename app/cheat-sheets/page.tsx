@@ -65,7 +65,7 @@ export default function CheatSheetsPage() {
                 </h3>
                 <p className="mb-6 max-w-[32rem] text-[15px] leading-[1.8] text-text-muted sm:text-[16px]">
                   Subscribe once, get the roadmap in your welcome email, and keep receiving weekly
-                  pricing insights built for technical founders.
+                  insights on pricing, monetization, and commercial economics for technical founders.
                 </p>
                 <div className="mb-8 flex w-full justify-center md:justify-start">
                   <iframe

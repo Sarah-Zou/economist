@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { primaryButtonSm } from '@/lib/brandStyles'
+import { outlineButtonSm } from '@/lib/brandStyles'
 
 const navLinks = [
   { href: '/consulting', label: 'Work With Me' },
@@ -16,37 +16,38 @@ const freeResourceLinks = [
 ]
 
 const navLinkClass =
-  'nav-link text-[13px] font-medium uppercase tracking-[0.1em] text-text-subtle transition-colors hover:text-ink'
+  'nav-link text-[12px] font-semibold uppercase tracking-[0.14em] text-text-subtle transition-colors hover:text-ink'
 
 const Navbar = () => {
   return (
-    <nav className="sticky top-0 z-50 bg-page/88 backdrop-blur-md supports-[backdrop-filter]:bg-page/78">
+    <nav className="sticky top-0 z-50 bg-page/94 backdrop-blur-md supports-[backdrop-filter]:bg-page/86">
       <div className="section-shell">
-        <div className="relative flex h-[68px] items-center justify-between border-b border-border-soft/80 md:h-[76px]">
-          <Link href="/" className="flex items-center gap-3 sm:gap-3.5">
+        <div className="relative flex h-[64px] items-center justify-between border-b border-border-soft/80 md:h-[72px]">
+          <Link href="/" className="flex min-w-0 items-center gap-3">
             <Image
               src="/images/econnova-logo-240.webp"
               alt="EconNova Consulting Logo"
               width={122}
               height={43}
-              className="h-8.5 w-auto"
+              className="h-[34px] w-[96px] object-contain sm:h-[38px] sm:w-[108px]"
+              priority
             />
-            <div className="flex flex-col">
-              <span className="font-serif-playfair text-[1.05rem] font-semibold leading-tight text-ink sm:text-[1.2rem]">
+            <div className="hidden min-w-0 flex-col border-l border-border-soft pl-3 sm:flex">
+              <span className="font-serif-playfair text-[1rem] font-semibold leading-tight text-ink sm:text-[1.08rem]">
                 Sarah Zou, PhD
               </span>
-              <span className="hidden text-[11px] font-medium uppercase tracking-[0.18em] text-text-subtle sm:block">
-                Fractional Chief Economist
+              <span className="hidden text-[10px] font-semibold uppercase tracking-[0.2em] text-text-subtle lg:block">
+                Pricing · GTM · Growth Economics
               </span>
             </div>
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden items-center gap-8 md:flex">
+          <div className="hidden items-center gap-6 lg:flex lg:gap-7">
             <Link href="/consulting" className={navLinkClass}>
               Work With Me
             </Link>
-            <div className="relative group">
+            <div className="relative flex items-center group">
               <Link href="/free-tools" className={navLinkClass} aria-haspopup="menu">
                 Free Resources
               </Link>
@@ -67,20 +68,20 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-            <Link href="/consulting/entry-offer/form" className={`${primaryButtonSm} shadow-none`}>
-              Book Session
+            <Link href="/consulting/entry-offer/form" className={`${outlineButtonSm} shadow-none`}>
+              Book Strategy Session
             </Link>
           </div>
 
           {/* Mobile toggle */}
-          <details className="md:hidden group">
+          <details className="lg:hidden group">
             <summary
               className="list-none cursor-pointer rounded-[12px] px-3.5 py-2 text-[14px] font-semibold text-text-muted transition-colors hover:bg-white hover:text-ink"
               aria-label="Toggle menu"
             >
               Menu
             </summary>
-            <div className="absolute inset-x-0 top-[68px] border-t border-border-soft bg-page px-5 py-5 shadow-card md:top-[76px]">
+            <div className="absolute inset-x-0 top-[64px] border-t border-border-soft bg-page px-5 py-5 shadow-card md:top-[72px]">
               <div className="space-y-1">
                 <Link
                   href="/consulting"
@@ -115,9 +116,9 @@ const Navbar = () => {
               </div>
               <Link
                 href="/consulting/entry-offer/form"
-                className={`${primaryButtonSm} mt-5 flex w-full justify-center text-center`}
+                className={`${outlineButtonSm} mt-5 flex w-full justify-center text-center`}
               >
-                Book Session
+                Book Strategy Session
               </Link>
             </div>
           </details>

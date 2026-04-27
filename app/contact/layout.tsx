@@ -2,8 +2,8 @@ import { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
-  title: "Contact Sarah Zou | Pricing & Metrics for Seed–Series A Startups",
-  description: "Contact for pricing sprint, metrics sprint, or fractional chief economist. SaaS, APIs & AI. Book a free 15-min call or send a message—reply in 1–2 business days.",
+  title: "Contact Sarah Zou | Commercial Strategy, Pricing & Growth Economics for AI SaaS",
+  description: "Get in touch about commercial strategy, pricing, GTM economics, fractional support, or embedded and full-time roles. Book a free consult or send a message — reply in 1–2 business days.",
   robots: {
     index: true,
     follow: true,
@@ -19,15 +19,15 @@ export const metadata: Metadata = {
     canonical: "https://sarahzou.com/contact",
   },
   openGraph: {
-    title: "Contact Sarah Zou | Pricing & Metrics for Seed–Series A Startups",
-    description: "Contact for pricing sprint, metrics sprint, or fractional chief economist. SaaS, APIs & AI. Book a free 15-min call or send a message—reply in 1–2 business days.",
+    title: "Contact Sarah Zou | Commercial Strategy, Pricing & Growth Economics for AI SaaS",
+    description: "Get in touch about commercial strategy, pricing, GTM economics, fractional support, or embedded and full-time roles. Book a free consult or send a message.",
     type: "website",
     url: "https://sarahzou.com/contact",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Sarah Zou | Pricing & Metrics for Seed–Series A Startups",
-    description: "Contact for pricing sprint, metrics sprint, or fractional chief economist. SaaS, APIs & AI. Book a free 15-min call or send a message—reply in 1–2 business days.",
+    title: "Contact Sarah Zou | Commercial Strategy, Pricing & Growth Economics for AI SaaS",
+    description: "Get in touch about commercial strategy, pricing, GTM economics, fractional support, or embedded and full-time roles. Book a free consult or send a message.",
   },
 };
 

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { Metadata } from 'next'
 import { ArrowRight, CheckCircle2, Target } from 'lucide-react'
-import { brandLink, primaryButton, primaryButtonLg } from '@/lib/brandStyles'
+import { brandLink, outlineButton, primaryButton, primaryButtonLg } from '@/lib/brandStyles'
 
 const SESSION_INFO_HREF = '/consulting/entry-offer'
 const PRICING_SPRINT_HREF = '/consulting/services/pricing-monetization-sprint'
@@ -18,9 +18,9 @@ function SessionEmbedLink({ children }: { children: ReactNode }) {
 }
 
 export const metadata: Metadata = {
-  title: 'Work with Sarah Zou | Pricing & Monetization for AI and SaaS Founders',
+  title: 'Work With Sarah Zou | Commercial Strategy, Pricing & Growth Economics for AI SaaS',
   description:
-    'Three focused engagements for AI and SaaS founders — a 90-minute strategy session, a pricing or metrics sprint, or a fractional Chief Economist retainer. Most founders start with the session.',
+    'Ways to work together on commercial strategy, pricing, GTM economics, revenue model, forecasting, and unit economics — from a 90-minute session to fractional or embedded strategy support.',
   robots: {
     index: true,
     follow: true,
@@ -36,26 +36,27 @@ export const metadata: Metadata = {
     canonical: 'https://sarahzou.com/consulting',
   },
   openGraph: {
-    title: 'Work with Sarah Zou | Pricing & Monetization for AI and SaaS Founders',
+    title: 'Work With Sarah Zou | Commercial Strategy, Pricing & Growth Economics for AI SaaS',
     description:
-      'Three focused engagements for AI and SaaS founders. Most start with a 90-minute pricing strategy session.',
+      'Commercial strategy, pricing, GTM economics, forecasting, and unit economics support for AI-native B2B SaaS teams. Start with a free consult or the 90-minute strategy session.',
     type: 'website',
     url: 'https://sarahzou.com/consulting',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Work with Sarah Zou | Pricing & Monetization for AI and SaaS Founders',
+    title: 'Work With Sarah Zou | Commercial Strategy, Pricing & Growth Economics for AI SaaS',
     description:
-      'Three focused engagements for AI and SaaS founders. Most start with a 90-minute pricing strategy session.',
+      'Commercial strategy, pricing, GTM economics, forecasting, and unit economics support for AI-native B2B SaaS teams. Start with a free consult or the 90-minute strategy session.',
   },
 }
 
 const CHALLENGES = [
   "You're about to launch and need a pricing model that won't need to be redone in six months.",
-  "Your pricing feels wrong, but you can't tell if it's the model, the packaging, or the price level.",
-  "You're debating seat-based vs usage-based vs hybrid and want a defensible decision.",
-  'Conversion or expansion is weaker than expected and you need to know why.',
-  'You want senior pricing and monetization thinking without a full-time strategy hire.',
+  "Your pricing or monetization feels wrong, but you can't tell if it's the model, the packaging, or the price level.",
+  "You're debating seat-based vs usage-based vs hybrid — or trying to align pricing with your GTM motion.",
+  'Your revenue model, unit economics, or forecasting assumptions need to hold up to investor scrutiny.',
+  "You need to structure messy commercial questions — GTM priorities, growth economics, or BizOps decisions — into something executable.",
+  'You want senior commercial strategy and monetization thinking without a full-time strategy hire.',
 ]
 
 const SESSION_OUTPUTS = [
@@ -67,8 +68,8 @@ const SESSION_OUTPUTS = [
 
 const SESSION_QUESTIONS = [
   'What pricing model should we use?',
-  'Is our value metric wrong?',
-  'Seat, usage, or hybrid?',
+  'Does our GTM motion match our monetization structure?',
+  'Is our unit economics story investor-ready?',
 ]
 
 const OTHER_PATHS = [
@@ -81,35 +82,35 @@ const OTHER_PATHS = [
     href: '/consulting/services/pricing-monetization-sprint',
   },
   {
-    title: 'Metrics & Experimentation Sprint',
-    bestFor: "Teams whose data is noisy and whose decisions aren't improving.",
-    scope: '2–3 weeks. KPI design, measurement, experiment priorities.',
+    title: 'Growth Economics, Forecasting & Unit Economics',
+    bestFor: 'Teams whose revenue model, KPI structure, or investor assumptions need rigorous grounding.',
+    scope: '2–3 weeks. Revenue model design, KPI logic, forward models, investor narrative.',
     price: 'From $6K',
     cta: 'Explore the sprint',
     href: '/consulting/services/metrics-experimentation-sprint',
   },
   {
-    title: 'Fractional Chief Economist Retainer',
-    bestFor: 'Founders who want ongoing monetization and board-facing economics support.',
-    scope: 'Monthly. Weekly advisory, board prep, strategic reviews.',
+    title: 'Fractional or Embedded Strategy Support',
+    bestFor: 'Teams that need ongoing commercial strategy, monetization, and board-facing economics — or a strong embedded hire.',
+    scope: 'Monthly. Weekly advisory, board prep, strategic reviews. Open to select embedded or full-time roles in commercial strategy, finance, or BizOps.',
     price: 'From $4K/mo',
-    cta: 'Explore the retainer',
+    cta: 'Explore this option',
     href: '/consulting/services/on-call-economist-retainer',
   },
 ]
 
 const DIFFERENTIATORS = [
   {
-    title: 'Pricing research, applied',
-    copy: 'Grounded in published work on pricing, value metrics, and willingness-to-pay — not generic frameworks.',
+    title: 'Commercial economics, applied',
+    copy: 'Grounded in pricing research, revenue model logic, and econometric rigor — not generic frameworks or consulting boilerplate.',
   },
   {
     title: 'Decisions, not deliverables',
     copy: 'Every engagement ends with a specific recommendation and the tradeoffs named — not a 40-page deck you have to interpret.',
   },
   {
-    title: 'Built for founders, not CFOs',
-    copy: 'Outputs are short, defensible, and board-ready. You can act on them the same week.',
+    title: 'Built for founders and operators',
+    copy: 'Outputs are short, defensible, and board-ready — useful whether you\'re the founder, the COO, or the CFO trying to make a call this week.',
   },
 ]
 
@@ -123,19 +124,19 @@ const CREDENTIALS = [
 const WORK_STEPS = [
   {
     title: 'You share context',
-    copy: 'I review the relevant background before we meet.',
+    copy: 'I review the relevant background — commercial model, pricing, metrics, or team structure — before we meet.',
   },
   {
     title: 'We identify the real problem',
-    copy: 'Model, value metric, packaging, price logic, KPI structure, or experiment design.',
+    copy: 'Pricing model, GTM economics, revenue logic, unit economics, KPI structure, or forecasting assumptions.',
   },
   {
     title: 'We work through the decision',
-    copy: 'You get a clear recommendation and the key tradeoffs in plain English.',
+    copy: 'You get a clear recommendation and the key tradeoffs in plain English — no vague strategy, no 40-page decks.',
   },
   {
     title: 'You leave with next steps',
-    copy: 'A concrete next move — one focused change, or a broader engagement if warranted.',
+    copy: 'A concrete next move — one focused change, or a broader engagement if the work warrants it.',
   },
 ]
 
@@ -162,17 +163,22 @@ const FAQ_ITEMS: Array<{
   {
     qSchema: 'Should I start with the 90-minute session or a sprint?',
     question: 'Should I start with the 90-minute session or a sprint?',
-    a: 'Start with the session if you have one specific decision in motion or want a lower-risk first step. Choose a sprint if you already know the work is broader. If we move into a Pricing & Monetization Sprint within 14 days, the $600 session fee is credited toward the sprint.',
+    a: 'Start with the session if you have one specific commercial decision in motion or want a lower-risk first step. Choose a sprint if you already know the work is broader — pricing structure, revenue model, or growth economics. If we move into a Pricing & Monetization Sprint within 14 days, the $600 session fee is credited toward the sprint.',
   },
   {
     qSchema: 'What if I do not know exactly what I need?',
     question: "What if I don't know exactly what I need?",
-    a: "That's common — and it's part of what the session is for. We use the 90 minutes to pinpoint the real problem and decide whether you need one focused change or a broader engagement.",
+    a: "That's common — and it's part of what the session is for. We use the 90 minutes to pinpoint the real commercial problem and decide whether you need one focused change or a broader engagement.",
   },
   {
     qSchema: 'Is this only for pricing?',
     question: 'Is this only for pricing?',
-    a: 'No. Founders also work with me on monetization structure, KPI design, experimentation priorities, and investor-facing unit economics — anywhere an economist\u2019s toolkit makes the decision sharper.',
+    a: 'No. Pricing and monetization are the core, but founders and operators also work with me on GTM economics, revenue model design, forecasting, unit economics, KPI structure, and investor-ready commercial narratives — anywhere economic rigor makes the decision sharper.',
+  },
+  {
+    qSchema: 'Are you open to embedded or full-time roles?',
+    question: 'Are you open to embedded or full-time roles?',
+    a: 'For the right team, yes. I am open to select embedded, fractional, or full-time roles where the work centers on commercial strategy, pricing, growth economics, finance, or BizOps. The best starting point is a conversation — book a free consult or reach out directly.',
   },
 ]
 
@@ -185,27 +191,28 @@ export default function ConsultingPage() {
           <section className="bg-hero-tint">
             <div className="section-shell pb-20 pt-12 sm:pb-24 sm:pt-16 lg:pb-30 lg:pt-24">
               <div className="section-header max-w-[44rem]">
-                <span className="kicker-accent">Work with me</span>
+                <span className="kicker-accent">Ways to work together</span>
                 <h1 className="mt-5 font-serif-playfair text-ink">
-                  Three focused ways to work together on live pricing decisions
+                  Commercial strategy, pricing, and growth economics support — at the level you need.
                 </h1>
                 <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
-                  Most founders start with a 90-minute session, then extend into a sprint or
-                  retainer only if the work calls for it.
+                  Most founders start with a 90-minute session. Deeper engagements are available
+                  for bigger questions — from pricing sprints to growth economics support and
+                  fractional or embedded strategy roles.
                 </p>
-                <p className="meta-note mt-6">Primary action: book the 90-minute session.</p>
-                <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-5">
+                <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
                   <Link
                     href={PRIMARY_CTA_HREF}
-                    className={`${primaryButtonLg} w-full max-w-[360px] sm:w-auto`}
+                    className={`${primaryButtonLg} w-full sm:w-auto`}
                   >
                     Book the 90-Minute Session
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
-                  <Link href={SECONDARY_CTA_HREF} className="display-link">
+                  <Link href={SECONDARY_CTA_HREF} className={`${outlineButton} w-full sm:w-auto`}>
                     Not sure? Start with a free 15-min consult
                   </Link>
                 </div>
+                <p className="meta-note mt-6">The 90-minute session is the cleanest next step for most.</p>
               </div>
             </div>
           </section>
@@ -215,12 +222,12 @@ export default function ConsultingPage() {
             <div className="section-shell max-w-3xl">
               <div className="section-header">
                 <span className="kicker">Is this for you?</span>
-                <h2 className="section-title">Founders come to me when</h2>
+                <h2 className="section-title">Founders and operators come to me when</h2>
               </div>
               <ul className="mt-10 divide-y divide-border-soft border-y border-border-soft">
                 {CHALLENGES.map((item) => (
                   <li key={item} className="flex items-start gap-4 py-5">
-                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-brand" aria-hidden />
+                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-text-subtle" aria-hidden />
                     <span className="text-[16px] leading-[1.65] text-text">{item}</span>
                   </li>
                 ))}
@@ -241,11 +248,11 @@ export default function ConsultingPage() {
                   Start here
                 </span>
                 <h2 className="mt-5 font-serif-playfair text-white">
-                  The 90-Minute Pricing Strategy Session
+                  The 90-Minute Commercial Strategy Session
                 </h2>
                 <p className="mt-4 max-w-2xl text-[16px] leading-[1.75] text-white/80 sm:text-[18px]">
-                  A focused working session to unblock your most important pricing or monetization
-                  decision. 48-hour follow-up memo included.
+                  A focused working session to unblock your most important pricing, GTM, revenue
+                  model, or commercial strategy decision. 48-hour follow-up memo included.
                 </p>
 
                 <div className="mt-10 grid gap-10 lg:grid-cols-[1.1fr_1fr]">
@@ -255,9 +262,10 @@ export default function ConsultingPage() {
                       <h3 className="text-[17px] font-semibold text-white">Who it&apos;s for</h3>
                     </div>
                     <p className="mt-3 max-w-xl text-[15px] leading-[1.7] text-white/75">
-                      Founders with a live pricing decision — model, value metric, packaging, or
-                      pre-launch structure — who need an expert opinion and a concrete next step,
-                      without committing to a multi-week project.
+                      Founders and operators with a live commercial decision — pricing model, value
+                      metric, GTM structure, revenue model logic, or unit economics — who need an
+                      expert opinion and a concrete next step, without committing to a multi-week
+                      project.
                     </p>
 
                     <div className="mt-8 flex items-center gap-3">
@@ -318,7 +326,7 @@ export default function ConsultingPage() {
                 <div className="mt-10 flex flex-col items-start gap-3 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
                   <p className="text-[12px] leading-[1.7] text-white/55">
                     <span className="text-white/75">Not for:</span> pure idea-stage exploration,
-                    brand/GTM help, or compressing a multi-week project into one session.
+                    brand positioning, demand-gen execution, or compressing a multi-week project into one session.
                   </p>
                   <Link
                     href={SESSION_INFO_HREF}
@@ -337,10 +345,10 @@ export default function ConsultingPage() {
             <div className="section-shell">
               <div className="section-header max-w-2xl">
                 <span className="kicker">If one session isn&apos;t enough</span>
-                <h2 className="section-title">Deeper engagements</h2>
+                <h2 className="section-title">Deeper commercial strategy support</h2>
                 <p className="mt-5 text-[16px] leading-[1.7] text-text-muted sm:text-[17px]">
-                  When the work is clearly bigger than one decision, here are the three formats
-                  founders move into.
+                  When the commercial question is bigger than one decision — or when ongoing
+                  support is the right model — here are the formats that work.
                 </p>
               </div>
 
@@ -388,8 +396,8 @@ export default function ConsultingPage() {
           <section className="section section-alt">
             <div className="section-shell">
               <div className="section-header max-w-2xl">
-                <span className="kicker">Why founders hire me</span>
-                <h2 className="section-title">Economist-grade thinking, at startup speed</h2>
+                <span className="kicker">Why founders and operators hire me</span>
+                <h2 className="section-title">Commercial economist thinking, at startup speed</h2>
               </div>
 
               <div className="mx-auto mt-16 grid max-w-5xl gap-10 sm:grid-cols-3">
@@ -397,10 +405,10 @@ export default function ConsultingPage() {
                   <div
                     key={item.title}
                     className={
-                      idx === 1 ? 'border-t border-brand/35 pt-6' : 'border-t border-border pt-6'
+                      idx === 1 ? 'border-t border-ink/20 pt-6' : 'border-t border-border pt-6'
                     }
                   >
-                    <p className="font-serif-playfair text-[28px] font-semibold leading-none text-brand/40">
+                    <p className="font-serif-playfair text-[28px] font-semibold leading-none text-ink/20">
                       {String(idx + 1).padStart(2, '0')}
                     </p>
                     <h3 className="mt-4 text-[18px] font-semibold text-ink">{item.title}</h3>
@@ -459,7 +467,7 @@ export default function ConsultingPage() {
               <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
                 {WORK_STEPS.map((item, idx) => (
                   <div key={item.title} className="border-t border-border pt-6">
-                    <p className="font-serif-playfair text-[44px] font-semibold leading-none text-brand/30">
+                    <p className="font-serif-playfair text-[44px] font-semibold leading-none text-ink/20">
                       {String(idx + 1).padStart(2, '0')}
                     </p>
                     <h3 className="mt-4 text-[17px] font-semibold leading-[1.3] text-ink">
@@ -499,7 +507,7 @@ export default function ConsultingPage() {
             <div className="section-shell max-w-4xl">
               <div className="cta-panel">
                 <h2 className="font-serif-playfair text-ink">
-                  Ready for a sharper pricing decision?
+                  Ready to make your commercial strategy clearer and more defensible?
                 </h2>
                 <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
                   Start with the{' '}
@@ -507,9 +515,10 @@ export default function ConsultingPage() {
                     href={SESSION_INFO_HREF}
                     className="font-semibold text-brand-ink underline decoration-brand/30 underline-offset-2 hover:decoration-brand/80"
                   >
-                    90-Minute Pricing Strategy Session
+                    90-Minute Commercial Strategy Session
                   </Link>
-                  . You&apos;ll leave with a clear recommendation and a concrete next step.
+                  . You&apos;ll leave with a clear recommendation on your most important commercial
+                  decision and a concrete next step.
                 </p>
                 <div className="mt-8">
                   <Link href={PRIMARY_CTA_HREF} className={primaryButtonLg}>

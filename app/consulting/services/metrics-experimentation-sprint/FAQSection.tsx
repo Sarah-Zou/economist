@@ -1,48 +1,30 @@
-import Link from 'next/link'
-import { brandLink } from '@/lib/brandStyles'
 import FAQList from '@/components/FAQList'
 
 export default function FAQSection() {
   const faqs = [
     {
+      q: 'When should I start with the 90-minute session vs. the sprint?',
+      a: 'Start with the session if you have one specific metrics or unit economics question in motion. Choose the sprint if you know you need a fuller KPI system, forecasting model, and unit economics baseline.',
+    },
+    {
+      q: 'Is the $600 session fee credited toward this sprint?',
+      a: 'Yes. If we move into either the Growth Economics Sprint or the Pricing & Monetization Sprint within 14 days, the $600 session fee is credited toward the project.',
+    },
+    {
       q: 'We have almost no data. Will this still work?',
-      a: 'Yes. I install a minimal KPI loop, define your metric tree, and set thresholds so you can make decisions immediately.',
+      a: 'Yes. Part of the sprint is installing the right minimal metric system so you can make decisions immediately — before you have perfect data.',
     },
     {
-      q: 'Which tools do you use?',
-      a: 'I integrate with your stack; common setups include GTM/GA/Amplitude/Mixpanel, plus a light instrumentation add-on if needed.',
+      q: 'Do I need the Pricing & Monetization Sprint before this one?',
+      a: 'Not necessarily. The two sprints are complementary but independent. Many founders do the Growth Economics Sprint first to build the unit economics foundation, then use the Pricing Sprint to design the monetization structure on top.',
     },
     {
-      q: 'What if our data is messy?',
-      a: 'I deliver an event patch list and governance basics so dashboards stay trustworthy and actionable.',
-    },
-    {
-      q: 'What exactly do we get?',
-      a: (
-        <>
-          Founders + GTM/Product <strong>dashboards</strong>,{' '}
-          <strong>KPI glossary + thresholds</strong>, <strong>experiment backlog</strong>{' '}
-          and <strong>test briefs</strong>, plus a 30-day plan with check-in. See{' '}
-          <Link href="/consulting/services/metrics-experimentation-sprint" className={brandLink}>
-            deliverables
-          </Link>
-          .
-        </>
-      ),
+      q: 'How long does the sprint take?',
+      a: 'Typically 1–2 weeks depending on complexity, existing data quality, and how many segments or scenarios we need to model.',
     },
   ]
 
   return (
-    <section id="faq" className="scroll-mt-24">
-      <div className="mx-auto max-w-3xl">
-        <div className="text-center">
-          <span className="kicker">FAQ</span>
-          <h2 className="mt-3 font-serif-playfair">Frequently asked questions</h2>
-        </div>
-        <div className="mt-10">
-          <FAQList items={faqs} />
-        </div>
-      </div>
-    </section>
+    <FAQList items={faqs} />
   )
 }

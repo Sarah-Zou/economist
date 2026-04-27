@@ -14,7 +14,7 @@ export default function CategoryCard({ title, slug, summary, level, image }: Cat
   return (
     <Link href={`/wiki/pricing/${slug}`} className="block group">
       <div
-        className="relative h-64 w-full overflow-hidden rounded-[1.45rem] bg-[#f3ede5] p-2.5 shadow-card transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-card-hover"
+        className="relative h-64 w-full overflow-hidden rounded-[1.45rem] bg-[#f3ede5] p-2.5 shadow-card transition-all duration-300 group-hover:-translate-y-0.5 group-"
         style={{
           backgroundImage: image
             ? `url(${image})`

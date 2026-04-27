@@ -2,17 +2,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { ArrowRight, CheckCircle2, Clock3, FileText, ChevronDown, Video } from 'lucide-react'
-import { brandLink, primaryButton, primaryButtonLg } from '@/lib/brandStyles'
+import { brandLink, outlineButton, primaryButton, primaryButtonLg } from '@/lib/brandStyles'
 
-const PRIMARY_CTA_HREF = '/consulting/entry-offer/form'
-const CONSULT_CTA_HREF = '/book'
+const PRIMARY_CTA_HREF = '/book'
+const CONSULT_CTA_HREF = '/consulting'
 
 const decisionFocus = [
-  'Pricing model',
-  'Value metric',
-  'Packaging',
+  'Pricing strategy',
+  'GTM economics',
+  'Revenue model',
   'Unit economics',
-  'Monetization risk',
+  'Forecasting',
+  'Investor narrative',
 ]
 
 const credentials = [
@@ -61,24 +62,25 @@ const otherEngagements = [
     href: '/consulting/services/pricing-monetization-sprint',
   },
   {
-    label: 'Metrics & Experimentation Sprint',
-    sub: 'KPI design, measurement, and experiment priorities',
+    label: 'Growth Economics, Forecasting & Unit Economics',
+    sub: 'Revenue model logic, KPI design, forward models, and investor-ready assumptions',
     href: '/consulting/services/metrics-experimentation-sprint',
   },
   {
-    label: 'Fractional Chief Economist Retainer',
-    sub: 'Ongoing strategic support for monetization and board-facing economics',
+    label: 'Fractional or Embedded Strategy Support',
+    sub: 'Ongoing commercial strategy, monetization, and board-facing economics — or select embedded / full-time roles',
     href: '/consulting/services/on-call-economist-retainer',
   },
 ]
 
 const faqItems = [
   {
-    q: 'What is a fractional Chief Economist?',
+    q: 'What kinds of commercial questions do you work on?',
     a: (
       <>
-        A part-time executive who designs your pricing system, unit economics, and monetization
-        cadence — bringing PhD-level rigor without a full-time hire. Read more{' '}
+        Pricing model, value metric, packaging, GTM economics, revenue model design, unit
+        economics, forecasting, KPI structure, and investor-ready commercial narratives. The common
+        thread: decisions where economic rigor makes the answer clearer. Read more{' '}
         <Link href="/about" className={brandLink}>
           about the practice
         </Link>
@@ -94,10 +96,10 @@ const faqItems = [
         <Link href="/consulting/entry-offer" className={brandLink}>
           90-minute session
         </Link>{' '}
-        if you have one important pricing decision in motion — model, value metric, packaging, or
-        pre-launch structure. If you already know the work is broader, a{' '}
-        <Link href="/consulting/services/pricing-monetization-sprint" className={brandLink}>
-          sprint
+        if you have one important commercial decision in motion — pricing model, value metric,
+        GTM structure, or revenue model logic. If you already know the work is broader, a{' '}
+        <Link href="/consulting" className={brandLink}>
+          deeper engagement
         </Link>{' '}
         is a better fit.
       </>
@@ -108,16 +110,16 @@ const faqItems = [
     a: (
       <>
         The 90-minute session is $600, credited toward a sprint if you move into one within 14 days.
-        Sprints are fixed-fee ($5K–$18K). A retainer starts at $4K/month.
+        Sprints are fixed-fee ($5K–$18K). Ongoing support starts at $4K/month.
       </>
     ),
   },
 ]
 
 export const metadata: Metadata = {
-  title: 'Fractional Chief Economist for AI & SaaS Founders | Sarah Zou, PhD',
+  title: 'Commercial Strategy, Pricing & Growth Economics for AI-Native B2B SaaS | Sarah Zou, PhD',
   description:
-    'A fractional Chief Economist for AI and SaaS founders. PhD-level pricing, unit economics, and monetization decisions — delivered at startup speed. Start with a 90-minute strategy session.',
+    'Commercial strategy, pricing, monetization, GTM economics, forecasting, and unit economics for AI-native B2B SaaS founders and operators. Fractional chief economist — start with a free consult.',
   robots: {
     index: true,
     follow: true,
@@ -133,18 +135,18 @@ export const metadata: Metadata = {
     canonical: 'https://sarahzou.com',
   },
   openGraph: {
-    title: 'Fractional Chief Economist for AI & SaaS Founders | Sarah Zou, PhD',
+    title: 'Commercial Strategy, Pricing & Growth Economics for AI-Native B2B SaaS | Sarah Zou, PhD',
     description:
-      'PhD-level pricing, unit economics, and monetization decisions for AI and SaaS founders — delivered at startup speed.',
+      'Commercial strategy, pricing, monetization, GTM economics, forecasting, and unit economics for AI-native B2B SaaS founders and operators.',
     type: 'website',
     url: 'https://sarahzou.com',
     images: ['https://sarahzou.com/images/headshot_v4.webp'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fractional Chief Economist for AI & SaaS Founders | Sarah Zou, PhD',
+    title: 'Commercial Strategy, Pricing & Growth Economics for AI-Native B2B SaaS | Sarah Zou, PhD',
     description:
-      'PhD-level pricing, unit economics, and monetization decisions for AI and SaaS founders — delivered at startup speed.',
+      'Commercial strategy, pricing, monetization, GTM economics, forecasting, and unit economics for AI-native B2B SaaS founders and operators.',
     images: ['https://sarahzou.com/images/headshot_v4.webp'],
   },
 }
@@ -157,18 +159,21 @@ export default function Home() {
     url: 'https://sarahzou.com',
     logo: 'https://sarahzou.com/images/econnova_logo.png',
     description:
-      'Fractional Chief Economist services for early-stage tech startups. Expert pricing strategy, metrics analysis, and economic storytelling to help startups optimize revenue and growth.',
+      'Commercial strategy, pricing, and growth economics for AI-native B2B SaaS teams. Pricing, monetization, GTM economics, forecasting, unit economics, and investor-ready commercial narratives.',
     founder: {
       '@type': 'Person',
       name: 'Dr. Sarah Zou',
-      jobTitle: 'Fractional Chief Economist',
+      jobTitle: 'Commercial Strategy Advisor & Fractional Chief Economist',
     },
     sameAs: ['https://www.linkedin.com/in/drsarahzou'],
     serviceType: [
+      'Commercial Strategy Consulting',
       'Pricing Strategy Consulting',
       'Monetization Strategy',
-      'Metrics and Experimentation Strategy',
+      'GTM Economics',
+      'Growth Economics and Forecasting',
       'Fractional Chief Economist Services',
+      'BizOps and Strategy Support',
     ],
   }
 
@@ -178,9 +183,9 @@ export default function Home() {
     name: 'Sarah Zou',
     honorificSuffix: 'PhD',
     alternateName: 'Dr. Sarah Zou',
-    jobTitle: 'Fractional Chief Economist',
+    jobTitle: 'Commercial Strategy Advisor & Fractional Chief Economist',
     description:
-      'PhD Economist specializing in pricing strategies, metrics analytics, and investor-ready storytelling for early-stage tech startups.',
+      'PhD economist and commercial strategy advisor helping AI-native B2B SaaS teams make sharper decisions on pricing, monetization, GTM economics, revenue models, forecasting, and unit economics.',
     url: 'https://sarahzou.com',
     image: 'https://sarahzou.com/images/headshot_v4.webp',
     sameAs: ['https://www.linkedin.com/in/drsarahzou/'],
@@ -190,13 +195,18 @@ export default function Home() {
       url: 'https://sarahzou.com',
     },
     knowsAbout: [
+      'Commercial Strategy',
       'Pricing',
       'Monetization',
+      'GTM Strategy',
       'Unit Economics',
+      'Revenue Model',
+      'Forecasting',
+      'Growth Economics',
       'Experimentation',
       'Econometrics',
-      'Value-Based Pricing',
-      'Revenue Optimization',
+      'BizOps',
+      'Investor Narratives',
     ],
   }
 
@@ -207,10 +217,10 @@ export default function Home() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'What is a fractional Chief Economist?',
+        name: 'What kinds of commercial questions do you work on?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'A part-time executive who designs your pricing system, unit economics, and monetization cadence, bringing PhD-level rigor without a full-time hire.',
+          text: 'Pricing model, value metric, packaging, GTM economics, revenue model design, unit economics, forecasting, KPI structure, and investor-ready commercial narratives — anywhere economic rigor makes the decision clearer.',
         },
       },
       {
@@ -218,7 +228,7 @@ export default function Home() {
         name: 'How do I know if the 90-minute session is the right first step?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Start with the 90-minute session if you have one important pricing decision in motion — pricing model, value metric, packaging, or pre-launch structure. If the work is broader, a sprint is a better fit.',
+          text: 'Start with the 90-minute session if you have one important commercial decision in motion — pricing model, value metric, GTM structure, or revenue model logic. If the work is broader, a deeper engagement is a better fit.',
         },
       },
       {
@@ -226,7 +236,7 @@ export default function Home() {
         name: 'What does it cost?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'The 90-minute session is $600, credited toward a sprint if you move into one within 14 days. Sprints are fixed-fee ($5K–$18K). A retainer starts at $4K/month.',
+          text: 'The 90-minute session is $600, credited toward a sprint if you move into one within 14 days. Sprints are fixed-fee ($5K–$18K). Ongoing support starts at $4K/month.',
         },
       },
     ],
@@ -247,61 +257,39 @@ export default function Home() {
         {/* Hero */}
         <section className="bg-hero-tint">
           <div className="section-shell pb-20 pt-10 sm:pb-24 sm:pt-16 lg:pb-28 lg:pt-20">
-            <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16 xl:gap-20">
-              <div className="order-2 lg:order-1">
-                <div className="portrait-shell mx-auto aspect-[4/5] w-full max-w-[380px] lg:max-w-[400px]">
-                  <div className="portrait-inner">
-                    <Image
-                      src="/images/headshot_v4.webp"
-                      alt="Sarah Zou, PhD economist"
-                      fill
-                      sizes="(min-width: 1024px) 34vw, 100vw"
-                      className="object-cover object-center"
-                      priority
-                    />
-                  </div>
-                </div>
-                <div className="media-rule mx-auto max-w-[380px] text-center lg:max-w-[400px]">
-                  <p className="media-caption">For AI, SaaS, and API founders</p>
-                </div>
-              </div>
+            <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(280px,0.75fr)] lg:gap-14 xl:gap-20">
+              <div className="order-1">
+                <span className="kicker-accent">Commercial Strategy &amp; Growth Economics</span>
 
-              <div className="order-1 lg:order-2">
-                <span className="kicker-accent">Fractional Chief Economist for Tech</span>
-
-                <h1 className="mt-5 font-serif-playfair text-ink">
-                  Investor-grade economic judgment for technical founders.
+                <h1 className="mt-5 max-w-[54rem] font-serif-playfair text-ink">
+                  Commercial strategy, pricing, and growth economics for AI-native B2B SaaS teams.
                 </h1>
 
-                <p className="lede mt-6 max-w-[34rem]">
-                  I help AI, SaaS, and API founders make sharper decisions on pricing, unit
-                  economics, and monetization &mdash; with research-grade rigor and startup-speed
-                  execution.
+                <p className="lede mt-7 max-w-[39rem]">
+                  I help technical founders and operators turn messy pricing, GTM, revenue model,
+                  and unit economics questions into clearer decisions, sharper investor narratives,
+                  and more executable growth plans.
                 </p>
 
-                <p className="meta-note mt-5">
-                  Most founders start with one live pricing decision.
-                </p>
-
-                <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+                <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
                   <Link
                     href={PRIMARY_CTA_HREF}
-                    className={`${primaryButtonLg} w-full max-w-[360px] sm:w-auto`}
+                    className={`${primaryButtonLg} w-full sm:w-auto`}
                   >
-                    Book the 90-Minute Session
+                    Book a free consult
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
 
-                  <Link href={CONSULT_CTA_HREF} className="display-link">
-                    Or start with a free 15-min consult
+                  <Link href={CONSULT_CTA_HREF} className={`${outlineButton} w-full sm:w-auto`}>
+                    Explore working together
                   </Link>
                 </div>
 
-                <div className="mt-12 border-t border-border-soft pt-6">
-                  <p className="text-[12px] uppercase tracking-[0.14em] text-text-subtle">
-                    Background
+                <div className="mt-10 max-w-3xl border-y border-border-soft py-5">
+                  <p className="meta-note">
+                    Most founders start with one live commercial or pricing decision.
                   </p>
-                  <div className="mt-3 grid gap-x-8 gap-y-2 sm:grid-cols-2">
+                  <div className="mt-4 grid gap-x-8 gap-y-2 sm:grid-cols-2">
                     {credentials.map((item) => (
                       <span key={item} className="text-[13.5px] leading-[1.65] text-text-muted">
                         {item}
@@ -310,25 +298,38 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+
+              <div className="order-2">
+                <div className="portrait-shell mx-auto aspect-[4/5] w-full max-w-[380px] lg:max-w-[440px]">
+                  <div className="portrait-inner">
+                    <Image
+                      src="/images/headshot_v4.webp"
+                      alt="Sarah Zou, PhD economist"
+                      fill
+                      sizes="(min-width: 1024px) 40vw, 100vw"
+                      className="object-cover object-center"
+                      priority
+                    />
+                  </div>
+                </div>
+                <div className="media-rule mx-auto max-w-[380px] text-center lg:max-w-[440px]">
+                  <p className="media-caption">For AI-native B2B SaaS teams</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Focus strip — answers "what decisions" in one glance */}
-        <section className="editorial-band">
-          <div className="section-shell py-9 sm:py-10">
-            <p className="text-center text-[12px] uppercase tracking-[0.18em] text-text-subtle">
-              I help founders decide
+        <section className="editorial-band bg-page/60">
+          <div className="section-shell grid gap-5 py-8 sm:py-9 lg:grid-cols-[0.32fr_1fr] lg:items-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-text-subtle">
+              Core areas of work
             </p>
-            <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:gap-x-7">
-              {decisionFocus.map((item, idx) => (
-                <li key={item} className="flex items-center gap-5 sm:gap-7">
-                  <span className="font-serif-playfair text-[18px] leading-none text-ink sm:text-[20px]">
-                    {item}
-                  </span>
-                  {idx < decisionFocus.length - 1 && (
-                    <span aria-hidden className="hidden h-px w-6 bg-border sm:inline-block" />
-                  )}
+            <ul className="grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
+              {decisionFocus.map((item) => (
+                <li key={item} className="border-t border-border-soft pt-2">
+                  <span className="text-[14px] font-semibold leading-none text-ink">{item}</span>
                 </li>
               ))}
             </ul>
@@ -340,10 +341,11 @@ export default function Home() {
           <div className="section-shell max-w-4xl">
             <div className="section-header">
               <span className="kicker">Start here</span>
-              <h2 className="section-title">The 90-Minute Pricing Strategy Session</h2>
+              <h2 className="section-title">The 90-Minute Commercial Strategy Session</h2>
               <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
-                One focused working session to pressure-test your direction, choose the right value
-                metric, or clean up packaging — with a 48-hour follow-up memo.
+                One focused working session to pressure-test your commercial direction — pricing
+                model, value metric, GTM structure, revenue logic, or packaging — with a 48-hour
+                follow-up memo.
               </p>
             </div>
 
@@ -370,7 +372,7 @@ export default function Home() {
 
               <div className="mt-10 flex flex-col gap-5 border-t border-white/10 pt-8 sm:flex-row sm:items-end sm:justify-between">
                 <div className="flex flex-col items-start gap-3">
-                  <Link href={PRIMARY_CTA_HREF} className={primaryButton}>
+                  <Link href="/consulting/entry-offer/form" className={primaryButton}>
                     Book the Session
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
@@ -386,14 +388,7 @@ export default function Home() {
                     $600
                   </p>
                   <p className="mt-2 max-w-sm text-[13px] leading-[1.6] text-white/60 sm:ml-auto">
-                    Fully credited toward a{' '}
-                    <Link
-                      href="/consulting/services/pricing-monetization-sprint"
-                      className="text-white underline decoration-white/30 underline-offset-2 hover:decoration-white/80"
-                    >
-                      Pricing &amp; Monetization Sprint
-                    </Link>{' '}
-                    if booked within 14 days.
+                    Credited toward either follow-on sprint if you move into one within 14 days.
                   </p>
                 </div>
               </div>
@@ -409,8 +404,8 @@ export default function Home() {
               <h2 className="section-title">Rigor, decisions, and startup speed</h2>
               <p className="mt-5 text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
                 Most consultants give you frameworks. Most analysts give you rigor. Most operators
-                give you speed. I combine all three — for founders making consequential monetization
-                decisions.
+                give you speed. I combine all three — for founders and operators making consequential
+                commercial decisions.
               </p>
             </div>
 
@@ -419,10 +414,10 @@ export default function Home() {
                 <div
                   key={pillar.title}
                   className={
-                    idx === 1 ? 'border-t border-brand/35 pt-6' : 'border-t border-border pt-6'
+                    idx === 1 ? 'border-t border-ink/20 pt-6' : 'border-t border-border pt-6'
                   }
                 >
-                  <p className="font-serif-playfair text-[28px] font-semibold leading-none text-brand/30">
+                  <p className="font-serif-playfair text-[28px] font-semibold leading-none text-ink/20">
                     {String(idx + 1).padStart(2, '0')}
                   </p>
                   <h3 className="mt-4 text-[18px] font-semibold text-ink">{pillar.title}</h3>
@@ -474,7 +469,7 @@ export default function Home() {
           <div className="section-shell max-w-3xl">
             <div className="section-header">
               <span className="kicker">Other ways to work together</span>
-              <h2 className="section-title">Need more than one session?</h2>
+              <h2 className="section-title">Deeper or ongoing commercial strategy support</h2>
             </div>
 
             <ul className="mt-10 divide-y divide-border-soft border-y border-border-soft">
@@ -501,8 +496,57 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FAQ — 3 items */}
+        {/* Who this is for */}
         <section className="section section-alt">
+          <div className="section-shell">
+            <div className="section-header">
+              <span className="kicker">Who this is for</span>
+              <h2 className="section-title">Built for teams making consequential commercial decisions</h2>
+            </div>
+
+            <div className="mt-12 grid gap-0 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  role: 'Founder',
+                  need: 'Need clearer pricing, packaging, GTM, or monetization decisions — framed in a way you can defend with your team and investors.',
+                },
+                {
+                  role: 'COO / BizOps Lead',
+                  need: 'Need structure around messy commercial questions, operating metrics, or growth priorities that cross multiple functions.',
+                },
+                {
+                  role: 'CFO / Finance Lead',
+                  need: 'Need revenue model logic, forecasting, unit economics, or investor-ready assumptions that hold up under scrutiny.',
+                },
+                {
+                  role: 'Hiring Founder',
+                  need: 'Need embedded strategy, finance, BizOps, or growth economics talent who can work across analysis, narrative, and execution.',
+                },
+              ].map((item) => (
+                <div
+                  key={item.role}
+                  className="border-t border-border-soft py-6 pr-6"
+                >
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-subtle">
+                    {item.role}
+                  </p>
+                  <p className="mt-3 text-[14px] leading-[1.75] text-text-muted">{item.need}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-10 text-center text-[14px] leading-[1.7] text-text-muted">
+              Not sure which applies to you?{' '}
+              <Link href={PRIMARY_CTA_HREF} className="font-semibold text-brand-ink underline decoration-brand/30 underline-offset-2 hover:decoration-brand/80">
+                Book a free 15-min consult
+              </Link>{' '}
+              and I&apos;ll help you figure out the right path.
+            </p>
+          </div>
+        </section>
+
+        {/* FAQ — 3 items */}
+        <section className="section">
           <div className="section-shell max-w-3xl">
             <div className="section-header">
               <span className="kicker">FAQ</span>
@@ -533,15 +577,15 @@ export default function Home() {
           <div className="section-shell max-w-4xl">
             <div className="cta-panel">
               <h2 className="font-serif-playfair text-ink">
-                Ready for a sharper pricing decision?
+                Ready to make your pricing, GTM, or revenue model decisions clearer?
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
-                Start with the 90-minute session. You&apos;ll leave with a clear recommendation and
-                a concrete next step.
+                Start with a free 15-min consult. Or go straight to the 90-minute session if you
+                have a live commercial decision to work through.
               </p>
               <div className="mt-8">
                 <Link href={PRIMARY_CTA_HREF} className={primaryButtonLg}>
-                  Book the Session
+                  Book a free consult
                   <ArrowRight className="h-4 w-4" aria-hidden />
                 </Link>
               </div>
@@ -550,7 +594,7 @@ export default function Home() {
                   href={CONSULT_CTA_HREF}
                   className="underline underline-offset-4 hover:text-ink"
                 >
-                  Or start with a free 15-min consult
+                  Explore ways to work together →
                 </Link>
               </p>
             </div>

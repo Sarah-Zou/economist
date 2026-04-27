@@ -1,13 +1,14 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { Metadata } from 'next';
-import FAQSection from './FAQSection';
-import ContactForm from '@/components/ContactForm';
-import { generateServiceJsonLd } from '@/lib/generateJsonLd';
+import Link from 'next/link'
+import { Metadata } from 'next'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import FAQSection from './FAQSection'
+import { generateServiceJsonLd } from '@/lib/generateJsonLd'
+import { outlineButton, primaryButtonLg } from '@/lib/brandStyles'
 
 export const metadata: Metadata = {
-  title: 'Fractional Chief Economist Retainer for Seed–Series A | Sarah Zou',
-  description: 'Ongoing monetization, NRR & payback, forward models, experiment cadence. Decisions, not dashboards—investor-grade every month. For SaaS, APIs & AI. Board pack, pricing updates.',
+  title: 'Fractional or Embedded Commercial Strategy Support | Sarah Zou',
+  description:
+    'Ongoing commercial strategy support for AI-native B2B SaaS teams — pricing, monetization, GTM economics, forecasting, unit economics, and board prep without hiring a full-time strategy or finance leader before you need one.',
   robots: {
     index: true,
     follow: true,
@@ -23,26 +24,181 @@ export const metadata: Metadata = {
     canonical: 'https://sarahzou.com/consulting/services/on-call-economist-retainer',
   },
   openGraph: {
-    title: 'Fractional Chief Economist Retainer for Seed–Series A | Sarah Zou',
-    description: 'Ongoing monetization, NRR & payback, forward models, experiment cadence. Decisions, not dashboards—investor-grade every month. For SaaS, APIs & AI. Board pack, pricing updates.',
+    title: 'Fractional or Embedded Commercial Strategy Support | Sarah Zou',
+    description:
+      'Ongoing commercial strategy support for AI-native B2B SaaS teams — pricing, monetization, GTM economics, forecasting, unit economics, and board prep without hiring a full-time strategy or finance leader before you need one.',
     type: 'website',
     url: 'https://sarahzou.com/consulting/services/on-call-economist-retainer',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fractional Chief Economist Retainer for Seed–Series A | Sarah Zou',
-    description: 'Ongoing monetization, NRR & payback, forward models, experiment cadence. Decisions, not dashboards—investor-grade every month. For SaaS, APIs & AI. Board pack, pricing updates.',
+    title: 'Fractional or Embedded Commercial Strategy Support | Sarah Zou',
+    description:
+      'Ongoing commercial strategy support for AI-native B2B SaaS teams — pricing, monetization, GTM economics, forecasting, unit economics, and board prep without hiring a full-time strategy or finance leader before you need one.',
   },
-};
+}
 
-const SERVICE_URL = 'https://sarahzou.com/consulting/services/on-call-economist-retainer';
+const SERVICE_URL = 'https://sarahzou.com/consulting/services/on-call-economist-retainer'
+const PRIMARY_CTA_HREF = '/book'
+const SECONDARY_CTA_HREF = '#pricing'
+
+const WHAT_YOU_GET = [
+  {
+    lead: 'Pricing moves shipped monthly',
+    rest: 'price/packaging experiments and adjustments with guardrails and rollback logic',
+  },
+  {
+    lead: 'Updated forward models',
+    rest: 'cohort LTV, NRR and GM bridges, and cash/runway scenarios — refreshed each month',
+  },
+  {
+    lead: "Economist's Board Pack",
+    rest: 'a monthly KPI story, pricing changes, and risk narrative ready for investors or the board',
+  },
+  {
+    lead: 'A learning loop',
+    rest: 'experiment readouts that connect directly to next bets, with MDE and stop rules',
+  },
+]
+
+const DELIVERABLES = [
+  "Economist's Board Pack (KPI story, NRR/GM bridges, pricing changes, risks)",
+  'Pricing update (price bands, fences, discount policy, rollout)',
+  'Experiment docket (2–4 briefs/month with MDE, guardrails, stop rules)',
+  'Forecast workbook (rolling 12–18 mo, hiring/capital scenarios)',
+  'Decision log (what we decided, why, owner, next check)',
+]
+
+const WHEN_FOUNDERS_HIRE = [
+  {
+    lead: 'Sprint work is done',
+    rest: '— now needs someone to run the ongoing cadence and keep models current',
+  },
+  {
+    lead: 'Commercial decisions are coming weekly',
+    rest: '— pricing, discount requests, packaging questions, investor follow-ups',
+  },
+  {
+    lead: 'Board needs ongoing economic narrative',
+    rest: '— monthly KPI story, NRR bridge, and forward model update',
+  },
+  {
+    lead: 'Pricing experiments need someone to own them',
+    rest: '— design, launch, monitor, and read out results',
+  },
+  {
+    lead: 'Pre-fundraise',
+    rest: '— needs investor-ready metrics, narratives, and diligence support on a reliable cadence',
+  },
+  {
+    lead: 'Not ready to hire full-time',
+    rest: '— but the commercial complexity has outgrown ad-hoc help',
+  },
+]
+
+const INVESTMENT_TIERS = [
+  {
+    name: 'Starter',
+    price: '$4K',
+    per: '/mo',
+    commitment: '≈ 0.5 d/wk',
+    desc: 'Guidance and cadence for early-stage teams making regular commercial decisions before or after a fundraise.',
+    featured: false,
+  },
+  {
+    name: 'Growth',
+    price: '$8K',
+    per: '/mo',
+    commitment: '≈ 1 d/wk',
+    desc: 'Active pricing experiments, ongoing forecast maintenance, and monthly board-ready narrative.',
+    featured: true,
+  },
+  {
+    name: 'Scale',
+    price: '$15K',
+    per: '/mo',
+    commitment: '≈ 2 d/wk',
+    desc: 'Complex monetization, multi-segment modeling, and full active fundraise support.',
+    featured: false,
+  },
+]
+
+const TESTIMONIALS = [
+  {
+    quote:
+      'Honestly, we were just guessing on price and our sales team was discounting everything just to hit their numbers. Sarah simplified our tiers and our ACV shot up 40% in two months.',
+    author: 'Dayvon, B.',
+    role: 'Founder & CEO, Series A SaaS Platform',
+  },
+  {
+    quote:
+      "We were stuck on value metric, and Sarah's framework helped a lot. Highly recommend the 90-min session.",
+    author: 'Lisa, J.',
+    role: 'Co-Founder, Seed AI Developer Tool',
+  },
+]
+
+const PROCESS_STEPS = [
+  {
+    num: '01',
+    title: 'Scope and access',
+    desc: 'Align on priorities, cadence, and tools. I get context on your pricing, metrics, and commercial questions in motion.',
+  },
+  {
+    num: '02',
+    title: 'Baseline review',
+    desc: 'First metrics audit, pricing review, and model foundation — so every subsequent month builds on solid ground.',
+  },
+  {
+    num: '03',
+    title: 'First quick win',
+    desc: 'A first pricing move or experiment, the first Board Pack, and the initial forecast model — usually by end of week 2.',
+  },
+  {
+    num: '04',
+    title: 'Ongoing cadence',
+    desc: 'Weekly or bi-weekly decision stand-up, monthly Board Pack + forecast update, quarterly pricing reset.',
+  },
+]
+
+const SCOPE_AREAS = [
+  {
+    area: 'Pricing & revenue',
+    items: [
+      'Quarterly price/pack refresh, discount guardrails, and elasticity updates',
+      'Monetization experiments: price points, value metric, plan fences',
+    ],
+  },
+  {
+    area: 'Forecasting & unit economics',
+    items: [
+      'Rolling 12–18 month forecast with NRR/GM waterfalls and scenario planning',
+      'Cohort LTV, CAC payback, and burn/runway models updated monthly',
+    ],
+  },
+  {
+    area: 'Experiments',
+    items: [
+      'Bi-weekly cadence: briefs with hypothesis, MDE, guardrails, and stop rules',
+      'Readouts with next-bet recommendations',
+    ],
+  },
+  {
+    area: 'Board & investor prep',
+    items: [
+      'Monthly narrative framing, KPI story, and talking points',
+      'Diligence support, FAQ prep, and investor-facing model review',
+    ],
+  },
+]
 
 export default function FractionalChiefEconomistRetainer() {
   const serviceJsonLd = generateServiceJsonLd({
-    name: 'Fractional Chief Economist (Retainer)',
-    description: 'Decisions, not dashboards. Ongoing ownership of monetization, forward models, and experiment cadence so pricing, payback, and runway stay investor-grade and up to date.',
-    url: SERVICE_URL
-  });
+    name: 'Fractional or Embedded Commercial Strategy Support',
+    description:
+      'Ongoing commercial strategy support across pricing, monetization, GTM economics, forecasting, unit economics, and board prep for AI-native B2B SaaS teams — without the full-time overhead.',
+    url: SERVICE_URL,
+  })
 
   return (
     <>
@@ -50,572 +206,470 @@ export default function FractionalChiefEconomistRetainer() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
-      <section className="bg-page min-h-screen py-0 pb-20 md:pb-0">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold text-text mb-6 leading-tight max-w-4xl mx-auto">
-            Strategic Economic Insight, On-Demand
-          </h1>
-          <p className="text-base sm:text-[17px] text-text leading-[1.65] mb-8 max-w-3xl mx-auto">
-            Guiding tech firms through market complexity with fractional chief economist services. Make smarter, data-driven decisions without the full-time overhead.
-          </p>
-        </div>
 
-        {/* Navigation Chips */}
-        <div className="flex flex-wrap gap-3 mb-12 justify-center">
-          <a
-            href="#outcomes"
-            className="inline-flex items-center px-4 py-2 bg-white border border-border-subtle rounded-full text-sm font-medium text-text hover:bg-surface hover:border-brand/40 hover:text-brand-ink transition-colors cursor-pointer active:scale-95"
-          >
-            Outcomes
-          </a>
-          <a
-            href="#how-it-works"
-            className="inline-flex items-center px-4 py-2 bg-white border border-border-subtle rounded-full text-sm font-medium text-text hover:bg-surface hover:border-brand/40 hover:text-brand-ink transition-colors cursor-pointer active:scale-95"
-          >
-            How it works
-          </a>
-          <a
-            href="#pricing"
-            className="inline-flex items-center px-4 py-2 bg-white border border-border-subtle rounded-full text-sm font-medium text-text hover:bg-surface hover:border-brand/40 hover:text-brand-ink transition-colors cursor-pointer active:scale-95"
-          >
-            Pricing
-          </a>
-          <a
-            href="#faq"
-            className="inline-flex items-center px-4 py-2 bg-white border border-border-subtle rounded-full text-sm font-medium text-text hover:bg-surface hover:border-brand/40 hover:text-brand-ink transition-colors cursor-pointer active:scale-95"
-          >
-            FAQ
-          </a>
-        </div>
-
-        {/* Main Content */}
-        <div className="max-w-7xl mx-auto space-y-24">
-          {/* What It Is Section */}
-          <section className="text-center">
-            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-4">What It Is</h2>
-            <p className="text-base sm:text-[17px] text-text leading-[1.65] mb-8 max-w-3xl mx-auto">
-              A Fractional Chief Economist provides high-level economic expertise and strategic guidance to your executive team on a part-time, retainer basis. This model offers the strategic benefits of a top-tier economist at a fraction of the cost of a full-time hire, integrating seamlessly with your team to drive growth and mitigate risk.
-            </p>
-          </section>
-
-          {/* Why It Matters Now Section */}
-          <section className="text-center">
-            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-8">Why It Matters Now</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {[
-                {
-                  title: 'Economic Uncertainty',
-                  desc: 'Navigate inflation, interest rate volatility, and geopolitical risks with expert guidance.',
-                  icon: (
-                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                  )
-                },
-                {
-                  title: 'AI & Tech Disruption',
-                  desc: 'Understand the economic impact of emerging technologies on your market and business model.',
-                  icon: (
-                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  )
-                },
-                {
-                  title: 'Competitive Pressure',
-                  desc: 'Stay ahead with sophisticated market analysis and data-driven competitive intelligence.',
-                  icon: (
-                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                  )
-                }
-              ].map((item, idx) => (
-                <div key={idx} className="bg-white rounded-lg p-6 border border-border-subtle shadow-sm text-left">
-                  <div className="mb-4">
-                    {item.icon}
-                  </div>
-                  <h3 className="font-semibold text-[20px] text-text mb-3">{item.title}</h3>
-                  <p className="text-base sm:text-[17px] text-text leading-[1.65]">{item.desc}</p>
+      <div className="bg-page text-text">
+        <main>
+          {/* Hero */}
+          <section className="bg-hero-tint">
+            <div className="section-shell pb-20 pt-12 sm:pb-24 sm:pt-16 lg:pb-28 lg:pt-24">
+              <div className="section-header max-w-[44rem]">
+                <span className="kicker-accent">Fractional &amp; Embedded Support</span>
+                <h1 className="mt-5 font-serif-playfair text-ink">
+                  Senior commercial strategy, without the full-time overhead
+                </h1>
+                <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
+                  Ongoing support across pricing, monetization, GTM economics, forecasting, unit
+                  economics, and board prep — at a cadence that matches your growth stage.
+                </p>
+                <p className="meta-note mt-6">
+                  Most teams start with the 90-minute session or a sprint. Retainer clients get
+                  priority access and a dedicated monthly cadence.
+                </p>
+                <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+                  <Link
+                    href={PRIMARY_CTA_HREF}
+                    className={`${primaryButtonLg} w-full max-w-[360px] sm:w-auto`}
+                  >
+                    Book a Free Consult
+                    <ArrowRight className="h-4 w-4" aria-hidden />
+                  </Link>
+                  <Link href={SECONDARY_CTA_HREF} className="display-link">
+                    See plans and pricing
+                  </Link>
                 </div>
-              ))}
+                <dl className="mx-auto mt-14 grid max-w-3xl grid-cols-1 gap-x-10 gap-y-6 border-t border-border-soft pt-8 text-left sm:grid-cols-3">
+                  <div>
+                    <dt className="kicker-muted">Best for</dt>
+                    <dd className="mt-2 text-[15px] leading-[1.55] text-ink">
+                      Post-sprint teams, active fundraise prep, or weekly commercial decisions
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="kicker-muted">Engagement type</dt>
+                    <dd className="mt-2 text-[15px] leading-[1.55] text-ink">Ongoing monthly</dd>
+                  </div>
+                  <div>
+                    <dt className="kicker-muted">Starting at</dt>
+                    <dd className="mt-2 text-[15px] font-semibold leading-[1.55] text-brand-ink">
+                      $4K/mo
+                    </dd>
+                  </div>
+                </dl>
+              </div>
             </div>
           </section>
 
-          {/* Outcomes Section */}
-          <section id="outcomes" className="text-center scroll-mt-24">
-            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-4">Outcomes (what you get every month)</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-              {[
-                { 
-                  title: 'Decisions shipped', 
-                  desc: 'pricing/packaging moves or tests launched with guardrails',
-                  icon: (
-                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  )
-                },
-                { 
-                  title: 'Forward view', 
-                  desc: 'updated cohort LTV, NRR & GM bridges, and cash/runway scenarios',
-                  icon: (
-                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  )
-                },
-                { 
-                  title: 'Investor-grade narrative', 
-                  desc: 'monthly Economist\'s Board Pack and talking points',
-                  icon: (
-                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                  )
-                },
-                { 
-                  title: 'Learning loop', 
-                  desc: 'experiment readouts → next bets with MDE/power and stop rules',
-                  icon: (
-                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                    </svg>
-                  )
-                }
-              ].map((outcome, idx) => (
-                <div key={idx} className="bg-white rounded-lg p-6 border border-border-subtle shadow-sm text-left">
-                  <div className="mb-4">
-                    {outcome.icon}
-                  </div>
-                  <h3 className="font-semibold text-[20px] text-text mb-3">{outcome.title}</h3>
-                  <p className="text-base sm:text-[17px] text-text leading-[1.65]">{outcome.desc}</p>
-                </div>
-              ))}
-          </div>
-          </section>
+          {/* What you get */}
+          <section className="section section-alt">
+            <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
+              <div className="mx-auto max-w-3xl text-center">
+                <span className="kicker">What you get</span>
+                <h2 className="mt-3 font-serif-playfair">
+                  A commercial economist in your corner every month
+                </h2>
+              </div>
 
-          {/* What I Own Section */}
-            <section>
-            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-8 text-center">What I Own (by function)</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-              {[
-                {
-                  function: 'Pricing & Revenue Optimization',
-                  items: [
-                    'Quarterly price/pack refresh; discount & trial guardrails; elasticity/win-loss updates.',
-                    'Monetization experiments (price points, value metric, plan fences) with exposure limits.'
-                  ]
-                },
-                {
-                  function: 'Marketing & Sales',
-                  items: [
-                    'Offer tests and ROI stories; CAC payback targets by segment/term; quota alignment.'
-                  ]
-                },
-                {
-                  function: 'Product & Data',
-                  items: [
-                    'Weekly/bi-weekly experiment cadence; metric QA; behavioral/event patch list; monetization UX guidance.'
-                  ]
-                },
-                {
-                  function: 'Finance & Planning',
-                  items: [
-                    'Rolling 12–18-month forecast; NRR/GM waterfalls; scenario planning (hiring, CAC shifts, burn runway); board/investor comms.'
-                  ]
-                }
-              ].map((area, idx) => (
-                <div key={idx} className="bg-white rounded-lg p-6 border border-border-subtle shadow-sm">
-                  <h3 className="font-semibold text-[20px] text-text mb-4">{area.function}</h3>
-                  <ul className="space-y-2">
-                    {area.items.map((item, itemIdx) => (
-                      <li key={itemIdx} className="text-base sm:text-[17px] text-text leading-[1.65] flex items-start gap-3">
-                        <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <span>{item}</span>
+              <div className="mt-12 grid gap-6 lg:grid-cols-2">
+                <div className="card">
+                  <h3 className="font-serif-playfair text-[24px] font-semibold leading-[1.2] text-ink sm:text-[26px]">
+                    Monthly outputs
+                  </h3>
+                  <ul className="mt-5 space-y-3">
+                    {WHAT_YOU_GET.map((item) => (
+                      <li key={item.lead} className="flex items-start gap-3">
+                        <CheckCircle2
+                          className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand"
+                          aria-hidden
+                        />
+                        <span className="text-[15px] leading-[1.65] text-text">
+                          <strong className="text-ink">{item.lead}</strong> {item.rest}
+                        </span>
                       </li>
                     ))}
-              </ul>
+                  </ul>
                 </div>
-              ))}
-            </div>
-            </section>
 
-          {/* Plans & Pricing Section */}
-          <section id="pricing" className="text-center scroll-mt-24">
-            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-12">Plans & Pricing</h2>
-            
-            <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                {[
-                  { 
-                    name: 'Starter', 
-                    price: '$4,000',
-                    duration: '/mo',
-                    timeCommitment: '≈0.5 d/wk',
-                    description: 'Early-stage guidance pre-fundraise.',
-                    buttonText: 'Choose Starter',
-                    buttonStyle: 'bg-surface text-text hover:bg-surface-muted',
-                    features: [
-                      'Bi-weekly Strategic Call',
-                      'Monthly Market Briefing',
-                      'Ad-hoc Email Support'
-                    ]
-                  },
-                  { 
-                    name: 'Growth', 
-                    price: '$8,000',
-                    duration: '/mo',
-                    timeCommitment: '≈1 d/wk',
-                    description: 'Active experiments + investor cadence.',
-                    buttonText: 'Choose Growth',
-                    buttonStyle: 'bg-brand text-brand-on text-[19px] font-bold leading-[1.2] hover:bg-brand-ink',
-                    features: [
-                      'Weekly Strategic Call',
-                      'Deep-Dive Quarterly Report',
-                      'Pricing Model Analysis',
-                      'Priority Slack Support'
-                    ]
-                  },
-                  { 
-                    name: 'Scale', 
-                    price: '$15,000',
-                    duration: '/mo',
-                    timeCommitment: '≈2 d/wk',
-                    description: 'Complex monetization or near/active fundraise.',
-                    buttonText: 'Choose Scale',
-                    buttonStyle: 'bg-surface text-text hover:bg-surface-muted',
-                    features: [
-                      'Multiple Weekly Syncs',
-                      'Board & Investor Material Prep',
-                      'Custom Research Projects',
-                      'Dedicated Slack Channel'
-                    ]
-                  }
-                ].map((tier, tierIdx) => (
-                  <div 
-                    key={tierIdx} 
-                    className="bg-white rounded-lg border-2 border-border-subtle shadow-sm p-6 flex flex-col"
-                  >
-                    <div className="mb-6">
-                      <h4 className="font-serif-playfair text-2xl font-bold text-brand mb-2 text-left">{tier.name}</h4>
-                      <p className="text-base sm:text-[17px] text-text text-left leading-[1.65] mb-3">{tier.description}</p>
-                      <div className="mb-2 text-left">
-                        <span className="text-3xl font-bold text-text">{tier.price}</span>
-                        <span className="text-sm text-text-muted ml-1">{tier.duration}</span>
-                        <span className="text-sm text-text-muted ml-2">({tier.timeCommitment})</span>
-                      </div>
-                    </div>
-                    <ul className="space-y-3 flex-grow mb-6 text-left">
-                      {tier.features.map((feature, featIdx) => (
-                        <li key={featIdx} className="flex items-start gap-3">
-                          <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                          </div>
-                          <span className="text-sm text-text">{feature}</span>
-                        </li>
-                      ))}
-              </ul>
-                    <Link
-                      href="/book"
-                      className={`${tier.buttonStyle} text-center py-3 px-6 rounded-lg font-bold transition-colors mt-auto`}
+                <div className="card">
+                  <h3 className="font-serif-playfair text-[24px] font-semibold leading-[1.2] text-ink sm:text-[26px]">
+                    Core deliverables
+                  </h3>
+                  <ul className="mt-5 space-y-3">
+                    {DELIVERABLES.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <span
+                          className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand"
+                          aria-hidden
+                        />
+                        <span className="text-[15px] font-semibold leading-[1.6] text-ink">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-6 border-t border-border-soft pt-5 text-[13px] leading-[1.7] text-text-muted">
+                    <strong className="text-ink">Note:</strong> Exact deliverables depend on tier
+                    and active priorities each month.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Pricing tiers */}
+          <section id="pricing" className="section scroll-mt-24">
+            <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
+              <div className="mx-auto max-w-3xl text-center">
+                <span className="kicker">Plans</span>
+                <h2 className="mt-3 font-serif-playfair">Engagement scales with your complexity</h2>
+              </div>
+
+              <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
+                {INVESTMENT_TIERS.map((tier) => (
+                  <div key={tier.name} className={tier.featured ? 'card-dark relative' : 'card'}>
+                    {tier.featured && (
+                      <span className="absolute right-5 top-5 rounded-full bg-brand px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-on">
+                        Most common
+                      </span>
+                    )}
+                    <p className={tier.featured ? 'kicker-muted text-brand-soft' : 'kicker-muted'}>
+                      {tier.name}
+                    </p>
+                    <p
+                      className={`mt-3 font-serif-playfair text-[42px] font-semibold leading-none ${
+                        tier.featured ? 'text-white' : 'text-ink'
+                      }`}
                     >
-                      {tier.buttonText}
+                      {tier.price}
+                      <span
+                        className={`ml-1 text-[18px] font-normal ${
+                          tier.featured ? 'text-white/60' : 'text-text-muted'
+                        }`}
+                      >
+                        {tier.per}
+                      </span>
+                    </p>
+                    <p
+                      className={`mt-1 text-[13px] font-semibold ${
+                        tier.featured ? 'text-brand-soft' : 'text-brand-ink'
+                      }`}
+                    >
+                      {tier.commitment}
+                    </p>
+                    <p
+                      className={`mt-4 text-[14px] leading-[1.65] ${
+                        tier.featured ? 'text-white/80' : 'text-text-muted'
+                      }`}
+                    >
+                      {tier.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <p className="mx-auto mt-10 max-w-2xl text-center text-[15px] leading-[1.7] text-text-muted">
+                Unsure which tier fits? Book the free consult. We&apos;ll discuss your growth stage
+                and commercial complexity to find the right level of engagement.
+              </p>
+              <div className="mt-5 text-center">
+                <Link href={PRIMARY_CTA_HREF} className={outlineButton}>
+                  Book a Free Consult
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* When founders hire */}
+          <section className="section section-alt">
+            <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
+              <div className="grid items-start gap-12 md:grid-cols-[1fr_1.4fr] lg:gap-16">
+                <div>
+                  <span className="kicker">The trigger</span>
+                  <h2 className="mt-3 font-serif-playfair">When founders hire me for this</h2>
+                  <p className="mt-5 max-w-md text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
+                    Usually, the commercial complexity has outgrown what a founder can manage alone
+                    — and it&apos;s not yet the right time to hire a full-time CFO or Head of
+                    Strategy.
+                  </p>
+                </div>
+                <div>
+                  <p className="kicker-muted mb-5">Common situations</p>
+                  <ul className="space-y-4">
+                    {WHEN_FOUNDERS_HIRE.map((item) => (
+                      <li key={item.lead} className="flex items-start gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
+                        <span className="text-[15px] leading-[1.6] text-text">
+                          <strong className="text-ink">{item.lead}</strong> {item.rest}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Scope areas */}
+          <section className="section">
+            <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
+              <div className="grid items-start gap-12 md:grid-cols-[1fr_1.8fr] lg:gap-16">
+                <div>
+                  <span className="kicker">Scope</span>
+                  <h2 className="mt-3 font-serif-playfair">What I own each month</h2>
+                  <p className="mt-5 max-w-md text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
+                    The retainer is structured around the commercial decisions that matter most —
+                    not a fixed list of deliverables that may or may not be relevant.
+                  </p>
+                </div>
+                <div className="grid gap-6 sm:grid-cols-2">
+                  {SCOPE_AREAS.map((area) => (
+                    <div key={area.area} className="border-t border-border-soft pt-5">
+                      <h3 className="text-[14px] font-semibold uppercase tracking-[0.12em] text-ink">
+                        {area.area}
+                      </h3>
+                      <ul className="mt-3 space-y-2">
+                        {area.items.map((item) => (
+                          <li key={item} className="flex items-start gap-2.5">
+                            <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
+                            <span className="text-[14px] leading-[1.6] text-text-muted">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Process */}
+          <section className="section section-alt">
+            <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
+              <div className="mx-auto max-w-3xl text-center">
+                <span className="kicker">Onboarding</span>
+                <h2 className="mt-3 font-serif-playfair">
+                  Up and running within two weeks
+                </h2>
+              </div>
+              <div className="mx-auto mt-14 grid max-w-5xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
+                {PROCESS_STEPS.map((step) => (
+                  <div key={step.title}>
+                    <p className="font-serif-playfair text-[40px] font-semibold leading-none text-brand/30">
+                      {step.num}
+                    </p>
+                    <h3 className="mt-4 text-[17px] font-semibold leading-[1.3] text-ink">
+                      {step.title}
+                    </h3>
+                    <p className="mt-2 text-[14px] leading-[1.65] text-text-muted">{step.desc}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="mx-auto mt-10 inline-flex max-w-fit rounded-full border border-brand/20 bg-brand-soft px-4 py-2 text-center text-[13px] font-semibold text-brand-ink">
+                First Board Pack and forecast model delivered by end of week 2.
+              </p>
+            </div>
+          </section>
+
+          {/* Why hire + testimonials */}
+          <section className="section">
+            <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
+              <div className="grid items-start gap-12 md:grid-cols-2 lg:gap-16">
+                <div>
+                  <span className="kicker">The approach</span>
+                  <h2 className="mt-3 font-serif-playfair">Why founders hire me for this work</h2>
+                  <p className="mt-6 max-w-lg text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
+                    I work more like a{' '}
+                    <strong className="text-ink">fractional Chief Economist</strong> embedded in
+                    your commercial decisions — not a consultant who shows up for a one-off project
+                    and disappears.
+                  </p>
+                  <p className="mt-5 max-w-lg text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
+                    The retainer is designed for founders who need someone thinking about
+                    monetization, metrics, and growth economics continuously — not episodically.
+                  </p>
+                </div>
+                <div>
+                  <span className="kicker">What founders say</span>
+                  <div className="mt-5 space-y-5">
+                    {TESTIMONIALS.map((item) => (
+                      <figure key={item.author} className="card">
+                        <blockquote className="font-serif-playfair text-[18px] italic leading-[1.55] text-ink">
+                          &ldquo;{item.quote}&rdquo;
+                        </blockquote>
+                        <figcaption className="mt-5 text-[13px] text-text-muted">
+                          <p className="font-semibold text-ink">{item.author}</p>
+                          <p>{item.role}</p>
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* How this fits with sprints */}
+          <section className="section section-alt">
+            <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
+              <div className="mx-auto max-w-3xl text-center">
+                <span className="kicker">How it fits together</span>
+                <h2 className="mt-3 font-serif-playfair">
+                  Sprints set the foundation. The retainer keeps it running.
+                </h2>
+                <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.7] text-text-muted sm:text-[17px]">
+                  Many founders start with a sprint or the 90-minute session, then move into the
+                  retainer once they know the work is ongoing.
+                </p>
+              </div>
+              <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
+                {[
+                  {
+                    label: 'Pricing & Monetization Sprint',
+                    desc: 'Sets the pricing structure, value metric, packaging, and rollout plan.',
+                    href: '/consulting/services/pricing-monetization-sprint',
+                  },
+                  {
+                    label: 'Growth Economics Sprint',
+                    desc: 'Installs the KPI system, unit economics model, and forecasting logic.',
+                    href: '/consulting/services/metrics-experimentation-sprint',
+                  },
+                  {
+                    label: 'Retainer',
+                    desc: 'Keeps the machine honest: iterate pricing, run experiments, maintain forward models, stay investor-ready.',
+                    href: '/consulting/services/on-call-economist-retainer',
+                  },
+                ].map((item, idx) => (
+                  <div
+                    key={item.label}
+                    className={idx === 2 ? 'card-dark' : 'card border-border-soft'}
+                  >
+                    <p
+                      className={`text-[11px] font-semibold uppercase tracking-[0.2em] ${
+                        idx === 2 ? 'text-brand-soft' : 'text-text-subtle'
+                      }`}
+                    >
+                      {idx === 0 ? 'Sprint 1' : idx === 1 ? 'Sprint 2' : 'Retainer'}
+                    </p>
+                    <h3
+                      className={`mt-3 font-serif-playfair text-[20px] font-semibold leading-[1.25] ${
+                        idx === 2 ? 'text-white' : 'text-ink'
+                      }`}
+                    >
+                      {item.label}
+                    </h3>
+                    <p
+                      className={`mt-3 text-[14px] leading-[1.65] ${
+                        idx === 2 ? 'text-white/75' : 'text-text-muted'
+                      }`}
+                    >
+                      {item.desc}
+                    </p>
+                    <Link
+                      href={item.href}
+                      className={`mt-5 inline-flex items-center gap-1 text-[13px] font-semibold underline underline-offset-4 transition-colors ${
+                        idx === 2
+                          ? 'text-brand-soft decoration-brand-soft/40 hover:text-white'
+                          : 'text-brand-ink decoration-brand/40 hover:text-brand-dark'
+                      }`}
+                    >
+                      Learn more
                     </Link>
                   </div>
                 ))}
               </div>
             </div>
-            </section>
+          </section>
 
-          {/* Core Deliverables Section */}
-            <section>
-            <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-8 text-center">Core Deliverables (menu)</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {[
-                { 
-                  title: 'Economist\'s Board Pack', 
-                  desc: 'KPI story, NRR/GM bridges, pricing changes, risks/mitigations.',
-                  icon: (
-                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                  )
-                },
-                { 
-                  title: 'Pricing Update', 
-                  desc: 'price bands, fences, discount policy, comms copy blocks, rollout/retro.',
-                  icon: (
-                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  )
-                },
-                { 
-                  title: 'Experiment Docket', 
-                  desc: '2–4 briefs/month (hypothesis, MDE/power, guardrails, stop rules).',
-                  icon: (
-                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                    </svg>
-                  )
-                },
-                { 
-                  title: 'Forecast Workbook', 
-                  desc: 'rolling 12–18-mo plan; hiring/capital scenarios; sensitivities.',
-                  icon: (
-                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                  )
-                },
-                { 
-                  title: 'Decision Log', 
-                  desc: 'what we decided, why, owner, next check.',
-                  icon: (
-                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                  )
-                },
-                { 
-                  title: 'Data Health Note', 
-                  desc: 'freshness, gaps, event patch list (no-/low-code guidance).',
-                  icon: (
-                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  )
-                },
-                { 
-                  title: 'Investor Prep', 
-                  desc: 'narrative framing, FAQ, diligence support.',
-                  icon: (
-                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  )
-                },
-                { 
-                  title: 'Marketplace design', 
-                  desc: 'take-rate, subsidies, liquidity levers.',
-                  icon: (
-                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                    </svg>
-                  )
-                },
-                { 
-                  title: 'Behavioral economics', 
-                  desc: 'choice architecture, framing tests, incentive design.',
-                  icon: (
-                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                    </svg>
-                  )
-                },
-                { 
-                  title: 'Pricing page & comms', 
-                  desc: 'wireframes, plan page UX, change-notice copy.',
-                  icon: (
-                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                  )
-                },
-                { 
-                  title: 'Board workshop', 
-                  desc: '"Economics of Growth" alignment session.',
-                  icon: (
-                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                  )
-                },
-                { 
-                  title: 'Recruit/handoff', 
-                  desc: 'analyst hiring spec, interview kit, 90-min transition workshop.',
-                  icon: (
-                    <svg className="w-6 h-6 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                  )
-                }
-              ].map((deliverable, idx) => (
-                <div key={idx} className="bg-white rounded-lg p-6 border border-border-subtle shadow-sm">
-                  <div className="mb-4">
-                    {deliverable.icon}
-                  </div>
-                  <h3 className="font-semibold text-[20px] text-text mb-3">{deliverable.title}</h3>
-                  <p className="text-base sm:text-[17px] text-text leading-[1.65]">{deliverable.desc}</p>
+          {/* FAQ */}
+          <section id="faq" className="section">
+            <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+              <div className="text-center">
+                <span className="kicker">FAQ</span>
+                <h2 className="mt-3 font-serif-playfair">Frequently asked questions</h2>
+              </div>
+              <div className="mt-10">
+                <FAQSection />
+              </div>
+            </div>
+          </section>
+
+          {/* Closing CTA */}
+          <section className="section-sm">
+            <div className="section-shell max-w-4xl">
+              <div className="cta-panel">
+                <h2 className="font-serif-playfair text-ink">
+                  Ready to explore an ongoing engagement?
+                </h2>
+                <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
+                  Book the free consult to discuss scope, cadence, and whether a retainer is the
+                  right fit given your growth stage and commercial complexity.
+                </p>
+                <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                  <Link href={PRIMARY_CTA_HREF} className={primaryButtonLg}>
+                    Book a Free Consult
+                    <ArrowRight className="h-4 w-4" aria-hidden />
+                  </Link>
+                  <Link href="/consulting" className={outlineButton}>
+                    See all services
+                  </Link>
                 </div>
-              ))}
-            </div>
-            
-            </section>
-
-          {/* Operating Cadence & How This Fits Section */}
-            <section id="how-it-works" className="scroll-mt-24">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              {/* Operating Cadence Column */}
-              <div>
-                <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-6">Operating Cadence</h2>
-                <ul className="space-y-4">
-                  {[
-                    'Weekly (or bi-weekly): Decision stand-up (tests, pricing moves, payback status)',
-                    'Monthly: Board Pack + forecast update + experiment readouts',
-                    'Quarterly: Pricing/pack reset; strategic deep-dive',
-                    'Onboarding (Week 0–2): scope & access → baseline metrics → quick-win pricing/test → first Board Pack'
-                  ].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span className="text-base sm:text-[17px] text-text leading-[1.65]">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* How This Fits Column */}
-              <div>
-                <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-6">How This Fits With My Sprints</h2>
-                <ul className="space-y-4">
-                  {[
-                    <><strong>Pricing & Monetization Sprint</strong> → sets price/pack/policy decisions.</>,
-                    <><strong>Metrics & Experimentation Sprint</strong> → installs the KPI loop.</>,
-                    <><strong>Retainer</strong> → keeps the machine honest: iterate pricing, run tests, maintain forward models, and stay investor-ready.</>
-                  ].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-brand flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                      </div>
-                      <span className="text-base sm:text-[17px] text-text leading-[1.65]">{item}</span>
-                    </li>
-                  ))}
-              </ul>
               </div>
             </div>
-            </section>
-
-          {/* FAQs Section */}
-          <FAQSection />
-        </div>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "url": "https://sarahzou.com/consulting/services/on-call-economist-retainer",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What's the difference between Starter, Growth, and Scale?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Time/attention and depth. Starter (~0.5 d/wk, $4k/mo) focuses on guidance; Growth (~1 d/wk, $8k/mo) runs active experiments; Scale (~2 d/wk, $15k/mo) handles complex monetization and fundraise prep."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Can we upgrade/downgrade or pause?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes—plans are flexible as needs change (e.g., ramp up pre-fundraise, step down post-launch)."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What happens during onboarding?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Week 0–2: scope + access → baseline metrics → first pricing/test move → first Economist's Board Pack."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What do you own each month?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Pricing moves/tests, forward models (NRR/LTV/GM bridges, runway), an Economist's Board Pack, and a learning loop with readouts → next bets."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Do you work with our existing tools and teams?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes—Marketing/Sales, Product/Data, and Finance/Planning are included in your operating cadence."
-                }
-              }
-            ]
-          }) }}
-        />
-
-        {/* CTA Section */}
-        <div className="max-w-4xl mx-auto mt-16">
-          <div className="bg-white rounded-lg p-8 md:p-12 border border-border-subtle shadow-lg text-center">
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <Image src="/images/headshot_v2.jpg" alt="Sarah Zou headshot" width={80} height={80} className="rounded-full object-cover flex-shrink-0" />
-              <h2 className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text">Exploring an ongoing Chief Economist partnership?</h2>
-          </div>
-            <p className="text-base sm:text-[17px] text-text leading-[1.65] mb-6 max-w-2xl mx-auto">
-              Use this call to discuss scope, cadence, and whether a retainer makes sense given your growth stage and internal capabilities.
-            </p>
-              <Link
-                href="/book"
-              className="inline-block bg-brand text-brand-on px-8 py-4 rounded-lg text-[19px] font-bold leading-[1.2] hover:bg-brand-ink transition shadow-lg hover:shadow-xl mb-8"
-              >
-              Book a free call
-              </Link>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-        <div className="max-w-2xl mx-auto mt-16 mb-16">
-          <div className="bg-white rounded-lg shadow-lg p-6 md:p-10">
-            <h2 className="font-serif-playfair text-[28px] sm:text-[32px] font-bold mb-4 text-text text-center">
-              Prefer email? Send a Message
-            </h2>
-            <p className="text-sm text-text-muted text-center mb-4">
-              Expect a reply in 1–2 business days. 
-              Want a faster answer? <Link href="/book" className="text-brand-ink hover:underline font-medium">Book a 15-min call</Link> (no prep needed)
-            </p>
-            <ContactForm />
-          </div>
-        </div>
+          </section>
+        </main>
       </div>
-    </section>
 
-      {/* Mobile Sticky Bottom Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-border-subtle shadow-lg z-50 md:hidden">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex gap-3">
-          <Link
-            href="/book"
-            className="flex-1 bg-brand hover:bg-brand-ink text-brand-on text-[19px] font-bold leading-[1.2] px-4 py-3 rounded-lg text-center transition-colors shadow-sm"
-          >
-            Book Free Consult
-          </Link>
-          <Link
-            href="/contact"
-            className="flex-1 bg-transparent border-2 border-brand text-brand-ink hover:bg-brand-ink hover:text-brand-on font-bold px-4 py-3 rounded-lg text-center transition-colors"
-          >
-            Send a message
-          </Link>
-        </div>
-      </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            url: SERVICE_URL,
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Do I need to complete a sprint before starting the retainer?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Not required, but many founders start with the Pricing or Growth Economics Sprint, then move into the retainer to keep the machine running. If you skip the sprint, the first month includes an onboarding baseline that covers similar ground.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: "What's the difference between Starter, Growth, and Scale?",
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Time, attention, and depth. Starter (~0.5 d/wk, $4k/mo) provides guidance and cadence. Growth (~1 d/wk, $8k/mo) runs active pricing experiments. Scale (~2 d/wk, $15k/mo) handles complex monetization, multi-segment modeling, and active fundraise prep.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Can we upgrade, downgrade, or pause?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes. Plans are flexible as your needs change — for example, ramping up pre-fundraise, stepping down post-launch, or pausing during a quiet quarter.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'What does onboarding look like?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Weeks 0–2: scope & access → baseline metrics review → first pricing/test move → first Economist\'s Board Pack. Most teams are fully up and running by the end of week 2.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Do you work with our existing tools and teams?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes. The retainer cadence includes touch points with Marketing/Sales, Product/Data, and Finance/Planning as needed.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
     </>
-  );
-} 
+  )
+}
