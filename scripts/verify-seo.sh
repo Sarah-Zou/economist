@@ -79,6 +79,8 @@ check_301 "/about/" "$DOMAIN/about"
 
 # Sample explicit removals.
 check_410 "/wiki/pricing/comms-and-deals/value-selling"
+check_410 "/wiki/pricing/comms-and-deals"
+check_410 "/wiki/pricing/pitfalls-and-failures"
 check_410 "/downloads/metrics-storytelling-one-pager"
 
 # Sample canonical live pages.

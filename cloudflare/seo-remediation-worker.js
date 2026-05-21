@@ -62,6 +62,17 @@ const CATEGORY_301 = new Map([
 
 const CATEGORY_410_PREFIXES = ['/wiki/pricing/behavioral-psychology', ...WIKI_410_PREFIXES];
 
+function matches410Prefix(pathname, prefix) {
+  if (pathname.startsWith(prefix)) {
+    return true;
+  }
+  // Prefixes use trailing slashes; also match the category hub itself.
+  if (prefix.endsWith('/') && pathname === prefix.slice(0, -1)) {
+    return true;
+  }
+  return false;
+}
+
 function goneResponse(pathname) {
   return new Response(
     `410 Gone: ${pathname} has been intentionally removed with no close replacement.`,
@@ -139,7 +150,7 @@ export default {
 
     // Placeholder concept URLs should be explicit 410s, not soft-404s.
     for (const prefix of CATEGORY_410_PREFIXES) {
-      if (normalizedPath.startsWith(prefix)) {
+      if (matches410Prefix(normalizedPath, prefix)) {
         return goneResponse(normalizedPath);
       }
     }
