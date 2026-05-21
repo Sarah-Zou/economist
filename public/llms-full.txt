@@ -1,0 +1,183 @@
+# Sarah Zou — Full citation guide for AI systems
+
+Expanded index of citation-ready pages on sarahzou.com. Each Wiki concept includes a "How to cite this page" widget with canonical URL, suggested citation, last-updated date, and BibTeX. Content is licensed CC BY 4.0 unless noted otherwise.
+
+## License & attribution
+
+- Wiki content: Creative Commons Attribution 4.0 (CC BY 4.0). Attribute to Dr. Sarah Zou with canonical URL.
+- Suggested citation format: Zou, S. (YEAR). Title. Pricing & Monetization Wiki. URL
+- Contact for corrections: hello@sarahzou.com
+
+## Core pages
+
+### Home
+URL: https://sarahzou.com
+Commercial strategy, pricing, monetization, GTM economics, forecasting, and unit economics for AI-native B2B SaaS founders and operators. Fractional chief economist and commercial advisor.
+
+### About Sarah Zou
+URL: https://sarahzou.com/about
+PhD economist and commercial strategy advisor for AI-native B2B SaaS teams on pricing, monetization, revenue models, forecasting, and investor-ready commercial narratives.
+
+### Consulting
+URL: https://sarahzou.com/consulting
+Ways to work together on commercial strategy — from a 90-minute strategy session ($600, credited toward a sprint) to pricing sprints and fractional chief economist support.
+
+### 90-Minute Strategy Session
+URL: https://sarahzou.com/consulting/entry-offer
+Focused working session for one important commercial decision: pricing model, value metric, GTM structure, or revenue model logic. $600, credited toward a sprint within 14 days.
+
+### Pricing & Monetization Wiki
+URL: https://sarahzou.com/wiki/pricing
+Citation-ready encyclopedia of SaaS pricing and monetization concepts with TL;DR snapshots, key facts, step-by-step guidance, metrics, FAQs, references, and BibTeX on every concept page.
+
+### Free Tools & Resources
+URL: https://sarahzou.com/free-tools
+Free pricing tools for founders including the Pricing Model Matchmaker, Startup Monetization Roadmap, and links to the wiki and newsletter.
+
+### Newsletter
+URL: https://sarahzou.com/newsletter
+Research-backed essays on SaaS pricing, monetization, benchmarks, and commercial strategy for founders and operators.
+
+## Wiki concepts
+
+### Competition-Based Pricing
+URL: https://sarahzou.com/wiki/pricing/foundations/competition-based-pricing
+Competition-Based Pricing sets price based on rivals to maintain share; encourages management passivity and risks destructive price wars.
+
+### Cost-Plus Pricing
+URL: https://sarahzou.com/wiki/pricing/foundations/cost-plus-pricing
+A simple way to set price by adding a markup to cost; fast for sanity checks but often misaligned with customer value and competition.
+
+### Customer-Driven Pricing (Consumer-Based Pricing)
+URL: https://sarahzou.com/wiki/pricing/foundations/customer-driven-pricing
+Customer-Driven Pricing is an approach that charges the highest perceived [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) based on haggling; alienates loyal customers and trains aggressive bargainers.
+
+### Maximization Pricing Strategy
+URL: https://sarahzou.com/wiki/pricing/foundations/maximization
+A short-term pricing approach that picks the price that maximizes a chosen metric (profit, revenue, or share) given demand and costs.
+
+### Penetration Pricing
+URL: https://sarahzou.com/wiki/pricing/foundations/penetration-strategy
+Launching at a deliberately low price to quickly win customers and market share, then raising prices once scale and lock-in are achieved.
+
+### Skimming Strategy
+URL: https://sarahzou.com/wiki/pricing/foundations/skimming-strategy
+A pricing strategy that launches at a premium to monetize early adopters' surplus, then steps down prices to capture successive demand tiers without eroding the anchor.
+
+### Strategic Pricing
+URL: https://sarahzou.com/wiki/pricing/foundations/strategic-pricing
+Strategic pricing is a systematic, value-based framework that aligns marketing, operations, and finance to maximize sustainable profitability.
+
+### Value-Based Pricing
+URL: https://sarahzou.com/wiki/pricing/foundations/value-based-pricing
+Value-Based Pricing (VBP) is a pricing approach where the price is determined by the value customers perceive and their willingness to pay for that product.
+
+### Credits / drawdown model
+URL: https://sarahzou.com/wiki/pricing/models-and-metering/credits-drawdown-model
+Customers prepay credits upfront, then draw down balances as they consume usage across products, features, and billing meters.
+
+### Freemium model
+URL: https://sarahzou.com/wiki/pricing/models-and-metering/freemium-model
+A customer acquisition strategy that uses a free-to-use version of a product to drive low-cost scale and upsell users into paid tiers.
+
+### Hybrid pricing
+URL: https://sarahzou.com/wiki/pricing/models-and-metering/hybrid-pricing
+A pricing model that combines fixed subscription fees with variable usage charges to stabilize revenue while capturing upside value.
+
+### Monetization model
+URL: https://sarahzou.com/wiki/pricing/models-and-metering/monetization-model
+The way a business turns delivered value into revenue—who pays, for what unit, and how the money scales.
+
+### Outcome / performance-based pricing
+URL: https://sarahzou.com/wiki/pricing/models-and-metering/outcome-performance-based-pricing
+A pricing model where customers pay based on the actual results or value achieved (outcomes) rather than usage, seats, or access.
+
+### Pricing Metric (Value Metric)
+URL: https://sarahzou.com/wiki/pricing/models-and-metering/pricing-metric-value-metric
+The pricing unit you charge on (seats, GB, transactions) that ensures your revenue grows as your customers succeed.
+
+### Seat-based pricing
+URL: https://sarahzou.com/wiki/pricing/models-and-metering/seat-based-pricing
+A monetization model where customers pay a fixed recurring fee for each individual user (license) granted access to the software.
+
+### Subscription model
+URL: https://sarahzou.com/wiki/pricing/models-and-metering/subscription-model
+A pricing model where customers pay repeatedly (monthly/annual) for ongoing access, usage, or replenishment—optimizing predictability and lifetime value.
+
+### Transaction-based pricing
+URL: https://sarahzou.com/wiki/pricing/models-and-metering/transaction-based-pricing
+A pricing model where fees are charged per transaction so revenue scales with usage while lowering adoption friction and aligning to outcomes.
+
+### Usage-based pricing
+URL: https://sarahzou.com/wiki/pricing/models-and-metering/usage-based-pricing
+Charge customers based on measured consumption so price scales with value, improving adoption and expansion.
+
+### Add-ons & modular packaging
+URL: https://sarahzou.com/wiki/pricing/packaging-and-bundling/add-ons-modular
+Sell a strong core product, then charge for optional add-ons/modules that match distinct customer needs.
+
+### Bundling
+URL: https://sarahzou.com/wiki/pricing/packaging-and-bundling/bundling
+Selling multiple complementary products together at one price to increase total revenue and customer stickiness.
+
+### Good-Better-Best (GBB) Framework
+URL: https://sarahzou.com/wiki/pricing/packaging-and-bundling/good-better-best
+A packaging method that offers 3 clearly differentiated plans to anchor value, segment buyers, and create predictable upgrade paths.
+
+### Leader / Filler / Killer Features
+URL: https://sarahzou.com/wiki/pricing/packaging-and-bundling/leader-filler-killer-features
+A packaging lens that classifies features so you can design high-converting tiers and avoid "feature soup."
+
+### Packaging architecture
+URL: https://sarahzou.com/wiki/pricing/packaging-and-bundling/packaging
+The blueprint for how to group features into distinct tiers to maximize willingness-to-pay and simplify the buying process.
+
+### Segmentation by Willingness to Pay (WTP) / Use Case
+URL: https://sarahzou.com/wiki/pricing/value-and-customers/customer-segments
+Partition customers by jobs-to-be-done and willingness to pay, then package and price to capture maximum value.
+
+### Customer Use Cases
+URL: https://sarahzou.com/wiki/pricing/value-and-customers/customer-use-cases
+Structured descriptions of the problem, persona, context, and outcomes that define how customers get value from your product and how you should price.
+
+### Economic Value Estimation (EVE)
+URL: https://sarahzou.com/wiki/pricing/value-and-customers/economic-value-estimation
+A structured method to quantify monetary value vs the next‑best alternative so you can set value‑based prices.
+
+### Ideal Customer Profile (ICP)
+URL: https://sarahzou.com/wiki/pricing/value-and-customers/ideal-customer-profile
+A hypothetical description of the account type that derives the most value from your product and provides the most value back to your business.
+
+### Jobs to Be Done (JTBD)
+URL: https://sarahzou.com/wiki/pricing/value-and-customers/jobs-to-be-done
+A demand lens that defines customers' 'progress' in context, so you can shape messaging, onboarding, packaging, and pricing around real switching triggers.
+
+### Price fences / price discrimination
+URL: https://sarahzou.com/wiki/pricing/value-and-customers/price-fences-price-discrimination
+A strategic framework for charging different customers different prices based on their willingness to pay, without triggering a PR backlash.
+
+### Value Decoder framework
+URL: https://sarahzou.com/wiki/pricing/value-and-customers/value-decoder-framework
+A framework for turning perceived customer value into a defendable price band by anchoring on the next-best alternative and adjusting for context.
+
+### Value drivers
+URL: https://sarahzou.com/wiki/pricing/value-and-customers/value-drivers
+The specific product benefits that create utility and drive a customer's Willingness to Pay (WTP).
+
+### Willingness to Pay (WTP)
+URL: https://sarahzou.com/wiki/pricing/value-and-customers/willingness-to-pay
+WTP is the maximum price a buyer accepts; use it to set a defensible price range, design tiers, and validate pricing against unit economics.
+
+## Newsletter
+
+### SaaS Benchmark Data Sources Guide | Stage-Smart Metrics for 2024-25
+URL: https://sarahzou.com/newsletter/saas-benchmark-data-sources-guide
+Cut through SaaS benchmark noise with stage-specific data sources. Learn which benchmark sources VCs trust for Seed to Pre-IPO, with actionable tips for investor presentations.
+
+### Why the Smartest SaaS Startups Are Hiring Fractional Chief Economists
+URL: https://sarahzou.com/newsletter/why-fractional-economist
+Why SaaS startups are hiring fractional chief economists and how they drive growth, pricing, and investor narrative.
+
+---
+Generated: 2026-05-21
+Total wiki concepts: 32

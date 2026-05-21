@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 import { Metadata } from 'next'
 import { ArrowRight, CheckCircle2, Target } from 'lucide-react'
 import { brandLink, outlineButton, primaryButton, primaryButtonLg } from '@/lib/brandStyles'
+import { generateBreadcrumbJsonLd } from '@/lib/generateJsonLd'
 import { OG_IMAGE_CONSULTING } from '@/lib/seo'
 
 const SESSION_INFO_HREF = '/consulting/entry-offer'
@@ -546,9 +547,21 @@ export default function ConsultingPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateBreadcrumbJsonLd([
+              { name: 'Home', url: '/' },
+              { name: 'Consulting', url: '/consulting' },
+            ])
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
+            url: 'https://sarahzou.com/consulting',
             mainEntity: FAQ_ITEMS.map((item) => ({
               '@type': 'Question',
               name: item.qSchema,

@@ -13,6 +13,7 @@ import {
   Zap,
 } from 'lucide-react'
 import { outlineButton, primaryButtonLg } from '@/lib/brandStyles'
+import { generateBreadcrumbJsonLd } from '@/lib/generateJsonLd'
 import { OG_IMAGE_ABOUT } from '@/lib/seo'
 
 const PRIMARY_CTA_HREF = '/book'
@@ -156,38 +157,16 @@ export const metadata: Metadata = {
 }
 
 export default function AboutPage() {
-  const personSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Sarah Zou',
-    honorificSuffix: 'PhD',
-    alternateName: 'Dr. Sarah Zou',
-    jobTitle: 'Commercial Strategy Advisor & Fractional Chief Economist',
-    description:
-      'PhD economist and commercial strategy advisor helping AI-native B2B SaaS teams make sharper decisions on pricing, monetization, GTM economics, revenue models, forecasting, and unit economics.',
-    url: 'https://sarahzou.com/about',
-    image: 'https://sarahzou.com/images/about_headshot.webp',
-    sameAs: ['https://www.linkedin.com/in/drsarahzou/'],
-    knowsAbout: [
-      'Commercial Strategy',
-      'Pricing',
-      'Monetization',
-      'GTM Strategy',
-      'Unit Economics',
-      'Revenue Model',
-      'Forecasting',
-      'Growth Economics',
-      'Econometrics',
-      'BizOps',
-      'Investor Narratives',
-    ],
-  }
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: 'Home', url: '/' },
+    { name: 'About', url: '/about' },
+  ])
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <div className="bg-page text-text">

@@ -2,6 +2,8 @@
 
 This file points to the best, clean, citation-ready content on this site. When quoting or attributing, use the canonical URLs below. Each Wiki concept page includes a "How to cite this page" widget with canonical URL, suggested citation, last-updated date, and BibTeX.
 
+Full index with one-paragraph summaries per page: https://sarahzou.com/llms-full.txt
+
 ## Wiki hub (entry point)
 
 https://sarahzou.com/wiki/pricing

@@ -6,6 +6,8 @@ import remarkGfm from 'remark-gfm'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Metadata } from 'next'
+import CiteThisPage from '@/components/wiki/CiteThisPage'
+import { generateArticleJsonLd, generateBreadcrumbJsonLd } from '@/lib/generateJsonLd'
 import '@/app/prose.css'
 
 export async function generateStaticParams() {
@@ -65,32 +67,33 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
     notFound()
   }
 
-  // Remove any top-level heading from the content
+  const canonicalUrl = post.canonical || `https://sarahzou.com/newsletter/${post.slug}`
   const content = post.content.replace(/^# .*$/m, '').trim()
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: post.title,
+  const articleJsonLd = generateArticleJsonLd({
+    title: post.title,
     description: post.description,
+    url: canonicalUrl,
     image: `https://sarahzou.com${post.image}`,
-    author: {
-      '@type': 'Person',
-      name: post.author,
-    },
     datePublished: post.date,
-    url: `https://sarahzou.com/newsletter/${post.slug}`,
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `https://sarahzou.com/newsletter/${post.slug}`,
-    },
-  }
+    dateModified: post.date,
+  })
+
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: 'Home', url: '/' },
+    { name: 'Newsletter', url: '/newsletter' },
+    { name: post.title, url: `/newsletter/${post.slug}` },
+  ])
 
   return (
     <div className="min-h-screen bg-white">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <article className="max-w-4xl mx-auto px-4 py-16">
         {/* Hero Image */}
@@ -123,6 +126,14 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
           <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
         </div>
 
+        <CiteThisPage
+          canonicalUrl={canonicalUrl}
+          title={post.title}
+          publicationTitle="Sarah Zou Newsletter"
+          lastUpdated={post.date}
+          slug={post.slug}
+        />
+
         {/* CTA Button */}
         <div className="flex justify-center mt-8">
           <Link
@@ -136,4 +147,4 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
       </article>
     </div>
   )
-} 
+}

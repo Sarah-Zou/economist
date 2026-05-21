@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { ArrowRight, ArrowUpRight, BookOpen, CheckCircle2, Mail, Map, Sparkles } from 'lucide-react'
 import { brandLink, outlineButton, primaryButtonSm } from '@/lib/brandStyles'
+import { generateBreadcrumbJsonLd } from '@/lib/generateJsonLd'
 
 export const metadata: Metadata = {
   title: 'Free Resources | EconNova',
@@ -13,6 +14,11 @@ export const metadata: Metadata = {
 }
 
 export default function FreeToolsPage() {
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: 'Home', url: '/' },
+    { name: 'Free Resources', url: '/free-tools' },
+  ])
+
   const quickChooser = [
     {
       heading: 'If you want a fast recommendation',
@@ -202,6 +208,11 @@ export default function FreeToolsPage() {
   }
 
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
     <main className="min-h-screen bg-page">
       <section className="bg-white/70">
         <div className="section-shell py-16 sm:py-20">
@@ -427,5 +438,6 @@ export default function FreeToolsPage() {
         </div>
       </section>
     </main>
+    </>
   )
 }

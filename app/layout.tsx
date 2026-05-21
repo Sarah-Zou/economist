@@ -5,7 +5,7 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { generateOrganizationProfessionalServiceJsonLd } from '@/lib/generateJsonLd'
+import { generateSiteEntityGraphJsonLd } from '@/lib/generateJsonLd'
 
 const inter = Inter({ 
   subsets: ['latin'], 
@@ -63,32 +63,10 @@ export default function RootLayout({
             `,
           }}
         />
-        {/* Person Schema for SEO - added to all pages for disambiguation */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Sarah Zou",
-              "honorificSuffix": "PhD",
-              "jobTitle": "Commercial Strategy Advisor & Fractional Chief Economist",
-              "url": "https://sarahzou.com/about",
-              "sameAs": ["https://www.linkedin.com/in/drsarahzou"],
-              "worksFor": {
-                "@type": "Organization",
-                "name": "EconNova Consulting",
-                "url": "https://sarahzou.com"
-              },
-              "knowsAbout": ["Pricing", "Monetization", "Commercial Strategy", "GTM Strategy", "Unit Economics", "Revenue Model", "Forecasting", "Growth Economics", "Experimentation", "Econometrics", "BizOps"]
-            })
-          }}
-        />
-        {/* Organization / ProfessionalService schema site-wide (footer entity) */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generateOrganizationProfessionalServiceJsonLd())
+            __html: JSON.stringify(generateSiteEntityGraphJsonLd()),
           }}
         />
         {/* Load analytics as non-critical work to protect first paint/LCP */}

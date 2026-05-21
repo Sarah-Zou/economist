@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { CheckCircle2, ArrowRight, FileText, Video, Target, Zap, XCircle } from 'lucide-react'
 import { outlineButton, primaryButton, primaryButtonLg } from '@/lib/brandStyles'
 import EntryOfferFAQ from './EntryOfferFAQ'
-import { generateServiceWithOffersJsonLd, generateFAQJsonLd } from '@/lib/generateJsonLd'
+import { generateServiceWithOffersJsonLd, generateFAQJsonLd, generateBreadcrumbJsonLd } from '@/lib/generateJsonLd'
 import { OG_IMAGE_CONSULTING } from '@/lib/seo'
 
 export const metadata: Metadata = {
@@ -125,6 +125,12 @@ export default function EntryOfferPage() {
     })),
   })
 
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: 'Home', url: '/' },
+    { name: 'Consulting', url: '/consulting' },
+    { name: '90-Minute Session', url: '/consulting/entry-offer' },
+  ])
+
   return (
     <>
       <script
@@ -134,6 +140,10 @@ export default function EntryOfferPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
     <div className="bg-page text-text">
       <main>

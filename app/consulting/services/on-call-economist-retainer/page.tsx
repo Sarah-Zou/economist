@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import FAQSection from './FAQSection'
-import { generateServiceWithOffersJsonLd } from '@/lib/generateJsonLd'
+import { generateServiceWithOffersJsonLd, generateBreadcrumbJsonLd } from '@/lib/generateJsonLd'
 import { outlineButton, primaryButtonLg } from '@/lib/brandStyles'
 
 export const metadata: Metadata = {
@@ -205,11 +205,24 @@ export default function FractionalChiefEconomistRetainer() {
     ],
   })
 
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: 'Home', url: '/' },
+    { name: 'Consulting', url: '/consulting' },
+    {
+      name: 'Fractional Commercial Strategy',
+      url: '/consulting/services/on-call-economist-retainer',
+    },
+  ])
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <div className="bg-page text-text">

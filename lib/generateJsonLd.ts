@@ -1,3 +1,14 @@
+import type { WikiEntityLink } from './wiki-entity-links';
+
+export const SITE_BASE_URL = 'https://sarahzou.com';
+
+export const SITE_ENTITY_IDS = {
+  person: `${SITE_BASE_URL}/#person`,
+  organization: `${SITE_BASE_URL}/#organization`,
+  professionalService: `${SITE_BASE_URL}/#professional-service`,
+  website: `${SITE_BASE_URL}/#website`,
+} as const;
+
 export interface ArticleData {
   title: string;
   description: string;
@@ -5,7 +16,9 @@ export interface ArticleData {
   image?: string;
   datePublished?: string;
   dateModified?: string;
-  author: string;
+  author?: string;
+  about?: WikiEntityLink | null;
+  mentions?: WikiEntityLink[];
 }
 
 export interface BreadcrumbItem {
@@ -24,94 +37,182 @@ export interface FAQItem {
   answer: string;
 }
 
-export function generateFAQJsonLd(data: {
-  url: string;
-  faqItems: FAQItem[];
-}) {
+function entityLinkToSchemaThing(link: WikiEntityLink) {
+  const sameAs = [link.wikipedia, link.wikidata].filter(Boolean);
   return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "url": data.url,
-    "mainEntity": data.faqItems.map(item => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
-      }
-    }))
+    '@type': 'Thing',
+    name: link.name,
+    ...(sameAs.length ? { sameAs } : {}),
+  };
+}
+
+export function generateSiteEntityGraphJsonLd() {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': SITE_ENTITY_IDS.website,
+        name: 'Sarah Zou',
+        url: SITE_BASE_URL,
+        publisher: { '@id': SITE_ENTITY_IDS.organization },
+      },
+      {
+        '@type': 'Organization',
+        '@id': SITE_ENTITY_IDS.organization,
+        name: 'EconNova Consulting',
+        url: SITE_BASE_URL,
+        logo: `${SITE_BASE_URL}/images/econnova_logo.png`,
+        description:
+          'Commercial strategy, pricing, and growth economics for AI-native B2B SaaS teams. Pricing, monetization, GTM economics, forecasting, unit economics, and investor-ready commercial narratives.',
+        founder: { '@id': SITE_ENTITY_IDS.person },
+        sameAs: ['https://www.linkedin.com/in/drsarahzou'],
+      },
+      {
+        '@type': 'Person',
+        '@id': SITE_ENTITY_IDS.person,
+        name: 'Sarah Zou',
+        honorificSuffix: 'PhD',
+        alternateName: 'Dr. Sarah Zou',
+        jobTitle: 'Commercial Strategy Advisor & Fractional Chief Economist',
+        description:
+          'PhD economist and commercial strategy advisor helping AI-native B2B SaaS teams make sharper decisions on pricing, monetization, GTM economics, revenue models, forecasting, and unit economics.',
+        url: `${SITE_BASE_URL}/about`,
+        image: `${SITE_BASE_URL}/images/headshot_v4.webp`,
+        sameAs: ['https://www.linkedin.com/in/drsarahzou/'],
+        worksFor: { '@id': SITE_ENTITY_IDS.organization },
+        knowsAbout: [
+          'Commercial Strategy',
+          'Pricing',
+          'Monetization',
+          'GTM Strategy',
+          'Unit Economics',
+          'Revenue Model',
+          'Forecasting',
+          'Growth Economics',
+          'Experimentation',
+          'Econometrics',
+          'BizOps',
+          'Investor Narratives',
+        ],
+      },
+      {
+        '@type': 'ProfessionalService',
+        '@id': SITE_ENTITY_IDS.professionalService,
+        name: 'EconNova Consulting',
+        url: SITE_BASE_URL,
+        logo: `${SITE_BASE_URL}/images/econnova_logo.png`,
+        description:
+          'Commercial strategy, pricing, and growth economics for AI-native B2B SaaS teams. Pricing, monetization, GTM economics, forecasting, unit economics, and investor-ready commercial narratives.',
+        founder: { '@id': SITE_ENTITY_IDS.person },
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Princeton',
+          addressRegion: 'NJ',
+          addressCountry: 'US',
+        },
+        contactPoint: {
+          '@type': 'ContactPoint',
+          contactType: 'Business Inquiries',
+          email: 'hello@sarahzou.com',
+          url: `${SITE_BASE_URL}/contact`,
+        },
+      },
+    ],
+  };
+}
+
+/** @deprecated Use generateSiteEntityGraphJsonLd() in root layout instead. */
+export function generateOrganizationProfessionalServiceJsonLd() {
+  const graph = generateSiteEntityGraphJsonLd();
+  return graph['@graph'].find(
+    (node) => node['@id'] === SITE_ENTITY_IDS.professionalService
+  );
+}
+
+export function generateFAQJsonLd(data: { url: string; faqItems: FAQItem[] }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    url: data.url,
+    mainEntity: data.faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
   };
 }
 
 export function generateArticleJsonLd(data: ArticleData) {
   return {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": data.title,
-    "description": data.description,
-    "image": data.image || "https://sarahzou.com/images/og-default.jpg",
-    "author": {
-      "@type": "Person",
-      "name": data.author,
-      "url": "https://sarahzou.com/about"
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: data.title,
+    description: data.description,
+    image: data.image || `${SITE_BASE_URL}/images/og-default.jpg`,
+    author: { '@id': SITE_ENTITY_IDS.person },
+    publisher: { '@id': SITE_ENTITY_IDS.organization },
+    ...(data.datePublished ? { datePublished: data.datePublished } : {}),
+    ...(data.dateModified ? { dateModified: data.dateModified } : {}),
+    ...(data.about ? { about: entityLinkToSchemaThing(data.about) } : {}),
+    ...(data.mentions?.length
+      ? { mentions: data.mentions.map(entityLinkToSchemaThing) }
+      : {}),
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': data.url,
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Sarah Zou",
-      "url": "https://sarahzou.com"
-    },
-    ...(data.datePublished ? { "datePublished": data.datePublished } : {}),
-    ...(data.dateModified ? { "dateModified": data.dateModified } : {}),
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": data.url
-    },
-    "url": data.url
+    url: data.url,
   };
 }
 
 export function generateTechArticleJsonLd(data: ArticleData) {
   return {
     ...generateArticleJsonLd(data),
-    "@type": "TechArticle"
+    '@type': 'TechArticle',
   };
 }
 
-const DEFAULT_BASE_URL = "https://sarahzou.com";
+const DEFAULT_BASE_URL = SITE_BASE_URL;
 
 export function generateBreadcrumbJsonLd(
   breadcrumbs: BreadcrumbItem[],
   baseUrl: string = DEFAULT_BASE_URL
 ) {
   return {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": breadcrumbs.map((item, index) => {
-      const absoluteUrl = item.url.startsWith("http") ? item.url : `${baseUrl.replace(/\/$/, "")}${item.url.startsWith("/") ? item.url : `/${item.url}`}`;
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbs.map((item, index) => {
+      const absoluteUrl = item.url.startsWith('http')
+        ? item.url
+        : `${baseUrl.replace(/\/$/, '')}${item.url.startsWith('/') ? item.url : `/${item.url}`}`;
       return {
-        "@type": "ListItem",
-        "position": index + 1,
-        "name": item.name,
-        "item": absoluteUrl
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        item: absoluteUrl,
       };
-    })
+    }),
   };
 }
 
 export function generateItemListJsonLd(categories: CategoryItem[]) {
   return {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "SaaS Pricing & Monetization Wiki Categories",
-    "description": "Comprehensive guide to SaaS pricing and monetization strategies",
-    "numberOfItems": categories.length,
-    "itemListElement": categories.map((category, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "name": category.name,
-      "description": category.description,
-      "url": category.url
-    }))
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'SaaS Pricing & Monetization Wiki Categories',
+    description: 'Comprehensive guide to SaaS pricing and monetization strategies',
+    numberOfItems: categories.length,
+    itemListElement: categories.map((category, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: category.name,
+      description: category.description,
+      url: category.url,
+    })),
   };
 }
 
@@ -122,17 +223,13 @@ export function generateWebPageJsonLd(data: {
   dateModified: string;
 }) {
   return {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": data.title,
-    "description": data.description,
-    "url": data.url,
-    "dateModified": data.dateModified,
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Sarah Zou",
-      "url": "https://sarahzou.com"
-    }
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: data.title,
+    description: data.description,
+    url: data.url,
+    dateModified: data.dateModified,
+    isPartOf: { '@id': SITE_ENTITY_IDS.website },
   };
 }
 
@@ -143,17 +240,13 @@ export function generateCollectionPageJsonLd(data: {
   dateModified: string;
 }) {
   return {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": data.title,
-    "description": data.description,
-    "url": data.url,
-    "dateModified": data.dateModified,
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Sarah Zou",
-      "url": "https://sarahzou.com"
-    }
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: data.title,
+    description: data.description,
+    url: data.url,
+    dateModified: data.dateModified,
+    isPartOf: { '@id': SITE_ENTITY_IDS.website },
   };
 }
 
@@ -172,16 +265,12 @@ export interface ServiceOfferTier {
 
 export function generateServiceJsonLd(data: ServiceData) {
   return {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": data.name,
-    "description": data.description,
-    "url": data.url,
-    "provider": {
-      "@type": "Organization",
-      "name": "EconNova Consulting",
-      "url": "https://sarahzou.com"
-    }
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: data.name,
+    description: data.description,
+    url: data.url,
+    provider: { '@id': SITE_ENTITY_IDS.professionalService },
   };
 }
 
@@ -191,41 +280,14 @@ export function generateServiceWithOffersJsonLd(
   return {
     ...generateServiceJsonLd(data),
     offers: data.offers.map((offer) => ({
-      "@type": "Offer",
+      '@type': 'Offer',
       name: offer.name,
       price: offer.price,
-      priceCurrency: offer.priceCurrency ?? "USD",
+      priceCurrency: offer.priceCurrency ?? 'USD',
       ...(offer.description ? { description: offer.description } : {}),
       url: data.url,
-      availability: "https://schema.org/InStock",
-      seller: {
-        "@type": "Organization",
-        name: "EconNova Consulting",
-        url: "https://sarahzou.com",
-      },
+      availability: 'https://schema.org/InStock',
+      seller: { '@id': SITE_ENTITY_IDS.organization },
     })),
-  };
-}
-
-export function generateOrganizationProfessionalServiceJsonLd() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "EconNova Consulting",
-    "url": "https://sarahzou.com",
-    "logo": "https://sarahzou.com/images/econnova_logo.png",
-    "description": "Commercial strategy, pricing, and growth economics for AI-native B2B SaaS teams. Pricing, monetization, GTM economics, forecasting, unit economics, and investor-ready commercial narratives.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Princeton",
-      "addressRegion": "NJ",
-      "addressCountry": "US"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "Business Inquiries",
-      "email": "hello@sarahzou.com",
-      "url": "https://sarahzou.com/contact"
-    }
   };
 }

@@ -153,64 +153,6 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
-  const organizationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'EconNova Consulting',
-    url: 'https://sarahzou.com',
-    logo: 'https://sarahzou.com/images/econnova_logo.png',
-    description:
-      'Commercial strategy, pricing, and growth economics for AI-native B2B SaaS teams. Pricing, monetization, GTM economics, forecasting, unit economics, and investor-ready commercial narratives.',
-    founder: {
-      '@type': 'Person',
-      name: 'Dr. Sarah Zou',
-      jobTitle: 'Commercial Strategy Advisor & Fractional Chief Economist',
-    },
-    sameAs: ['https://www.linkedin.com/in/drsarahzou'],
-    serviceType: [
-      'Commercial Strategy Consulting',
-      'Pricing Strategy Consulting',
-      'Monetization Strategy',
-      'GTM Economics',
-      'Growth Economics and Forecasting',
-      'Fractional Chief Economist Services',
-      'BizOps and Strategy Support',
-    ],
-  }
-
-  const personSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Sarah Zou',
-    honorificSuffix: 'PhD',
-    alternateName: 'Dr. Sarah Zou',
-    jobTitle: 'Commercial Strategy Advisor & Fractional Chief Economist',
-    description:
-      'PhD economist and commercial strategy advisor helping AI-native B2B SaaS teams make sharper decisions on pricing, monetization, GTM economics, revenue models, forecasting, and unit economics.',
-    url: 'https://sarahzou.com',
-    image: 'https://sarahzou.com/images/headshot_v4.webp',
-    sameAs: ['https://www.linkedin.com/in/drsarahzou/'],
-    worksFor: {
-      '@type': 'Organization',
-      name: 'EconNova Consulting',
-      url: 'https://sarahzou.com',
-    },
-    knowsAbout: [
-      'Commercial Strategy',
-      'Pricing',
-      'Monetization',
-      'GTM Strategy',
-      'Unit Economics',
-      'Revenue Model',
-      'Forecasting',
-      'Growth Economics',
-      'Experimentation',
-      'Econometrics',
-      'BizOps',
-      'Investor Narratives',
-    ],
-  }
-
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -245,15 +187,6 @@ export default function Home() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-      />
-
       <div className="bg-page text-text">
         {/* Hero */}
         <section className="bg-hero-tint">

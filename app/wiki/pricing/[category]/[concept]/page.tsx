@@ -43,7 +43,10 @@ import {
   Activity,
 } from 'lucide-react'
 import Image from 'next/image'
-import '@/app/prose.css'
+import {
+  getWikiConceptEntityLink,
+  getWikiConceptMentionLinks,
+} from '@/lib/wiki-entity-links'
 
 interface ConceptPageProps {
   params: {
@@ -1241,6 +1244,12 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
       { name: conceptName, url: `/wiki/pricing/${params.category}/${params.concept}` },
     ]
 
+    const entityAbout = getWikiConceptEntityLink(params.category, params.concept)
+    const entityMentions = getWikiConceptMentionLinks(
+      params.category,
+      conceptData?.relatedConcepts ?? relatedConceptIds
+    )
+
     const articleJsonLd = generateTechArticleJsonLd({
       title: conceptName,
       description: description || `Learn about ${conceptName} in the context of ${category.title}`,
@@ -1248,6 +1257,8 @@ export default async function ConceptPage({ params }: ConceptPageProps) {
       datePublished: conceptData?.publishedAt,
       dateModified: conceptData?.lastUpdated || category.updated,
       author: conceptData?.owner || 'Dr. Sarah Zou',
+      about: entityAbout,
+      mentions: entityMentions,
     })
 
     const breadcrumbJsonLd = generateBreadcrumbJsonLd(breadcrumbs)

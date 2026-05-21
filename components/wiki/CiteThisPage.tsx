@@ -3,30 +3,57 @@
 import { useState } from 'react';
 import { Copy, Check, Quote, ChevronDown, ChevronUp } from 'lucide-react';
 
-const WIKI_TITLE = 'Pricing & Monetization Wiki';
+const DEFAULT_PUBLICATION_TITLE = 'Pricing & Monetization Wiki';
 
 export interface CiteThisPageProps {
   canonicalUrl: string;
   title: string;
-  categoryTitle: string;
+  /** Section or series name shown in the citation (e.g. wiki category or "Newsletter"). */
+  collectionTitle?: string;
+  /** @deprecated Use collectionTitle */
+  categoryTitle?: string;
+  publicationTitle?: string;
   lastUpdated?: string;
+  /** @deprecated Use slug */
   conceptSlug?: string;
+  slug?: string;
 }
 
-function formatSuggestedCitation(title: string, categoryTitle: string, url: string, lastUpdated?: string): string {
+function formatSuggestedCitation(
+  title: string,
+  publicationTitle: string,
+  url: string,
+  lastUpdated?: string,
+  collectionTitle?: string
+): string {
   const year = lastUpdated ? new Date(lastUpdated).getFullYear() : new Date().getFullYear();
-  return `Zou, S. (${year}). ${title}. In ${categoryTitle}. ${WIKI_TITLE}. ${url}`;
+  if (collectionTitle) {
+    return `Zou, S. (${year}). ${title}. In ${collectionTitle}. ${publicationTitle}. ${url}`;
+  }
+  return `Zou, S. (${year}). ${title}. ${publicationTitle}. ${url}`;
 }
 
-function formatBibTeX(title: string, categoryTitle: string, url: string, lastUpdated?: string, conceptSlug?: string): string {
+function formatBibTeX(
+  title: string,
+  publicationTitle: string,
+  url: string,
+  lastUpdated?: string,
+  slug?: string,
+  collectionTitle?: string
+): string {
   const year = lastUpdated ? new Date(lastUpdated).getFullYear() : new Date().getFullYear();
-  const key = conceptSlug ? `zou-${conceptSlug}` : `zou-${title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`;
+  const key = slug
+    ? `zou-${slug}`
+    : `zou-${title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`;
   const note = lastUpdated ? `Last updated: ${lastUpdated}` : '';
   const noteLine = note ? `\n  note = {${note}},` : '';
+  const howpublished = collectionTitle
+    ? `{${publicationTitle}, ${collectionTitle}}`
+    : `{${publicationTitle}}`;
   return `@misc{${key},
   author = {Zou, Sarah},
   title = {{${title}}},
-  howpublished = {${WIKI_TITLE}, ${categoryTitle}},
+  howpublished = ${howpublished},
   year = {${year}},
   url = {${url}},${noteLine}
 }`;
@@ -53,10 +80,34 @@ function CopyButton({ text, label }: { text: string; label: string }) {
   );
 }
 
-export default function CiteThisPage({ canonicalUrl, title, categoryTitle, lastUpdated, conceptSlug }: CiteThisPageProps) {
+export default function CiteThisPage({
+  canonicalUrl,
+  title,
+  collectionTitle,
+  categoryTitle,
+  publicationTitle = DEFAULT_PUBLICATION_TITLE,
+  lastUpdated,
+  conceptSlug,
+  slug,
+}: CiteThisPageProps) {
   const [showBibTeX, setShowBibTeX] = useState(false);
-  const suggestedCitation = formatSuggestedCitation(title, categoryTitle, canonicalUrl, lastUpdated);
-  const bibTeX = formatBibTeX(title, categoryTitle, canonicalUrl, lastUpdated, conceptSlug);
+  const sectionTitle = collectionTitle ?? categoryTitle;
+  const bibSlug = slug ?? conceptSlug;
+  const suggestedCitation = formatSuggestedCitation(
+    title,
+    publicationTitle,
+    canonicalUrl,
+    lastUpdated,
+    sectionTitle
+  );
+  const bibTeX = formatBibTeX(
+    title,
+    publicationTitle,
+    canonicalUrl,
+    lastUpdated,
+    bibSlug,
+    sectionTitle
+  );
 
   return (
     <div className="border border-border-subtle rounded-lg bg-[#fafafa] p-4 mt-6 overflow-hidden">
