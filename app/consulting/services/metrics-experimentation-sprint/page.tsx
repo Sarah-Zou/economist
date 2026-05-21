@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { ArrowRight, ArrowUpRight, CheckCircle2 } from 'lucide-react'
 import FAQSection from './FAQSection'
-import { generateServiceJsonLd } from '@/lib/generateJsonLd'
+import { generateServiceWithOffersJsonLd } from '@/lib/generateJsonLd'
 import { outlineButton, primaryButtonLg } from '@/lib/brandStyles'
 
 export const metadata: Metadata = {
@@ -174,11 +174,16 @@ const PROCESS_STEPS = [
 ]
 
 export default function GrowthEconomicsSprint() {
-  const serviceJsonLd = generateServiceJsonLd({
+  const serviceJsonLd = generateServiceWithOffersJsonLd({
     name: 'Growth Economics, Forecasting & Unit Economics Sprint',
     description:
       'A focused 1–2 week sprint for AI-native B2B SaaS teams to build a working KPI system, unit economics model, and forecasting logic that supports pricing decisions and investor-ready commercial narratives.',
     url: SERVICE_URL,
+    offers: [
+      { name: 'Lite', price: 6000, description: 'Core KPI and unit economics structure.' },
+      { name: 'Core', price: 9000, description: 'Broader revenue model and forecasting work.' },
+      { name: 'Pro', price: 12000, description: 'Investor-critical models with deeper segmentation.' },
+    ],
   })
 
   return (

@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 import { Metadata } from 'next'
 import { ArrowRight, CheckCircle2, Target } from 'lucide-react'
 import { brandLink, outlineButton, primaryButton, primaryButtonLg } from '@/lib/brandStyles'
+import { OG_IMAGE_CONSULTING } from '@/lib/seo'
 
 const SESSION_INFO_HREF = '/consulting/entry-offer'
 const PRICING_SPRINT_HREF = '/consulting/services/pricing-monetization-sprint'
@@ -41,12 +42,14 @@ export const metadata: Metadata = {
       'Commercial strategy, pricing, GTM economics, forecasting, and unit economics support for AI-native B2B SaaS teams. Start with a free consult or the 90-minute strategy session.',
     type: 'website',
     url: 'https://sarahzou.com/consulting',
+    images: [OG_IMAGE_CONSULTING],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Work With Sarah Zou | Commercial Strategy, Pricing & Growth Economics for AI SaaS',
     description:
       'Commercial strategy, pricing, GTM economics, forecasting, and unit economics support for AI-native B2B SaaS teams. Start with a free consult or the 90-minute strategy session.',
+    images: [OG_IMAGE_CONSULTING],
   },
 }
 

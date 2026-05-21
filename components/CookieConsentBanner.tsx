@@ -50,11 +50,10 @@ export default function CookieConsentBanner() {
   if (!visible) return null
 
   return (
-    <aside
+    <div
       className="fixed bottom-4 right-4 z-[60] max-w-[320px] rounded-lg border border-[#e2e6ea] bg-white/95 p-3 shadow-lg backdrop-blur-sm sm:bottom-5 sm:right-5 sm:p-3"
-      role="dialog"
+      role="region"
       aria-label="Cookie consent"
-      aria-live="polite"
     >
       <p className="text-xs text-[#1f2933] leading-snug sm:text-sm">
         This site uses cookies to analyze traffic.{' '}
@@ -78,6 +77,6 @@ export default function CookieConsentBanner() {
           Decline
         </button>
       </div>
-    </aside>
+    </div>
   )
 }

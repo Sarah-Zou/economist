@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { ArrowRight, ArrowUpRight, CheckCircle2 } from 'lucide-react'
 import FAQSection from './FAQSection'
-import { generateServiceJsonLd } from '@/lib/generateJsonLd'
+import { generateServiceWithOffersJsonLd } from '@/lib/generateJsonLd'
 import { outlineButton, primaryButtonLg } from '@/lib/brandStyles'
 
 export const metadata: Metadata = {
@@ -189,11 +189,16 @@ const PROCESS_STEPS = [
 ]
 
 export default function PricingDiagnosticRevenueBoost() {
-  const serviceJsonLd = generateServiceJsonLd({
+  const serviceJsonLd = generateServiceWithOffersJsonLd({
     name: 'Pricing & Monetization Sprint',
     description:
       'Build a pricing structure you can take to market across model, value metric, packaging, price logic, and rollout in 1–2 weeks.',
     url: SERVICE_URL,
+    offers: [
+      { name: 'Lite', price: 5000, description: 'Defendable first pricing structure and package design.' },
+      { name: 'Core', price: 9000, description: 'Broader reset across model, metric, packaging, and rollout.' },
+      { name: 'Pro', price: 18000, description: 'Complex or investor-critical pricing with deeper analysis.' },
+    ],
   })
 
   return (

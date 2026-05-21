@@ -25,7 +25,9 @@ const nextConfig = {
         hostname: 'cdn.jsdelivr.net',
       }
     ],
-    // Use unoptimized images only for static export builds.
+    // Static export (GitHub Pages): Next image optimizer is unavailable.
+    // Hero assets are pre-compressed WebP in /public/images; og-home.webp is generated at build.
+    // For responsive resizing at the edge, enable Cloudflare Polish or Images in front of Pages.
     unoptimized: isStaticExport,
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],

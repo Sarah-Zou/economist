@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import { CheckCircle2, ArrowRight, FileText, Video, Target, Zap, XCircle } from 'lucide-react'
 import { outlineButton, primaryButton, primaryButtonLg } from '@/lib/brandStyles'
 import EntryOfferFAQ from './EntryOfferFAQ'
+import { generateServiceWithOffersJsonLd, generateFAQJsonLd } from '@/lib/generateJsonLd'
+import { OG_IMAGE_CONSULTING } from '@/lib/seo'
 
 export const metadata: Metadata = {
   title: '90-Minute Commercial Strategy Session for AI-Native B2B SaaS | Sarah Zou',
@@ -28,12 +30,14 @@ export const metadata: Metadata = {
       'A focused, flat-fee working session for AI-native B2B SaaS founders and operators who need a clearer direction on pricing model, value metric, GTM structure, revenue logic, or packaging.',
     type: 'website',
     url: 'https://sarahzou.com/consulting/entry-offer',
+    images: [OG_IMAGE_CONSULTING],
   },
   twitter: {
     card: 'summary_large_image',
     title: '90-Minute Commercial Strategy Session for AI-Native B2B SaaS | Sarah Zou',
     description:
       'A 90-minute working session plus a 48-hour follow-up memo covering pricing model, value metric, GTM structure, revenue logic, packaging, risks, and next steps.',
+    images: [OG_IMAGE_CONSULTING],
   },
 }
 
@@ -98,7 +102,39 @@ const WHY_FOUNDERS = [
 ]
 
 export default function EntryOfferPage() {
+  const serviceJsonLd = generateServiceWithOffersJsonLd({
+    name: '90-Minute Commercial Strategy Session',
+    description:
+      'A focused 90-minute working session for AI-native B2B SaaS founders and operators, with a 48-hour follow-up memo.',
+    url: 'https://sarahzou.com/consulting/entry-offer',
+    offers: [
+      {
+        name: '90-Minute Commercial Strategy Session',
+        price: 600,
+        description:
+          'Flat fee; credited toward a follow-on sprint if booked within 14 days.',
+      },
+    ],
+  })
+
+  const faqJsonLd = generateFAQJsonLd({
+    url: 'https://sarahzou.com/consulting/entry-offer',
+    faqItems: FAQ_ITEMS.map((item) => ({
+      question: item.q,
+      answer: item.a,
+    })),
+  })
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
     <div className="bg-page text-text">
       <main>
         {/* Hero */}
@@ -389,5 +425,6 @@ export default function EntryOfferPage() {
         </section>
       </main>
     </div>
+    </>
   )
 }

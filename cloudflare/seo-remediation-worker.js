@@ -90,6 +90,12 @@ function normalizePathname(pathname) {
 export default {
   async fetch(request) {
     const url = new URL(request.url);
+
+    // SEO assets must pass through unchanged (avoid redirect/canonical side effects).
+    if (/^\/(robots\.txt|sitemap.*\.xml|llms\.txt)$/i.test(url.pathname)) {
+      return fetch(request);
+    }
+
     const originalPath = url.pathname;
     const lowerPath = originalPath.toLowerCase();
     const normalizedPath = normalizePathname(lowerPath);

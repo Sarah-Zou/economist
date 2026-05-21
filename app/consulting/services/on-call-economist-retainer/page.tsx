@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import FAQSection from './FAQSection'
-import { generateServiceJsonLd } from '@/lib/generateJsonLd'
+import { generateServiceWithOffersJsonLd } from '@/lib/generateJsonLd'
 import { outlineButton, primaryButtonLg } from '@/lib/brandStyles'
 
 export const metadata: Metadata = {
@@ -193,11 +193,16 @@ const SCOPE_AREAS = [
 ]
 
 export default function FractionalChiefEconomistRetainer() {
-  const serviceJsonLd = generateServiceJsonLd({
+  const serviceJsonLd = generateServiceWithOffersJsonLd({
     name: 'Fractional or Embedded Commercial Strategy Support',
     description:
       'Ongoing commercial strategy support across pricing, monetization, GTM economics, forecasting, unit economics, and board prep for AI-native B2B SaaS teams — without the full-time overhead.',
     url: SERVICE_URL,
+    offers: [
+      { name: 'Lite', price: 4000, description: 'Monthly advisory and async support.' },
+      { name: 'Core', price: 8000, description: 'Weekly working sessions and board prep.' },
+      { name: 'Pro', price: 15000, description: 'Embedded support with broader scope.' },
+    ],
   })
 
   return (

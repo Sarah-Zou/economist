@@ -3,6 +3,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { ArrowRight, CheckCircle2, Clock3, FileText, ChevronDown, Video } from 'lucide-react'
 import { brandLink, outlineButton, primaryButton, primaryButtonLg } from '@/lib/brandStyles'
+import { OG_IMAGE_HOME } from '@/lib/seo'
 
 const PRIMARY_CTA_HREF = '/book'
 const CONSULT_CTA_HREF = '/consulting'
@@ -140,14 +141,14 @@ export const metadata: Metadata = {
       'Commercial strategy, pricing, monetization, GTM economics, forecasting, and unit economics for AI-native B2B SaaS founders and operators.',
     type: 'website',
     url: 'https://sarahzou.com',
-    images: ['https://sarahzou.com/images/headshot_v4.webp'],
+    images: [OG_IMAGE_HOME],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Commercial Strategy, Pricing & Growth Economics for AI-Native B2B SaaS | Sarah Zou, PhD',
     description:
       'Commercial strategy, pricing, monetization, GTM economics, forecasting, and unit economics for AI-native B2B SaaS founders and operators.',
-    images: ['https://sarahzou.com/images/headshot_v4.webp'],
+    images: [OG_IMAGE_HOME],
   },
 }
 

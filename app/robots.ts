@@ -11,7 +11,9 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/'],
       },
     ],
-    sitemap: `${baseUrl}/sitemap_index.xml`,
+    // Primary sitemap is Next.js app/sitemap.ts → out/sitemap.xml.
+    // sitemap_index.xml is also emitted postbuild for legacy GSC submissions.
+    sitemap: [`${baseUrl}/sitemap.xml`, `${baseUrl}/sitemap_index.xml`],
     host: baseUrl,
   }
 }

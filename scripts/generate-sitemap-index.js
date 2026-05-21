@@ -1,229 +1,84 @@
 #!/usr/bin/env node
 
 /**
- * Generate separate sitemap files and sitemap_index.xml
- * This script runs after Next.js build to create wiki/posts sitemaps and the index
+ * Post-build: sitemap index, OG image, GitHub Pages helpers.
+ * Wiki/newsletter URLs live in app/sitemap.ts (out/sitemap.xml).
  */
 
 const fs = require('fs');
 const path = require('path');
-const matter = require('gray-matter');
-const { buildWikiRegistry } = require('./wiki-content-state');
 
 const baseUrl = 'https://sarahzou.com';
 const outDir = path.join(process.cwd(), 'out');
 
-// Helper to format sitemap XML
-function formatSitemap(entries) {
-  const urls = entries.map((entry) => {
-    const lastmod = entry.lastModified 
-      ? new Date(entry.lastModified).toISOString().split('T')[0]
-      : new Date().toISOString().split('T')[0];
-    return `  <url>
-    <loc>${entry.url}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>${entry.changeFrequency || 'monthly'}</changefreq>
-    <priority>${entry.priority || 0.5}</priority>
-  </url>`;
-  }).join('\n');
-
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls}
-</urlset>`;
-}
-
-// Generate wiki sitemap
-function generateWikiSitemap() {
+function getLastModified(filePath) {
   try {
-    const registry = buildWikiRegistry();
-    const currentDate = new Date().toISOString();
-    const entries = [];
-
-    for (const category of registry.categories) {
-      const categoryPath = `/wiki/pricing/${category.slug}`;
-      if (!registry.publishedCategoryUrls.has(categoryPath)) {
-        continue;
-      }
-      if (registry.redirects.has(categoryPath)) {
-        continue;
-      }
-
-      entries.push({
-        url: `${baseUrl}${categoryPath}`,
-        lastModified: category.updated || currentDate,
-        changeFrequency: 'monthly',
-        priority: 0.8,
-      });
-
-      for (const conceptId of category.conceptIds) {
-        const conceptPath = `/wiki/pricing/${category.slug}/${conceptId}`;
-        if (!registry.publishedConceptUrls.has(conceptPath)) {
-          continue;
-        }
-        if (registry.redirects.has(conceptPath)) {
-          continue;
-        }
-
-        const conceptFile = path.join(
-          process.cwd(),
-          'content',
-          'wiki',
-          'concepts',
-          category.slug,
-          `${conceptId}.md`
-        );
-        let lastModified = category.updated || currentDate;
-        if (fs.existsSync(conceptFile)) {
-          const conceptMatter = matter(fs.readFileSync(conceptFile, 'utf8'));
-          lastModified = conceptMatter.data.lastUpdated || category.updated || currentDate;
-        }
-
-        entries.push({
-          url: `${baseUrl}${conceptPath}`,
-          lastModified,
-          changeFrequency: 'monthly',
-          priority: 0.7,
-        });
-      }
+    if (fs.existsSync(filePath)) {
+      return fs.statSync(filePath).mtime.toISOString().split('T')[0];
     }
-
-    const uniqueByUrl = new Map(entries.map((entry) => [entry.url, entry]));
-    const sitemap = formatSitemap(Array.from(uniqueByUrl.values()));
-    const wikiPath = path.join(outDir, 'sitemap-wiki.xml');
-    fs.writeFileSync(wikiPath, sitemap, 'utf8');
-    console.log(`✓ Generated sitemap-wiki.xml (${uniqueByUrl.size} URLs)`);
-    return true;
-  } catch (error) {
-    console.error('❌ Error generating wiki sitemap:', error.message);
-    return false;
-  }
-}
-
-// Generate posts sitemap
-function generatePostsSitemap() {
-  try {
-    // Read posts directly from _posts directory
-    
-    const postsDir = path.join(process.cwd(), '_posts');
-    const fileNames = fs.readdirSync(postsDir).filter(name => name.endsWith('.md'));
-    
-    const baseUrlNorm = baseUrl.replace(/\/$/, '');
-    const posts = fileNames.map((fileName) => {
-      const fullPath = path.join(postsDir, fileName);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data } = matter(fileContents);
-      const slug = fileName.replace(/^[0-9]{4}-[0-9]{2}-[0-9]{2}-/, '').replace(/\.md$/, '');
-      return {
-        slug,
-        date: data.date || new Date().toISOString(),
-        draft: data.draft,
-        canonical: data.canonical,
-      };
-    });
-
-    const indexablePosts = posts.filter((post) => {
-      if (post.draft === true) return false;
-      const canon = post.canonical;
-      if (!canon) return true;
-      if (!/^https?:\/\//i.test(canon)) return true;
-      return canon.startsWith(baseUrlNorm);
-    });
-
-    const postPages = indexablePosts.map((post) => ({
-      url: `${baseUrl}/newsletter/${post.slug}`,
-      lastModified: post.date || new Date().toISOString(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    }));
-
-    const sitemap = formatSitemap(postPages);
-    const postsPath = path.join(outDir, 'sitemap-posts.xml');
-    fs.writeFileSync(postsPath, sitemap, 'utf8');
-    console.log(`✓ Generated sitemap-posts.xml (${postPages.length} URLs)`);
-    return true;
-  } catch (error) {
-    console.error('❌ Error generating posts sitemap:', error.message);
-    return false;
-  }
-}
-
-function getLastModified(sitemapPath) {
-  try {
-    if (fs.existsSync(sitemapPath)) {
-      const stats = fs.statSync(sitemapPath);
-      return stats.mtime.toISOString().split('T')[0];
-    }
-  } catch (error) {
-    // Ignore errors, use current date as fallback
+  } catch {
+    // fall through
   }
   return new Date().toISOString().split('T')[0];
 }
 
 function generateSitemapIndex() {
-  // Generate wiki and posts sitemaps first
-  const wikiGenerated = generateWikiSitemap();
-  const postsGenerated = generatePostsSitemap();
-
-  // Sitemaps to include in the index
-  const sitemaps = ['sitemap.xml']; // Core sitemap from Next.js
-  if (wikiGenerated) sitemaps.push('sitemap-wiki.xml');
-  if (postsGenerated) sitemaps.push('sitemap-posts.xml');
-
-  // Filter to only include sitemaps that actually exist
-  const existingSitemaps = sitemaps.filter((sitemap) => {
-    const sitemapPath = path.join(outDir, sitemap);
-    return fs.existsSync(sitemapPath);
-  });
-
-  if (existingSitemaps.length === 0) {
-    console.error('❌ No sitemap files found. Run "npm run build" first.');
+  const sitemapPath = path.join(outDir, 'sitemap.xml');
+  if (!fs.existsSync(sitemapPath)) {
+    console.error('❌ out/sitemap.xml missing. Run "npm run build" first.');
     process.exit(1);
   }
 
+  const lastmod = getLastModified(sitemapPath);
   const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${existingSitemaps
-  .map((sitemap) => {
-    const sitemapPath = path.join(outDir, sitemap);
-    const lastmod = getLastModified(sitemapPath);
-    return `  <sitemap>
-    <loc>${baseUrl}/${sitemap}</loc>
+  <sitemap>
+    <loc>${baseUrl}/sitemap.xml</loc>
     <lastmod>${lastmod}</lastmod>
-  </sitemap>`;
-  })
-  .join('\n')}
+  </sitemap>
 </sitemapindex>`;
 
   const indexPath = path.join(outDir, 'sitemap_index.xml');
   fs.writeFileSync(indexPath, sitemapIndex, 'utf8');
-  console.log(`✓ Generated sitemap_index.xml at ${indexPath}`);
-  console.log(`  Included ${existingSitemaps.length} sitemap(s):`);
-  existingSitemaps.forEach((sitemap) => console.log(`    - ${sitemap}`));
+  console.log(`✓ Generated sitemap_index.xml → ${indexPath}`);
+
+  // Remove legacy split sitemaps if a previous build left them behind.
+  for (const legacy of ['sitemap-wiki.xml', 'sitemap-posts.xml']) {
+    const legacyPath = path.join(outDir, legacy);
+    if (fs.existsSync(legacyPath)) {
+      fs.unlinkSync(legacyPath);
+      console.log(`✓ Removed legacy ${legacy}`);
+    }
+  }
 }
 
-// Setup 404.html for GitHub Pages client-side routing
+async function generateOgHomeImage() {
+  const { execSync } = require('child_process');
+  execSync('node scripts/generate-og-home.js', { stdio: 'inherit' });
+
+  const destPath = path.join(process.cwd(), 'public', 'images', 'og-home.webp');
+  const outCopy = path.join(outDir, 'images', 'og-home.webp');
+  if (fs.existsSync(destPath)) {
+    fs.mkdirSync(path.dirname(outCopy), { recursive: true });
+    fs.copyFileSync(destPath, outCopy);
+  }
+}
+
 function setup404Page() {
   try {
     const indexPath = path.join(outDir, 'index.html');
     const notFoundPath = path.join(outDir, '404.html');
-    
+
     if (!fs.existsSync(indexPath)) {
-      console.error('❌ Error: index.html not found. Run "npm run build" first.');
+      console.error('❌ index.html not found in out/.');
       return false;
     }
-    
-    // Next.js with output: 'export' should generate 404.html from not-found.tsx
-    // But if it doesn't exist, we copy index.html to 404.html for GitHub Pages
-    // This allows GitHub Pages to serve the Next.js app for 404s,
-    // enabling client-side routing to work properly
+
     if (!fs.existsSync(notFoundPath)) {
       fs.copyFileSync(indexPath, notFoundPath);
-      console.log('✓ Created 404.html from index.html for GitHub Pages routing');
+      console.log('✓ Created 404.html from index.html');
     } else {
-      // If Next.js generated 404.html, we still need to ensure it works with GitHub Pages
-      // For client-side routing, we can keep Next.js's 404.html as-is
-      console.log('✓ 404.html already exists (generated by Next.js)');
+      console.log('✓ 404.html already exists');
     }
     return true;
   } catch (error) {
@@ -232,50 +87,50 @@ function setup404Page() {
   }
 }
 
-// Copy CNAME file to out directory for custom domain support
 function setupCNAME() {
   try {
     const cnameSource = path.join(process.cwd(), 'CNAME');
     const cnameDest = path.join(outDir, 'CNAME');
-    
+
     if (!fs.existsSync(cnameSource)) {
-      console.log('⚠ CNAME file not found in root directory, skipping...');
+      console.log('⚠ CNAME not found; skipping');
       return false;
     }
-    
-    // Copy CNAME file to out directory
-    // This is required for GitHub Pages custom domain configuration
+
     fs.copyFileSync(cnameSource, cnameDest);
-    console.log('✓ Copied CNAME file to out directory');
+    console.log('✓ Copied CNAME to out/');
     return true;
   } catch (error) {
-    console.error('❌ Error copying CNAME file:', error.message);
+    console.error('❌ Error copying CNAME:', error.message);
     return false;
   }
 }
 
-// Create .nojekyll file to disable Jekyll processing
 function setupNoJekyll() {
   try {
-    const nojekyllPath = path.join(outDir, '.nojekyll');
-    // Create empty .nojekyll file
-    fs.writeFileSync(nojekyllPath, '');
-    console.log('✓ Created .nojekyll file');
+    fs.writeFileSync(path.join(outDir, '.nojekyll'), '');
+    console.log('✓ Created .nojekyll');
     return true;
   } catch (error) {
-    console.error('❌ Error creating .nojekyll file:', error.message);
+    console.error('❌ Error creating .nojekyll:', error.message);
     return false;
   }
 }
 
-// Ensure out directory exists
-if (!fs.existsSync(outDir)) {
-  console.error(`❌ Error: ${outDir} does not exist. Run 'npm run build' first.`);
-  process.exit(1);
+async function main() {
+  if (!fs.existsSync(outDir)) {
+    console.error(`❌ ${outDir} does not exist. Run "npm run build" first.`);
+    process.exit(1);
+  }
+
+  generateSitemapIndex();
+  await generateOgHomeImage();
+  setup404Page();
+  setupCNAME();
+  setupNoJekyll();
 }
 
-generateSitemapIndex();
-setup404Page();
-setupCNAME();
-setupNoJekyll();
-
+main().catch((error) => {
+  console.error('❌ postbuild failed:', error);
+  process.exit(1);
+});

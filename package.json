@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/generate-og-home.js && next build",
     "start": "next start",
     "preview": "npx serve@latest out -l 3002 --no-port-switching",
     "lint": "next lint",

@@ -163,6 +163,13 @@ export interface ServiceData {
   url: string;
 }
 
+export interface ServiceOfferTier {
+  name: string;
+  price: number;
+  priceCurrency?: string;
+  description?: string;
+}
+
 export function generateServiceJsonLd(data: ServiceData) {
   return {
     "@context": "https://schema.org",
@@ -175,6 +182,28 @@ export function generateServiceJsonLd(data: ServiceData) {
       "name": "EconNova Consulting",
       "url": "https://sarahzou.com"
     }
+  };
+}
+
+export function generateServiceWithOffersJsonLd(
+  data: ServiceData & { offers: ServiceOfferTier[] }
+) {
+  return {
+    ...generateServiceJsonLd(data),
+    offers: data.offers.map((offer) => ({
+      "@type": "Offer",
+      name: offer.name,
+      price: offer.price,
+      priceCurrency: offer.priceCurrency ?? "USD",
+      ...(offer.description ? { description: offer.description } : {}),
+      url: data.url,
+      availability: "https://schema.org/InStock",
+      seller: {
+        "@type": "Organization",
+        name: "EconNova Consulting",
+        url: "https://sarahzou.com",
+      },
+    })),
   };
 }
 

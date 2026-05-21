@@ -13,6 +13,7 @@ import {
   Zap,
 } from 'lucide-react'
 import { outlineButton, primaryButtonLg } from '@/lib/brandStyles'
+import { OG_IMAGE_ABOUT } from '@/lib/seo'
 
 const PRIMARY_CTA_HREF = '/book'
 const SECONDARY_CTA_HREF = '/consulting'
@@ -143,14 +144,14 @@ export const metadata: Metadata = {
       'Commercial strategy, pricing, monetization, GTM economics, and unit economics support for AI-native B2B SaaS founders and operators.',
     type: 'website',
     url: 'https://sarahzou.com/about',
-    images: ['https://sarahzou.com/images/about_headshot.webp'],
+    images: [OG_IMAGE_ABOUT],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About Sarah Zou | Commercial Strategy Advisor & Economist for AI-Native B2B SaaS',
     description:
       'Commercial strategy, pricing, monetization, GTM economics, and unit economics support for AI-native B2B SaaS founders and operators.',
-    images: ['https://sarahzou.com/images/about_headshot.webp'],
+    images: [OG_IMAGE_ABOUT],
   },
 }
 
