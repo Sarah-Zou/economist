@@ -21,6 +21,7 @@
     "check:color-drift": "node scripts/check-color-drift.js",
     "check-links": "node scripts/check-links.js",
     "check-links:local": "npm run build && node scripts/check-links.js",
+    "seo:audit-links": "node scripts/audit-internal-links.js",
     "export:wiki-pdf": "node scripts/export-concepts-to-pdf.js"
   },
   "dependencies": {

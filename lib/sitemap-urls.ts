@@ -73,6 +73,17 @@ export function getAllSitemapEntries(): MetadataRoute.Sitemap {
     })
   }
 
+  const newsletterPosts = getIndexablePosts()
+  const newsletterTotalPages = Math.max(1, Math.ceil(newsletterPosts.length / 10))
+  for (let page = 2; page <= newsletterTotalPages; page += 1) {
+    addEntry(entriesByUrl, {
+      url: normalizeSitemapUrl(`/newsletter/page/${page}`),
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.6,
+    })
+  }
+
   for (const category of getAllCategories()) {
     const categoryPath = `/wiki/pricing/${category.slug}`
     if (redirectSources.has(categoryPath)) {
