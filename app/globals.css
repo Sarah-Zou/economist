@@ -362,11 +362,15 @@
   }
 
   .portrait-shell {
-    @apply relative overflow-hidden rounded-[1.5rem] border border-border-soft bg-white/70 p-2 shadow-card transition-[box-shadow] duration-300;
+    @apply relative isolate overflow-hidden rounded-[24px] bg-transparent;
+    border: 1px solid rgba(148, 132, 110, 0.2);
+    box-shadow:
+      0 2px 8px -2px rgba(45, 35, 25, 0.06),
+      0 12px 36px -16px rgba(45, 35, 25, 0.1);
   }
 
   .portrait-inner {
-    @apply relative h-full w-full overflow-hidden rounded-[1.15rem] bg-white;
+    @apply relative h-full w-full overflow-hidden rounded-[24px];
   }
 
   .media-shell {
@@ -437,14 +441,18 @@
       box-shadow: 0 8px 20px -18px rgba(15, 23, 42, 0.28);
     }
 
-    .media-shell:hover,
-    .portrait-shell:hover {
+    .media-shell:hover {
       box-shadow: 0 28px 60px -34px rgba(15, 23, 42, 0.26);
     }
 
-    .media-shell:hover img,
-    .portrait-shell:hover img {
+    .media-shell:hover img {
       transform: scale(1.018);
+    }
+
+    .portrait-shell:hover {
+      box-shadow:
+        0 4px 12px -2px rgba(45, 35, 25, 0.08),
+        0 16px 44px -18px rgba(45, 35, 25, 0.12);
     }
   }
 

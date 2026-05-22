@@ -233,20 +233,18 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="order-2">
-                <div className="portrait-shell mx-auto aspect-[4/5] w-full max-w-[380px] lg:max-w-[440px]">
-                  <div className="portrait-inner">
-                    <Image
-                      src="/images/headshot_v4.webp"
-                      alt="Sarah Zou, PhD economist"
-                      fill
-                      sizes="(min-width: 1024px) 40vw, 100vw"
-                      className="object-cover object-center"
-                      priority
-                    />
-                  </div>
+              <div className="order-2 w-full">
+                <div className="portrait-shell mx-auto aspect-[4/5] w-full max-w-full sm:max-w-[340px] md:max-w-[360px] lg:max-w-[380px]">
+                  <Image
+                    src="/images/headshot_v4.webp"
+                    alt="Sarah Zou, PhD economist"
+                    fill
+                    sizes="(min-width: 1024px) 380px, (min-width: 768px) 360px, 100vw"
+                    className="object-cover object-top"
+                    priority
+                  />
                 </div>
-                <div className="media-rule mx-auto max-w-[380px] text-center lg:max-w-[440px]">
+                <div className="media-rule mx-auto w-full max-w-full text-center sm:max-w-[340px] md:max-w-[360px] lg:max-w-[380px]">
                   <p className="media-caption">For AI-native B2B SaaS teams</p>
                 </div>
               </div>

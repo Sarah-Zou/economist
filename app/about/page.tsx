@@ -173,21 +173,19 @@ export default function AboutPage() {
         {/* Hero */}
         <section className="bg-hero-tint">
           <div className="section-shell pb-20 pt-10 sm:pb-24 sm:pt-16 lg:pb-28 lg:pt-20">
-            <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16 xl:gap-20">
-              <div className="order-2 lg:order-1">
-                <div className="portrait-shell mx-auto aspect-[4/5] w-full max-w-[380px] lg:max-w-[400px]">
-                  <div className="portrait-inner">
-                    <Image
-                      src="/images/about_headshot.webp"
-                      alt="Sarah Zou, PhD economist"
-                      fill
-                      priority
-                      sizes="(min-width: 1024px) 34vw, 100vw"
-                      className="object-cover object-center"
-                    />
-                  </div>
+            <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16 xl:gap-20">
+              <div className="order-2 w-full lg:order-1">
+                <div className="portrait-shell mx-auto aspect-[4/5] w-full max-w-full sm:max-w-[380px] md:max-w-[400px] lg:mx-0 lg:max-w-none">
+                  <Image
+                    src="/images/about_headshot.webp"
+                    alt="Sarah Zou, PhD economist"
+                    fill
+                    priority
+                    sizes="(min-width: 1280px) 480px, (min-width: 1024px) 440px, (min-width: 768px) 400px, 100vw"
+                    className="object-cover object-top"
+                  />
                 </div>
-                <div className="media-rule mx-auto max-w-[380px] text-center lg:max-w-[400px]">
+                <div className="media-rule mx-auto w-full max-w-full text-center sm:max-w-[380px] md:max-w-[400px] lg:mx-0 lg:max-w-none lg:text-left">
                   <p className="media-caption">Economist. Strategist. Advisor.</p>
                 </div>
               </div>
