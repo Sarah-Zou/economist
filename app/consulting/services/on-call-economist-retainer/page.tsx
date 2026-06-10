@@ -8,7 +8,7 @@ import { outlineButton, primaryButtonLg } from '@/lib/brandStyles'
 export const metadata: Metadata = {
   title: 'Fractional or Embedded Commercial Strategy Support | Sarah Zou',
   description:
-    'Ongoing commercial strategy support for AI-native B2B SaaS teams — pricing, monetization, GTM economics, forecasting, unit economics, and board prep without hiring a full-time strategy or finance leader before you need one.',
+    'Ongoing commercial strategy support for technical founders of API-first infrastructure and data platform companies — pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and board prep without hiring a full-time strategy or finance leader before you need one.',
   robots: {
     index: true,
     follow: true,
@@ -23,10 +23,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://sarahzou.com/consulting/services/on-call-economist-retainer',
   },
-  openGraph: {
+    openGraph: {
     title: 'Fractional or Embedded Commercial Strategy Support | Sarah Zou',
     description:
-      'Ongoing commercial strategy support for AI-native B2B SaaS teams — pricing, monetization, GTM economics, forecasting, unit economics, and board prep without hiring a full-time strategy or finance leader before you need one.',
+      'Ongoing commercial strategy support for technical founders of API-first infrastructure and data platform companies — pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and board prep without hiring a full-time strategy or finance leader before you need one.',
     type: 'website',
     url: 'https://sarahzou.com/consulting/services/on-call-economist-retainer',
   },
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Fractional or Embedded Commercial Strategy Support | Sarah Zou',
     description:
-      'Ongoing commercial strategy support for AI-native B2B SaaS teams — pricing, monetization, GTM economics, forecasting, unit economics, and board prep without hiring a full-time strategy or finance leader before you need one.',
+      'Ongoing commercial strategy support for technical founders of API-first infrastructure and data platform companies — pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and board prep without hiring a full-time strategy or finance leader before you need one.',
   },
 }
 
@@ -196,7 +196,7 @@ export default function FractionalChiefEconomistRetainer() {
   const serviceJsonLd = generateServiceWithOffersJsonLd({
     name: 'Fractional or Embedded Commercial Strategy Support',
     description:
-      'Ongoing commercial strategy support across pricing, monetization, GTM economics, forecasting, unit economics, and board prep for AI-native B2B SaaS teams — without the full-time overhead.',
+      'Ongoing commercial strategy support across pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and board prep for technical founders of infrastructure and data platform companies — without the full-time overhead.',
     url: SERVICE_URL,
     offers: [
       { name: 'Lite', price: 4000, description: 'Monthly advisory and async support.' },
@@ -236,8 +236,9 @@ export default function FractionalChiefEconomistRetainer() {
                   Senior commercial strategy, without the full-time overhead
                 </h1>
                 <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
-                  Ongoing support across pricing, monetization, GTM economics, forecasting, unit
-                  economics, and board prep — at a cadence that matches your growth stage.
+                  Ongoing support across pricing architecture, GTM for technical buyers, unit
+                  economics, cost-floor modeling, and board prep — for infrastructure and data
+                  platform founders at any growth stage.
                 </p>
                 <p className="meta-note mt-6">
                   Most teams start with the 90-minute session or a sprint. Retainer clients get

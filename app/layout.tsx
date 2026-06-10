@@ -26,11 +26,11 @@ const CookieConsentBanner = dynamic(() => import('@/components/CookieConsentBann
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sarahzou.com'),
-  title: 'Commercial Strategy, Pricing & Growth Economics for AI SaaS | Sarah Zou',
-  description: 'Commercial strategy, pricing, monetization, forecasting, and growth economics for AI-native B2B SaaS founders and operators. Fractional chief economist and commercial advisor.',
+  title: 'Commercial Strategy & Pricing for API-First Infrastructure & Data Platforms | Sarah Zou',
+  description: 'I help technical founders of API-first infrastructure and data platform companies build the commercial layer: pricing architecture, GTM for technical buyers, and fundraising-ready unit economics.',
   openGraph: {
-    title: 'Commercial Strategy, Pricing & Growth Economics for AI SaaS | Sarah Zou',
-    description: 'Commercial strategy, pricing, monetization, forecasting, and growth economics for AI-native B2B SaaS founders and operators. Fractional chief economist and commercial advisor.',
+    title: 'Commercial Strategy & Pricing for API-First Infrastructure & Data Platforms | Sarah Zou',
+    description: 'I help technical founders of API-first infrastructure and data platform companies build the commercial layer: pricing architecture, GTM for technical buyers, and fundraising-ready unit economics.',
     type: 'website',
   },
 }

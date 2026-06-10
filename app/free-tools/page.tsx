@@ -7,7 +7,7 @@ import { generateBreadcrumbJsonLd } from '@/lib/generateJsonLd'
 
 export const metadata: Metadata = {
   title: 'Free Resources | EconNova',
-  description: 'Free pricing tools and guides for AI and SaaS founders.',
+  description: 'Free pricing tools and guides for technical founders of API-first infrastructure, data platform, and AI companies.',
   alternates: {
     canonical: 'https://sarahzou.com/free-tools',
   },
@@ -218,7 +218,7 @@ export default function FreeToolsPage() {
         <div className="section-shell py-16 sm:py-20">
           <p className="kicker-accent">Free Resources</p>
           <h1 className="mt-4 max-w-[13ch] font-serif-playfair text-[34px] font-bold leading-tight text-text sm:text-[46px]">
-            Free pricing tools and guides for AI and SaaS founders
+            Free pricing tools and guides for technical founders of infrastructure &amp; data platforms
           </h1>
           <p className="mt-6 max-w-[44rem] text-base leading-[1.85] text-text-muted sm:text-[18px]">
             Use these resources to choose a pricing model, improve monetization decisions, build a

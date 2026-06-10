@@ -6,9 +6,9 @@ import { generateServiceWithOffersJsonLd, generateBreadcrumbJsonLd } from '@/lib
 import { outlineButton, primaryButtonLg } from '@/lib/brandStyles'
 
 export const metadata: Metadata = {
-  title: 'Growth Economics, Forecasting & Unit Economics Sprint | Sarah Zou',
+  title: 'Unit Economics, Forecasting & Cost-Floor Modeling Sprint | Sarah Zou',
   description:
-    'A focused 1–2 week sprint for AI-native B2B SaaS teams: working KPI system, unit economics model, forecasting logic, and growth narrative that supports pricing decisions and investor-ready commercial narratives.',
+    'A focused 1–2 week sprint for technical founders of infrastructure and data platform companies: unit economics model, cost-floor analysis, forecasting logic, and fundraising-ready growth narrative.',
   robots: {
     index: true,
     follow: true,
@@ -23,18 +23,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://sarahzou.com/consulting/services/metrics-experimentation-sprint',
   },
-  openGraph: {
-    title: 'Growth Economics, Forecasting & Unit Economics Sprint | Sarah Zou',
+    openGraph: {
+    title: 'Unit Economics, Forecasting & Cost-Floor Modeling Sprint | Sarah Zou',
     description:
-      'A focused 1–2 week sprint for AI-native B2B SaaS teams: working KPI system, unit economics model, forecasting logic, and growth narrative that supports pricing decisions and investor-ready commercial narratives.',
+      'A focused 1–2 week sprint for technical founders of infrastructure and data platform companies: unit economics model, cost-floor analysis, forecasting logic, and fundraising-ready growth narrative.',
     type: 'website',
     url: 'https://sarahzou.com/consulting/services/metrics-experimentation-sprint',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Growth Economics, Forecasting & Unit Economics Sprint | Sarah Zou',
+    title: 'Unit Economics, Forecasting & Cost-Floor Modeling Sprint | Sarah Zou',
     description:
-      'A focused 1–2 week sprint for AI-native B2B SaaS teams: working KPI system, unit economics model, forecasting logic, and growth narrative that supports pricing decisions and investor-ready commercial narratives.',
+      'A focused 1–2 week sprint for technical founders of infrastructure and data platform companies: unit economics model, cost-floor analysis, forecasting logic, and fundraising-ready growth narrative.',
   },
 }
 
@@ -67,7 +67,7 @@ const WHEN_FOUNDERS_HIRE = [
   { lead: 'NRR or CAC looks wrong', rest: '— but you are not sure why or where the leak is' },
   {
     lead: 'You need to model a pricing move',
-    rest: '— but there is no unit economics baseline to reason from',
+    rest: '— but there is no unit economics baseline to reason from, and the cost structure for compute, hardware, or sensing is complex',
   },
   {
     lead: 'Board deck needs stronger growth economics',
@@ -177,7 +177,7 @@ export default function GrowthEconomicsSprint() {
   const serviceJsonLd = generateServiceWithOffersJsonLd({
     name: 'Growth Economics, Forecasting & Unit Economics Sprint',
     description:
-      'A focused 1–2 week sprint for AI-native B2B SaaS teams to build a working KPI system, unit economics model, and forecasting logic that supports pricing decisions and investor-ready commercial narratives.',
+      'A focused 1–2 week sprint for technical founders of infrastructure and data platform companies to build a unit economics model, cost-floor analysis, and forecasting logic that supports pricing decisions and fundraising diligence.',
     url: SERVICE_URL,
     offers: [
       { name: 'Lite', price: 6000, description: 'Core KPI and unit economics structure.' },
@@ -214,12 +214,12 @@ export default function GrowthEconomicsSprint() {
               <div className="section-header max-w-[44rem]">
                 <span className="kicker-accent">Growth Economics Sprint</span>
                 <h1 className="mt-5 font-serif-playfair text-ink">
-                  Build the economics foundation your growth decisions need
+                  Build the economics foundation your pricing decisions and fundraising diligence need
                 </h1>
                 <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
-                  For AI-native B2B SaaS teams that need a working KPI system, cohort-based
-                  forecasting model, and unit economics framework — built to support pricing
-                  decisions and investor-ready narratives.
+                  For technical founders of infrastructure and data platform companies that need a
+                  working unit economics model, cost-floor analysis, and forecasting logic — built
+                  to support pricing decisions and fundraising diligence.
                 </p>
                 <p className="meta-note mt-6">
                   Most founders start with the 90-minute session. The $600 fee is credited toward

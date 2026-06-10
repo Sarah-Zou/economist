@@ -37,7 +37,7 @@ const Navbar = () => {
                 Sarah Zou, PhD
               </span>
               <span className="hidden text-[10px] font-semibold uppercase tracking-[0.2em] text-text-subtle lg:block">
-                Pricing · GTM · Growth Economics
+                Pricing · GTM · Unit Economics
               </span>
             </div>
           </Link>

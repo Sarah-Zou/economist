@@ -5,9 +5,9 @@ import Script from 'next/script'
 import CalendlyEmbed from '@/components/CalendlyEmbed'
 
 export const metadata: Metadata = {
-  title: 'Book a Free Consult | Commercial Strategy & Pricing for AI-Native B2B SaaS | Sarah Zou',
+  title: 'Book a Free Consult | Commercial Strategy for API-First Infrastructure & Data Platforms | Sarah Zou',
   description:
-    'Book a free 15-min call with Sarah Zou — commercial strategy, pricing, monetization, GTM economics, and unit economics for AI-native B2B SaaS founders and operators. No prep needed.',
+    'Book a free 15-min call with Sarah Zou — commercial strategy, pricing architecture, GTM for technical buyers, and unit economics for founders of API-first infrastructure and data platform companies. No prep needed.',
   robots: {
     index: true,
     follow: true,
@@ -15,10 +15,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://sarahzou.com/book',
   },
-  openGraph: {
-    title: 'Book a Free Consult | Commercial Strategy & Pricing for AI-Native B2B SaaS | Sarah Zou',
+    openGraph: {
+    title: 'Book a Free Consult | Commercial Strategy for API-First Infrastructure & Data Platforms | Sarah Zou',
     description:
-      'Book a free 15-min call — commercial strategy, pricing, monetization, GTM economics, and unit economics for AI-native B2B SaaS founders and operators.',
+      'Book a free 15-min call — commercial strategy, pricing architecture, GTM for technical buyers, and unit economics for founders of API-first infrastructure and data platform companies.',
     type: 'website',
     url: 'https://sarahzou.com/book',
   },

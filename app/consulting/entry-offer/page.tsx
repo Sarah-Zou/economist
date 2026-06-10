@@ -7,9 +7,9 @@ import { generateServiceWithOffersJsonLd, generateFAQJsonLd, generateBreadcrumbJ
 import { OG_IMAGE_CONSULTING } from '@/lib/seo'
 
 export const metadata: Metadata = {
-  title: '90-Minute Commercial Strategy Session for AI-Native B2B SaaS | Sarah Zou',
+  title: '90-Minute Commercial Strategy Session for API-First Infrastructure & Data Platforms | Sarah Zou',
   description:
-    'A focused 90-minute working session for AI-native B2B SaaS founders and operators. Get a clear recommendation on pricing model, value metric, GTM structure, revenue logic, or packaging — with a 48-hour follow-up memo.',
+    'A focused 90-minute working session for technical founders of API-first infrastructure and data platform companies. Get a clear recommendation on pricing model, value metric, GTM structure, cost-floor logic, or packaging — with a 48-hour follow-up memo.',
   robots: {
     index: true,
     follow: true,
@@ -24,19 +24,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://sarahzou.com/consulting/entry-offer',
   },
-  openGraph: {
-    title: '90-Minute Commercial Strategy Session for AI-Native B2B SaaS | Sarah Zou',
+    openGraph: {
+    title: '90-Minute Commercial Strategy Session for API-First Infrastructure & Data Platforms | Sarah Zou',
     description:
-      'A focused, flat-fee working session for AI-native B2B SaaS founders and operators who need a clearer direction on pricing model, value metric, GTM structure, revenue logic, or packaging.',
+      'A focused, flat-fee working session for technical founders of API-first infrastructure and data platform companies who need a clearer direction on pricing model, value metric, GTM structure, cost-floor logic, or packaging.',
     type: 'website',
     url: 'https://sarahzou.com/consulting/entry-offer',
     images: [OG_IMAGE_CONSULTING],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '90-Minute Commercial Strategy Session for AI-Native B2B SaaS | Sarah Zou',
+    title: '90-Minute Commercial Strategy Session for API-First Infrastructure & Data Platforms | Sarah Zou',
     description:
-      'A 90-minute working session plus a 48-hour follow-up memo covering pricing model, value metric, GTM structure, revenue logic, packaging, risks, and next steps.',
+      'A 90-minute working session plus a 48-hour follow-up memo covering pricing model, value metric, GTM structure, cost-floor logic, packaging, risks, and next steps.',
     images: [OG_IMAGE_CONSULTING],
   },
 }
@@ -45,11 +45,11 @@ const PRIMARY_CTA_HREF = '/consulting/entry-offer/form'
 const SECONDARY_CTA_HREF = '/book'
 
 const QUESTIONS = [
-  'Should we use subscription, usage-based, or hybrid pricing?',
-  'What should we actually charge for?',
-  'Are our plans too complicated or too weak?',
-  'Does our pricing align with how we sell and how customers actually use the product?',
-  'What should we fix before we launch, raise prices, or go into a fundraise?',
+  'Should we use usage-based, credit-based, committed-use, or hybrid pricing — and what does our cost structure actually allow?',
+  'What should we actually charge for, and how do we define a value metric that technical buyers understand?',
+  'How do we structure a paid pilot that converts to a contract without giving everything away?',
+  'Does our pricing model match how infrastructure or data-platform buyers evaluate and adopt products?',
+  'What should we fix in our pricing or packaging before we launch, raise prices, or go into a fundraise?',
 ]
 
 const FAQ_ITEMS = [
@@ -71,19 +71,19 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Is this for B2C too?',
-    a: 'Sometimes, but this offer is strongest for B2B AI/SaaS/API businesses.',
+    a: 'Sometimes, but this offer is strongest for B2B infrastructure, API, data-platform, and technically complex AI businesses where pricing and GTM require more than a standard SaaS template.',
   },
 ]
 
 const SESSION_TOPICS = [
-  'Pricing model choice',
-  'Usage vs seat vs hybrid logic',
+  'Pricing model choice for API / infrastructure / data products',
+  'Usage vs credit vs committed-use vs hybrid logic',
+  'Cost-floor and gross-margin analysis',
   'Plan and package structure',
-  'GTM and pricing alignment',
+  'Paid pilot and entry offer design',
+  'GTM alignment for technical buyers',
   'Revenue model and unit economics logic',
-  'Trial / freemium / entry offer decisions',
-  'Pricing risks before launch or changes',
-  'What to test next',
+  'Pricing risks before launch or fundraise',
 ]
 
 const WHY_FOUNDERS = [
@@ -105,7 +105,7 @@ export default function EntryOfferPage() {
   const serviceJsonLd = generateServiceWithOffersJsonLd({
     name: '90-Minute Commercial Strategy Session',
     description:
-      'A focused 90-minute working session for AI-native B2B SaaS founders and operators, with a 48-hour follow-up memo.',
+      'A focused 90-minute working session for technical founders of API-first infrastructure and data platform companies, with a 48-hour follow-up memo.',
     url: 'https://sarahzou.com/consulting/entry-offer',
     offers: [
       {
@@ -156,9 +156,9 @@ export default function EntryOfferPage() {
                 Get a clear commercial direction on one live decision
               </h1>
               <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
-                A 90-minute working session for AI-native B2B SaaS founders and operators who need
-                expert help with pricing model, value metric, GTM structure, revenue logic, or
-                package design.
+                A 90-minute working session for technical founders of API-first infrastructure and
+                data platform companies who need expert help with pricing model, value metric, GTM
+                structure, cost-floor logic, or package design.
               </p>
               <p className="meta-note mt-6">
                 If we move into a sprint within 14 days, the fee is credited toward the project.
@@ -276,8 +276,9 @@ export default function EntryOfferPage() {
                 <span className="kicker">Best fit</span>
                 <h2 className="section-title">Who this is for</h2>
                 <p className="mt-6 max-w-md text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
-                  Seed to Series A AI and SaaS companies with a real product, beta users, or early
-                  revenue — and a pricing decision they need to make soon.
+                  Seed to Series A founders of API-first infrastructure, data platform, or
+                  technically complex AI companies — with a real product, beta users, or early
+                  revenue — and a live commercial decision they need to resolve.
                 </p>
               </div>
               <div className="border-l border-border pl-6">

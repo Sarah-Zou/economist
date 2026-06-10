@@ -77,55 +77,15 @@ export default function ContactForm({
 
       <div className="field-group">
         <label htmlFor="company-input" className="label">
-          Company name or website (optional)
+          Company or website (optional)
         </label>
         <input
           id="company-input"
           type="text"
           name="company"
-          placeholder="Acme Inc. or acme.com"
+          placeholder="acme.com or Acme Inc."
           className="input"
         />
-      </div>
-
-      <div className="field-group">
-        <label htmlFor="stage-select" className="label">
-          Stage &amp; ARR band (optional)
-        </label>
-        <select id="stage-select" name="stage" className="select-input">
-          <option value="">Select your stage</option>
-          <option value="pre-rev">Pre-revenue</option>
-          <option value="under-1m">Under $1M ARR</option>
-          <option value="1-5m">$1M – $5M ARR</option>
-          <option value="5m-plus">$5M+ ARR</option>
-        </select>
-      </div>
-
-      <div className="field-group">
-        <label htmlFor="pricing-select" className="label">
-          Current pricing model (optional)
-        </label>
-        <select id="pricing-select" name="pricing" className="select-input">
-          <option value="">Select your model</option>
-          <option value="seats">Seats</option>
-          <option value="usage">Usage</option>
-          <option value="hybrid">Hybrid</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-
-      <div className="field-group">
-        <label htmlFor="goal-select" className="label">
-          Goal (optional)
-        </label>
-        <select id="goal-select" name="goal" className="select-input">
-          <option value="">Select your goal</option>
-          <option value="raise-arpa">Raise ARPA</option>
-          <option value="improve-nrr">Improve NRR</option>
-          <option value="faster-payback">Faster payback</option>
-          <option value="new-market">New market</option>
-          <option value="other">Other</option>
-        </select>
       </div>
 
       <div className="field-group">
@@ -142,14 +102,19 @@ export default function ContactForm({
         />
       </div>
 
-      <button
-        type="submit"
-        id="submit-btn"
-        disabled={isSubmitting}
-        className={cn(primaryButton, 'mt-2 w-full sm:w-auto')}
-      >
-        {isSubmitting ? 'Sending…' : buttonText}
-      </button>
+      <div>
+        <button
+          type="submit"
+          id="submit-btn"
+          disabled={isSubmitting}
+          className={cn(primaryButton, 'mt-2 w-full sm:w-auto')}
+        >
+          {isSubmitting ? 'Sending…' : buttonText}
+        </button>
+        <p className="mt-3 text-[13px] leading-[1.65] text-text-subtle">
+          No spam — I&apos;ll only use this to reply.
+        </p>
+      </div>
 
       {status.show && (
         <div

@@ -20,9 +20,9 @@ function SessionEmbedLink({ children }: { children: ReactNode }) {
 }
 
 export const metadata: Metadata = {
-  title: 'Work With Sarah Zou | Commercial Strategy, Pricing & Growth Economics for AI SaaS',
+  title: 'Work With Sarah Zou | Pricing, GTM & Unit Economics for API-First Infrastructure & Data Platforms',
   description:
-    'Ways to work together on commercial strategy, pricing, GTM economics, revenue model, forecasting, and unit economics — from a 90-minute session to fractional or embedded strategy support.',
+    'Ways to work together on pricing architecture, GTM for technical buyers, unit economics, and fundraising-ready commercial models — from a 90-minute session to fractional or embedded strategy support.',
   robots: {
     index: true,
     follow: true,
@@ -37,30 +37,30 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://sarahzou.com/consulting',
   },
-  openGraph: {
-    title: 'Work With Sarah Zou | Commercial Strategy, Pricing & Growth Economics for AI SaaS',
+    openGraph: {
+    title: 'Work With Sarah Zou | Pricing, GTM & Unit Economics for API-First Infrastructure & Data Platforms',
     description:
-      'Commercial strategy, pricing, GTM economics, forecasting, and unit economics support for AI-native B2B SaaS teams. Start with a free consult or the 90-minute strategy session.',
+      'Pricing architecture, GTM for technical buyers, unit economics, and fundraising-ready commercial models for infrastructure and data platform founders. Start with a free consult or the 90-minute strategy session.',
     type: 'website',
     url: 'https://sarahzou.com/consulting',
     images: [OG_IMAGE_CONSULTING],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Work With Sarah Zou | Commercial Strategy, Pricing & Growth Economics for AI SaaS',
+    title: 'Work With Sarah Zou | Pricing, GTM & Unit Economics for API-First Infrastructure & Data Platforms',
     description:
-      'Commercial strategy, pricing, GTM economics, forecasting, and unit economics support for AI-native B2B SaaS teams. Start with a free consult or the 90-minute strategy session.',
+      'Pricing architecture, GTM for technical buyers, unit economics, and fundraising-ready commercial models for infrastructure and data platform founders. Start with a free consult or the 90-minute strategy session.',
     images: [OG_IMAGE_CONSULTING],
   },
 }
 
 const CHALLENGES = [
-  "You're about to launch and need a pricing model that won't need to be redone in six months.",
-  "Your pricing or monetization feels wrong, but you can't tell if it's the model, the packaging, or the price level.",
-  "You're debating seat-based vs usage-based vs hybrid — or trying to align pricing with your GTM motion.",
-  'Your revenue model, unit economics, or forecasting assumptions need to hold up to investor scrutiny.',
-  "You need to structure messy commercial questions — GTM priorities, growth economics, or BizOps decisions — into something executable.",
-  'You want senior commercial strategy and monetization thinking without a full-time strategy hire.',
+  "You're launching an API, infrastructure product, or data platform and need a pricing architecture built on cost-floor logic — not a SaaS template.",
+  "You're choosing between usage-based, credit-based, committed-use, or hybrid pricing and need to know which model survives technical-buyer adoption.",
+  "Your GTM motion is misaligned with how infrastructure or data-platform buyers evaluate, pilot, and buy.",
+  'Your unit economics or gross-margin story needs to hold up when an investor asks about cost floors, margin at scale, or hardware-software economics.',
+  "You need a paid-pilot structure, ICP definition, or commercial packaging for a product category that doesn't have a ready benchmark.",
+  'You want senior commercial strategy thinking — pricing, GTM, and fundraising economics — without a full-time strategy hire.',
 ]
 
 const SESSION_OUTPUTS = [
@@ -105,16 +105,16 @@ const OTHER_PATHS = [
 
 const DIFFERENTIATORS = [
   {
-    title: 'Commercial economics, applied',
-    copy: 'Grounded in pricing research, revenue model logic, and econometric rigor — not generic frameworks or consulting boilerplate.',
+    title: 'I operate the same kind of company',
+    copy: 'I am COO of a fiber-optic sensing infrastructure-as-a-service startup — pricing against real cost floors, running paid pilots, building diligence-ready models. Not advising from the outside.',
   },
   {
     title: 'Decisions, not deliverables',
     copy: 'Every engagement ends with a specific recommendation and the tradeoffs named — not a 40-page deck you have to interpret.',
   },
   {
-    title: 'Built for founders and operators',
-    copy: 'Outputs are short, defensible, and board-ready — useful whether you\'re the founder, the COO, or the CFO trying to make a call this week.',
+    title: 'Built for technical founders',
+    copy: 'Outputs are short, defensible, and board-ready — designed for founding teams where the product is complex and the commercial layer has to match.',
   },
 ]
 
@@ -167,7 +167,7 @@ const FAQ_ITEMS: Array<{
   {
     qSchema: 'Should I start with the 90-minute session or a sprint?',
     question: 'Should I start with the 90-minute session or a sprint?',
-    a: 'Start with the session if you have one specific commercial decision in motion or want a lower-risk first step. Choose a sprint if you already know the work is broader — pricing structure, revenue model, or growth economics. If we move into a Pricing & Monetization Sprint within 14 days, the $600 session fee is credited toward the sprint.',
+    a: 'Start with the session if you have one specific commercial decision in motion or want a lower-risk first step. Choose a sprint if you already know the work is broader — pricing architecture, unit economics, or fundraising diligence modeling. If we move into a Pricing & Monetization Sprint within 14 days, the $600 session fee is credited toward the sprint.',
   },
   {
     qSchema: 'What if I do not know exactly what I need?',
@@ -177,12 +177,12 @@ const FAQ_ITEMS: Array<{
   {
     qSchema: 'Is this only for pricing?',
     question: 'Is this only for pricing?',
-    a: 'No. Pricing and monetization are the core, but founders and operators also work with me on GTM economics, revenue model design, forecasting, unit economics, KPI structure, and investor-ready commercial narratives — anywhere economic rigor makes the decision sharper.',
+    a: 'No. Pricing and monetization are the core, but technical founders also work with me on GTM motion design for infrastructure buyers, paid pilot structure, ICP definition for novel-category products, gross-margin and cost-floor logic, and fundraising-ready commercial narratives — anywhere the commercial layer around a complex product needs to be built.',
   },
   {
     qSchema: 'Are you open to embedded or full-time roles?',
     question: 'Are you open to embedded or full-time roles?',
-    a: 'For the right team, yes. I am open to select embedded, fractional, or full-time roles where the work centers on commercial strategy, pricing, growth economics, finance, or BizOps. The best starting point is a conversation — book a free consult or reach out directly.',
+    a: 'For the right team, yes. I am open to select embedded, fractional, or full-time roles where the work centers on commercial strategy, pricing, unit economics, finance, or BizOps at infrastructure and data platform companies. The best starting point is a conversation — book a free consult or reach out directly.',
   },
 ]
 
@@ -197,12 +197,12 @@ export default function ConsultingPage() {
               <div className="section-header max-w-[44rem]">
                 <span className="kicker-accent">Ways to work together</span>
                 <h1 className="mt-5 font-serif-playfair text-ink">
-                  Commercial strategy, pricing, and growth economics support — at the level you need.
+                  Pricing, GTM, and unit economics support for technical founders — at the level you need.
                 </h1>
                 <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
                   Most founders start with a 90-minute session. Deeper engagements are available
-                  for bigger questions — from pricing sprints to growth economics support and
-                  fractional or embedded strategy roles.
+                  for bigger questions — from pricing architecture and GTM design to unit-economics
+                  modeling and fundraising diligence support.
                 </p>
                 <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
                   <Link
@@ -401,7 +401,7 @@ export default function ConsultingPage() {
             <div className="section-shell">
               <div className="section-header max-w-2xl">
                 <span className="kicker">Why founders and operators hire me</span>
-                <h2 className="section-title">Commercial economist thinking, at startup speed</h2>
+                <h2 className="section-title">Commercial strategy for technically complex products — with operator context</h2>
               </div>
 
               <div className="mx-auto mt-16 grid max-w-5xl gap-10 sm:grid-cols-3">

@@ -24,29 +24,25 @@ export default function ContactPage() {
           <div className="mx-auto max-w-[44rem] text-center">
             <span className="kicker-accent">Contact</span>
             <h1 className="mt-5 font-serif-playfair text-[36px] font-bold text-text sm:text-[42px] lg:text-[52px]">
-              Contact Sarah
+            Got a question?  
+            Book a free 15-min call to get a faster answer.
+            
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-[1.75] text-text-muted sm:text-xl lg:text-[22px]">
-              Pick the fastest path for your situation: book a free consult, or send a short note
-              about the decision you&apos;re working through.
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-[1.75] text-text-muted sm:text-xl">
+            Otherwise, send a note below.
             </p>
 
             <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link href="/book" className={primaryButtonLg}>
-                Book Free Consult
+                Book a free consult
               </Link>
               <button onClick={scrollToForm} className={cn(outlineButton, 'w-full sm:w-auto')}>
-                Send a message instead
+                Send a message
               </button>
             </div>
 
-            <p className="meta-note mt-6">
-              Primary action: book the consult if the decision is live.
-            </p>
-
-            <p className="mx-auto mt-6 max-w-xl text-[14px] leading-[1.75] text-text-subtle">
-              Expect a reply in 1-2 business days. If your question is urgent, booking the consult
-              is usually the fastest path.
+            <p className="mx-auto mt-5 max-w-xl text-[13px] leading-[1.7] text-text-subtle">
+              I reply within 1–2 business days.
             </p>
           </div>
         </div>
@@ -56,17 +52,14 @@ export default function ContactPage() {
         <div className="section-shell max-w-3xl">
           <div className="border-t border-border-soft pt-8 sm:pt-10">
             <h2 className="text-center font-serif-playfair text-[28px] font-bold text-text sm:text-[32px]">
-              Prefer email? Send a Message
+              Send a message
             </h2>
             <p className="mb-8 mt-4 text-center text-[15px] leading-[1.8] text-text-muted">
-              Give me the short version of the commercial question, pricing issue, or decision in
-              motion. Want a faster answer?{' '}
-              <Link href="/book" className={cn(brandLink, 'font-medium')}>
-                Book a 15-min call
-              </Link>
+              Briefly describe what you&apos;re working through. I&apos;ll reply with the clearest
+              next step.
             </p>
             <ContactForm
-              messagePlaceholder="Share the context, commercial question, current pricing or revenue model if relevant, and what outcome you want."
+              messagePlaceholder="What's the commercial question, pricing issue, or decision you're working through?"
               buttonText="Send message"
             />
             <p className="mt-6 text-center text-[13px] leading-[1.7] text-text-subtle">

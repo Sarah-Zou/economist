@@ -32,9 +32,9 @@ export function MatchmakerLanding() {
           </h1>
 
           <p className="mt-4 max-w-2xl text-base leading-[1.8] text-text-muted sm:mt-5 sm:text-lg">
-            Find the right pricing model + metric for your SaaS/API/AI product in 3 minutes. Answer
-            10-15 questions about your product, customers, and costs to get tailored
-            recommendations.
+            Find the right pricing model + metric for your API, infrastructure, or SaaS product in
+            3 minutes. Answer 10–15 questions about your product, customers, and costs to get
+            tailored recommendations.
           </p>
 
           <button

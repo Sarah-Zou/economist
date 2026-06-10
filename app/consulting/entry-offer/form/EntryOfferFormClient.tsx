@@ -101,19 +101,12 @@ export default function EntryOfferFormClient() {
               90-Minute Commercial Strategy Session
             </Link>
             <h1 className="mt-5 font-serif-playfair text-ink">
-              Request the 90-Minute Commercial Strategy Session
+              Book the Session
             </h1>
             <p className="mt-4 text-[16px] leading-[1.7] text-text-muted sm:text-[17px]">
-              Share a few details so I can quickly tell whether this session is the right
-              fit and make it useful from the start.
+              Takes 2 minutes. I read every request and reply with the next step.
             </p>
           </div>
-
-          <p className="text-[14px] text-text-muted">Takes about 2 minutes.</p>
-          <p className="mt-1 text-[14px] leading-[1.55] text-text-subtle">
-            Best fit for founders with a live product, clear offer, or active pricing
-            decision in motion.
-          </p>
 
           {/* Form card */}
           <form
@@ -203,31 +196,16 @@ export default function EntryOfferFormClient() {
                 <option value="Pricing model">Pricing model</option>
                 <option value="Packaging / tiers">Packaging / tiers</option>
                 <option value="Value metric">Value metric</option>
-                <option value="Price level">Price level</option>
-                <option value="GTM structure / pricing alignment">GTM structure / pricing alignment</option>
-                <option value="Revenue model / unit economics">Revenue model / unit economics</option>
-                <option value="Forecasting / forward model">Forecasting / forward model</option>
-                <option value="Investor-ready commercial narrative">Investor-ready commercial narrative</option>
-                <option value="Experiment / test design">Experiment / test design</option>
+                <option value="GTM / pricing alignment">GTM / pricing alignment</option>
+                <option value="Unit economics / cost floors">Unit economics / cost floors</option>
+                <option value="Investor-ready commercial story">Investor-ready commercial story</option>
                 <option value="Not sure yet">Not sure yet</option>
               </select>
             </div>
 
             <div>
-              <label htmlFor="target-customer" className="label">Company name *</label>
-              <input
-                id="target-customer"
-                name="target_customer"
-                type="text"
-                required
-                className="input"
-                placeholder="Your company name"
-              />
-            </div>
-
-            <div>
               <label htmlFor="website" className="label">
-                Website, product page, demo, LinkedIn company page, or short deck link (recommended)
+                Website, product page, demo, or deck link (recommended)
               </label>
               <input
                 id="website"
@@ -240,35 +218,13 @@ export default function EntryOfferFormClient() {
             </div>
 
             <div>
-              <label htmlFor="current-pricing" className="label">Current pricing (optional)</label>
+              <label htmlFor="extra-context" className="label">Anything else that would help me prepare? (optional)</label>
               <textarea
-                id="current-pricing"
-                name="current_pricing"
-                rows={2}
+                id="extra-context"
+                name="extra_context"
+                rows={3}
                 className="textarea"
-                placeholder="How do you charge today, if at all?"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="uncertainty" className="label">Biggest uncertainty (optional)</label>
-              <textarea
-                id="uncertainty"
-                name="uncertainty"
-                rows={2}
-                className="textarea"
-                placeholder="What feels hardest, riskiest, or most unclear right now?"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="deadline" className="label">Deadline or timing (optional)</label>
-              <input
-                id="deadline"
-                name="deadline"
-                type="text"
-                className="input"
-                placeholder="e.g., before launch in May, before next fundraise"
+                placeholder="Current pricing, biggest uncertainty, timing, or anything else relevant."
               />
             </div>
 
@@ -278,27 +234,23 @@ export default function EntryOfferFormClient() {
                 disabled={!IS_VALID_FORM_ACTION || isSubmitting}
                 className={cn(primaryButtonLg, 'w-full')}
               >
-                {isSubmitting ? 'Submitting…' : 'Submit request'}
+                {isSubmitting ? 'Sending…' : 'Send my request'}
               </button>
               <p className="mt-3 text-center text-[13px] leading-[1.65] text-text-muted">
-                I read every request myself. If it looks like a fit, I&apos;ll reply with
-                the next step to choose a time. Your session is confirmed once payment is
-                completed.
+                If it&apos;s a good fit, I&apos;ll reply with a link to choose a time.
+                Session confirmed once payment is complete.
               </p>
             </div>
           </form>
 
           {/* Benefits card */}
           <div className="mt-8 rounded-card border border-border-soft bg-surface p-6 sm:p-7">
-            <h2 className="font-serif-playfair text-[20px] font-semibold text-ink">
-              In this session, you&apos;ll get:
-            </h2>
-            <ul className="mt-4 space-y-2.5 text-[15px] leading-[1.6] text-text">
+            <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-text-subtle">What you get</p>
+            <ul className="mt-3 space-y-2.5 text-[15px] leading-[1.6] text-text">
               {[
-                'A clear recommendation on pricing model, value metric, GTM structure, or revenue logic',
-                'Concrete guidance on packages, tiers, and entry offer',
-                'A short memo within 48 hours with risks and next steps',
-                'A chance to pressure-test your current or planned commercial model',
+                'A clear recommendation on your pricing model, value metric, or GTM structure',
+                'Guidance on packaging, tiers, and entry offer design',
+                'A 48-hour follow-up memo with risks and next steps',
               ].map((item) => (
                 <li key={item} className="flex gap-2.5">
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" aria-hidden />
@@ -309,13 +261,13 @@ export default function EntryOfferFormClient() {
           </div>
 
           {/* Secondary CTA */}
-          <div className="mt-10 text-center text-[15px] leading-[1.65] text-text-muted">
-            <p className="mb-2">Not ready to apply yet?</p>
+          <div className="mt-8 text-center text-[14px] text-text-muted">
+            Not ready yet?{' '}
             <Link
               href="/book"
               className="font-medium text-brand-ink underline decoration-brand decoration-2 underline-offset-4 hover:text-brand-dark"
             >
-              Start with a free 15-minute consult instead
+              Start with a free 15-min call
             </Link>
           </div>
         </div>

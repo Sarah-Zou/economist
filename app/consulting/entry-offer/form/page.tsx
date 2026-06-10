@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Apply for 90-Minute Pricing Strategy Session | Sarah Zou',
     description:
-      'Apply for a focused 90-minute pricing strategy session. For AI and SaaS founders who need a clear pricing direction on model, value metric, and packaging.',
+      'Apply for a focused 90-minute pricing strategy session. For technical founders of infrastructure and data platform companies who need a clear pricing direction on model, value metric, cost-floor logic, and packaging.',
     type: 'website',
     url: 'https://sarahzou.com/consulting/entry-offer/form',
   },

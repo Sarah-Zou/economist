@@ -25,25 +25,25 @@ const heroProofPoints = [
   'NBER / World Bank research',
   'Citigroup',
   'Capgemini',
-  'Startup pricing & ops',
+  'COO, fiber-optic sensing IaaS startup',
 ]
 
 const companyTypes = [
-  'SaaS',
-  'AI products',
-  'API platforms',
-  'OSS-commercial products',
-  'Operator-led marketplaces',
-  'Hardware-enabled software',
+  'Model serving & LLMOps',
+  'AI developer tooling & API platforms',
+  'AI data infrastructure',
+  'Fiber-optic / distributed sensing (DFOS)',
+  'Geospatial & environmental data platforms',
+  'Sensing-as-a-service / data-as-a-service',
 ]
 
 const bestUseCases = [
-  'You need sharper pricing, packaging, or monetization decisions',
-  'Your GTM motion and pricing structure are out of alignment',
-  'Your unit economics or revenue model assumptions need rigorous grounding',
-  'Your team has data but not decision clarity',
-  'You need investor- or board-ready commercial narratives that hold up under scrutiny',
-  'You need embedded or fractional commercial strategy, finance, or BizOps support',
+  "You're pricing a complex product and need cost logic that holds up.",
+  "Your GTM doesn't match how technical buyers actually adopt.",
+  'You need a paid-pilot, packaging, or ICP for a brand-new category.',
+  'Your unit economics have to survive fundraising diligence.',
+  'You need an investor-ready economic story for an infrastructure product.',
+  'You want ongoing support from someone who runs the same kind of company.',
 ]
 
 const selectedOutcomes: { id: string; icon: typeof Rocket; content: ReactNode }[] = [
@@ -122,9 +122,9 @@ const pillars = [
 ]
 
 export const metadata: Metadata = {
-  title: 'About Sarah Zou | Commercial Strategy Advisor & Economist for AI-Native B2B SaaS',
+  title: 'About Sarah Zou | Commercial Strategy Advisor for API-First Infrastructure & Data Platforms',
   description:
-    'Economist and commercial strategy advisor for AI-native B2B SaaS teams. Pricing, monetization, GTM economics, forecasting, and unit economics — with openness to consulting, fractional, or select full-time roles.',
+    'PhD economist and COO of a fiber-optic sensing IaaS startup. Commercial strategy for technical founders of API-first infrastructure and data platform companies — pricing architecture, GTM for technical buyers, fundraising-ready unit economics.',
   robots: {
     index: true,
     follow: true,
@@ -139,19 +139,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://sarahzou.com/about',
   },
-  openGraph: {
-    title: 'About Sarah Zou | Commercial Strategy Advisor & Economist for AI-Native B2B SaaS',
+    openGraph: {
+    title: 'About Sarah Zou | Commercial Strategy Advisor for API-First Infrastructure & Data Platforms',
     description:
-      'Commercial strategy, pricing, monetization, GTM economics, and unit economics support for AI-native B2B SaaS founders and operators.',
+      'PhD economist and COO of a fiber-optic sensing IaaS startup. Commercial strategy for technical founders of API-first infrastructure and data platform companies.',
     type: 'website',
     url: 'https://sarahzou.com/about',
     images: [OG_IMAGE_ABOUT],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Sarah Zou | Commercial Strategy Advisor & Economist for AI-Native B2B SaaS',
+    title: 'About Sarah Zou | Commercial Strategy Advisor for API-First Infrastructure & Data Platforms',
     description:
-      'Commercial strategy, pricing, monetization, GTM economics, and unit economics support for AI-native B2B SaaS founders and operators.',
+      'PhD economist and COO of a fiber-optic sensing IaaS startup. Commercial strategy for technical founders of API-first infrastructure and data platform companies.',
     images: [OG_IMAGE_ABOUT],
   },
 }
@@ -186,23 +186,21 @@ export default function AboutPage() {
                   />
                 </div>
                 <div className="media-rule mx-auto w-full max-w-full text-center sm:max-w-[380px] md:max-w-[400px] lg:mx-0 lg:max-w-none lg:text-left">
-                  <p className="media-caption">Economist. Strategist. Advisor.</p>
+                  <p className="media-caption">Economist. Operator. Advisor.</p>
                 </div>
               </div>
 
               <div className="order-1 lg:order-2">
                 <span className="kicker-accent">About</span>
                 <h1 className="mt-5 font-serif-playfair text-ink">
-                  Commercial strategy advisor and economist for AI-native B2B SaaS teams.
+                  I&apos;m a PhD economist who also operates a deep tech startup.
                 </h1>
                 <p className="lede mt-6 max-w-[34rem]">
-                  I help founders and operators make better commercial decisions &mdash; on pricing,
-                  monetization, GTM economics, revenue models, forecasting, and unit economics &mdash;
-                  with research-grade rigor and the clarity to defend those decisions with leadership,
-                  investors, and boards.
+                  I help deep tech founders price, package, and sell products that are hard to
+                  explain and hard to cost — so they win customers and clear investor diligence.
                 </p>
                 <p className="meta-note mt-5">
-                  Best fit for technical teams making consequential commercial decisions.
+                  Best fit for deep tech founders at Seed to Series B.
                 </p>
                 <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
                   <Link
@@ -248,12 +246,12 @@ export default function AboutPage() {
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-7">
                 <span className="kicker">What makes me different</span>
-                <h2 className="section-title">Commercial strategy, rigor, and speed in one person</h2>
+                <h2 className="section-title">Why founders choose me</h2>
                 <ul className="mt-6 space-y-3 text-[16px] leading-[1.7] text-text sm:text-[17px]">
                   {[
-                    'Most pricing consultants give you frameworks.',
-                    'Most analysts give you rigor.',
-                    'Most startup operators give you speed.',
+                    'Most pricing consultants advise from the outside.',
+                    'Most economists give you rigor without operator context.',
+                    'Most operators move fast but lack commercial modeling depth.',
                   ].map((line) => (
                     <li key={line} className="flex items-start gap-2.5">
                       <span className="mt-[10px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
@@ -265,10 +263,8 @@ export default function AboutPage() {
                   I bring all three together.
                 </p>
                 <p className="mt-5 max-w-2xl text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
-                  I combine commercial strategy, pricing expertise, unit economics, and econometric
-                  rigor in one person — then turn that work into practical recommendations, fast
-                  testable next steps, and a commercial logic that can stand up to investor and
-                  board scrutiny.
+                  The result: pricing and GTM decisions tested against real costs and real buyers —
+                  not theory.
                 </p>
               </div>
 
@@ -311,7 +307,7 @@ export default function AboutPage() {
                     Who I help
                   </span>
                   <h2 className="mt-4 font-serif-playfair text-white">
-                    AI-native B2B SaaS teams — pre-seed to Series A:
+                    AI infrastructure and data platform companies — Seed to Series B:
                   </h2>
                   <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                     {companyTypes.map((item) => (
@@ -386,10 +382,9 @@ export default function AboutPage() {
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-6">
                 <span className="kicker">How I work</span>
-                <h2 className="section-title">Rigor, operated like a startup</h2>
+                <h2 className="section-title">What you actually get</h2>
                 <p className="mt-5 text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
-                  I bring an economist&apos;s rigor with an operator&apos;s speed. Every
-                  recommendation is:
+                  Every recommendation is built to be used, not filed:
                 </p>
 
                 <div className="mt-8 space-y-8">
@@ -447,45 +442,39 @@ export default function AboutPage() {
                 <span className="kicker">Story</span>
                 <h2 className="section-title">Why I built this practice</h2>
                 <p className="mt-6 font-serif-playfair text-[22px] italic leading-[1.3] text-ink sm:text-[24px]">
-                  Bridging the gap between academic rigor and startup speed.
+                  Pricing and commercial strategy from someone who is building the same kind of company.
                 </p>
               </div>
 
               <div className="lg:col-span-7">
                 <div className="space-y-6 text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
                   <p>
-                    My background spans economics, statistical research, enterprise strategy, and
-                    startup work. I was trained to think carefully and rigorously — through a{' '}
-                    <strong className="text-ink">PhD</strong> in Economics at Rutgers, an{' '}
-                    <strong className="text-ink">MS</strong> in Finance and Statistics at UIUC, and
-                    research work with <strong className="text-ink">NBER</strong> and the{' '}
-                    <strong className="text-ink">World Bank</strong>.
-                  </p>
-                  <p>
-                    I brought that rigor into industry at{' '}
-                    <strong className="text-ink">Citigroup</strong> building risk and forecasting
-                    models, then at <strong className="text-ink">Capgemini</strong> leading
-                    digital-transformation and GenAI initiatives where complex analysis had to
-                    become executive decisions.
+                    I trained as an economist — a <strong className="text-ink">PhD</strong> at
+                    Rutgers, an <strong className="text-ink">MS</strong> in Finance and Statistics
+                    at UIUC, and research with <strong className="text-ink">NBER</strong> and the{' '}
+                    <strong className="text-ink">World Bank</strong> — then built risk and
+                    forecasting models at <strong className="text-ink">Citigroup</strong> and led
+                    GenAI and digital-transformation work at{' '}
+                    <strong className="text-ink">Capgemini</strong>.
                   </p>
 
                   <blockquote className="quote-block">
                     <p className="font-serif-playfair text-[20px] leading-[1.4] text-ink sm:text-[22px]">
-                      Over time, I saw the same gap again and again: early-stage teams need serious
-                      economic thinking, but in a form they can actually use this week.
+                      What makes my perspective unusual: I am not only advising technical founders
+                      from the outside. I operate a fiber-optic sensing infrastructure-as-a-service
+                      startup as COO — pricing against real cost floors, structuring paid pilots,
+                      and building unit-economics models for fundraising diligence.
                     </p>
                     <p className="mt-4 text-[15px] font-semibold text-ink">
-                      That is the gap I fill.
+                      That is the context I bring to every engagement.
                     </p>
                   </blockquote>
 
                   <p>
-                    I started <strong className="text-ink">EconNova Consulting</strong> to offer
-                    something different: rigorous economic thinking, practical commercial strategy,
-                    and clear decision support designed for founders and operators who need to move
-                    quickly and get it right. I work as a consultant, fractional advisor, or
-                    embedded strategist — and for the right team, I am open to select full-time
-                    roles in commercial strategy, finance, or BizOps.
+                    I started <strong className="text-ink">EconNova Consulting</strong> to bring
+                    that rigor to deep tech founders — pricing and commercial strategy where generic
+                    SaaS frameworks fall short. I work as a consultant, fractional advisor, or
+                    embedded strategist.
                   </p>
                 </div>
               </div>
@@ -498,11 +487,11 @@ export default function AboutPage() {
           <div className="section-shell max-w-4xl">
             <div className="cta-panel">
               <h2 className="font-serif-playfair text-ink">
-                Need sharper commercial strategy, clearer economics, or a pricing decision you can defend?
+                Have a pricing or GTM decision you need to get right?
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
-                Book a free consult and I&apos;ll help you identify the most important commercial or
-                unit-economics question in your business — and what to do about it.
+                Book a free consult and we&apos;ll find the most important commercial question in
+                your business — and what to do about it.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link href={PRIMARY_CTA_HREF} className={primaryButtonLg}>

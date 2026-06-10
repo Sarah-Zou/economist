@@ -42,9 +42,7 @@ const Footer = () => {
               </div>
             </Link>
             <p className="mt-6 max-w-sm text-[15px] leading-[1.8] text-text-muted">
-              Commercial strategy, pricing, and growth economics for AI-native B2B SaaS teams.
-              Fractional chief economist and commercial advisor — from pricing and GTM decisions to
-              unit economics, forecasting, and investor-ready narratives.
+              Pricing, GTM, and unit economics for deep tech founders — Seed to Series B.
             </p>
             <Link
               href="/consulting/entry-offer/form"

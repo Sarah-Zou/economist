@@ -9,12 +9,12 @@ const PRIMARY_CTA_HREF = '/book'
 const CONSULT_CTA_HREF = '/consulting'
 
 const decisionFocus = [
-  'Pricing strategy',
-  'GTM economics',
-  'Revenue model',
-  'Unit economics',
-  'Forecasting',
-  'Investor narrative',
+  'Pricing architecture',
+  'Usage & credit-based pricing',
+  'Value metric selection',
+  'GTM for technical buyers',
+  'Unit economics & cost floors',
+  'Fundraising-ready models',
 ]
 
 const credentials = [
@@ -26,18 +26,19 @@ const credentials = [
 
 const pillars = [
   {
-    title: 'Rigor, not frameworks',
+    title: 'Inside the problem, not above it',
     description:
-      'Econometrics and pricing research applied to the revenue decisions actually in front of you.',
+      'I operate a fiber-optic sensing infrastructure-as-a-service startup as COO — pricing against real cost floors, running paid pilots, building diligence-ready models. Not advising from the outside.',
   },
   {
-    title: 'Decisions, not dashboards',
+    title: 'Decisions, not deliverables',
     description:
       'Clear recommendations with tradeoffs named — not long reports that avoid a point of view.',
   },
   {
-    title: 'Startup speed',
-    description: 'Fast, testable outputs built to ship and defend, not to be admired on a shelf.',
+    title: 'Built for technical founders',
+    description:
+      'Fast, defensible outputs calibrated for founding teams where the product is complex and the commercial layer has to match.',
   },
 ]
 
@@ -79,9 +80,10 @@ const faqItems = [
     q: 'What kinds of commercial questions do you work on?',
     a: (
       <>
-        Pricing model, value metric, packaging, GTM economics, revenue model design, unit
-        economics, forecasting, KPI structure, and investor-ready commercial narratives. The common
-        thread: decisions where economic rigor makes the answer clearer. Read more{' '}
+        Pricing architecture, value-metric selection, usage/credit/committed-use model design, GTM
+        for technical buyers, paid pilot structuring, unit economics and gross-margin logic for
+        API/infra/hardware-software products, cost-floor modeling, and fundraising-ready commercial
+        narratives. Read more{' '}
         <Link href="/about" className={brandLink}>
           about the practice
         </Link>
@@ -118,9 +120,9 @@ const faqItems = [
 ]
 
 export const metadata: Metadata = {
-  title: 'Commercial Strategy, Pricing & Growth Economics for AI-Native B2B SaaS | Sarah Zou, PhD',
+  title: 'Commercial Strategy & Pricing for API-First Infrastructure & Data Platforms | Sarah Zou, PhD',
   description:
-    'Commercial strategy, pricing, monetization, GTM economics, forecasting, and unit economics for AI-native B2B SaaS founders and operators. Fractional chief economist — start with a free consult.',
+    'I help technical founders of API-first infrastructure and data platform companies build the commercial layer — pricing architecture, GTM for technical buyers, and fundraising-ready unit economics. Start with a free consult.',
   robots: {
     index: true,
     follow: true,
@@ -135,19 +137,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://sarahzou.com',
   },
-  openGraph: {
-    title: 'Commercial Strategy, Pricing & Growth Economics for AI-Native B2B SaaS | Sarah Zou, PhD',
+    openGraph: {
+    title: 'Commercial Strategy & Pricing for API-First Infrastructure & Data Platforms | Sarah Zou, PhD',
     description:
-      'Commercial strategy, pricing, monetization, GTM economics, forecasting, and unit economics for AI-native B2B SaaS founders and operators.',
+      'I help technical founders of API-first infrastructure and data platform companies build the commercial layer — pricing architecture, GTM for technical buyers, and fundraising-ready unit economics.',
     type: 'website',
     url: 'https://sarahzou.com',
     images: [OG_IMAGE_HOME],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Commercial Strategy, Pricing & Growth Economics for AI-Native B2B SaaS | Sarah Zou, PhD',
+    title: 'Commercial Strategy & Pricing for API-First Infrastructure & Data Platforms | Sarah Zou, PhD',
     description:
-      'Commercial strategy, pricing, monetization, GTM economics, forecasting, and unit economics for AI-native B2B SaaS founders and operators.',
+      'I help technical founders of API-first infrastructure and data platform companies build the commercial layer — pricing architecture, GTM for technical buyers, and fundraising-ready unit economics.',
     images: [OG_IMAGE_HOME],
   },
 }
@@ -163,7 +165,7 @@ export default function Home() {
         name: 'What kinds of commercial questions do you work on?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Pricing model, value metric, packaging, GTM economics, revenue model design, unit economics, forecasting, KPI structure, and investor-ready commercial narratives — anywhere economic rigor makes the decision clearer.',
+          text: 'Pricing architecture, value-metric selection, usage/credit/committed-use model design, GTM for technical buyers, paid pilot structuring, unit economics and gross-margin logic for API/infrastructure/hardware-software products, cost-floor modeling, and fundraising-ready commercial narratives.',
         },
       },
       {
@@ -193,16 +195,15 @@ export default function Home() {
           <div className="section-shell pb-20 pt-10 sm:pb-24 sm:pt-16 lg:pb-28 lg:pt-20">
             <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(280px,0.75fr)] lg:gap-14 xl:gap-20">
               <div className="order-1">
-                <span className="kicker-accent">Commercial Strategy &amp; Growth Economics</span>
+                <span className="kicker-accent">Pricing · GTM · Unit Economics</span>
 
                 <h1 className="mt-5 max-w-[54rem] font-serif-playfair text-ink">
-                  Commercial strategy, pricing, and growth economics for AI-native B2B SaaS teams.
+                  Pricing and <span className="whitespace-nowrap">go-to-market</span> for deep tech founders.
                 </h1>
 
                 <p className="lede mt-7 max-w-[39rem]">
-                  I help technical founders and operators turn messy pricing, GTM, revenue model,
-                  and unit economics questions into clearer decisions, sharper investor narratives,
-                  and more executable growth plans.
+                  I help founders of AI infrastructure and deep tech data platforms turn hard
+                  technology into a business that customers buy and investors back.
                 </p>
 
                 <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
@@ -215,15 +216,12 @@ export default function Home() {
                   </Link>
 
                   <Link href={CONSULT_CTA_HREF} className={`${outlineButton} w-full sm:w-auto`}>
-                    Explore working together
+                    See how it works
                   </Link>
                 </div>
 
                 <div className="mt-10 max-w-3xl border-y border-border-soft py-5">
-                  <p className="meta-note">
-                    Most founders start with one live commercial or pricing decision.
-                  </p>
-                  <div className="mt-4 grid gap-x-8 gap-y-2 sm:grid-cols-2">
+                  <div className="grid gap-x-8 gap-y-2 sm:grid-cols-2">
                     {credentials.map((item) => (
                       <span key={item} className="text-[13.5px] leading-[1.65] text-text-muted">
                         {item}
@@ -245,7 +243,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="media-rule mx-auto w-full max-w-full text-center sm:max-w-[340px] md:max-w-[360px] lg:max-w-[380px]">
-                  <p className="media-caption">For AI-native B2B SaaS teams</p>
+                  <p className="media-caption">For seed to series B technical founders of AI infrastructure &amp; deep tech data platforms</p>
                 </div>
               </div>
             </div>
@@ -268,8 +266,80 @@ export default function Home() {
           </div>
         </section>
 
-        {/* The Session — single offer block */}
+        {/* Who this is for */}
+        <section className="section">
+          <div className="section-shell">
+            <div className="section-header">
+              <span className="kicker">Who this is for</span>
+              <h2 className="section-title">Deep tech founders at Seed to Series B</h2>
+              <p className="mt-4 text-[15px] leading-[1.75] text-text-muted">
+                The fit is strongest when the product is technically
+                complex and the right business model is not yet obvious.
+              </p>
+            </div>
+
+            <div className="mt-12 grid gap-0 sm:grid-cols-3">
+              {[
+                {
+                  role: 'AI Infrastructure & API Platforms',
+                  need: 'Founders building model-serving, LLMOps, AI data infrastructure, developer tools, or technical API platforms.',
+                },
+                {
+                  role: 'Deep Tech Data Platforms',
+                  need: 'Founders commercializing geospatial, environmental, sensing, fiber-optic sensing, or physical-world data infrastructure.',
+                },
+                {
+                  role: 'Technical Founders Facing the Commercial Layer',
+                  need: 'Founders with strong technology who need clarity on pricing, packaging, ICP, GTM motion, unit economics, or investor narrative.',
+                },
+              ].map((item) => (
+                <div key={item.role} className="border-t border-border-soft py-6 pr-8">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-subtle">
+                    {item.role}
+                  </p>
+                  <p className="mt-3 text-[14px] leading-[1.75] text-text-muted">{item.need}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Problem */}
         <section className="section section-alt">
+          <div className="section-shell">
+            <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-16 lg:items-start">
+              <div>
+                <span className="kicker">The problem</span>
+                <h2 className="mt-3 font-serif-playfair text-[28px] font-semibold leading-[1.2] text-ink sm:text-[32px]">
+                  Deep tech doesn&apos;t fail on technology alone.
+                </h2>
+                <p className="mt-5 text-[15px] leading-[1.75] text-text-muted">
+                  The commercial layer — pricing, GTM, unit economics — is where technically strong
+                  products stall. These are the patterns that surface most often at Seed to Series B.
+                </p>
+              </div>
+              <ul className="grid gap-x-8 gap-y-0 sm:grid-cols-2">
+                {[
+                  'The product works, but the buyer does not know how to evaluate it.',
+                  'Usage grows, but gross margin becomes unclear.',
+                  'Pricing is either too simple for the cost structure or too complex for adoption.',
+                  'Free pilots do not convert.',
+                  'The technical user is excited, but the economic buyer is unclear.',
+                  'Investors ask about margins, repeatability, and GTM, and the answers are not yet crisp.',
+                  'The company is stuck between developer adoption, enterprise sales, and partner-led GTM.',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 border-b border-border-soft py-4">
+                    <span className="mt-[9px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" aria-hidden />
+                    <span className="text-[14px] leading-[1.65] text-text">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* The Session — single offer block */}
+        <section className="section">
           <div className="section-shell max-w-4xl">
             <div className="section-header">
               <span className="kicker">Start here</span>
@@ -333,11 +403,11 @@ export default function Home() {
           <div className="section-shell">
             <div className="section-header">
               <span className="kicker">Approach</span>
-              <h2 className="section-title">Rigor, decisions, and startup speed</h2>
+              <h2 className="section-title">An economist who also runs a deep tech startup</h2>
               <p className="mt-5 text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
-                Most consultants give you frameworks. Most analysts give you rigor. Most operators
-                give you speed. I combine all three — for founders and operators making consequential
-                commercial decisions.
+                I&apos;m a PhD economist, and I&apos;m also COO of a deep tech startup. So I price
+                against real costs and real buyers — not theory — and give you clear decisions, not
+                long reports.
               </p>
             </div>
 
@@ -428,55 +498,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Who this is for */}
-        <section className="section section-alt">
-          <div className="section-shell">
-            <div className="section-header">
-              <span className="kicker">Who this is for</span>
-              <h2 className="section-title">Built for teams making consequential commercial decisions</h2>
-            </div>
-
-            <div className="mt-12 grid gap-0 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                {
-                  role: 'Founder',
-                  need: 'Need clearer pricing, packaging, GTM, or monetization decisions — framed in a way you can defend with your team and investors.',
-                },
-                {
-                  role: 'COO / BizOps Lead',
-                  need: 'Need structure around messy commercial questions, operating metrics, or growth priorities that cross multiple functions.',
-                },
-                {
-                  role: 'CFO / Finance Lead',
-                  need: 'Need revenue model logic, forecasting, unit economics, or investor-ready assumptions that hold up under scrutiny.',
-                },
-                {
-                  role: 'Hiring Founder',
-                  need: 'Need embedded strategy, finance, BizOps, or growth economics talent who can work across analysis, narrative, and execution.',
-                },
-              ].map((item) => (
-                <div
-                  key={item.role}
-                  className="border-t border-border-soft py-6 pr-6"
-                >
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-subtle">
-                    {item.role}
-                  </p>
-                  <p className="mt-3 text-[14px] leading-[1.75] text-text-muted">{item.need}</p>
-                </div>
-              ))}
-            </div>
-
-            <p className="mt-10 text-center text-[14px] leading-[1.7] text-text-muted">
-              Not sure which applies to you?{' '}
-              <Link href={PRIMARY_CTA_HREF} className="font-semibold text-brand-ink underline decoration-brand/30 underline-offset-2 hover:decoration-brand/80">
-                Book a free 15-min consult
-              </Link>{' '}
-              and I&apos;ll help you figure out the right path.
-            </p>
-          </div>
-        </section>
-
         {/* FAQ — 3 items */}
         <section className="section">
           <div className="section-shell max-w-3xl">
@@ -509,7 +530,7 @@ export default function Home() {
           <div className="section-shell max-w-4xl">
             <div className="cta-panel">
               <h2 className="font-serif-playfair text-ink">
-                Ready to make your pricing, GTM, or revenue model decisions clearer?
+                Have a pricing or GTM decision in front of you?
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
                 Start with a free 15-min consult. Or go straight to the 90-minute session if you

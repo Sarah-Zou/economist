@@ -6,9 +6,9 @@ import { generateServiceWithOffersJsonLd, generateBreadcrumbJsonLd } from '@/lib
 import { outlineButton, primaryButtonLg } from '@/lib/brandStyles'
 
 export const metadata: Metadata = {
-  title: 'Pricing & Monetization Sprint for Seed–Series A Startups | Sarah Zou',
+  title: 'Pricing & Monetization Sprint for API-First Infrastructure & Data Platforms | Sarah Zou',
   description:
-    'Build a pricing structure you can take to market. For AI and SaaS founders needing model, value metric, packaging, price logic, and rollout guidance in one focused sprint.',
+    'Build a pricing architecture for a technically complex product. For technical founders of API-first infrastructure and data platform companies needing pricing model, value metric, packaging, and rollout guidance in one focused sprint.',
   robots: {
     index: true,
     follow: true,
@@ -23,18 +23,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://sarahzou.com/consulting/services/pricing-monetization-sprint',
   },
-  openGraph: {
-    title: 'Pricing & Monetization Sprint for Seed–Series A Startups | Sarah Zou',
+    openGraph: {
+    title: 'Pricing & Monetization Sprint for API-First Infrastructure & Data Platforms | Sarah Zou',
     description:
-      'Build a pricing structure you can take to market. For AI and SaaS founders needing model, value metric, packaging, price logic, and rollout guidance in one focused sprint.',
+      'Build a pricing architecture for a technically complex product. For technical founders of API-first infrastructure and data platform companies needing pricing model, value metric, packaging, and rollout guidance in one focused sprint.',
     type: 'website',
     url: 'https://sarahzou.com/consulting/services/pricing-monetization-sprint',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing & Monetization Sprint for Seed–Series A Startups | Sarah Zou',
+    title: 'Pricing & Monetization Sprint for API-First Infrastructure & Data Platforms | Sarah Zou',
     description:
-      'Build a pricing structure you can take to market. For AI and SaaS founders needing model, value metric, packaging, price logic, and rollout guidance in one focused sprint.',
+      'Build a pricing architecture for a technically complex product. For technical founders of API-first infrastructure and data platform companies needing pricing model, value metric, packaging, and rollout guidance in one focused sprint.',
   },
 }
 
@@ -61,15 +61,12 @@ const DELIVERABLES = [
 ]
 
 const WHEN_FOUNDERS_HIRE = [
-  { lead: 'You are launching', rest: 'and need a first pricing structure' },
-  { lead: 'You have traction', rest: 'but conversion or expansion feels weak' },
-  { lead: 'Your packaging is unclear', rest: 'and upgrade paths are muddy' },
-  { lead: 'You are debating', rest: 'seat, usage-based, hybrid, or another model' },
-  { lead: 'Your current pricing', rest: 'feels patched together' },
-  {
-    lead: 'You need clearer pricing logic',
-    rest: 'for investors, leadership, or internal alignment',
-  },
+  { lead: 'You are launching', rest: 'and need a first pricing architecture — usage-based, credit-based, committed-use, or hybrid — built on your actual cost structure' },
+  { lead: 'You have traction', rest: 'but your pricing model is misaligned with how technical buyers evaluate and adopt your product' },
+  { lead: 'Your packaging is unclear', rest: 'and you need a paid-pilot or expansion structure that works for infrastructure buyers' },
+  { lead: 'You are debating', rest: 'usage-based vs credit-based vs committed-use vs hybrid — and need cost-floor logic, not a template' },
+  { lead: 'Your current pricing', rest: 'was designed for SaaS but your product is infrastructure or a data platform — the model needs to match' },
+  { lead: 'You need clearer pricing logic', rest: 'for investors, customers, or internal alignment on a technically complex product' },
 ]
 
 const WORKSTREAMS = [
@@ -192,7 +189,7 @@ export default function PricingDiagnosticRevenueBoost() {
   const serviceJsonLd = generateServiceWithOffersJsonLd({
     name: 'Pricing & Monetization Sprint',
     description:
-      'Build a pricing structure you can take to market across model, value metric, packaging, price logic, and rollout in 1–2 weeks.',
+      'Build a pricing architecture for a technically complex product across model, value metric, packaging, cost-floor logic, and rollout in 1–2 weeks.',
     url: SERVICE_URL,
     offers: [
       { name: 'Lite', price: 5000, description: 'Defendable first pricing structure and package design.' },
@@ -225,12 +222,13 @@ export default function PricingDiagnosticRevenueBoost() {
               <div className="section-header max-w-[44rem]">
                 <span className="kicker-accent">Pricing &amp; Monetization Sprint</span>
                 <h1 className="mt-5 font-serif-playfair text-ink">
-                  Build a pricing structure you can take to market
+                  Build a pricing architecture your technical buyers can adopt and your investors can underwrite
                 </h1>
                 <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
-                  For AI and SaaS founders who need more than a quick opinion. We work across
-                  pricing model, value metric, packaging, price logic, and rollout so your
-                  monetization system works together.
+                  For technical founders of API-first infrastructure and data platform companies who
+                  need more than a quick opinion. We work across pricing model, value metric,
+                  packaging, price logic, and rollout — built for products where generic SaaS
+                  frameworks fall short.
                 </p>
                 <p className="meta-note mt-6">
                   Most founders start with the 90-minute session. The $600 fee is credited toward
