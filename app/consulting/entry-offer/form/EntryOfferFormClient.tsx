@@ -210,7 +210,7 @@ export default function EntryOfferFormClient() {
               <input
                 id="website"
                 name="website_url"
-                type="url"
+                type="text"
                 autoComplete="url"
                 className="input"
                 placeholder="https://yourproduct.com"
