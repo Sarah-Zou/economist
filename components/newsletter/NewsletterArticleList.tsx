@@ -40,7 +40,7 @@ export default function NewsletterArticleList({
             <div className="relative ml-2 h-20 w-28 flex-shrink-0 overflow-hidden rounded-[12px] bg-white shadow-card">
               <Image
                 src={post.image}
-                alt={post.title}
+                alt={post.imageAlt ?? post.title}
                 fill
                 className="object-cover"
                 loading="lazy"

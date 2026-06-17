@@ -100,7 +100,7 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
         <div className="relative w-full h-[400px] mb-12 rounded-lg overflow-hidden">
           <Image
             src={post.image}
-            alt={post.title}
+            alt={post.imageAlt ?? post.title}
             fill
             className="object-cover"
             priority

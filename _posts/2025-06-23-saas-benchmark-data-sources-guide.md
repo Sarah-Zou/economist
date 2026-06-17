@@ -3,7 +3,7 @@ title: "SaaS Benchmark Data Sources Guide | Stage-Smart Metrics for 2024-25"
 date: 2025-06-23
 author: Dr. Sarah Zou
 description: "Cut through SaaS benchmark noise with stage-specific data sources. Learn which benchmark sources VCs trust for Seed to Pre-IPO, with actionable tips for investor presentations."
-image: "https://images.unsplash.com/photo-1551281044-8b683b3f4f40?auto=format&fit=crop&w=1400&q=80"
+image: "/assets/images/newsletter/benchmark-data-sources.webp"
 canonical: "https://sarahzou.com/newsletter/saas-benchmark-data-sources-guide"
 tags:
   - SaaS
@@ -21,7 +21,7 @@ As SaaS founders, have you faced that moment before a board meeting or investor 
 
 The solution: **This guide helps you match the right benchmark sources to your specific stage and funding / business model.**
 
-![SaaS startup benchmark source selection framework for 2024-25 (Seed to Pre-IPO)](https://images.unsplash.com/photo-1551281044-8b683b3f4f40?auto=format&fit=crop&w=1400&q=80)
+![SaaS startup benchmark source selection framework for 2024-25 (Seed to Pre-IPO)](/assets/images/newsletter/benchmark-data-sources.webp)
 
 ## SaaS Benchmark Data Sources Guide
 

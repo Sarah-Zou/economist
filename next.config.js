@@ -23,7 +23,11 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'cdn.jsdelivr.net',
-      }
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
     ],
     // Static export (GitHub Pages): Next image optimizer is unavailable.
     // Hero assets are pre-compressed WebP in /public/images; og-home.webp is generated at build.

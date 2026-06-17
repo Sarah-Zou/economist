@@ -11,6 +11,7 @@ export interface Post {
   author: string
   description: string
   image: string
+  imageAlt?: string
   content: string
   tags: string[]
   canonical?: string
@@ -50,6 +51,7 @@ export function getAllPosts(): Post[] {
       author: data.author,
       description: data.description,
       image: data.image,
+      imageAlt: data.imageAlt,
       content,
       tags: data.tags || [],
       canonical: data.canonical,
@@ -91,6 +93,7 @@ export function getPostBySlug(slug: string): Post | null {
       author: data.author,
       description: data.description,
       image: data.image,
+      imageAlt: data.imageAlt,
       content,
       tags: data.tags || [],
       canonical: data.canonical,

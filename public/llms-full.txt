@@ -170,6 +170,14 @@ WTP is the maximum price a buyer accepts; use it to set a defensible price range
 
 ## Newsletter
 
+### Why AI Infrastructure Is Not an AI Application Business
+URL: https://sarahzou.com/newsletter/ai-infrastructure-not-ai-app
+Infrastructure and applications run on different economic engines. Learn how to classify your AI company, price on the right unit, and avoid copying the application playbook.
+
+### Mapping the Emerging AI Infrastructure and Deep Tech Data Platforms
+URL: https://sarahzou.com/newsletter/mapping-ai-infrastructure-deep-tech-data-platforms
+A founder's map of AI software infrastructure and deep tech data platforms—drawn by economics, not buzzwords—with segments, comparables, and the margin question for each.
+
 ### SaaS Benchmark Data Sources Guide | Stage-Smart Metrics for 2024-25
 URL: https://sarahzou.com/newsletter/saas-benchmark-data-sources-guide
 Cut through SaaS benchmark noise with stage-specific data sources. Learn which benchmark sources VCs trust for Seed to Pre-IPO, with actionable tips for investor presentations.
@@ -179,5 +187,5 @@ URL: https://sarahzou.com/newsletter/why-fractional-economist
 Why SaaS startups are hiring fractional chief economists and how they drive growth, pricing, and investor narrative.
 
 ---
-Generated: 2026-05-21
+Generated: 2026-06-17
 Total wiki concepts: 32
