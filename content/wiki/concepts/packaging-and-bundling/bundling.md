@@ -60,7 +60,7 @@ Imagine a graph where the X-axis is "Value of Product A" and the Y-axis is "Valu
 * If your customers are clustered along a line that slopes downward (negative correlation), **bundle immediately.**
 * If they are clustered in the top right (high value for both), **price high individually.**
 
-![Bundling mental model: Scatter plot with Value of Product A on the X-axis and Value of Product B on the Y-axis. Downward slope (negative correlation) indicates diverse needs—bundle. Top-right cluster (high value for both) indicates sell individually at high price. Bottom-left cluster indicates commodity; positive correlation suggests usage-based pricing.](/images/wiki_bundling_mental.png)
+![Bundling mental model: Scatter plot with Value of Product A on the X-axis and Value of Product B on the Y-axis. Downward slope (negative correlation) indicates diverse needs—bundle. Top-right cluster (high value for both) indicates sell individually at high price. Bottom-left cluster indicates commodity; positive correlation suggests usage-based pricing.](/images/wiki_bundling_mental.webp)
 
 **The Downward Slope (Negative Correlation)**
 

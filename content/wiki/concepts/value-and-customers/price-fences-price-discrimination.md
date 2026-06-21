@@ -64,7 +64,7 @@ Most price fences fall into four categories: **Buyer Identification** (Who they 
 
 ### Mental model
 
-![Price fences mental model: A visual diagram illustrating the "Hurdle" framework for price discrimination. The diagram shows how companies place hurdles (fences) in front of low prices that are easy for price-sensitive customers to jump (e.g., booking in advance, accepting limited features) but difficult or impossible for high-value customers to overcome (e.g., business travelers who need flexibility, enterprise customers who require compliance features). This self-selection mechanism allows segments to naturally separate, with high-value customers paying premiums to avoid hurdles while low-value customers jump hurdles to access discounts.](/images/wiki_fence_mental.png)
+![Price fences mental model: A visual diagram illustrating the "Hurdle" framework for price discrimination. The diagram shows how companies place hurdles (fences) in front of low prices that are easy for price-sensitive customers to jump (e.g., booking in advance, accepting limited features) but difficult or impossible for high-value customers to overcome (e.g., business travelers who need flexibility, enterprise customers who require compliance features). This self-selection mechanism allows segments to naturally separate, with high-value customers paying premiums to avoid hurdles while low-value customers jump hurdles to access discounts.](/images/wiki_fence_mental.webp)
 
 **The "Hurdle"**
 

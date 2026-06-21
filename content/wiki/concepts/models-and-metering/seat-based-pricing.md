@@ -44,7 +44,7 @@ owner: "Dr. Sarah Zou"
 
 Think of seat-based pricing like selling office chairs. A company buys 50 chairs because they have 50 "butts in seats."
 
-![Seat-based pricing mental model: The Office Chair. You charge for the presence of a user—like selling office chairs. The price of each "chair" is fixed regardless of how much work the employee does while sitting in it. Revenue is coupled with hiring, not value: if the company downsizes to 20 highly productive employees, they stop buying 30 chairs and your revenue drops even if their output stays the same.](/images/wiki_seat-based_mental.png)
+![Seat-based pricing mental model: The Office Chair. You charge for the presence of a user—like selling office chairs. The price of each "chair" is fixed regardless of how much work the employee does while sitting in it. Revenue is coupled with hiring, not value: if the company downsizes to 20 highly productive employees, they stop buying 30 chairs and your revenue drops even if their output stays the same.](/images/wiki_seat-based_mental.webp)
 
 * **The Concept:** You are charging for the presence of a user.
 * **The Limit:** The price of the "chair" is fixed. It doesn't matter how hard the employee works or how much ROI they generate while sitting in it; your upside is capped by the headcount.

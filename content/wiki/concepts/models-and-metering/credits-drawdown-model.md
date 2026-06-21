@@ -43,7 +43,7 @@ Instead of billing entirely in arrears like pure [pay-as-you-go](/wiki/pricing/m
 
 **"The Prepaid Transit Card"**
 
-![Credits / drawdown mental model: prepaid transit card. You load value upfront into a wallet, then each ride deducts variable amounts based on what you use. This preserves spending flexibility while giving the provider upfront cash and better revenue predictability.](/images/wiki_drawdown_mental.png)
+![Credits / drawdown mental model: prepaid transit card. You load value upfront into a wallet, then each ride deducts variable amounts based on what you use. This preserves spending flexibility while giving the provider upfront cash and better revenue predictability.](/images/wiki_drawdown_mental.webp)
 
 Think of drawdown like a prepaid MetroCard: you load \$20 first, then spend that value as you ride. You are not renegotiating each trip, and you are not locked into a flat monthly amount regardless of use. You keep flexibility on what/when you consume; the seller gets committed cash upfront.
 

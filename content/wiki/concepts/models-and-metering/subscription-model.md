@@ -46,7 +46,7 @@ owner: "Dr. Sarah Zou"
 
 **The "Leaky Bucket"**
 
-![Subscription mental model: The Leaky Bucket. Your customer base is a bucket. New customers are water poured in (acquisition). Churn is a hole in the bottom. Traditional sales: you fill the bucket, then dump it out to sell again. Subscription: you plug the holes so revenue constantly rises as you pour more in.](/images/wiki_subscription_mental.png)
+![Subscription mental model: The Leaky Bucket. Your customer base is a bucket. New customers are water poured in (acquisition). Churn is a hole in the bottom. Traditional sales: you fill the bucket, then dump it out to sell again. Subscription: you plug the holes so revenue constantly rises as you pour more in.](/images/wiki_subscription_mental.webp)
 
 Imagine your customer base as a bucket. New customers are water being poured in (acquisition). Churn is a hole in the bottom.
 

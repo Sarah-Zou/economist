@@ -240,13 +240,8 @@ export function createWikiMarkdownComponents() {
     img: ({ node, src, alt, ...props }: any) => {
       // Handle images with Next.js Image component for optimization
       if (src?.startsWith('/')) {
-        // Check if this is a mental model image - make it smaller
-        const isUseCaseMental = src.includes('wiki_usecase_mental')
-        const isJTBDMental = src.includes('wiki_JTBD_mental')
-        const isSegmentMental = src.includes('wiki_segment_mental')
-        const isPenetrationMental = src.includes('wiki_penetration_mental')
         const isMentalModel =
-          isUseCaseMental || isJTBDMental || isSegmentMental || isPenetrationMental
+          /wiki_(?:.*_mental|freemium_)/.test(src)
         const imageWidth = isMentalModel ? 600 : 800
         const imageHeight = isMentalModel ? 450 : 600
         const maxWidth = isMentalModel ? 'max-w-2xl' : 'max-w-full'

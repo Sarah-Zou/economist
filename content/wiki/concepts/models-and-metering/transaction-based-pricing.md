@@ -65,7 +65,7 @@ Imagine you build a bridge. To monetize it, you have two primary choices:
   * **Pros:** Low barrier to entry; if the bridge helps a driver get to a high-value job, they don't mind the \$1. If they don't cross, they don't pay.
   * **Cons:** Revenue fluctuates with traffic; you bear the risk of a "quiet" month.
 
-![Transaction-based pricing mental model: The Toll Bridge. The Subscription Model (Monthly Pass) charges a flat fee regardless of how many times the bridge is crossed—predictable revenue for the owner, but a high barrier for occasional users. The Transaction Model (The Toll) charges per crossing—perfectly value-aligned and low-friction, but revenue fluctuates with customer activity, shifting volatility risk to the platform.](/images/wiki_transaction_mental.png)
+![Transaction-based pricing mental model: The Toll Bridge. The Subscription Model (Monthly Pass) charges a flat fee regardless of how many times the bridge is crossed—predictable revenue for the owner, but a high barrier for occasional users. The Transaction Model (The Toll) charges per crossing—perfectly value-aligned and low-friction, but revenue fluctuates with customer activity, shifting volatility risk to the platform.](/images/wiki_transaction_mental.webp)
 
 This creates a **perfect value-price alignment.** Transaction-based pricing charges **at the moment value is realized** (a "crossing"). By giving customers visibility and control over spend, it lowers adoption friction, but shifts volatility risk to you. In the transaction model, your success is mathematically tied to your customer's activity.
 

@@ -43,12 +43,12 @@ Think of free users not as "freeloaders," but as the **fuel** for your growth en
 
 In a **B2C setting**, the Freemium Growth Framework operates as a product-led system: the free tier drives acquisition, activation and retention create compounding usage, and monetization happens when users hit natural limits or need higher-capability features.
 
-![Freemium growth framework for B2C: free tier drives acquisition, activation and retention create compounding usage, and monetization happens when users hit natural limits or need higher-capability features.](/images/wiki_freemium_b2c.png)
+![Freemium growth framework for B2C: free tier drives acquisition, activation and retention create compounding usage, and monetization happens when users hit natural limits or need higher-capability features.](/images/wiki_freemium_b2c.webp)
 
 
 In a **B2B setting**, free users serve as the primary infrastructure for your next enterprise sale.
 
-![Freemium growth framework for B2B: infiltration via bottom-up adoption, viral expansion as free users invite teammates, signal through high usage density creating enterprise purchase intent, and harvest when organizations hit the value fence and need centralized control.](/images/wiki_freemium_b2b.png)
+![Freemium growth framework for B2B: infiltration via bottom-up adoption, viral expansion as free users invite teammates, signal through high usage density creating enterprise purchase intent, and harvest when organizations hit the value fence and need centralized control.](/images/wiki_freemium_b2b.webp)
 
 The B2B Freemium pipeline unfolds in four stages:
 

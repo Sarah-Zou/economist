@@ -161,7 +161,7 @@ export default function FreeToolsPage() {
       <div className="media-shell h-full bg-[#f2ece5] p-3">
         <div className="media-inner">
           <Image
-            src="/images/pmm_hero_image.png"
+            src="/images/pmm_hero_image.webp"
             alt="Pricing Model Matchmaker interface preview"
             fill
             className="object-cover object-left-top"

@@ -45,7 +45,7 @@ The emergence of UBP fits within the context of **The Usage Economy,** which ref
 
 **"The Taxi vs. The Car"**
 
-![Usage-based pricing mental model: The Taxi vs The Car. Subscription/License (The Car) means you pay the same whether you use it or not; the asset sits idle. Usage-Based (The Taxi) means you pay only for distance traveled; no travel equals zero cost. Hybrid (The Cell Phone Plan) is a base bucket plus overage—predictability with upside capture.](/images/wiki_ubp_mental.png)
+![Usage-based pricing mental model: The Taxi vs The Car. Subscription/License (The Car) means you pay the same whether you use it or not; the asset sits idle. Usage-Based (The Taxi) means you pay only for distance traveled; no travel equals zero cost. Hybrid (The Cell Phone Plan) is a base bucket plus overage—predictability with upside capture.](/images/wiki_ubp_mental.webp)
 
 * **[Subscription](/wiki/pricing/models-and-metering/subscription-model)/License (The Car):** You buy the car (or lease it flat-rate). You pay the same amount whether you drive it 100 miles or 0 miles. It sits idle 95% of the time, representing wasted efficiency for the buyer.
 * **Usage-Based (The Taxi):** You pay only for the specific distance traveled. If you don't travel, you pay zero. The risk of asset utilization shifts from the buyer to the seller.

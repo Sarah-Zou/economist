@@ -47,7 +47,7 @@ In B2B SaaS, this is the first "price-your-customer" decision, categorizing user
 
 Think of customer use cases as a structured card:
 
-![Customer Use Cases Mental Model: A visual diagram showing how customer use cases are structured as cards. The Use Case Card framework includes: Who (role, company type, size), When (trigger event / frequency), Goal / outcome (what success looks like), Constraints (time, budget, compliance, skill, integrations), Success metrics (e.g., time saved, error rate, revenue uplift), Critical features (must-haves to achieve the outcome), and Nice-to-haves (extras that delight but are not decisive). This card-based framework helps pricing teams make strategic decisions about which use cases to optimize for, serve but not optimize, or say no to.](/images/wiki_usecase_mental.png)
+![Customer Use Cases Mental Model: A visual diagram showing how customer use cases are structured as cards. The Use Case Card framework includes: Who (role, company type, size), When (trigger event / frequency), Goal / outcome (what success looks like), Constraints (time, budget, compliance, skill, integrations), Success metrics (e.g., time saved, error rate, revenue uplift), Critical features (must-haves to achieve the outcome), and Nice-to-haves (extras that delight but are not decisive). This card-based framework helps pricing teams make strategic decisions about which use cases to optimize for, serve but not optimize, or say no to.](/images/wiki_usecase_mental.webp)
 
 Pricing uses these cards to make choices about:
 

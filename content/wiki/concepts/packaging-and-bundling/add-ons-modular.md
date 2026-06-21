@@ -61,7 +61,7 @@ Think of your product not as a single block, but as a Base Platform (the core fe
 - **Vertical Strategy (Tiers):** You force customers to buy a pre-built Lego castle (Small/Medium/Large).
 - **Horizontal Strategy (Add-ons/Modules):** You sell the base castle, and let them buy the "Motorized Drawbridge" (a high-cost capability, considered as a module) or "Moat" (a niche feature, considered as an add-on) separately if they need it.
 
-![Diagram of Core plus Lego blocks: a base platform (core) with optional add-on and module blocks that customers can attach—contrasting vertical tier strategy (pre-built castle) with horizontal strategy (base plus optional drawbridge and moat)](/images/wiki_addon_mental.png)
+![Diagram of Core plus Lego blocks: a base platform (core) with optional add-on and module blocks that customers can attach—contrasting vertical tier strategy (pre-built castle) with horizontal strategy (base plus optional drawbridge and moat)](/images/wiki_addon_mental.webp)
 
 ### Rules of thumb
 

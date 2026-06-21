@@ -16,6 +16,10 @@
 # misc
 .DS_Store
 *.pem
+.cache/
+
+# lighthouse / audit tool caches (do not commit)
+/reports/.npx-cache/
 
 # debug
 npm-debug.log*

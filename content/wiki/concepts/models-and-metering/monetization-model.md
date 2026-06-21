@@ -38,7 +38,7 @@ owner: "Dr. Sarah Zou"
 
 **The Monetization Triangle** (Risk vs. Commitment)
 
-![Monetization Triangle: Risk vs. Commitment. Capex/License places high risk on the buyer (large upfront fee). Subscription shares risk (recurring flat fee). Usage/Consumption places high risk on the vendor (pay only for what you use). The sweet spot is in the center—a hybrid model that feels fair to the user and sustainable for the business.](/images/wiki_momodel_mental.png)
+![Monetization Triangle: Risk vs. Commitment. Capex/License places high risk on the buyer (large upfront fee). Subscription shares risk (recurring flat fee). Usage/Consumption places high risk on the vendor (pay only for what you use). The sweet spot is in the center—a hybrid model that feels fair to the user and sustainable for the business.](/images/wiki_momodel_mental.webp)
 
 Visualizing monetization models based on who holds the risk:
 * **Capex/License (High Buyer Risk):** The customer pays a massive upfront fee (e.g., buying a server). If they don't use it, they lose money.

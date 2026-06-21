@@ -46,7 +46,7 @@ The Leader/Filler/Killer framework is a method for classifying product features 
 
 Think of a simple 2×2 grid:
 
-![Leader/Filler/Killer packaging matrix: 2×2 grid with Perceived Value (Low to High) on the X-axis and Willingness to Pay (Low to High) on the Y-axis. Quadrants show Leader (High/High – reason customers buy), Filler (High Value/Low WTP – nice-to-have), Killer (Low/Low – devalues product), and Add-on (Low Value/High WTP – sell separately).](/images/wiki_lfk_mental.png)
+![Leader/Filler/Killer packaging matrix: 2×2 grid with Perceived Value (Low to High) on the X-axis and Willingness to Pay (Low to High) on the Y-axis. Quadrants show Leader (High/High – reason customers buy), Filler (High Value/Low WTP – nice-to-have), Killer (Low/Low – devalues product), and Add-on (Low Value/High WTP – sell separately).](/images/wiki_lfk_mental.webp)
 
 * **X-Axis:** Perceived Value (Relative Preference) — Low to High  
 * **Y-Axis:** Willingness to Pay (WTP) — Low to High  

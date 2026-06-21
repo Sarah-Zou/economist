@@ -45,7 +45,7 @@ Instead of starting from your costs, it starts from what buyers see as their nex
 
 Think of the Value Decoder as a simple value equation pipeline:
 
-![Value Decoder framework mental model: Visual diagram showing the value-based pricing pipeline starting with Next-Best Competitive Alternative (NBCA) price, then adjusting for product differences (brand, quality, attributes, service, convenience, style), income effects, complementary products, and market environment factors to calculate the final value-based price band](/images/wiki_decoder_mental.png)
+![Value Decoder framework mental model: Visual diagram showing the value-based pricing pipeline starting with Next-Best Competitive Alternative (NBCA) price, then adjusting for product differences (brand, quality, attributes, service, convenience, style), income effects, complementary products, and market environment factors to calculate the final value-based price band](/images/wiki_decoder_mental.webp)
 
 - **Anchor:** Start at the NBCA price.
 - **Decode product value:** Adjust for how your product is better/worse along customer-relevant attributes.

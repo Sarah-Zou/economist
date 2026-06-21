@@ -16,7 +16,7 @@ export function MatchmakerLanding() {
             <div className="media-shell bg-[#f2ece5] p-3">
               <div className="media-inner aspect-[2/1]">
                 <Image
-                  src="/images/pmm_hero_image.png"
+                  src="/images/pmm_hero_image.webp"
                   alt="Pricing Model Matchmaker hero illustration"
                   fill
                   className="object-cover object-center"

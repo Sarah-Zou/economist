@@ -51,7 +51,7 @@ owner: "Dr. Sarah Zou"
 
 Visualize your customer's workflow as a chain from **Input** → **Process** → **Output**. You must strategically choose where to "attach" your price along the workflow.
 
-![The Value Chain Attachment mental model: Visualize your customer's workflow as a chain from Input → Process → Output. You must strategically choose where to "attach" your price along the workflow. Input metrics (per user, per server) create friction as customers view them as overhead. Process metrics (per GB processed, per API call) track usage directly but don't guarantee success. Output metrics (per qualified lead, per tax return filed) create the highest alignment as customers view this as "Value Sharing" rather than a cost.](/images/wiki_pricingmetric_mental.png)
+![The Value Chain Attachment mental model: Visualize your customer's workflow as a chain from Input → Process → Output. You must strategically choose where to "attach" your price along the workflow. Input metrics (per user, per server) create friction as customers view them as overhead. Process metrics (per GB processed, per API call) track usage directly but don't guarantee success. Output metrics (per qualified lead, per tax return filed) create the highest alignment as customers view this as "Value Sharing" rather than a cost.](/images/wiki_pricingmetric_mental.webp)
 
 1. **The Input (Input Metrics):** Charging for what goes into the system (e.g., "Per User," "Per Server").
 

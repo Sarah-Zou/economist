@@ -54,7 +54,7 @@ To understand ICP, **distinguish between observable vs. value-based characterist
 - **Value (will they win?):** painful problem, measurable outcome, urgency.
 - **Reach (can you reliably acquire them?):** channel access, sales motion, budget, buying process.
 
-![ICP Mental Model: A Venn diagram showing three overlapping circles labeled Fit, Value, and Reach. The intersection of all three circles represents the Ideal Customer Profile. Fit asks "can you serve them?" (product requirements, integrations, constraints). Value asks "will they win?" (painful problem, measurable outcome, urgency). Reach asks "can you reliably acquire them?" (channel access, sales motion, budget, buying process). Missing any circle leads to churn (missing Value), failed deals (missing Fit), or runaway CAC (missing Reach).](/images/wiki_icp_mental.png)
+![ICP Mental Model: A Venn diagram showing three overlapping circles labeled Fit, Value, and Reach. The intersection of all three circles represents the Ideal Customer Profile. Fit asks "can you serve them?" (product requirements, integrations, constraints). Value asks "will they win?" (painful problem, measurable outcome, urgency). Reach asks "can you reliably acquire them?" (channel access, sales motion, budget, buying process). Missing any circle leads to churn (missing Value), failed deals (missing Fit), or runaway CAC (missing Reach).](/images/wiki_icp_mental.webp)
 
 
 If any circle is missing, you'll feel it as churn (Value), failed deals (Fit), or runaway CAC (Reach).

@@ -45,7 +45,7 @@ Think of penetration pricing as a **flywheel**: you trade short-term margin for 
 
 **Penetration Pricing Flywheel:**
 
-![Penetration pricing flywheel: low intro price leads to fast adoption and share gain, then scale and network effects, lower unit costs and higher perceived value, then ability to raise prices and expand monetization; the loop feeds back for stronger competitive advantage.](/images/wiki_penetration_mental.png)
+![Penetration pricing flywheel: low intro price leads to fast adoption and share gain, then scale and network effects, lower unit costs and higher perceived value, then ability to raise prices and expand monetization; the loop feeds back for stronger competitive advantage.](/images/wiki_penetration_mental.webp)
 
 
 If this loop spins faster than competitors can respond, penetration pricing doesn't just buy share—it locks in an economic advantage.
