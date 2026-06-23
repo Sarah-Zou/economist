@@ -10,6 +10,7 @@ export interface Post {
   date: string
   author: string
   description: string
+  dek?: string
   image: string
   imageAlt?: string
   content: string
@@ -50,6 +51,7 @@ export function getAllPosts(): Post[] {
       date,
       author: data.author,
       description: data.description,
+      dek: data.dek,
       image: data.image,
       imageAlt: data.imageAlt,
       content,
@@ -92,6 +94,7 @@ export function getPostBySlug(slug: string): Post | null {
       date,
       author: data.author,
       description: data.description,
+      dek: data.dek,
       image: data.image,
       imageAlt: data.imageAlt,
       content,

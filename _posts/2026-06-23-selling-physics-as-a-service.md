@@ -3,6 +3,7 @@ title: "Selling Physics as a Service"
 date: 2026-06-23
 author: Dr. Sarah Zou
 description: "When should a hardware company stop selling equipment and start selling an outcome? A framework for servitization, four archetypes, and the asset-light vs asset-heavy decision."
+dek: "A decision framework for hardware founders choosing between product sales, outcome pricing, and data-as-product models."
 image: "/assets/images/newsletter/1.3_header.webp"
 imageAlt: "Illustration of hardware servitization—equipment transitioning from a one-time product sale to metered outcomes such as uptime, throughput, and sensing data."
 canonical: "https://sarahzou.com/newsletter/selling-physics-as-a-service"

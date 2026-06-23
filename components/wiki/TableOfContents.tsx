@@ -60,9 +60,14 @@ const getSectionIcon = (text: string) => {
   if (lowerText.includes('key fact') || lowerText.includes('fact')) {
     return <Target className="w-4 h-4" />
   }
-  
-  // Default icon
-  return <Pin className="w-4 h-4" />
+
+  // Deterministic fallback so generic section names don't all look identical.
+  const fallbackIcons = [Pin, Book, Target, TrendingUp, Zap, Link2, Users, AlertTriangle]
+  const hash = lowerText
+    .split('')
+    .reduce((acc, ch) => acc + ch.charCodeAt(0), 0)
+  const Icon = fallbackIcons[hash % fallbackIcons.length]
+  return <Icon className="w-4 h-4" />
 }
 
 export default function TableOfContents({ items, title }: TableOfContentsProps) {
