@@ -3,7 +3,7 @@ title: "Why AI Infrastructure Is Not an AI Application Business"
 date: 2026-06-17
 author: Dr. Sarah Zou
 description: "Infrastructure and applications run on different economic engines. Learn how to classify your AI company, price on the right unit, and avoid copying the application playbook."
-image: "/assets/images/newsletter/1.1_header.png"
+image: "/assets/images/newsletter/1.1_header.webp"
 imageAlt: "Isometric illustration comparing AI infrastructure on the left—servers, databases, and cloud systems—with an AI application dashboard and users on the right, connected by a central data-processing hub."
 canonical: "https://sarahzou.com/newsletter/ai-infrastructure-not-ai-app"
 tags:
@@ -34,7 +34,7 @@ Every founder borrows a playbook; infrastructure founders often borrow the wrong
 
 The application playbook is tempting because it is concrete and well benchmarked. It can be dangerous for infrastructure companies because the economics are fundamentally different.
 
-![Infographic comparing infrastructure reality and the application playbook across six dimensions: what you monetize, what drives economics, how time works, what really matters, go-to-market, and how you defend](/assets/images/newsletter/1.1_info_diff.png)
+![Infographic comparing infrastructure reality and the application playbook across six dimensions: what you monetize, what drives economics, how time works, what really matters, go-to-market, and how you defend](/assets/images/newsletter/1.1_info_diff.webp)
 
 ### Infrastructure monetizes constraints, not outcomes
 
@@ -96,7 +96,7 @@ The application founder asks, "what workflow do we own?" The infrastructure foun
 
 Mark the side that fits your core product—the part customers actually pay for, not everything you do.
 
-![Classifier table with ten rows comparing infrastructure signals and application signals for what customers pay for, who signs off, value scaling, pricing metrics, COGS, integration, churn drivers, moats, expansion, and investor diligence](/assets/images/newsletter/1.1_table_classifier.png)
+![Classifier table with ten rows comparing infrastructure signals and application signals for what customers pay for, who signs off, value scaling, pricing metrics, COGS, integration, churn drivers, moats, expansion, and investor diligence](/assets/images/newsletter/1.1_table_classifier.webp)
 
 - **Mostly left:** you are infrastructure—so price on usage, sell developer-first, report consumption NRR, and engineer switching-cost moats.
 - **Mostly right:** you are an application—so price on seats or outcomes, own the workflow, and defend retention.

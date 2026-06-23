@@ -3,7 +3,7 @@ title: "Mapping the Emerging AI Infrastructure and Deep Tech Data Platforms"
 date: 2026-06-17
 author: Dr. Sarah Zou
 description: "A founder's map of AI software infrastructure and deep tech data platforms—drawn by economics, not buzzwords—with segments, comparables, and the margin question for each."
-image: "/assets/images/newsletter/1.2_header.png"
+image: "/assets/images/newsletter/1.2_header.webp"
 imageAlt: "Isometric illustration of interconnected AI and data infrastructure including cloud compute, data centers, satellites, global networks, industrial sensors, and data visualization layers."
 canonical: "https://sarahzou.com/newsletter/mapping-ai-infrastructure-deep-tech-data-platforms"
 tags:
@@ -49,7 +49,7 @@ What remains falls into three groups, running from the most software-like to the
 - **Group B — Deep-tech and physical-world data platforms:** companies whose product is data collected from the physical world (orbit, ground, atmosphere, etc.) with real hardware and capital behind it.
 - **Group C — Application-layer AI with infrastructure-style economics:** an adjacent set of agent and copilot companies that are technically applications but whose unit economics behave like infrastructure.
 
-![Infographic mapping three groups of emerging AI infrastructure and deep tech data platforms, with four inclusion criteria and deliberately excluded categories](/assets/images/newsletter/1.2_relationship.png)
+![Infographic mapping three groups of emerging AI infrastructure and deep tech data platforms, with four inclusion criteria and deliberately excluded categories](/assets/images/newsletter/1.2_relationship.webp)
 
 ## Group A: AI software infrastructure
 
@@ -132,7 +132,7 @@ The boundary matters. These are not the core audience of this map and most of th
 
 Find the row whose signal matches your core product, and read across to the segment, the metric you should meter, your nearest public comp, and the question that will decide your margin.
 
-![Segment locator table matching core product descriptions to AI infrastructure segments, metering units, nearest public comps, and margin questions](/assets/images/newsletter/1.2_table_segment_locator.png)
+![Segment locator table matching core product descriptions to AI infrastructure segments, metering units, nearest public comps, and margin questions](/assets/images/newsletter/1.2_table_segment_locator.webp)
 
 ## The shared commercial problem
 

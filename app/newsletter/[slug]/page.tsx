@@ -60,6 +60,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
+// Plain <img> is intentional: static export disables next/image optimiser and
+// markdown image src/dimensions are only known at runtime.
+function MarkdownImg({ src, alt }: { src?: string; alt?: string }) {
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img src={src} alt={alt ?? ''} loading="lazy" decoding="async" width={1200} height={800} className="my-8 h-auto w-full rounded-lg shadow-card" />
+}
+
 export default function NewsletterPost({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug)
 
@@ -123,7 +130,12 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
 
         {/* Article Content */}
         <div className="prose prose-lg max-w-none mb-12 text-text text-base sm:text-[17px] leading-[1.65]">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{ img: MarkdownImg }}
+          >
+            {content}
+          </ReactMarkdown>
         </div>
 
         <CiteThisPage

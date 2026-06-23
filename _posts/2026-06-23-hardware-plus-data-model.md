@@ -3,7 +3,7 @@ title: "The Hardware-plus-Data Model"
 date: 2026-06-23
 author: Dr. Sarah Zou
 description: "When the hardware is a sensor and the data is the product. A framework for the data-as-product archetype, three subtypes, comparables, and a seven-dimension data-moat test."
-image: "/assets/images/newsletter/1.4_header.png"
+image: "/assets/images/newsletter/1.4_header.webp"
 imageAlt: "Illustration of a hardware sensing network feeding proprietary data into analytics dashboards and AI models—the hardware-plus-data business model."
 canonical: "https://sarahzou.com/newsletter/hardware-plus-data-model"
 tags:
