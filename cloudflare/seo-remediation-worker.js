@@ -16,6 +16,10 @@ const CANONICAL_HOST = 'sarahzou.com';
 const CANONICAL_ORIGIN = `https://${CANONICAL_HOST}`;
 
 const EXACT_301 = new Map([
+  // Retired entry-offer routes — now redirected to the free diagnostic note.
+  ['/consulting/entry-offer', '/diagnostic-note'],
+  ['/consulting/entry-offer/form', '/diagnostic-note'],
+
   // Legacy consulting services consolidated into current offerings.
   ['/consulting/services/rapid-pricing-experiment-toolkit', '/consulting/services/pricing-monetization-sprint'],
   ['/consulting/services/investor-monetization-pitch-kit', '/consulting/services/pricing-monetization-sprint'],

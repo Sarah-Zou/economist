@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { ArrowRight, CheckCircle2, Clock3, FileText, ChevronDown, Video } from 'lucide-react'
+import { ArrowRight, ChevronDown } from 'lucide-react'
 import { brandLink, outlineButton, primaryButton, primaryButtonLg } from '@/lib/brandStyles'
 import { OG_IMAGE_HOME } from '@/lib/seo'
 
-const PRIMARY_CTA_HREF = '/book'
-const CONSULT_CTA_HREF = '/consulting'
+const PRIMARY_CTA_HREF = '/diagnostic-note'
+const SECONDARY_CTA_HREF = '/book'
 
 const decisionFocus = [
   'Pricing architecture',
@@ -24,39 +24,6 @@ const credentials = [
   'Former Citigroup & Capgemini',
 ]
 
-const pillars = [
-  {
-    title: 'Inside the problem, not above it',
-    description:
-      'I operate a fiber-optic sensing infrastructure-as-a-service startup as COO — pricing against real cost floors, running paid pilots, building diligence-ready models. Not advising from the outside.',
-  },
-  {
-    title: 'Decisions, not deliverables',
-    description:
-      'Clear recommendations with tradeoffs named — not long reports that avoid a point of view.',
-  },
-  {
-    title: 'Built for technical founders',
-    description:
-      'Fast, defensible outputs calibrated for founding teams where the product is complex and the commercial layer has to match.',
-  },
-]
-
-const testimonials = [
-  {
-    quote:
-      'Honestly, we were just guessing on price and our sales team was discounting everything just to hit their numbers. Sarah simplified our tiers and our ACV shot up 40% in two months.',
-    author: 'Dayvon, B.',
-    role: 'Founder & CEO, Series A SaaS Platform',
-  },
-  {
-    quote:
-      "We were stuck on value metric, and Sarah's framework helped a lot. Highly recommend the 90-min session.",
-    author: 'Lisa, J.',
-    role: 'Co-Founder, Seed AI Developer Tool',
-  },
-]
-
 const otherEngagements = [
   {
     label: 'Pricing & Monetization Sprint',
@@ -70,7 +37,7 @@ const otherEngagements = [
   },
   {
     label: 'Fractional or Embedded Strategy Support',
-    sub: 'Ongoing commercial strategy, monetization, and board-facing economics — or select embedded / full-time roles',
+    sub: 'Ongoing commercial strategy, monetization, and board-facing economics',
     href: '/consulting/services/on-call-economist-retainer',
   },
 ]
@@ -92,19 +59,15 @@ const faqItems = [
     ),
   },
   {
-    q: 'How do I know if the 90-minute session is the right first step?',
+    q: 'How should I start?',
     a: (
       <>
-        Start with the{' '}
-        <Link href="/consulting/entry-offer" className={brandLink}>
-          90-minute session
-        </Link>{' '}
-        if you have one important commercial decision in motion — pricing model, value metric,
-        GTM structure, or revenue model logic. If you already know the work is broader, a{' '}
-        <Link href="/consulting" className={brandLink}>
-          deeper engagement
-        </Link>{' '}
-        is a better fit.
+        Most founders start with a free one-page diagnostic note — the lowest-risk way to see how I
+        think before anything is paid. From there, the two-week Commercial Architecture Diagnostic
+        is the usual next step. If you already know the work is broader, a deeper sprint may fit.{' '}
+        <Link href="/diagnostic-note" className={brandLink}>
+          Request a free note →
+        </Link>
       </>
     ),
   },
@@ -112,17 +75,20 @@ const faqItems = [
     q: 'What does it cost?',
     a: (
       <>
-        The 90-minute session is $600, credited toward a sprint if you move into one within 14 days.
-        Sprints are fixed-fee ($5K–$18K). Ongoing support starts at $4K/month.
+        The Commercial Architecture Diagnostic is a fixed fee of US$10,000, and it starts with a
+        free one-page diagnostic note. Deeper engagements — the Pricing &amp; Monetization Sprint
+        and Growth Economics, Forecasting &amp; Unit Economics — are fixed-fee; ongoing support
+        starts at US$4K/month.
       </>
     ),
   },
 ]
 
 export const metadata: Metadata = {
-  title: 'Commercial Strategy & Pricing for API-First Infrastructure & Data Platforms | Sarah Zou, PhD',
+  title:
+    'Pricing & Commercial Strategy for AI-Infrastructure & Data-Platform Companies | Sarah Zou, PhD',
   description:
-    'I help technical founders of API-first infrastructure and data platform companies build the commercial layer — pricing architecture, GTM for technical buyers, and fundraising-ready unit economics. Start with a free consult.',
+    'Pricing, packaging, and unit-economics strategy for AI-infrastructure, API, and data-platform founders (Seed–Series B). Start with a free one-page diagnostic note.',
   robots: {
     index: true,
     follow: true,
@@ -137,19 +103,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://sarahzou.com',
   },
-    openGraph: {
-    title: 'Commercial Strategy & Pricing for API-First Infrastructure & Data Platforms | Sarah Zou, PhD',
+  openGraph: {
+    title:
+      'Pricing & Commercial Strategy for AI-Infrastructure & Data-Platform Companies | Sarah Zou, PhD',
     description:
-      'I help technical founders of API-first infrastructure and data platform companies build the commercial layer — pricing architecture, GTM for technical buyers, and fundraising-ready unit economics.',
+      'Pricing, packaging, and unit-economics strategy for AI-infrastructure, API, and data-platform founders (Seed–Series B). Start with a free one-page diagnostic note.',
     type: 'website',
     url: 'https://sarahzou.com',
     images: [OG_IMAGE_HOME],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Commercial Strategy & Pricing for API-First Infrastructure & Data Platforms | Sarah Zou, PhD',
+    title:
+      'Pricing & Commercial Strategy for AI-Infrastructure & Data-Platform Companies | Sarah Zou, PhD',
     description:
-      'I help technical founders of API-first infrastructure and data platform companies build the commercial layer — pricing architecture, GTM for technical buyers, and fundraising-ready unit economics.',
+      'Pricing, packaging, and unit-economics strategy for AI-infrastructure, API, and data-platform founders (Seed–Series B). Start with a free one-page diagnostic note.',
     images: [OG_IMAGE_HOME],
   },
 }
@@ -170,10 +138,10 @@ export default function Home() {
       },
       {
         '@type': 'Question',
-        name: 'How do I know if the 90-minute session is the right first step?',
+        name: 'How should I start?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Start with the 90-minute session if you have one important commercial decision in motion — pricing model, value metric, GTM structure, or revenue model logic. If the work is broader, a deeper engagement is a better fit.',
+          text: 'Most founders start with a free one-page diagnostic note — the lowest-risk way to see how I think before anything is paid. From there, the two-week Commercial Architecture Diagnostic is the usual next step. If you already know the work is broader, a deeper sprint may fit.',
         },
       },
       {
@@ -181,7 +149,7 @@ export default function Home() {
         name: 'What does it cost?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'The 90-minute session is $600, credited toward a sprint if you move into one within 14 days. Sprints are fixed-fee ($5K–$18K). Ongoing support starts at $4K/month.',
+          text: 'The Commercial Architecture Diagnostic is a fixed fee of US$10,000, and it starts with a free one-page diagnostic note. Deeper engagements are fixed-fee; ongoing support starts at US$4K/month.',
         },
       },
     ],
@@ -198,12 +166,14 @@ export default function Home() {
                 <span className="kicker-accent">Pricing · GTM · Unit Economics</span>
 
                 <h1 className="mt-5 max-w-[54rem] font-serif-playfair text-ink">
-                  Pricing and <span className="whitespace-nowrap">go-to-market</span> for deep tech founders.
+                  Pricing and commercial-model strategy for AI-infrastructure and data-platform
+                  companies.
                 </h1>
 
                 <p className="lede mt-7 max-w-[39rem]">
-                  I help founders of AI infrastructure and deep tech data platforms turn hard
-                  technology into a business that customers buy and investors back.
+                  I help technical founders turn consumption-shaped pricing, unit economics, and GTM
+                  into decisions they can defend — to buyers and to investors. Built by an economist
+                  who operates an infrastructure company, not a generic SaaS consultant.
                 </p>
 
                 <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
@@ -211,12 +181,12 @@ export default function Home() {
                     href={PRIMARY_CTA_HREF}
                     className={`${primaryButtonLg} w-full sm:w-auto`}
                   >
-                    Book a free consult
+                    Get a free diagnostic note
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
 
-                  <Link href={CONSULT_CTA_HREF} className={`${outlineButton} w-full sm:w-auto`}>
-                    See how it works
+                  <Link href={SECONDARY_CTA_HREF} className={`${outlineButton} w-full sm:w-auto`}>
+                    Book a free 15-min consult
                   </Link>
                 </div>
 
@@ -243,14 +213,16 @@ export default function Home() {
                   />
                 </div>
                 <div className="media-rule mx-auto w-full max-w-full text-center sm:max-w-[340px] md:max-w-[360px] lg:max-w-[380px]">
-                  <p className="media-caption">For seed to series B technical founders of AI infrastructure &amp; deep tech data platforms</p>
+                  <p className="media-caption">
+                    For AI-infrastructure, API, and data-platform founders · Seed to Series B
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Focus strip — answers "what decisions" in one glance */}
+        {/* Focus strip */}
         <section className="editorial-band bg-page/60">
           <div className="section-shell grid gap-5 py-8 sm:py-9 lg:grid-cols-[0.32fr_1fr] lg:items-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-text-subtle">
@@ -271,26 +243,28 @@ export default function Home() {
           <div className="section-shell">
             <div className="section-header">
               <span className="kicker">Who this is for</span>
-              <h2 className="section-title">Deep tech founders at Seed to Series B</h2>
+              <h2 className="section-title">
+                AI-infrastructure, API, and data-platform founders at Seed to Series B
+              </h2>
               <p className="mt-4 text-[15px] leading-[1.75] text-text-muted">
-                The fit is strongest when the product is technically
-                complex and the right business model is not yet obvious.
+                The fit is strongest when the product is technically complex and the right
+                commercial model is not yet obvious.
               </p>
             </div>
 
             <div className="mt-12 grid gap-0 sm:grid-cols-3">
               {[
                 {
-                  role: 'AI Infrastructure & API Platforms',
-                  need: 'Founders building model-serving, LLMOps, AI data infrastructure, developer tools, or technical API platforms.',
+                  role: 'Founder',
+                  need: 'Building pricing, packaging, and GTM from scratch — or fixing what\'s already in market. Needs decisions, not frameworks.',
                 },
                 {
-                  role: 'Deep Tech Data Platforms',
-                  need: 'Founders commercializing geospatial, environmental, sensing, fiber-optic sensing, or physical-world data infrastructure.',
+                  role: 'COO / BizOps',
+                  need: 'Owning the commercial model, unit economics, or pricing operations. Needs rigorous inputs fast.',
                 },
                 {
-                  role: 'Technical Founders Facing the Commercial Layer',
-                  need: 'Founders with strong technology who need clarity on pricing, packaging, ICP, GTM motion, unit economics, or investor narrative.',
+                  role: 'CFO / Finance',
+                  need: 'Building investor-ready models, defending margin assumptions, or stress-testing the revenue architecture.',
                 },
               ].map((item) => (
                 <div key={item.role} className="border-t border-border-soft py-6 pr-8">
@@ -338,59 +312,50 @@ export default function Home() {
           </div>
         </section>
 
-        {/* The Session — single offer block */}
+        {/* Commercial Architecture Diagnostic — condensed feature block */}
         <section className="section">
           <div className="section-shell max-w-4xl">
             <div className="section-header">
               <span className="kicker">Start here</span>
-              <h2 className="section-title">The 90-Minute Commercial Strategy Session</h2>
+              <h2 className="section-title">The Commercial Architecture Diagnostic</h2>
               <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
-                One focused working session to pressure-test your commercial direction — pricing
-                model, value metric, GTM structure, revenue logic, or packaging — with a 48-hour
-                follow-up memo.
+                Infrastructure and usage-based companies get handed pricing advice built for
+                per-seat SaaS — and it misfits. The error compounds with each contract you sign —
+                and it&apos;s the first thing a serious investor probes.
               </p>
             </div>
 
             <div className="card-dark mt-12">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-soft">
-                What you get
+                Two-week · Fixed fee · Starts free
               </p>
-              <ul className="mt-6 grid gap-4 sm:grid-cols-2">
-                {[
-                  { icon: FileText, label: 'Short intake review' },
-                  { icon: Video, label: '90-minute live session' },
-                  { icon: Clock3, label: '48-hour summary memo' },
-                  { icon: CheckCircle2, label: 'Top 3 next actions' },
-                ].map(({ icon: Icon, label }) => (
-                  <li
-                    key={label}
-                    className="flex items-center gap-3 border-b border-white/10 pb-4 text-[15px] text-white/90"
-                  >
-                    <Icon className="h-4 w-4 text-brand-soft" aria-hidden />
-                    <span>{label}</span>
-                  </li>
-                ))}
-              </ul>
+              <p className="mt-5 max-w-2xl text-[16px] leading-[1.75] text-white/80 sm:text-[17px]">
+                A two-week, fixed-fee audit of your pricing, packaging, and unit economics, built
+                for consumption- and capability-shaped economics — not per-seat SaaS. You get the
+                right value metric, a pricing &amp; packaging recommendation, a unit-economics view,
+                and a prioritized action list. Starts with a free one-page diagnostic note.
+              </p>
 
               <div className="mt-10 flex flex-col gap-5 border-t border-white/10 pt-8 sm:flex-row sm:items-end sm:justify-between">
                 <div className="flex flex-col items-start gap-3">
-                  <Link href="/consulting/entry-offer/form" className={primaryButton}>
-                    Book the Session
+                  <Link href={PRIMARY_CTA_HREF} className={primaryButton}>
+                    Get a free diagnostic note
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
                   <Link
-                    href="/consulting/entry-offer"
+                    href="/consulting"
                     className="text-[13px] font-medium text-white/70 underline underline-offset-4 hover:text-white"
                   >
-                    See full session details →
+                    See full details →
                   </Link>
                 </div>
                 <div className="sm:text-right">
                   <p className="font-serif-playfair text-[32px] font-semibold leading-none text-white">
-                    $600
+                    US$10,000
                   </p>
                   <p className="mt-2 max-w-sm text-[13px] leading-[1.6] text-white/60 sm:ml-auto">
-                    Credited toward either follow-on sprint if you move into one within 14 days.
+                    Fixed fee. Starts with a free one-page diagnostic note — no cost until you
+                    decide to proceed.
                   </p>
                 </div>
               </div>
@@ -398,75 +363,35 @@ export default function Home() {
           </div>
         </section>
 
-        {/* How I'm different — 3 pillars */}
-        <section className="section">
-          <div className="section-shell">
-            <div className="section-header">
-              <span className="kicker">Approach</span>
-              <h2 className="section-title">An economist who also runs a deep tech startup</h2>
-              <p className="mt-5 text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
-                I&apos;m a PhD economist, and I&apos;m also COO of a deep tech startup. So I price
-                against real costs and real buyers — not theory — and give you clear decisions, not
-                long reports.
-              </p>
-            </div>
-
-            <div className="mx-auto mt-16 grid max-w-5xl gap-10 sm:grid-cols-3">
-              {pillars.map((pillar, idx) => (
-                <div
-                  key={pillar.title}
-                  className={
-                    idx === 1 ? 'border-t border-ink/20 pt-6' : 'border-t border-border pt-6'
-                  }
-                >
-                  <p className="font-serif-playfair text-[28px] font-semibold leading-none text-ink/20">
-                    {String(idx + 1).padStart(2, '0')}
-                  </p>
-                  <h3 className="mt-4 text-[18px] font-semibold text-ink">{pillar.title}</h3>
-                  <p className="mt-3 text-[15px] leading-[1.75] text-text-muted">
-                    {pillar.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Proof */}
+        {/* Proof — verifiable proof block */}
         <section className="section section-alt">
           <div className="section-shell">
             <div className="section-header">
-              <span className="kicker">Proof</span>
-              <h2 className="section-title">What founders say</h2>
+              <span className="kicker">Why founders work with me</span>
+              <h2 className="section-title">Operator context, not outside advice</h2>
             </div>
 
-            <div className="mx-auto mt-12 grid max-w-5xl gap-12 md:grid-cols-[1.25fr_0.95fr]">
-              <figure className="quote-block">
-                <blockquote className="font-serif-playfair text-[22px] leading-[1.65] text-ink sm:text-[24px]">
-                  &ldquo;{testimonials[0].quote}&rdquo;
-                </blockquote>
-                <figcaption className="mt-5 text-[13px] text-text-muted">
-                  <p className="font-semibold text-ink">{testimonials[0].author}</p>
-                  <p>{testimonials[0].role}</p>
-                </figcaption>
-              </figure>
-              <div className="border-t border-border pt-6">
-                <p className="text-[12px] uppercase tracking-[0.12em] text-text-subtle">
-                  Also heard from
-                </p>
-                <blockquote className="mt-4 font-serif-playfair text-[18px] leading-[1.7] text-ink">
-                  &ldquo;{testimonials[1].quote}&rdquo;
-                </blockquote>
-                <div className="mt-5 text-[13px] text-text-muted">
-                  <p className="font-semibold text-ink">{testimonials[1].author}</p>
-                  <p>{testimonials[1].role}</p>
-                </div>
-              </div>
+            <div className="mx-auto mt-12 max-w-3xl space-y-6 text-[16px] leading-[1.8] text-text-muted">
+              <p>
+                I operate the same kind of company I advise: COO of an infrastructure data
+                platform, pricing against real cost floors and building diligence-ready models —
+                not advising from the outside. Every engagement ends with a specific recommendation
+                and the tradeoffs named, not a 40-page deck. I also publish an openly available{' '}
+                <Link href="/wiki/pricing" className={brandLink}>
+                  pricing &amp; monetization wiki
+                </Link>
+                .
+              </p>
+              <p className="text-[14px] text-text-subtle">
+                PhD Economics, Rutgers · MS Finance &amp; Statistics, UIUC · NBER &amp; World Bank
+                research · Former Citigroup &amp; Capgemini
+              </p>
+              {/* TODO(Sarah): add named, linkable client testimonials here when available. */}
             </div>
           </div>
         </section>
 
-        {/* Other engagements — quiet text-only list */}
+        {/* Other ways to work together */}
         <section className="section">
           <div className="section-shell max-w-3xl">
             <div className="section-header">
@@ -498,7 +423,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FAQ — 3 items */}
+        {/* FAQ */}
         <section className="section">
           <div className="section-shell max-w-3xl">
             <div className="section-header">
@@ -525,29 +450,56 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Closing CTA — single button */}
+        {/* Newsletter capture */}
+        <section className="section section-alt">
+          <div className="section-shell max-w-3xl">
+            <div className="section-header">
+              <span className="kicker">Just exploring?</span>
+              <h2 className="section-title">Get the occasional pricing note</h2>
+              <p className="mt-4 text-[15px] leading-[1.75] text-text-muted">
+                I publish notes on pricing, unit economics, and commercial strategy for
+                infrastructure founders. No cadence commitment — only when there&apos;s something
+                worth saying.
+              </p>
+            </div>
+            <div className="mt-8 flex justify-center">
+              <iframe
+                src="https://sarahzou.substack.com/embed"
+                width="480"
+                height="150"
+                style={{ border: '1px solid #EEE', background: 'white' }}
+                frameBorder="0"
+                scrolling="no"
+                title="Subscribe to pricing notes"
+                className="max-w-full rounded-card"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Closing CTA */}
         <section className="section-sm">
           <div className="section-shell max-w-4xl">
             <div className="cta-panel">
               <h2 className="font-serif-playfair text-ink">
-                Have a pricing or GTM decision in front of you?
+                Have a pricing or commercial-model decision in front of you?
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
-                Start with a free 15-min consult. Or go straight to the 90-minute session if you
-                have a live commercial decision to work through.
+                Start with a free one-page diagnostic note — no commitment, no pitch. Or book a
+                free 15-min consult if you want to talk it through first.
               </p>
               <div className="mt-8">
                 <Link href={PRIMARY_CTA_HREF} className={primaryButtonLg}>
-                  Book a free consult
+                  Get a free diagnostic note
                   <ArrowRight className="h-4 w-4" aria-hidden />
                 </Link>
               </div>
               <p className="mt-6 text-[13px] text-text-muted">
                 <Link
-                  href={CONSULT_CTA_HREF}
+                  href={SECONDARY_CTA_HREF}
                   className="underline underline-offset-4 hover:text-ink"
                 >
-                  Explore ways to work together →
+                  Or book a free 15-min consult →
                 </Link>
               </p>
             </div>

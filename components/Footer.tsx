@@ -45,10 +45,10 @@ const Footer = () => {
               Pricing, GTM, and unit economics for deep tech founders — Seed to Series B.
             </p>
             <Link
-              href="/consulting/entry-offer/form"
+              href="/diagnostic-note"
               className="mt-7 inline-flex items-center gap-1.5 text-[14px] font-semibold text-brand-ink transition-colors hover:text-brand-dark"
             >
-              Book the 90-minute strategy session
+              Get a free diagnostic note
             </Link>
           </div>
 

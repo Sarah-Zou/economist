@@ -68,8 +68,8 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-            <Link href="/consulting/entry-offer/form" className={`${outlineButtonSm} shadow-none`}>
-              Book Strategy Session
+            <Link href="/diagnostic-note" className={`${outlineButtonSm} shadow-none`}>
+              Get a free diagnostic note
             </Link>
           </div>
 
@@ -115,10 +115,10 @@ const Navbar = () => {
                 ))}
               </div>
               <Link
-                href="/consulting/entry-offer/form"
+                href="/diagnostic-note"
                 className={`${outlineButtonSm} mt-5 flex w-full justify-center text-center`}
               >
-                Book Strategy Session
+                Get a free diagnostic note
               </Link>
             </div>
           </details>
