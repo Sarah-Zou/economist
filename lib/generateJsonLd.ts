@@ -72,7 +72,7 @@ export function generateSiteEntityGraphJsonLd() {
         url: SITE_BASE_URL,
         logo: `${SITE_BASE_URL}/images/econnova_logo.png`,
         description:
-          'Commercial strategy for technical founders of API-first infrastructure and data platform companies. Pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and fundraising-ready commercial narratives.',
+          'Commercial strategy for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B). Pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and fundraising-ready commercial narratives.',
         founder: { '@id': SITE_ENTITY_IDS.person },
         sameAs: ['https://www.linkedin.com/in/drsarahzou'],
       },
@@ -82,9 +82,9 @@ export function generateSiteEntityGraphJsonLd() {
         name: 'Sarah Zou',
         honorificSuffix: 'PhD',
         alternateName: 'Dr. Sarah Zou',
-        jobTitle: 'Commercial Strategy Advisor for API-First Infrastructure & Data Platforms',
+        jobTitle: 'Commercial Strategy Advisor for AI-Infrastructure & Data Platforms',
         description:
-          'PhD economist and COO of a fiber-optic sensing infrastructure-as-a-service startup. Helps technical founders of API-first infrastructure and data platform companies build the commercial layer: pricing architecture, GTM for technical buyers, and fundraising-ready unit economics.',
+          'PhD economist and COO of an infrastructure data platform. Helps founders of AI-infrastructure, API, and data-platform companies (Seed–Series B) build the commercial layer: pricing architecture, GTM for technical buyers, and fundraising-ready unit economics.',
         url: `${SITE_BASE_URL}/about`,
         image: `${SITE_BASE_URL}/images/headshot_v4.webp`,
         sameAs: ['https://www.linkedin.com/in/drsarahzou/'],
@@ -118,7 +118,7 @@ export function generateSiteEntityGraphJsonLd() {
         url: SITE_BASE_URL,
         logo: `${SITE_BASE_URL}/images/econnova_logo.png`,
         description:
-          'Commercial strategy for technical founders of API-first infrastructure and data platform companies. Pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and fundraising-ready commercial narratives.',
+          'Commercial strategy for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B). Pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and fundraising-ready commercial narratives.',
         founder: { '@id': SITE_ENTITY_IDS.person },
         address: {
           '@type': 'PostalAddress',

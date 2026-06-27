@@ -6,9 +6,9 @@ import { generateServiceWithOffersJsonLd, generateBreadcrumbJsonLd } from '@/lib
 import { outlineButton, primaryButtonLg } from '@/lib/brandStyles'
 
 export const metadata: Metadata = {
-  title: 'Pricing & Monetization Sprint for API-First Infrastructure & Data Platforms | Sarah Zou',
+  title: 'Pricing & Monetization Sprint for AI-Infrastructure & Data Platforms | Sarah Zou',
   description:
-    'Build a pricing architecture for a technically complex product. For technical founders of API-first infrastructure and data platform companies needing pricing model, value metric, packaging, and rollout guidance in one focused sprint.',
+    'Build a pricing architecture for a technically complex product. For founders of AI-infrastructure, API, and data-platform companies (Seed–Series B) needing pricing model, value metric, packaging, and rollout guidance in one focused sprint.',
   robots: {
     index: true,
     follow: true,
@@ -24,22 +24,22 @@ export const metadata: Metadata = {
     canonical: 'https://sarahzou.com/consulting/services/pricing-monetization-sprint',
   },
     openGraph: {
-    title: 'Pricing & Monetization Sprint for API-First Infrastructure & Data Platforms | Sarah Zou',
+    title: 'Pricing & Monetization Sprint for AI-Infrastructure & Data Platforms | Sarah Zou',
     description:
-      'Build a pricing architecture for a technically complex product. For technical founders of API-first infrastructure and data platform companies needing pricing model, value metric, packaging, and rollout guidance in one focused sprint.',
+      'Build a pricing architecture for a technically complex product. For founders of AI-infrastructure, API, and data-platform companies (Seed–Series B) needing pricing model, value metric, packaging, and rollout guidance in one focused sprint.',
     type: 'website',
     url: 'https://sarahzou.com/consulting/services/pricing-monetization-sprint',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing & Monetization Sprint for API-First Infrastructure & Data Platforms | Sarah Zou',
+    title: 'Pricing & Monetization Sprint for AI-Infrastructure & Data Platforms | Sarah Zou',
     description:
-      'Build a pricing architecture for a technically complex product. For technical founders of API-first infrastructure and data platform companies needing pricing model, value metric, packaging, and rollout guidance in one focused sprint.',
+      'Build a pricing architecture for a technically complex product. For founders of AI-infrastructure, API, and data-platform companies (Seed–Series B) needing pricing model, value metric, packaging, and rollout guidance in one focused sprint.',
   },
 }
 
 const SERVICE_URL = 'https://sarahzou.com/consulting/services/pricing-monetization-sprint'
-const PRIMARY_CTA_HREF = '/consulting/entry-offer/form'
+const PRIMARY_CTA_HREF = '/diagnostic-note'
 const SECONDARY_CTA_HREF = '#pricing'
 
 const WHAT_YOU_GET = [
@@ -147,21 +147,6 @@ const INVESTMENT_TIERS = [
   },
 ]
 
-const TESTIMONIALS = [
-  {
-    quote:
-      'Honestly, we were just guessing on price and our sales team was discounting everything just to hit their numbers. Sarah simplified our tiers and our ACV shot up 40% in two months.',
-    author: 'Dayvon, B.',
-    role: 'Founder & CEO, Series A SaaS Platform',
-  },
-  {
-    quote:
-      "We were stuck on value metric, and Sarah's framework helped a lot. Highly recommend the 90-min session.",
-    author: 'Lisa, J.',
-    role: 'Co-Founder, Seed AI Developer Tool',
-  },
-]
-
 const PROCESS_STEPS = [
   {
     num: '01',
@@ -225,21 +210,21 @@ export default function PricingDiagnosticRevenueBoost() {
                   Build a pricing architecture your technical buyers can adopt and your investors can underwrite
                 </h1>
                 <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
-                  For technical founders of API-first infrastructure and data platform companies who
-                  need more than a quick opinion. We work across pricing model, value metric,
+                  For founders of AI-infrastructure, API, and data-platform companies (Seed–Series B)
+                  who need more than a quick opinion. We work across pricing model, value metric,
                   packaging, price logic, and rollout — built for products where generic SaaS
                   frameworks fall short.
                 </p>
                 <p className="meta-note mt-6">
-                  Most founders start with the 90-minute session. The $600 fee is credited toward
-                  either sprint within 14 days.
+                  The usual path: a free one-page diagnostic note, then the Commercial Architecture
+                  Diagnostic to set direction, then this sprint to build and roll out the structure.
                 </p>
                 <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
                   <Link
                     href={PRIMARY_CTA_HREF}
                     className={`${primaryButtonLg} w-full max-w-[360px] sm:w-auto`}
                   >
-                    Book the 90-Minute Session
+                    Get a free diagnostic note
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
                   <Link href={SECONDARY_CTA_HREF} className="display-link">
@@ -324,30 +309,36 @@ export default function PricingDiagnosticRevenueBoost() {
             </div>
           </section>
 
-          {/* Session vs Sprint */}
+          {/* Diagnostic or Sprint */}
           <section className="section">
             <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
               <div className="mx-auto max-w-3xl text-center">
-                <span className="kicker">Session or sprint?</span>
+                <span className="kicker">Diagnostic or sprint?</span>
                 <h2 className="mt-3 font-serif-playfair">
-                  Most founders start with the 90-minute session
+                  Most founders start with a free diagnostic note
                 </h2>
                 <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.7] text-text-muted sm:text-[17px]">
-                  Usually the fastest way to tell whether you need one sharp recommendation or a
-                  broader pricing reset.
+                  The free one-page note and the two-week{' '}
+                  <Link
+                    href="/consulting"
+                    className="font-semibold text-brand-ink underline decoration-brand/40 underline-offset-4 hover:text-brand-dark"
+                  >
+                    Commercial Architecture Diagnostic
+                  </Link>{' '}
+                  set the direction. This sprint is where you build and roll out the full structure.
                 </p>
               </div>
 
               <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2">
                 <div className="card">
                   <h3 className="font-serif-playfair text-[22px] font-semibold leading-[1.2] text-ink">
-                    Start with the session if you need
+                    Start with the Diagnostic if you need
                   </h3>
                   <ul className="mt-5 space-y-3 border-t border-border-soft pt-5">
                     {[
-                      'One key pricing decision resolved',
-                      'A fast expert recommendation',
-                      'A lower-risk way to test whether deeper work is needed',
+                      'Direction on value metric, pricing, and unit economics',
+                      'A prioritized action list of what to fix first',
+                      'A lower-risk way to see how I think before a larger build',
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-2.5">
                         <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
@@ -359,11 +350,11 @@ export default function PricingDiagnosticRevenueBoost() {
 
                 <div className="card-dark">
                   <h3 className="font-serif-playfair text-[22px] font-semibold leading-[1.2] text-white">
-                    Move into the sprint if you need
+                    Move into this sprint if you need
                   </h3>
                   <ul className="mt-5 space-y-3 border-t border-white/10 pt-5">
                     {[
-                      'A full pricing structure, not just a quick opinion',
+                      'The full pricing structure built, not just the direction set',
                       'Model, metric, packaging, and pricing to work together',
                       'A structure you can actually take to market',
                       'A stronger monetization story before launch or fundraise',
@@ -378,8 +369,8 @@ export default function PricingDiagnosticRevenueBoost() {
               </div>
 
               <p className="mx-auto mt-10 max-w-3xl rounded-card border border-brand/20 bg-brand-soft p-5 text-center text-[14px] font-medium leading-[1.65] text-brand-ink">
-                If we move into either sprint (Pricing &amp; Monetization or Growth Economics) within
-                14 days, the $600 session fee is credited toward the project.
+                Not sure yet? Start with a free one-page diagnostic note — you see how I think before
+                anything is paid.
               </p>
             </div>
           </section>
@@ -424,12 +415,12 @@ export default function PricingDiagnosticRevenueBoost() {
               </div>
 
               <p className="mx-auto mt-10 max-w-2xl text-center text-[15px] leading-[1.7] text-text-muted">
-                Not sure which scope fits? Start with the 90-minute session. I&apos;ll tell you
-                honestly whether you need the sprint at all.
+                Not sure which scope fits? Start with a free one-page diagnostic note. I&apos;ll
+                tell you honestly whether you need the sprint at all.
               </p>
               <div className="mt-5 text-center">
                 <Link href={PRIMARY_CTA_HREF} className={outlineButton}>
-                  Book the 90-Minute Session
+                  Get a free diagnostic note
                 </Link>
               </div>
             </div>
@@ -529,39 +520,20 @@ export default function PricingDiagnosticRevenueBoost() {
             </div>
           </section>
 
-          {/* Why hire + testimonials */}
+          {/* Why hire */}
           <section className="section section-alt">
             <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
-              <div className="grid items-start gap-12 md:grid-cols-2 lg:gap-16">
-                <div>
-                  <span className="kicker">The approach</span>
-                  <h2 className="mt-3 font-serif-playfair">Why founders hire me for this work</h2>
-                  <p className="mt-6 max-w-lg text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
-                    I work more like a{' '}
-                    <strong className="text-ink">fractional Chief Economist</strong> for startups
-                    making consequential monetization decisions.
-                  </p>
-                  <p className="mt-5 max-w-lg text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
-                    That means rigorous thinking without academic abstraction, practical
-                    founder-facing recommendations, and outputs designed to be used — not admired.
-                  </p>
-                </div>
-                <div>
-                  <span className="kicker">What founders say</span>
-                  <div className="mt-5 space-y-5">
-                    {TESTIMONIALS.map((item) => (
-                      <figure key={item.author} className="card">
-                        <blockquote className="font-serif-playfair text-[18px] italic leading-[1.55] text-ink">
-                          &ldquo;{item.quote}&rdquo;
-                        </blockquote>
-                        <figcaption className="mt-5 text-[13px] text-text-muted">
-                          <p className="font-semibold text-ink">{item.author}</p>
-                          <p>{item.role}</p>
-                        </figcaption>
-                      </figure>
-                    ))}
-                  </div>
-                </div>
+              <div className="mx-auto max-w-3xl">
+                <span className="kicker">The approach</span>
+                <h2 className="mt-3 font-serif-playfair">Why founders hire me for this work</h2>
+                <p className="mt-6 text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
+                  I operate the same kind of company I advise — COO of an infrastructure data
+                  platform, pricing against real cost floors and building diligence-ready models. So
+                  the work is rigorous without academic abstraction, the recommendations are
+                  practical and founder-facing, and the outputs are designed to be used — not
+                  admired.
+                </p>
+                {/* TODO(Sarah): add named, linkable client testimonials here when available. */}
               </div>
             </div>
           </section>
@@ -583,19 +555,18 @@ export default function PricingDiagnosticRevenueBoost() {
           <section className="section-sm">
             <div className="section-shell max-w-4xl">
               <div className="cta-panel">
-                <h2 className="font-serif-playfair text-ink">Need more than one pricing answer?</h2>
+                <h2 className="font-serif-playfair text-ink">Ready to build the full structure?</h2>
                 <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
-                  Start with the 90-Minute Pricing Strategy Session. It&apos;s the fastest way to
-                  get a sharp recommendation and move into the sprint intelligently if the problem
-                  is broader.
+                  Start with a free one-page diagnostic note. You see how I think before anything is
+                  paid — and we move into the sprint intelligently once the direction is set.
                 </p>
                 <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                   <Link href={PRIMARY_CTA_HREF} className={primaryButtonLg}>
-                    Book the Session
+                    Get a free diagnostic note
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
                   <Link href="/book" className={outlineButton}>
-                    Book a free consult
+                    Book a free 15-min consult
                   </Link>
                 </div>
               </div>
@@ -614,18 +585,18 @@ export default function PricingDiagnosticRevenueBoost() {
             mainEntity: [
               {
                 '@type': 'Question',
-                name: 'Should I start with the session or the sprint?',
+                name: 'Should I start with the Diagnostic or the sprint?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Start with the session if you need clarity on one important pricing decision. Choose the sprint if you already know you need a fuller pricing structure, packaging, and rollout plan.',
+                  text: 'Most founders start with a free one-page diagnostic note, then the two-week Commercial Architecture Diagnostic to set direction. This sprint is the follow-on where you build and roll out the full pricing structure, packaging, and rollout plan.',
                 },
               },
               {
                 '@type': 'Question',
-                name: 'Is the session fee credited toward the sprint?',
+                name: 'How do I start?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Yes. If we move into either the Pricing & Monetization Sprint or the Growth Economics Sprint within 14 days, the $600 session fee is credited toward the project.',
+                  text: 'Start with a free one-page diagnostic note on your pricing. You see how I think before anything is paid, and we move into the sprint once the direction is clear.',
                 },
               },
               {

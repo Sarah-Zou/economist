@@ -7,7 +7,7 @@ import { generateBreadcrumbJsonLd } from '@/lib/generateJsonLd'
 
 export const metadata: Metadata = {
   title: 'Free Resources | EconNova',
-  description: 'Free pricing tools and guides for technical founders of API-first infrastructure, data platform, and AI companies.',
+  description: 'Free pricing tools and guides for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B).',
   alternates: {
     canonical: 'https://sarahzou.com/free-tools',
   },
@@ -226,8 +226,8 @@ export default function FreeToolsPage() {
           </p>
           <p className="mt-4 max-w-[42rem] text-base leading-[1.85] text-text-muted sm:text-[17px]">
             Not ready to hire yet? Start here. Need a sharper answer faster?{' '}
-            <Link href="/consulting/entry-offer/form" className={`${brandLink} font-medium`}>
-              Book the 90-minute session.
+            <Link href="/diagnostic-note" className={`${brandLink} font-medium`}>
+              Get a free diagnostic note.
             </Link>
           </p>
           <p className="meta-note mt-6">Start with one resource, not all of them at once.</p>
@@ -423,12 +423,12 @@ export default function FreeToolsPage() {
             </h2>
             <p className="mx-auto mt-4 max-w-3xl text-base leading-[1.65] text-text-muted sm:text-[17px]">
               The free resources are built to help you self-serve. But if you need a faster
-              recommendation, clearer tradeoffs, or direct help with a live commercial decision, start
-              with the 90-minute commercial strategy session.
+              recommendation, clearer tradeoffs, or direct help with a live commercial decision,
+              start with a free one-page diagnostic note on your pricing.
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
-              <Link href="/consulting/entry-offer/form" className={primaryButtonSm}>
-                Book the 90-Minute Session <ArrowRight className="ml-1 inline h-4 w-4" />
+              <Link href="/diagnostic-note" className={primaryButtonSm}>
+                Get a free diagnostic note <ArrowRight className="ml-1 inline h-4 w-4" />
               </Link>
               <Link href="/consulting" className={outlineButton}>
                 Explore Work With Me

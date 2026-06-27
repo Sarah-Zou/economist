@@ -15,25 +15,25 @@ const CORE_PAGES = [
     url: `${SITE}`,
     title: 'Home',
     summary:
-      'Commercial strategy, pricing, monetization, GTM economics, forecasting, and unit economics for AI-native B2B SaaS founders and operators. Fractional chief economist and commercial advisor.',
+      'Pricing, packaging, and unit-economics strategy for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B). Start with a free one-page diagnostic note.',
   },
   {
     url: `${SITE}/about`,
     title: 'About Sarah Zou',
     summary:
-      'PhD economist and commercial strategy advisor for AI-native B2B SaaS teams on pricing, monetization, revenue models, forecasting, and investor-ready commercial narratives.',
+      'PhD economist and COO of an infrastructure data platform, advising founders of AI-infrastructure, API, and data-platform companies (Seed–Series B) on pricing, monetization, unit economics, and investor-ready commercial narratives.',
   },
   {
     url: `${SITE}/consulting`,
     title: 'Consulting',
     summary:
-      'Ways to work together on commercial strategy — from a 90-minute strategy session ($600, credited toward a sprint) to pricing sprints and fractional chief economist support.',
+      'The Commercial Architecture Diagnostic — a two-week, fixed-fee (US$6,000) audit of pricing, packaging, and unit economics — plus deeper pricing and growth-economics sprints and fractional support. Starts with a free one-page diagnostic note.',
   },
   {
-    url: `${SITE}/consulting/entry-offer`,
-    title: '90-Minute Strategy Session',
+    url: `${SITE}/diagnostic-note`,
+    title: 'Free Pricing Diagnostic Note',
     summary:
-      'Focused working session for one important commercial decision: pricing model, value metric, GTM structure, or revenue model logic. $600, credited toward a sprint within 14 days.',
+      'Request a free one-page diagnostic note on your pricing: the specific gap, a pattern from comparable infrastructure companies, and one concrete thing to do this week. The low-risk entry point to the Commercial Architecture Diagnostic.',
   },
   {
     url: `${SITE}/wiki/pricing`,

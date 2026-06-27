@@ -5,9 +5,9 @@ import Script from 'next/script'
 import CalendlyEmbed from '@/components/CalendlyEmbed'
 
 export const metadata: Metadata = {
-  title: 'Book a Free Consult | Commercial Strategy for API-First Infrastructure & Data Platforms | Sarah Zou',
+  title: 'Book a Free Consult | Commercial Strategy for AI-Infrastructure & Data Platforms | Sarah Zou',
   description:
-    'Book a free 15-min call with Sarah Zou — commercial strategy, pricing architecture, GTM for technical buyers, and unit economics for founders of API-first infrastructure and data platform companies. No prep needed.',
+    'Book a free 15-min call with Sarah Zou — commercial strategy, pricing architecture, GTM for technical buyers, and unit economics for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B). No prep needed.',
   robots: {
     index: true,
     follow: true,
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     canonical: 'https://sarahzou.com/book',
   },
     openGraph: {
-    title: 'Book a Free Consult | Commercial Strategy for API-First Infrastructure & Data Platforms | Sarah Zou',
+    title: 'Book a Free Consult | Commercial Strategy for AI-Infrastructure & Data Platforms | Sarah Zou',
     description:
-      'Book a free 15-min call — commercial strategy, pricing architecture, GTM for technical buyers, and unit economics for founders of API-first infrastructure and data platform companies.',
+      'Book a free 15-min call — commercial strategy, pricing architecture, GTM for technical buyers, and unit economics for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B).',
     type: 'website',
     url: 'https://sarahzou.com/book',
   },
@@ -90,8 +90,8 @@ export default function BookPage() {
                 </li>
                 <li>
                   <span className="font-semibold text-ink">If we&apos;re a fit:</span> I&apos;ll
-                  recommend the best engagement — session, sprint, fractional support, or point you
-                  to resources.
+                  recommend the best next step — the Commercial Architecture Diagnostic, a sprint,
+                  fractional support, or point you to resources.
                 </li>
               </ul>
             </div>

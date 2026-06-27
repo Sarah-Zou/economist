@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 }
 
 const SERVICE_URL = 'https://sarahzou.com/consulting/services/metrics-experimentation-sprint'
-const PRIMARY_CTA_HREF = '/consulting/entry-offer/form'
+const PRIMARY_CTA_HREF = '/diagnostic-note'
 const SECONDARY_CTA_HREF = '#pricing'
 
 const WHAT_YOU_GET = [
@@ -135,21 +135,6 @@ const INVESTMENT_TIERS = [
   },
 ]
 
-const TESTIMONIALS = [
-  {
-    quote:
-      'Honestly, we were just guessing on price and our sales team was discounting everything just to hit their numbers. Sarah simplified our tiers and our ACV shot up 40% in two months.',
-    author: 'Dayvon, B.',
-    role: 'Founder & CEO, Series A SaaS Platform',
-  },
-  {
-    quote:
-      "We were stuck on value metric, and Sarah's framework helped a lot. Highly recommend the 90-min session.",
-    author: 'Lisa, J.',
-    role: 'Co-Founder, Seed AI Developer Tool',
-  },
-]
-
 const PROCESS_STEPS = [
   {
     num: '01',
@@ -217,20 +202,20 @@ export default function GrowthEconomicsSprint() {
                   Build the economics foundation your pricing decisions and fundraising diligence need
                 </h1>
                 <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
-                  For technical founders of infrastructure and data platform companies that need a
-                  working unit economics model, cost-floor analysis, and forecasting logic — built
-                  to support pricing decisions and fundraising diligence.
+                  For founders of AI-infrastructure, API, and data-platform companies (Seed–Series B)
+                  that need a working unit economics model, cost-floor analysis, and forecasting
+                  logic — built to support pricing decisions and fundraising diligence.
                 </p>
                 <p className="meta-note mt-6">
-                  Most founders start with the 90-minute session. The $600 fee is credited toward
-                  either sprint within 14 days.
+                  The usual path: a free one-page diagnostic note, then the Commercial Architecture
+                  Diagnostic to set direction, then this sprint to build the economics foundation.
                 </p>
                 <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
                   <Link
                     href={PRIMARY_CTA_HREF}
                     className={`${primaryButtonLg} w-full max-w-[360px] sm:w-auto`}
                   >
-                    Book the 90-Minute Session
+                    Get a free diagnostic note
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
                   <Link href={SECONDARY_CTA_HREF} className="display-link">
@@ -315,30 +300,36 @@ export default function GrowthEconomicsSprint() {
             </div>
           </section>
 
-          {/* Session vs Sprint */}
+          {/* Diagnostic or Sprint */}
           <section className="section">
             <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
               <div className="mx-auto max-w-3xl text-center">
-                <span className="kicker">Session or sprint?</span>
+                <span className="kicker">Diagnostic or sprint?</span>
                 <h2 className="mt-3 font-serif-playfair">
-                  Most founders start with the 90-minute session
+                  Most founders start with a free diagnostic note
                 </h2>
                 <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.7] text-text-muted sm:text-[17px]">
-                  Usually the fastest way to tell whether you need one sharp answer or a full
-                  economics rebuild.
+                  The free one-page note and the two-week{' '}
+                  <Link
+                    href="/consulting"
+                    className="font-semibold text-brand-ink underline decoration-brand/40 underline-offset-4 hover:text-brand-dark"
+                  >
+                    Commercial Architecture Diagnostic
+                  </Link>{' '}
+                  set the direction. This sprint is where you build the economics foundation.
                 </p>
               </div>
 
               <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2">
                 <div className="card">
                   <h3 className="font-serif-playfair text-[22px] font-semibold leading-[1.2] text-ink">
-                    Start with the session if you need
+                    Start with the Diagnostic if you need
                   </h3>
                   <ul className="mt-5 space-y-3 border-t border-border-soft pt-5">
                     {[
-                      'One specific KPI or unit economics question resolved',
-                      'A fast expert read on your forecasting assumptions',
-                      'A lower-risk way to test whether deeper work is needed',
+                      'Direction on value metric, pricing, and unit economics',
+                      'A prioritized action list of what to fix first',
+                      'A lower-risk way to see how I think before a larger build',
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-2.5">
                         <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
@@ -350,7 +341,7 @@ export default function GrowthEconomicsSprint() {
 
                 <div className="card-dark">
                   <h3 className="font-serif-playfair text-[22px] font-semibold leading-[1.2] text-white">
-                    Move into the sprint if you need
+                    Move into this sprint if you need
                   </h3>
                   <ul className="mt-5 space-y-3 border-t border-white/10 pt-5">
                     {[
@@ -369,8 +360,8 @@ export default function GrowthEconomicsSprint() {
               </div>
 
               <p className="mx-auto mt-10 max-w-3xl rounded-card border border-brand/20 bg-brand-soft p-5 text-center text-[14px] font-medium leading-[1.65] text-brand-ink">
-                If we move into either sprint (Pricing &amp; Monetization or Growth Economics)
-                within 14 days, the $600 session fee is credited toward the project.
+                Not sure yet? Start with a free one-page diagnostic note — you see how I think before
+                anything is paid.
               </p>
             </div>
           </section>
@@ -415,12 +406,12 @@ export default function GrowthEconomicsSprint() {
               </div>
 
               <p className="mx-auto mt-10 max-w-2xl text-center text-[15px] leading-[1.7] text-text-muted">
-                Not sure which scope fits? Start with the 90-minute session. I&apos;ll tell you
-                honestly whether you need the sprint at all.
+                Not sure which scope fits? Start with a free one-page diagnostic note. I&apos;ll
+                tell you honestly whether you need the sprint at all.
               </p>
               <div className="mt-5 text-center">
                 <Link href={PRIMARY_CTA_HREF} className={outlineButton}>
-                  Book the 90-Minute Session
+                  Get a free diagnostic note
                 </Link>
               </div>
             </div>
@@ -520,40 +511,19 @@ export default function GrowthEconomicsSprint() {
             </div>
           </section>
 
-          {/* Why hire + testimonials */}
+          {/* Why hire */}
           <section className="section section-alt">
             <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
-              <div className="grid items-start gap-12 md:grid-cols-2 lg:gap-16">
-                <div>
-                  <span className="kicker">The approach</span>
-                  <h2 className="mt-3 font-serif-playfair">Why founders hire me for this work</h2>
-                  <p className="mt-6 max-w-lg text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
-                    I work more like a{' '}
-                    <strong className="text-ink">fractional Chief Economist</strong> for startups
-                    making consequential growth decisions — not an analyst building dashboards for
-                    their own sake.
-                  </p>
-                  <p className="mt-5 max-w-lg text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
-                    The goal is always the same: economics that inform decisions, not reports that
-                    sit in a folder.
-                  </p>
-                </div>
-                <div>
-                  <span className="kicker">What founders say</span>
-                  <div className="mt-5 space-y-5">
-                    {TESTIMONIALS.map((item) => (
-                      <figure key={item.author} className="card">
-                        <blockquote className="font-serif-playfair text-[18px] italic leading-[1.55] text-ink">
-                          &ldquo;{item.quote}&rdquo;
-                        </blockquote>
-                        <figcaption className="mt-5 text-[13px] text-text-muted">
-                          <p className="font-semibold text-ink">{item.author}</p>
-                          <p>{item.role}</p>
-                        </figcaption>
-                      </figure>
-                    ))}
-                  </div>
-                </div>
+              <div className="mx-auto max-w-3xl">
+                <span className="kicker">The approach</span>
+                <h2 className="mt-3 font-serif-playfair">Why founders hire me for this work</h2>
+                <p className="mt-6 text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
+                  I operate the same kind of company I advise — COO of an infrastructure data
+                  platform, building diligence-ready models against real cost floors. The goal is
+                  always the same: economics that inform decisions, not reports that sit in a
+                  folder.
+                </p>
+                {/* TODO(Sarah): add named, linkable client testimonials here when available. */}
               </div>
             </div>
           </section>
@@ -576,20 +546,19 @@ export default function GrowthEconomicsSprint() {
             <div className="section-shell max-w-4xl">
               <div className="cta-panel">
                 <h2 className="font-serif-playfair text-ink">
-                  Need more than one growth economics answer?
+                  Ready to build the economics foundation?
                 </h2>
                 <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
-                  Start with the 90-Minute Commercial Strategy Session. It&apos;s the fastest way
-                  to get a sharp recommendation and move into the sprint intelligently if the
-                  problem is broader.
+                  Start with a free one-page diagnostic note. You see how I think before anything is
+                  paid — and we move into the sprint intelligently once the direction is set.
                 </p>
                 <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                   <Link href={PRIMARY_CTA_HREF} className={primaryButtonLg}>
-                    Book the Session
+                    Get a free diagnostic note
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
                   <Link href="/book" className={outlineButton}>
-                    Book a free consult
+                    Book a free 15-min consult
                   </Link>
                 </div>
               </div>
@@ -608,18 +577,18 @@ export default function GrowthEconomicsSprint() {
             mainEntity: [
               {
                 '@type': 'Question',
-                name: 'When should I start with the 90-minute session vs. the sprint?',
+                name: 'Should I start with the Diagnostic or the sprint?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Start with the session if you have one specific metrics or unit economics question in motion. Choose the sprint if you know you need a fuller KPI system, forecasting model, and unit economics baseline.',
+                  text: 'Most founders start with a free one-page diagnostic note, then the two-week Commercial Architecture Diagnostic to set direction. This sprint is the follow-on where you build the full KPI system, forecasting model, and unit economics baseline.',
                 },
               },
               {
                 '@type': 'Question',
-                name: 'Is the $600 session fee credited toward this sprint?',
+                name: 'How do I start?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Yes. If we move into either the Growth Economics Sprint or the Pricing & Monetization Sprint within 14 days, the $600 session fee is credited toward the project.',
+                  text: 'Start with a free one-page diagnostic note. You see how I think before anything is paid, and we move into the sprint once the direction is clear.',
                 },
               },
               {

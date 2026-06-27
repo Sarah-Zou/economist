@@ -3,12 +3,12 @@ import FAQList from '@/components/FAQList'
 export default function FAQSection() {
   const faqs = [
     {
-      q: 'Should I start with the session or the sprint?',
-      a: 'Start with the session if you need clarity on one important pricing decision. Choose the sprint if you already know you need a fuller pricing structure, packaging, and rollout plan.',
+      q: 'Should I start with the Diagnostic or the sprint?',
+      a: 'Most founders start with a free one-page diagnostic note, then the two-week Commercial Architecture Diagnostic to set direction. This sprint is the follow-on where you build and roll out the full pricing structure, packaging, and rollout plan.',
     },
     {
-      q: 'Is the session fee credited toward the sprint?',
-      a: 'Yes. If we move into either the Pricing & Monetization Sprint or the Growth Economics Sprint within 14 days, the $600 session fee is credited toward the project.',
+      q: 'How do I start?',
+      a: 'Start with a free one-page diagnostic note on your pricing. You see how I think before anything is paid, and we move into the sprint once the direction is clear.',
     },
     {
       q: 'Will this work if we are pre-revenue?',

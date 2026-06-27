@@ -75,7 +75,7 @@ const faqItems = [
     q: 'What does it cost?',
     a: (
       <>
-        The Commercial Architecture Diagnostic is a fixed fee of US$10,000, and it starts with a
+        The Commercial Architecture Diagnostic is a fixed fee of US$6,000, and it starts with a
         free one-page diagnostic note. Deeper engagements — the Pricing &amp; Monetization Sprint
         and Growth Economics, Forecasting &amp; Unit Economics — are fixed-fee; ongoing support
         starts at US$4K/month.
@@ -149,7 +149,7 @@ export default function Home() {
         name: 'What does it cost?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'The Commercial Architecture Diagnostic is a fixed fee of US$10,000, and it starts with a free one-page diagnostic note. Deeper engagements are fixed-fee; ongoing support starts at US$4K/month.',
+          text: 'The Commercial Architecture Diagnostic is a fixed fee of US$6,000, and it starts with a free one-page diagnostic note. Deeper engagements are fixed-fee; ongoing support starts at US$4K/month.',
         },
       },
     ],
@@ -351,7 +351,7 @@ export default function Home() {
                 </div>
                 <div className="sm:text-right">
                   <p className="font-serif-playfair text-[32px] font-semibold leading-none text-white">
-                    US$10,000
+                    US$6,000
                   </p>
                   <p className="mt-2 max-w-sm text-[13px] leading-[1.6] text-white/60 sm:ml-auto">
                     Fixed fee. Starts with a free one-page diagnostic note — no cost until you

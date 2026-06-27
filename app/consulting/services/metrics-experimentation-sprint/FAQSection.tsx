@@ -3,12 +3,12 @@ import FAQList from '@/components/FAQList'
 export default function FAQSection() {
   const faqs = [
     {
-      q: 'When should I start with the 90-minute session vs. the sprint?',
-      a: 'Start with the session if you have one specific metrics or unit economics question in motion. Choose the sprint if you know you need a fuller KPI system, forecasting model, and unit economics baseline.',
+      q: 'Should I start with the Diagnostic or the sprint?',
+      a: 'Most founders start with a free one-page diagnostic note, then the two-week Commercial Architecture Diagnostic to set direction. This sprint is the follow-on where you build the full KPI system, forecasting model, and unit economics baseline.',
     },
     {
-      q: 'Is the $600 session fee credited toward this sprint?',
-      a: 'Yes. If we move into either the Growth Economics Sprint or the Pricing & Monetization Sprint within 14 days, the $600 session fee is credited toward the project.',
+      q: 'How do I start?',
+      a: 'Start with a free one-page diagnostic note. You see how I think before anything is paid, and we move into the sprint once the direction is clear.',
     },
     {
       q: 'We have almost no data. Will this still work?',

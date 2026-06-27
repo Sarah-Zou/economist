@@ -40,7 +40,7 @@ export function getAllSitemapEntries(): MetadataRoute.Sitemap {
   }> = [
     { path: '', changeFrequency: 'weekly', priority: 1.0 },
     { path: '/consulting', changeFrequency: 'monthly', priority: 0.9 },
-    { path: '/consulting/entry-offer', changeFrequency: 'monthly', priority: 0.9 },
+    { path: '/diagnostic-note', changeFrequency: 'monthly', priority: 0.9 },
     { path: '/consulting/services/pricing-monetization-sprint', changeFrequency: 'monthly', priority: 0.9 },
     { path: '/consulting/services/metrics-experimentation-sprint', changeFrequency: 'monthly', priority: 0.9 },
     { path: '/consulting/services/on-call-economist-retainer', changeFrequency: 'monthly', priority: 0.9 },

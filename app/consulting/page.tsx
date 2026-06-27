@@ -286,7 +286,7 @@ export default function ConsultingPage() {
                           Investment
                         </p>
                         <p className="mt-2 font-serif-playfair text-[36px] font-semibold leading-none text-white">
-                          US$10,000
+                          US$6,000
                         </p>
                         <p className="mt-2 text-[13px] leading-[1.6] text-white/60">
                           Fixed fee. 50% to start, 50% on delivery. No hourly billing, no

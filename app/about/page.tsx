@@ -16,7 +16,8 @@ import { outlineButton, primaryButtonLg } from '@/lib/brandStyles'
 import { generateBreadcrumbJsonLd } from '@/lib/generateJsonLd'
 import { OG_IMAGE_ABOUT } from '@/lib/seo'
 
-const PRIMARY_CTA_HREF = '/book'
+const PRIMARY_CTA_HREF = '/diagnostic-note'
+const CONSULT_CTA_HREF = '/book'
 const SECONDARY_CTA_HREF = '/consulting'
 
 const heroProofPoints = [
@@ -25,14 +26,14 @@ const heroProofPoints = [
   'NBER / World Bank research',
   'Citigroup',
   'Capgemini',
-  'COO, fiber-optic sensing IaaS startup',
+  'COO, infrastructure data platform',
 ]
 
 const companyTypes = [
   'Model serving & LLMOps',
   'AI developer tooling & API platforms',
   'AI data infrastructure',
-  'Fiber-optic / distributed sensing (DFOS)',
+  'Distributed sensing & physical-world data',
   'Geospatial & environmental data platforms',
   'Sensing-as-a-service / data-as-a-service',
 ]
@@ -122,9 +123,9 @@ const pillars = [
 ]
 
 export const metadata: Metadata = {
-  title: 'About Sarah Zou | Commercial Strategy Advisor for API-First Infrastructure & Data Platforms',
+  title: 'About Sarah Zou | Commercial Strategy Advisor for AI-Infrastructure & Data Platforms',
   description:
-    'PhD economist and COO of a fiber-optic sensing IaaS startup. Commercial strategy for technical founders of API-first infrastructure and data platform companies — pricing architecture, GTM for technical buyers, fundraising-ready unit economics.',
+    'PhD economist and COO of an infrastructure data platform. Commercial strategy for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B) — pricing architecture, GTM for technical buyers, fundraising-ready unit economics.',
   robots: {
     index: true,
     follow: true,
@@ -140,18 +141,18 @@ export const metadata: Metadata = {
     canonical: 'https://sarahzou.com/about',
   },
     openGraph: {
-    title: 'About Sarah Zou | Commercial Strategy Advisor for API-First Infrastructure & Data Platforms',
+    title: 'About Sarah Zou | Commercial Strategy Advisor for AI-Infrastructure & Data Platforms',
     description:
-      'PhD economist and COO of a fiber-optic sensing IaaS startup. Commercial strategy for technical founders of API-first infrastructure and data platform companies.',
+      'PhD economist and COO of an infrastructure data platform. Commercial strategy for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B).',
     type: 'website',
     url: 'https://sarahzou.com/about',
     images: [OG_IMAGE_ABOUT],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Sarah Zou | Commercial Strategy Advisor for API-First Infrastructure & Data Platforms',
+    title: 'About Sarah Zou | Commercial Strategy Advisor for AI-Infrastructure & Data Platforms',
     description:
-      'PhD economist and COO of a fiber-optic sensing IaaS startup. Commercial strategy for technical founders of API-first infrastructure and data platform companies.',
+      'PhD economist and COO of an infrastructure data platform. Commercial strategy for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B).',
     images: [OG_IMAGE_ABOUT],
   },
 }
@@ -207,7 +208,7 @@ export default function AboutPage() {
                     href={PRIMARY_CTA_HREF}
                     className={`${primaryButtonLg} w-full max-w-[360px] sm:w-auto`}
                   >
-                    Book a free consult
+                    Get a free diagnostic note
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
                   <Link href={SECONDARY_CTA_HREF} className="display-link">
@@ -461,9 +462,9 @@ export default function AboutPage() {
                   <blockquote className="quote-block">
                     <p className="font-serif-playfair text-[20px] leading-[1.4] text-ink sm:text-[22px]">
                       What makes my perspective unusual: I am not only advising technical founders
-                      from the outside. I operate a fiber-optic sensing infrastructure-as-a-service
-                      startup as COO — pricing against real cost floors, structuring paid pilots,
-                      and building unit-economics models for fundraising diligence.
+                      from the outside. I operate an infrastructure data platform as COO — pricing
+                      against real cost floors, structuring paid pilots, and building unit-economics
+                      models for fundraising diligence.
                     </p>
                     <p className="mt-4 text-[15px] font-semibold text-ink">
                       That is the context I bring to every engagement.
@@ -490,15 +491,15 @@ export default function AboutPage() {
                 Have a pricing or GTM decision you need to get right?
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
-                Book a free consult and we&apos;ll find the most important commercial question in
-                your business — and what to do about it.
+                Start with a free one-page diagnostic note on your pricing — the specific gap I see
+                and one concrete thing you can do this week. Or book a 15-min consult.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link href={PRIMARY_CTA_HREF} className={primaryButtonLg}>
-                  Book a free consult
+                  Get a free diagnostic note
                 </Link>
-                <Link href={SECONDARY_CTA_HREF} className={outlineButton}>
-                  See ways to work with me
+                <Link href={CONSULT_CTA_HREF} className={outlineButton}>
+                  Book a free 15-min consult
                 </Link>
               </div>
             </div>

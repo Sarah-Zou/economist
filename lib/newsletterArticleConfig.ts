@@ -51,7 +51,7 @@ const config: Record<string, NewsletterArticleConfig> = {
     matrixHeadingSlug: 'two-questions-place-any-business',
     worksheetHeadingSlug: 'worksheet-place-a-business',
     worksheetCtaCopy:
-      'Unsure where your hardware-plus-data business fits? Book the 90-minute strategy session.',
+      'Unsure where your hardware-plus-data business fits? Get a free one-page diagnostic note on your pricing.',
     introCtaCopy: 'Want help placing your own business on this framework?',
     tocLabels: {
       'the-movement-of-servitization': 'The movement of servitization',

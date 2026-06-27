@@ -8,7 +8,7 @@ import { outlineButton, primaryButtonLg } from '@/lib/brandStyles'
 export const metadata: Metadata = {
   title: 'Fractional or Embedded Commercial Strategy Support | Sarah Zou',
   description:
-    'Ongoing commercial strategy support for technical founders of API-first infrastructure and data platform companies — pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and board prep without hiring a full-time strategy or finance leader before you need one.',
+    'Ongoing commercial strategy support for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B) — pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and board prep without hiring a full-time strategy or finance leader before you need one.',
   robots: {
     index: true,
     follow: true,
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     openGraph: {
     title: 'Fractional or Embedded Commercial Strategy Support | Sarah Zou',
     description:
-      'Ongoing commercial strategy support for technical founders of API-first infrastructure and data platform companies — pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and board prep without hiring a full-time strategy or finance leader before you need one.',
+      'Ongoing commercial strategy support for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B) — pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and board prep without hiring a full-time strategy or finance leader before you need one.',
     type: 'website',
     url: 'https://sarahzou.com/consulting/services/on-call-economist-retainer',
   },
@@ -34,12 +34,13 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Fractional or Embedded Commercial Strategy Support | Sarah Zou',
     description:
-      'Ongoing commercial strategy support for technical founders of API-first infrastructure and data platform companies — pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and board prep without hiring a full-time strategy or finance leader before you need one.',
+      'Ongoing commercial strategy support for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B) — pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and board prep without hiring a full-time strategy or finance leader before you need one.',
   },
 }
 
 const SERVICE_URL = 'https://sarahzou.com/consulting/services/on-call-economist-retainer'
-const PRIMARY_CTA_HREF = '/book'
+const PRIMARY_CTA_HREF = '/diagnostic-note'
+const CONSULT_CTA_HREF = '/book'
 const SECONDARY_CTA_HREF = '#pricing'
 
 const WHAT_YOU_GET = [
@@ -123,21 +124,6 @@ const INVESTMENT_TIERS = [
   },
 ]
 
-const TESTIMONIALS = [
-  {
-    quote:
-      'Honestly, we were just guessing on price and our sales team was discounting everything just to hit their numbers. Sarah simplified our tiers and our ACV shot up 40% in two months.',
-    author: 'Dayvon, B.',
-    role: 'Founder & CEO, Series A SaaS Platform',
-  },
-  {
-    quote:
-      "We were stuck on value metric, and Sarah's framework helped a lot. Highly recommend the 90-min session.",
-    author: 'Lisa, J.',
-    role: 'Co-Founder, Seed AI Developer Tool',
-  },
-]
-
 const PROCESS_STEPS = [
   {
     num: '01',
@@ -196,7 +182,7 @@ export default function FractionalChiefEconomistRetainer() {
   const serviceJsonLd = generateServiceWithOffersJsonLd({
     name: 'Fractional or Embedded Commercial Strategy Support',
     description:
-      'Ongoing commercial strategy support across pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and board prep for technical founders of infrastructure and data platform companies — without the full-time overhead.',
+      'Ongoing commercial strategy support across pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and board prep for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B) — without the full-time overhead.',
     url: SERVICE_URL,
     offers: [
       { name: 'Lite', price: 4000, description: 'Monthly advisory and async support.' },
@@ -237,11 +223,11 @@ export default function FractionalChiefEconomistRetainer() {
                 </h1>
                 <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
                   Ongoing support across pricing architecture, GTM for technical buyers, unit
-                  economics, cost-floor modeling, and board prep — for infrastructure and data
-                  platform founders at any growth stage.
+                  economics, cost-floor modeling, and board prep — for founders of AI-infrastructure,
+                  API, and data-platform companies (Seed–Series B) at any growth stage.
                 </p>
                 <p className="meta-note mt-6">
-                  Most teams start with the 90-minute session or a sprint. Retainer clients get
+                  Most teams start with a free diagnostic note or a sprint. Retainer clients get
                   priority access and a dedicated monthly cadence.
                 </p>
                 <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
@@ -249,7 +235,7 @@ export default function FractionalChiefEconomistRetainer() {
                     href={PRIMARY_CTA_HREF}
                     className={`${primaryButtonLg} w-full max-w-[360px] sm:w-auto`}
                   >
-                    Book a Free Consult
+                    Get a free diagnostic note
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
                   <Link href={SECONDARY_CTA_HREF} className="display-link">
@@ -386,12 +372,12 @@ export default function FractionalChiefEconomistRetainer() {
               </div>
 
               <p className="mx-auto mt-10 max-w-2xl text-center text-[15px] leading-[1.7] text-text-muted">
-                Unsure which tier fits? Book the free consult. We&apos;ll discuss your growth stage
-                and commercial complexity to find the right level of engagement.
+                Unsure which tier fits? Book a free 15-min consult. We&apos;ll discuss your growth
+                stage and commercial complexity to find the right level of engagement.
               </p>
               <div className="mt-5 text-center">
-                <Link href={PRIMARY_CTA_HREF} className={outlineButton}>
-                  Book a Free Consult
+                <Link href={CONSULT_CTA_HREF} className={outlineButton}>
+                  Book a free 15-min consult
                 </Link>
               </div>
             </div>
@@ -488,40 +474,21 @@ export default function FractionalChiefEconomistRetainer() {
             </div>
           </section>
 
-          {/* Why hire + testimonials */}
+          {/* Why hire */}
           <section className="section">
             <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
-              <div className="grid items-start gap-12 md:grid-cols-2 lg:gap-16">
-                <div>
-                  <span className="kicker">The approach</span>
-                  <h2 className="mt-3 font-serif-playfair">Why founders hire me for this work</h2>
-                  <p className="mt-6 max-w-lg text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
-                    I work more like a{' '}
-                    <strong className="text-ink">fractional Chief Economist</strong> embedded in
-                    your commercial decisions — not a consultant who shows up for a one-off project
-                    and disappears.
-                  </p>
-                  <p className="mt-5 max-w-lg text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
-                    The retainer is designed for founders who need someone thinking about
-                    monetization, metrics, and growth economics continuously — not episodically.
-                  </p>
-                </div>
-                <div>
-                  <span className="kicker">What founders say</span>
-                  <div className="mt-5 space-y-5">
-                    {TESTIMONIALS.map((item) => (
-                      <figure key={item.author} className="card">
-                        <blockquote className="font-serif-playfair text-[18px] italic leading-[1.55] text-ink">
-                          &ldquo;{item.quote}&rdquo;
-                        </blockquote>
-                        <figcaption className="mt-5 text-[13px] text-text-muted">
-                          <p className="font-semibold text-ink">{item.author}</p>
-                          <p>{item.role}</p>
-                        </figcaption>
-                      </figure>
-                    ))}
-                  </div>
-                </div>
+              <div className="mx-auto max-w-3xl">
+                <span className="kicker">The approach</span>
+                <h2 className="mt-3 font-serif-playfair">Why founders hire me for this work</h2>
+                <p className="mt-6 text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
+                  I work more like a{' '}
+                  <strong className="text-ink">fractional Chief Economist</strong> embedded in your
+                  commercial decisions — not a consultant who shows up for a one-off project and
+                  disappears. I operate the same kind of company I advise, so the retainer is built
+                  for founders who need someone thinking about monetization, metrics, and growth
+                  economics continuously — not episodically.
+                </p>
+                {/* TODO(Sarah): add named, linkable client testimonials here when available. */}
               </div>
             </div>
           </section>
@@ -535,7 +502,7 @@ export default function FractionalChiefEconomistRetainer() {
                   Sprints set the foundation. The retainer keeps it running.
                 </h2>
                 <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.7] text-text-muted sm:text-[17px]">
-                  Many founders start with a sprint or the 90-minute session, then move into the
+                  Many founders start with a free diagnostic note or a sprint, then move into the
                   retainer once they know the work is ongoing.
                 </p>
               </div>
@@ -619,16 +586,17 @@ export default function FractionalChiefEconomistRetainer() {
                   Ready to explore an ongoing engagement?
                 </h2>
                 <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
-                  Book the free consult to discuss scope, cadence, and whether a retainer is the
-                  right fit given your growth stage and commercial complexity.
+                  Start with a free one-page diagnostic note, or book a 15-min consult to discuss
+                  scope, cadence, and whether a retainer is the right fit given your growth stage and
+                  commercial complexity.
                 </p>
                 <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                   <Link href={PRIMARY_CTA_HREF} className={primaryButtonLg}>
-                    Book a Free Consult
+                    Get a free diagnostic note
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
-                  <Link href="/consulting" className={outlineButton}>
-                    See all services
+                  <Link href={CONSULT_CTA_HREF} className={outlineButton}>
+                    Book a free 15-min consult
                   </Link>
                 </div>
               </div>

@@ -19,6 +19,10 @@ const EXACT_301 = new Map([
   // Retired entry-offer routes — now redirected to the free diagnostic note.
   ['/consulting/entry-offer', '/diagnostic-note'],
   ['/consulting/entry-offer/form', '/diagnostic-note'],
+  ['/entry-offer', '/diagnostic-note'],
+  ['/entry-offer/form', '/diagnostic-note'],
+  ['/thanks/entry-offer', '/diagnostic-note'],
+  ['/thanks/pricing-strategy-session', '/diagnostic-note'],
 
   // Legacy consulting services consolidated into current offerings.
   ['/consulting/services/rapid-pricing-experiment-toolkit', '/consulting/services/pricing-monetization-sprint'],

@@ -386,8 +386,9 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
               {isWorksheetSection && articleConfig?.worksheetCtaCopy && (
                 <ArticleCTA
                   variant="strong"
+                  href="/diagnostic-note"
                   copy={articleConfig.worksheetCtaCopy}
-                  buttonLabel="Book the 90-minute strategy session"
+                  buttonLabel="Get a free diagnostic note"
                 />
               )}
             </section>
