@@ -35,3 +35,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts 
+# Cowork session folder (contains CLAUDE.md project instructions)
+/my website/
+
+# archived unused assets (kept out of deploys)
+/archive/
