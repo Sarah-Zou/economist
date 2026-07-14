@@ -10,6 +10,9 @@ const navLinks = [
 
 const wikiLinks = [
   { href: '/wiki/pricing', label: 'Pricing & Monetization' },
+  { href: '/wiki/business-models', label: 'Business Models' },
+  { href: '/wiki/go-to-market', label: 'Go-to-Market' },
+  { href: '/wiki/unit-economics', label: 'Unit Economics' },
   { href: '/fundraising', label: 'Startup Fundraising' },
 ]
 

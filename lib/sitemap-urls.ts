@@ -20,10 +20,7 @@ export function normalizeSitemapUrl(path: string): string {
 
 type SitemapEntry = MetadataRoute.Sitemap[number]
 
-function addEntry(
-  entriesByUrl: Map<string, SitemapEntry>,
-  entry: SitemapEntry
-): void {
+function addEntry(entriesByUrl: Map<string, SitemapEntry>, entry: SitemapEntry): void {
   entriesByUrl.set(entry.url, entry)
 }
 
@@ -42,9 +39,21 @@ export function getAllSitemapEntries(): MetadataRoute.Sitemap {
     { path: '', changeFrequency: 'weekly', priority: 1.0 },
     { path: '/consulting', changeFrequency: 'monthly', priority: 0.9 },
     { path: '/diagnostic-note', changeFrequency: 'monthly', priority: 0.9 },
-    { path: '/consulting/services/pricing-monetization-sprint', changeFrequency: 'monthly', priority: 0.9 },
-    { path: '/consulting/services/metrics-experimentation-sprint', changeFrequency: 'monthly', priority: 0.9 },
-    { path: '/consulting/services/on-call-economist-retainer', changeFrequency: 'monthly', priority: 0.9 },
+    {
+      path: '/consulting/services/pricing-monetization-sprint',
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      path: '/consulting/services/metrics-experimentation-sprint',
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      path: '/consulting/services/on-call-economist-retainer',
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
     { path: '/about', changeFrequency: 'monthly', priority: 0.8 },
     { path: '/book', changeFrequency: 'monthly', priority: 0.8 },
     { path: '/newsletter', changeFrequency: 'weekly', priority: 0.8 },
@@ -54,6 +63,9 @@ export function getAllSitemapEntries(): MetadataRoute.Sitemap {
     { path: '/free-tools/pricing-model-matchmaker', changeFrequency: 'monthly', priority: 0.7 },
     { path: '/wiki', changeFrequency: 'weekly', priority: 0.9 },
     { path: '/wiki/pricing', changeFrequency: 'weekly', priority: 0.9 },
+    { path: '/wiki/business-models', changeFrequency: 'weekly', priority: 0.9 },
+    { path: '/wiki/go-to-market', changeFrequency: 'weekly', priority: 0.9 },
+    { path: '/wiki/unit-economics', changeFrequency: 'weekly', priority: 0.9 },
     { path: '/fundraising', changeFrequency: 'weekly', priority: 0.9 },
     { path: '/privacy', changeFrequency: 'yearly', priority: 0.3 },
   ]

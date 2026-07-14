@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { getAllCategories, getConceptBySlug } from '@/lib/mdx'
 import { FUNDRAISING_WIKI_AREA, PRICING_WIKI_AREA, WIKI_AREAS } from '@/lib/wiki-areas'
+import { BUSINESS_MODELS_HUB, GO_TO_MARKET_HUB, UNIT_ECONOMICS_HUB } from '@/lib/wiki-hub-data'
 import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter'
 
 export const metadata: Metadata = {
@@ -27,8 +28,9 @@ export default function WikiHubPage() {
   const pricingConceptCount = pricingCategories.reduce(
     (count, category) =>
       count +
-      category.concepts.filter((concept) => concept.id && getConceptBySlug(category.slug, concept.id))
-        .length,
+      category.concepts.filter(
+        (concept) => concept.id && getConceptBySlug(category.slug, concept.id)
+      ).length,
     0
   )
   const fundraisingConceptCount = getConceptBySlug(
@@ -41,6 +43,9 @@ export default function WikiHubPage() {
 
   const statsByPath: Record<string, string> = {
     [PRICING_WIKI_AREA.basePath]: `${pricingCategories.length} categories · ${pricingConceptCount} concepts`,
+    [BUSINESS_MODELS_HUB.basePath]: `${BUSINESS_MODELS_HUB.calendarTopicCount} topics · ${BUSINESS_MODELS_HUB.groups.length} tracks`,
+    [GO_TO_MARKET_HUB.basePath]: `${GO_TO_MARKET_HUB.calendarTopicCount} topics · ${GO_TO_MARKET_HUB.groups.length} tracks`,
+    [UNIT_ECONOMICS_HUB.basePath]: `${UNIT_ECONOMICS_HUB.calendarTopicCount} topics · ${UNIT_ECONOMICS_HUB.groups.length} tracks`,
     [FUNDRAISING_WIKI_AREA.basePath]: `${fundraisingConceptCount} guide · expanding library`,
   }
 
@@ -58,7 +63,7 @@ export default function WikiHubPage() {
           </p>
         </div>
 
-        <section className="mt-12 grid gap-6 md:grid-cols-2" aria-label="Wiki areas">
+        <section className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3" aria-label="Wiki areas">
           {WIKI_AREAS.map((area) => (
             <Link
               key={area.basePath}
@@ -73,7 +78,8 @@ export default function WikiHubPage() {
               <div className="mt-auto flex items-center justify-between border-t border-border-soft pt-5 text-sm font-semibold text-brand-ink">
                 <span>{statsByPath[area.basePath]}</span>
                 <span className="inline-flex items-center gap-2">
-                  Explore <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  Explore{' '}
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </span>
               </div>
             </Link>

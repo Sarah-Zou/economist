@@ -11,6 +11,21 @@ const BASE_URL = 'https://sarahzou.com';
 
 const STANDALONE_WIKI_AREAS = [
   {
+    basePath: '/wiki/business-models',
+    categorySlug: 'business-models',
+    includeConcepts: false,
+  },
+  {
+    basePath: '/wiki/go-to-market',
+    categorySlug: 'go-to-market',
+    includeConcepts: false,
+  },
+  {
+    basePath: '/wiki/unit-economics',
+    categorySlug: 'unit-economics',
+    includeConcepts: false,
+  },
+  {
     basePath: '/fundraising',
     categorySlug: 'fundraising',
     pillarConceptId: 'how-startup-funding-works',
@@ -161,10 +176,16 @@ function buildStandaloneWikiRegistry() {
       continue;
     }
 
-    const conceptIds = Array.from(
-      new Set([area.pillarConceptId, ...category.conceptIds].filter(Boolean))
-    );
-    redirects.set(`/wiki/${area.categorySlug}`, area.basePath);
+    const conceptIds =
+      area.includeConcepts === false
+        ? []
+        : Array.from(new Set([area.pillarConceptId, ...category.conceptIds].filter(Boolean)));
+    publishedUrls.add(area.basePath);
+
+    const legacyCategoryPath = `/wiki/${area.categorySlug}`;
+    if (legacyCategoryPath !== area.basePath) {
+      redirects.set(legacyCategoryPath, area.basePath);
+    }
 
     for (const conceptId of conceptIds) {
       const conceptPath = getStandaloneConceptPath(area, conceptId);
@@ -175,7 +196,10 @@ function buildStandaloneWikiRegistry() {
         publishedConceptUrls.add(conceptPath);
         publishedUrls.add(conceptPath);
         redirects.set(pricingConceptPath, conceptPath);
-        redirects.set(`/wiki/${area.categorySlug}/${conceptId}`, conceptPath);
+        const legacyConceptPath = `/wiki/${area.categorySlug}/${conceptId}`;
+        if (legacyConceptPath !== conceptPath) {
+          redirects.set(legacyConceptPath, conceptPath);
+        }
       } else if (conceptRecord) {
         nonPublishedStatusByUrl.set(conceptPath, conceptRecord.status);
       }
@@ -228,6 +252,10 @@ function buildWikiRegistry() {
         continue;
       }
 
+      if (category.status !== STATUS.PUBLISHED) {
+        continue;
+      }
+
       if (!conceptRecord) {
         unresolvedConceptPlaceholders.push({
           category: category.slug,
@@ -275,6 +303,9 @@ function buildWikiRegistry() {
   }
   for (const url of standaloneRegistry.publishedConceptUrls) {
     publishedConceptUrls.add(url);
+    publishedUrls.add(url);
+  }
+  for (const url of standaloneRegistry.publishedUrls) {
     publishedUrls.add(url);
   }
   for (const [url, status] of standaloneRegistry.nonPublishedStatusByUrl.entries()) {
