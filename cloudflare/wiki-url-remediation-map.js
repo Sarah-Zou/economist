@@ -3,7 +3,24 @@
  * Do not edit manually.
  */
 
-export const WIKI_EXACT_301 = new Map([]);
+export const WIKI_EXACT_301 = new Map([
+  [
+    "/wiki/fundraising",
+    "/fundraising"
+  ],
+  [
+    "/wiki/fundraising/how-startup-funding-works",
+    "/fundraising/how-startup-funding-works"
+  ],
+  [
+    "/wiki/pricing/fundraising",
+    "/fundraising"
+  ],
+  [
+    "/wiki/pricing/fundraising/how-startup-funding-works",
+    "/fundraising/how-startup-funding-works"
+  ]
+]);
 export const WIKI_EXACT_410 = new Set([
   "/wiki/pricing/comms-and-deals",
   "/wiki/pricing/comms-and-deals/deal-structuring",

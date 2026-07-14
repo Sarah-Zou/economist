@@ -109,7 +109,7 @@ function validateSitemaps(registry, failures) {
         continue;
       }
 
-      if (!pathname.startsWith('/wiki/pricing')) {
+      if (!pathname.startsWith('/wiki/') && !pathname.startsWith('/fundraising')) {
         continue;
       }
 
@@ -118,7 +118,7 @@ function validateSitemaps(registry, failures) {
       }
       seen.add(pathname);
 
-      if (pathname === '/wiki/pricing') {
+      if (pathname === '/wiki' || pathname === '/wiki/pricing' || pathname === '/fundraising') {
         continue;
       }
 
@@ -140,7 +140,7 @@ function validateSitemaps(registry, failures) {
 }
 
 function validatePublishedPageOutputs(registry, failures) {
-  const publishedPagePaths = ['/wiki/pricing', ...Array.from(registry.publishedUrls)].sort();
+  const publishedPagePaths = ['/wiki', '/wiki/pricing', '/fundraising', ...Array.from(registry.publishedUrls)].sort();
   const publishedPathSet = new Set(publishedPagePaths);
 
   for (const pagePath of publishedPagePaths) {
@@ -165,10 +165,10 @@ function validatePublishedPageOutputs(registry, failures) {
     const links = extractLinks(html);
     for (const href of links) {
       const linkedPath = toWikiPath(href);
-      if (!linkedPath || !linkedPath.startsWith('/wiki/pricing')) {
+      if (!linkedPath || (!linkedPath.startsWith('/wiki/') && !linkedPath.startsWith('/fundraising'))) {
         continue;
       }
-      if (linkedPath === '/wiki/pricing') {
+      if (linkedPath === '/wiki' || linkedPath === '/wiki/pricing' || linkedPath === '/fundraising') {
         continue;
       }
       if (registry.redirects.has(linkedPath)) {

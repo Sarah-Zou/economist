@@ -9,6 +9,14 @@ const CATEGORY_DIR = path.join(ROOT, 'content', 'wiki', 'categories');
 const CONCEPT_DIR = path.join(ROOT, 'content', 'wiki', 'concepts');
 const BASE_URL = 'https://sarahzou.com';
 
+const STANDALONE_WIKI_AREAS = [
+  {
+    basePath: '/fundraising',
+    categorySlug: 'fundraising',
+    pillarConceptId: 'how-startup-funding-works',
+  },
+];
+
 const STATUS = {
   PUBLISHED: 'published',
   DRAFT: 'draft',
@@ -137,6 +145,51 @@ function readConceptRecord(categorySlug, conceptId) {
   };
 }
 
+function getStandaloneConceptPath(area, conceptId) {
+  return `${area.basePath}/${conceptId}`;
+}
+
+function buildStandaloneWikiRegistry() {
+  const publishedConceptUrls = new Set();
+  const publishedUrls = new Set();
+  const redirects = new Map();
+  const nonPublishedStatusByUrl = new Map();
+
+  for (const area of STANDALONE_WIKI_AREAS) {
+    const category = readCategoryRecords().find((item) => item.slug === area.categorySlug);
+    if (!category) {
+      continue;
+    }
+
+    const conceptIds = Array.from(
+      new Set([area.pillarConceptId, ...category.conceptIds].filter(Boolean))
+    );
+    redirects.set(`/wiki/${area.categorySlug}`, area.basePath);
+
+    for (const conceptId of conceptIds) {
+      const conceptPath = getStandaloneConceptPath(area, conceptId);
+      const conceptRecord = readConceptRecord(area.categorySlug, conceptId);
+      const pricingConceptPath = `/wiki/pricing/${area.categorySlug}/${conceptId}`;
+
+      if (conceptRecord?.status === STATUS.PUBLISHED) {
+        publishedConceptUrls.add(conceptPath);
+        publishedUrls.add(conceptPath);
+        redirects.set(pricingConceptPath, conceptPath);
+        redirects.set(`/wiki/${area.categorySlug}/${conceptId}`, conceptPath);
+      } else if (conceptRecord) {
+        nonPublishedStatusByUrl.set(conceptPath, conceptRecord.status);
+      }
+    }
+  }
+
+  return {
+    publishedConceptUrls,
+    publishedUrls,
+    redirects,
+    nonPublishedStatusByUrl,
+  };
+}
+
 function buildWikiRegistry() {
   const categories = readCategoryRecords();
   const categoryStatusBySlug = new Map(categories.map((category) => [category.slug, category.status]));
@@ -214,6 +267,18 @@ function buildWikiRegistry() {
         nonPublishedStatusByUrl.set(conceptPath, conceptRecord.status);
       }
     }
+  }
+
+  const standaloneRegistry = buildStandaloneWikiRegistry();
+  for (const [from, to] of standaloneRegistry.redirects.entries()) {
+    redirects.set(from, to);
+  }
+  for (const url of standaloneRegistry.publishedConceptUrls) {
+    publishedConceptUrls.add(url);
+    publishedUrls.add(url);
+  }
+  for (const [url, status] of standaloneRegistry.nonPublishedStatusByUrl.entries()) {
+    nonPublishedStatusByUrl.set(url, status);
   }
 
   return {

@@ -6,6 +6,7 @@ import {
   getPublishedConceptIdsForCategory,
   getWikiRemediationMap,
 } from '@/lib/mdx'
+import { FUNDRAISING_WIKI_AREA, getWikiConceptPagePath } from '@/lib/wiki-areas'
 
 export const SITE_BASE_URL = 'https://sarahzou.com'
 
@@ -51,7 +52,9 @@ export function getAllSitemapEntries(): MetadataRoute.Sitemap {
     { path: '/contact', changeFrequency: 'yearly', priority: 0.7 },
     { path: '/free-tools', changeFrequency: 'monthly', priority: 0.7 },
     { path: '/free-tools/pricing-model-matchmaker', changeFrequency: 'monthly', priority: 0.7 },
+    { path: '/wiki', changeFrequency: 'weekly', priority: 0.9 },
     { path: '/wiki/pricing', changeFrequency: 'weekly', priority: 0.9 },
+    { path: '/fundraising', changeFrequency: 'weekly', priority: 0.9 },
     { path: '/privacy', changeFrequency: 'yearly', priority: 0.3 },
   ]
 
@@ -116,6 +119,41 @@ export function getAllSitemapEntries(): MetadataRoute.Sitemap {
       addEntry(entriesByUrl, {
         url: normalizeSitemapUrl(conceptPath),
         lastModified: conceptData.lastUpdated || category.updated || currentDate,
+        changeFrequency: 'monthly',
+        priority: 0.7,
+      })
+    }
+  }
+
+  const fundraisingCategory = getAllCategories({ includeNonPublished: true }).find(
+    (category) => category.slug === FUNDRAISING_WIKI_AREA.categorySlug
+  )
+  if (fundraisingCategory) {
+    const fundraisingConceptIds = [
+      FUNDRAISING_WIKI_AREA.pillarConceptId,
+      ...fundraisingCategory.concepts.map((concept) => concept.id).filter(Boolean),
+    ] as string[]
+
+    for (const conceptId of Array.from(new Set(fundraisingConceptIds))) {
+      const conceptPath = getWikiConceptPagePath(
+        FUNDRAISING_WIKI_AREA,
+        FUNDRAISING_WIKI_AREA.categorySlug,
+        conceptId
+      )
+      if (redirectSources.has(conceptPath)) {
+        continue
+      }
+
+      const conceptData = getConceptBySlug(FUNDRAISING_WIKI_AREA.categorySlug, conceptId, {
+        includeNonPublished: true,
+      })
+      if (!conceptData || conceptData.status !== 'published') {
+        continue
+      }
+
+      addEntry(entriesByUrl, {
+        url: normalizeSitemapUrl(conceptPath),
+        lastModified: conceptData.lastUpdated || fundraisingCategory.updated || currentDate,
         changeFrequency: 'monthly',
         priority: 0.7,
       })

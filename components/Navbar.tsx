@@ -8,8 +8,12 @@ const navLinks = [
   { href: '/contact', label: 'Contact' },
 ]
 
+const wikiLinks = [
+  { href: '/wiki/pricing', label: 'Pricing & Monetization' },
+  { href: '/fundraising', label: 'Startup Fundraising' },
+]
+
 const freeResourceLinks = [
-  { href: '/wiki/pricing', label: 'Pricing Wiki' },
   { href: '/free-tools/pricing-model-matchmaker', label: 'Pricing Model Matchmaker' },
   { href: '/cheat-sheets', label: 'Roadmap Download' },
   { href: '/newsletter', label: 'Newsletter' },
@@ -52,6 +56,23 @@ const Navbar = () => {
                 Free Resources
               </Link>
               <div className="invisible absolute left-0 top-full mt-4 w-72 rounded-card border border-border-soft bg-white p-2 opacity-0 shadow-elevated transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                <Link
+                  href="/wiki"
+                  className="block rounded-[12px] px-4 py-3 text-[13px] font-semibold text-text transition-colors hover:bg-surface"
+                >
+                  Wiki Library
+                </Link>
+                <div className="mb-1 ml-4 border-l border-border-soft pb-1 pl-2">
+                  {wikiLinks.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block rounded-[10px] px-3 py-2 text-[13px] text-text-muted transition-colors hover:bg-surface hover:text-ink"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
                 {freeResourceLinks.map((item) => (
                   <Link
                     key={item.href}
@@ -95,6 +116,23 @@ const Navbar = () => {
                 >
                   Free Resources
                 </Link>
+                <Link
+                  href="/wiki"
+                  className="block rounded-[12px] px-8 py-2.5 text-[14px] font-semibold text-text hover:bg-white hover:text-ink"
+                >
+                  Wiki Library
+                </Link>
+                <div className="ml-8 border-l border-border-soft pl-2">
+                  {wikiLinks.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block rounded-[12px] px-4 py-2.5 text-[14px] text-text-muted hover:bg-white hover:text-ink"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
                 {freeResourceLinks.map((item) => (
                   <Link
                     key={item.href}

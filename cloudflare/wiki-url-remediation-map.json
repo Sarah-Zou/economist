@@ -1,6 +1,23 @@
 {
-  "generatedAt": "2026-06-23T19:43:29.041Z",
-  "exact301": [],
+  "generatedAt": "2026-07-14T16:27:52.098Z",
+  "exact301": [
+    [
+      "/wiki/fundraising",
+      "/fundraising"
+    ],
+    [
+      "/wiki/fundraising/how-startup-funding-works",
+      "/fundraising/how-startup-funding-works"
+    ],
+    [
+      "/wiki/pricing/fundraising",
+      "/fundraising"
+    ],
+    [
+      "/wiki/pricing/fundraising/how-startup-funding-works",
+      "/fundraising/how-startup-funding-works"
+    ]
+  ],
   "exact410": [
     "/wiki/pricing/comms-and-deals",
     "/wiki/pricing/comms-and-deals/deal-structuring",

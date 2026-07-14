@@ -12,19 +12,23 @@ Expanded index of citation-ready pages on sarahzou.com. Each Wiki concept includ
 
 ### Home
 URL: https://sarahzou.com
-Commercial strategy, pricing, monetization, GTM economics, forecasting, and unit economics for AI-native B2B SaaS founders and operators. Fractional chief economist and commercial advisor.
+Pricing, packaging, and unit-economics strategy for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B). Start with a free one-page diagnostic note.
 
 ### About Sarah Zou
 URL: https://sarahzou.com/about
-PhD economist and commercial strategy advisor for AI-native B2B SaaS teams on pricing, monetization, revenue models, forecasting, and investor-ready commercial narratives.
+PhD economist and COO of an infrastructure data platform, advising founders of AI-infrastructure, API, and data-platform companies (Seed–Series B) on pricing, monetization, unit economics, and investor-ready commercial narratives.
 
 ### Consulting
 URL: https://sarahzou.com/consulting
-Ways to work together on commercial strategy — from a 90-minute strategy session ($600, credited toward a sprint) to pricing sprints and fractional chief economist support.
+The Commercial Architecture Diagnostic — a two-week, fixed-fee (US$6,000) audit of pricing, packaging, and unit economics — plus deeper pricing and growth-economics sprints and fractional support. Starts with a free one-page diagnostic note.
 
-### 90-Minute Strategy Session
-URL: https://sarahzou.com/consulting/entry-offer
-Focused working session for one important commercial decision: pricing model, value metric, GTM structure, or revenue model logic. $600, credited toward a sprint within 14 days.
+### Free Pricing Diagnostic Note
+URL: https://sarahzou.com/diagnostic-note
+Request a free one-page diagnostic note on your pricing: the specific gap, a pattern from comparable infrastructure companies, and one concrete thing to do this week. The low-risk entry point to the Commercial Architecture Diagnostic.
+
+### Business Strategy Wiki
+URL: https://sarahzou.com/wiki
+Practical, evidence-based reference guides for startup pricing, monetization, and fundraising.
 
 ### Pricing & Monetization Wiki
 URL: https://sarahzou.com/wiki/pricing
@@ -39,6 +43,10 @@ URL: https://sarahzou.com/newsletter
 Research-backed essays on SaaS pricing, monetization, benchmarks, and commercial strategy for founders and operators.
 
 ## Wiki concepts
+
+### How Startup Funding Works: A Founder's Guide
+URL: https://sarahzou.com/fundraising/how-startup-funding-works
+Startup funding converts a milestone-sized cash gap into a financing choice with specific repayment, dilution, control, and legal consequences.
 
 ### Competition-Based Pricing
 URL: https://sarahzou.com/wiki/pricing/foundations/competition-based-pricing
@@ -71,6 +79,14 @@ Strategic pricing is a systematic, value-based framework that aligns marketing, 
 ### Value-Based Pricing
 URL: https://sarahzou.com/wiki/pricing/foundations/value-based-pricing
 Value-Based Pricing (VBP) is a pricing approach where the price is determined by the value customers perceive and their willingness to pay for that product.
+
+### Pre-Seed, Seed, and Series A: What Changes at Each Funding Stage
+URL: https://sarahzou.com/wiki/pricing/fundraising/pre-seed-seed-series-a
+Pre-seed, seed, and Series A are market labels for different risk-reduction jobs—not fixed revenue, valuation, or check-size thresholds.
+
+### TAM, SAM, and SOM: How to Size a Startup Market
+URL: https://sarahzou.com/wiki/pricing/go-to-market/tam-sam-som
+TAM is the full revenue pool, SAM is the portion your current offer can serve, and SOM is the time-bound share your company can realistically capture.
 
 ### Credits / drawdown model
 URL: https://sarahzou.com/wiki/pricing/models-and-metering/credits-drawdown-model
@@ -195,5 +211,5 @@ URL: https://sarahzou.com/newsletter/why-fractional-economist
 Why SaaS startups are hiring fractional chief economists and how they drive growth, pricing, and investor narrative.
 
 ---
-Generated: 2026-06-23
-Total wiki concepts: 32
+Generated: 2026-07-14
+Total wiki concepts: 35

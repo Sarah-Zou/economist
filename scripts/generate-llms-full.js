@@ -36,6 +36,12 @@ const CORE_PAGES = [
       'Request a free one-page diagnostic note on your pricing: the specific gap, a pattern from comparable infrastructure companies, and one concrete thing to do this week. The low-risk entry point to the Commercial Architecture Diagnostic.',
   },
   {
+    url: `${SITE}/wiki`,
+    title: 'Business Strategy Wiki',
+    summary:
+      'Practical, evidence-based reference guides for startup pricing, monetization, and fundraising.',
+  },
+  {
     url: `${SITE}/wiki/pricing`,
     title: 'Pricing & Monetization Wiki',
     summary:
@@ -61,6 +67,12 @@ function readWikiConcepts() {
     return entries;
   }
 
+  const standaloneConceptUrls = {
+    fundraising: {
+      'how-startup-funding-works': `${SITE}/fundraising/how-startup-funding-works`,
+    },
+  };
+
   for (const category of fs.readdirSync(CONCEPTS_DIR)) {
     const categoryDir = path.join(CONCEPTS_DIR, category);
     if (!fs.statSync(categoryDir).isDirectory()) {
@@ -82,8 +94,9 @@ function readWikiConcepts() {
         data.oneLiner ||
         data.metaTitle ||
         `Wiki concept on ${title} in the ${category} category of the Pricing & Monetization Wiki.`;
+      const standaloneUrl = standaloneConceptUrls[category]?.[slug];
       entries.push({
-        url: `${SITE}/wiki/pricing/${category}/${slug}`,
+        url: standaloneUrl || `${SITE}/wiki/pricing/${category}/${slug}`,
         title,
         summary,
         category,

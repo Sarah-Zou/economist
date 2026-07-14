@@ -32,10 +32,10 @@ export default function WikiError({
             Try again
           </button>
           <Link
-            href="/wiki/pricing"
+            href="/wiki"
             className="bg-white text-brand-ink border-2 border-brand px-6 py-3 rounded-lg font-semibold hover:bg-surface transition-colors"
           >
-            Go to Pricing Wiki
+            Go to Wiki Library
           </Link>
         </div>
       </div>
