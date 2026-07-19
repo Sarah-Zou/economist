@@ -13,7 +13,7 @@ import '@/app/prose.css'
 export const metadata: Metadata = {
   title: 'Pricing & Monetization Wiki for SaaS & Tech Startups | Sarah Zou',
   description:
-    'Evidence-based concepts: value metric, packaging, NRR, payback, usage-based pricing. For Seed–Series A SaaS, APIs & AI. Definitions, applications, pitfalls, metrics.',
+    'Evidence-based concepts: value metric, packaging, NRR, payback, usage-based pricing. For Seed–Series B SaaS, APIs & AI. Definitions, applications, pitfalls, metrics.',
   robots: {
     index: true,
     follow: true,
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Pricing & Monetization Wiki for SaaS & Tech Startups | Sarah Zou',
     description:
-      'Evidence-based concepts: value metric, packaging, NRR, payback, usage-based pricing. For Seed–Series A SaaS, APIs & AI. Definitions, applications, pitfalls, metrics.',
+      'Evidence-based concepts: value metric, packaging, NRR, payback, usage-based pricing. For Seed–Series B SaaS, APIs & AI. Definitions, applications, pitfalls, metrics.',
     url: 'https://sarahzou.com/wiki/pricing',
     siteName: 'Sarah Zou',
     type: 'website',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Pricing & Monetization Wiki for SaaS & Tech Startups | Sarah Zou',
     description:
-      'Evidence-based concepts: value metric, packaging, NRR, payback, usage-based pricing. For Seed–Series A SaaS, APIs & AI. Definitions, applications, pitfalls, metrics.',
+      'Evidence-based concepts: value metric, packaging, NRR, payback, usage-based pricing. For Seed–Series B SaaS, APIs & AI. Definitions, applications, pitfalls, metrics.',
   },
 }
 

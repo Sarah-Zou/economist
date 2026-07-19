@@ -1,12 +1,14 @@
 ---
 title: "Skimming Strategy"
-metaTitle: "Skimming Strategy: Definition, Framework, When to Use"
+metaTitle: "Price Skimming: Launch High, Step Down Without Breaking the Anchor"
+metaDescription: "How skimming works as time-sequenced segmentation: set the launch premium, design fences, pre-plan markdown cadence, and avoid whiplashing early adopters."
 oneLiner: "A pricing strategy that launches at a premium to monetize early adopters' surplus, then steps down prices to capture successive demand tiers without eroding the anchor."
 prereqs: ["Value-Based Pricing", "Segmentation", "Price Fences", "WTP Research"]
 tags: ["Pricing Strategy", "Product Launch", "Value-Based Pricing", "Versioning", "Innovation", "SaaS", "Hardware", "Lifecycle"]
 readingTime: 8
-lastUpdated: "2025-12-24"
+lastUpdated: "2026-07-19"
 owner: "Dr. Sarah Zou"
+canonical: "https://sarahzou.com/wiki/pricing/foundations/skimming-strategy"
 ---
 
 ## Snapshot (TL;DR)
@@ -80,9 +82,9 @@ Skimming lets you monetize the highest-[WTP](/wiki/pricing/value-and-customers/w
 - **Create room for future discounts:** Planned step-downs and promotions can be meaningful without ever touching the original premium anchor.
 
 ## Key Facts
-- 16% "cream": In diffusion theory, innovators (2.5%) + early adopters (13.5%) ≈ 16% of the market are the **"cream" tiers** skimming targets before the Early Majority (34%) arrives. ([Lumen Learning](https://courses.lumenlearning.com/clinton-marketing/chapter/reading-diffusion-of-innovation/))
-- 50–60% brand-loyal: In consumer tech, ~50–60% of early adopters are **brand‑loyal** and are willing to **pay a premium** for early access. ([Gönen (2024)](https://www.researchgate.net/publication/378123456))
+- 16% "cream": In diffusion theory, innovators (2.5%) + early adopters (13.5%) ≈ 16% of the market are the **"cream" tiers** skimming targets before the Early Majority (34%) arrives. ([Rogers, *Diffusion of Innovations*, via Lumen Learning](https://courses.lumenlearning.com/clinton-marketing/chapter/reading-diffusion-of-innovation/))
 - 25% high-WTP tier: Premium smartphones reached **25% of the global market** in 2024, meaning the high-WTP tier is now **big enough** that "price the top first" can move company-level outcomes. ([Counterpoint Research (2025)](https://counterpointresearch.com/en/insights/post-insight-research-notes-blogs-global-premium-smartphone-share-climbs-to-25-in-2024-as-premiumization-continues))
+- 30% margin logic: skimming pays when profit from **low volume at high margin** exceeds profit from high volume at a lower price — at a 30-point price premium, you can lose up to half the volume and still come out ahead (see rules of thumb below).
 
 ## How do you implement skimming strategy step-by-step?
 

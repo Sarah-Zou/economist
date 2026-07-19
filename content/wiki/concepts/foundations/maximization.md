@@ -1,12 +1,14 @@
 ---
 title: "Maximization Pricing Strategy"
-metaTitle: "Maximization Pricing Strategy: Definition, Framework, When to Use"
+metaTitle: "Maximization Pricing: Choosing the Profit- or Revenue-Maximizing Price"
+metaDescription: "How to pick the single price that maximizes profit, revenue, or share: elasticity, break-even sales math, objective-setting, and the traps of over-optimization."
 oneLiner: "A short-term pricing approach that picks the price that maximizes a chosen metric (profit, revenue, or share) given demand and costs."
 prereqs: ["Value-Based Pricing", "Price Elasticity", "Cost Analysis", "WTP Research"]
 tags: ["Pricing Strategy", "Profit Maximization", "Revenue Optimization", "Price Elasticity", "Startups", "SaaS"]
 readingTime: 7
-lastUpdated: "2025-12-24"
+lastUpdated: "2026-07-19"
 owner: "Dr. Sarah Zou"
+canonical: "https://sarahzou.com/wiki/pricing/foundations/maximization"
 ---
 
 ## Snapshot (TL;DR)

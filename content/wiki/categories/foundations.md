@@ -23,6 +23,8 @@ In practice, a healthy SaaS pricing system is [value-based pricing](/wiki/pricin
 - **[<span id="skimming-strategy">Skimming strategy</span>](/wiki/pricing/foundations/skimming-strategy)**: Launch at a premium to monetize the highest-WTP tier first, then **step down in planned stages** to reach more price-sensitive segments without destroying the anchor.
 - **[<span id="penetration-strategy">Penetration strategy</span>](/wiki/pricing/foundations/penetration-strategy)**: Launch below long-run profit-maximizing price to **accelerate adoption and share** (especially with scale/network effects), with explicit criteria and a path to normalize pricing later.
 - **[<span id="maximization">Maximization</span>](/wiki/pricing/foundations/maximization)**: Choose the single price that **maximizes a chosen objective** (profit, revenue, or share) given demand and constraints—making pricing a testable, data-backed decision.
+- **[<span id="how-to-choose-a-pricing-consultant">How to choose a pricing consultant</span>](/wiki/pricing/foundations/how-to-choose-a-pricing-consultant)**: Match the advisor type — global firm, boutique agency, billing-platform team, or independent specialist — to your **pricing model's actual complexity**, with evaluation questions and cost ranges.
+- **[<span id="fractional-chief-economist">Fractional chief economist</span>](/wiki/pricing/foundations/fractional-chief-economist)**: Part-time, retainer-based access to **PhD-level economic reasoning** — pricing architecture, unit economics, forecasting, and investor-facing models — without a full-time strategy hire.
 
 ## Core Concepts
 

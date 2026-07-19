@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 import { Metadata } from 'next'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { brandLink, outlineButton, primaryButton, primaryButtonLg } from '@/lib/brandStyles'
-import { generateBreadcrumbJsonLd } from '@/lib/generateJsonLd'
+import { generateBreadcrumbJsonLd, generateServiceWithOffersJsonLd } from '@/lib/generateJsonLd'
 import { OG_IMAGE_CONSULTING } from '@/lib/seo'
 
 const PRIMARY_CTA_HREF = '/diagnostic-note'
@@ -525,6 +525,28 @@ export default function ConsultingPage() {
               { name: 'Home', url: '/' },
               { name: 'Consulting', url: '/consulting' },
             ])
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateServiceWithOffersJsonLd({
+              name: 'Commercial Architecture Diagnostic',
+              description:
+                'A two-week, fixed-fee audit of pricing, packaging, and unit economics for AI-infrastructure, API, and data-platform companies (Seed–Series B). Starts with a free one-page diagnostic note.',
+              url: 'https://sarahzou.com/consulting',
+              offers: [
+                {
+                  name: 'Commercial Architecture Diagnostic (two-week, fixed fee)',
+                  price: 6000,
+                  priceCurrency: 'USD',
+                  description:
+                    'Value-metric selection, pricing & packaging recommendation, unit-economics view, and a prioritized action list. Starts with a free one-page diagnostic note.',
+                },
+              ],
+            })
           ),
         }}
       />

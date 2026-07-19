@@ -74,7 +74,11 @@ export function generateSiteEntityGraphJsonLd() {
         description:
           'Commercial strategy for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B). Pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and fundraising-ready commercial narratives.',
         founder: { '@id': SITE_ENTITY_IDS.person },
-        sameAs: ['https://www.linkedin.com/in/drsarahzou'],
+        sameAs: [
+          'https://www.linkedin.com/in/drsarahzou',
+          'https://www.gigx.com/user/sarah-zou',
+          'https://sarahzou.substack.com',
+        ],
       },
       {
         '@type': 'Person',
@@ -87,7 +91,23 @@ export function generateSiteEntityGraphJsonLd() {
           'PhD economist and COO of an infrastructure data platform. Helps founders of AI-infrastructure, API, and data-platform companies (Seed–Series B) build the commercial layer: pricing architecture, GTM for technical buyers, and fundraising-ready unit economics.',
         url: `${SITE_BASE_URL}/about`,
         image: `${SITE_BASE_URL}/images/headshot_v4.webp`,
-        sameAs: ['https://www.linkedin.com/in/drsarahzou/'],
+        sameAs: [
+          'https://www.linkedin.com/in/drsarahzou/',
+          'https://www.gigx.com/user/sarah-zou',
+          'https://sarahzou.substack.com',
+        ],
+        alumniOf: [
+          {
+            '@type': 'CollegeOrUniversity',
+            name: 'Rutgers University',
+            sameAs: 'https://www.rutgers.edu',
+          },
+          {
+            '@type': 'CollegeOrUniversity',
+            name: 'University of Illinois Urbana-Champaign',
+            sameAs: 'https://illinois.edu',
+          },
+        ],
         worksFor: { '@id': SITE_ENTITY_IDS.organization },
         knowsAbout: [
           'Commercial Strategy',
@@ -109,6 +129,7 @@ export function generateSiteEntityGraphJsonLd() {
           'Econometrics',
           'Revenue Model',
           'Investor Narratives',
+          'Fractional Chief Economist',
         ],
       },
       {

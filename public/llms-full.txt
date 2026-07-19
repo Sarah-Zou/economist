@@ -60,6 +60,14 @@ A simple way to set price by adding a markup to cost; fast for sanity checks but
 URL: https://sarahzou.com/wiki/pricing/foundations/customer-driven-pricing
 Customer-Driven Pricing is an approach that charges the highest perceived [WTP](/wiki/pricing/value-and-customers/willingness-to-pay) based on haggling; alienates loyal customers and trains aggressive bargainers.
 
+### Fractional Chief Economist
+URL: https://sarahzou.com/wiki/pricing/foundations/fractional-chief-economist
+A fractional chief economist gives a startup part-time access to PhD-level economic reasoning — pricing architecture, unit economics, forecasting, and investor-facing models — without a full-time strategy hire.
+
+### How to Choose a Pricing Consultant
+URL: https://sarahzou.com/wiki/pricing/foundations/how-to-choose-a-pricing-consultant
+Choosing a pricing consultant means matching the type of advisor — global firm, boutique agency, billing-platform team, or independent specialist — to your pricing model's actual complexity, cost structure, and stage.
+
 ### Maximization Pricing Strategy
 URL: https://sarahzou.com/wiki/pricing/foundations/maximization
 A short-term pricing approach that picks the price that maximizes a chosen metric (profit, revenue, or share) given demand and costs.
@@ -83,6 +91,10 @@ Value-Based Pricing (VBP) is a pricing approach where the price is determined by
 ### Pre-Seed, Seed, and Series A: What Changes at Each Funding Stage
 URL: https://sarahzou.com/wiki/pricing/fundraising/pre-seed-seed-series-a
 Pre-seed, seed, and Series A are market labels for different risk-reduction jobs—not fixed revenue, valuation, or check-size thresholds.
+
+### SAFE Notes: How Startup SAFEs Work and Dilute Founders
+URL: https://sarahzou.com/wiki/pricing/fundraising/safe-notes
+A SAFE gives an investor a contractual right to future equity when a defined event occurs; the cap, discount, capitalization definition, and later financing terms decide the shares issued.
 
 ### TAM, SAM, and SOM: How to Size a Startup Market
 URL: https://sarahzou.com/wiki/pricing/go-to-market/tam-sam-som
@@ -211,5 +223,5 @@ URL: https://sarahzou.com/newsletter/why-fractional-economist
 Why SaaS startups are hiring fractional chief economists and how they drive growth, pricing, and investor narrative.
 
 ---
-Generated: 2026-07-14
-Total wiki concepts: 35
+Generated: 2026-07-19
+Total wiki concepts: 38
