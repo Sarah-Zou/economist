@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Metadata } from 'next'
 import { ArrowRight, ArrowUpRight, CheckCircle2 } from 'lucide-react'
 import FAQSection from './FAQSection'
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://sarahzou.com/consulting/services/metrics-experimentation-sprint',
   },
-    openGraph: {
+  openGraph: {
     title: 'Unit Economics, Forecasting & Cost-Floor Modeling Sprint | Sarah Zou',
     description:
       'A focused 1–2 week sprint for technical founders of infrastructure and data platform companies: unit economics model, cost-floor analysis, forecasting logic, and fundraising-ready growth narrative.',
@@ -43,10 +44,22 @@ const PRIMARY_CTA_HREF = '/diagnostic-note'
 const SECONDARY_CTA_HREF = '#pricing'
 
 const WHAT_YOU_GET = [
-  { lead: 'A working KPI system', rest: 'with metric tree, north star, and thresholds your team will actually use' },
-  { lead: 'A unit economics model', rest: 'LTV, CAC, payback period, and gross margin by segment — not generic templates' },
-  { lead: 'A forecasting framework', rest: 'cohort-based revenue logic, scenario switches, and investor-readable outputs' },
-  { lead: 'A growth narrative', rest: 'the commercial story of where your economics stand and what to fix first' },
+  {
+    lead: 'A working KPI system',
+    rest: 'with metric tree, north star, and thresholds your team will actually use',
+  },
+  {
+    lead: 'A unit economics model',
+    rest: 'LTV, CAC, payback period, and gross margin by segment — not generic templates',
+  },
+  {
+    lead: 'A forecasting framework',
+    rest: 'cohort-based revenue logic, scenario switches, and investor-readable outputs',
+  },
+  {
+    lead: 'A growth narrative',
+    rest: 'the commercial story of where your economics stand and what to fix first',
+  },
 ]
 
 const DELIVERABLES = [
@@ -58,8 +71,14 @@ const DELIVERABLES = [
 ]
 
 const WHEN_FOUNDERS_HIRE = [
-  { lead: 'Forecasting feels made up', rest: '— no cohort logic, just spreadsheet guesses that change every quarter' },
-  { lead: 'Metrics exist but tell no story', rest: '— numbers without a connected commercial narrative' },
+  {
+    lead: 'Forecasting feels made up',
+    rest: '— no cohort logic, just spreadsheet guesses that change every quarter',
+  },
+  {
+    lead: 'Metrics exist but tell no story',
+    rest: '— numbers without a connected commercial narrative',
+  },
   {
     lead: 'Investor is asking about payback',
     rest: '— and you cannot answer with confidence',
@@ -167,7 +186,11 @@ export default function GrowthEconomicsSprint() {
     offers: [
       { name: 'Lite', price: 6000, description: 'Core KPI and unit economics structure.' },
       { name: 'Core', price: 9000, description: 'Broader revenue model and forecasting work.' },
-      { name: 'Pro', price: 12000, description: 'Investor-critical models with deeper segmentation.' },
+      {
+        name: 'Pro',
+        price: 12000,
+        description: 'Investor-critical models with deeper segmentation.',
+      },
     ],
   })
 
@@ -191,7 +214,7 @@ export default function GrowthEconomicsSprint() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
-      <div className="bg-page text-text">
+      <div className="consulting-editorial bg-page text-text">
         <main>
           {/* Hero */}
           <section className="bg-hero-tint">
@@ -199,11 +222,12 @@ export default function GrowthEconomicsSprint() {
               <div className="section-header max-w-[44rem]">
                 <span className="kicker-accent">Growth Economics Sprint</span>
                 <h1 className="mt-5 font-serif-playfair text-ink">
-                  Build the economics foundation your pricing decisions and fundraising diligence need
+                  Build the economics foundation your pricing decisions and fundraising diligence
+                  need
                 </h1>
                 <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
-                  For founders of AI-infrastructure, API, and data-platform companies (Seed–Series B)
-                  that need a working unit economics model, cost-floor analysis, and forecasting
+                  For founders of AI-infrastructure, API, and data-platform companies (Seed–Series
+                  B) that need a working unit economics model, cost-floor analysis, and forecasting
                   logic — built to support pricing decisions and fundraising diligence.
                 </p>
                 <p className="meta-note mt-6">
@@ -215,7 +239,7 @@ export default function GrowthEconomicsSprint() {
                     href={PRIMARY_CTA_HREF}
                     className={`${primaryButtonLg} w-full max-w-[360px] sm:w-auto`}
                   >
-                    Get a free diagnostic note
+                    Request a free diagnostic note
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
                   <Link href={SECONDARY_CTA_HREF} className="display-link">
@@ -226,7 +250,8 @@ export default function GrowthEconomicsSprint() {
                   <div>
                     <dt className="kicker-muted">Best for</dt>
                     <dd className="mt-2 text-[15px] leading-[1.55] text-ink">
-                      Messy forecasting, weak unit economics, or investor pressure for growth metrics
+                      Messy forecasting, weak unit economics, or investor pressure for growth
+                      metrics
                     </dd>
                   </div>
                   <div>
@@ -360,8 +385,8 @@ export default function GrowthEconomicsSprint() {
               </div>
 
               <p className="mx-auto mt-10 max-w-3xl rounded-card border border-brand/20 bg-brand-soft p-5 text-center text-[14px] font-medium leading-[1.65] text-brand-ink">
-                Not sure yet? Start with a free one-page diagnostic note — you see how I think before
-                anything is paid.
+                Not sure yet? Start with a free one-page diagnostic note — you see how I think
+                before anything is paid.
               </p>
             </div>
           </section>
@@ -411,7 +436,7 @@ export default function GrowthEconomicsSprint() {
               </p>
               <div className="mt-5 text-center">
                 <Link href={PRIMARY_CTA_HREF} className={outlineButton}>
-                  Get a free diagnostic note
+                  Request a free diagnostic note
                 </Link>
               </div>
             </div>
@@ -429,6 +454,20 @@ export default function GrowthEconomicsSprint() {
                     never built properly, or the company has outgrown the assumptions it started
                     with.
                   </p>
+                  <figure className="mt-8 max-w-[480px]">
+                    <div className="relative aspect-[3/2] overflow-hidden bg-page">
+                      <Image
+                        src="/images/service-growth-review-v3.webp"
+                        alt="An East Asian woman and a client reviewing forecast scenarios"
+                        fill
+                        sizes="(min-width: 768px) 420px, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <figcaption className="mt-3 border-t border-border-subtle pt-3 text-[11px] uppercase tracking-[0.16em] text-text-subtle">
+                      Forecast assumptions reviewed in context
+                    </figcaption>
+                  </figure>
                 </div>
                 <div>
                   <p className="kicker-muted mb-5">Common situations</p>
@@ -531,7 +570,7 @@ export default function GrowthEconomicsSprint() {
           {/* FAQ */}
           <section id="faq" className="section">
             <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
-              <div className="text-center">
+              <div>
                 <span className="kicker">FAQ</span>
                 <h2 className="mt-3 font-serif-playfair">Frequently asked questions</h2>
               </div>
@@ -554,7 +593,7 @@ export default function GrowthEconomicsSprint() {
                 </p>
                 <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                   <Link href={PRIMARY_CTA_HREF} className={primaryButtonLg}>
-                    Get a free diagnostic note
+                    Request a free diagnostic note
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
                   <Link href="/book" className={outlineButton}>

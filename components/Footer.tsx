@@ -9,13 +9,11 @@ const workLinks = [
 
 const resourceLinks = [
   { href: '/wiki/pricing', label: 'Pricing Wiki' },
-  { href: '/free-tools/pricing-model-matchmaker', label: 'Pricing Model Matchmaker' },
-  { href: '/cheat-sheets', label: 'Roadmap Download' },
+  { href: '/fundraising', label: 'Fundraising Library' },
   { href: '/newsletter', label: 'Newsletter' },
 ]
 
-const footerLink =
-  'text-[13px] uppercase tracking-[0.08em] leading-[1.6] text-text-muted transition-colors hover:text-ink'
+const footerLink = 'text-[14px] leading-[1.6] text-text-muted transition-colors hover:text-ink'
 
 const Footer = () => {
   return (
@@ -48,7 +46,7 @@ const Footer = () => {
               href="/diagnostic-note"
               className="mt-7 inline-flex items-center gap-1.5 text-[14px] font-semibold text-brand-ink transition-colors hover:text-brand-dark"
             >
-              Get a free diagnostic note
+              Request a free diagnostic note
             </Link>
           </div>
 
@@ -68,7 +66,7 @@ const Footer = () => {
 
           {/* Resources */}
           <div>
-            <p className="kicker-muted mb-4">Free resources</p>
+            <p className="kicker-muted mb-4">Resources</p>
             <ul className="space-y-3">
               {resourceLinks.map((link) => (
                 <li key={link.href}>
@@ -84,14 +82,15 @@ const Footer = () => {
           <div className="md:text-right">
             <p className="kicker-muted mb-4 md:text-right">Contact</p>
             <p className="mb-5 text-[14px] leading-[1.7] text-text-muted md:ml-auto md:max-w-[14rem]">
-              For commercial strategy, pricing, or GTM questions, the fastest path is the free consult.
+              For commercial strategy, pricing, or GTM questions, the fastest path is the free
+              consult.
             </p>
             <div className="flex items-center gap-3 md:justify-end">
               <Link
                 href="/contact"
                 aria-label="Contact Sarah Zou"
                 title="Contact Sarah Zou"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-[12px] bg-white text-text-muted transition-colors hover:bg-surface hover:text-ink"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-[8px] bg-white text-text-muted transition-colors hover:bg-surface hover:text-ink"
               >
                 <Mail className="h-4 w-4" />
               </Link>
@@ -101,7 +100,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 aria-label="Sarah Zou on LinkedIn"
                 title="Sarah Zou on LinkedIn"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-[12px] bg-white text-text-muted transition-colors hover:bg-surface hover:text-ink"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-[8px] bg-white text-text-muted transition-colors hover:bg-surface hover:text-ink"
               >
                 <Linkedin className="h-4 w-4" />
               </a>

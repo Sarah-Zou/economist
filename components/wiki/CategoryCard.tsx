@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 
 interface CategoryCardProps {
   title: string
@@ -8,43 +9,37 @@ interface CategoryCardProps {
   level: string
   icon?: string
   image?: string
+  conceptCount?: number
 }
 
-export default function CategoryCard({ title, slug, summary, level, image }: CategoryCardProps) {
+export default function CategoryCard({
+  title,
+  slug,
+  summary,
+  level,
+  conceptCount,
+}: CategoryCardProps) {
   return (
-    <Link href={`/wiki/pricing/${slug}`} className="block group">
-      <div
-        className="relative h-64 w-full overflow-hidden rounded-[1.45rem] bg-[#f3ede5] p-2.5 shadow-card transition-all duration-300 group-hover:-translate-y-0.5 group-"
-        style={{
-          backgroundImage: image
-            ? `url(${image})`
-            : 'linear-gradient(135deg, #eadfd5 0%, #f7f4f0 100%)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      >
-        <div className="relative h-full overflow-hidden rounded-[1.05rem]">
-          {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(16,24,40,0.8),rgba(16,24,40,0.22),rgba(16,24,40,0.04))] transition-all duration-300 group-hover:opacity-90"></div>
-
-          {/* Content */}
-          <div className="relative flex h-full flex-col justify-end p-6">
-            {/* Title - positioned at mid-bottom, moves up on hover */}
-            <div className="transform transition-transform duration-300 group-hover:-translate-y-4">
-              <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/72">
-                {level}
-              </p>
-              <h3 className="text-xl font-semibold text-white drop-shadow-lg">{title}</h3>
-            </div>
-
-            {/* Summary - appears on hover */}
-            <div className="transform translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-              <p className="mt-2 text-sm leading-relaxed text-white/88 drop-shadow-md">{summary}</p>
-            </div>
-          </div>
-        </div>
+    <Link
+      href={`/wiki/pricing/${slug}`}
+      className="group grid gap-5 border-b border-border-soft py-9 no-underline lg:grid-cols-[minmax(0,0.9fr)_minmax(15rem,1.1fr)_auto] lg:items-start lg:gap-10"
+    >
+      <div>
+        <p className="kicker-muted">{level}</p>
+        <h3 className="mt-3 font-serif-playfair text-[26px] font-medium leading-[1.2] text-ink">
+          {title}
+        </h3>
+        {typeof conceptCount === 'number' && (
+          <p className="mt-3 text-[11px] uppercase tracking-[0.13em] text-brand-ink">
+            {conceptCount} {conceptCount === 1 ? 'concept' : 'concepts'}
+          </p>
+        )}
       </div>
+      <p className="text-[15px] leading-[1.8] text-text-muted sm:text-[16px]">{summary}</p>
+      <ArrowRight
+        className="mt-1 hidden h-4 w-4 text-text-subtle transition-transform group-hover:translate-x-1 group-hover:text-ink lg:block"
+        aria-hidden
+      />
     </Link>
   )
 }

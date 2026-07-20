@@ -1,10 +1,12 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type { ReactNode } from 'react'
 import { Metadata } from 'next'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
-import { brandLink, outlineButton, primaryButton, primaryButtonLg } from '@/lib/brandStyles'
+import { brandLink, outlineButton, primaryButtonLg } from '@/lib/brandStyles'
 import { generateBreadcrumbJsonLd, generateServiceWithOffersJsonLd } from '@/lib/generateJsonLd'
 import { OG_IMAGE_CONSULTING } from '@/lib/seo'
+import FAQList from '@/components/FAQList'
 
 const PRIMARY_CTA_HREF = '/diagnostic-note'
 const SECONDARY_CTA_HREF = '/book'
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
 const CHALLENGES = [
   "You're launching an API, infrastructure product, or data platform and need a pricing architecture built on cost-floor logic — not a SaaS template.",
   "You're choosing between usage-based, credit-based, committed-use, or hybrid pricing and need to know which model survives technical-buyer adoption.",
-  "Your GTM motion is misaligned with how infrastructure or data-platform buyers evaluate, pilot, and buy.",
+  'Your GTM motion is misaligned with how infrastructure or data-platform buyers evaluate, pilot, and buy.',
   'Your unit economics or gross-margin story needs to hold up when an investor asks about cost floors, margin at scale, or hardware-software economics.',
   "You need a paid-pilot structure, ICP definition, or commercial packaging for a product category that doesn't have a ready benchmark.",
   'You want senior commercial strategy thinking — pricing, GTM, and fundraising economics — without a full-time strategy hire.',
@@ -121,28 +123,28 @@ const FAQ_ITEMS: Array<{
 }> = [
   {
     qSchema: "We're too early / pre-revenue.",
-    question: "\"We're too early / pre-revenue.\"",
+    question: '"We\'re too early / pre-revenue."',
     a: "If you're charging anything — or about to — the architecture decision is already in front of you. It's cheapest to fix before contracts pile up.",
   },
   {
     qSchema: 'Why two weeks, why fixed fee?',
     question: 'Why two weeks, why fixed fee?',
-    a: "You get a decision, not a dependency. A fixed fee keeps the work focused and the cost predictable.",
+    a: 'You get a decision, not a dependency. A fixed fee keeps the work focused and the cost predictable.',
   },
   {
-    qSchema: "Why you, not a pricing tool or a big firm?",
-    question: "Why you, not a pricing tool or a big firm?",
-    a: "An economist who operates an infrastructure company and builds these exact cost and pricing models — infra-specific, not generic SaaS.",
+    qSchema: 'Why you, not a pricing tool or a big firm?',
+    question: 'Why you, not a pricing tool or a big firm?',
+    a: 'An economist who operates an infrastructure company and builds these exact cost and pricing models — infra-specific, not generic SaaS.',
   },
   {
     qSchema: "We can't share our cost data.",
-    question: "\"We can't share our cost data.\"",
-    a: "We work under NDA, from ranges and your own categories.",
+    question: '"We can\'t share our cost data."',
+    a: 'We work under NDA, from ranges and your own categories.',
   },
   {
     qSchema: 'How should I start?',
     question: 'How should I start?',
-    a: "Most founders start with a free one-page diagnostic note — the lowest-risk way to see how I think before anything is paid. From there, the two-week Commercial Architecture Diagnostic is the usual next step. If you already know the work is broader, a deeper sprint may fit.",
+    a: 'Most founders start with a free one-page diagnostic note — the lowest-risk way to see how I think before anything is paid. From there, the two-week Commercial Architecture Diagnostic is the usual next step. If you already know the work is broader, a deeper sprint may fit.',
   },
   {
     qSchema: "What if I don't know exactly what I need?",
@@ -159,7 +161,7 @@ const FAQ_ITEMS: Array<{
 export default function ConsultingPage() {
   return (
     <>
-      <div className="bg-page text-text">
+      <div className="consulting-editorial bg-page text-text">
         <main>
           {/* Hero */}
           <section className="bg-hero-tint">
@@ -172,17 +174,14 @@ export default function ConsultingPage() {
                 </h1>
                 <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
                   Infrastructure and usage-based companies get handed pricing advice built for
-                  per-seat SaaS — and it misfits. The value metric drifts from the real cost
-                  driver, tiers cap on the wrong axis, the free tier leaks margin, and every
-                  enterprise deal is renegotiated from scratch. The error compounds with each
-                  contract you sign — and it&apos;s the first thing a serious investor probes.
+                  per-seat SaaS — and it misfits. The value metric drifts from the real cost driver,
+                  tiers cap on the wrong axis, the free tier leaks margin, and every enterprise deal
+                  is renegotiated from scratch. The error compounds with each contract you sign —
+                  and it&apos;s the first thing a serious investor probes.
                 </p>
                 <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-                  <Link
-                    href={PRIMARY_CTA_HREF}
-                    className={`${primaryButtonLg} w-full sm:w-auto`}
-                  >
-                    Get a free diagnostic note
+                  <Link href={PRIMARY_CTA_HREF} className={`${primaryButtonLg} w-full sm:w-auto`}>
+                    Request a free diagnostic note
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
                   <Link href={SECONDARY_CTA_HREF} className={`${outlineButton} w-full sm:w-auto`}>
@@ -196,14 +195,17 @@ export default function ConsultingPage() {
           {/* Is this for you? */}
           <section className="section">
             <div className="section-shell max-w-3xl">
-              <div className="section-header">
+              <div className="section-header-left">
                 <span className="kicker">Is this for you?</span>
                 <h2 className="section-title">Founders and operators come to me when</h2>
               </div>
               <ul className="mt-10 divide-y divide-border-soft border-y border-border-soft">
                 {CHALLENGES.map((item) => (
                   <li key={item} className="flex items-start gap-4 py-5">
-                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-text-subtle" aria-hidden />
+                    <CheckCircle2
+                      className="mt-1 h-5 w-5 flex-shrink-0 text-text-subtle"
+                      aria-hidden
+                    />
                     <span className="text-[16px] leading-[1.65] text-text">{item}</span>
                   </li>
                 ))}
@@ -219,14 +221,31 @@ export default function ConsultingPage() {
           </section>
 
           {/* Commercial Architecture Diagnostic — anchor tier */}
-          <section className="section section-alt">
-            <div className="section-shell max-w-5xl">
-              <div className="card-dark">
-                <span className="inline-flex rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-soft">
+          <section className="bg-ink text-white">
+            <div className="grid lg:grid-cols-[0.78fr_1.22fr]">
+              <figure className="relative min-h-[420px] overflow-hidden lg:min-h-full">
+                <Image
+                  src="/images/consulting-diagnostic-session-v3.webp"
+                  alt="An East Asian woman and a client reviewing a commercial diagnostic"
+                  fill
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className="object-cover"
+                />
+                <div
+                  className="absolute inset-0 bg-[linear-gradient(0deg,rgba(12,25,32,0.38),rgba(12,25,32,0.02))]"
+                  aria-hidden
+                />
+                <figcaption className="absolute bottom-5 left-5 right-5 border-t border-white/30 pt-3 text-[11px] uppercase tracking-[0.16em] text-white/[0.65]">
+                  The commercial system, designed from first principles
+                </figcaption>
+              </figure>
+
+              <div className="px-5 py-20 sm:px-7 sm:py-24 lg:px-14 lg:py-28 xl:px-20">
+                <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/[0.55]">
                   Anchor offer
-                </span>
+                </p>
                 <h2 className="mt-5 font-serif-playfair text-white">
-                  Commercial Architecture Diagnostic
+                  The Commercial Architecture Diagnostic
                 </h2>
                 <p className="mt-4 max-w-2xl text-[16px] leading-[1.75] text-white/80 sm:text-[18px]">
                   A two-week, fixed-fee audit that fixes your pricing, packaging, and unit economics
@@ -252,16 +271,25 @@ export default function ConsultingPage() {
                       </h3>
                       <ul className="mt-3 space-y-3">
                         {[
-                          { label: 'The right value metric', desc: 'one that tracks both value and cost.' },
-                          { label: 'A pricing & packaging recommendation', desc: 'tiers, credits, committed-use, and the price ceiling.' },
-                          { label: 'A unit-economics view', desc: 'cost to serve, the margin floor, and which customers actually make money.' },
+                          {
+                            label: 'The right value metric',
+                            desc: 'one that tracks both value and cost.',
+                          },
+                          {
+                            label: 'A pricing & packaging recommendation',
+                            desc: 'tiers, credits, committed-use, and the price ceiling.',
+                          },
+                          {
+                            label: 'A unit-economics view',
+                            desc: 'cost to serve, the margin floor, and which customers actually make money.',
+                          },
                           { label: 'A prioritized action list', desc: 'what to change first.' },
                         ].map((item) => (
                           <li key={item.label} className="flex items-start gap-2.5">
                             <span className="mt-2 inline-block h-1 w-1 flex-shrink-0 rounded-full bg-brand" />
                             <span className="text-[15px] leading-[1.6] text-white/80">
-                              <span className="font-semibold text-white">{item.label}</span>{' '}
-                              — {item.desc}
+                              <span className="font-semibold text-white">{item.label}</span> —{' '}
+                              {item.desc}
                             </span>
                           </li>
                         ))}
@@ -289,8 +317,8 @@ export default function ConsultingPage() {
                           US$6,000
                         </p>
                         <p className="mt-2 text-[13px] leading-[1.6] text-white/60">
-                          Fixed fee. 50% to start, 50% on delivery. No hourly billing, no
-                          open-ended retainer.
+                          Fixed fee. 50% to start, 50% on delivery. No hourly billing, no open-ended
+                          retainer.
                         </p>
                       </div>
 
@@ -318,9 +346,15 @@ export default function ConsultingPage() {
                       </div>
                     </div>
 
-                    <Link href={PRIMARY_CTA_HREF} className={`${primaryButton} w-full text-center`}>
-                      Start with a free diagnostic note
-                      <ArrowRight className="h-4 w-4" aria-hidden />
+                    <Link
+                      href={PRIMARY_CTA_HREF}
+                      className="group inline-flex items-center gap-2 self-start border-b border-white pb-1 text-[15px] font-medium text-white"
+                    >
+                      Request a free diagnostic note
+                      <ArrowRight
+                        className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                        aria-hidden
+                      />
                     </Link>
                   </div>
                 </div>
@@ -341,11 +375,14 @@ export default function ConsultingPage() {
               </div>
 
               <div className="mt-12 divide-y divide-border-soft border-y border-border-soft">
-                {OTHER_PATHS.map((item) => (
+                {OTHER_PATHS.map((item, index) => (
                   <article
                     key={item.title}
-                    className="grid gap-4 py-7 md:grid-cols-[1.35fr_1fr_auto] md:items-start md:gap-8"
+                    className="grid gap-5 py-8 md:grid-cols-[2.5rem_1.35fr_1fr_auto] md:items-start md:gap-8"
                   >
+                    <span className="text-[11px] tracking-[0.14em] text-text-subtle">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
                     <div>
                       <h3 className="font-serif-playfair text-[22px] leading-[1.25] text-ink">
                         {item.title}
@@ -371,7 +408,7 @@ export default function ConsultingPage() {
                     </dl>
                     <Link
                       href={item.href}
-                      className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-brand-ink hover:text-brand-dark md:justify-self-end md:pt-1"
+                      className="inline-flex items-center gap-1.5 border-b border-border pb-1 text-[14px] font-medium text-ink transition-colors hover:border-ink md:justify-self-end md:pt-1"
                     >
                       {item.cta}
                       <ArrowRight className="h-4 w-4" aria-hidden />
@@ -389,9 +426,7 @@ export default function ConsultingPage() {
             <div className="section-shell">
               <div className="section-header max-w-2xl">
                 <span className="kicker">Why founders work with me</span>
-                <h2 className="section-title">
-                  Operator context, not outside advice
-                </h2>
+                <h2 className="section-title">Operator context, not outside advice</h2>
               </div>
 
               <div className="mx-auto mt-12 max-w-3xl space-y-6 text-[16px] leading-[1.8] text-text-muted">
@@ -406,9 +441,7 @@ export default function ConsultingPage() {
                   </Link>
                   .
                 </p>
-                <p className="text-[14px] text-text-subtle">
-                  {CREDENTIALS.join(' · ')}
-                </p>
+                <p className="text-[14px] text-text-subtle">{CREDENTIALS.join(' · ')}</p>
                 {/* TODO(Sarah): add named, linkable client testimonials here when available. */}
               </div>
             </div>
@@ -417,7 +450,7 @@ export default function ConsultingPage() {
           {/* Process */}
           <section className="section">
             <div className="section-shell">
-              <div className="section-header">
+              <div className="section-header-left">
                 <span className="kicker">What working together looks like</span>
                 <h2 className="section-title">A simple process</h2>
               </div>
@@ -440,29 +473,21 @@ export default function ConsultingPage() {
           {/* FAQ */}
           <section id="faq" className="section section-alt">
             <div className="section-shell max-w-3xl">
-              <div className="section-header">
+              <div className="section-header-left">
                 <span className="kicker">FAQ</span>
                 <h2 className="section-title">Frequently asked questions</h2>
               </div>
-              <div className="mt-10 divide-y divide-border-soft border-y border-border-soft">
-                {FAQ_ITEMS.map((item) => (
-                  <article key={item.qSchema} className="py-5">
-                    <h3 className="text-[17px] font-semibold leading-[1.35] text-ink">
-                      {item.question}
-                    </h3>
-                    <p className="mt-3 max-w-[60ch] text-[15px] leading-[1.8] text-text-muted">
-                      {item.a}
-                    </p>
-                  </article>
-                ))}
-              </div>
+              <FAQList
+                className="mt-10"
+                items={FAQ_ITEMS.map((item) => ({ q: item.question, a: item.a }))}
+              />
             </div>
           </section>
 
           {/* Newsletter — just exploring */}
           <section className="section">
             <div className="section-shell max-w-3xl">
-              <div className="section-header">
+              <div className="section-header-left">
                 <span className="kicker">Just exploring?</span>
                 <h2 className="section-title">Get the occasional pricing note</h2>
                 <p className="mt-4 text-[15px] leading-[1.75] text-text-muted">
@@ -499,7 +524,7 @@ export default function ConsultingPage() {
                 </p>
                 <div className="mt-8">
                   <Link href={PRIMARY_CTA_HREF} className={primaryButtonLg}>
-                    Get a free diagnostic note
+                    Request a free diagnostic note
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
                 </div>

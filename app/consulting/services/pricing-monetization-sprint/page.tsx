@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Metadata } from 'next'
 import { ArrowRight, ArrowUpRight, CheckCircle2 } from 'lucide-react'
 import FAQSection from './FAQSection'
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://sarahzou.com/consulting/services/pricing-monetization-sprint',
   },
-    openGraph: {
+  openGraph: {
     title: 'Pricing & Monetization Sprint for AI-Infrastructure & Data Platforms | Sarah Zou',
     description:
       'Build a pricing architecture for a technically complex product. For founders of AI-infrastructure, API, and data-platform companies (Seed–Series B) needing pricing model, value metric, packaging, and rollout guidance in one focused sprint.',
@@ -61,12 +62,30 @@ const DELIVERABLES = [
 ]
 
 const WHEN_FOUNDERS_HIRE = [
-  { lead: 'You are launching', rest: 'and need a first pricing architecture — usage-based, credit-based, committed-use, or hybrid — built on your actual cost structure' },
-  { lead: 'You have traction', rest: 'but your pricing model is misaligned with how technical buyers evaluate and adopt your product' },
-  { lead: 'Your packaging is unclear', rest: 'and you need a paid-pilot or expansion structure that works for infrastructure buyers' },
-  { lead: 'You are debating', rest: 'usage-based vs credit-based vs committed-use vs hybrid — and need cost-floor logic, not a template' },
-  { lead: 'Your current pricing', rest: 'was designed for SaaS but your product is infrastructure or a data platform — the model needs to match' },
-  { lead: 'You need clearer pricing logic', rest: 'for investors, customers, or internal alignment on a technically complex product' },
+  {
+    lead: 'You are launching',
+    rest: 'and need a first pricing architecture — usage-based, credit-based, committed-use, or hybrid — built on your actual cost structure',
+  },
+  {
+    lead: 'You have traction',
+    rest: 'but your pricing model is misaligned with how technical buyers evaluate and adopt your product',
+  },
+  {
+    lead: 'Your packaging is unclear',
+    rest: 'and you need a paid-pilot or expansion structure that works for infrastructure buyers',
+  },
+  {
+    lead: 'You are debating',
+    rest: 'usage-based vs credit-based vs committed-use vs hybrid — and need cost-floor logic, not a template',
+  },
+  {
+    lead: 'Your current pricing',
+    rest: 'was designed for SaaS but your product is infrastructure or a data platform — the model needs to match',
+  },
+  {
+    lead: 'You need clearer pricing logic',
+    rest: 'for investors, customers, or internal alignment on a technically complex product',
+  },
 ]
 
 const WORKSTREAMS = [
@@ -177,15 +196,30 @@ export default function PricingDiagnosticRevenueBoost() {
       'Build a pricing architecture for a technically complex product across model, value metric, packaging, cost-floor logic, and rollout in 1–2 weeks.',
     url: SERVICE_URL,
     offers: [
-      { name: 'Lite', price: 5000, description: 'Defendable first pricing structure and package design.' },
-      { name: 'Core', price: 9000, description: 'Broader reset across model, metric, packaging, and rollout.' },
-      { name: 'Pro', price: 18000, description: 'Complex or investor-critical pricing with deeper analysis.' },
+      {
+        name: 'Lite',
+        price: 5000,
+        description: 'Defendable first pricing structure and package design.',
+      },
+      {
+        name: 'Core',
+        price: 9000,
+        description: 'Broader reset across model, metric, packaging, and rollout.',
+      },
+      {
+        name: 'Pro',
+        price: 18000,
+        description: 'Complex or investor-critical pricing with deeper analysis.',
+      },
     ],
   })
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: 'Home', url: '/' },
     { name: 'Consulting', url: '/consulting' },
-    { name: 'Pricing & Monetization Sprint', url: '/consulting/services/pricing-monetization-sprint' },
+    {
+      name: 'Pricing & Monetization Sprint',
+      url: '/consulting/services/pricing-monetization-sprint',
+    },
   ])
 
   return (
@@ -199,7 +233,7 @@ export default function PricingDiagnosticRevenueBoost() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
-      <div className="bg-page text-text">
+      <div className="consulting-editorial bg-page text-text">
         <main>
           {/* Hero */}
           <section className="bg-hero-tint">
@@ -207,11 +241,12 @@ export default function PricingDiagnosticRevenueBoost() {
               <div className="section-header max-w-[44rem]">
                 <span className="kicker-accent">Pricing &amp; Monetization Sprint</span>
                 <h1 className="mt-5 font-serif-playfair text-ink">
-                  Build a pricing architecture your technical buyers can adopt and your investors can underwrite
+                  Build a pricing architecture your technical buyers can adopt and your investors
+                  can underwrite
                 </h1>
                 <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
-                  For founders of AI-infrastructure, API, and data-platform companies (Seed–Series B)
-                  who need more than a quick opinion. We work across pricing model, value metric,
+                  For founders of AI-infrastructure, API, and data-platform companies (Seed–Series
+                  B) who need more than a quick opinion. We work across pricing model, value metric,
                   packaging, price logic, and rollout — built for products where generic SaaS
                   frameworks fall short.
                 </p>
@@ -224,7 +259,7 @@ export default function PricingDiagnosticRevenueBoost() {
                     href={PRIMARY_CTA_HREF}
                     className={`${primaryButtonLg} w-full max-w-[360px] sm:w-auto`}
                   >
-                    Get a free diagnostic note
+                    Request a free diagnostic note
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
                   <Link href={SECONDARY_CTA_HREF} className="display-link">
@@ -369,8 +404,8 @@ export default function PricingDiagnosticRevenueBoost() {
               </div>
 
               <p className="mx-auto mt-10 max-w-3xl rounded-card border border-brand/20 bg-brand-soft p-5 text-center text-[14px] font-medium leading-[1.65] text-brand-ink">
-                Not sure yet? Start with a free one-page diagnostic note — you see how I think before
-                anything is paid.
+                Not sure yet? Start with a free one-page diagnostic note — you see how I think
+                before anything is paid.
               </p>
             </div>
           </section>
@@ -420,7 +455,7 @@ export default function PricingDiagnosticRevenueBoost() {
               </p>
               <div className="mt-5 text-center">
                 <Link href={PRIMARY_CTA_HREF} className={outlineButton}>
-                  Get a free diagnostic note
+                  Request a free diagnostic note
                 </Link>
               </div>
             </div>
@@ -438,6 +473,20 @@ export default function PricingDiagnosticRevenueBoost() {
                     strong to begin with, or the company has outgrown something that used to be good
                     enough.
                   </p>
+                  <figure className="mt-8 max-w-[480px]">
+                    <div className="relative aspect-[3/2] overflow-hidden bg-page">
+                      <Image
+                        src="/images/service-pricing-session-v3.webp"
+                        alt="An East Asian woman and a client comparing pricing structures"
+                        fill
+                        sizes="(min-width: 768px) 420px, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <figcaption className="mt-3 border-t border-border-subtle pt-3 text-[11px] uppercase tracking-[0.16em] text-text-subtle">
+                      A working session focused on the pricing decision
+                    </figcaption>
+                  </figure>
                 </div>
                 <div>
                   <p className="kicker-muted mb-5">Common situations</p>
@@ -541,7 +590,7 @@ export default function PricingDiagnosticRevenueBoost() {
           {/* FAQ */}
           <section id="faq" className="section">
             <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
-              <div className="text-center">
+              <div>
                 <span className="kicker">FAQ</span>
                 <h2 className="mt-3 font-serif-playfair">Frequently asked questions</h2>
               </div>
@@ -562,7 +611,7 @@ export default function PricingDiagnosticRevenueBoost() {
                 </p>
                 <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                   <Link href={PRIMARY_CTA_HREF} className={primaryButtonLg}>
-                    Get a free diagnostic note
+                    Request a free diagnostic note
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
                   <Link href="/book" className={outlineButton}>

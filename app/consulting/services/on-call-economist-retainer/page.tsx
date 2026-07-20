@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Metadata } from 'next'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import FAQSection from './FAQSection'
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://sarahzou.com/consulting/services/on-call-economist-retainer',
   },
-    openGraph: {
+  openGraph: {
     title: 'Fractional or Embedded Commercial Strategy Support | Sarah Zou',
     description:
       'Ongoing commercial strategy support for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B) — pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and board prep without hiring a full-time strategy or finance leader before you need one.',
@@ -211,7 +212,7 @@ export default function FractionalChiefEconomistRetainer() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
-      <div className="bg-page text-text">
+      <div className="consulting-editorial bg-page text-text">
         <main>
           {/* Hero */}
           <section className="bg-hero-tint">
@@ -223,8 +224,9 @@ export default function FractionalChiefEconomistRetainer() {
                 </h1>
                 <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
                   Ongoing support across pricing architecture, GTM for technical buyers, unit
-                  economics, cost-floor modeling, and board prep — for founders of AI-infrastructure,
-                  API, and data-platform companies (Seed–Series B) at any growth stage.
+                  economics, cost-floor modeling, and board prep — for founders of
+                  AI-infrastructure, API, and data-platform companies (Seed–Series B) at any growth
+                  stage.
                 </p>
                 <p className="meta-note mt-6">
                   Most teams start with a free diagnostic note or a sprint. Retainer clients get
@@ -235,7 +237,7 @@ export default function FractionalChiefEconomistRetainer() {
                     href={PRIMARY_CTA_HREF}
                     className={`${primaryButtonLg} w-full max-w-[360px] sm:w-auto`}
                   >
-                    Get a free diagnostic note
+                    Request a free diagnostic note
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
                   <Link href={SECONDARY_CTA_HREF} className="display-link">
@@ -395,6 +397,20 @@ export default function FractionalChiefEconomistRetainer() {
                     — and it&apos;s not yet the right time to hire a full-time CFO or Head of
                     Strategy.
                   </p>
+                  <figure className="mt-8 max-w-[480px]">
+                    <div className="relative aspect-[3/2] overflow-hidden bg-page">
+                      <Image
+                        src="/images/service-embedded-advisory-v3.webp"
+                        alt="An East Asian woman and a client in an ongoing strategy session"
+                        fill
+                        sizes="(min-width: 768px) 420px, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <figcaption className="mt-3 border-t border-border-subtle pt-3 text-[11px] uppercase tracking-[0.16em] text-text-subtle">
+                      Ongoing advisory, close to the operating cadence
+                    </figcaption>
+                  </figure>
                 </div>
                 <div>
                   <p className="kicker-muted mb-5">Common situations</p>
@@ -435,7 +451,9 @@ export default function FractionalChiefEconomistRetainer() {
                         {area.items.map((item) => (
                           <li key={item} className="flex items-start gap-2.5">
                             <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
-                            <span className="text-[14px] leading-[1.6] text-text-muted">{item}</span>
+                            <span className="text-[14px] leading-[1.6] text-text-muted">
+                              {item}
+                            </span>
                           </li>
                         ))}
                       </ul>
@@ -451,9 +469,7 @@ export default function FractionalChiefEconomistRetainer() {
             <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
               <div className="mx-auto max-w-3xl text-center">
                 <span className="kicker">Onboarding</span>
-                <h2 className="mt-3 font-serif-playfair">
-                  Up and running within two weeks
-                </h2>
+                <h2 className="mt-3 font-serif-playfair">Up and running within two weeks</h2>
               </div>
               <div className="mx-auto mt-14 grid max-w-5xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
                 {PROCESS_STEPS.map((step) => (
@@ -568,7 +584,7 @@ export default function FractionalChiefEconomistRetainer() {
           {/* FAQ */}
           <section id="faq" className="section">
             <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
-              <div className="text-center">
+              <div>
                 <span className="kicker">FAQ</span>
                 <h2 className="mt-3 font-serif-playfair">Frequently asked questions</h2>
               </div>
@@ -587,12 +603,12 @@ export default function FractionalChiefEconomistRetainer() {
                 </h2>
                 <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
                   Start with a free one-page diagnostic note, or book a 15-min consult to discuss
-                  scope, cadence, and whether a retainer is the right fit given your growth stage and
-                  commercial complexity.
+                  scope, cadence, and whether a retainer is the right fit given your growth stage
+                  and commercial complexity.
                 </p>
                 <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                   <Link href={PRIMARY_CTA_HREF} className={primaryButtonLg}>
-                    Get a free diagnostic note
+                    Request a free diagnostic note
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </Link>
                   <Link href={CONSULT_CTA_HREF} className={outlineButton}>
@@ -642,7 +658,7 @@ export default function FractionalChiefEconomistRetainer() {
                 name: 'What does onboarding look like?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Weeks 0–2: scope & access → baseline metrics review → first pricing/test move → first Economist\'s Board Pack. Most teams are fully up and running by the end of week 2.',
+                  text: "Weeks 0–2: scope & access → baseline metrics review → first pricing/test move → first Economist's Board Pack. Most teams are fully up and running by the end of week 2.",
                 },
               },
               {

@@ -29,6 +29,13 @@ export default function WikiLayout({
 }: WikiLayoutProps) {
   // Default to 3:1 ratio, but allow custom ratio like "7:5" or "9:3"
   const getGridClasses = () => {
+    if (customGridRatio === '10:2') {
+      return {
+        container: 'grid grid-cols-1 gap-10 lg:grid-cols-12',
+        main: 'lg:col-span-10',
+        sidebar: 'lg:col-span-2',
+      }
+    }
     if (customGridRatio === '9:3') {
       return {
         container: 'grid grid-cols-1 lg:grid-cols-12 gap-8',

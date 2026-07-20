@@ -61,8 +61,8 @@ module.exports = {
         elevated: '0 28px 60px -34px rgba(15, 23, 42, 0.28)',
       },
       borderRadius: {
-        control: '0.875rem',
-        card: '1.25rem',
+        control: '0.5rem',
+        card: '0.75rem',
       },
     },
   },

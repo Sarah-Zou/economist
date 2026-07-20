@@ -28,7 +28,7 @@ export function WikiMarkdownHtml({ markdown, className }: WikiMarkdownHtmlProps)
   return (
     <div className={className}>
       <ReactMarkdown
-        remarkPlugins={[remarkGfm, remarkMath]}
+        remarkPlugins={[remarkGfm, [remarkMath, { singleDollarTextMath: false }]]}
         rehypePlugins={[rehypeRaw, rehypeKatex]}
         components={createWikiMarkdownComponents()}
       >

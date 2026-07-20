@@ -1,12 +1,14 @@
 ---
 title: "Subscription model"
-metaTitle: "Subscription model: Definition and Best Practices"
+metaTitle: "Subscription Model: When Recurring Pricing Fits and How to Run It"
+metaDescription: "When subscriptions fit: natural frequency, LTV/CAC math with a worked example, monthly vs. annual trade-offs, and the billing hygiene that protects recurring revenue."
 oneLiner: "A pricing model where customers pay repeatedly (monthly/annual) for ongoing access, usage, or replenishment—optimizing predictability and lifetime value."
 prereqs: []
 tags: ["subscription model", "recurring revenue", "saas pricing", "retention", "churn", "billing", "hybrid pricing"]
 readingTime: 8
-lastUpdated: "2026-02-06"
+lastUpdated: "2026-07-19"
 owner: "Dr. Sarah Zou"
+canonical: "https://sarahzou.com/wiki/pricing/models-and-metering/subscription-model"
 ---
 
 ## Snapshot (TL;DR)
@@ -52,12 +54,6 @@ Imagine your customer base as a bucket. New customers are water being poured in 
 
 * **Traditional Sales:** You fill the bucket, then dump it out to sell again.
 * **Subscription:** You try to plug the holes so the water level (revenue) constantly rises as you pour more in.
-
-### Rules of thumb
-
-* If customers don't get clear value within the **first 1–2 billing cycles**, churn spikes.
-* **CAC Payback Period:** In subscriptions, you collect cash slowly. You must ensure your **Customer Lifetime Value (CLTV)** exceeds **Customer Acquisition Cost (CAC)** by at least 3:1 (if 1:1, you're losing money; if 5:1, you aren't spending enough on growth), and you recover CAC in <12 months.
-* Use annual billing to reduce churn and improve cash flow **only if** the value is continuous and measurable.
 
 ### Worked example (simple)
 

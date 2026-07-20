@@ -4,7 +4,7 @@ export default function PricingWikiNotFound() {
   return (
     <div className="min-h-screen bg-page flex items-center justify-center px-4">
       <div className="max-w-2xl mx-auto text-center">
-        <h1 className="font-serif-playfair text-[32px] sm:text-[36px] font-bold text-text mb-4">
+        <h1 className="font-serif-playfair mb-4">
           Page not found
         </h1>
         <p className="text-base sm:text-[17px] text-text mb-8 leading-[1.65]">

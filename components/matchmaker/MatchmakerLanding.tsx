@@ -27,7 +27,7 @@ export function MatchmakerLanding() {
           </div>
 
           <p className="kicker">Interactive tool</p>
-          <h1 className="mt-5 font-serif-playfair text-3xl font-semibold tracking-tight text-text sm:text-5xl">
+          <h1 className="mt-5 font-serif-playfair tracking-tight">
             Pricing Model Matchmaker
           </h1>
 
@@ -40,7 +40,7 @@ export function MatchmakerLanding() {
           <button
             type="button"
             onClick={() => setStarted(true)}
-            className="mt-7 inline-flex min-h-12 w-full max-w-xs items-center justify-center gap-2 rounded-[14px] bg-brand px-6 py-3 text-base font-semibold text-white shadow-card transition hover:bg-brand  sm:mt-8 sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
+            className="mt-7 inline-flex min-h-12 w-full max-w-xs items-center justify-center gap-2 rounded-[8px] bg-brand px-6 py-3 text-base font-semibold text-white transition hover:bg-brand-ink sm:mt-8 sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
           >
             Start the Matchmaker
             <ArrowRight className="h-5 w-5" />
@@ -51,7 +51,7 @@ export function MatchmakerLanding() {
           </p>
 
           <section className="mx-auto mt-16 w-full max-w-2xl" id="faq">
-            <h2 className="mb-6 text-center font-serif-playfair text-2xl font-semibold text-text sm:mb-8 sm:text-[28px]">
+            <h2 className="mb-6 text-center font-serif-playfair sm:mb-8">
               Frequently Asked Questions
             </h2>
             <div className="space-y-4 sm:space-y-6 text-left">

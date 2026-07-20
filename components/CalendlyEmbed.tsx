@@ -9,12 +9,7 @@ interface CalendlyEmbedProps {
 
 export default function CalendlyEmbed({ url }: CalendlyEmbedProps) {
   const widgetRef = useRef<HTMLDivElement>(null)
-  const [height, setHeight] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return `${window.innerHeight - 250}px`
-    }
-    return 'calc(100vh - 250px)'
-  })
+  const [height, setHeight] = useState<string>('calc(100vh - 250px)')
 
   // Add hide_gdpr_banner parameter to URL
   const embedUrl = (() => {
@@ -32,7 +27,7 @@ export default function CalendlyEmbed({ url }: CalendlyEmbedProps) {
   useEffect(() => {
     // Update height on window resize
     const updateHeight = () => {
-      const newHeight = window.innerHeight - 250
+      const newHeight = Math.max(600, window.innerHeight - 250)
       setHeight(`${newHeight}px`)
     }
 

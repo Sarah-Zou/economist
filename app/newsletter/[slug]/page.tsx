@@ -254,7 +254,10 @@ function splitBodyAroundTable(body: string): {
   return {
     before: lines.slice(0, tableStart).join('\n').trim(),
     hasTable: true,
-    after: lines.slice(tableEnd + 1).join('\n').trim(),
+    after: lines
+      .slice(tableEnd + 1)
+      .join('\n')
+      .trim(),
   }
 }
 
@@ -328,7 +331,8 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
         {/* H2 sections */}
         {bodySections.map((section, i) => {
           const isMatrixSection =
-            articleConfig?.matrixHeadingSlug && section.headingId === articleConfig.matrixHeadingSlug
+            articleConfig?.matrixHeadingSlug &&
+            section.headingId === articleConfig.matrixHeadingSlug
           const isWorksheetSection =
             articleConfig?.worksheetHeadingSlug &&
             section.headingId === articleConfig.worksheetHeadingSlug
@@ -339,7 +343,7 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
               {section.heading && section.headingId && (
                 <h2
                   id={section.headingId}
-                  className="newsletter-h2 font-serif-playfair text-[24px] sm:text-[28px] font-semibold text-text mt-16 mb-5 scroll-mt-24 leading-tight"
+                  className="newsletter-h2 font-serif-playfair mt-16 mb-5 scroll-mt-24"
                 >
                   {section.heading}
                 </h2>
@@ -388,7 +392,7 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
                   variant="strong"
                   href="/diagnostic-note"
                   copy={articleConfig.worksheetCtaCopy}
-                  buttonLabel="Get a free diagnostic note"
+                  buttonLabel="Request a free diagnostic note"
                 />
               )}
             </section>
@@ -422,11 +426,10 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
       />
 
       <div className="max-w-[90rem] mx-auto px-5 sm:px-7 lg:px-8 pt-12 sm:pt-16 pb-20">
-
         {/* ── Article header (above hero) ──────────────────────── */}
         <header className="max-w-[700px] mx-auto xl:mx-0 mb-8">
           <p className="kicker-accent mb-4">Newsletter</p>
-          <h1 className="font-serif-playfair text-[32px] sm:text-[40px] font-bold text-text mb-4 leading-[1.1] tracking-[-0.025em]">
+          <h1 className="font-serif-playfair mb-4 text-[length:clamp(2rem,1.6vw+1.3rem,3rem)]">
             {post.title}
           </h1>
           {post.dek && (
@@ -435,10 +438,10 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
             </p>
           )}
           <div className="flex items-center text-text-muted text-[15px] gap-1.5">
-            <time dateTime={String(post.date).split('T')[0]}>
-              {formatPostDate(post.date)}
-            </time>
-            <span aria-hidden="true" className="opacity-40 text-[18px] leading-none">·</span>
+            <time dateTime={String(post.date).split('T')[0]}>{formatPostDate(post.date)}</time>
+            <span aria-hidden="true" className="opacity-40 text-[18px] leading-none">
+              ·
+            </span>
             <span>{post.author}</span>
           </div>
         </header>
@@ -471,7 +474,6 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
 
         {/* ── Main layout: sidebar + content ───────────────────── */}
         <div className="flex gap-12 items-start">
-
           {/* Sticky desktop TOC sidebar */}
           {tocItems.length > 0 && (
             <aside className="hidden xl:block w-64 flex-shrink-0">
@@ -483,33 +485,39 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
 
           {/* Main content column */}
           <div className="flex-1 min-w-0 max-w-[700px]">
-
             {/* Article body */}
-            <article>
-              {articleConfig ? renderConfigArticle() : renderGenericArticle()}
-            </article>
+            <article>{articleConfig ? renderConfigArticle() : renderGenericArticle()}</article>
 
             {/* ── Collapsible references ──────────────────────── */}
             {referencesMarkdown && (
               <details className="mt-14 border-t border-border-soft pt-6 group">
                 <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden text-[13px] font-semibold uppercase tracking-[0.14em] text-text-muted hover:text-text transition-colors select-none flex items-center gap-2">
                   <span>References</span>
-                  <span className="text-[11px] font-normal normal-case tracking-normal opacity-60">(tap to expand)</span>
+                  <span className="text-[11px] font-normal normal-case tracking-normal opacity-60">
+                    (tap to expand)
+                  </span>
                 </summary>
                 <div className="mt-4 pl-1">
                   <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
                     components={{
                       h3: ({ children, ...props }: any) => (
-                        <h3 className="font-serif-playfair text-[18px] font-semibold text-text mb-4 mt-2" {...props}>
+                        <h3
+                          className="font-serif-playfair text-[18px] font-semibold text-text mb-4 mt-2"
+                          {...props}
+                        >
                           {children}
                         </h3>
                       ),
                       ol: ({ children, ...props }: any) => (
-                        <ol className="list-decimal pl-5 space-y-2.5" {...props}>{children}</ol>
+                        <ol className="list-decimal pl-5 space-y-2.5" {...props}>
+                          {children}
+                        </ol>
                       ),
                       li: ({ children, ...props }: any) => (
-                        <li className="text-[14px] text-text-muted leading-[1.65]" {...props}>{children}</li>
+                        <li className="text-[14px] text-text-muted leading-[1.65]" {...props}>
+                          {children}
+                        </li>
                       ),
                       a: ({ href, children, ...props }: any) => (
                         <a
@@ -523,7 +531,9 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
                         </a>
                       ),
                       p: ({ children, ...props }: any) => (
-                        <p className="text-[14px] text-text-muted leading-[1.65] mb-2" {...props}>{children}</p>
+                        <p className="text-[14px] text-text-muted leading-[1.65] mb-2" {...props}>
+                          {children}
+                        </p>
                       ),
                     }}
                   >
@@ -540,25 +550,42 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
                   remarkPlugins={[remarkGfm]}
                   components={{
                     p: ({ children, ...props }: any) => (
-                      <p className="text-[15px] text-text-muted leading-[1.75] mb-3 last:mb-0" {...props}>{children}</p>
+                      <p
+                        className="text-[15px] text-text-muted leading-[1.75] mb-3 last:mb-0"
+                        {...props}
+                      >
+                        {children}
+                      </p>
                     ),
                     a: ({ href, children, ...props }: any) => {
                       const isInternal = href?.startsWith('/')
                       if (isInternal && href) {
                         return (
-                          <Link href={href} className="text-brand-ink hover:underline font-medium" {...props}>
+                          <Link
+                            href={href}
+                            className="text-brand-ink hover:underline font-medium"
+                            {...props}
+                          >
                             {children}
                           </Link>
                         )
                       }
                       return (
-                        <a href={href} className="text-brand-ink hover:underline" target="_blank" rel="noopener noreferrer" {...props}>
+                        <a
+                          href={href}
+                          className="text-brand-ink hover:underline"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          {...props}
+                        >
                           {children}
                         </a>
                       )
                     },
                     em: ({ children, ...props }: any) => (
-                      <em className="italic" {...props}>{children}</em>
+                      <em className="italic" {...props}>
+                        {children}
+                      </em>
                     ),
                   }}
                 >
@@ -587,7 +614,6 @@ export default function NewsletterPost({ params }: { params: { slug: string } })
                 Book a Free Consultation
               </Link>
             </div>
-
           </div>
         </div>
       </div>

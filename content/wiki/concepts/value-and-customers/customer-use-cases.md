@@ -1,12 +1,14 @@
 ---
 title: "Customer Use Cases"
-metaTitle: "Customer Use Cases: Definition, Framework, Steps"
+metaTitle: "Customer Use Cases: The Problem-Persona-Context Cards That Drive Pricing"
+metaDescription: "How to define customer use cases (problem + persona + context + outcome), pick the 3–7 that drive revenue, and map each to plans, pricing metrics, and packaging."
 oneLiner: "Structured descriptions of the problem, persona, context, and outcomes that define how customers get value from your product and how you should price."
 prereqs: ["Segmentation", "Jobs-to-be-Done", "Value Metrics", "Packaging & Bundling"]
 tags: ["Customer Use Cases", "Segmentation", "Jobs-to-be-Done", "Monetization", "B2B SaaS", "Pricing Strategy", "Packaging"]
 readingTime: 10
-lastUpdated: "2025-12-30"
+lastUpdated: "2026-07-19"
 owner: "Dr. Sarah Zou"
+canonical: "https://sarahzou.com/wiki/pricing/value-and-customers/customer-use-cases"
 ---
 
 ## Snapshot (TL;DR)
@@ -83,9 +85,9 @@ For startup founders, customer use cases are the bridge between product features
 
 ## Key Facts
 
-- **98% of new users:** **98% of new users** will churn within the first 14 days if they do not experience the product's core value (the "Aha! moment") through a specific use case. [Amplitude 2025 Product Benchmark Report](https://amplitude.com/blog/time-to-value-drives-user-retention)
-- **30% Conversion Lift:** Clear use-case-based marketing can increase landing page conversions by up to **30%** compared to feature-heavy messaging. [Adobe Summit](https://business.adobe.com/summit/2025/sessions/data-collaboration-with-adobe-how-alterra-achieved-s507.html)
-- **25% faster:** Sales cycles are often **25% faster** when reps lead with a specific use case rather than a general product demo. [Articsledge](https://www.articsledge.com/post/ai-micro-segmentation)
+- **72% of new products** miss their revenue and profit goals — most commonly because they answer a question nobody was asking, i.e., they were built without validating the use case and its [willingness-to-pay](/wiki/pricing/value-and-customers/willingness-to-pay). ([Monetizing Innovation (2016)](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840))
+- **80% of features are rarely or never used:** Pendo's analysis of product usage data found roughly **80% of features in the average software product see little to no use** — the direct cost of building for imagined rather than validated use cases. ([Pendo, Feature Adoption Report (2019)](https://www.pendo.io/resources/the-2019-feature-adoption-report/))
+- **Revenue coverage benchmark:** healthy B2B SaaS pricing typically concentrates on **3–7 primary use cases covering 70–85% of revenue**; plans anchored to more use cases than that stop being explainable in one sentence (see rules of thumb below).
 
 ## How do you implement customer use cases step-by-step?
 

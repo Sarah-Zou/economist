@@ -41,7 +41,7 @@ export default function DownloadRedirector({ download, slug }: { download: Downl
       <div className="min-h-screen bg-[#fff8f2] flex items-center justify-center">
         <div className="text-center">
           <div className="text-red-500 text-6xl mb-4">⚠️</div>
-          <h1 className="text-xl font-semibold text-[#222] mb-2">Download Error</h1>
+          <h1 className="text-[#222] mb-2">Download Error</h1>
           <p className="text-[#4b636e] mb-4">{error}</p>
           <a 
             href={`/downloads/${download.filename}`} 
@@ -57,8 +57,8 @@ export default function DownloadRedirector({ download, slug }: { download: Downl
   return (
     <div className="min-h-screen bg-[#fff8f2] flex items-center justify-center">
       <div className="text-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#ff5722] mx-auto mb-4"></div>
-        <h1 className="text-xl font-semibold text-[#222] mb-2">Preparing your download...</h1>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand mx-auto mb-4"></div>
+        <h1 className="text-[#222] mb-2">Preparing your download...</h1>
         <p className="text-[#4b636e] mb-2">{download.title}</p>
         <p className="text-sm text-[#666] mb-4">Tracking download analytics...</p>
         <p className="text-sm text-[#666]">If download doesn't start automatically, <a href={`/downloads/${download.filename}`} className="text-[#c2410c] hover:underline">click here</a></p>

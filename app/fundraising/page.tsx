@@ -47,7 +47,7 @@ export default function FundraisingHubPage() {
       <div className="w-full">
         <div className="mb-14">
           <p className="kicker-accent">Reference library</p>
-          <h1 className="mt-4 mb-4 font-serif-playfair text-[40px] font-bold text-text sm:text-[48px]">
+          <h1 className="mt-4 mb-4 font-serif-playfair">
             Startup Fundraising Wiki
           </h1>
           <div className="prose prose-lg mb-6 text-base text-text sm:text-[17px] leading-[1.75]">
@@ -70,7 +70,7 @@ export default function FundraisingHubPage() {
         <section className="mb-12">
           <div className="mb-6 flex items-center gap-3">
             <div className="h-8 w-px bg-brand" />
-            <h2 className="font-serif-playfair text-2xl font-semibold text-text sm:text-[28px]">
+            <h2 className="font-serif-playfair">
               Explore Guides
             </h2>
           </div>

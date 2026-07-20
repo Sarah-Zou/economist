@@ -88,6 +88,18 @@ Strategic pricing is a systematic, value-based framework that aligns marketing, 
 URL: https://sarahzou.com/wiki/pricing/foundations/value-based-pricing
 Value-Based Pricing (VBP) is a pricing approach where the price is determined by the value customers perceive and their willingness to pay for that product.
 
+### Convertible Notes: Conversion, Interest, and Founder Dilution
+URL: https://sarahzou.com/wiki/pricing/fundraising/convertible-notes
+A convertible note is startup debt that usually converts into equity at a later financing; principal, accrued interest, the cap or discount, and the capitalization definition determine the shares issued.
+
+### Dilution and Cap Tables: Model Startup Ownership Correctly
+URL: https://sarahzou.com/wiki/pricing/fundraising/dilution-cap-tables
+A cap table records who owns which securities; a dilution model shows how financing, options, convertibles, and other issuances change each holder's percentage and economic outcome.
+
+### Liquidation Preferences: How Startup Exit Waterfalls Work
+URL: https://sarahzou.com/wiki/pricing/fundraising/liquidation-preferences
+A liquidation preference determines who gets paid first in a startup exit; its multiple, participation, seniority, dividends, and conversion terms can matter more than ownership percentages at modest outcomes.
+
 ### Pre-Seed, Seed, and Series A: What Changes at Each Funding Stage
 URL: https://sarahzou.com/wiki/pricing/fundraising/pre-seed-seed-series-a
 Pre-seed, seed, and Series A are market labels for different risk-reduction jobs—not fixed revenue, valuation, or check-size thresholds.
@@ -95,6 +107,14 @@ Pre-seed, seed, and Series A are market labels for different risk-reduction jobs
 ### SAFE Notes: How Startup SAFEs Work and Dilute Founders
 URL: https://sarahzou.com/wiki/pricing/fundraising/safe-notes
 A SAFE gives an investor a contractual right to future equity when a defined event occurs; the cap, discount, capitalization definition, and later financing terms decide the shares issued.
+
+### Startup Valuation Methods: A Practical Founder Framework
+URL: https://sarahzou.com/wiki/pricing/fundraising/startup-valuation-methods
+A startup valuation is a purpose-specific estimate or negotiated price; founders should triangulate market evidence, operating scenarios, financing ownership, and security rights instead of treating one formula as truth.
+
+### Startup Term Sheets: Economics, Control, and Negotiation
+URL: https://sarahzou.com/wiki/pricing/fundraising/term-sheets
+A venture term sheet summarizes the proposed financing's economics, governance, and process; the headline valuation matters only in combination with dilution, preference, control, and closing conditions.
 
 ### TAM, SAM, and SOM: How to Size a Startup Market
 URL: https://sarahzou.com/wiki/pricing/go-to-market/tam-sam-som
@@ -223,5 +243,5 @@ URL: https://sarahzou.com/newsletter/why-fractional-economist
 Why SaaS startups are hiring fractional chief economists and how they drive growth, pricing, and investor narrative.
 
 ---
-Generated: 2026-07-19
-Total wiki concepts: 38
+Generated: 2026-07-20
+Total wiki concepts: 43

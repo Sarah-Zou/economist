@@ -3,7 +3,7 @@
 // unified Button/utility system in globals.css and components/ui/button.tsx.
 
 const btnBase =
-  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-[12px] font-semibold leading-none tracking-[0.01em] transition-[background-color,color,border-color,box-shadow] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand disabled:pointer-events-none disabled:opacity-50'
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-[8px] font-semibold leading-none tracking-[0.01em] transition-[background-color,color,border-color,box-shadow] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand disabled:pointer-events-none disabled:opacity-50'
 
 const primaryShadow = `shadow-[0_1px_3px_rgba(15,23,42,0.08),inset_0_1px_0_rgba(255,255,255,0.12)]`
 
@@ -15,9 +15,9 @@ export const primaryButtonSm = `${btnBase} h-10 min-w-[160px] px-5 text-[14px] b
 
 export const secondaryButton = `${btnBase} h-11 px-6 text-[15px] bg-ink text-white hover:bg-ink/90 [&_svg]:text-white [&_svg]:transition-transform`
 
-export const outlineButton = `${btnBase} h-11 min-w-[180px] px-6 text-[15px] border border-border bg-white text-ink hover:border-ink hover:bg-surface [&_svg]:text-ink [&_svg]:transition-transform`
+export const outlineButton = `${btnBase} h-11 min-w-[180px] px-6 text-[15px] border border-border bg-transparent text-ink hover:border-ink hover:bg-surface [&_svg]:text-ink [&_svg]:transition-transform`
 
-export const outlineButtonSm = `${btnBase} h-10 min-w-[168px] px-5 text-[14px] border border-border bg-white text-ink hover:border-ink hover:bg-surface [&_svg]:text-ink [&_svg]:transition-transform`
+export const outlineButtonSm = `${btnBase} h-10 min-w-[168px] px-5 text-[14px] border border-border bg-transparent text-ink hover:border-ink hover:bg-surface [&_svg]:text-ink [&_svg]:transition-transform`
 
 export const ghostButton = `${btnBase} h-11 px-6 text-[15px] text-text hover:bg-surface`
 

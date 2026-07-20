@@ -2,7 +2,7 @@
 title: "Product, Packaging & Bundling"
 slug: "packaging-and-bundling"
 summary: "Strategic product packaging, bundling, and offer design that maximizes value capture while maintaining customer clarity and choice."
-updated: "2026-01-27"
+updated: "2026-07-19"
 level: "101"
 tags: ["pricing","saas","monetization","packaging","bundling","offers"]
 canonical: "https://sarahzou.com/wiki/pricing/packaging-and-bundling"
@@ -21,21 +21,15 @@ Packaging is how you turn product capability into offers customers can choose an
 - **[<span id="add-ons-modular">Add‑ons & modular packaging</span>](/wiki/pricing/packaging-and-bundling/add-ons-modular)**: Use add‑ons for power/scale (more volume, seats, automation) and modules for distinct roles/use cases—so the core plans stay simple.
 - **[<span id="bundling">Bundling</span>](/wiki/pricing/packaging-and-bundling/bundling)**: When you have multiple products/offers, sell a bundle that improves the workflow and keep à la carte pricing (mixed bundling) to avoid forcing everyone into the suite.
 
-## Core Concepts
+## Which page do you need right now?
 
-### Blueprint
-
-- **Packaging architecture:** The structural design of plans, limits, and upgrade paths before you set price points.
-
-### Tier Design
-
-- **Leader/Filler/Killer Features:** Classify features by upgrade impact to avoid feature soup.
-- **Good-Better-Best tiers:** Build a clear plan ladder with a strong default and meaningful premium differentiation.
-
-### Expansion
-
-- **Add-ons & modular packaging:** Keep core plans simple, then monetize specialized power use and role-specific needs.
-- **Bundling:** Package complementary products to improve workflow value and increase total spend while preserving choice.
+| Your symptom | Likely cause | Start here |
+|--------------|--------------|-----------|
+| "Every new feature goes into the same plan and nobody upgrades" | Kitchen-sink packaging | [Packaging architecture](/wiki/pricing/packaging-and-bundling/packaging) |
+| "We argue feature-by-feature about what goes in which tier" | No classification system | [Leader/Filler/Killer Features](/wiki/pricing/packaging-and-bundling/leader-filler-killer-features) |
+| ">50% of signups pick the cheapest plan" | Entry tier too rich, weak fences | [Good–Better–Best tiers](/wiki/pricing/packaging-and-bundling/good-better-best) |
+| "High-value niche features are bloating our core plans" | Missing modular layer | [Add-ons & modular packaging](/wiki/pricing/packaging-and-bundling/add-ons-modular) |
+| "We have multiple products and buyers cherry-pick one" | Uncaptured cross-product surplus | [Bundling](/wiki/pricing/packaging-and-bundling/bundling) |
 
 ## Insights
 

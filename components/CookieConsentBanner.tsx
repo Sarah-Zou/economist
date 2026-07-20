@@ -23,7 +23,7 @@ function updateConsent(status: ConsentStatus) {
 
   gtag('consent', 'update', {
     ad_storage: 'denied',
-    analytics_storage: 'granted',
+    analytics_storage: 'denied',
     ad_user_data: 'denied',
     ad_personalization: 'denied',
   })
@@ -51,28 +51,34 @@ export default function CookieConsentBanner() {
 
   return (
     <div
-      className="fixed bottom-4 right-4 z-[60] max-w-[320px] rounded-lg border border-[#e2e6ea] bg-white/95 p-3 shadow-lg backdrop-blur-sm sm:bottom-5 sm:right-5 sm:p-3"
+      className="fixed inset-x-4 bottom-4 z-[60] border border-border-soft bg-page/95 px-5 py-4 shadow-elevated backdrop-blur-md sm:inset-x-auto sm:bottom-6 sm:right-6 sm:max-w-[390px] sm:px-6 sm:py-5"
       role="region"
       aria-label="Cookie consent"
     >
-      <p className="text-xs text-[#1f2933] leading-snug sm:text-sm">
-        This site uses cookies to analyze traffic.{' '}
-        <Link href="/privacy" className="text-brand-ink underline decoration-brand decoration-2 underline-offset-2 hover:text-brand-ink/90">
-          View privacy policy
+      <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-text-subtle">
+        Your privacy
+      </p>
+      <p className="mt-3 text-[13px] leading-[1.65] text-text-muted sm:text-[14px]">
+        Optional cookies help me understand site traffic and measure marketing performance.{' '}
+        <Link
+          href="/privacy"
+          className="text-ink underline decoration-border underline-offset-4 hover:decoration-ink"
+        >
+          Privacy policy
         </Link>
       </p>
-      <div className="mt-2 flex flex-wrap gap-2">
+      <div className="mt-4 flex flex-wrap items-center gap-4">
         <button
           type="button"
           onClick={() => handleChoice('allow')}
-          className="rounded bg-brand-ink px-3 py-1.5 text-xs font-semibold leading-[1.2] text-brand-on hover:bg-brand"
+          className="border border-ink bg-ink px-4 py-2 text-[12px] font-semibold text-white transition-colors hover:bg-brand-ink"
         >
-          Accept
+          Accept optional cookies
         </button>
         <button
           type="button"
           onClick={() => handleChoice('deny')}
-          className="rounded border border-[#d1d5db] px-3 py-1.5 text-xs font-semibold text-[#1f2933] hover:bg-[#f6f7f9]"
+          className="border-b border-border pb-1 text-[12px] font-medium text-text-muted transition-colors hover:border-ink hover:text-ink"
         >
           Decline
         </button>

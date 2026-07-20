@@ -1,12 +1,14 @@
 ---
 title: "Freemium model"
-metaTitle: "Freemium Model: Definition, Framework, and When to Use"
+metaTitle: "Freemium Model: Designing a Free Tier That Actually Converts"
+metaDescription: "When freemium works: near-zero marginal cost, viral loops, and a big market — plus how to design paywalls and conversion motions that avoid the Santa Claus trap."
 oneLiner: "A customer acquisition strategy that uses a free-to-use version of a product to drive low-cost scale and upsell users into paid tiers."
 prereqs: []
 tags: ["Pricing Strategy", "Product-led growth (PLG)", "SaaS", "Land and Expand", "Customer Acquisition", "Business Model", "Unit Economics"]
 readingTime: 8
-lastUpdated: "2026-02-19"
+lastUpdated: "2026-07-19"
 owner: "Dr. Sarah Zou"
+canonical: "https://sarahzou.com/wiki/pricing/models-and-metering/freemium-model"
 ---
 
 ## Snapshot (TL;DR)

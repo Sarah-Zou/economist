@@ -53,52 +53,53 @@
 .prose h4 {
   font-family:
     var(--font-playfair),
-    Playfair Display,
+    EB Garamond,
     serif;
   color: var(--color-ink);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
 }
 
+/* Sizes run ~15% larger than the old Playfair scale — EB Garamond renders small. */
 .prose h1 {
-  font-size: 34px;
-  font-weight: 600;
+  font-size: 40px;
+  font-weight: 500;
   line-height: 1.06;
 }
 
 @media (min-width: 640px) {
   .prose h1 {
-    font-size: 36px;
+    font-size: 44px;
   }
 }
 
 .prose h2 {
-  font-size: 25px;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: 500;
   margin-top: 4.75rem;
   margin-bottom: 1.15rem;
 }
 
 @media (min-width: 640px) {
   .prose h2 {
-    font-size: 28px;
+    font-size: 32px;
   }
 }
 
 .prose h3 {
-  font-size: 21px;
-  font-weight: 600;
+  font-size: 23px;
+  font-weight: 500;
   margin-top: 2.3rem;
   margin-bottom: 1rem;
 }
 
 @media (min-width: 640px) {
   .prose h3 {
-    font-size: 22px;
+    font-size: 25px;
   }
 }
 
 .prose h4 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;

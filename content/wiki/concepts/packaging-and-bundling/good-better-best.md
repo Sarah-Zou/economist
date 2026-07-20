@@ -1,12 +1,14 @@
 ---
 title: "Good-Better-Best (GBB) Framework"
-metaTitle: "Good-Better-Best (GBB) Framework: Definition, Framework, Steps"
+metaTitle: "Good-Better-Best Pricing Tiers: The 30/50/20 Design Playbook"
+metaDescription: "How to design Good-Better-Best tiers: the 30/50/20 distribution rule, 1x-2x-4x price ratios, fencing that prevents cannibalization, and upgrade triggers that feel inevitable."
 oneLiner: "A packaging method that offers 3 clearly differentiated plans to anchor value, segment buyers, and create predictable upgrade paths."
 prereqs: ["Packaging Architecture", "Segmentation", "Leader/Filler/Killer Features", "Value Drivers", "Jobs-to-Be-Done"]
 tags: ["Packaging", "Tiered pricing", "Growth", "Price anchoring", "SaaS", "Offers"]
 readingTime: 7
-lastUpdated: "2026-01-27"
+lastUpdated: "2026-07-19"
 owner: "Dr. Sarah Zou"
+canonical: "https://sarahzou.com/wiki/pricing/packaging-and-bundling/good-better-best"
 ---
 
 ## Snapshot (TL;DR)
@@ -140,7 +142,7 @@ Early-stage startups often underprice because they fear rejection. GBB reduces t
 
 ### Sources:
 
-* Gourville, J. T., & Soman, D. (2018). [The Good-Better-Best Approach to Pricing](https://hbr.org/2018/09/the-good-better-best-approach-to-pricing). *Harvard Business Review*, *96*(5), 118-125.
+* Mohammed, R. (2018). [The Good-Better-Best Approach to Pricing](https://hbr.org/2018/09/the-good-better-best-approach-to-pricing). *Harvard Business Review*, *96*(5), 118-125.
 * Nagle, T. T., Hogan, J. E., & Zale, J. (2016). [*The Strategy and Tactics of Pricing*](https://www.routledge.com/The-Strategy-and-Tactics-of-Pricing-A-Guide-to-Growing-More-Profitably/Nagle-Hogan-Zale/p/book/9781138846774) (6th ed.). Routledge.
 * Ramanujam, M., & Tacke, G. (2016). [*Monetizing Innovation: How Smart Companies Design the Product Around the Price*](https://www.wiley.com/en-us/Monetizing+Innovation%3A+How+Smart+Companies+Design+the+Product+Around+the+Price-p-9781119163840). Wiley.
 * Ghuman, A. (2021). *Price to Scale*. Independently published.

@@ -1,12 +1,14 @@
 ---
 title: "Bundling"
-metaTitle: "Bundling: Definition, Framework, Steps"
+metaTitle: "Bundling: When to Bundle and When to Sell Separately"
+metaDescription: "The variance-reduction logic of bundling: why negatively correlated preferences make bundles profitable, mixed vs. pure bundling, and a worked two-customer example."
 oneLiner: "Selling multiple complementary products together at one price to increase total revenue and customer stickiness."
 prereqs: ["Value-Based Pricing", "Packaging Architecture", "Segmentation", "Willingness-to-Pay"]
 tags: ["pricing strategy", "packaging", "price discrimination", "monetization", "SaaS", "unit economics"]
 readingTime: 8
-lastUpdated: "2026-01-30"
+lastUpdated: "2026-07-19"
 owner: "Dr. Sarah Zou"
+canonical: "https://sarahzou.com/wiki/pricing/packaging-and-bundling/bundling"
 ---
 
 ## Snapshot (TL;DR)

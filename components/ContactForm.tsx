@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { primaryButton } from '@/lib/brandStyles'
 import { cn } from '@/lib/utils'
+import { trackEvent } from '@/lib/analytics'
 
 interface ContactFormProps {
   messagePlaceholder?: string
@@ -32,6 +33,10 @@ export default function ContactForm({
         method: 'POST',
         mode: 'no-cors',
         body: formData,
+      })
+      trackEvent('generate_lead', {
+        method: 'contact_form',
+        form_name: 'contact_message',
       })
       window.location.href = '/contact/thanks'
     } catch (error) {

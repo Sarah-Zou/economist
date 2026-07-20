@@ -1,12 +1,12 @@
 ---
-title: "Fractional Chief Economist"
-metaTitle: "Fractional Chief Economist: What It Is, Cost, and When to Hire One"
-oneLiner: "A fractional chief economist gives a startup part-time access to PhD-level economic reasoning — pricing architecture, unit economics, forecasting, and investor-facing models — without a full-time strategy hire."
-prereqs: ["Strategic Pricing", "Usage-Based Pricing"]
-tags: ["fractional executive", "chief economist", "unit economics", "AI infrastructure", "B2B SaaS"]
+title: 'Fractional Chief Economist'
+metaTitle: 'Fractional Chief Economist: What It Is, Cost, and When to Hire One'
+oneLiner: 'A fractional chief economist gives a startup part-time access to PhD-level economic reasoning — pricing architecture, unit economics, forecasting, and investor-facing models — without a full-time strategy hire.'
+prereqs: ['Strategic Pricing', 'Usage-Based Pricing']
+tags: ['fractional executive', 'chief economist', 'unit economics', 'AI infrastructure', 'B2B SaaS']
 readingTime: 7
-lastUpdated: "2026-07-19"
-owner: "Dr. Sarah Zou"
+lastUpdated: '2026-07-19'
+owner: 'Dr. Sarah Zou'
 ---
 
 ## Snapshot (TL;DR)
@@ -33,13 +33,13 @@ The role exists because a class of startup decisions is fundamentally economic:
 
 ## Fractional chief economist vs. fractional CFO vs. pricing consultant
 
-| | Fractional chief economist | Fractional CFO | Pricing consultant (project) |
-| --- | --- | --- | --- |
-| Core question | Does the commercial model make economic sense? | Are the books, runway, and reporting right? | What should this product's pricing be? |
-| Cadence | Ongoing retainer | Ongoing retainer | 2–6 week project |
-| Typical background | PhD economics / econometrics, operating experience | Accounting / corporate finance | Pricing practice or agency |
-| Owns | Pricing logic, elasticity, unit economics, forecasts, experiment design | Close, reporting, cash management, fundraising ops | One pricing decision, delivered once |
-| Fails when | Used for bookkeeping or compliance questions | Asked to design pricing or demand models | The model needs revisiting quarterly and nobody owns it |
+|                    | Fractional chief economist                                              | Fractional CFO                                     | Pricing consultant (project)                            |
+| ------------------ | ----------------------------------------------------------------------- | -------------------------------------------------- | ------------------------------------------------------- |
+| Core question      | Does the commercial model make economic sense?                          | Are the books, runway, and reporting right?        | What should this product's pricing be?                  |
+| Cadence            | Ongoing retainer                                                        | Ongoing retainer                                   | 2–6 week project                                        |
+| Typical background | PhD economics / econometrics, operating experience                      | Accounting / corporate finance                     | Pricing practice or agency                              |
+| Owns               | Pricing logic, elasticity, unit economics, forecasts, experiment design | Close, reporting, cash management, fundraising ops | One pricing decision, delivered once                    |
+| Fails when         | Used for bookkeeping or compliance questions                            | Asked to design pricing or demand models           | The model needs revisiting quarterly and nobody owns it |
 
 The three roles are complements. A common pattern at Seed–Series B: a fractional CFO for the books, a project engagement to set the pricing model, and a fractional economist retainer to own the model as costs, competitors, and usage patterns move.
 
@@ -59,7 +59,7 @@ Signals the retainer model fits:
 4. **Experiments go uninterpreted.** You run pricing or packaging tests but nobody translates results into decisions.
 5. **A strategy hire is premature.** The work is real but adds up to days per month, not a full-time role.
 
-When *not* to hire one: if the need is a single pricing decision (use a fixed-scope project — see [how to choose a pricing consultant](/wiki/pricing/foundations/how-to-choose-a-pricing-consultant)); if the actual gap is bookkeeping, close, or cash management (that's a fractional CFO); or if the company hasn't reached commercial decisions yet at all.
+When _not_ to hire one: if the need is a single pricing decision (use a fixed-scope project — see [how to choose a pricing consultant](/wiki/pricing/foundations/how-to-choose-a-pricing-consultant)); if the actual gap is bookkeeping, close, or cash management (that's a fractional CFO); or if the company hasn't reached commercial decisions yet at all.
 
 ## Key Facts
 
@@ -75,7 +75,7 @@ When *not* to hire one: if the need is a single pricing decision (use a fixed-sc
 
 **Q: How much does a fractional chief economist cost?**
 
-**A:** Expect the fractional-executive band: roughly US$3,000–12,000/month depending on scope and cadence, with light advisory retainers starting around US$4,000/month.
+**A:** Expect the fractional-executive band: roughly US$3,000 to US$12,000 per month depending on scope and cadence, with light advisory retainers starting around US$4,000 per month.
 
 **Q: How is this different from hiring a pricing consultant?**
 
@@ -89,7 +89,7 @@ When *not* to hire one: if the need is a single pricing decision (use a fixed-sc
 
 **A:** Typically Seed through Series B — after commercial decisions become recurring, before a full-time head of pricing or strategy is justified.
 
-*Disclosure: this wiki is published by [EconNova Consulting](/consulting), which offers a fractional / on-call economist retainer. The evaluation guidance above applies to this practice too.*
+_Disclosure: this wiki is published by [EconNova Consulting](/consulting), which offers a fractional / on-call economist retainer. The evaluation guidance above applies to this practice too._
 
 ## Related concepts
 

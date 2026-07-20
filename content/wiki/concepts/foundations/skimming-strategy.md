@@ -84,7 +84,7 @@ Skimming lets you monetize the highest-[WTP](/wiki/pricing/value-and-customers/w
 ## Key Facts
 - 16% "cream": In diffusion theory, innovators (2.5%) + early adopters (13.5%) ≈ 16% of the market are the **"cream" tiers** skimming targets before the Early Majority (34%) arrives. ([Rogers, *Diffusion of Innovations*, via Lumen Learning](https://courses.lumenlearning.com/clinton-marketing/chapter/reading-diffusion-of-innovation/))
 - 25% high-WTP tier: Premium smartphones reached **25% of the global market** in 2024, meaning the high-WTP tier is now **big enough** that "price the top first" can move company-level outcomes. ([Counterpoint Research (2025)](https://counterpointresearch.com/en/insights/post-insight-research-notes-blogs-global-premium-smartphone-share-climbs-to-25-in-2024-as-premiumization-continues))
-- 30% margin logic: skimming pays when profit from **low volume at high margin** exceeds profit from high volume at a lower price — at a 30-point price premium, you can lose up to half the volume and still come out ahead (see rules of thumb below).
+- Break-even math favors the premium: at a 60% contribution margin, a **30% launch premium** still breaks even if volume comes in **~33% lower** — margin per unit rises from 60 to 90, so 2/3 of the volume earns the same contribution (why skimming pays when early elasticity is low).
 
 ## How do you implement skimming strategy step-by-step?
 

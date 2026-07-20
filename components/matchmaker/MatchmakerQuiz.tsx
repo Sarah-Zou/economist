@@ -736,7 +736,7 @@ export function MatchmakerQuiz({ onRestart }: MatchmakerQuizProps) {
     return (
       <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] shadow-[var(--shadow-card)]">
         <div className="z-10 border-b border-[var(--color-border)] bg-white/95 px-4 py-3 text-center backdrop-blur sm:sticky sm:top-0 sm:px-8 sm:py-4">
-          <h2 className="font-serif-playfair text-2xl font-semibold text-[var(--color-text)] sm:text-[28px]">
+          <h2 className="font-serif-playfair text-[var(--color-text)]">
             Your pricing model match
           </h2>
           <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
@@ -1012,7 +1012,7 @@ export function MatchmakerQuiz({ onRestart }: MatchmakerQuizProps) {
         </div>
       </div>
 
-      <h2 className="text-[1.35rem] font-semibold leading-[1.25] text-[#111827] sm:text-[1.9rem]">
+      <h2 className="text-[1.35rem] text-[#111827] sm:text-[1.9rem]">
         {currentQuestion.prompt}
       </h2>
       <p className="mt-3 flex items-start gap-2 text-sm leading-[1.5] text-[#344256] sm:text-[0.97rem]">

@@ -1,12 +1,14 @@
 ---
 title: "Usage-based pricing"
-metaTitle: "Usage-based pricing (pay-as-you-go): Definition and Examples"
+metaTitle: "Usage-Based Pricing: When Pay-As-You-Go Works (and When It Bites)"
+metaDescription: "When usage-based (pay-as-you-go) pricing works, how to pick the value metric, design allowances and overages, and avoid bill shock and taxi-meter fear."
 oneLiner: "Charge customers based on measured consumption so price scales with value, improving adoption and expansion."
 prereqs: []
 tags: ["usage-based pricing", "consumption pricing", "value metric", "metering", "saas pricing", "hybrid pricing", "net revenue retention"]
 readingTime: 10
-lastUpdated: "2026-01-31"
+lastUpdated: "2026-07-19"
 owner: "Dr. Sarah Zou"
+canonical: "https://sarahzou.com/wiki/pricing/models-and-metering/usage-based-pricing"
 ---
 
 ## Snapshot (TL;DR)
@@ -98,7 +100,7 @@ In traditional [seat-based](/wiki/pricing/models-and-metering/seat-based-pricing
 ## Key Facts
 
 - **38% Faster Growth:** Public SaaS companies utilizing usage-based pricing grew 38% faster year-over-year compared to those with traditional models. ([OpenView, 2023](https://openviewpartners.com/blog/state-of-usage-based-pricing/))
-- **54% of CFOs like UBP:** 54% of CFOs agree that flexible "pay-as-you-use" models are a game-changer for reducing customer churn. ([LogiSense](https://twitter.com/LogiSense/status/1658172144566583296))
+- **38% adoption and rising:** 38% of SaaS companies use some form of usage-based pricing, up from 27% in 2021 — with most successful implementations being hybrid (base + overage). ([OpenView](https://openviewpartners.com/blog/state-of-usage-based-pricing/))
 - **2/3 use UBP:** 80% of customers said usage-based pricing better aligns with value; ~2/3 of software companies using it said it increases revenue with existing customers. ([Bain](https://www.bain.com/insights/is-consumption-based-pricing-right-for-your-software-tech-report-2022/))
 
 ## How do you implement usage-based pricing step-by-step?

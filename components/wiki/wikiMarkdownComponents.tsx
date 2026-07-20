@@ -1,6 +1,21 @@
 import Image from 'next/image'
-import { normalizeHeadingText, createUniqueHeadingId, extractNodeText } from '@/lib/wikiHeadingUtils'
-import { Zap, TrendingUp, CheckCircle, DollarSign, Users, AlertCircle, TrendingDown, XCircle, ArrowLeftRight, Target } from 'lucide-react'
+import {
+  normalizeHeadingText,
+  createUniqueHeadingId,
+  extractNodeText,
+} from '@/lib/wikiHeadingUtils'
+import {
+  Zap,
+  TrendingUp,
+  CheckCircle,
+  DollarSign,
+  Users,
+  AlertCircle,
+  TrendingDown,
+  XCircle,
+  ArrowLeftRight,
+  Target,
+} from 'lucide-react'
 
 export function createWikiMarkdownComponents() {
   const renderedHeadingIds = new Map<string, number>()
@@ -11,7 +26,7 @@ export function createWikiMarkdownComponents() {
       return (
         <h2
           id={id}
-          className="group font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-4 mt-[4.5rem] scroll-mt-24 flex items-center gap-3"
+          className="group font-serif-playfair mb-4 mt-[4.5rem] scroll-mt-24 flex items-center gap-3"
         >
           <span>{text}</span>
           <a
@@ -41,7 +56,7 @@ export function createWikiMarkdownComponents() {
       return (
         <h2
           id={id}
-          className="group font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-4 mt-[4.5rem] scroll-mt-24 flex items-center gap-3"
+          className="group font-serif-playfair mb-4 mt-[4.5rem] scroll-mt-24 flex items-center gap-3"
         >
           {Icon && <Icon className="w-6 h-6 text-brand-ink flex-shrink-0" />}
           <span>{text}</span>
@@ -123,9 +138,7 @@ export function createWikiMarkdownComponents() {
     a: ({ node, href, ...props }: any) => {
       const isInternalLink = href?.startsWith('/')
       if (isInternalLink && href) {
-        return (
-          <a href={href} className="text-brand-ink hover:underline font-medium" {...props} />
-        )
+        return <a href={href} className="text-brand-ink hover:underline font-medium" {...props} />
       }
       return (
         <a
@@ -156,18 +169,21 @@ export function createWikiMarkdownComponents() {
     },
     table: ({ node, ...props }: any) => (
       <div
-        className="my-8 w-full max-w-full overflow-x-auto rounded-xl border border-border-soft bg-white"
+        className="wiki-data-table my-10 w-full max-w-full overflow-x-auto border-y border-border bg-transparent"
         role="region"
         aria-label="Data table"
         tabIndex={0}
       >
-        <table className="w-full border-separate border-spacing-0 min-w-[620px]" {...props} />
+        <table
+          className="wiki-data-table__table min-w-[620px] w-full border-separate border-spacing-0"
+          {...props}
+        />
       </div>
     ),
-    thead: ({ node, ...props }: any) => <thead className="bg-surface/80" {...props} />,
+    thead: ({ node, ...props }: any) => <thead className="bg-surface" {...props} />,
     th: ({ node, ...props }: any) => (
       <th
-        className="text-left py-3.5 sm:py-4 px-4 sm:px-6 font-semibold text-sm text-text border-b border-border-subtle first:pl-4 sm:first:pl-6 last:pr-4 sm:last:pr-6 whitespace-nowrap"
+        className="whitespace-nowrap border-b border-border px-4 py-3.5 text-left text-[10px] font-semibold uppercase tracking-[0.13em] text-text-muted first:pl-4 last:pr-4 sm:px-5 sm:first:pl-5 sm:last:pr-5"
         {...props}
       />
     ),
@@ -212,12 +228,12 @@ export function createWikiMarkdownComponents() {
 
       return (
         <td
-          className="py-4 sm:py-4.5 px-4 sm:px-6 text-[15px] sm:text-base text-text leading-[1.6] border-b border-border-subtle align-top first:pl-4 sm:first:pl-6 last:pr-4 sm:last:pr-6 min-w-[140px]"
+          className="min-w-[140px] border-b border-border-soft px-4 py-4 align-top text-[15px] leading-[1.65] text-text first:pl-4 first:font-medium first:text-ink last:pr-4 sm:px-5 sm:py-5 sm:first:pl-5 sm:last:pr-5"
           {...props}
         >
           {Icon ? (
             <div className="flex items-center gap-2">
-              <Icon className={`w-4 h-4 sm:w-5 sm:h-5 ${iconColor} flex-shrink-0`} />
+              <Icon className={`h-4 w-4 flex-shrink-0 ${iconColor}`} />
               <span>{props.children}</span>
             </div>
           ) : (
@@ -226,10 +242,10 @@ export function createWikiMarkdownComponents() {
         </td>
       )
     },
-    tbody: ({ node, ...props }: any) => <tbody className="divide-y divide-[#e5e7eb]" {...props} />,
+    tbody: ({ node, ...props }: any) => <tbody {...props} />,
     tr: ({ node, ...props }: any) => (
       <tr
-        className="even:bg-[#fafbfc] hover:bg-surface transition-colors duration-150 last:border-b-0"
+        className="transition-colors duration-150 even:bg-surface/40 hover:bg-surface/75 [&:last-child>td]:border-b-0"
         {...props}
       />
     ),
@@ -240,11 +256,10 @@ export function createWikiMarkdownComponents() {
     img: ({ node, src, alt, ...props }: any) => {
       // Handle images with Next.js Image component for optimization
       if (src?.startsWith('/')) {
-        const isMentalModel =
-          /wiki_(?:.*_mental|freemium_)/.test(src)
+        const isMentalModel = /wiki_(?:.*_mental|freemium_)/.test(src)
         const imageWidth = isMentalModel ? 600 : 800
         const imageHeight = isMentalModel ? 450 : 600
-        const maxWidth = isMentalModel ? 'max-w-2xl' : 'max-w-full'
+        const maxWidth = isMentalModel ? 'sm:max-w-2xl' : ''
 
         return (
           <span className="my-8 block text-center">
@@ -253,7 +268,7 @@ export function createWikiMarkdownComponents() {
               alt={alt || ''}
               width={imageWidth}
               height={imageHeight}
-              className={`inline-block rounded-lg shadow-lg ${maxWidth} h-auto`}
+              className={`inline-block h-auto max-w-full rounded-lg shadow-lg ${maxWidth}`}
               {...props}
             />
           </span>
@@ -261,9 +276,8 @@ export function createWikiMarkdownComponents() {
       }
 
       // Use next/image for configured remote hosts to keep lint clean and preserve static-export safety.
-      const isConfiguredRemoteImage = /^https:\/\/(?:assets\.calendly\.com|cdn\.jsdelivr\.net)\//.test(
-        src || ''
-      )
+      const isConfiguredRemoteImage =
+        /^https:\/\/(?:assets\.calendly\.com|cdn\.jsdelivr\.net)\//.test(src || '')
       if (isConfiguredRemoteImage) {
         const explicitWidth = Number(props.width)
         const explicitHeight = Number(props.height)

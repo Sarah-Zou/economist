@@ -1,12 +1,14 @@
 ---
 title: "Price fences / price discrimination"
-metaTitle: "Price fences / price discrimination: Definition, Framework, Steps"
+metaTitle: "Price Fences: How to Charge Different Prices Without the Backlash"
+metaDescription: "How price fences enforce differential pricing fairly: the hurdle mental model, four fence types, self-selection design, and the break-even rule for enforcement."
 oneLiner: "A strategic framework for charging different customers different prices based on their willingness to pay, without triggering a PR backlash."
 prereqs: ["Value-Based Pricing", "Segmentation", "WTP Research", "Packaging & Bundling"]
 tags: ["segmentation", "packaging", "unit economics", "discounts", "dynamic pricing", "microeconomics", "willingness-to-pay"]
 readingTime: 8
-lastUpdated: "2026-01-22"
+lastUpdated: "2026-07-19"
 owner: "Dr. Sarah Zou"
+canonical: "https://sarahzou.com/wiki/pricing/value-and-customers/price-fences-price-discrimination"
 ---
 
 ## Snapshot (TL;DR)
@@ -93,8 +95,8 @@ You place a "hurdle" in front of the low price. This hurdle must be essentially 
 
 ## Key Facts
 
-- **Psychology:** 64% of consumers feel a price is "unfair" if they see others paying less for the *exact* same thing without a clear reason (the "Fence"). [Annenberg Public Policy Center](https://share.google/Mu6ISyr86LP9ndCmi)
-- **30% Untapped Revenue:** Companies implementing effective price discrimination techniques can capture up to 30% more revenue from their existing customer base by minimizing "consumer surplus" leakage. ([BCG](https://www.bcg.com/capabilities/marketing-sales/pricing))
+- **87% object without a fence:** in the Annenberg Public Policy Center's national survey, **87% of online shoppers strongly objected** to stores charging different people different prices based on collected data — and 64% didn't know the practice is legal. The lesson: *unexplained* differential pricing reads as exploitation; visible, rule-based fences are what make it acceptable. ([Annenberg, "Open to Exploitation"](https://www.annenbergpublicpolicycenter.org/open-to-exploitation-american-shoppers-online-and-offline/))
+- **~36% dispersion on one plane:** classic airline research found the expected fare difference between two random passengers on the same route averaged **~36% of the airline's mean ticket price** — fenced discrimination (advance purchase, Saturday stay, refundability) at industrial scale. ([Borenstein & Rose (1994)](https://faculty.haas.berkeley.edu/borenste/download/JPE94AirPrice.pdf))
 - **The 2x Growth:** Companies that align their price fences with a value metric ([usage-based](/wiki/pricing/models-and-metering/usage-based-pricing) or [outcome-based](/wiki/pricing/models-and-metering/outcome-performance-based-pricing)) grow at least 2x faster than those using traditional [seat-based](/wiki/pricing/models-and-metering/seat-based-pricing) flat pricing. ([OpenView](https://openviewpartners.com/blog/2023-saas-benchmarks-report/))
 
 ## How do you implement price fences step-by-step?

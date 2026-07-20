@@ -16,59 +16,72 @@ export default function NewsletterArticleList({
   totalPages,
 }: NewsletterArticleListProps) {
   return (
-    <section className="mx-auto flex w-full max-w-2xl flex-col gap-8">
+    <section className="w-full border-t border-border-soft">
       {posts.map((post) => (
-        <div
+        <article
           key={post.slug}
-          className="flex items-start justify-between gap-4 border-t border-border pt-5"
+          className={`group grid gap-5 border-b border-border-soft py-8 sm:gap-8 ${
+            post.image
+              ? 'sm:grid-cols-[5.5rem_minmax(0,1fr)_8.5rem]'
+              : 'sm:grid-cols-[5.5rem_minmax(0,1fr)]'
+          }`}
         >
-          <div className="min-w-0 flex-1">
+          <div className="pt-1">
+            <p className="text-[11px] uppercase tracking-[0.13em] text-text-subtle">
+              {format(new Date(post.date), 'MMM d')}
+            </p>
+            <p className="mt-2 text-[11px] uppercase tracking-[0.13em] text-text-subtle">
+              {format(new Date(post.date), 'yyyy')}
+            </p>
+          </div>
+          <div className="min-w-0">
             <Link
               href={`/newsletter/${post.slug}`}
-              className="mb-2 block font-serif-playfair text-[22px] font-semibold leading-[1.3] text-text hover:text-brand-ink"
+              className="block font-serif-playfair text-[24px] font-medium leading-[1.22] text-ink transition-colors group-hover:text-brand-ink sm:text-[27px]"
             >
               {post.title}
             </Link>
-            <div className="mb-2 text-[12px] uppercase tracking-[0.12em] text-text-subtle">
-              {post.author.toUpperCase()} &nbsp; {format(new Date(post.date), 'MMM d')}
-            </div>
-            <p className="line-clamp-2 max-w-full text-base leading-[1.8] text-text-muted sm:text-[17px]">
+            <p className="mt-4 line-clamp-2 max-w-full text-[15px] leading-[1.8] text-text-muted sm:text-[16px]">
               {post.description}
+            </p>
+            <p className="mt-4 text-[11px] uppercase tracking-[0.13em] text-text-subtle">
+              By {post.author}
             </p>
           </div>
           {post.image && (
-            <div className="relative ml-2 h-20 w-28 flex-shrink-0 overflow-hidden rounded-[12px] bg-white shadow-card">
+            <div className="relative aspect-[4/3] w-full max-w-[10rem] overflow-hidden bg-surface sm:max-w-none">
               <Image
                 src={post.image}
                 alt={post.imageAlt ?? post.title}
                 fill
+                sizes="(min-width: 640px) 136px, 160px"
                 className="object-cover"
                 loading="lazy"
               />
             </div>
           )}
-        </div>
+        </article>
       ))}
 
       {totalPages > 1 && (
-        <nav aria-label="Newsletter pagination" className="pt-4">
-          <div className="flex items-center justify-center gap-2">
+        <nav aria-label="Newsletter pagination" className="pt-8">
+          <div className="flex flex-wrap items-center gap-2">
             {currentPage > 1 && (
               <Link
                 href={getNewsletterPagePath(currentPage - 1)}
-                className="rounded border border-border-subtle bg-white px-3 py-1.5 text-sm text-text hover:border-brand-ink"
+                className="border-b border-border px-2 py-1.5 text-sm text-text hover:border-ink"
               >
-                Prev
+                Previous
               </Link>
             )}
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
               <Link
                 key={pageNum}
                 href={getNewsletterPagePath(pageNum)}
-                className={`rounded border px-3 py-1.5 text-sm ${
+                className={`border-b px-2 py-1.5 text-sm ${
                   pageNum === currentPage
-                    ? 'border-brand bg-brand-ink text-white'
-                    : 'border-border-subtle bg-white text-text hover:border-brand-ink'
+                    ? 'border-ink text-ink'
+                    : 'border-transparent text-text-muted hover:border-border hover:text-ink'
                 }`}
                 aria-current={pageNum === currentPage ? 'page' : undefined}
               >
@@ -78,7 +91,7 @@ export default function NewsletterArticleList({
             {currentPage < totalPages && (
               <Link
                 href={getNewsletterPagePath(currentPage + 1)}
-                className="rounded border border-border-subtle bg-white px-3 py-1.5 text-sm text-text hover:border-brand-ink"
+                className="border-b border-border px-2 py-1.5 text-sm text-text hover:border-ink"
               >
                 Next
               </Link>

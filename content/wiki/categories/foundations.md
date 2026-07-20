@@ -2,7 +2,7 @@
 title: "Core Philosophies & Strategy"
 slug: "foundations"
 summary: "Strategic pricing approaches and foundational philosophies that determine how pricing aligns with business objectives and market positioning."
-updated: "2025-01-15"
+updated: "2026-07-19"
 level: "101"
 tags: ["pricing","saas","monetization","strategy","foundations"]
 canonical: "https://sarahzou.com/wiki/pricing/foundations"
@@ -23,53 +23,39 @@ In practice, a healthy SaaS pricing system is [value-based pricing](/wiki/pricin
 - **[<span id="skimming-strategy">Skimming strategy</span>](/wiki/pricing/foundations/skimming-strategy)**: Launch at a premium to monetize the highest-WTP tier first, then **step down in planned stages** to reach more price-sensitive segments without destroying the anchor.
 - **[<span id="penetration-strategy">Penetration strategy</span>](/wiki/pricing/foundations/penetration-strategy)**: Launch below long-run profit-maximizing price to **accelerate adoption and share** (especially with scale/network effects), with explicit criteria and a path to normalize pricing later.
 - **[<span id="maximization">Maximization</span>](/wiki/pricing/foundations/maximization)**: Choose the single price that **maximizes a chosen objective** (profit, revenue, or share) given demand and constraints—making pricing a testable, data-backed decision.
-- **[<span id="how-to-choose-a-pricing-consultant">How to choose a pricing consultant</span>](/wiki/pricing/foundations/how-to-choose-a-pricing-consultant)**: Match the advisor type — global firm, boutique agency, billing-platform team, or independent specialist — to your **pricing model's actual complexity**, with evaluation questions and cost ranges.
-- **[<span id="fractional-chief-economist">Fractional chief economist</span>](/wiki/pricing/foundations/fractional-chief-economist)**: Part-time, retainer-based access to **PhD-level economic reasoning** — pricing architecture, unit economics, forecasting, and investor-facing models — without a full-time strategy hire.
+- **[<span id="how-to-choose-a-pricing-consultant">How to choose a pricing consultant</span>](/wiki/pricing/foundations/how-to-choose-a-pricing-consultant)**: Match the type of advisor—global firm, boutique agency, billing-platform team, or independent specialist—to your pricing model's **actual complexity, cost structure, and stage**.
+- **[<span id="fractional-chief-economist">Fractional chief economist</span>](/wiki/pricing/foundations/fractional-chief-economist)**: Part-time access to PhD-level economic reasoning—**pricing architecture, unit economics, forecasting, and investor-facing models**—without a full-time strategy hire.
 
-## Core Concepts
+## Which page should you start with?
 
-### Core Philosophy
+Match your current situation to the page that addresses it directly:
 
-- **Value-based pricing:** Anchors prices to the measurable value you create and customers' willingness to pay.
-- **Strategic pricing:** Treats pricing as an operating system for how you charge, what you charge, and when you change prices.
-
-### Constraints & Benchmarks
-
-- **Cost-plus pricing:** Useful as a price floor and unit-economics sanity check.
-- **Competition-based pricing:** Good as a reference point; risky as a default strategy.
-- **Customer-driven pricing:** A failure pattern—haggling erodes trust and punishes loyal customers.
-
-### Posture Strategies
-
-- **Skimming strategy:** Launch at a premium, then step down in planned stages.
-- **Penetration strategy:** Launch below long-run price to accelerate adoption and share.
-- **Maximization:** Choose the single price that maximizes a chosen objective given demand and constraints.
-
-## Insights
-
-### Strategic Insight
-
-At the center of this category is [strategic pricing](/wiki/pricing/foundations/strategic-pricing): a systematic, [value-based pricing](/wiki/pricing/foundations/value-based-pricing) way of deciding how you charge, what you charge, and how prices evolve so profit, growth, and positioning stay aligned. The underlying philosophy is [value-based pricing](/wiki/pricing/foundations/value-based-pricing), which pegs price to the economic value you create and your customers' willingness to pay—not to your own costs or whatever rivals happen to charge.
-
-### Pricing Insight
-
-[Cost-plus pricing](/wiki/pricing/foundations/cost-plus-pricing) and [competition-based pricing](/wiki/pricing/foundations/competition-based-pricing) still matter, but mainly as constraints and reference points: [cost-plus pricing](/wiki/pricing/foundations/cost-plus-pricing) defines your economic floor, while [competition-based pricing](/wiki/pricing/foundations/competition-based-pricing) shows where the market is today and how crowded it is. At the other end of the spectrum is [customer-driven pricing](/wiki/pricing/foundations/customer-driven-pricing)—haggling to extract the maximum from each buyer—which may look flexible but tends to train aggressive bargaining, punish loyal customers, and erode trust, so in this wiki it's treated as a failure pattern, not a strategy to emulate.
+| Your situation | Start here | Why |
+|----------------|-----------|-----|
+| "We priced by gut at launch and haven't touched it since" | [Strategic pricing](/wiki/pricing/foundations/strategic-pricing) | You need the operating system (structure, levels, policies) before any single number matters. |
+| "We set prices by adding a margin to our costs" | [Cost-plus pricing](/wiki/pricing/foundations/cost-plus-pricing) | See the markup-vs-margin trap and the death-spiral math, then keep cost as a floor only. |
+| "We just match what competitors charge" | [Competition-based pricing](/wiki/pricing/foundations/competition-based-pricing) | The break-even example shows what matching actually costs; learn to use rival prices as data instead. |
+| "Every deal is negotiated; discounting feels out of control" | [Customer-driven pricing](/wiki/pricing/foundations/customer-driven-pricing) | Diagnose the haggling culture and replace it with fences and a give-get ladder. |
+| "We don't know what our product is actually worth to buyers" | [Value-based pricing](/wiki/pricing/foundations/value-based-pricing) | Work through the EVE example to turn value into a testable price range. |
+| "We're launching something genuinely differentiated" | [Skimming strategy](/wiki/pricing/foundations/skimming-strategy) | Sequence high-WTP tiers first with fences and a planned markdown cadence. |
+| "We're entering a market where scale or network effects decide the winner" | [Penetration strategy](/wiki/pricing/foundations/penetration-strategy) | Launch low deliberately — with exit criteria that prevent profitless prosperity. |
+| "We have demand data and need to hit a near-term number" | [Maximization](/wiki/pricing/foundations/maximization) | Pick one objective and find the price that maximizes it, with elasticity doing the work. |
 
 ## How to use this
 
 ### New to SaaS pricing?
 
-Read this section first to get the big picture before touching discount ladders or feature matrices.
+Read this section first to get the big picture before touching discount ladders or feature matrices. Suggested order: [value-based pricing](/wiki/pricing/foundations/value-based-pricing) (the philosophy) → [strategic pricing](/wiki/pricing/foundations/strategic-pricing) (the system) → the posture strategy that matches your launch context.
 
 ### Working on a live pricing problem?
 
-1. Skim the cards above.
-2. Pick the 1–2 strategies that match your situation.
-3. [Go to the detailed guide and follow the steps](/cheat-sheets)
+1. Find your situation in the table above.
+2. Read the 1–2 pages that match.
+3. [Use the strategic pricing framework to work through the decision](/wiki/pricing/foundations/strategic-pricing)
 
 ### Teaching / studying?
 
-Use the strategy cards as a syllabus for a 2–3 session MBA module.
+Use the strategy cards as a syllabus for a 2–3 session MBA module: session one on philosophies (value, cost, competition, customer-driven), session two on postures (skimming, penetration, maximization), session three applying the [strategic pricing](/wiki/pricing/foundations/strategic-pricing) sprint to a case.
 
 ## Related categories
 

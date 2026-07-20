@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, CheckCircle2, Clock3 } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { getConceptBySlug } from '@/lib/mdx'
 import {
   generateCollectionPageJsonLd,
@@ -52,7 +52,7 @@ export default function WikiAreaHub({ config }: WikiAreaHubProps) {
   })
 
   return (
-    <main className="min-h-screen bg-page">
+    <main className="resource-editorial min-h-screen bg-page">
       {availableTopics.length > 0 && (
         <script
           type="application/ld+json"
@@ -68,197 +68,209 @@ export default function WikiAreaHub({ config }: WikiAreaHubProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd) }}
       />
 
-      <div className="section-shell py-10 sm:py-14">
-        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-text-muted">
+      <div className="section-shell py-6">
+        <nav
+          aria-label="Breadcrumb"
+          className="flex items-center gap-2 text-[12px] uppercase tracking-[0.12em] text-text-subtle"
+        >
           <Link href="/wiki" className="transition-colors hover:text-brand-ink">
             Wiki library
           </Link>
           <span aria-hidden="true">/</span>
           <span className="text-text">{config.shortTitle}</span>
         </nav>
+      </div>
 
-        <header className="mt-8 overflow-hidden rounded-card border border-border-soft bg-white shadow-card">
-          <div className="grid lg:grid-cols-[minmax(0,1fr)_340px]">
-            <div className="p-7 sm:p-10 lg:p-12">
-              <p className="kicker-accent">{config.areaLabel}</p>
-              <h1 className="mt-5 max-w-3xl font-serif-playfair text-[40px] font-bold leading-[1.08] text-text sm:text-[52px]">
-                {config.title}
-              </h1>
-              <p className="mt-6 max-w-3xl text-xl font-light leading-[1.7] text-text-muted sm:text-2xl">
-                {config.description}
-              </p>
-              <p className="mt-7 max-w-2xl border-l-2 border-brand pl-5 text-base leading-[1.75] text-text">
-                {config.intro}
-              </p>
-            </div>
-
-            <aside className="flex flex-col justify-between border-t border-border-soft bg-surface-muted p-7 lg:border-l lg:border-t-0 lg:p-9">
-              <div>
-                <p className="kicker-muted">The decision underneath</p>
-                <p className="mt-4 font-serif-playfair text-2xl font-semibold leading-snug text-text">
-                  {config.guidingQuestion}
-                </p>
-              </div>
-              <dl className="mt-10 grid grid-cols-3 gap-4 border-t border-border-soft pt-6 lg:grid-cols-1">
-                <div>
-                  <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-text-subtle">
-                    Topic map
-                  </dt>
-                  <dd className="mt-1 text-xl font-bold text-brand-ink">
-                    {config.calendarTopicCount}
-                  </dd>
-                </div>
-                <div>
-                  <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-text-subtle">
-                    Tracks
-                  </dt>
-                  <dd className="mt-1 text-xl font-bold text-brand-ink">{config.groups.length}</dd>
-                </div>
-                <div>
-                  <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-text-subtle">
-                    Roadmap
-                  </dt>
-                  <dd className="mt-1 text-xl font-bold text-brand-ink">P1–P3</dd>
-                </div>
-              </dl>
-            </aside>
-          </div>
-        </header>
-
-        <section className="mt-14" aria-labelledby={`${config.slug}-start-heading`}>
-          <div className="max-w-3xl">
-            <p className="kicker-muted">A practical sequence</p>
-            <h2
-              id={`${config.slug}-start-heading`}
-              className="mt-3 font-serif-playfair text-3xl font-semibold text-text sm:text-[36px]"
-            >
-              Start here
-            </h2>
-            <p className="mt-4 text-base leading-[1.75] text-text-muted sm:text-[17px]">
-              Follow these concepts in order for the shortest path from first principles to a usable
-              operating decision.
+      <section className="border-y border-border-soft bg-surface">
+        <div className="section-shell grid gap-14 py-20 sm:py-24 lg:grid-cols-[1.35fr_0.65fr] lg:items-end lg:gap-24 lg:py-32">
+          <div>
+            <p className="kicker-accent">{config.areaLabel}</p>
+            <h1 className="mt-6 max-w-[14ch] font-serif-playfair">{config.title}</h1>
+            <p className="mt-7 max-w-[46rem] text-[17px] leading-[1.85] text-text-muted sm:text-[18px]">
+              {config.description}
+            </p>
+            <p className="mt-7 max-w-[42rem] border-l border-brand pl-5 text-[15px] leading-[1.8] text-text">
+              {config.intro}
             </p>
           </div>
 
-          <ol className="mt-7 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {config.startHere.map((slug, index) => {
-              const topic = topicsBySlug.get(slug)
-              if (!topic) return null
-              const content = (
-                <>
-                  <div className="flex items-center justify-between">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-soft text-sm font-bold text-brand-ink">
-                      {index + 1}
+          <aside className="border-t border-border pt-5">
+            <p className="kicker-muted">The decision underneath</p>
+            <p className="mt-4 font-serif-playfair text-[25px] leading-[1.25] text-ink">
+              {config.guidingQuestion}
+            </p>
+            <dl className="mt-8 grid grid-cols-3 gap-4 border-t border-border-soft pt-5">
+              <div>
+                <dt className="kicker-muted">Topics</dt>
+                <dd className="mt-2 text-[20px] text-ink">{config.calendarTopicCount}</dd>
+              </div>
+              <div>
+                <dt className="kicker-muted">Tracks</dt>
+                <dd className="mt-2 text-[20px] text-ink">{config.groups.length}</dd>
+              </div>
+              <div>
+                <dt className="kicker-muted">Published</dt>
+                <dd className="mt-2 text-[20px] text-ink">{availableCount}</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section>
+        <div className="section-shell py-20 sm:py-24 lg:py-32">
+          <div className="grid gap-12 lg:grid-cols-[0.46fr_1.54fr] lg:gap-24">
+            <div>
+              <p className="kicker-muted">A practical sequence</p>
+              <h2 id={`${config.slug}-start-heading`} className="mt-3 font-serif-playfair">
+                Start here
+              </h2>
+              <p className="mt-5 max-w-xs text-[14px] leading-[1.75] text-text-muted">
+                Follow these concepts in order for the shortest path from first principles to a
+                usable operating decision.
+              </p>
+            </div>
+
+            <ol
+              className="border-t border-border-soft"
+              aria-labelledby={`${config.slug}-start-heading`}
+            >
+              {config.startHere.map((slug, index) => {
+                const topic = topicsBySlug.get(slug)
+                if (!topic) return null
+
+                const content = (
+                  <>
+                    <span className="pt-1 text-[12px] tracking-[0.14em] text-text-subtle">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <div>
+                      <h3 className="font-serif-playfair text-[24px] font-medium leading-[1.22] text-ink">
+                        {topic.title}
+                      </h3>
+                      <p className="mt-3 text-[15px] leading-[1.75] text-text-muted">
+                        {topic.summary}
+                      </p>
+                    </div>
+                    <span
+                      className={`pt-1 text-[11px] uppercase tracking-[0.13em] ${
+                        topic.available ? 'text-brand-ink' : 'text-text-subtle'
+                      }`}
+                    >
+                      {topic.available ? 'Available now' : `Scheduled · ${topic.phase}`}
                     </span>
                     {topic.available ? (
-                      <CheckCircle2
-                        className="h-5 w-5 text-brand-ink"
-                        aria-label="Guide available"
+                      <ArrowRight
+                        className="mt-1 hidden h-4 w-4 text-text-subtle transition-transform group-hover:translate-x-1 group-hover:text-ink lg:block"
+                        aria-hidden
                       />
                     ) : (
-                      <Clock3 className="h-5 w-5 text-text-subtle" aria-label="Guide scheduled" />
+                      <span aria-hidden="true" />
                     )}
-                  </div>
-                  <h3 className="mt-5 font-serif-playfair text-xl font-semibold leading-snug text-text">
-                    {topic.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-[1.65] text-text-muted">{topic.summary}</p>
-                  <p className="mt-auto border-t border-border-soft pt-4 text-xs font-semibold uppercase tracking-[0.12em] text-text-subtle">
-                    {topic.available ? 'Read guide' : `Scheduled · ${topic.phase}`}
-                  </p>
-                </>
-              )
+                  </>
+                )
 
-              return topic.available ? (
-                <li key={topic.slug}>
-                  <Link
-                    href={topicHref(config, topic)}
-                    className="group flex h-full min-h-[260px] flex-col rounded-card border border-border-soft bg-white p-6 shadow-card transition hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-card-hover"
-                  >
-                    {content}
-                  </Link>
-                </li>
-              ) : (
-                <li
-                  key={topic.slug}
-                  className="flex min-h-[260px] flex-col rounded-card border border-border-soft bg-white p-6"
-                >
-                  {content}
-                </li>
-              )
-            })}
-          </ol>
-        </section>
+                return (
+                  <li key={topic.slug}>
+                    {topic.available ? (
+                      <Link
+                        href={topicHref(config, topic)}
+                        className="group grid gap-5 border-b border-border-soft py-8 lg:grid-cols-[2.75rem_minmax(0,1fr)_8rem_auto] lg:items-start lg:gap-8"
+                      >
+                        {content}
+                      </Link>
+                    ) : (
+                      <div className="grid gap-5 border-b border-border-soft py-8 lg:grid-cols-[2.75rem_minmax(0,1fr)_8rem_auto] lg:items-start lg:gap-8">
+                        {content}
+                      </div>
+                    )}
+                  </li>
+                )
+              })}
+            </ol>
+          </div>
+        </div>
+      </section>
 
-        <section className="mt-16" aria-labelledby={`${config.slug}-library-heading`}>
-          <div className="flex flex-col gap-6 border-b border-border-soft pb-7 sm:flex-row sm:items-end sm:justify-between">
-            <div className="max-w-3xl">
+      <section className="border-y border-border-soft bg-surface">
+        <div className="section-shell py-20 sm:py-24 lg:py-32">
+          <div className="grid gap-8 border-b border-border pb-8 lg:grid-cols-[1fr_auto] lg:items-end">
+            <div>
               <p className="kicker-muted">The full map</p>
-              <h2
-                id={`${config.slug}-library-heading`}
-                className="mt-3 font-serif-playfair text-3xl font-semibold text-text sm:text-[36px]"
-              >
+              <h2 id={`${config.slug}-library-heading`} className="mt-3 font-serif-playfair">
                 Explore by decision track
               </h2>
             </div>
-            <div className="min-w-[220px]">
-              <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.12em] text-text-subtle">
+            <div className="min-w-[230px]">
+              <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.13em] text-text-subtle">
                 <span>Library progress</span>
                 <span>
                   {availableCount}/{topics.length}
                 </span>
               </div>
-              <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-border-soft">
-                <div className="h-full rounded-full bg-brand" style={{ width: `${progress}%` }} />
+              <div className="mt-3 h-px bg-border">
+                <div className="h-px bg-brand" style={{ width: `${progress}%` }} />
               </div>
             </div>
           </div>
 
-          <div className="divide-y divide-border-soft">
+          <div aria-labelledby={`${config.slug}-library-heading`}>
             {config.groups.map((group, groupIndex) => (
               <section
                 key={group.title}
-                className="grid gap-7 py-10 lg:grid-cols-[250px_minmax(0,1fr)] lg:gap-10"
+                className="grid gap-10 border-b border-border-soft py-12 lg:grid-cols-[0.46fr_1.54fr] lg:gap-24"
                 aria-labelledby={`${config.slug}-group-${groupIndex}`}
               >
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand-ink">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-ink">
                     Track {String(groupIndex + 1).padStart(2, '0')}
                   </p>
                   <h3
                     id={`${config.slug}-group-${groupIndex}`}
-                    className="mt-3 font-serif-playfair text-2xl font-semibold text-text"
+                    className="mt-3 font-serif-playfair text-[26px] font-medium text-ink"
                   >
                     {group.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-[1.65] text-text-muted">{group.description}</p>
+                  <p className="mt-4 max-w-sm text-[14px] leading-[1.7] text-text-muted">
+                    {group.description}
+                  </p>
                 </div>
 
-                <div className="grid gap-3 md:grid-cols-2">
+                <div className="border-t border-border-soft">
                   {group.topicSlugs.map((slug) => {
                     const topic = topicsBySlug.get(slug)
                     if (!topic) return null
-                    const cardBody = (
+
+                    const topicBody = (
                       <>
-                        <div className="flex items-start justify-between gap-4">
-                          <h4 className="font-serif-playfair text-lg font-semibold leading-snug text-text">
+                        <div>
+                          <h4 className="font-serif-playfair text-[21px] font-medium leading-[1.25] text-ink">
                             {topic.title}
                           </h4>
-                          <span className="shrink-0 rounded-full bg-surface px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-text-subtle">
+                          <p className="mt-2 text-[14px] leading-[1.7] text-text-muted">
+                            {topic.summary}
+                          </p>
+                        </div>
+                        <div className="flex items-center justify-between gap-4 lg:block">
+                          <span className="text-[10px] uppercase tracking-[0.13em] text-text-subtle">
                             {topic.phase}
                           </span>
-                        </div>
-                        <p className="mt-2 text-sm leading-[1.6] text-text-muted">
-                          {topic.summary}
-                        </p>
-                        <div className="mt-auto flex items-center justify-between pt-4 text-xs font-semibold uppercase tracking-[0.1em]">
-                          <span className={topic.available ? 'text-brand-ink' : 'text-text-subtle'}>
-                            {topic.available ? 'Available now' : 'On the roadmap'}
+                          <span
+                            className={`mt-2 block text-[11px] uppercase tracking-[0.12em] ${
+                              topic.available ? 'text-brand-ink' : 'text-text-subtle'
+                            }`}
+                          >
+                            {topic.available ? 'Read guide' : 'On the roadmap'}
                           </span>
-                          {topic.available && (
-                            <ArrowRight className="h-4 w-4 text-brand-ink transition-transform group-hover:translate-x-1" />
-                          )}
                         </div>
+                        {topic.available ? (
+                          <ArrowRight
+                            className="mt-1 hidden h-4 w-4 text-text-subtle transition-transform group-hover:translate-x-1 group-hover:text-ink lg:block"
+                            aria-hidden
+                          />
+                        ) : (
+                          <span aria-hidden="true" />
+                        )}
                       </>
                     )
 
@@ -266,16 +278,16 @@ export default function WikiAreaHub({ config }: WikiAreaHubProps) {
                       <Link
                         key={topic.slug}
                         href={topicHref(config, topic)}
-                        className="group flex min-h-[190px] flex-col rounded-[16px] border border-border-soft bg-white p-5 transition hover:border-brand/40 hover:shadow-card"
+                        className="group grid gap-5 border-b border-border-soft py-6 lg:grid-cols-[minmax(0,1fr)_7.5rem_auto] lg:items-start lg:gap-8"
                       >
-                        {cardBody}
+                        {topicBody}
                       </Link>
                     ) : (
                       <article
                         key={topic.slug}
-                        className="flex min-h-[190px] flex-col rounded-[16px] border border-border-soft bg-white p-5"
+                        className="grid gap-5 border-b border-border-soft py-6 lg:grid-cols-[minmax(0,1fr)_7.5rem_auto] lg:items-start lg:gap-8"
                       >
-                        {cardBody}
+                        {topicBody}
                       </article>
                     )
                   })}
@@ -283,34 +295,40 @@ export default function WikiAreaHub({ config }: WikiAreaHubProps) {
               </section>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <aside className="mt-6 rounded-card bg-ink px-7 py-8 text-white sm:px-9 sm:py-9">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-            <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/60">
-                Built as a living reference
-              </p>
-              <h2 className="mt-3 font-serif-playfair text-2xl font-semibold text-white">
-                New guides will open in editorial-calendar order.
-              </h2>
-              <p className="mt-3 text-sm leading-[1.7] text-white/70">
-                The complete map is visible now so you can see how each concept fits the decision,
-                even before every article is published.
-              </p>
-            </div>
+      <section className="bg-ink text-white">
+        <div className="section-shell grid gap-10 py-16 sm:py-20 lg:grid-cols-[1.35fr_0.65fr] lg:items-end lg:gap-20">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/55">
+              Built as a living reference
+            </p>
+            <h2 className="mt-4 max-w-[42rem] font-serif-playfair !text-white">
+              New guides open in editorial-calendar order.
+            </h2>
+            <p className="mt-4 max-w-[42rem] text-[15px] leading-[1.8] text-white/65">
+              The full map remains visible so each concept has context, even before every article is
+              published.
+            </p>
+          </div>
+          <div className="lg:text-right">
             <Link
               href="/wiki"
-              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-[12px] border border-white/30 px-5 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
+              className="group inline-flex items-center gap-2 border-b border-white/50 pb-1 text-[15px] font-medium text-white"
             >
-              Browse all wiki areas <ArrowRight className="h-4 w-4" />
+              Browse all wiki areas
+              <ArrowRight
+                className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                aria-hidden
+              />
             </Link>
           </div>
-        </aside>
-
-        <div className="mt-12">
-          <WikiLicenseFooter />
         </div>
+      </section>
+
+      <div className="section-shell pb-20 pt-4 sm:pb-24">
+        <WikiLicenseFooter />
       </div>
     </main>
   )

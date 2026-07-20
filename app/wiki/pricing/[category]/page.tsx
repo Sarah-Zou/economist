@@ -6,7 +6,6 @@ import { getCategoryBySlug, getAllCategorySlugs } from '@/lib/mdx'
 import WikiLayout from '@/components/wiki/WikiLayout'
 import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter'
 import Link from 'next/link'
-import Image from 'next/image'
 import {
   Diamond,
   Settings,
@@ -345,35 +344,34 @@ export default function CategoryPage({ params }: CategoryPageProps) {
       />
 
       <WikiLayout breadcrumbs={breadcrumbs} showAreasFooter={false}>
-        <div className="max-w-4xl">
-          {/* Hero Section with Background Image */}
-          <div className="mb-10">
-            <div
-              className="relative h-96 w-full overflow-hidden rounded-card border border-border-soft shadow-card"
-              style={{
-                backgroundImage: `url(${categoryImage})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-              }}
-            >
-              {/* Dark overlay for better text readability */}
-              <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(16,24,40,0.76),rgba(16,24,40,0.28),rgba(16,24,40,0.08))]"></div>
-
-              {/* Content positioned at mid-bottom */}
-              <div className="relative h-full flex flex-col justify-end p-8">
-                <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/72">
-                  Pricing Wiki
-                </p>
-                <h1 className="mb-4 font-serif-playfair text-[32px] font-bold text-white drop-shadow-lg sm:text-[36px]">
-                  {category.title}
-                </h1>
-                <p className="text-xl leading-relaxed text-white/88 drop-shadow-md">
+        <div className="resource-editorial wiki-category-editorial max-w-4xl">
+          <header className="mb-14 border-y border-border-soft bg-surface">
+            <div className="grid lg:grid-cols-[1.18fr_0.82fr]">
+              <div className="p-7 sm:p-10 lg:p-12">
+                <p className="kicker-accent">Pricing wiki · Category</p>
+                <h1 className="mt-5 font-serif-playfair">{category.title}</h1>
+                <p className="mt-6 max-w-[40rem] text-[17px] leading-[1.8] text-text-muted sm:text-[18px]">
                   {category.summary}
                 </p>
               </div>
+              <div
+                className="relative min-h-[260px] border-t border-border-soft bg-surface-muted lg:min-h-full lg:border-l lg:border-t-0"
+                style={{
+                  backgroundImage: `url(${categoryImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                }}
+                role="img"
+                aria-label=""
+              >
+                <div
+                  className="absolute inset-0 bg-[linear-gradient(0deg,rgba(19,33,42,0.2),rgba(19,33,42,0.02))]"
+                  aria-hidden
+                />
+              </div>
             </div>
-          </div>
+          </header>
 
           <div className="prose prose-lg max-w-none">
             {/* Summary Section - For foundations (from markdown) */}
@@ -381,10 +379,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               <div className="mt-12 mb-12">
                 <div className="mb-6 flex items-center">
                   <div className="mr-3 h-8 w-px bg-brand"></div>
-                  <h2
-                    id="summary"
-                    className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-0"
-                  >
+                  <h2 id="summary" className="font-serif-playfair mb-0">
                     Summary
                   </h2>
                 </div>
@@ -421,14 +416,11 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               <div className="mt-12 mb-12">
                 <div className="mb-6 flex items-center">
                   <div className="mr-3 h-8 w-px bg-brand"></div>
-                  <h2
-                    id="the-core-concepts"
-                    className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-0"
-                  >
+                  <h2 id="the-core-concepts" className="font-serif-playfair mb-0">
                     Concepts in Context
                   </h2>
                 </div>
-                <div className="space-y-32">
+                <div className="space-y-20">
                   {/* First section: Value-based and Strategic pricing with first text box */}
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                     {/* Left side - First two concept boxes */}
@@ -617,10 +609,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               <div className="mt-16 mb-12">
                 <div className="flex items-center mb-6">
                   <div className="w-1 h-8 bg-blue-600 mr-3"></div>
-                  <h2
-                    id="choosing-your-posture"
-                    className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-0"
-                  >
+                  <h2 id="choosing-your-posture" className="font-serif-playfair mb-0">
                     Choosing Your Posture
                   </h2>
                 </div>
@@ -722,10 +711,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               <div className="mt-12 mb-12">
                 <div className="flex items-center mb-6">
                   <div className="w-1 h-8 bg-blue-600 mr-3"></div>
-                  <h2
-                    id="summary"
-                    className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-0"
-                  >
+                  <h2 id="summary" className="font-serif-playfair mb-0">
                     Summary
                   </h2>
                 </div>
@@ -762,14 +748,11 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               <div className="mt-12 mb-12">
                 <div className="flex items-center mb-6">
                   <div className="w-1 h-8 bg-blue-600 mr-3"></div>
-                  <h2
-                    id="the-core-concepts"
-                    className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-0"
-                  >
+                  <h2 id="the-core-concepts" className="font-serif-playfair mb-0">
                     Concepts in Context
                   </h2>
                 </div>
-                <div className="space-y-32">
+                <div className="space-y-20">
                   {/* First section: Foundation concepts (ICP, Use Cases, JTBD) with insight box */}
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                     {/* Left side - Foundation concept boxes */}
@@ -1082,14 +1065,11 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               <div className="mt-12 mb-12">
                 <div className="flex items-center mb-6">
                   <div className="w-1 h-8 bg-blue-600 mr-3"></div>
-                  <h2
-                    id="the-core-concepts"
-                    className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-0"
-                  >
+                  <h2 id="the-core-concepts" className="font-serif-playfair mb-0">
                     Concepts in Context
                   </h2>
                 </div>
-                <div className="space-y-32">
+                <div className="space-y-20">
                   {/* Blueprint: Packaging architecture */}
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                     <div className="lg:col-span-5 flex order-2 lg:order-1">
@@ -1297,14 +1277,11 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               <div className="mt-12 mb-12">
                 <div className="flex items-center mb-6">
                   <div className="w-1 h-8 bg-blue-600 mr-3"></div>
-                  <h2
-                    id="the-core-concepts"
-                    className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-0"
-                  >
+                  <h2 id="the-core-concepts" className="font-serif-playfair mb-0">
                     Concepts in Context
                   </h2>
                 </div>
-                <div className="space-y-32">
+                <div className="space-y-20">
                   {/* Foundation: Monetization model, Pricing metric / value metric */}
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                     <div className="lg:col-span-7 flex flex-col gap-4">
@@ -1615,10 +1592,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 <div className="mt-12 mb-12">
                   <div className="flex items-center mb-6">
                     <div className="w-1 h-8 bg-blue-600 mr-3"></div>
-                    <h2
-                      id="the-core-concepts"
-                      className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-0"
-                    >
+                    <h2 id="the-core-concepts" className="font-serif-playfair mb-0">
                       Concepts in Context
                     </h2>
                   </div>
@@ -1661,10 +1635,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               <div className="mt-16 mb-12">
                 <div className="flex items-center mb-8">
                   <div className="w-1 h-8 bg-blue-600 mr-3"></div>
-                  <h2
-                    id="how-to-use-this"
-                    className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-0"
-                  >
+                  <h2 id="how-to-use-this" className="font-serif-playfair mb-0">
                     How to use this
                   </h2>
                 </div>
@@ -1937,10 +1908,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 )}
                 <div className="flex items-center mb-6">
                   <div className="w-1 h-8 bg-blue-600 mr-3"></div>
-                  <h2
-                    id="whats-in-this-category"
-                    className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-0"
-                  >
+                  <h2 id="whats-in-this-category" className="font-serif-playfair mb-0">
                     What's in this category
                   </h2>
                 </div>
@@ -1976,24 +1944,23 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             )}
 
             <div className="mt-16 mb-8">
-              <div className="mb-6 flex items-center">
-                <div className="mr-3 h-8 w-px bg-brand"></div>
-                <h2
-                  id="related-categories"
-                  className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-0"
-                >
+              <div className="mb-6 border-b border-border-soft pb-5">
+                <p className="kicker-muted">Continue through the library</p>
+                <h2 id="related-categories" className="mt-3 font-serif-playfair">
                   Related categories
                 </h2>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="border-t border-border-soft">
                 {category.relatedCategories.slice(0, 2).map((related) => (
                   <Link
                     key={related.slug}
                     href={`/wiki/pricing/${related.slug}`}
-                    className="block rounded-card border border-border-soft bg-white/88 p-4 shadow-card transition-all hover:border-brand/30 "
+                    className="group grid gap-4 border-b border-border-soft py-6 no-underline sm:grid-cols-[minmax(0,0.72fr)_minmax(15rem,1.28fr)] sm:gap-8"
                   >
-                    <h3 className="font-semibold text-text mb-2">{related.title}</h3>
-                    <p className="text-base sm:text-[17px] text-text leading-[1.65]">
+                    <h3 className="font-serif-playfair text-[22px] font-medium text-ink transition-colors group-hover:text-brand-ink">
+                      {related.title}
+                    </h3>
+                    <p className="text-[15px] leading-[1.75] text-text-muted sm:text-[16px]">
                       {related.summary}
                     </p>
                   </Link>
@@ -2004,24 +1971,22 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
           {/* CTA Section */}
           <div className="max-w-4xl mx-auto mt-16 mb-8">
-            <div className="rounded-card border border-border-soft bg-white/92 p-8 text-center shadow-card md:p-12">
-              <div className="flex items-center justify-center gap-4 mb-6">
-                <Image
-                  src="/images/headshot_v2.jpg"
-                  alt="Sarah Zou headshot"
-                  width={80}
-                  height={80}
-                  className="rounded-full object-cover flex-shrink-0"
-                />
-                <h2 className="font-serif-playfair text-2xl md:text-[28px] font-semibold text-text">
-                  If you want help applying this to your business…
-                </h2>
-              </div>
+            <div className="border-y border-white/10 bg-ink p-8 text-left md:p-12">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/55">
+                From reference to recommendation
+              </p>
+              <h2 className="mt-4 max-w-[36rem] font-serif-playfair !text-white">
+                If you want help applying this to your business…
+              </h2>
+              <p className="mt-4 max-w-[40rem] text-[15px] leading-[1.8] text-white/65">
+                Bring the commercial decision, the evidence you have, and the constraint you cannot
+                ignore.
+              </p>
               <Link
                 href="/book"
-                className="inline-flex h-[3.25rem] min-w-[220px] items-center justify-center rounded-[12px] bg-brand px-8 text-[16px] font-semibold leading-none text-brand-on shadow-card transition-[background-color,box-shadow] duration-200 hover:bg-brand"
+                className="mt-7 inline-flex items-center border-b border-white/50 pb-1 text-[15px] font-medium text-white no-underline"
               >
-                Book a 15-min intro call
+                Book a 15-minute introduction
               </Link>
             </div>
           </div>

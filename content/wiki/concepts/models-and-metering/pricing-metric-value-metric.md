@@ -1,12 +1,14 @@
 ---
 title: "Pricing Metric (Value Metric)"
-metaTitle: "Pricing metric and value metric: Definition and Examples"
+metaTitle: "Pricing Metric (Value Metric): How to Choose What You Charge For"
+metaDescription: "How to choose a pricing metric (value metric): the SMP test, the input-process-output attachment model, the density check, and a step-by-step selection process."
 oneLiner: "The pricing unit you charge on (seats, GB, transactions) that ensures your revenue grows as your customers succeed."
 prereqs: []
 tags: ["pricing metric", "value metric", "saas pricing", "packaging", "usage-based pricing", "monetization", "expansion revenue"]
 readingTime: 10
-lastUpdated: "2026-02-05"
+lastUpdated: "2026-07-19"
 owner: "Dr. Sarah Zou"
+canonical: "https://sarahzou.com/wiki/pricing/models-and-metering/pricing-metric-value-metric"
 ---
 
 ## Snapshot (TL;DR)

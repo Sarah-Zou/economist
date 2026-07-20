@@ -1,105 +1,135 @@
-'use client'
-
 import Link from 'next/link'
-import ContactForm from '@/components/ContactForm'
+import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
-import { brandLink, outlineButton, primaryButtonLg } from '@/lib/brandStyles'
-import { cn } from '@/lib/utils'
+import ContactForm from '@/components/ContactForm'
+
+const waysToBegin = [
+  {
+    number: '01',
+    title: 'Request a diagnostic note',
+    description:
+      'Share the commercial question and receive one specific observation and a practical next move.',
+    href: '/diagnostic-note',
+    linkLabel: 'Request a free diagnostic note',
+  },
+  {
+    number: '02',
+    title: 'Book a short conversation',
+    description:
+      'Use a 15-minute call when context is easier to explain aloud or the decision is time-sensitive.',
+    href: '/book',
+    linkLabel: 'Book 15 minutes',
+  },
+]
 
 export default function ContactPage() {
-  const scrollToForm = () => {
-    const nameInput = document.getElementById('name-input')
-    if (nameInput) {
-      nameInput.scrollIntoView({ behavior: 'smooth', block: 'center' })
-      setTimeout(() => {
-        nameInput.focus()
-      }, 300)
-    }
-  }
-
   return (
-    <>
-      <section className="bg-hero-tint">
-        <div className="section-shell py-16 sm:py-20 lg:py-24">
-          <div className="mx-auto max-w-[44rem] text-center">
-            <span className="kicker-accent">Contact</span>
-            <h1 className="mt-5 font-serif-playfair text-[36px] font-bold text-text sm:text-[42px] lg:text-[52px]">
-              Get in touch.
+    <div id="contact-editorial" className="overflow-hidden bg-page text-text">
+      <section className="border-b border-border-soft bg-surface">
+        <div className="section-shell grid gap-12 py-16 sm:py-20 lg:min-h-[650px] lg:grid-cols-[1.02fr_0.98fr] lg:items-end lg:gap-20 lg:py-24">
+          <div className="max-w-[48rem]">
+            <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-text-subtle">
+              Contact
+            </p>
+            <h1 className="mt-6 font-serif-playfair text-ink">
+              Start with the decision in front of you.
             </h1>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-[1.75] text-text-muted sm:text-xl">
-              Pricing, commercial strategy, and unit economics for infrastructure and data-platform
-              companies.
+            <p className="mt-7 max-w-[39rem] text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
+              A short note is enough. Tell me what you are trying to decide, what makes it
+              difficult, and where the business is today.
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* Async option — lead element */}
-      <section className="section section-alt">
-        <div className="section-shell max-w-3xl">
-          <div className="rounded-card border border-border bg-surface p-7 sm:p-9">
-            <span className="kicker-accent">Async · Free · No strings</span>
-            <h2 className="mt-4 font-serif-playfair text-[26px] font-semibold text-ink sm:text-[30px]">
-              Not ready for a call? Get a free one-page diagnostic note.
-            </h2>
-            <p className="mt-4 text-[16px] leading-[1.8] text-text-muted">
-              Tell me what you&apos;re working through and share your pricing page. Within 1–2
-              business days I&apos;ll send a one-page note with the specific gap I see and one
-              concrete thing you can do this week.
-            </p>
-            <div className="mt-6">
-              <Link href="/diagnostic-note" className={`${primaryButtonLg} w-full sm:w-auto`}>
-                Get a free diagnostic note
-                <ArrowRight className="h-4 w-4" aria-hidden />
-              </Link>
+          <figure>
+            <div className="relative aspect-[3/2] overflow-hidden bg-page">
+              <Image
+                src="/images/contact-open-threshold.webp"
+                alt="An open doorway leading into a quiet consulting studio"
+                fill
+                priority
+                sizes="(min-width: 1024px) 560px, 100vw"
+                className="object-cover"
+              />
             </div>
-          </div>
+            <figcaption className="mt-4 border-t border-border-subtle pt-3 text-[11px] uppercase tracking-[0.16em] text-text-subtle">
+              A first conversation can begin simply
+            </figcaption>
+          </figure>
         </div>
       </section>
 
-      {/* Call option — secondary */}
-      <section className="section">
-        <div className="section-shell max-w-3xl">
-          <div className="border-t border-border-soft pt-8 sm:pt-10">
-            <h2 className="font-serif-playfair text-[24px] font-semibold text-ink sm:text-[28px]">
-              Prefer a call?
-            </h2>
-            <p className="mt-3 text-[15px] leading-[1.8] text-text-muted">
-              Book a free 15-minute consult — the fastest way to get a direct answer.
+      <section aria-labelledby="contact-starting-points">
+        <div className="section-shell grid gap-10 py-20 sm:py-24 lg:grid-cols-[0.55fr_1.45fr] lg:gap-20 lg:py-32">
+          <div>
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-text-subtle">
+              Ways to begin
             </p>
-            <div className="mt-6">
-              <Link href="/book" className={cn(outlineButton, 'w-full sm:w-auto')}>
-                Book a free 15-min consult
-              </Link>
-            </div>
+            <h2 id="contact-starting-points" className="mt-5 font-serif-playfair text-ink">
+              Choose the format that fits the question.
+            </h2>
+          </div>
+
+          <div className="border-t border-border-soft">
+            {waysToBegin.map((item) => (
+              <article
+                key={item.number}
+                className="grid gap-5 border-b border-border-soft py-8 sm:grid-cols-[2.5rem_1fr_auto] sm:gap-7"
+              >
+                <span className="text-[11px] tracking-[0.14em] text-text-subtle">
+                  {item.number}
+                </span>
+                <div className="max-w-[36rem]">
+                  <h3 className="text-[18px] font-medium text-ink">{item.title}</h3>
+                  <p className="mt-3 text-[15px] leading-[1.75] text-text-muted">
+                    {item.description}
+                  </p>
+                </div>
+                <Link
+                  href={item.href}
+                  className="group inline-flex items-center gap-2 self-start border-b border-border pb-1 text-[14px] font-medium text-ink transition-colors hover:border-ink"
+                >
+                  {item.linkLabel}
+                  <ArrowRight
+                    className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                    aria-hidden
+                  />
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Message form */}
-      <section className="section section-alt">
-        <div className="section-shell max-w-3xl">
-          <div className="border-t border-border-soft pt-8 sm:pt-10">
-            <h2 className="text-center font-serif-playfair text-[28px] font-bold text-text sm:text-[32px]">
+      <section className="border-y border-border-soft bg-surface">
+        <div className="section-shell grid gap-12 py-20 sm:py-24 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24 lg:py-32">
+          <div>
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-text-subtle">
               Send a message
-            </h2>
-            <p className="mb-8 mt-4 text-center text-[15px] leading-[1.8] text-text-muted">
-              Tell me what you&apos;re working through — pricing, packaging, unit economics, or GTM
-              — and I&apos;ll reply with the clearest next step.
             </p>
-            <ContactForm
-              messagePlaceholder="Tell me what you're working through — pricing, packaging, unit economics, or GTM — and I'll reply with the clearest next step."
-              buttonText="Send message"
-            />
-            <p className="mt-6 text-center text-[13px] leading-[1.7] text-text-subtle">
+            <h2 className="mt-5 font-serif-playfair text-ink">Put the context in writing.</h2>
+            <p className="mt-6 max-w-[27rem] text-[15px] leading-[1.8] text-text-muted">
+              Pricing, packaging, unit economics, GTM, or a commercial model that does not yet feel
+              defensible—I will reply with the clearest next step.
+            </p>
+            <p className="mt-8 border-t border-border-soft pt-5 text-[13px] leading-[1.7] text-text-subtle">
               Prefer direct email?{' '}
-              <Link href="mailto:hello@sarahzou.com" className={brandLink}>
+              <Link
+                href="mailto:hello@sarahzou.com"
+                className="text-ink underline decoration-border underline-offset-4 hover:decoration-ink"
+              >
                 hello@sarahzou.com
               </Link>
             </p>
           </div>
+
+          <div className="border-t border-border-soft pt-8">
+            <ContactForm
+              messagePlaceholder="Tell me what you're working through and what makes the decision difficult."
+              buttonText="Send message"
+            />
+          </div>
         </div>
       </section>
-    </>
+    </div>
   )
 }

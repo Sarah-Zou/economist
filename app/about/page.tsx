@@ -1,131 +1,72 @@
 import type { Metadata } from 'next'
-import type { ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import {
-  ArrowRight,
-  BarChart3,
-  Briefcase,
-  CheckCircle2,
-  LineChart,
-  Rocket,
-  ShieldCheck,
-  Zap,
-} from 'lucide-react'
-import { outlineButton, primaryButtonLg } from '@/lib/brandStyles'
+import { ArrowRight } from 'lucide-react'
 import { generateBreadcrumbJsonLd } from '@/lib/generateJsonLd'
 import { OG_IMAGE_ABOUT } from '@/lib/seo'
 
-const PRIMARY_CTA_HREF = '/diagnostic-note'
-const CONSULT_CTA_HREF = '/book'
-const SECONDARY_CTA_HREF = '/consulting'
-
-const heroProofPoints = [
-  'PhD Economics',
-  'MS Finance & Statistics',
-  'NBER / World Bank research',
-  'Citigroup',
-  'Capgemini',
-  'COO, infrastructure data platform',
-]
-
-const companyTypes = [
-  'Model serving & LLMOps',
-  'AI developer tooling & API platforms',
-  'AI data infrastructure',
-  'Distributed sensing & physical-world data',
-  'Geospatial & environmental data platforms',
-  'Sensing-as-a-service / data-as-a-service',
-]
-
-const bestUseCases = [
-  "You're pricing a complex product and need cost logic that holds up.",
-  "Your GTM doesn't match how technical buyers actually adopt.",
-  'You need a paid-pilot, packaging, or ICP for a brand-new category.',
-  'Your unit economics have to survive fundraising diligence.',
-  'You need an investor-ready economic story for an infrastructure product.',
-  'You want ongoing support from someone who runs the same kind of company.',
-]
-
-const selectedOutcomes: { id: string; icon: typeof Rocket; content: ReactNode }[] = [
+const careerChapters = [
   {
-    id: 'cac-payback',
-    icon: Rocket,
-    content: (
-      <>
-        Helped <strong>redesign pricing and packaging</strong> to support faster{' '}
-        <strong>CAC payback</strong>.
-      </>
-    ),
+    number: '01',
+    period: 'Economics',
+    title: 'Learning to ask what drives the outcome.',
+    description:
+      'Doctoral training at Rutgers and research with NBER and the World Bank taught me to separate signal from noise—and to make assumptions visible before trusting a conclusion.',
   },
   {
-    id: 'nrr',
-    icon: LineChart,
-    content: (
-      <>
-        Improved <strong>monetization structure</strong> to support stronger{' '}
-        <strong>expansion</strong> and <strong>NRR</strong>.
-      </>
-    ),
+    number: '02',
+    period: 'Finance',
+    title: 'Learning what a model must withstand.',
+    description:
+      'At Citigroup, I worked with risk and forecasting models where precision mattered, but so did judgment, governance, and the ability to explain what the numbers could not guarantee.',
   },
   {
-    id: 'models-narratives',
-    icon: BarChart3,
-    content: (
-      <>
-        Built <strong>forward models</strong>, <strong>KPI logic</strong>, and{' '}
-        <strong>investor-facing economic narratives</strong> to support growth and fundraising.
-      </>
-    ),
+    number: '03',
+    period: 'Transformation',
+    title: 'Learning to translate across disciplines.',
+    description:
+      'At Capgemini, I led generative-AI and digital-transformation work across technical and business teams. The challenge was rarely the technology alone; it was creating shared language around the decision.',
   },
   {
-    id: 'raises',
-    icon: ShieldCheck,
-    content: (
-      <>
-        Supported clients involved in <strong>$50M+</strong> in cumulative raises.
-      </>
-    ),
+    number: '04',
+    period: 'Operations',
+    title: 'Learning where strategy meets constraint.',
+    description:
+      'Operating an infrastructure data platform as COO brought the work closest to reality: pricing against cost floors, structuring paid pilots, and building an economic story that could survive diligence.',
   },
 ]
 
-const workPrinciples = [
+const convictions = [
   {
-    title: 'Hypothesis-driven',
-    description: 'Focused on what is most likely to improve revenue, retention, or margin.',
+    number: '01',
+    title: 'Begin with behavior.',
+    description:
+      'A commercial model should reflect how customers evaluate, adopt, use, and expand—not simply how the company prefers to charge.',
   },
   {
-    title: 'Documented',
-    description: 'Clear about assumptions, tradeoffs, and decision logic.',
+    number: '02',
+    title: 'Make complexity legible.',
+    description:
+      'Technical products do not need to be made simplistic. They need an economic logic that buyers, teams, and investors can understand from their own vantage point.',
   },
   {
-    title: 'Testable',
-    description: 'Built to be launched, measured, and refined in the real business.',
-  },
-]
-
-const pillars = [
-  {
-    icon: Briefcase,
-    title: 'Strategy',
-    desc: 'Practical founder-facing recommendations instead of vague strategy talk.',
+    number: '03',
+    title: 'Use the model to expose the decision.',
+    description:
+      'The purpose of analysis is not a more elaborate spreadsheet. It is to reveal the tradeoff, define what matters, and make the next move easier to defend.',
   },
   {
-    icon: BarChart3,
-    title: 'Rigor',
-    desc: 'Research-grade quantitative analysis that removes guesswork from pricing.',
-  },
-  {
-    icon: Zap,
-    title: 'Speed',
-    desc: 'Actionable steps you can implement and test this week.',
+    number: '04',
+    title: 'Stay close to operating reality.',
+    description:
+      'A recommendation is only strong if it can survive product constraints, cost behavior, sales conversations, and the imperfect information of a growing company.',
   },
 ]
 
 export const metadata: Metadata = {
-  title: 'About Sarah Zou | Commercial Strategy Advisor for AI-Infrastructure & Data Platforms',
+  title: 'About Sarah Zou | Economist, Operator & Advisor',
   description:
-    'PhD economist and COO of an infrastructure data platform. Commercial strategy for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B) — pricing architecture, GTM for technical buyers, fundraising-ready unit economics.',
+    'Sarah Zou is a PhD economist and infrastructure operator. Read how research, finance, consulting, and operating experience shaped her commercial point of view.',
   robots: {
     index: true,
     follow: true,
@@ -140,19 +81,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://sarahzou.com/about',
   },
-    openGraph: {
-    title: 'About Sarah Zou | Commercial Strategy Advisor for AI-Infrastructure & Data Platforms',
+  openGraph: {
+    title: 'About Sarah Zou | Economist, Operator & Advisor',
     description:
-      'PhD economist and COO of an infrastructure data platform. Commercial strategy for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B).',
+      'The path from economic research to finance, transformation, and operating an infrastructure data platform.',
     type: 'website',
     url: 'https://sarahzou.com/about',
     images: [OG_IMAGE_ABOUT],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Sarah Zou | Commercial Strategy Advisor for AI-Infrastructure & Data Platforms',
+    title: 'About Sarah Zou | Economist, Operator & Advisor',
     description:
-      'PhD economist and COO of an infrastructure data platform. Commercial strategy for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B).',
+      'The path from economic research to finance, transformation, and operating an infrastructure data platform.',
     images: [OG_IMAGE_ABOUT],
   },
 }
@@ -170,338 +111,214 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
-      <div className="bg-page text-text">
-        {/* Hero */}
-        <section className="bg-hero-tint">
-          <div className="section-shell pb-20 pt-10 sm:pb-24 sm:pt-16 lg:pb-28 lg:pt-20">
-            <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16 xl:gap-20">
-              <div className="order-2 w-full lg:order-1">
-                <div className="portrait-shell mx-auto aspect-[4/5] w-full max-w-full sm:max-w-[380px] md:max-w-[400px] lg:mx-0 lg:max-w-none">
-                  <Image
-                    src="/images/about_headshot.webp"
-                    alt="Sarah Zou, PhD economist"
-                    fill
-                    priority
-                    sizes="(min-width: 1280px) 480px, (min-width: 1024px) 440px, (min-width: 768px) 400px, 100vw"
-                    className="object-cover object-top"
-                  />
-                </div>
-                <div className="media-rule mx-auto w-full max-w-full text-center sm:max-w-[380px] md:max-w-[400px] lg:mx-0 lg:max-w-none lg:text-left">
-                  <p className="media-caption">Economist. Operator. Advisor.</p>
-                </div>
-              </div>
-
-              <div className="order-1 lg:order-2">
-                <span className="kicker-accent">About</span>
-                <h1 className="mt-5 font-serif-playfair text-ink">
-                  I&apos;m a PhD economist who also operates a deep tech startup.
-                </h1>
-                <p className="lede mt-6 max-w-[34rem]">
-                  I help deep tech founders price, package, and sell products that are hard to
-                  explain and hard to cost — so they win customers and clear investor diligence.
-                </p>
-                <p className="meta-note mt-5">
-                  Best fit for deep tech founders at Seed to Series B.
-                </p>
-                <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-                  <Link
-                    href={PRIMARY_CTA_HREF}
-                    className={`${primaryButtonLg} w-full max-w-[360px] sm:w-auto`}
-                  >
-                    Get a free diagnostic note
-                    <ArrowRight className="h-4 w-4" aria-hidden />
-                  </Link>
-                  <Link href={SECONDARY_CTA_HREF} className="display-link">
-                    See ways to work with me
-                  </Link>
-                </div>
-
-                <div className="mt-12 grid max-w-2xl gap-x-6 gap-y-3 border-t border-border-soft pt-6 sm:grid-cols-2">
-                  <p className="text-[12px] uppercase tracking-[0.12em] text-text-subtle">
-                    Background &amp; experience
-                  </p>
-                  <ul className="col-span-full flex flex-wrap gap-x-6 gap-y-3">
-                    {heroProofPoints.map((item) => (
-                      <li
-                        key={item}
-                        className="inline-flex items-center gap-2 text-[13px] text-text-muted"
-                      >
-                        <CheckCircle2
-                          className="h-3.5 w-3.5 flex-shrink-0 text-text-subtle"
-                          strokeWidth={2.25}
-                          aria-hidden
-                        />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* What makes me different */}
-        <section className="section section-alt">
-          <div className="section-shell">
-            <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-              <div className="lg:col-span-7">
-                <span className="kicker">What makes me different</span>
-                <h2 className="section-title">Why founders choose me</h2>
-                <ul className="mt-6 space-y-3 text-[16px] leading-[1.7] text-text sm:text-[17px]">
-                  {[
-                    'Most pricing consultants advise from the outside.',
-                    'Most economists give you rigor without operator context.',
-                    'Most operators move fast but lack commercial modeling depth.',
-                  ].map((line) => (
-                    <li key={line} className="flex items-start gap-2.5">
-                      <span className="mt-[10px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
-                      <span>{line}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-6 font-serif-playfair text-[24px] leading-[1.25] text-ink sm:text-[28px]">
-                  I bring all three together.
-                </p>
-                <p className="mt-5 max-w-2xl text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
-                  The result: pricing and GTM decisions tested against real costs and real buyers —
-                  not theory.
-                </p>
-              </div>
-
-              <div className="lg:col-span-5">
-                <div className="space-y-6 border-l border-border pl-6">
-                  {pillars.map((pillar, idx) => {
-                    const Icon = pillar.icon
-                    return (
-                      <div key={pillar.title}>
-                        <div className="flex items-start gap-4">
-                          <div className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-[14px] bg-surface">
-                            <Icon className="h-4 w-4 text-text" aria-hidden />
-                          </div>
-                          <div>
-                            <h3 className="text-[17px] font-semibold leading-tight text-ink">
-                              {pillar.title}
-                            </h3>
-                            <p className="mt-1 text-[14px] leading-[1.65] text-text-muted">
-                              {pillar.desc}
-                            </p>
-                          </div>
-                        </div>
-                        {idx < pillars.length - 1 && <div className="mt-6 h-px bg-border-soft" />}
-                      </div>
-                    )
-                  })}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Who I help */}
-        <section className="section">
-          <div className="section-shell">
-            <div className="card-dark">
-              <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-                <div>
-                  <span className="inline-flex rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-soft">
-                    Who I help
-                  </span>
-                  <h2 className="mt-4 font-serif-playfair text-white">
-                    AI infrastructure and data platform companies — Seed to Series B:
-                  </h2>
-                  <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-                    {companyTypes.map((item) => (
-                      <li
-                        key={item}
-                        className="border-b border-white/10 pb-3 text-[14px] font-medium text-white"
-                      >
-                        <span className="inline-flex items-center gap-2">
-                          <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
-                          <span>{item}</span>
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <span className="inline-flex rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-soft">
-                    Best fit
-                  </span>
-                  <h3 className="mt-4 font-serif-playfair text-white">
-                    I&apos;m most useful when:
-                  </h3>
-                  <ul className="mt-6 space-y-3 text-[15px] leading-[1.6] text-white/85">
-                    {bestUseCases.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5">
-                        <span className="mt-[8px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Selected outcomes */}
-        <section className="section section-alt">
-          <div className="section-shell">
-            <div className="section-header">
-              <span className="kicker">Selected outcomes</span>
-              <h2 className="section-title">What the work has looked like</h2>
-            </div>
-            <div className="mt-12 divide-y divide-border-soft border-y border-border-soft">
-              {selectedOutcomes.map((item) => {
-                  const Icon = item.icon
-                return (
-                  <div
-                    key={item.id}
-                    className="grid gap-4 py-5 md:grid-cols-[auto_1fr] md:items-start md:gap-5"
-                  >
-                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-[14px] bg-surface">
-                      <Icon className="h-4 w-4 text-text-subtle" aria-hidden />
-                    </div>
-                    <p className="text-[16px] leading-[1.8] text-text sm:text-[17px]">
-                      {item.content}
-                    </p>
-                  </div>
-                )
-              })}
-            </div>
-            <p className="mt-8 text-center text-[13px] text-text-muted">
-              Selected results are representative; details available under NDA.
-            </p>
-          </div>
-        </section>
-
-        {/* How I work + image */}
-        <section className="section">
-          <div className="section-shell">
-            <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-              <div className="lg:col-span-6">
-                <span className="kicker">How I work</span>
-                <h2 className="section-title">What you actually get</h2>
-                <p className="mt-5 text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
-                  Every recommendation is built to be used, not filed:
-                </p>
-
-                <div className="mt-8 space-y-8">
-                  {workPrinciples.map((item, index) => (
-                    <div key={item.title} className="flex items-start gap-4">
-                      <span className="inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-white text-[13px] font-semibold text-ink shadow-card">
-                        {index + 1}
-                      </span>
-                      <div>
-                        <h3 className="text-[18px] font-semibold leading-[1.25] text-ink">
-                          {item.title}
-                        </h3>
-                        <p className="mt-1 text-[15px] leading-[1.7] text-text-muted">
-                          {item.description}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-8 border-t border-border-soft pt-6">
-                  <p className="text-[15px] leading-[1.75] text-text-muted sm:text-[16px]">
-                    Your team gets decisions, not dashboards — and your board gets a clear economic
-                    narrative behind the numbers.
-                  </p>
-                </div>
-              </div>
-
-              <div className="lg:col-span-6">
-                <div className="media-shell aspect-[4/5] bg-[#f1ece5] p-3">
-                  <div className="media-inner">
-                    <Image
-                      src="/images/processsteps.webp"
-                      alt="Team reviewing business metrics and growth strategy"
-                      fill
-                      sizes="(min-width: 1024px) 42vw, 100vw"
-                      className="object-cover"
-                    />
-                  </div>
-                </div>
-                <p className="media-caption text-center sm:text-left">
-                  The work is designed to help founders move from ambiguity to a decision they can
-                  defend.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why I built this */}
-        <section className="section section-alt">
-          <div className="section-shell">
-            <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-              <div className="lg:col-span-5">
-                <span className="kicker">Story</span>
-                <h2 className="section-title">Why I built this practice</h2>
-                <p className="mt-6 font-serif-playfair text-[22px] italic leading-[1.3] text-ink sm:text-[24px]">
-                  Pricing and commercial strategy from someone who is building the same kind of company.
-                </p>
-              </div>
-
-              <div className="lg:col-span-7">
-                <div className="space-y-6 text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
-                  <p>
-                    I trained as an economist — a <strong className="text-ink">PhD</strong> at
-                    Rutgers, an <strong className="text-ink">MS</strong> in Finance and Statistics
-                    at UIUC, and research with <strong className="text-ink">NBER</strong> and the{' '}
-                    <strong className="text-ink">World Bank</strong> — then built risk and
-                    forecasting models at <strong className="text-ink">Citigroup</strong> and led
-                    GenAI and digital-transformation work at{' '}
-                    <strong className="text-ink">Capgemini</strong>.
-                  </p>
-
-                  <blockquote className="quote-block">
-                    <p className="font-serif-playfair text-[20px] leading-[1.4] text-ink sm:text-[22px]">
-                      What makes my perspective unusual: I am not only advising technical founders
-                      from the outside. I operate an infrastructure data platform as COO — pricing
-                      against real cost floors, structuring paid pilots, and building unit-economics
-                      models for fundraising diligence.
-                    </p>
-                    <p className="mt-4 text-[15px] font-semibold text-ink">
-                      That is the context I bring to every engagement.
-                    </p>
-                  </blockquote>
-
-                  <p>
-                    I started <strong className="text-ink">EconNova Consulting</strong> to bring
-                    that rigor to deep tech founders — pricing and commercial strategy where generic
-                    SaaS frameworks fall short. I work as a consultant, fractional advisor, or
-                    embedded strategist.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Closing CTA */}
-        <section className="section-sm">
-          <div className="section-shell max-w-4xl">
-            <div className="cta-panel">
-              <h2 className="font-serif-playfair text-ink">
-                Have a pricing or GTM decision you need to get right?
-              </h2>
-              <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
-                Start with a free one-page diagnostic note on your pricing — the specific gap I see
-                and one concrete thing you can do this week. Or book a 15-min consult.
+      <div id="about-norm" className="overflow-hidden bg-page text-text">
+        <section className="border-b border-border-soft bg-surface">
+          <div className="section-shell grid gap-12 py-16 sm:py-20 lg:min-h-[690px] lg:grid-cols-[1.08fr_0.92fr] lg:items-end lg:gap-16 lg:py-24">
+            <div className="max-w-[47rem] lg:pb-8">
+              <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-text-subtle">
+                About Sarah Zou
               </p>
-              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <Link href={PRIMARY_CTA_HREF} className={primaryButtonLg}>
-                  Get a free diagnostic note
-                </Link>
-                <Link href={CONSULT_CTA_HREF} className={outlineButton}>
-                  Book a free 15-min consult
-                </Link>
+              <h1 className="mt-6 max-w-[44rem] font-serif-playfair text-ink">
+                I’m an economist who cares about what happens behind the model.
+              </h1>
+              <p className="mt-7 max-w-[36rem] text-[17px] leading-[1.78] text-text-muted sm:text-[19px]">
+                I’ve spent my career learning how evidence becomes judgment—from research and
+                finance to transformation and infrastructure operations.
+              </p>
+            </div>
+
+            <figure className="w-full lg:justify-self-end">
+              <div className="relative aspect-[4/5] max-h-[610px] w-full overflow-hidden bg-page">
+                <Image
+                  src="/images/about_headshot.webp"
+                  alt="Sarah Zou, economist, operator, and advisor"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 470px, 100vw"
+                  className="object-cover object-top"
+                />
               </div>
+              <figcaption className="mt-4 border-t border-border-subtle pt-3 text-[11px] uppercase tracking-[0.16em] text-text-subtle">
+                Economist &middot; Operator &middot; Advisor
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section aria-labelledby="career-path-title">
+          <div className="section-shell py-20 sm:py-24 lg:py-32">
+            <div className="grid gap-8 border-b border-border-soft pb-12 lg:grid-cols-[0.55fr_1.45fr] lg:gap-20">
+              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-text-subtle">
+                The path
+              </p>
+              <h2 id="career-path-title" className="max-w-[44rem] font-serif-playfair text-ink">
+                Four contexts that changed how I see commercial problems.
+              </h2>
+            </div>
+
+            <ol>
+              {careerChapters.map((chapter) => (
+                <li
+                  key={chapter.number}
+                  className="grid gap-5 border-b border-border-soft py-9 sm:grid-cols-[3rem_0.38fr_1fr] sm:gap-8 lg:py-11"
+                >
+                  <span className="text-[11px] tracking-[0.14em] text-text-subtle">
+                    {chapter.number}
+                  </span>
+                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-subtle">
+                    {chapter.period}
+                  </p>
+                  <div className="max-w-[42rem]">
+                    <h3 className="font-serif-playfair text-[24px] font-medium leading-[1.2] tracking-[-0.01em] text-ink sm:text-[27px]">
+                      {chapter.title}
+                    </h3>
+                    <p className="mt-4 text-[15px] leading-[1.8] text-text-muted sm:text-[16px]">
+                      {chapter.description}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section className="bg-ink text-white">
+          <div className="section-shell grid gap-12 py-20 sm:py-24 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20 lg:py-28">
+            <figure>
+              <div className="relative aspect-[3/2] overflow-hidden bg-white/[0.04]">
+                <Image
+                  src="/images/about-model-and-decision-v2.webp"
+                  alt="Handwritten financial-modeling calculations beside a printed radar chart"
+                  fill
+                  sizes="(min-width: 1024px) 540px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-4 border-t border-white/20 pt-3 text-[11px] uppercase tracking-[0.16em] text-white/50">
+                Evidence, judgment, and the decision between them
+              </figcaption>
+            </figure>
+
+            <div className="max-w-[46rem]">
+              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/[0.5]">
+                A working thesis
+              </p>
+              <blockquote>
+                <p className="mt-6 font-serif-playfair text-[32px] leading-[1.22] text-white sm:text-[38px] lg:text-[43px]">
+                  The strongest commercial decisions are neither purely analytical nor purely
+                  intuitive.
+                </p>
+              </blockquote>
+              <p className="mt-8 max-w-[41rem] border-t border-white/[0.18] pt-7 text-[16px] leading-[1.8] text-white/70 sm:text-[17px]">
+                They connect evidence with judgment. They make uncertainty explicit without becoming
+                paralyzed by it. And they give the people responsible for the outcome a logic they
+                can carry forward.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="convictions-title">
+          <div className="section-shell py-20 sm:py-24 lg:py-32">
+            <div className="grid gap-8 lg:grid-cols-[0.55fr_1.45fr] lg:gap-20">
+              <div>
+                <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-text-subtle">
+                  Point of view
+                </p>
+                <h2 id="convictions-title" className="mt-5 font-serif-playfair text-ink">
+                  What I have come to believe.
+                </h2>
+              </div>
+
+              <div className="border-t border-border-soft">
+                {convictions.map((conviction) => (
+                  <article
+                    key={conviction.number}
+                    className="grid grid-cols-[2.5rem_1fr] gap-6 border-b border-border-soft py-8"
+                  >
+                    <span className="text-[11px] tracking-[0.14em] text-text-subtle">
+                      {conviction.number}
+                    </span>
+                    <div className="max-w-[41rem]">
+                      <h3 className="text-[18px] font-medium text-ink">{conviction.title}</h3>
+                      <p className="mt-3 text-[15px] leading-[1.8] text-text-muted sm:text-[16px]">
+                        {conviction.description}
+                      </p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-border-soft bg-surface">
+          <div className="section-shell grid gap-12 py-20 sm:py-24 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20 lg:py-28">
+            <figure>
+              <div className="relative aspect-[3/2] overflow-hidden bg-page">
+                <Image
+                  src="/images/about-boutique-office.webp"
+                  alt="A quiet boutique consulting office prepared for a working session"
+                  fill
+                  sizes="(min-width: 1024px) 540px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-4 border-t border-border-subtle pt-3 text-[11px] uppercase tracking-[0.16em] text-text-subtle">
+                A small practice, close to the work
+              </figcaption>
+            </figure>
+
+            <div className="max-w-[46rem]">
+              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-text-subtle">
+                Why EconNova
+              </p>
+              <h2 className="mt-5 font-serif-playfair text-ink">
+                A practice built for questions without an off-the-shelf answer.
+              </h2>
+              <div className="mt-8 space-y-6 text-[16px] leading-[1.85] text-text-muted sm:text-[17px]">
+                <p>
+                  I started EconNova to bring economic reasoning and operating context into the same
+                  conversation. Technical founders are often told to borrow a familiar SaaS playbook
+                  even when their products, costs, buyers, and adoption patterns behave very
+                  differently.
+                </p>
+                <p className="text-text">
+                  I am most interested in the moment before the answer looks obvious—when the right
+                  framing can prevent months of optimizing the wrong model.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div className="section-shell grid gap-9 py-20 sm:py-24 lg:grid-cols-[1.35fr_0.65fr] lg:items-end lg:gap-20 lg:py-28">
+            <div>
+              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-text-subtle">
+                From perspective to practice
+              </p>
+              <h2 className="mt-5 max-w-[48rem] font-serif-playfair text-ink">
+                See how this point of view translates into the work.
+              </h2>
+            </div>
+            <div className="flex flex-col items-start gap-5 lg:items-end">
+              <Link
+                href="/consulting"
+                className="group inline-flex items-center gap-2 border-b border-ink pb-1 text-[15px] font-medium text-ink"
+              >
+                Explore the practice
+                <ArrowRight
+                  className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                  aria-hidden
+                />
+              </Link>
+              <Link
+                href="/newsletter"
+                className="border-b border-border pb-1 text-[14px] text-text-muted transition-colors hover:border-ink hover:text-ink"
+              >
+                Read the field notes
+              </Link>
             </div>
           </div>
         </section>

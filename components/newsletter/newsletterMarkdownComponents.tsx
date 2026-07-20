@@ -14,7 +14,7 @@ export function createNewsletterMarkdownComponents() {
       return (
         <h2
           id={id}
-          className="font-serif-playfair text-[24px] sm:text-[28px] font-semibold text-text mt-16 mb-5 scroll-mt-24 leading-tight"
+          className="font-serif-playfair mt-16 mb-5 scroll-mt-24"
           {...props}
         >
           {text}
@@ -28,7 +28,7 @@ export function createNewsletterMarkdownComponents() {
       return (
         <h2
           id={id}
-          className="font-serif-playfair text-[24px] sm:text-[28px] font-semibold text-text mt-16 mb-5 scroll-mt-24 leading-tight"
+          className="font-serif-playfair mt-16 mb-5 scroll-mt-24"
           {...props}
         >
           {text}

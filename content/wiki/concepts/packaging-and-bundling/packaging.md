@@ -1,12 +1,14 @@
 ---
 title: "Packaging architecture"
-metaTitle: "Packaging architecture: Definition, Framework, Steps"
+metaTitle: "Packaging Architecture: Designing Tiers, Fences, and Upgrade Paths"
+metaDescription: "Packaging precedes pricing: how to group features into tiers, classify Leader/Filler/Killer features, set fences and upgrade triggers, and avoid the kitchen-sink trap."
 oneLiner: "The blueprint for how to group features into distinct tiers to maximize willingness-to-pay and simplify the buying process."
 prereqs: ["Value-Based Pricing", "Segmentation", "Value Drivers", "Jobs-to-Be-Done", "Customer Use Cases"]
 tags: ["monetization", "tiering", "bundling", "add-ons", "value metric", "growth", "SaaS"]
 readingTime: 8
-lastUpdated: "2026-01-27"
+lastUpdated: "2026-07-19"
 owner: "Dr. Sarah Zou"
+canonical: "https://sarahzou.com/wiki/pricing/packaging-and-bundling/packaging"
 ---
 
 ## Snapshot (TL;DR)

@@ -2,7 +2,7 @@
 title: "Monetization Models & Metering"
 slug: "models-and-metering"
 summary: "Monetization models are less about what price and more about what you charge for."
-updated: "2026-02-26"
+updated: "2026-07-19"
 level: "101"
 tags: ["pricing","saas","monetization","models","metering","subscription"]
 canonical: "https://sarahzou.com/wiki/pricing/models-and-metering"
@@ -26,29 +26,19 @@ Monetization models are less about "what price" and more about **what you charge
 - **[<span id="hybrid-pricing">Hybrid pricing</span>](/wiki/pricing/models-and-metering/hybrid-pricing)**: Combine a fixed base (subscription/seat) with a variable component (usage/transactions/outcomes) to balance predictability and upside.
 - **[<span id="credits-drawdown-model">Credits / drawdown model</span>](/wiki/pricing/models-and-metering/credits-drawdown-model)**: Customers prepay a wallet of credits and consume that balance as usage occurs, blending budget certainty with flexible consumption.
 
-## Core Concepts
+## Which model fits your product?
 
-### Core Architecture
-
-- **Monetization model:** The overarching blueprint for who pays, for what, and how revenue scales.
-- **Pricing metric / value metric:** The specific billable unit (seat, GB, transaction, outcome) that should track value and cost-to-serve.
-
-### Revenue Engines
-
-- **Subscription model:** Recurring access pricing for continuous value and stable usage.
-- **Seat-based pricing:** Per-user recurring pricing when value scales with headcount and buyers want budget predictability.
-- **Usage-based pricing:** Consumption pricing when usage is the clearest value proxy and cost scales with use.
-- **Transaction-based pricing:** Event pricing for discrete, countable value moments such as successful payments or completed bookings.
-- **Outcome-based pricing:** Value-sharing pricing tied to measurable, attributable results.
-
-### Advanced Execution
-
-- **Hybrid pricing:** Base fee plus variable usage to combine predictable revenue with upside capture.
-- **Credits / drawdown model:** Prepaid wallet model that improves budget predictability while preserving usage flexibility.
-
-### Go-To-Market Pricing
-
-- **Freemium model:** A free acquisition tier that feeds paid conversion and expansion when marginal costs are low.
+| Your product's reality | Best-fit model(s) | The page to read |
+|------------------------|-------------------|------------------|
+| Value scales with how many people use it (collaboration, CRM) | Subscription per seat | [Seat-based pricing](/wiki/pricing/models-and-metering/seat-based-pricing) |
+| Continuous value, stable usage, recurring need | Flat or tiered recurring fee | [Subscription model](/wiki/pricing/models-and-metering/subscription-model) |
+| Usage varies 10× across customers; costs scale with use (API, data, AI) | Consumption pricing, usually with a base | [Usage-based pricing](/wiki/pricing/models-and-metering/usage-based-pricing) |
+| Value arrives in discrete, countable events (payments, bookings) | Per-event pricing | [Transaction-based pricing](/wiki/pricing/models-and-metering/transaction-based-pricing) |
+| The result is measurable, attributable, and auditable | Gainshare / success fee | [Outcome-based pricing](/wiki/pricing/models-and-metering/outcome-performance-based-pricing) |
+| Buyers need budget certainty AND you need upside | Base + variable | [Hybrid pricing](/wiki/pricing/models-and-metering/hybrid-pricing) |
+| Procurement wants committed spend; usage is spiky | Prepaid wallet | [Credits / drawdown](/wiki/pricing/models-and-metering/credits-drawdown-model) |
+| Near-zero marginal cost, viral loops, huge market | Free tier feeding paid | [Freemium model](/wiki/pricing/models-and-metering/freemium-model) |
+| You're not sure what unit to bill on at all | Start here first | [Pricing metric / value metric](/wiki/pricing/models-and-metering/pricing-metric-value-metric) |
 
 ## Insights
 

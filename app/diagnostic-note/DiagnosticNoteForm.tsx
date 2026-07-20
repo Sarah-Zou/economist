@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { primaryButton } from '@/lib/brandStyles'
 import { cn } from '@/lib/utils'
+import { trackEvent } from '@/lib/analytics'
 
 const STAGE_OPTIONS = [
   { value: '', label: 'Select stage…' },
@@ -53,6 +54,10 @@ export default function DiagnosticNoteForm() {
         mode: 'no-cors',
         body: formData,
       })
+      trackEvent('generate_lead', {
+        method: 'diagnostic_note',
+        form_name: 'diagnostic_note_request',
+      })
       setSucceeded(true)
     } catch (err) {
       setError('Something went wrong. Please try again or email hello@sarahzou.com directly.')
@@ -64,9 +69,15 @@ export default function DiagnosticNoteForm() {
 
   if (succeeded) {
     return (
-      <div className="rounded-card border border-border bg-surface px-6 py-10 text-center">
-        <p className="font-serif-playfair text-[22px] font-semibold text-ink">
+      <div className="border-y border-border-soft py-10">
+        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-text-subtle">
+          Request received
+        </p>
+        <p className="mt-5 font-serif-playfair text-[26px] font-medium text-ink">
           Thanks — I&apos;ll be in touch within 1–2 business days.
+        </p>
+        <p className="mt-4 max-w-[34rem] text-[15px] leading-[1.75] text-text-muted">
+          I&apos;ll review the context personally and reply with a concise, practical note.
         </p>
       </div>
     )
@@ -118,8 +129,7 @@ export default function DiagnosticNoteForm() {
 
       <div className="field-group">
         <label htmlFor="dn-pricing-url" className="label">
-          Pricing page URL{' '}
-          <span className="text-text-subtle">(optional)</span>
+          Pricing page URL <span className="text-text-subtle">(optional)</span>
         </label>
         <input
           id="dn-pricing-url"
@@ -149,7 +159,7 @@ export default function DiagnosticNoteForm() {
           <label htmlFor="dn-stage" className="label">
             Stage
           </label>
-          <select id="dn-stage" name="stage" className="input" required>
+          <select id="dn-stage" name="stage" className="input" defaultValue="" required>
             {STAGE_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value} disabled={opt.value === ''}>
                 {opt.label}
@@ -162,7 +172,7 @@ export default function DiagnosticNoteForm() {
           <label htmlFor="dn-category" className="label">
             Category
           </label>
-          <select id="dn-category" name="category" className="input" required>
+          <select id="dn-category" name="category" className="input" defaultValue="" required>
             {CATEGORY_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value} disabled={opt.value === ''}>
                 {opt.label}
@@ -180,7 +190,10 @@ export default function DiagnosticNoteForm() {
           value="yes"
           className="mt-0.5 h-4 w-4 flex-shrink-0 rounded border-border accent-brand"
         />
-        <label htmlFor="dn-newsletter" className="cursor-pointer text-[14px] leading-[1.65] text-text-muted">
+        <label
+          htmlFor="dn-newsletter"
+          className="cursor-pointer text-[14px] leading-[1.65] text-text-muted"
+        >
           Also send me the occasional pricing note
         </label>
       </div>

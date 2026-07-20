@@ -8,11 +8,7 @@ import {
   generateFAQJsonLd,
 } from '@/lib/generateJsonLd'
 import { getCategoryBySlug, getConceptBySlug } from '@/lib/mdx'
-import {
-  getWikiConceptPagePath,
-  type WikiAreaConfig,
-  PRICING_WIKI_AREA,
-} from '@/lib/wiki-areas'
+import { getWikiConceptPagePath, type WikiAreaConfig, PRICING_WIKI_AREA } from '@/lib/wiki-areas'
 import {
   normalizeHeadingText,
   createUniqueHeadingId,
@@ -23,6 +19,7 @@ import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter'
 import TableOfContents from '@/components/wiki/TableOfContents'
 import CiteThisPage from '@/components/wiki/CiteThisPage'
 import { WikiMarkdownHtml } from '@/components/wiki/WikiMarkdownHtml'
+import FAQList from '@/components/FAQList'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
@@ -48,11 +45,7 @@ import {
   FileWarning,
   Activity,
 } from 'lucide-react'
-import Image from 'next/image'
-import {
-  getWikiConceptEntityLink,
-  getWikiConceptMentionLinks,
-} from '@/lib/wiki-entity-links'
+import { getWikiConceptEntityLink, getWikiConceptMentionLinks } from '@/lib/wiki-entity-links'
 
 export interface WikiConceptArticlePageOptions {
   categorySlug: string
@@ -284,15 +277,11 @@ function SnapshotTopCard({ snapshot }: { snapshot: SnapshotData }) {
     : undefined
 
   return (
-    <div className="mb-10 border-y border-border-soft py-8">
+    <div className="border-t border-border pt-7">
       <div className="mb-5">
-        <p className="kicker-muted mb-3">Snapshot</p>
-        <h2
-          id="snapshot"
-          className="text-2xl sm:text-[30px] font-serif-playfair font-semibold text-text scroll-mt-24"
-        >
-          Snapshot (TL;DR)
-        </h2>
+        <p id="snapshot" className="kicker-muted scroll-mt-24">
+          Snapshot
+        </p>
       </div>
       <div className="grid gap-6 md:grid-cols-2">
         {snapshot.whatItIs && (
@@ -789,15 +778,6 @@ export default async function WikiConceptArticlePage({
       console.error('Error parsing snapshot:', error)
     }
 
-    if (
-      snapshot &&
-      !tocItems.some(
-        (item) => item.id.startsWith('snapshot') || item.text.toLowerCase().includes('snapshot')
-      )
-    ) {
-      tocItems = [{ id: 'snapshot', text: 'Snapshot (TL;DR)', level: 2 }, ...tocItems]
-    }
-
     // Parse Key Facts section - parse from content after snapshot only (never full content when Snapshot exists to avoid duplicating it)
     let beforeKeyFacts = ''
     let keyFacts: Array<{
@@ -928,7 +908,7 @@ export default async function WikiConceptArticlePage({
         }
       })
       .filter((item): item is NonNullable<typeof item> => item !== null)
-    const conceptBodyWidthClass = 'max-w-none 2xl:max-w-[96ch]'
+    const conceptBodyWidthClass = 'w-full max-w-[64rem]'
     const breadcrumbs =
       resolvedWikiArea.basePath === PRICING_WIKI_AREA.basePath
         ? [
@@ -990,15 +970,15 @@ export default async function WikiConceptArticlePage({
           />
         )}
 
-        <div className="min-h-screen bg-page pb-20 md:pb-8">
-          <div className="section-shell max-w-[90rem] py-8">
+        <main className="resource-editorial wiki-concept-editorial min-h-screen bg-page pb-20">
+          <div className="section-shell max-w-[96rem] py-8">
             {breadcrumbs.length > 0 && (
-              <div className="mb-6">
-                <nav className="flex items-center space-x-2 text-sm text-text-muted">
+              <div className="mb-8 border-b border-border-soft pb-5">
+                <nav className="flex flex-wrap items-center gap-y-2 text-[11px] uppercase tracking-[0.12em] text-text-subtle">
                   {breadcrumbs.map((crumb, index) => (
                     <span key={index} className="flex items-center">
-                      {index > 0 && <span className="mx-2">/</span>}
-                      <Link href={crumb.url} className="hover:text-brand-ink hover:underline">
+                      {index > 0 && <span className="mx-2.5">/</span>}
+                      <Link href={crumb.url} className="transition-colors hover:text-brand-ink">
                         {crumb.name}
                       </Link>
                     </span>
@@ -1008,22 +988,22 @@ export default async function WikiConceptArticlePage({
             )}
 
             {tocItems.length > 0 && (
-              <div className="xl:hidden mb-6">
-                <details className="border-y border-border-soft bg-white/70">
-                  <summary className="cursor-pointer list-none px-4 py-3 text-sm font-semibold text-text">
+              <div className="mb-8 xl:hidden">
+                <details className="border-y border-border-soft">
+                  <summary className="cursor-pointer list-none py-4 text-[12px] font-semibold uppercase tracking-[0.12em] text-text">
                     On this page
                   </summary>
-                  <div className="p-4">
+                  <div className="pb-5">
                     <TableOfContents items={tocItems} title={conceptName} />
                   </div>
                 </details>
               </div>
             )}
 
-            <div className="flex gap-8">
+            <div className="flex gap-10">
               {/* Table of Contents Sidebar - Left side, outside content box */}
               {tocItems.length > 0 && (
-                <aside className="hidden xl:block w-72 flex-shrink-0">
+                <aside className="hidden w-56 flex-shrink-0 xl:block">
                   <div className="sticky top-24">
                     <TableOfContents items={tocItems} title={conceptName} />
                   </div>
@@ -1031,18 +1011,19 @@ export default async function WikiConceptArticlePage({
               )}
 
               {/* Main content area with WikiLayout */}
-              <div className="flex-1 min-w-0">
+              <div className="min-w-0 flex-1">
                 <WikiLayout
                   breadcrumbs={[]}
-                  customGridRatio="9:3"
+                  customGridRatio="10:2"
                   noOuterWrapper={true}
                   showAreasFooter={false}
                   rightSidebarContent={
                     <div className="space-y-6">
                       <div className="border-t border-border pt-6">
+                        <p className="kicker-muted mb-5">Article details</p>
                         <div className="space-y-4">
                           <div>
-                            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-muted">
+                            <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.13em] text-text-subtle">
                               Category
                             </p>
                             <Link
@@ -1051,17 +1032,17 @@ export default async function WikiConceptArticlePage({
                                   ? `${PRICING_WIKI_AREA.basePath}/${category.slug}`
                                   : resolvedWikiArea.basePath
                               }
-                              className="text-sm text-brand-ink hover:underline font-medium"
+                              className="text-[13px] font-medium text-brand-ink hover:underline"
                             >
                               {category.title}
                             </Link>
                           </div>
                           {conceptData?.lastUpdated && (
                             <div>
-                              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-muted">
-                                Last Updated
+                              <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.13em] text-text-subtle">
+                                Last updated
                               </p>
-                              <p className="text-sm text-text">
+                              <p className="text-[13px] text-text-muted">
                                 {new Date(conceptData.lastUpdated).toLocaleDateString('en-US', {
                                   year: 'numeric',
                                   month: 'long',
@@ -1072,22 +1053,24 @@ export default async function WikiConceptArticlePage({
                           )}
                           {conceptData?.readingTime && (
                             <div>
-                              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-muted">
-                                Reading Time
+                              <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.13em] text-text-subtle">
+                                Reading time
                               </p>
-                              <p className="text-sm text-text">{conceptData.readingTime} minutes</p>
+                              <p className="text-[13px] text-text-muted">
+                                {conceptData.readingTime} minutes
+                              </p>
                             </div>
                           )}
                           {conceptData?.tags && conceptData.tags.length > 0 && (
                             <div>
-                              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-text-muted">
+                              <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.13em] text-text-subtle">
                                 Tags
                               </p>
-                              <div className="flex flex-wrap gap-2">
+                              <div className="flex flex-wrap gap-x-3 gap-y-1.5">
                                 {conceptData.tags.map((tag, index) => (
                                   <span
                                     key={index}
-                                    className="rounded-full bg-surface px-2 py-1 text-xs text-text-muted"
+                                    className="border-b border-border pb-0.5 text-[11px] text-text-muted"
                                   >
                                     {tag}
                                   </span>
@@ -1108,9 +1091,11 @@ export default async function WikiConceptArticlePage({
                   }
                 >
                   {/* Header */}
-                  <div className={`mb-10 ${conceptBodyWidthClass}`}>
-                    <p className="kicker-accent mb-4">{resolvedWikiArea.areaLabel}</p>
-                    <h1 className="mb-4 text-[34px] sm:text-[40px] font-serif-playfair font-bold text-text">
+                  <header
+                    className={`mb-14 border-y border-border-soft bg-surface px-6 py-10 sm:px-9 sm:py-12 ${conceptBodyWidthClass}`}
+                  >
+                    <p className="kicker-accent">{resolvedWikiArea.areaLabel}</p>
+                    <h1 className="mt-5 font-serif-playfair text-[length:clamp(2.25rem,2vw+1.3rem,3.6rem)]">
                       {conceptName}
                     </h1>
                     {description && (
@@ -1119,7 +1104,7 @@ export default async function WikiConceptArticlePage({
                         components={{
                           p: ({ node, ...props }) => (
                             <p
-                              className="mb-0 max-w-[38rem] text-lg italic leading-[1.9] text-text-muted sm:text-xl"
+                              className="mb-0 mt-6 max-w-[42rem] text-[17px] leading-[1.85] text-text-muted sm:text-[18px]"
                               {...props}
                             />
                           ),
@@ -1154,7 +1139,7 @@ export default async function WikiConceptArticlePage({
                         <SnapshotTopCard snapshot={snapshot} />
                       </div>
                     )}
-                  </div>
+                  </header>
 
                   {/* Content */}
                   <div
@@ -1163,9 +1148,7 @@ export default async function WikiConceptArticlePage({
                     {hasContent && conceptData ? (
                       <>
                         {/* Content before Snapshot */}
-                        {beforeSnapshot && (
-                          <WikiMarkdownHtml markdown={beforeSnapshot} />
-                        )}
+                        {beforeSnapshot && <WikiMarkdownHtml markdown={beforeSnapshot} />}
 
                         {/* Content after Snapshot but before Key Facts (What, When, Why sections) */}
                         {beforeKeyFacts && beforeKeyFacts.trim() && (
@@ -1194,7 +1177,7 @@ export default async function WikiConceptArticlePage({
                           <div className="mb-8">
                             <h2
                               id="key-facts"
-                              className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-text mb-4 mt-[4.5rem] scroll-mt-24"
+                              className="font-serif-playfair mb-4 mt-[4.5rem] scroll-mt-24"
                             >
                               Key Facts
                             </h2>
@@ -1330,7 +1313,7 @@ export default async function WikiConceptArticlePage({
                           <div className="mb-8">
                             <h2
                               id="step-by-step"
-                              className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-text mb-4 mt-[4.5rem] scroll-mt-24"
+                              className="font-serif-playfair mb-4 mt-[4.5rem] scroll-mt-24"
                             >
                               Step-by-step
                             </h2>
@@ -1338,7 +1321,10 @@ export default async function WikiConceptArticlePage({
                             {beforeStepsContent && (
                               <div className="mb-6">
                                 <ReactMarkdown
-                                  remarkPlugins={[remarkGfm, remarkMath]}
+                                  remarkPlugins={[
+                                    remarkGfm,
+                                    [remarkMath, { singleDollarTextMath: false }],
+                                  ]}
                                   rehypePlugins={[rehypeKatex]}
                                   components={{
                                     p: ({ node, ...props }) => (
@@ -1462,7 +1448,10 @@ export default async function WikiConceptArticlePage({
                             {afterStepsContent && afterStepsContent.trim() && (
                               <div className="mt-6">
                                 <ReactMarkdown
-                                  remarkPlugins={[remarkGfm, remarkMath]}
+                                  remarkPlugins={[
+                                    remarkGfm,
+                                    [remarkMath, { singleDollarTextMath: false }],
+                                  ]}
                                   rehypePlugins={[rehypeKatex]}
                                   components={{
                                     p: ({ node, ...props }) => (
@@ -1543,7 +1532,7 @@ export default async function WikiConceptArticlePage({
                           <div className="mb-8">
                             <h2
                               id="metrics-to-monitor"
-                              className="text-2xl sm:text-[28px] font-serif-playfair font-semibold text-text mb-4 mt-[4.5rem] scroll-mt-24"
+                              className="font-serif-playfair mb-4 mt-[4.5rem] scroll-mt-24"
                             >
                               Metrics to monitor
                             </h2>
@@ -1691,20 +1680,19 @@ export default async function WikiConceptArticlePage({
 
                         {/* FAQ Section */}
                         {faqItems.length > 0 && (
-                          <section className="mt-12 mb-12">
+                          <section className="mb-12 mt-12">
                             <h2
                               id="faq"
-                              className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-4 mt-[4.5rem] text-center scroll-mt-24"
+                              className="mb-8 mt-[4.5rem] scroll-mt-24 font-serif-playfair"
                             >
-                              Frequently Asked Questions
+                              Frequently asked questions
                             </h2>
-                            <div className="mx-auto max-w-3xl divide-y divide-border-soft border-y border-border-soft">
-                              {faqItems.map((item, index) => (
-                                <div key={index} className="py-5">
-                                  <h3 className="mb-2 font-semibold text-[20px] text-text sm:text-[22px]">
-                                    {item.question}
-                                  </h3>
-                                  <div className="text-base sm:text-[17px] text-text leading-[1.75]">
+                            <FAQList
+                              className="not-prose"
+                              items={faqItems.map((item) => ({
+                                q: item.question,
+                                a: (
+                                  <div>
                                     <ReactMarkdown
                                       remarkPlugins={[remarkGfm]}
                                       rehypePlugins={[rehypeRaw]}
@@ -1713,7 +1701,7 @@ export default async function WikiConceptArticlePage({
                                           <p className="mb-3 last:mb-0" {...props} />
                                         ),
                                         strong: ({ node, ...props }) => (
-                                          <strong className="font-bold text-text" {...props} />
+                                          <strong className="font-semibold text-text" {...props} />
                                         ),
                                         a: ({ node, href, ...props }) => {
                                           const isInternalLink = href?.startsWith('/')
@@ -1747,9 +1735,9 @@ export default async function WikiConceptArticlePage({
                                       {item.answer}
                                     </ReactMarkdown>
                                   </div>
-                                </div>
-                              ))}
-                            </div>
+                                ),
+                              }))}
+                            />
                           </section>
                         )}
 
@@ -1771,7 +1759,7 @@ export default async function WikiConceptArticlePage({
                           <section className="mt-12 mb-12">
                             <h2
                               id="references"
-                              className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-4 mt-[4.5rem] scroll-mt-24"
+                              className="font-serif-playfair mb-4 mt-[4.5rem] scroll-mt-24"
                             >
                               References / Further reading
                             </h2>
@@ -1799,26 +1787,36 @@ export default async function WikiConceptArticlePage({
                         )}
 
                         {relatedConceptCards.length > 0 && (
-                          <section className="mt-12 mb-12">
-                            <h2
-                              id="related-concepts"
-                              className="font-serif-playfair text-2xl sm:text-[28px] font-semibold text-text mb-4 mt-[4.5rem] scroll-mt-24"
-                            >
-                              Related concepts / Next steps
-                            </h2>
-                            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-                              {relatedConceptCards.map((related) => (
+                          <section
+                            id="related-concepts"
+                            className="wiki-related-concepts not-prose mb-14 mt-20 scroll-mt-24 border-y border-border-soft bg-surface px-6 py-10 sm:px-9 sm:py-12"
+                          >
+                            <p className="kicker-accent">Continue through the system</p>
+                            <h2 className="font-serif-playfair">Related concepts / Next steps</h2>
+                            <div className="mt-8 border-t border-border">
+                              {relatedConceptCards.map((related, index) => (
                                 <Link
                                   key={related.id}
                                   href={related.href}
-                                  className="block border-t border-border pt-4 transition-colors hover:border-brand/40 no-underline"
+                                  className="group grid gap-3 border-b border-border-soft py-6 no-underline sm:grid-cols-[2.5rem_minmax(0,0.7fr)_minmax(15rem,1.3fr)_auto] sm:items-start sm:gap-7"
                                 >
-                                  <h3 className="font-semibold text-text mb-2">{related.title}</h3>
-                                  {related.summary && (
-                                    <p className="text-base sm:text-[17px] text-text leading-[1.65]">
+                                  <span className="pt-1 text-[10px] font-semibold tracking-[0.14em] text-text-subtle">
+                                    {String(index + 1).padStart(2, '0')}
+                                  </span>
+                                  <h3 className="font-serif-playfair font-medium text-ink transition-colors group-hover:text-brand-ink">
+                                    {related.title}
+                                  </h3>
+                                  {related.summary ? (
+                                    <p className="text-[15px] leading-[1.75] text-text-muted">
                                       {related.summary}
                                     </p>
+                                  ) : (
+                                    <span aria-hidden />
                                   )}
+                                  <ArrowRight
+                                    className="mt-1 hidden size-4 text-brand transition-transform group-hover:translate-x-1 sm:block"
+                                    aria-hidden
+                                  />
                                 </Link>
                               ))}
                             </div>
@@ -1826,25 +1824,23 @@ export default async function WikiConceptArticlePage({
                         )}
 
                         {/* CTA Section */}
-                        <div className="max-w-4xl mx-auto mt-16 mb-8">
-                          <div className="border-y border-border-soft p-8 text-center md:p-12">
-                            <div className="flex items-center justify-center gap-4 mb-6">
-                              <Image
-                                src="/images/headshot_v2.jpg"
-                                alt="Sarah Zou headshot"
-                                width={80}
-                                height={80}
-                                className="rounded-full object-cover flex-shrink-0"
-                              />
-                              <h2 className="font-serif-playfair text-2xl md:text-[28px] font-semibold text-text">
-                                If you want help applying this to your business…
-                              </h2>
-                            </div>
+                        <div className="mx-auto mb-8 mt-16 max-w-4xl">
+                          <div className="wiki-concept-cta border-y border-white/10 bg-ink p-8 text-left md:p-12">
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/55">
+                              From reference to recommendation
+                            </p>
+                            <h2 className="mt-4 max-w-[34rem] font-serif-playfair !text-white">
+                              If you want help applying this to your business…
+                            </h2>
+                            <p className="mt-4 max-w-[38rem] text-[15px] leading-[1.8] text-white/65">
+                              Bring the commercial decision, the evidence you have, and the
+                              constraint you cannot ignore.
+                            </p>
                             <Link
                               href="/book"
-                              className="inline-flex h-[3.25rem] min-w-[220px] items-center justify-center rounded-[12px] bg-brand px-8 text-[16px] font-semibold leading-none text-brand-on shadow-card transition-[background-color,box-shadow] duration-200 hover:bg-brand"
+                              className="mt-7 inline-flex items-center border-b border-white/50 pb-1 text-[15px] font-medium text-white no-underline"
                             >
-                              Book a 15-min intro call
+                              Book a 15-minute introduction
                             </Link>
                           </div>
                         </div>
@@ -1871,25 +1867,7 @@ export default async function WikiConceptArticlePage({
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Mobile Sticky Bottom Bar */}
-        <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-border-soft bg-white shadow-lg md:hidden">
-          <div className="mx-auto flex max-w-[90rem] gap-3 px-4 py-3">
-            <Link
-              href="/book"
-              className="flex-1 rounded-[14px] bg-brand px-4 py-3 text-center text-[16px] font-semibold leading-none text-brand-on transition-colors shadow-card hover:bg-brand"
-            >
-              Book Free Consult
-            </Link>
-            <Link
-              href="/contact"
-              className="flex-1 rounded-[14px] border border-border-soft bg-white px-4 py-3 text-center font-semibold text-text transition-colors hover:border-ink hover:text-ink"
-            >
-              Send a message
-            </Link>
-          </div>
-        </div>
+        </main>
       </>
     )
   } catch (error) {

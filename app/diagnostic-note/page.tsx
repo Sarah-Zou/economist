@@ -1,12 +1,53 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { generateBreadcrumbJsonLd } from '@/lib/generateJsonLd'
 import { OG_IMAGE_HOME } from '@/lib/seo'
 import DiagnosticNoteForm from './DiagnosticNoteForm'
 
+const noteContents = [
+  {
+    number: '01',
+    title: 'The specific gap',
+    description: 'The part of the current pricing or commercial logic that deserves attention.',
+  },
+  {
+    number: '02',
+    title: 'A comparable pattern',
+    description:
+      'A useful way to frame the issue based on how similar infrastructure businesses behave.',
+  },
+  {
+    number: '03',
+    title: 'One practical move',
+    description: 'A concrete action you can take this week without commissioning a larger project.',
+  },
+]
+
+const processSteps = [
+  {
+    number: '01',
+    title: 'Share the context',
+    description:
+      'Tell me what you are working through and include your pricing page if you have one.',
+  },
+  {
+    number: '02',
+    title: 'I review and write',
+    description:
+      'I look for the underlying commercial issue and prepare a concise one-page response.',
+  },
+  {
+    number: '03',
+    title: 'Use the note',
+    description:
+      'Take the recommendation forward on your own. A larger next step is entirely optional.',
+  },
+]
+
 export const metadata: Metadata = {
   title: 'Free Pricing Diagnostic Note | Sarah Zou, PhD',
   description:
-    'A free one-page diagnostic note on your pricing for AI-infrastructure and data-platform companies — the specific gap, a comparable pattern, and one thing to do this week.',
+    'A free one-page diagnostic note on your pricing for AI-infrastructure and data-platform companies—the specific gap, a comparable pattern, and one thing to do this week.',
   robots: {
     index: true,
     follow: true,
@@ -24,7 +65,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Pricing Diagnostic Note | Sarah Zou, PhD',
     description:
-      'A free one-page diagnostic note on your pricing for AI-infrastructure and data-platform companies — the specific gap, a comparable pattern, and one thing to do this week.',
+      'A free one-page diagnostic note: the specific gap, a comparable pattern, and one practical move.',
     type: 'website',
     url: 'https://sarahzou.com/diagnostic-note',
     images: [OG_IMAGE_HOME],
@@ -33,88 +74,135 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Pricing Diagnostic Note | Sarah Zou, PhD',
     description:
-      'A free one-page diagnostic note on your pricing for AI-infrastructure and data-platform companies — the specific gap, a comparable pattern, and one thing to do this week.',
+      'A free one-page diagnostic note: the specific gap, a comparable pattern, and one practical move.',
     images: [OG_IMAGE_HOME],
   },
 }
 
 export default function DiagnosticNotePage() {
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: 'Home', url: '/' },
+    { name: 'Free Diagnostic Note', url: '/diagnostic-note' },
+  ])
+
   return (
     <>
-      <div className="bg-page text-text">
-        {/* Hero */}
-        <section className="bg-hero-tint">
-          <div className="section-shell pb-16 pt-12 sm:pb-20 sm:pt-16 lg:pb-24 lg:pt-20">
-            <div className="mx-auto max-w-[44rem]">
-              <span className="kicker-accent">Free · No strings · 1–2 business days</span>
-              <h1 className="mt-5 font-serif-playfair text-ink">
-                Get a free one-page diagnostic note on your pricing.
+      <div id="diagnostic-editorial" className="overflow-hidden bg-page text-text">
+        <section className="border-b border-border-soft bg-surface">
+          <div className="section-shell grid gap-14 py-20 sm:py-24 lg:grid-cols-[1.08fr_0.92fr] lg:items-end lg:gap-24 lg:py-28">
+            <div className="max-w-[47rem]">
+              <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-text-subtle">
+                Free · No strings · 1–2 business days
+              </p>
+              <h1 className="mt-6 font-serif-playfair text-ink">
+                A clear outside view on the pricing decision in front of you.
               </h1>
-              <p className="mt-6 text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
-                Tell me what you&apos;re working through and share your pricing page. Within 1–2
-                business days I&apos;ll send a one-page note: the specific gap I see, a pattern from
-                comparable infrastructure companies, and one concrete thing you can do this week. No
-                strings, no pitch — I send these to a small number of infrastructure companies.
+              <p className="mt-7 max-w-[40rem] text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
+                Share the context and your pricing page. I will send a concise one-page note with
+                the issue I see, a relevant pattern, and one practical next move.
+              </p>
+              <p className="mt-6 text-[13px] leading-[1.7] text-text-subtle">
+                Available to a small number of AI-infrastructure, API, and data-platform companies.
               </p>
             </div>
-          </div>
-        </section>
 
-        {/* Form */}
-        <section className="section section-alt">
-          <div className="section-shell max-w-2xl">
-            <DiagnosticNoteForm />
-          </div>
-        </section>
-
-        {/* What happens next */}
-        <section className="section">
-          <div className="section-shell max-w-3xl">
-            <div className="section-header">
-              <span className="kicker">What happens next</span>
-              <h2 className="section-title">Simple process</h2>
+            <div>
+              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-text-subtle">
+                What you receive
+              </p>
+              <div className="mt-5 border-t border-border-soft">
+                {noteContents.map((item) => (
+                  <div
+                    key={item.number}
+                    className="grid grid-cols-[2.5rem_1fr] gap-5 border-b border-border-soft py-5"
+                  >
+                    <span className="text-[11px] tracking-[0.14em] text-text-subtle">
+                      {item.number}
+                    </span>
+                    <div>
+                      <h2 className="text-[16px] font-medium text-ink">{item.title}</h2>
+                      <p className="mt-2 text-[14px] leading-[1.7] text-text-muted">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="mt-10 grid gap-8 sm:grid-cols-3">
-              {[
-                {
-                  n: '01',
-                  title: 'Submit the form',
-                  copy: 'Share what you\'re working through and your pricing page, if you have one.',
-                },
-                {
-                  n: '02',
-                  title: 'I review and write',
-                  copy: 'Within 1–2 business days I\'ll send a one-page note: the specific gap, a comparable pattern, and one thing to do this week.',
-                },
-                {
-                  n: '03',
-                  title: 'Optional next step',
-                  copy: 'If the work is bigger, the two-week Commercial Architecture Diagnostic is the usual next step. But there\'s no obligation.',
-                },
-              ].map((item) => (
-                <div key={item.n} className="border-t border-border pt-6">
-                  <p className="font-serif-playfair text-[28px] font-semibold leading-none text-ink/20">
-                    {item.n}
-                  </p>
-                  <h3 className="mt-4 text-[17px] font-semibold text-ink">{item.title}</h3>
-                  <p className="mt-2 text-[14px] leading-[1.65] text-text-muted">{item.copy}</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="diagnostic-form-title">
+          <div className="section-shell grid gap-12 py-20 sm:py-24 lg:grid-cols-[0.62fr_1.38fr] lg:gap-24 lg:py-32">
+            <div>
+              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-text-subtle">
+                Your request
+              </p>
+              <h2 id="diagnostic-form-title" className="mt-5 font-serif-playfair text-ink">
+                Give me enough context to see the real question.
+              </h2>
+              <p className="mt-6 max-w-[28rem] text-[15px] leading-[1.8] text-text-muted">
+                A few direct sentences are more useful than a polished brief. If you have live
+                pricing, include the link.
+              </p>
+              <figure className="mt-10">
+                <div className="relative aspect-[3/2] overflow-hidden bg-surface">
+                  <Image
+                    src="/images/diagnostic-one-page-review.webp"
+                    alt="A concise one-page analytical review with handwritten annotations"
+                    fill
+                    sizes="(min-width: 1024px) 420px, 100vw"
+                    className="object-cover"
+                  />
                 </div>
-              ))}
+                <figcaption className="mt-4 border-t border-border-subtle pt-3 text-[11px] uppercase tracking-[0.16em] text-text-subtle">
+                  One page, focused on the decision
+                </figcaption>
+              </figure>
             </div>
+
+            <div className="border-t border-border-soft pt-8">
+              <DiagnosticNoteForm />
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-ink text-white" aria-labelledby="diagnostic-process-title">
+          <div className="section-shell py-20 sm:py-24 lg:py-28">
+            <div className="grid gap-8 border-b border-white/[0.18] pb-10 lg:grid-cols-[0.55fr_1.45fr] lg:gap-20">
+              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/[0.5]">
+                What happens next
+              </p>
+              <h2 id="diagnostic-process-title" className="font-serif-playfair text-white">
+                A simple, useful exchange.
+              </h2>
+            </div>
+
+            <ol className="grid lg:grid-cols-3">
+              {processSteps.map((step, index) => (
+                <li
+                  key={step.number}
+                  className={`py-8 lg:px-8 lg:py-10 ${
+                    index > 0 ? 'border-t border-white/[0.18] lg:border-l lg:border-t-0' : ''
+                  }`}
+                >
+                  <span className="text-[11px] tracking-[0.14em] text-white/[0.4]">
+                    {step.number}
+                  </span>
+                  <h3 className="mt-8 text-[18px] font-medium text-white">{step.title}</h3>
+                  <p className="mt-3 text-[15px] leading-[1.75] text-white/65">
+                    {step.description}
+                  </p>
+                </li>
+              ))}
+            </ol>
           </div>
         </section>
       </div>
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            generateBreadcrumbJsonLd([
-              { name: 'Home', url: '/' },
-              { name: 'Free Diagnostic Note', url: '/diagnostic-note' },
-            ])
-          ),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
     </>
   )
