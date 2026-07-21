@@ -18,7 +18,6 @@ const STANDALONE_WIKI_AREAS = [
   {
     basePath: '/wiki/go-to-market',
     categorySlug: 'go-to-market',
-    includeConcepts: false,
   },
   {
     basePath: '/wiki/unit-economics',

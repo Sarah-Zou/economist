@@ -161,7 +161,7 @@ The 2.6% share is the _output_ of the hiring, productivity, and retention assump
 
 **Q:** How does market sizing connect to fundraising?
 
-**A:** A large TAM shows the ceiling; a focused SAM and a capacity-based SOM show you know where you'll win first and that the operating plan is realistic. Both jobs matter—see [Pre-Seed, Seed, and Series A](/wiki/fundraising/pre-seed-seed-series-a) for how investor expectations shift by stage.
+**A:** A large TAM shows the ceiling; a focused SAM and a capacity-based SOM show you know where you'll win first and that the operating plan is realistic. Both jobs matter—see [Pre-Seed, Seed, and Series A](/fundraising/pre-seed-seed-series-a) for how investor expectations shift by stage.
 
 ## Sources
 

@@ -9,16 +9,76 @@ export const WIKI_EXACT_301 = new Map([
     "/fundraising"
   ],
   [
+    "/wiki/fundraising/convertible-notes",
+    "/fundraising/convertible-notes"
+  ],
+  [
+    "/wiki/fundraising/dilution-cap-tables",
+    "/fundraising/dilution-cap-tables"
+  ],
+  [
     "/wiki/fundraising/how-startup-funding-works",
     "/fundraising/how-startup-funding-works"
+  ],
+  [
+    "/wiki/fundraising/liquidation-preferences",
+    "/fundraising/liquidation-preferences"
+  ],
+  [
+    "/wiki/fundraising/pre-seed-seed-series-a",
+    "/fundraising/pre-seed-seed-series-a"
+  ],
+  [
+    "/wiki/fundraising/safe-notes",
+    "/fundraising/safe-notes"
+  ],
+  [
+    "/wiki/fundraising/startup-valuation-methods",
+    "/fundraising/startup-valuation-methods"
+  ],
+  [
+    "/wiki/fundraising/term-sheets",
+    "/fundraising/term-sheets"
   ],
   [
     "/wiki/pricing/fundraising",
     "/fundraising"
   ],
   [
+    "/wiki/pricing/fundraising/convertible-notes",
+    "/fundraising/convertible-notes"
+  ],
+  [
+    "/wiki/pricing/fundraising/dilution-cap-tables",
+    "/fundraising/dilution-cap-tables"
+  ],
+  [
     "/wiki/pricing/fundraising/how-startup-funding-works",
     "/fundraising/how-startup-funding-works"
+  ],
+  [
+    "/wiki/pricing/fundraising/liquidation-preferences",
+    "/fundraising/liquidation-preferences"
+  ],
+  [
+    "/wiki/pricing/fundraising/pre-seed-seed-series-a",
+    "/fundraising/pre-seed-seed-series-a"
+  ],
+  [
+    "/wiki/pricing/fundraising/safe-notes",
+    "/fundraising/safe-notes"
+  ],
+  [
+    "/wiki/pricing/fundraising/startup-valuation-methods",
+    "/fundraising/startup-valuation-methods"
+  ],
+  [
+    "/wiki/pricing/fundraising/term-sheets",
+    "/fundraising/term-sheets"
+  ],
+  [
+    "/wiki/pricing/go-to-market/tam-sam-som",
+    "/wiki/go-to-market/tam-sam-som"
   ]
 ]);
 export const WIKI_EXACT_410 = new Set([

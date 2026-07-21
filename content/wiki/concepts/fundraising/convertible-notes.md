@@ -8,7 +8,7 @@ tags: ["convertible note", "convertible debt", "fundraising", "valuation cap", "
 readingTime: 14
 lastUpdated: "2026-07-20"
 owner: "Dr. Sarah Zou"
-canonical: "https://sarahzou.com/wiki/fundraising/convertible-notes"
+canonical: "https://sarahzou.com/fundraising/convertible-notes"
 ---
 
 ## Snapshot (TL;DR)
@@ -17,7 +17,7 @@ canonical: "https://sarahzou.com/wiki/fundraising/convertible-notes"
 
 **Why founders use it:** A note can close faster than a priced round because the company does not have to negotiate a full preferred-stock financing immediately. But the speed comes from deferring the share price, not from eliminating financing cost.
 
-**The essential difference from a [SAFE](/wiki/fundraising/safe-notes):** A classic convertible note is debt. It has principal, accrues interest, has a maturity date, and may become repayable. A standard SAFE has none of those features. Y Combinator introduced the SAFE specifically to keep future-equity conversion while removing them.
+**The essential difference from a [SAFE](/fundraising/safe-notes):** A classic convertible note is debt. It has principal, accrues interest, has a maturity date, and may become repayable. A standard SAFE has none of those features. Y Combinator introduced the SAFE specifically to keep future-equity conversion while removing them.
 
 **Core conversion logic:**
 
@@ -209,9 +209,9 @@ The cap is not always the controlling benefit, and a higher next round gives the
 
 <!--
 FORWARD LINKS — target pages do not exist yet (create then link):
-/wiki/fundraising/bootstrapping-vs-vc
-Links live at time of writing: /wiki/fundraising, /wiki/fundraising/pre-seed-seed-series-a,
-/wiki/fundraising/safe-notes, /wiki/fundraising/startup-valuation-methods,
-/wiki/fundraising/dilution-cap-tables, /wiki/fundraising/term-sheets,
-/wiki/fundraising/liquidation-preferences (all published in this batch)
+/fundraising/bootstrapping-vs-vc
+Links live at time of writing: /wiki/fundraising, /fundraising/pre-seed-seed-series-a,
+/fundraising/safe-notes, /fundraising/startup-valuation-methods,
+/fundraising/dilution-cap-tables, /fundraising/term-sheets,
+/fundraising/liquidation-preferences (all published in this batch)
 -->

@@ -8,7 +8,7 @@ tags: ["cap table", "dilution", "fully diluted shares", "option pool", "fundrais
 readingTime: 15
 lastUpdated: "2026-07-20"
 owner: "Dr. Sarah Zou"
-canonical: "https://sarahzou.com/wiki/fundraising/dilution-cap-tables"
+canonical: "https://sarahzou.com/fundraising/dilution-cap-tables"
 ---
 
 ## Snapshot (TL;DR)
@@ -64,7 +64,7 @@ There is no safe universal definition of "fully diluted." A term sheet, a SAFE, 
 
 **Investors diligence the cap table before closing.** They verify legal issuance and approvals, founder vesting, plan capacity, conversion terms, outstanding promises, voting thresholds, and whether there are enough authorized shares to close. A cap-table surprise delays the round, changes the share price, or costs trust.
 
-**Ownership is not proceeds.** At a simple common-stock exit, `Holder proceeds = distributable proceeds x ownership %`. Venture outcomes are rarely that simple: debt and transaction expenses come first, and preferred stock may take a preference or participate. The cap table supplies share counts; the [waterfall](/wiki/fundraising/liquidation-preferences) supplies payout rights.
+**Ownership is not proceeds.** At a simple common-stock exit, `Holder proceeds = distributable proceeds x ownership %`. Venture outcomes are rarely that simple: debt and transaction expenses come first, and preferred stock may take a preference or participate. The cap table supplies share counts; the [waterfall](/fundraising/liquidation-preferences) supplies payout rights.
 
 ## Worked example: a priced round with a pre-money option-pool top-up
 
@@ -192,7 +192,7 @@ Anti-dilution protection does not prevent all dilution. A broad-based weighted-a
 
 <!--
 FORWARD LINKS — all targets exist as of publication:
-/wiki/fundraising, /wiki/fundraising/startup-valuation-methods, /wiki/fundraising/safe-notes,
-/wiki/fundraising/convertible-notes, /wiki/fundraising/term-sheets,
-/wiki/fundraising/liquidation-preferences, /wiki/fundraising/pre-seed-seed-series-a
+/wiki/fundraising, /fundraising/startup-valuation-methods, /fundraising/safe-notes,
+/fundraising/convertible-notes, /fundraising/term-sheets,
+/fundraising/liquidation-preferences, /fundraising/pre-seed-seed-series-a
 -->

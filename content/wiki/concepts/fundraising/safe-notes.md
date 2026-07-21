@@ -8,16 +8,16 @@ tags: ["SAFE", "SAFE notes", "fundraising", "valuation cap", "dilution", "cap ta
 readingTime: 13
 lastUpdated: "2026-07-16"
 owner: "Dr. Sarah Zou"
-canonical: "https://sarahzou.com/wiki/fundraising/safe-notes"
+canonical: "https://sarahzou.com/fundraising/safe-notes"
 ---
 
 ## Snapshot (TL;DR)
 
 **What it is:** A SAFE—a *simple agreement for future equity*—is a security in which an investor pays a company now for a contractual right to receive equity (or, in some events, cash) when a specified trigger occurs. Until conversion, holding a SAFE is not the same as owning stock. The SEC defines a SAFE as a promise of a future ownership interest if a trigger such as an equity financing or acquisition occurs.
 
-**Naming correction:** "SAFE note" is common search language, but the standard Y Combinator SAFE is *not* a promissory note. It has no interest rate and no maturity date, and it is not debt. A [convertible note](/wiki/fundraising/convertible-notes), by contrast, is a debt obligation that usually carries interest and a maturity date.
+**Naming correction:** "SAFE note" is common search language, but the standard Y Combinator SAFE is *not* a promissory note. It has no interest rate and no maturity date, and it is not debt. A [convertible note](/fundraising/convertible-notes), by contrast, is a debt obligation that usually carries interest and a maturity date.
 
-**Why it matters:** A SAFE can make an early financing faster and cheaper to document than a priced round, and investors can close one at a time. That is why SAFEs dominate [pre-seed and seed rounds](/wiki/fundraising/pre-seed-seed-series-a). But the simplicity is misleading: every SAFE sells a claim on future ownership, multiple SAFEs accumulate, and the conversion result depends on definitions in the signed agreement and on the terms of the later round.
+**Why it matters:** A SAFE can make an early financing faster and cheaper to document than a priced round, and investors can close one at a time. That is why SAFEs dominate [pre-seed and seed rounds](/fundraising/pre-seed-seed-series-a). But the simplicity is misleading: every SAFE sells a claim on future ownership, multiple SAFEs accumulate, and the conversion result depends on definitions in the signed agreement and on the terms of the later round.
 
 **Core estimate:**
 
@@ -31,7 +31,7 @@ This page explains the standard U.S. post-money SAFE published by Y Combinator. 
 
 ## What is a SAFE—and what is it not?
 
-A SAFE is one of several instruments in the broader map of [how startup funding works](/wiki/fundraising). It separates the date cash enters the company from the date the investor receives shares. The investor pays a **purchase amount** when the SAFE is issued. The agreement then specifies three broad situations:
+A SAFE is one of several instruments in the broader map of [how startup funding works](/fundraising/how-startup-funding-works). It separates the date cash enters the company from the date the investor receives shares. The investor pays a **purchase amount** when the SAFE is issued. The agreement then specifies three broad situations:
 
 - **Equity financing:** The SAFE normally converts automatically into preferred stock. Under YC's post-money form there is no minimum financing size required to trigger conversion.
 - **Liquidity event:** On an acquisition, merger, or IPO before conversion, the investor generally receives the greater of its purchase amount or the value of an as-converted claim, subject to the agreement's priority provisions.
@@ -167,7 +167,7 @@ A priced round may be preferable when a lead investor wants a board seat, protec
 
 **Q:** Is a "SAFE note" the same as a convertible note?
 
-**A:** No. Despite the nickname, a standard SAFE is not debt—no interest, no maturity, and it ranks behind creditors. A [convertible note](/wiki/fundraising/convertible-notes) is a loan that converts, usually with interest and a maturity date. Use the correct characterization for the actual instrument, not its nickname.
+**A:** No. Despite the nickname, a standard SAFE is not debt—no interest, no maturity, and it ranks behind creditors. A [convertible note](/fundraising/convertible-notes) is a loan that converts, usually with interest and a maturity date. Use the correct characterization for the actual instrument, not its nickname.
 
 **Q:** Does a $750,000 SAFE at a $12M post-money cap mean the investor ends up with 6.25%?
 
@@ -203,9 +203,9 @@ A priced round may be preferable when a lead investor wants a board seat, protec
 
 <!--
 FORWARD LINKS — target pages do not exist yet (create then link):
-/wiki/fundraising/convertible-notes, /wiki/fundraising/startup-valuation-methods,
-/wiki/fundraising/dilution-cap-tables, /wiki/fundraising/term-sheets,
-/wiki/fundraising/liquidation-preferences
+/fundraising/convertible-notes, /fundraising/startup-valuation-methods,
+/fundraising/dilution-cap-tables, /fundraising/term-sheets,
+/fundraising/liquidation-preferences
 Existing internal links used and live: /wiki/fundraising (how-startup-funding-works),
-/wiki/fundraising/pre-seed-seed-series-a
+/fundraising/pre-seed-seed-series-a
 -->

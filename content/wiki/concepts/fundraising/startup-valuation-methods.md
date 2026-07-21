@@ -8,7 +8,7 @@ tags: ["startup valuation", "pre-money valuation", "post-money valuation", "fund
 readingTime: 14
 lastUpdated: "2026-07-20"
 owner: "Dr. Sarah Zou"
-canonical: "https://sarahzou.com/wiki/fundraising/startup-valuation-methods"
+canonical: "https://sarahzou.com/fundraising/startup-valuation-methods"
 ---
 
 ## Snapshot (TL;DR)
@@ -29,7 +29,7 @@ canonical: "https://sarahzou.com/wiki/fundraising/startup-valuation-methods"
 
 If an investor puts in $2M for 20% post-closing ownership: post-money is `$2M / 20% = $10M`, so pre-money is `$10M - $2M = $8M`. That shortcut holds only once you define what counts in the fully diluted capitalization and how SAFEs, notes, and an option-pool increase are treated.
 
-**Founder rule:** A financing valuation is not the same as the cap on a [SAFE](/wiki/fundraising/safe-notes) or [convertible note](/wiki/fundraising/convertible-notes), the fair market value of common stock for option grants, the accounting fair value of a security, enterprise value in an acquisition, or the proceeds common holders receive at exit. **Name the purpose before naming the number.**
+**Founder rule:** A financing valuation is not the same as the cap on a [SAFE](/fundraising/safe-notes) or [convertible note](/fundraising/convertible-notes), the fair market value of common stock for option grants, the accounting fair value of a security, enterprise value in an acquisition, or the proceeds common holders receive at exit. **Name the purpose before naming the number.**
 
 ## Why is valuation purpose-specific?
 
@@ -202,8 +202,8 @@ Existing holders retain 80% **before** any pool increase or converting securitie
 
 <!--
 FORWARD LINKS — all targets exist as of publication:
-/wiki/fundraising, /wiki/fundraising/pre-seed-seed-series-a, /wiki/go-to-market/tam-sam-som,
-/wiki/fundraising/safe-notes, /wiki/fundraising/convertible-notes,
-/wiki/fundraising/dilution-cap-tables, /wiki/fundraising/term-sheets,
-/wiki/fundraising/liquidation-preferences
+/wiki/fundraising, /fundraising/pre-seed-seed-series-a, /wiki/go-to-market/tam-sam-som,
+/fundraising/safe-notes, /fundraising/convertible-notes,
+/fundraising/dilution-cap-tables, /fundraising/term-sheets,
+/fundraising/liquidation-preferences
 -->

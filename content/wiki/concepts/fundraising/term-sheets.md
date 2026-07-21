@@ -8,7 +8,7 @@ tags: ["term sheet", "venture capital", "fundraising", "liquidation preference",
 readingTime: 16
 lastUpdated: "2026-07-20"
 owner: "Dr. Sarah Zou"
-canonical: "https://sarahzou.com/wiki/fundraising/term-sheets"
+canonical: "https://sarahzou.com/fundraising/term-sheets"
 ---
 
 ## Snapshot (TL;DR)
@@ -59,9 +59,9 @@ The term sheet should be specific enough that these documents *implement* the de
 
 **Pre-money valuation and price per share.** The term sheet must define **fully diluted capitalization**: does it include the existing unissued pool, the pool top-up, outstanding and promised options, warrants, SAFEs, and notes with interest? If that definition is unresolved, ownership is unresolved.
 
-**Option pool.** State the target unallocated pool after closing, whether outstanding awards count, whether top-up shares sit in the pre-money, and the hiring plan that justifies the size. A pre-money top-up dilutes existing holders without touching the investor's negotiated percentage — see the worked model in [Dilution and Cap Tables](/wiki/fundraising/dilution-cap-tables).
+**Option pool.** State the target unallocated pool after closing, whether outstanding awards count, whether top-up shares sit in the pre-money, and the hiring plan that justifies the size. A pre-money top-up dilutes existing holders without touching the investor's negotiated percentage — see the worked model in [Dilution and Cap Tables](/fundraising/dilution-cap-tables).
 
-**Liquidation preference.** Specify the multiple, participating or nonparticipating, any participation cap, seniority relative to existing preferred, dividend treatment, what counts as a liquidation event, and conversion mechanics. Covered in depth in [Liquidation Preferences](/wiki/fundraising/liquidation-preferences).
+**Liquidation preference.** Specify the multiple, participating or nonparticipating, any participation cap, seniority relative to existing preferred, dividend treatment, what counts as a liquidation event, and conversion mechanics. Covered in depth in [Liquidation Preferences](/fundraising/liquidation-preferences).
 
 **Dividends.** Distinguish noncumulative dividends payable only if declared from cumulative or accruing dividends that increase the preference. An 8% cumulative dividend materially raises the exit hurdle over several years even when no cash is ever paid.
 
@@ -183,9 +183,9 @@ Convert non-price terms into scenarios and dollars wherever possible. Do not ass
 
 <!--
 FORWARD LINKS — target pages do not exist yet (create then link):
-/wiki/fundraising/bootstrapping-vs-vc
-All other targets exist: /wiki/fundraising, /wiki/fundraising/pre-seed-seed-series-a,
-/wiki/fundraising/startup-valuation-methods, /wiki/fundraising/dilution-cap-tables,
-/wiki/fundraising/safe-notes, /wiki/fundraising/convertible-notes,
-/wiki/fundraising/liquidation-preferences
+/fundraising/bootstrapping-vs-vc
+All other targets exist: /wiki/fundraising, /fundraising/pre-seed-seed-series-a,
+/fundraising/startup-valuation-methods, /fundraising/dilution-cap-tables,
+/fundraising/safe-notes, /fundraising/convertible-notes,
+/fundraising/liquidation-preferences
 -->

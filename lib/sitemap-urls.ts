@@ -6,7 +6,7 @@ import {
   getPublishedConceptIdsForCategory,
   getWikiRemediationMap,
 } from '@/lib/mdx'
-import { FUNDRAISING_WIKI_AREA, getWikiConceptPagePath } from '@/lib/wiki-areas'
+import { FUNDRAISING_WIKI_AREA, GO_TO_MARKET_WIKI_AREA, getWikiConceptPagePath } from '@/lib/wiki-areas'
 
 export const SITE_BASE_URL = 'https://sarahzou.com'
 
@@ -164,6 +164,40 @@ export function getAllSitemapEntries(): MetadataRoute.Sitemap {
       addEntry(entriesByUrl, {
         url: normalizeSitemapUrl(conceptPath),
         lastModified: conceptData.lastUpdated || fundraisingCategory.updated || currentDate,
+        changeFrequency: 'monthly',
+        priority: 0.7,
+      })
+    }
+  }
+
+  const goToMarketCategory = getAllCategories({ includeNonPublished: true }).find(
+    (category) => category.slug === GO_TO_MARKET_WIKI_AREA.categorySlug
+  )
+  if (goToMarketCategory) {
+    for (const concept of goToMarketCategory.concepts) {
+      if (!concept.id) {
+        continue
+      }
+
+      const conceptPath = getWikiConceptPagePath(
+        GO_TO_MARKET_WIKI_AREA,
+        GO_TO_MARKET_WIKI_AREA.categorySlug,
+        concept.id
+      )
+      if (redirectSources.has(conceptPath)) {
+        continue
+      }
+
+      const conceptData = getConceptBySlug(GO_TO_MARKET_WIKI_AREA.categorySlug, concept.id, {
+        includeNonPublished: true,
+      })
+      if (!conceptData || conceptData.status !== 'published') {
+        continue
+      }
+
+      addEntry(entriesByUrl, {
+        url: normalizeSitemapUrl(conceptPath),
+        lastModified: conceptData.lastUpdated || goToMarketCategory.updated || currentDate,
         changeFrequency: 'monthly',
         priority: 0.7,
       })
