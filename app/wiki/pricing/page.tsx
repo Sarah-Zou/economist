@@ -7,6 +7,7 @@ import {
 import { getAllCategories, getConceptBySlug } from '@/lib/mdx'
 import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter'
 import CategoryCard from '@/components/wiki/CategoryCard'
+import { WikiHubHero, WikiHubIndexSection, WikiHubShell } from '@/components/wiki/WikiHubPrimitives'
 
 export const metadata: Metadata = {
   title: 'Pricing & Monetization Wiki for SaaS & Tech Startups | Sarah Zou',
@@ -117,66 +118,47 @@ export default function WikiPricingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd) }}
       />
 
-      <main className="resource-editorial min-h-screen bg-page">
-        <section className="border-b border-border-soft bg-surface">
-          <div className="section-shell grid gap-14 py-20 sm:py-24 lg:grid-cols-[1.35fr_0.65fr] lg:items-end lg:gap-24 lg:py-32">
-            <div>
-              <p className="kicker-accent">Pricing reference library</p>
-              <h1 className="mt-6 max-w-[13ch] font-serif-playfair">
-                Pricing &amp; Monetization Wiki
-              </h1>
-              <p className="mt-7 max-w-[46rem] text-[17px] leading-[1.85] text-text-muted sm:text-[18px]">
-                Evidence-based guidance for choosing the metric, packaging the offer, understanding
-                customer value, and protecting the economics underneath the model.
-              </p>
-            </div>
-            <dl className="grid grid-cols-2 gap-6 border-t border-border pt-5">
-              <div>
-                <dt className="kicker-muted">Active categories</dt>
-                <dd className="mt-3 font-serif-playfair text-[30px] leading-none text-ink">
-                  {categoriesWithContent.length}
-                </dd>
-              </div>
-              <div>
-                <dt className="kicker-muted">Published concepts</dt>
-                <dd className="mt-3 font-serif-playfair text-[30px] leading-none text-ink">
-                  {totalConcepts}
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </section>
+      <WikiHubShell>
+        <WikiHubHero
+          kicker="Pricing reference library"
+          title={<>Pricing &amp; Monetization Wiki</>}
+          titleClassName="max-w-[13ch]"
+          description={
+            <p>
+              Evidence-based guidance for choosing the metric, packaging the offer, understanding
+              customer value, and protecting the economics underneath the model.
+            </p>
+          }
+          stats={[
+            { label: 'Active categories', value: categoriesWithContent.length },
+            { label: 'Published concepts', value: totalConcepts },
+          ]}
+        />
 
-        <section>
-          <div className="section-shell py-20 sm:py-24 lg:py-32">
-            <div className="grid gap-12 lg:grid-cols-[0.46fr_1.54fr] lg:gap-24">
-              <div>
-                <p className="kicker-muted">Explore categories</p>
-                <p className="mt-5 max-w-xs text-[14px] leading-[1.75] text-text-muted">
-                  Start with the commercial question you are trying to answer, then move through the
-                  connected concepts one decision at a time.
-                </p>
-              </div>
-              <div>
-                <div className="border-t border-border-soft">
-                  {categoriesWithContent.map((category) => (
-                    <CategoryCard
-                      key={category.slug}
-                      title={category.title}
-                      slug={category.slug}
-                      summary={category.summary}
-                      tags={category.tags}
-                      level={category.level}
-                      conceptCount={category.conceptCount}
-                    />
-                  ))}
-                </div>
-                <WikiLicenseFooter />
-              </div>
-            </div>
+        <WikiHubIndexSection
+          eyebrow="Explore categories"
+          description={
+            <p>
+              Start with the commercial question you are trying to answer, then move through the
+              connected concepts one decision at a time.
+            </p>
+          }
+        >
+          <div className="border-t border-border-soft">
+            {categoriesWithContent.map((category) => (
+              <CategoryCard
+                key={category.slug}
+                title={category.title}
+                slug={category.slug}
+                summary={category.summary}
+                level={category.level}
+                conceptCount={category.conceptCount}
+              />
+            ))}
           </div>
-        </section>
-      </main>
+          <WikiLicenseFooter />
+        </WikiHubIndexSection>
+      </WikiHubShell>
     </>
   )
 }

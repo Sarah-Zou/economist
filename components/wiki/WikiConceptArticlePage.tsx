@@ -541,7 +541,7 @@ function parseMetricsToMonitor(content: string): {
   metrics: Array<{ title: string; description: string }> | null
   afterMetrics: string
 } {
-  const metricsRegex = /##\s+Metrics to monitor\s*\n([\s\S]*?)(?=\n##|$)/
+  const metricsRegex = /#{2,3}\s+Metrics to monitor\s*\n([\s\S]*?)(?=\n##|$)/
   const match = content.match(metricsRegex)
 
   if (!match) {
@@ -588,7 +588,7 @@ function parseStepByStep(content: string): {
   afterStepsContent: string
   afterStepByStep: string
 } {
-  const stepByStepRegex = /###\s+Step-by-step\s*\n([\s\S]*?)(?=\n##|$)/
+  const stepByStepRegex = /#{2,3}\s+Step-by-step\s*\n([\s\S]*?)(?=\n##|$)/
   const match = content.match(stepByStepRegex)
 
   if (!match) {
@@ -970,7 +970,7 @@ export default async function WikiConceptArticlePage({
           />
         )}
 
-        <main className="resource-editorial wiki-concept-editorial min-h-screen bg-page pb-20">
+        <div className="resource-editorial wiki-concept-editorial min-h-screen bg-page pb-20">
           <div className="section-shell max-w-[96rem] py-8">
             {breadcrumbs.length > 0 && (
               <div className="mb-8 border-b border-border-soft pb-5">
@@ -1043,10 +1043,13 @@ export default async function WikiConceptArticlePage({
                                 Last updated
                               </p>
                               <p className="text-[13px] text-text-muted">
-                                {new Date(conceptData.lastUpdated).toLocaleDateString('en-US', {
+                                {new Date(
+                                  `${conceptData.lastUpdated}T00:00:00Z`
+                                ).toLocaleDateString('en-US', {
                                   year: 'numeric',
                                   month: 'long',
                                   day: 'numeric',
+                                  timeZone: 'UTC',
                                 })}
                               </p>
                             </div>
@@ -1151,9 +1154,10 @@ export default async function WikiConceptArticlePage({
                         {beforeSnapshot && <WikiMarkdownHtml markdown={beforeSnapshot} />}
 
                         {/* Content after Snapshot but before Key Facts (What, When, Why sections) */}
-                        {beforeKeyFacts && beforeKeyFacts.trim() && (
-                          <WikiMarkdownHtml markdown={beforeKeyFacts} />
-                        )}
+                        {keyFacts &&
+                          keyFacts.length > 0 &&
+                          beforeKeyFacts &&
+                          beforeKeyFacts.trim() && <WikiMarkdownHtml markdown={beforeKeyFacts} />}
                         {/* Content after Snapshot when there are no Key Facts, Steps, or Metrics but FAQ exists - render main content sections before FAQ */}
                         {(() => {
                           // Only render if there are no intermediate sections, FAQ exists, and we have content to render
@@ -1867,7 +1871,7 @@ export default async function WikiConceptArticlePage({
               </div>
             </div>
           </div>
-        </main>
+        </div>
       </>
     )
   } catch (error) {

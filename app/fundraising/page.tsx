@@ -1,10 +1,18 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import {
+  generateCollectionPageJsonLd,
+  generateItemListJsonLd,
+  generateWebPageJsonLd,
+} from '@/lib/generateJsonLd'
 import { getCategoryBySlug, getConceptBySlug } from '@/lib/mdx'
 import { FUNDRAISING_WIKI_AREA } from '@/lib/wiki-areas'
-import WikiLayout from '@/components/wiki/WikiLayout'
 import WikiLicenseFooter from '@/components/wiki/WikiLicenseFooter'
+import {
+  WikiHubHero,
+  WikiHubIndexSection,
+  WikiHubRow,
+  WikiHubShell,
+} from '@/components/wiki/WikiHubPrimitives'
 
 export const metadata: Metadata = {
   title: 'Startup Fundraising Wiki | Sarah Zou',
@@ -21,6 +29,32 @@ export const metadata: Metadata = {
   },
 }
 
+const START_HERE = [
+  'how-startup-funding-works',
+  'pre-seed-seed-series-a',
+  'startup-valuation-methods',
+  'dilution-cap-tables',
+]
+
+const FUNDRAISING_TRACKS = [
+  {
+    title: 'Choose the funding path',
+    description: 'Understand the financing landscape and what changes from one round to the next.',
+    slugs: ['how-startup-funding-works', 'pre-seed-seed-series-a'],
+  },
+  {
+    title: 'Price the round and choose the instrument',
+    description: 'Connect valuation logic to the mechanics of SAFEs, notes, and priced equity.',
+    slugs: ['startup-valuation-methods', 'safe-notes', 'convertible-notes'],
+  },
+  {
+    title: 'Model ownership, control, and exit outcomes',
+    description:
+      'See how dilution, negotiated rights, and payout priority change founder outcomes.',
+    slugs: ['dilution-cap-tables', 'term-sheets', 'liquidation-preferences'],
+  },
+]
+
 export default function FundraisingHubPage() {
   const category = getCategoryBySlug(FUNDRAISING_WIKI_AREA.categorySlug, {
     includeNonPublished: true,
@@ -31,71 +65,155 @@ export default function FundraisingHubPage() {
       const content = getConceptBySlug(FUNDRAISING_WIKI_AREA.categorySlug, concept.id!, {
         includeNonPublished: true,
       })
-      return content
-        ? {
-            id: concept.id!,
-            title: content.title,
-            summary: content.oneLiner || category?.summary || '',
-            readingTime: content.readingTime,
-          }
-        : null
+
+      if (!content || content.status !== 'published') return null
+
+      return {
+        id: concept.id!,
+        title: content.title,
+        summary: content.oneLiner || category?.summary || '',
+        readingTime: content.readingTime,
+        lastUpdated: content.lastUpdated,
+      }
     })
     .filter((concept): concept is NonNullable<typeof concept> => concept !== null)
 
-  return (
-    <WikiLayout breadcrumbs={[]} showAreasFooter={false}>
-      <div className="w-full">
-        <div className="mb-14">
-          <p className="kicker-accent">Reference library</p>
-          <h1 className="mt-4 mb-4 font-serif-playfair">
-            Startup Fundraising Wiki
-          </h1>
-          <div className="prose prose-lg mb-6 text-base text-text sm:text-[17px] leading-[1.75]">
-            <p className="text-xl font-light text-text-muted sm:text-2xl">
-              Practical guidance for choosing capital, sizing a round, and understanding the
-              dilution and control trade-offs behind startup funding.
-            </p>
-          </div>
-          <p className="meta-note">Start with a guide, then build your financing plan one decision at a time.</p>
-          <div className="mt-8 flex flex-wrap gap-10 border-t border-border-soft pt-5">
-            <div>
-              <div className="text-2xl font-bold text-brand-ink">{concepts.length}</div>
-              <div className="text-[12px] uppercase tracking-[0.12em] text-text-subtle">
-                Guides Available
-              </div>
-            </div>
-          </div>
-        </div>
+  const conceptsBySlug = new Map(concepts.map((concept) => [concept.id, concept]))
+  const dateModified =
+    concepts
+      .map((concept) => concept.lastUpdated)
+      .filter((date): date is string => Boolean(date))
+      .sort()
+      .at(-1) || '2026-07-21'
 
-        <section className="mb-12">
-          <div className="mb-6 flex items-center gap-3">
-            <div className="h-8 w-px bg-brand" />
-            <h2 className="font-serif-playfair">
-              Explore Guides
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {concepts.map((concept) => (
-              <Link
-                key={concept.id}
-                href={`/fundraising/${concept.id}`}
-                className="group flex min-h-[220px] flex-col border border-border-soft bg-white p-6 shadow-card transition hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-elevated"
+  const itemListJsonLd = generateItemListJsonLd(
+    concepts.map((concept) => ({
+      name: concept.title,
+      url: `https://sarahzou.com/fundraising/${concept.id}`,
+      description: concept.summary,
+    }))
+  )
+  const description =
+    'Practical guidance for choosing capital, sizing a round, and understanding the dilution and control trade-offs behind startup funding.'
+  const webPageJsonLd = generateWebPageJsonLd({
+    title: 'Startup Fundraising Wiki',
+    description,
+    url: 'https://sarahzou.com/fundraising',
+    dateModified,
+  })
+  const collectionPageJsonLd = generateCollectionPageJsonLd({
+    title: 'Startup Fundraising Wiki',
+    description,
+    url: 'https://sarahzou.com/fundraising',
+    dateModified,
+  })
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd) }}
+      />
+
+      <WikiHubShell>
+        <WikiHubHero
+          kicker="Fundraising reference library"
+          title="Startup Fundraising Wiki"
+          description={<p>{description}</p>}
+          stats={[
+            { label: 'Published guides', value: concepts.length },
+            { label: 'Decision tracks', value: FUNDRAISING_TRACKS.length },
+          ]}
+        />
+
+        <WikiHubIndexSection
+          eyebrow="A practical sequence"
+          heading="Start here"
+          description={
+            <p>
+              Follow these four guides for the shortest path from financing basics to a usable
+              ownership model.
+            </p>
+          }
+        >
+          <ol className="border-t border-border-soft">
+            {START_HERE.map((slug, index) => {
+              const concept = conceptsBySlug.get(slug)
+              if (!concept) return null
+
+              return (
+                <li key={slug}>
+                  <WikiHubRow
+                    href={`/fundraising/${concept.id}`}
+                    title={concept.title}
+                    summary={concept.summary}
+                    eyebrow={String(index + 1).padStart(2, '0')}
+                    meta={concept.readingTime ? `${concept.readingTime} min read` : 'Read guide'}
+                  />
+                </li>
+              )
+            })}
+          </ol>
+        </WikiHubIndexSection>
+
+        <WikiHubIndexSection
+          eyebrow="The full library"
+          heading="Explore by decision track"
+          description={
+            <p>
+              Start with the financing question you need to answer, then move through the connected
+              legal and economic choices.
+            </p>
+          }
+          surface
+        >
+          <div className="border-t border-border">
+            {FUNDRAISING_TRACKS.map((track, trackIndex) => (
+              <section
+                key={track.title}
+                className="grid gap-8 border-b border-border-soft py-10 lg:grid-cols-[0.42fr_1.58fr] lg:gap-12"
               >
-                <h3 className="font-serif-playfair text-2xl font-semibold text-text">{concept.title}</h3>
-                <p className="mt-4 text-base leading-[1.7] text-text-muted">{concept.summary}</p>
-                <div className="mt-auto flex items-center justify-between border-t border-border-soft pt-5 text-sm font-semibold text-brand-ink">
-                  <span>{concept.readingTime ? `${concept.readingTime} min read` : 'Read guide'}</span>
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <div>
+                  <p className="kicker-accent">Track {String(trackIndex + 1).padStart(2, '0')}</p>
+                  <h3 className="mt-3 font-serif-playfair text-[25px] font-medium text-ink">
+                    {track.title}
+                  </h3>
+                  <p className="mt-4 text-[14px] leading-[1.7] text-text-muted">
+                    {track.description}
+                  </p>
                 </div>
-              </Link>
+                <div className="border-t border-border-soft">
+                  {track.slugs.map((slug) => {
+                    const concept = conceptsBySlug.get(slug)
+                    if (!concept) return null
+
+                    return (
+                      <WikiHubRow
+                        key={slug}
+                        href={`/fundraising/${concept.id}`}
+                        title={concept.title}
+                        summary={concept.summary}
+                        meta={
+                          concept.readingTime ? `${concept.readingTime} min read` : 'Read guide'
+                        }
+                      />
+                    )
+                  })}
+                </div>
+              </section>
             ))}
           </div>
-        </section>
-
-        <div className="mt-12">
           <WikiLicenseFooter />
-        </div>
-      </div>
-    </WikiLayout>
+        </WikiHubIndexSection>
+      </WikiHubShell>
+    </>
   )
 }
