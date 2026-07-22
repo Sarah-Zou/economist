@@ -15,7 +15,7 @@ canonical: "https://sarahzou.com/fundraising/convertible-notes"
 
 **What it is:** A convertible note is a loan from an investor to a company that can convert into another security, usually preferred stock in the company's next priced equity financing. The SEC classifies a convertible note as both a security and a loan: it starts as debt and converts when the next round or another agreed condition occurs.
 
-**Why founders use it:** A note can close faster than a priced round because the company does not have to negotiate a full preferred-stock financing immediately. But the speed comes from deferring the share price, not from eliminating financing cost.
+**Why founders use it:** A note can close faster than a priced round because the company does not have to negotiate a full preferred-stock financing immediately. But the speed comes from deferring the share price, not from eliminating financing cost. Convertible notes are one instrument in the broader map of [how startup funding works](/fundraising/how-startup-funding-works).
 
 **The essential difference from a [SAFE](/fundraising/safe-notes):** A classic convertible note is debt. It has principal, accrues interest, has a maturity date, and may become repayable. A standard SAFE has none of those features. Y Combinator introduced the SAFE specifically to keep future-equity conversion while removing them.
 

@@ -269,13 +269,6 @@ function parseSnapshot(content: string): {
 }
 
 function SnapshotTopCard({ snapshot }: { snapshot: SnapshotData }) {
-  const conciseWhyItMatters = snapshot.whyItMatters
-    ? snapshot.whyItMatters
-        .split(/(?<=[.!?])\s+/)
-        .find((sentence) => sentence.trim().length > 0)
-        ?.trim() || snapshot.whyItMatters
-    : undefined
-
   return (
     <div className="border-t border-border pt-7">
       <div className="mb-5">
@@ -328,7 +321,7 @@ function SnapshotTopCard({ snapshot }: { snapshot: SnapshotData }) {
             </div>
           </div>
         )}
-        {conciseWhyItMatters && (
+        {snapshot.whyItMatters && (
           <div className="border-t border-border pt-4">
             <h3 className="mb-2 font-serif-playfair text-[20px] font-semibold text-text sm:text-[22px]">
               Why it matters
@@ -345,7 +338,7 @@ function SnapshotTopCard({ snapshot }: { snapshot: SnapshotData }) {
                   ),
                 }}
               >
-                {conciseWhyItMatters}
+                {snapshot.whyItMatters}
               </ReactMarkdown>
             </div>
           </div>
@@ -1145,9 +1138,7 @@ export default async function WikiConceptArticlePage({
                   </header>
 
                   {/* Content */}
-                  <div
-                    className={`prose prose-lg ${conceptBodyWidthClass} text-text text-base sm:text-[17px] leading-[1.7]`}
-                  >
+                  <div className={`wiki-concept-main-copy prose prose-lg ${conceptBodyWidthClass}`}>
                     {hasContent && conceptData ? (
                       <>
                         {/* Content before Snapshot */}
@@ -1829,7 +1820,7 @@ export default async function WikiConceptArticlePage({
 
                         {/* CTA Section */}
                         <div className="mx-auto mb-8 mt-16 max-w-4xl">
-                          <div className="wiki-concept-cta border-y border-white/10 bg-ink p-8 text-left md:p-12">
+                          <div className="wiki-concept-cta not-prose border-y border-white/10 bg-ink p-8 text-left md:p-12">
                             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/55">
                               From reference to recommendation
                             </p>

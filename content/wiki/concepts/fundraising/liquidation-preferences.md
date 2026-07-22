@@ -13,7 +13,7 @@ canonical: "https://sarahzou.com/wiki/fundraising/liquidation-preferences"
 
 ## Snapshot (TL;DR)
 
-**What it is:** A liquidation preference is a preferred stockholder's contractual right to receive specified proceeds before junior equity — usually common stock — when a defined liquidation event occurs. That event often includes a sale or merger, not only a shutdown.
+**What it is:** A liquidation preference is a preferred stockholder's contractual right to receive specified proceeds before junior equity — usually common stock — when a defined liquidation event occurs. That event often includes a sale or merger, not only a shutdown. It is part of the priced-equity claim structure introduced in [how startup funding works](/fundraising/how-startup-funding-works).
 
 **Why it matters:** Ownership percentages do not by themselves determine exit payouts. A founder can own 60% of the fully diluted shares and receive nothing in a low-value sale if debt, transaction costs, and senior preference claims absorb the proceeds.
 

@@ -13,7 +13,7 @@ canonical: "https://sarahzou.com/fundraising/term-sheets"
 
 ## Snapshot (TL;DR)
 
-**What it is:** A term sheet summarizes the proposed material terms of an investment. It is the blueprint for the definitive documents, diligence, approvals, and closing. Most provisions are usually stated as non-binding, while selected ones — confidentiality, exclusivity or no-shop, expenses, access, governing law — may be binding. The actual wording and applicable law control.
+**What it is:** A term sheet summarizes the proposed material terms of an investment. It is the blueprint for the definitive documents, diligence, approvals, and closing. Most provisions are usually stated as non-binding, while selected ones — confidentiality, exclusivity or no-shop, expenses, access, governing law — may be binding. The actual wording and applicable law control. The term sheet is where the financing choice in [how startup funding works](/fundraising/how-startup-funding-works) becomes a specific bargain.
 
 **Why it matters:** The term sheet allocates far more than valuation: post-round ownership, option-pool dilution, exit proceeds, board seats, investor veto rights, anti-dilution protection, founder vesting, pro rata rights, legal fees, exclusivity, and the conditions that must be met before funds arrive.
 

@@ -13,7 +13,7 @@ canonical: "https://sarahzou.com/fundraising/startup-valuation-methods"
 
 ## Snapshot (TL;DR)
 
-**What it is:** Startup valuation is the process of estimating or negotiating what a company or a class of its securities is worth, for a defined purpose and as of a defined date. In a priced financing, the valuation sets the price per share and therefore how much ownership the investment buys.
+**What it is:** Startup valuation is the process of estimating or negotiating what a company or a class of its securities is worth, for a defined purpose and as of a defined date. In a priced financing, the valuation sets the price per share and therefore how much ownership the investment buys. It sits inside the financing decision described in [how startup funding works](/fundraising/how-startup-funding-works).
 
 **Why it is difficult:** An early startup may have little revenue, negative cash flow, few comparable transactions, binary technical or regulatory risk, and several equity classes with different rights. A mathematically precise output can still be economically weak if its assumptions are not observable.
 

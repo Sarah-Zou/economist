@@ -774,3 +774,54 @@
     font-size: 0.875rem;
   }
 }
+
+/* Concept copy only: match the screenshot's direct, high-contrast sans-serif
+   reading style without changing wiki navigation, summaries, cards, or CTAs. */
+.wiki-concept-editorial .wiki-concept-main-copy {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-ink);
+  font-size: 17px;
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
+}
+
+.wiki-concept-editorial .wiki-concept-main-copy .not-prose {
+  font-family:
+    var(--font-inter),
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+}
+
+.wiki-concept-editorial
+  .wiki-concept-main-copy
+  :where(p, li, dd, blockquote):not(:where(.not-prose, .not-prose *)) {
+  font-family: inherit;
+  color: var(--color-ink);
+  font-size: inherit;
+  line-height: 1.55;
+}
+
+.wiki-concept-editorial
+  .wiki-concept-main-copy
+  :where(h2, h3, h4):not(:where(.not-prose, .not-prose *)) {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.wiki-concept-editorial
+  .wiki-concept-main-copy
+  :where(strong, b):not(:where(.not-prose, .not-prose *)) {
+  color: var(--color-ink);
+  font-weight: 700;
+}
+
+@media (min-width: 640px) {
+  .wiki-concept-editorial .wiki-concept-main-copy {
+    font-size: 18px;
+  }
+}

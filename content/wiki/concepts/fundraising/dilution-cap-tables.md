@@ -15,7 +15,7 @@ canonical: "https://sarahzou.com/fundraising/dilution-cap-tables"
 
 **What it is:** A capitalization table records a company's ownership securities and related rights — holders of common stock, preferred stock, convertible notes, warrants, and other securities, with units, purchase price, and transaction dates.
 
-**Dilution** is the reduction in a holder's percentage ownership, or in a security's economic or voting power, when the company increases the relevant denominator or changes rights. New shares are the common case, but option-pool increases, SAFEs, notes, warrants, anti-dilution adjustments, and stock-funded acquisitions all create dilution.
+**Dilution** is the reduction in a holder's percentage ownership, or in a security's economic or voting power, when the company increases the relevant denominator or changes rights. New shares are the common case, but option-pool increases, SAFEs, notes, warrants, anti-dilution adjustments, and stock-funded acquisitions all create dilution. Every financing path in [how startup funding works](/fundraising/how-startup-funding-works) eventually shows up here as a change in ownership.
 
 **Core formulas:**
 

@@ -19,7 +19,7 @@ canonical: "https://sarahzou.com/wiki/fundraising/pre-seed-seed-series-a"
 - **Seed:** Is there real demand, and can the company find a repeatable path toward product-market fit?
 - **Series A:** Is there enough evidence to invest in scaling a repeatable growth engine and organization?
 
-These are not legal categories or universal revenue bands. The SEC notes that federal securities law does not assign a separate exemption to a friends-and-family, angel, seed, or Series A label—the issuer still needs a valid registration exemption or a registered offering.
+These are not legal categories or universal revenue bands. They sit inside the broader financing map of [how startup funding works](/fundraising/how-startup-funding-works). The SEC notes that federal securities law does not assign a separate exemption to a friends-and-family, angel, seed, or Series A label—the issuer still needs a valid registration exemption or a registered offering.
 
 **Why it matters:** A stage label changes investor expectations about traction, diligence, terms, board rights, and scaling plans. It does not change the company's underlying facts or its legal duties.
 
