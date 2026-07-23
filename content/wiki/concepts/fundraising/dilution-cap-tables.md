@@ -58,7 +58,7 @@ There is no safe universal definition of "fully diluted." A term sheet, a SAFE, 
 
 ## Why does this matter to founders?
 
-**Fundraising terms become share counts.** A $20M pre-money and a $5M check imply `$5M / ($20M + $5M) = 20%` new-investor ownership — but only after the fully diluted pre-money definition is fixed. If the term sheet also requires an option-pool increase inside the pre-money capitalization, existing holders bear that dilution before the investor buys a single share.
+**Fundraising terms become share counts.** A $20M pre-money and a $5M check imply `$5M / ($20M + $5M) = 20%` new-investor ownership — but only after the fully diluted pre-money definition is fixed. If the term sheet also requires an option-pool increase inside the pre-money capitalization, existing holders bear that dilution before the investor buys a single share. The same arithmetic applies whether the round is labeled [seed or Series A](/fundraising/pre-seed-seed-series-a); the label does not change the model.
 
 **Employee offers depend on the denominator.** "10,000 options" is not an ownership statement. `Option ownership = option shares / fully diluted shares`. An offer should state the percentage at a dated capitalization, note that future dilution is expected, and distinguish a granted option from an informal promise.
 

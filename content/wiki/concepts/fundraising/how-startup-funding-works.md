@@ -152,7 +152,7 @@ The practical sequence is:
 
 Federal securities law applies even to private-company sales to friends, family, angels or VCs. A U.S. company selling securities generally needs registration or an exemption, and state law can also apply. ([SEC, 2024](https://www.sec.gov/resources-small-businesses/capital-raising-building-blocks/private-companies-sec))
 
-## Worked example: sizing a seed round and estimating dilution
+## Worked example: sizing a [seed](/fundraising/pre-seed-seed-series-a) round and estimating dilution
 
 Assume a B2B software startup has:
 

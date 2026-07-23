@@ -51,7 +51,7 @@ The term sheet should be specific enough that these documents *implement* the de
 
 **Governance outlasts the cash.** Board composition and protective provisions affect budgets, executive hiring, future financings, debt, pool increases, acquisitions, and charter amendments. An investor may own 20% and still hold approval rights over actions common holders would otherwise control. Percentage ownership, board control, and class vetoes are **three separate control systems** — check all three.
 
-**Early terms set precedent.** Rights granted at Series A are routinely requested by later investors or carried into a senior stack. A small concession compounds across Series B and C. Negotiate the architecture, not just the immediate dollar impact.
+**Early terms set precedent.** Rights granted at [Series A](/fundraising/pre-seed-seed-series-a) are routinely requested by later investors or carried into a senior stack. A small concession compounds across Series B and C. Negotiate the architecture, not just the immediate dollar impact.
 
 ## What are the economic terms?
 
