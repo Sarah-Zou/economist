@@ -74,7 +74,7 @@ This is why "raise as much as possible" is not a strategy. The correct question 
 A good milestone changes what a rational investor, lender or operator can believe about the company. Examples include:
 
 - a working product that resolves the highest technical risk;
-- paid pilots that show [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay);
+- paid pilots that show willingness to pay;
 - a repeatable acquisition channel with measured CAC and payback;
 - regulatory clearance or a completed clinical/technical validation;
 - positive contribution margin at a useful scale;

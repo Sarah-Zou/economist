@@ -32,7 +32,7 @@ canonical: "https://sarahzou.com/fundraising/pre-seed-seed-series-a"
 
 | Stage | Main question being financed | Evidence commonly available | Primary use of funds | Common instrument pattern |
 | --- | --- | --- | --- | --- |
-| **Pre-seed** | Is the problem real, is the insight differentiated, and can the team build? | Founder-market fit, customer discovery, prototype, design partners | Build the first product, validate the problem, recruit the core team, test [willingness to pay](/wiki/pricing/value-and-customers/willingness-to-pay) | [SAFEs](/fundraising/safe-notes) and [convertible notes](/fundraising/convertible-notes); occasionally a small priced round |
+| **Pre-seed** | Is the problem real, is the insight differentiated, and can the team build? | Founder-market fit, customer discovery, prototype, design partners | Build the first product, validate the problem, recruit the core team, test willingness to pay | [SAFEs](/fundraising/safe-notes) and [convertible notes](/fundraising/convertible-notes); occasionally a small priced round |
 | **Seed** | Do customers adopt, pay, return, and refer—and can the team find a repeatable motion? | Usable product, pilots or revenue, engagement cohorts, early pricing and channel signals | Prove demand and retention, test go-to-market, establish unit-economics baselines | SAFEs, notes, or a priced seed preferred-stock round |
 | **Series A** | Can the company scale a repeatable engine without destroying economics or quality? | Initial customer base, proof of concept, stronger retention and growth, credible operating plan | Scale sales, marketing, product, hiring, infrastructure, and governance | Usually a priced preferred-stock round with negotiated investor rights |
 
@@ -123,7 +123,7 @@ This is an educational simplification. A closing model must use the actual SAFE 
 
 - **Capital-intensive and regulated companies.** Biotech, climate, hardware, and regulated products can raise large rounds pre-revenue because technical, clinical, or regulatory proof is the relevant milestone. A software ARR threshold would misclassify them.
 - **Sector concentration.** Current benchmarks can reflect capital concentration rather than universal quality—see the AI-versus-non-AI Series A valuation gap above. Different sectors are not comparable markets.
-- **[Bootstrapped](/fundraising/bootstrapping-vs-vc) or profitable businesses.** Revenue, prepayments, grants, or suitable debt may finance the plan with better founder economics. Venture stages are a funding path, not a maturity ladder every company must climb.
+- **Bootstrapped or profitable businesses.** Revenue, prepayments, grants, or suitable debt may finance the plan with better founder economics. Venture stages are a funding path, not a maturity ladder every company must climb.
 - **Bridge rounds and extensions.** A seed extension, SAFE bridge, or insider round may buy time without changing the company's true evidence stage. Renaming a round does not retire risk.
 - **A closed or selective capital market.** Reaching a milestone does not guarantee financing; fund strategy, sentiment, and reserves can delay or prevent a round. Build enough runway to survive a slower process.
 
