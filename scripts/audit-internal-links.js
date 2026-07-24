@@ -120,6 +120,8 @@ function getNewsletterRoutes() {
 
   const postFiles = fs.readdirSync(postsDir).filter((name) => name.endsWith('.md'));
   for (const fileName of postFiles) {
+    const { data } = matter(fs.readFileSync(path.join(postsDir, fileName), 'utf8'));
+    if (data.status === 'retired' || data.status === 'draft' || data.draft === true) continue;
     const slug = fileName
       .replace(/^[0-9]{4}-[0-9]{2}-[0-9]{2}-/, '')
       .replace(/\.md$/, '');

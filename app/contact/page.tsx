@@ -11,6 +11,7 @@ const waysToBegin = [
       'Share the commercial question and receive one specific observation and a practical next move.',
     href: '/diagnostic-note',
     linkLabel: 'Request a free diagnostic note',
+    primary: true,
   },
   {
     number: '02',
@@ -19,19 +20,40 @@ const waysToBegin = [
       'Use a 15-minute call when context is easier to explain aloud or the decision is time-sensitive.',
     href: '/book',
     linkLabel: 'Book 15 minutes',
+    primary: false,
   },
 ]
 
 export default function ContactPage() {
   return (
     <div id="contact-editorial" className="overflow-hidden bg-page text-text">
-      <section className="border-b border-border-soft bg-surface">
-        <div className="section-shell grid gap-12 py-16 sm:py-20 lg:min-h-[650px] lg:grid-cols-[1.02fr_0.98fr] lg:items-end lg:gap-20 lg:py-24">
-          <div className="max-w-[48rem]">
+      <section
+        className="relative isolate border-b border-border-soft bg-surface min-h-[540px] lg:min-h-[640px]"
+        aria-labelledby="contact-hero-title"
+      >
+        <Image
+          src="/images/contact-hero.png"
+          alt="An open doorway leading into a quiet space"
+          fill
+          sizes="100vw"
+          className="object-cover object-[70%_center] lg:object-center"
+          priority
+        />
+        <div
+          className="absolute inset-0 bg-[linear-gradient(90deg,rgba(246,243,237,0.98)_0%,rgba(246,243,237,0.85)_45%,rgba(246,243,237,0.3)_75%,rgba(246,243,237,0)_100%)]"
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 bg-[linear-gradient(0deg,rgba(246,243,237,0.95)_0%,rgba(246,243,237,0)_30%)] sm:hidden"
+          aria-hidden
+        />
+
+        <div className="section-shell relative z-10 flex min-h-[540px] items-end pb-16 pt-32 sm:min-h-[640px] sm:pb-24 lg:pb-28">
+          <div className="max-w-[47rem]">
             <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-text-subtle">
               Contact
             </p>
-            <h1 className="mt-6 font-serif-playfair text-ink">
+            <h1 id="contact-hero-title" className="mt-6 font-serif-playfair text-ink">
               Start with the decision in front of you.
             </h1>
             <p className="mt-7 max-w-[39rem] text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
@@ -39,22 +61,6 @@ export default function ContactPage() {
               difficult, and where the business is today.
             </p>
           </div>
-
-          <figure>
-            <div className="relative aspect-[3/2] overflow-hidden bg-page">
-              <Image
-                src="/images/contact-open-threshold.webp"
-                alt="An open doorway leading into a quiet consulting studio"
-                fill
-                priority
-                sizes="(min-width: 1024px) 560px, 100vw"
-                className="object-cover"
-              />
-            </div>
-            <figcaption className="mt-4 border-t border-border-subtle pt-3 text-[11px] uppercase tracking-[0.16em] text-text-subtle">
-              A first conversation can begin simply
-            </figcaption>
-          </figure>
         </div>
       </section>
 
@@ -86,7 +92,9 @@ export default function ContactPage() {
                 </div>
                 <Link
                   href={item.href}
-                  className="group inline-flex items-center gap-2 self-start border-b border-border pb-1 text-[14px] font-medium text-ink transition-colors hover:border-ink"
+                  className={item.primary
+                    ? 'group inline-flex items-center gap-2 self-start rounded-[8px] bg-brand px-4 py-2.5 text-[14px] font-semibold text-brand-on transition-colors hover:bg-brand-dark'
+                    : 'group inline-flex items-center gap-2 self-start border-b border-border pb-1 text-[14px] font-medium text-ink transition-colors hover:border-ink'}
                 >
                   {item.linkLabel}
                   <ArrowRight

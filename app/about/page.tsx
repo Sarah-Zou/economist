@@ -112,36 +112,45 @@ export default function AboutPage() {
       />
 
       <div id="about-norm" className="overflow-hidden bg-page text-text">
-        <section className="border-b border-border-soft bg-surface">
-          <div className="section-shell grid gap-12 py-16 sm:py-20 lg:min-h-[690px] lg:grid-cols-[1.08fr_0.92fr] lg:items-end lg:gap-16 lg:py-24">
-            <div className="max-w-[47rem] lg:pb-8">
+        <section
+          className="relative isolate border-b border-border-soft bg-surface min-h-[540px] lg:min-h-[690px]"
+          aria-labelledby="about-hero-title"
+        >
+          <Image
+            src="/images/about-hero.png"
+            alt="Sarah Zou, economist, operator, and advisor"
+            fill
+            sizes="100vw"
+            className="object-cover object-[70%_top] lg:object-[80%_top]"
+            priority
+          />
+          <div
+            className="absolute inset-0 bg-[linear-gradient(90deg,rgba(246,243,237,0.98)_0%,rgba(246,243,237,0.85)_45%,rgba(246,243,237,0.3)_75%,rgba(246,243,237,0)_100%)]"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 bg-[linear-gradient(0deg,rgba(246,243,237,0.95)_0%,rgba(246,243,237,0)_30%)] sm:hidden"
+            aria-hidden
+          />
+
+          <div className="section-shell relative z-10 flex min-h-[540px] items-center pb-16 pt-32 sm:min-h-[690px] sm:pb-24 sm:pt-40 lg:pb-28 lg:pt-48">
+            <div className="max-w-[47rem]">
               <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-text-subtle">
                 About Sarah Zou
               </p>
-              <h1 className="mt-6 max-w-[44rem] font-serif-playfair text-ink">
+              <h1 id="about-hero-title" className="mt-6 max-w-[44rem] font-serif-playfair text-ink">
                 I’m an economist who cares about what happens behind the model.
               </h1>
               <p className="mt-7 max-w-[36rem] text-[17px] leading-[1.78] text-text-muted sm:text-[19px]">
                 I’ve spent my career learning how evidence becomes judgment—from research and
                 finance to transformation and infrastructure operations.
               </p>
-            </div>
-
-            <figure className="w-full lg:justify-self-end">
-              <div className="relative aspect-[4/5] max-h-[610px] w-full overflow-hidden bg-page">
-                <Image
-                  src="/images/about_headshot.webp"
-                  alt="Sarah Zou, economist, operator, and advisor"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 470px, 100vw"
-                  className="object-cover object-top"
-                />
+              <div className="mt-10 border-t border-border pt-5 max-w-sm">
+                <p className="text-[11px] uppercase tracking-[0.16em] text-text-subtle">
+                  Economist &middot; Operator &middot; Advisor
+                </p>
               </div>
-              <figcaption className="mt-4 border-t border-border-subtle pt-3 text-[11px] uppercase tracking-[0.16em] text-text-subtle">
-                Economist &middot; Operator &middot; Advisor
-              </figcaption>
-            </figure>
+            </div>
           </div>
         </section>
 

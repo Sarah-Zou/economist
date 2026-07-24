@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import Image from 'next/image'
 
 type NewsletterIndexLayoutProps = {
   children: ReactNode
@@ -6,24 +7,46 @@ type NewsletterIndexLayoutProps = {
 
 export default function NewsletterIndexLayout({ children }: NewsletterIndexLayoutProps) {
   return (
-    <main className="resource-editorial min-h-screen bg-page">
-      <section className="border-b border-border-soft bg-surface">
-        <div className="section-shell grid gap-14 py-20 sm:py-24 lg:grid-cols-[1.35fr_0.65fr] lg:items-end lg:gap-24 lg:py-32">
-          <div>
+    <main className="resource-editorial min-h-screen bg-page text-text">
+      {/* Hero */}
+      <section
+        className="relative isolate border-b border-border-soft bg-surface min-h-[500px] lg:min-h-[600px]"
+        aria-labelledby="newsletter-hero-title"
+      >
+        <Image
+          src="/images/newsletter-hero.png"
+          alt="Printed field notes and research journals"
+          fill
+          sizes="100vw"
+          className="object-cover object-[70%_center] lg:object-center"
+          priority
+        />
+        <div
+          className="absolute inset-0 bg-[linear-gradient(90deg,rgba(246,243,237,0.98)_0%,rgba(246,243,237,0.85)_45%,rgba(246,243,237,0.3)_75%,rgba(246,243,237,0)_100%)]"
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 bg-[linear-gradient(0deg,rgba(246,243,237,0.95)_0%,rgba(246,243,237,0)_30%)] sm:hidden"
+          aria-hidden
+        />
+
+        <div className="section-shell relative z-10 flex min-h-[500px] items-center pb-16 pt-32 sm:min-h-[600px] sm:pb-24 sm:pt-40">
+          <div className="max-w-[48rem]">
             <p className="kicker-accent">Newsletter</p>
-            <h1 className="mt-6 max-w-[14ch] font-serif-playfair">
+            <h1 id="newsletter-hero-title" className="mt-6 max-w-[14ch] font-serif-playfair text-ink">
               Weekly pricing and monetization thinking for technical founders
             </h1>
             <p className="mt-7 max-w-[42rem] text-[17px] leading-[1.85] text-text-muted sm:text-[18px]">
               Research, case studies, frameworks, and pricing judgment you can actually use.
             </p>
-          </div>
-          <div className="border-t border-border pt-5">
-            <p className="kicker-muted">The editorial brief</p>
-            <p className="mt-4 max-w-sm text-[15px] leading-[1.8] text-text-muted">
-              Notes on the choices behind the model: what to measure, where the economics break, and
-              how to make the trade-off legible.
-            </p>
+            
+            <div className="mt-10 border-t border-border pt-5 max-w-sm">
+              <p className="kicker-muted">The editorial brief</p>
+              <p className="mt-3 text-[15px] leading-[1.8] text-text-muted">
+                Notes on the choices behind the model: what to measure, where the economics break, and
+                how to make the trade-off legible.
+              </p>
+            </div>
           </div>
         </div>
       </section>

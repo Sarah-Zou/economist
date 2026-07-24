@@ -88,13 +88,33 @@ export default function DiagnosticNotePage() {
   return (
     <>
       <div id="diagnostic-editorial" className="overflow-hidden bg-page text-text">
-        <section className="border-b border-border-soft bg-surface">
-          <div className="section-shell grid gap-14 py-20 sm:py-24 lg:grid-cols-[1.08fr_0.92fr] lg:items-end lg:gap-24 lg:py-28">
+        <section
+          className="relative isolate border-b border-border-soft bg-surface min-h-[540px] lg:min-h-[640px]"
+          aria-labelledby="diagnostic-hero-title"
+        >
+          <Image
+            src="/images/diagnostic-note-hero.png"
+            alt="Thoughtful review of a pricing decision"
+            fill
+            sizes="100vw"
+            className="object-cover object-[70%_center] lg:object-center"
+            priority
+          />
+          <div
+            className="absolute inset-0 bg-[linear-gradient(90deg,rgba(246,243,237,0.98)_0%,rgba(246,243,237,0.85)_45%,rgba(246,243,237,0.3)_75%,rgba(246,243,237,0)_100%)]"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 bg-[linear-gradient(0deg,rgba(246,243,237,0.95)_0%,rgba(246,243,237,0)_30%)] sm:hidden"
+            aria-hidden
+          />
+
+          <div className="section-shell relative z-10 grid gap-14 py-20 sm:py-24 lg:grid-cols-[1.08fr_0.92fr] lg:items-end lg:gap-24 lg:py-28">
             <div className="max-w-[47rem]">
               <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-text-subtle">
                 Free · No strings · 1–2 business days
               </p>
-              <h1 className="mt-6 font-serif-playfair text-ink">
+              <h1 id="diagnostic-hero-title" className="mt-6 font-serif-playfair text-ink">
                 A clear outside view on the pricing decision in front of you.
               </h1>
               <p className="mt-7 max-w-[40rem] text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
@@ -106,7 +126,7 @@ export default function DiagnosticNotePage() {
               </p>
             </div>
 
-            <div>
+            <div className="rounded-[12px] bg-page/85 px-7 py-8 backdrop-blur-[16px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] sm:px-9 sm:py-10 border border-white/40">
               <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-text-subtle">
                 What you receive
               </p>
@@ -114,7 +134,7 @@ export default function DiagnosticNotePage() {
                 {noteContents.map((item) => (
                   <div
                     key={item.number}
-                    className="grid grid-cols-[2.5rem_1fr] gap-5 border-b border-border-soft py-5"
+                    className="grid grid-cols-[2.5rem_1fr] gap-5 border-b border-border-soft py-5 last:border-b-0"
                   >
                     <span className="text-[11px] tracking-[0.14em] text-text-subtle">
                       {item.number}

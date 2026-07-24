@@ -27,7 +27,7 @@ const CORE_PAGES = [
     url: `${SITE}/consulting`,
     title: 'Consulting',
     summary:
-      'The Commercial Architecture Diagnostic — a two-week, fixed-fee (US$6,000) audit of pricing, packaging, and unit economics — plus deeper pricing and growth-economics sprints and fractional support. Starts with a free one-page diagnostic note.',
+      'The Commercial Architecture Diagnostic — a two-week, fixed-fee ($9,500) engagement on pricing, packaging, or unit economics — plus fixed-fee Builds and ongoing advisory. Starts with a free one-page diagnostic note.',
   },
   {
     url: `${SITE}/diagnostic-note`,
@@ -123,8 +123,10 @@ function readNewsletterPosts() {
         url: `${SITE}/newsletter/${slug}`,
         title: data.title || slug,
         summary: data.description || data.excerpt || 'Newsletter essay by Dr. Sarah Zou.',
+        status: data.status || (data.draft === true ? 'draft' : 'published'),
       };
     })
+    .filter((post) => post.status === 'published')
     .sort((a, b) => a.url.localeCompare(b.url));
 }
 

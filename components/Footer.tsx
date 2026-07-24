@@ -82,8 +82,7 @@ const Footer = () => {
           <div className="md:text-right">
             <p className="kicker-muted mb-4 md:text-right">Contact</p>
             <p className="mb-5 text-[14px] leading-[1.7] text-text-muted md:ml-auto md:max-w-[14rem]">
-              For commercial strategy, pricing, or GTM questions, the fastest path is the free
-              consult.
+              The fastest path is a free one-page diagnostic note.
             </p>
             <div className="flex items-center gap-3 md:justify-end">
               <Link

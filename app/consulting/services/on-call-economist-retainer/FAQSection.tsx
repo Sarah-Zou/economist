@@ -3,12 +3,12 @@ import FAQList from '@/components/FAQList'
 export default function FAQSection() {
   const faqs = [
     {
-      q: 'Do I need to complete a sprint before starting the retainer?',
-      a: "Not required, but many founders start with the Pricing or Growth Economics Sprint, then move into the retainer to keep the machine running. If you skip the sprint, the first month includes an onboarding baseline that covers similar ground.",
+      q: 'Do I need to complete a Build before starting ongoing advisory?',
+      a: 'Not required, but many founders start with the Commercial Architecture Diagnostic and a Build, then move into ongoing advisory to keep the work current.',
     },
     {
-      q: "What's the difference between Starter, Growth, and Scale?",
-      a: "Time, attention, and depth. Starter (~0.5 d/wk, $4k/mo) provides guidance and cadence. Growth (~1 d/wk, $8k/mo) runs active pricing experiments. Scale (~2 d/wk, $15k/mo) handles complex monetization, multi-segment modeling, and active fundraise prep.",
+      q: 'What determines whether ongoing advisory is the right format?',
+      a: 'Cadence. If the commercial decisions are episodic, a Build is the better structure. If they arrive weekly — pricing exceptions, packaging questions, investor follow-ups, forecast revisions — ongoing advisory is cheaper than rebuilding context every quarter.',
     },
     {
       q: 'Can we upgrade, downgrade, or pause?',

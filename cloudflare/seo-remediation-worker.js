@@ -16,9 +16,9 @@ const CANONICAL_HOST = 'sarahzou.com';
 const CANONICAL_ORIGIN = `https://${CANONICAL_HOST}`;
 
 const EXACT_301 = new Map([
-  // Retired entry-offer routes — now redirected to the free diagnostic note.
-  ['/consulting/entry-offer', '/diagnostic-note'],
-  ['/consulting/entry-offer/form', '/diagnostic-note'],
+  // Retired entry-offer routes — now redirected to the consulting offer ladder.
+  ['/consulting/entry-offer', '/consulting'],
+  ['/consulting/entry-offer/form', '/consulting'],
   ['/entry-offer', '/diagnostic-note'],
   ['/entry-offer/form', '/diagnostic-note'],
   ['/thanks/entry-offer', '/diagnostic-note'],
@@ -40,8 +40,6 @@ const EXACT_301 = new Map([
 
   // Downloads.
   ['/downloads/monetization-roadmap', '/downloads/monetization-roadmap'],
-  ['/downloads/stage-smart-metrics-benchmarks-2025-q2', '/newsletter/saas-benchmark-data-sources-guide'],
-  ['/downloads/saas-benchmark-source-navigator', '/newsletter/saas-benchmark-data-sources-guide'],
 
   // Canonical wiki concept renames.
   ['/wiki/pricing/models-and-metering/pricing-metric', '/wiki/pricing/models-and-metering/pricing-metric-value-metric'],
@@ -58,6 +56,9 @@ const EXACT_301 = new Map([
 
 // Intentionally removed URLs with no replacement — return 410.
 const EXACT_410 = new Set([
+  '/newsletter/saas-benchmark-data-sources-guide',
+  '/downloads/stage-smart-metrics-benchmarks-2025-q2',
+  '/downloads/saas-benchmark-source-navigator',
   '/downloads/metrics-storytelling-one-pager', // retired download; remains 410
   '/wiki/pricing/pitfalls-and-failures/minivation',
 ]);
@@ -166,4 +167,3 @@ export default {
     return fetch(request);
   },
 };
-

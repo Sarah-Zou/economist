@@ -133,9 +133,10 @@ const faqItems = [
     q: 'What does it cost?',
     a: (
       <>
-        The Commercial Architecture Diagnostic is a fixed fee of US$6,000 and starts with a free
-        one-page diagnostic note. Deeper engagements are fixed-fee; ongoing support starts at
-        US$4K/month.
+        The Commercial Architecture Diagnostic is a fixed fee of $9,500 and begins with a free
+        one-page diagnostic note. Deeper engagements are also fixed-fee: the Pricing & Monetization
+        Build is $22,000 and the Growth Economics Build is $18,000. Ongoing advisory is $9,000 per
+        month with a three-month minimum.
       </>
     ),
   },
@@ -206,7 +207,7 @@ export default function Home() {
         name: 'What does it cost?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'The Commercial Architecture Diagnostic is a fixed fee of US$6,000 and starts with a free one-page diagnostic note. Deeper engagements are fixed-fee; ongoing support starts at US$4K/month.',
+          text: 'The Commercial Architecture Diagnostic is a fixed fee of $9,500 and begins with a free one-page diagnostic note. Deeper engagements are also fixed-fee: the Pricing & Monetization Build is $22,000 and the Growth Economics Build is $18,000. Ongoing advisory is $9,000 per month with a three-month minimum.',
         },
       },
     ],
@@ -391,7 +392,7 @@ export default function Home() {
                   />
                 </Link>
                 <span className="text-[13px] uppercase tracking-[0.14em] text-white/[0.45]">
-                  Two weeks &middot; US$6,000 fixed fee
+                  Two weeks &middot; $9,500 fixed fee
                 </span>
               </div>
 
@@ -548,6 +549,9 @@ export default function Home() {
                 <p className="mt-6 max-w-[39rem] text-[16px] leading-[1.8] text-text-muted">
                   Read the frameworks before hiring me - or instead of hiring me. The work should be
                   useful on its own.
+                </p>
+                <p className="mt-2 text-[13px] leading-[1.65] text-text-subtle">
+                  Fifty percent is credited toward a deeper engagement booked within thirty days.
                 </p>
               </div>
             </div>

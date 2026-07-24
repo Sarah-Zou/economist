@@ -7,9 +7,9 @@ import { generateServiceWithOffersJsonLd, generateBreadcrumbJsonLd } from '@/lib
 import { outlineButton, primaryButtonLg } from '@/lib/brandStyles'
 
 export const metadata: Metadata = {
-  title: 'Unit Economics, Forecasting & Cost-Floor Modeling Sprint | Sarah Zou',
+  title: 'Growth Economics Build | Sarah Zou',
   description:
-    'A focused 1–2 week sprint for technical founders of infrastructure and data platform companies: unit economics model, cost-floor analysis, forecasting logic, and fundraising-ready growth narrative.',
+    'A fixed-fee Growth Economics Build for infrastructure and data-platform founders: unit economics model, cost-floor analysis, cohort-based forecasting logic, and a KPI system over three weeks.',
   robots: {
     index: true,
     follow: true,
@@ -25,17 +25,17 @@ export const metadata: Metadata = {
     canonical: 'https://sarahzou.com/consulting/services/metrics-experimentation-sprint',
   },
   openGraph: {
-    title: 'Unit Economics, Forecasting & Cost-Floor Modeling Sprint | Sarah Zou',
+    title: 'Growth Economics Build | Sarah Zou',
     description:
-      'A focused 1–2 week sprint for technical founders of infrastructure and data platform companies: unit economics model, cost-floor analysis, forecasting logic, and fundraising-ready growth narrative.',
+      'A fixed-fee Growth Economics Build for infrastructure and data-platform founders: unit economics model, cost-floor analysis, cohort-based forecasting logic, and a KPI system over three weeks.',
     type: 'website',
     url: 'https://sarahzou.com/consulting/services/metrics-experimentation-sprint',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Unit Economics, Forecasting & Cost-Floor Modeling Sprint | Sarah Zou',
+    title: 'Growth Economics Build | Sarah Zou',
     description:
-      'A focused 1–2 week sprint for technical founders of infrastructure and data platform companies: unit economics model, cost-floor analysis, forecasting logic, and fundraising-ready growth narrative.',
+      'A fixed-fee Growth Economics Build for infrastructure and data-platform founders: unit economics model, cost-floor analysis, cohort-based forecasting logic, and a KPI system over three weeks.',
   },
 }
 
@@ -133,27 +133,6 @@ const WORKSTREAMS = [
   },
 ]
 
-const INVESTMENT_TIERS = [
-  {
-    name: 'Lite',
-    price: '$6K+',
-    desc: 'For early-stage teams needing a minimal KPI loop and a first unit economics model before scaling GTM.',
-    featured: false,
-  },
-  {
-    name: 'Core',
-    price: '$9K+',
-    desc: 'For revenue-stage teams that need aligned metrics, a full unit economics baseline, and a working forecast model.',
-    featured: true,
-  },
-  {
-    name: 'Pro',
-    price: '$12K+',
-    desc: 'For multi-segment or investor-critical cases requiring deeper cohort analysis, complex scenarios, and a board-ready growth narrative.',
-    featured: false,
-  },
-]
-
 const PROCESS_STEPS = [
   {
     num: '01',
@@ -177,28 +156,20 @@ const PROCESS_STEPS = [
   },
 ]
 
-export default function GrowthEconomicsSprint() {
+export default function GrowthEconomicsBuild() {
   const serviceJsonLd = generateServiceWithOffersJsonLd({
-    name: 'Growth Economics, Forecasting & Unit Economics Sprint',
+    name: 'Growth Economics Build',
     description:
-      'A focused 1–2 week sprint for technical founders of infrastructure and data platform companies to build a unit economics model, cost-floor analysis, and forecasting logic that supports pricing decisions and fundraising diligence.',
+      'A fixed-fee Growth Economics Build for technical founders to build a unit economics model, cost-floor analysis, cohort-based forecasting logic, and KPI system over three weeks.',
     url: SERVICE_URL,
-    offers: [
-      { name: 'Lite', price: 6000, description: 'Core KPI and unit economics structure.' },
-      { name: 'Core', price: 9000, description: 'Broader revenue model and forecasting work.' },
-      {
-        name: 'Pro',
-        price: 12000,
-        description: 'Investor-critical models with deeper segmentation.',
-      },
-    ],
+    offers: [{ name: 'Growth Economics Build', price: 18000, description: 'Unit economics model, cost-floor analysis, cohort-based forecasting logic, and KPI system.' }],
   })
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: 'Home', url: '/' },
     { name: 'Consulting', url: '/consulting' },
     {
-      name: 'Growth Economics Sprint',
+      name: 'Growth Economics Build',
       url: '/consulting/services/metrics-experimentation-sprint',
     },
   ])
@@ -220,7 +191,7 @@ export default function GrowthEconomicsSprint() {
           <section className="bg-hero-tint">
             <div className="section-shell pb-20 pt-12 sm:pb-24 sm:pt-16 lg:pb-28 lg:pt-24">
               <div className="section-header max-w-[44rem]">
-                <span className="kicker-accent">Growth Economics Sprint</span>
+                <span className="kicker-accent">Growth Economics Build</span>
                 <h1 className="mt-5 font-serif-playfair text-ink">
                   Build the economics foundation your pricing decisions and fundraising diligence
                   need
@@ -232,7 +203,7 @@ export default function GrowthEconomicsSprint() {
                 </p>
                 <p className="meta-note mt-6">
                   The usual path: a free one-page diagnostic note, then the Commercial Architecture
-                  Diagnostic to set direction, then this sprint to build the economics foundation.
+                  Diagnostic to set direction, then this Build to construct the economics foundation.
                 </p>
                 <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
                   <Link
@@ -256,12 +227,12 @@ export default function GrowthEconomicsSprint() {
                   </div>
                   <div>
                     <dt className="kicker-muted">Typical scope</dt>
-                    <dd className="mt-2 text-[15px] leading-[1.55] text-ink">1–2 weeks</dd>
+                    <dd className="mt-2 text-[15px] leading-[1.55] text-ink">Three weeks</dd>
                   </div>
                   <div>
-                    <dt className="kicker-muted">Starting at</dt>
+                    <dt className="kicker-muted">Fixed fee</dt>
                     <dd className="mt-2 text-[15px] font-semibold leading-[1.55] text-brand-ink">
-                      $6K
+                      $18,000 fixed
                     </dd>
                   </div>
                 </dl>
@@ -325,23 +296,23 @@ export default function GrowthEconomicsSprint() {
             </div>
           </section>
 
-          {/* Diagnostic or Sprint */}
+          {/* Diagnostic or Build */}
           <section className="section">
             <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
               <div className="mx-auto max-w-3xl text-center">
-                <span className="kicker">Diagnostic or sprint?</span>
+                <span className="kicker">Diagnostic or Build?</span>
                 <h2 className="mt-3 font-serif-playfair">
                   Most founders start with a free diagnostic note
                 </h2>
                 <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.7] text-text-muted sm:text-[17px]">
                   The free one-page note and the two-week{' '}
                   <Link
-                    href="/consulting"
+                    href="/consulting#commercial-architecture-diagnostic"
                     className="font-semibold text-brand-ink underline decoration-brand/40 underline-offset-4 hover:text-brand-dark"
                   >
                     Commercial Architecture Diagnostic
                   </Link>{' '}
-                  set the direction. This sprint is where you build the economics foundation.
+                  set the direction. This Build is where you construct the economics foundation.
                 </p>
               </div>
 
@@ -366,7 +337,7 @@ export default function GrowthEconomicsSprint() {
 
                 <div className="card-dark">
                   <h3 className="font-serif-playfair text-[22px] font-semibold leading-[1.2] text-white">
-                    Move into this sprint if you need
+                    Move into this Build if you need
                   </h3>
                   <ul className="mt-5 space-y-3 border-t border-white/10 pt-5">
                     {[
@@ -391,54 +362,19 @@ export default function GrowthEconomicsSprint() {
             </div>
           </section>
 
-          {/* Pricing tiers */}
+          {/* Investment */}
           <section id="pricing" className="section section-alt scroll-mt-24">
             <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
               <div className="mx-auto max-w-3xl text-center">
                 <span className="kicker">Investment</span>
-                <h2 className="mt-3 font-serif-playfair">
-                  Sprints start at $6K and scale with complexity
-                </h2>
+                <h2 className="mt-3 font-serif-playfair">A single fixed fee of $18,000</h2>
+                <p className="mx-auto mt-5 max-w-3xl text-[16px] leading-[1.7] text-text-muted">
+                  Unit economics model, cost-floor analysis, cohort-based forecasting logic, and a
+                  KPI system your team will actually operate — built over three weeks against a
+                  scope defined before the work begins.
+                </p>
               </div>
 
-              <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
-                {INVESTMENT_TIERS.map((tier) => (
-                  <div key={tier.name} className={tier.featured ? 'card-dark relative' : 'card'}>
-                    {tier.featured && (
-                      <span className="absolute right-5 top-5 rounded-full bg-brand px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-on">
-                        Most popular
-                      </span>
-                    )}
-                    <p className={tier.featured ? 'kicker-muted text-brand-soft' : 'kicker-muted'}>
-                      {tier.name}
-                    </p>
-                    <p
-                      className={`mt-3 font-serif-playfair text-[42px] font-semibold leading-none ${
-                        tier.featured ? 'text-white' : 'text-ink'
-                      }`}
-                    >
-                      {tier.price}
-                    </p>
-                    <p
-                      className={`mt-5 text-[14px] leading-[1.65] ${
-                        tier.featured ? 'text-white/80' : 'text-text-muted'
-                      }`}
-                    >
-                      {tier.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <p className="mx-auto mt-10 max-w-2xl text-center text-[15px] leading-[1.7] text-text-muted">
-                Not sure which scope fits? Start with a free one-page diagnostic note. I&apos;ll
-                tell you honestly whether you need the sprint at all.
-              </p>
-              <div className="mt-5 text-center">
-                <Link href={PRIMARY_CTA_HREF} className={outlineButton}>
-                  Request a free diagnostic note
-                </Link>
-              </div>
             </div>
           </section>
 
@@ -494,7 +430,7 @@ export default function GrowthEconomicsSprint() {
                   <span className="kicker">Scope</span>
                   <h2 className="mt-3 font-serif-playfair">What we can work on</h2>
                   <p className="mt-5 max-w-md text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
-                    The sprint is flexible, but always focuses on the economics decisions with the
+                    The Build focuses on the economics decisions with the
                     highest leverage for your growth stage.
                   </p>
                 </div>
@@ -526,7 +462,7 @@ export default function GrowthEconomicsSprint() {
           <section className="section">
             <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
               <div className="mx-auto max-w-3xl text-center">
-                <span className="kicker">How the sprint works</span>
+                <span className="kicker">How the Build works</span>
                 <h2 className="mt-3 font-serif-playfair">
                   Structured enough to move quickly, rigorous enough to be defensible
                 </h2>
@@ -589,7 +525,7 @@ export default function GrowthEconomicsSprint() {
                 </h2>
                 <p className="mx-auto mt-5 max-w-xl text-[16px] leading-[1.8] text-text-muted sm:text-[17px]">
                   Start with a free one-page diagnostic note. You see how I think before anything is
-                  paid — and we move into the sprint intelligently once the direction is set.
+                  paid — and we move into the Build intelligently once the direction is set.
                 </p>
                 <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                   <Link href={PRIMARY_CTA_HREF} className={primaryButtonLg}>
@@ -616,10 +552,10 @@ export default function GrowthEconomicsSprint() {
             mainEntity: [
               {
                 '@type': 'Question',
-                name: 'Should I start with the Diagnostic or the sprint?',
+                name: 'Should I start with the Diagnostic or the Build?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Most founders start with a free one-page diagnostic note, then the two-week Commercial Architecture Diagnostic to set direction. This sprint is the follow-on where you build the full KPI system, forecasting model, and unit economics baseline.',
+                  text: 'Start with the Diagnostic when the direction is unsettled. Fifty percent of the Diagnostic fee is credited toward this Build when it is booked within thirty days.',
                 },
               },
               {
@@ -627,7 +563,7 @@ export default function GrowthEconomicsSprint() {
                 name: 'How do I start?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Start with a free one-page diagnostic note. You see how I think before anything is paid, and we move into the sprint once the direction is clear.',
+                  text: 'Start with a free one-page diagnostic note. You see how I think before anything is paid, and we move into the Build once the direction is clear.',
                 },
               },
               {
@@ -635,23 +571,23 @@ export default function GrowthEconomicsSprint() {
                 name: 'We have almost no data. Will this still work?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Yes. Part of the sprint is installing the right minimal metric system so you can make decisions immediately — before you have perfect data.',
+                  text: 'Yes. Part of the Build is installing the right minimal metric system so you can make decisions immediately — before you have perfect data.',
                 },
               },
               {
                 '@type': 'Question',
-                name: 'Do I need the Pricing & Monetization Sprint before this one?',
+                name: 'Do I need the Pricing & Monetization Build before this one?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Not necessarily. The two sprints are complementary but independent. Many founders do the Growth Economics Sprint first to build the unit economics foundation, then use the Pricing Sprint to design the monetization structure on top.',
+                  text: 'Not necessarily. The two Builds are complementary but independent. Many founders do the Growth Economics Build first to build the unit economics foundation, then use the Pricing & Monetization Build to design the monetization structure on top.',
                 },
               },
               {
                 '@type': 'Question',
-                name: 'How long does the sprint take?',
+                name: 'How long does the Build take?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Typically 1–2 weeks depending on complexity, existing data quality, and how many segments or scenarios we need to model.',
+                  text: 'Three weeks against a scope defined before the work begins.',
                 },
               },
             ],

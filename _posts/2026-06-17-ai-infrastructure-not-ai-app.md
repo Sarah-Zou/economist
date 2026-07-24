@@ -3,8 +3,8 @@ title: "Why AI Infrastructure Is Not an AI Application Business"
 date: 2026-06-17
 author: Dr. Sarah Zou
 description: "Infrastructure and applications run on different economic engines. Learn how to classify your AI company, price on the right unit, and avoid copying the application playbook."
-image: "/assets/images/newsletter/1.1_header.webp"
-imageAlt: "Isometric illustration comparing AI infrastructure on the left—servers, databases, and cloud systems—with an AI application dashboard and users on the right, connected by a central data-processing hub."
+image: "/images/newsletter/ai-infrastructure-not-ai-app-field.webp"
+imageAlt: "A minimal access terminal beside exposed data-center racks, cooling pipes, and power systems, contrasting applications with infrastructure."
 canonical: "https://sarahzou.com/newsletter/ai-infrastructure-not-ai-app"
 tags:
   - AI Infrastructure

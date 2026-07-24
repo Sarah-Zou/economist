@@ -3,7 +3,8 @@ title: "Why the Smartest SaaS Startups Are Hiring Fractional Chief Economists"
 date: 2025-06-08
 author: Dr. Sarah Zou
 description: Why SaaS startups are hiring fractional chief economists and how they drive growth, pricing, and investor narrative.
-image: /assets/images/newsletter/fractional-economist-saas-startups.webp
+image: "/images/newsletter/why-fractional-economist-field.webp"
+imageAlt: "Parallel flow channels in an experimental economics lab, evoking controlled tests and causal analysis for SaaS decisions."
 canonical: "https://sarahzou.com/newsletter/why-fractional-economist"
 tags:
   - SaaS

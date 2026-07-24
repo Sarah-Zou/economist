@@ -4,6 +4,8 @@ import matter from 'gray-matter'
 
 const postsDirectory = path.join(process.cwd(), '_posts')
 
+export type NewsletterPostStatus = 'published' | 'draft' | 'retired'
+
 export interface Post {
   slug: string
   title: string
@@ -17,6 +19,12 @@ export interface Post {
   tags: string[]
   canonical?: string
   draft?: boolean
+  status: NewsletterPostStatus
+}
+
+function getPostStatus(data: Record<string, any>): NewsletterPostStatus {
+  if (data.status === 'draft' || data.status === 'retired') return data.status
+  return data.draft === true ? 'draft' : 'published'
 }
 
 function getFileDate(filePath: string, frontmatterDate: string) {
@@ -58,10 +66,13 @@ export function getAllPosts(): Post[] {
       tags: data.tags || [],
       canonical: data.canonical,
       draft: data.draft,
+      status: getPostStatus(data),
     }
   })
 
-  return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1))
+  return allPostsData
+    .filter((post) => post.status === 'published')
+    .sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 
 const SITE_BASE = 'https://sarahzou.com'
@@ -86,6 +97,8 @@ export function getPostBySlug(slug: string): Post | null {
     const fullPath = path.join(postsDirectory, fileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const { data, content } = matter(fileContents)
+    const status = getPostStatus(data)
+    if (status !== 'published') return null
     const date = getFileDate(fullPath, data.date)
 
     return {
@@ -101,8 +114,9 @@ export function getPostBySlug(slug: string): Post | null {
       tags: data.tags || [],
       canonical: data.canonical,
       draft: data.draft,
+      status,
     }
   } catch (error) {
     return null
   }
-} 
+}

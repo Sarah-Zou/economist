@@ -34,8 +34,7 @@ export default function DiagnosticNoteForm() {
     setError('')
 
     const form = e.currentTarget
-    // Uses the same env var as the old entry-offer form — set NEXT_PUBLIC_PRICING_SESSION_FORM_URL
-    // to the deployed URL of google-apps-script-entry-offer.gs in your .env.local.
+    // Set NEXT_PUBLIC_PRICING_SESSION_FORM_URL to the deployed diagnostic-note form endpoint.
     const scriptURL =
       process.env.NEXT_PUBLIC_PRICING_SESSION_FORM_URL ||
       process.env.NEXT_PUBLIC_GOOGLE_WEB_APP_URL ||

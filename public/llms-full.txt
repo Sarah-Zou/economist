@@ -20,7 +20,7 @@ PhD economist and COO of an infrastructure data platform, advising founders of A
 
 ### Consulting
 URL: https://sarahzou.com/consulting
-The Commercial Architecture Diagnostic — a two-week, fixed-fee (US$6,000) audit of pricing, packaging, and unit economics — plus deeper pricing and growth-economics sprints and fractional support. Starts with a free one-page diagnostic note.
+The Commercial Architecture Diagnostic — a two-week, fixed-fee ($9,500) engagement on pricing, packaging, or unit economics — plus fixed-fee Builds and ongoing advisory. Starts with a free one-page diagnostic note.
 
 ### Free Pricing Diagnostic Note
 URL: https://sarahzou.com/diagnostic-note
@@ -88,6 +88,10 @@ Strategic pricing is a systematic, value-based framework that aligns marketing, 
 URL: https://sarahzou.com/wiki/pricing/foundations/value-based-pricing
 Value-Based Pricing (VBP) is a pricing approach where the price is determined by the value customers perceive and their willingness to pay for that product.
 
+### Bootstrapping vs. Venture Capital: A Founder's Decision Framework
+URL: https://sarahzou.com/wiki/pricing/fundraising/bootstrapping-vs-vc
+Bootstrapping and venture capital are different systems for financing risk: one protects ownership by constraining spend, the other trades ownership and governance rights for speed, capacity, and a larger required outcome.
+
 ### Convertible Notes: Conversion, Interest, and Founder Dilution
 URL: https://sarahzou.com/wiki/pricing/fundraising/convertible-notes
 A convertible note is startup debt that usually converts into equity at a later financing; principal, accrued interest, the cap or discount, and the capitalization definition determine the shares issued.
@@ -99,6 +103,10 @@ A cap table records who owns which securities; a dilution model shows how financ
 ### Liquidation Preferences: How Startup Exit Waterfalls Work
 URL: https://sarahzou.com/wiki/pricing/fundraising/liquidation-preferences
 A liquidation preference determines who gets paid first in a startup exit; its multiple, participation, seniority, dividends, and conversion terms can matter more than ownership percentages at modest outcomes.
+
+### Oversubscribed Funding Rounds: Meaning, Math, and Allocation
+URL: https://sarahzou.com/wiki/pricing/fundraising/oversubscribed
+A funding round is oversubscribed when qualified investor demand exceeds a defined amount the company is prepared and authorized to accept; the useful work is proving the demand, naming the denominator, and allocating scarce capacity deliberately.
 
 ### Pre-Seed, Seed, and Series A: What Changes at Each Funding Stage
 URL: https://sarahzou.com/wiki/pricing/fundraising/pre-seed-seed-series-a
@@ -230,10 +238,6 @@ When the hardware is a sensor and the data is the product. A framework for the d
 URL: https://sarahzou.com/newsletter/mapping-ai-infrastructure-deep-tech-data-platforms
 A founder's map of AI software infrastructure and deep tech data platforms—drawn by economics, not buzzwords—with segments, comparables, and the margin question for each.
 
-### SaaS Benchmark Data Sources Guide | Stage-Smart Metrics for 2024-25
-URL: https://sarahzou.com/newsletter/saas-benchmark-data-sources-guide
-Cut through SaaS benchmark noise with stage-specific data sources. Learn which benchmark sources VCs trust for Seed to Pre-IPO, with actionable tips for investor presentations.
-
 ### Selling Physics as a Service
 URL: https://sarahzou.com/newsletter/selling-physics-as-a-service
 When should a hardware company stop selling equipment and start selling an outcome? A framework for servitization, four archetypes, and the asset-light vs asset-heavy decision.
@@ -243,5 +247,5 @@ URL: https://sarahzou.com/newsletter/why-fractional-economist
 Why SaaS startups are hiring fractional chief economists and how they drive growth, pricing, and investor narrative.
 
 ---
-Generated: 2026-07-22
-Total wiki concepts: 43
+Generated: 2026-07-23
+Total wiki concepts: 45

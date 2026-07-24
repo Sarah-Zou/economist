@@ -25,8 +25,6 @@ const EXPLICIT_301 = new Map([
   ['/consulting/services/pricing-diagnostic-revenue-boost', '/consulting/services/pricing-monetization-sprint'],
   ['/consulting/services/pricing-optimization-retainer', '/consulting/services/on-call-economist-retainer'],
   ['/consulting/services/saas-metrics-clarity-pack', '/consulting/services/metrics-experimentation-sprint'],
-  ['/downloads/stage-smart-metrics-benchmarks-2025-q2', '/newsletter/saas-benchmark-data-sources-guide'],
-  ['/downloads/saas-benchmark-source-navigator', '/newsletter/saas-benchmark-data-sources-guide'],
   ['/downloads/monetization-roadmap', '/downloads/monetization-roadmap'],
   ['/wiki/pricing/models-and-metering/pricing-metric', '/wiki/pricing/models-and-metering/pricing-metric-value-metric'],
   ['/wiki/pricing/models-and-metering/value-metric', '/wiki/pricing/models-and-metering/pricing-metric-value-metric'],
@@ -44,6 +42,9 @@ const EXPLICIT_301 = new Map([
 ]);
 
 const EXPLICIT_410 = new Set([
+  '/newsletter/saas-benchmark-data-sources-guide',
+  '/downloads/stage-smart-metrics-benchmarks-2025-q2',
+  '/downloads/saas-benchmark-source-navigator',
   '/downloads/metrics-storytelling-one-pager',
   '/wiki/pricing/pitfalls-and-failures/minivation',
 ]);
@@ -168,6 +169,8 @@ function getNewsletterRoutes() {
   if (!fs.existsSync(postsDir)) return set;
   for (const file of fs.readdirSync(postsDir)) {
     if (!file.endsWith('.md')) continue;
+    const { data } = matter(fs.readFileSync(path.join(postsDir, file), 'utf8'));
+    if (data.status === 'retired' || data.status === 'draft' || data.draft === true) continue;
     const slug = file.replace(/^[0-9]{4}-[0-9]{2}-[0-9]{2}-/, '').replace(/\.md$/, '');
     set.add(`/newsletter/${slug}`);
   }

@@ -3,8 +3,8 @@ title: "Mapping the Emerging AI Infrastructure and Deep Tech Data Platforms"
 date: 2026-06-17
 author: Dr. Sarah Zou
 description: "A founder's map of AI software infrastructure and deep tech data platforms—drawn by economics, not buzzwords—with segments, comparables, and the margin question for each."
-image: "/assets/images/newsletter/1.2_header.webp"
-imageAlt: "Isometric illustration of interconnected AI and data infrastructure including cloud compute, data centers, satellites, global networks, industrial sensors, and data visualization layers."
+image: "/images/newsletter/mapping-ai-infrastructure-field.webp"
+imageAlt: "A coastal research campus where satellite, weather, compute, and shoreline systems connect across distinct operating zones."
 canonical: "https://sarahzou.com/newsletter/mapping-ai-infrastructure-deep-tech-data-platforms"
 tags:
   - AI Infrastructure

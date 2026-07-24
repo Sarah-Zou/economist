@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 import { ArrowRight } from 'lucide-react'
 import { generateBreadcrumbJsonLd } from '@/lib/generateJsonLd'
@@ -52,25 +53,47 @@ export default function ResourcesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
-      <main className="resource-editorial min-h-screen bg-page">
-        <section className="border-b border-border-soft bg-surface">
-          <div className="section-shell grid gap-14 py-20 sm:py-24 lg:grid-cols-[1.35fr_0.65fr] lg:items-end lg:gap-24 lg:py-32">
-            <div>
+      <main className="resource-editorial min-h-screen bg-page text-text">
+        {/* Hero */}
+        <section
+          className="relative isolate border-b border-border-soft bg-surface min-h-[500px] lg:min-h-[600px]"
+          aria-labelledby="resources-hero-title"
+        >
+          <Image
+            src="/images/free-tools-hero.png"
+            alt="A clean digital workspace for open research and frameworks"
+            fill
+            sizes="100vw"
+            className="object-cover object-[70%_center] lg:object-center"
+            priority
+          />
+          <div
+            className="absolute inset-0 bg-[linear-gradient(90deg,rgba(246,243,237,0.98)_0%,rgba(246,243,237,0.85)_45%,rgba(246,243,237,0.3)_75%,rgba(246,243,237,0)_100%)]"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 bg-[linear-gradient(0deg,rgba(246,243,237,0.95)_0%,rgba(246,243,237,0)_30%)] sm:hidden"
+            aria-hidden
+          />
+
+          <div className="section-shell relative z-10 flex min-h-[500px] items-center pb-16 pt-32 sm:min-h-[600px] sm:pb-24 sm:pt-40">
+            <div className="max-w-[48rem]">
               <p className="kicker-accent">Open resources</p>
-              <h1 className="mt-6 max-w-[13ch] font-serif-playfair text-ink">
+              <h1 id="resources-hero-title" className="mt-6 max-w-[13ch] font-serif-playfair text-ink">
                 Research and frameworks, available without a gate.
               </h1>
               <p className="mt-7 max-w-[43rem] text-[17px] leading-[1.85] text-text-muted sm:text-[18px]">
                 Use the library to understand a decision, align a team, or sharpen the question
                 before bringing in outside help.
               </p>
-            </div>
-            <div className="border-t border-border pt-5">
-              <p className="kicker-muted">Built for the work before the meeting</p>
-              <p className="mt-4 max-w-sm text-[15px] leading-[1.8] text-text-muted">
-                Plain-language references for technical founders making pricing, growth, and
-                financing decisions.
-              </p>
+              
+              <div className="mt-10 border-t border-border pt-5 max-w-sm">
+                <p className="kicker-muted">Built for the work before the meeting</p>
+                <p className="mt-3 text-[15px] leading-[1.8] text-text-muted">
+                  Plain-language references for technical founders making pricing, growth, and
+                  financing decisions.
+                </p>
+              </div>
             </div>
           </div>
         </section>

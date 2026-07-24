@@ -7,9 +7,9 @@ import { generateServiceWithOffersJsonLd, generateBreadcrumbJsonLd } from '@/lib
 import { outlineButton, primaryButtonLg } from '@/lib/brandStyles'
 
 export const metadata: Metadata = {
-  title: 'Fractional or Embedded Commercial Strategy Support | Sarah Zou',
+  title: 'Ongoing Advisory for Infrastructure & Data-Platform Founders | Sarah Zou',
   description:
-    'Ongoing commercial strategy support for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B) — pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and board prep without hiring a full-time strategy or finance leader before you need one.',
+    'Ongoing advisory for AI-infrastructure, API, and data-platform founders: pricing moves, forward models, cost-floor analysis, and board-facing economics on a monthly cadence.',
   robots: {
     index: true,
     follow: true,
@@ -25,17 +25,17 @@ export const metadata: Metadata = {
     canonical: 'https://sarahzou.com/consulting/services/on-call-economist-retainer',
   },
   openGraph: {
-    title: 'Fractional or Embedded Commercial Strategy Support | Sarah Zou',
+    title: 'Ongoing Advisory for Infrastructure & Data-Platform Founders | Sarah Zou',
     description:
-      'Ongoing commercial strategy support for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B) — pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and board prep without hiring a full-time strategy or finance leader before you need one.',
+      'Ongoing advisory for AI-infrastructure, API, and data-platform founders: pricing moves, forward models, cost-floor analysis, and board-facing economics on a monthly cadence.',
     type: 'website',
     url: 'https://sarahzou.com/consulting/services/on-call-economist-retainer',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fractional or Embedded Commercial Strategy Support | Sarah Zou',
+    title: 'Ongoing Advisory for Infrastructure & Data-Platform Founders | Sarah Zou',
     description:
-      'Ongoing commercial strategy support for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B) — pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and board prep without hiring a full-time strategy or finance leader before you need one.',
+      'Ongoing advisory for AI-infrastructure, API, and data-platform founders: pricing moves, forward models, cost-floor analysis, and board-facing economics on a monthly cadence.',
   },
 }
 
@@ -73,7 +73,7 @@ const DELIVERABLES = [
 
 const WHEN_FOUNDERS_HIRE = [
   {
-    lead: 'Sprint work is done',
+    lead: 'Build work is done',
     rest: '— now needs someone to run the ongoing cadence and keep models current',
   },
   {
@@ -93,35 +93,8 @@ const WHEN_FOUNDERS_HIRE = [
     rest: '— needs investor-ready metrics, narratives, and diligence support on a reliable cadence',
   },
   {
-    lead: 'Not ready to hire full-time',
-    rest: '— but the commercial complexity has outgrown ad-hoc help',
-  },
-]
-
-const INVESTMENT_TIERS = [
-  {
-    name: 'Starter',
-    price: '$4K',
-    per: '/mo',
-    commitment: '≈ 0.5 d/wk',
-    desc: 'Guidance and cadence for early-stage teams making regular commercial decisions before or after a fundraise.',
-    featured: false,
-  },
-  {
-    name: 'Growth',
-    price: '$8K',
-    per: '/mo',
-    commitment: '≈ 1 d/wk',
-    desc: 'Active pricing experiments, ongoing forecast maintenance, and monthly board-ready narrative.',
-    featured: true,
-  },
-  {
-    name: 'Scale',
-    price: '$15K',
-    per: '/mo',
-    commitment: '≈ 2 d/wk',
-    desc: 'Complex monetization, multi-segment modeling, and full active fundraise support.',
-    featured: false,
+    lead: 'Commercial decisions arrive weekly',
+    rest: '— and the commercial complexity has outgrown ad-hoc help',
   },
 ]
 
@@ -181,22 +154,18 @@ const SCOPE_AREAS = [
 
 export default function FractionalChiefEconomistRetainer() {
   const serviceJsonLd = generateServiceWithOffersJsonLd({
-    name: 'Fractional or Embedded Commercial Strategy Support',
+    name: 'Ongoing Advisory',
     description:
-      'Ongoing commercial strategy support across pricing architecture, GTM for technical buyers, unit economics, cost-floor modeling, and board prep for founders of AI-infrastructure, API, and data-platform companies (Seed–Series B) — without the full-time overhead.',
+      'Ongoing advisory across pricing moves, forward models, cost-floor analysis, and board-facing economics for infrastructure and data-platform founders.',
     url: SERVICE_URL,
-    offers: [
-      { name: 'Lite', price: 4000, description: 'Monthly advisory and async support.' },
-      { name: 'Core', price: 8000, description: 'Weekly working sessions and board prep.' },
-      { name: 'Pro', price: 15000, description: 'Embedded support with broader scope.' },
-    ],
+    offers: [{ name: 'Ongoing Advisory', price: 9000, description: 'Monthly cadence across pricing moves, forward models, and board-facing economics.' }],
   })
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: 'Home', url: '/' },
     { name: 'Consulting', url: '/consulting' },
     {
-      name: 'Fractional Commercial Strategy',
+      name: 'Ongoing Advisory',
       url: '/consulting/services/on-call-economist-retainer',
     },
   ])
@@ -218,9 +187,9 @@ export default function FractionalChiefEconomistRetainer() {
           <section className="bg-hero-tint">
             <div className="section-shell pb-20 pt-12 sm:pb-24 sm:pt-16 lg:pb-28 lg:pt-24">
               <div className="section-header max-w-[44rem]">
-                <span className="kicker-accent">Fractional &amp; Embedded Support</span>
+                <span className="kicker-accent">Ongoing Advisory</span>
                 <h1 className="mt-5 font-serif-playfair text-ink">
-                  Senior commercial strategy, without the full-time overhead
+                  Commercial strategy at operating cadence
                 </h1>
                 <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-[1.8] text-text-muted sm:text-[19px]">
                   Ongoing support across pricing architecture, GTM for technical buyers, unit
@@ -229,7 +198,7 @@ export default function FractionalChiefEconomistRetainer() {
                   stage.
                 </p>
                 <p className="meta-note mt-6">
-                  Most teams start with a free diagnostic note or a sprint. Retainer clients get
+                  Most teams start with a free diagnostic note or a Build. Ongoing advisory clients get
                   priority access and a dedicated monthly cadence.
                 </p>
                 <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
@@ -248,7 +217,7 @@ export default function FractionalChiefEconomistRetainer() {
                   <div>
                     <dt className="kicker-muted">Best for</dt>
                     <dd className="mt-2 text-[15px] leading-[1.55] text-ink">
-                      Post-sprint teams, active fundraise prep, or weekly commercial decisions
+                      Post-Build teams, active fundraise prep, or weekly commercial decisions
                     </dd>
                   </div>
                   <div>
@@ -256,9 +225,9 @@ export default function FractionalChiefEconomistRetainer() {
                     <dd className="mt-2 text-[15px] leading-[1.55] text-ink">Ongoing monthly</dd>
                   </div>
                   <div>
-                    <dt className="kicker-muted">Starting at</dt>
+                    <dt className="kicker-muted">Monthly fee</dt>
                     <dd className="mt-2 text-[15px] font-semibold leading-[1.55] text-brand-ink">
-                      $4K/mo
+                      $9,000/month
                     </dd>
                   </div>
                 </dl>
@@ -322,66 +291,15 @@ export default function FractionalChiefEconomistRetainer() {
             </div>
           </section>
 
-          {/* Pricing tiers */}
+          {/* Investment */}
           <section id="pricing" className="section scroll-mt-24">
             <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
               <div className="mx-auto max-w-3xl text-center">
-                <span className="kicker">Plans</span>
-                <h2 className="mt-3 font-serif-playfair">Engagement scales with your complexity</h2>
+                <span className="kicker">Ongoing advisory</span>
+                <h2 className="mt-3 font-serif-playfair">A single monthly engagement</h2>
               </div>
 
-              <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
-                {INVESTMENT_TIERS.map((tier) => (
-                  <div key={tier.name} className={tier.featured ? 'card-dark relative' : 'card'}>
-                    {tier.featured && (
-                      <span className="absolute right-5 top-5 rounded-full bg-brand px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-on">
-                        Most common
-                      </span>
-                    )}
-                    <p className={tier.featured ? 'kicker-muted text-brand-soft' : 'kicker-muted'}>
-                      {tier.name}
-                    </p>
-                    <p
-                      className={`mt-3 font-serif-playfair text-[42px] font-semibold leading-none ${
-                        tier.featured ? 'text-white' : 'text-ink'
-                      }`}
-                    >
-                      {tier.price}
-                      <span
-                        className={`ml-1 text-[18px] font-normal ${
-                          tier.featured ? 'text-white/60' : 'text-text-muted'
-                        }`}
-                      >
-                        {tier.per}
-                      </span>
-                    </p>
-                    <p
-                      className={`mt-1 text-[13px] font-semibold ${
-                        tier.featured ? 'text-brand-soft' : 'text-brand-ink'
-                      }`}
-                    >
-                      {tier.commitment}
-                    </p>
-                    <p
-                      className={`mt-4 text-[14px] leading-[1.65] ${
-                        tier.featured ? 'text-white/80' : 'text-text-muted'
-                      }`}
-                    >
-                      {tier.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <p className="mx-auto mt-10 max-w-2xl text-center text-[15px] leading-[1.7] text-text-muted">
-                Unsure which tier fits? Book a free 15-min consult. We&apos;ll discuss your growth
-                stage and commercial complexity to find the right level of engagement.
-              </p>
-              <div className="mt-5 text-center">
-                <Link href={CONSULT_CTA_HREF} className={outlineButton}>
-                  Book a free 15-min consult
-                </Link>
-              </div>
+              <div className="mx-auto mt-12 max-w-3xl"><div className="card"><p className="font-serif-playfair text-[42px] font-semibold leading-none text-ink">$9,000/month</p><p className="mt-3 text-[14px] font-semibold text-brand-ink">Three-month minimum. Two client seats at a time.</p><p className="mt-5 text-[15px] leading-[1.7] text-text-muted">Monthly cadence across pricing moves, forward models, and board-facing economics, for teams making commercial decisions weekly or running an active fundraise.</p></div><p className="mt-7 text-center text-[15px] leading-[1.7] text-text-muted">Deeper embedded work — multi-segment monetization, complex cost structures, full fundraise support — is available for a small number of teams. That scope is set by conversation.</p></div>
             </div>
           </section>
 
@@ -394,8 +312,7 @@ export default function FractionalChiefEconomistRetainer() {
                   <h2 className="mt-3 font-serif-playfair">When founders hire me for this</h2>
                   <p className="mt-5 max-w-md text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
                     Usually, the commercial complexity has outgrown what a founder can manage alone
-                    — and it&apos;s not yet the right time to hire a full-time CFO or Head of
-                    Strategy.
+                    and now calls for a consistent operating cadence.
                   </p>
                   <figure className="mt-8 max-w-[480px]">
                     <div className="relative aspect-[3/2] overflow-hidden bg-page">
@@ -497,70 +414,72 @@ export default function FractionalChiefEconomistRetainer() {
                 <span className="kicker">The approach</span>
                 <h2 className="mt-3 font-serif-playfair">Why founders hire me for this work</h2>
                 <p className="mt-6 text-[16px] leading-[1.75] text-text-muted sm:text-[17px]">
-                  I work more like a{' '}
-                  <strong className="text-ink">fractional Chief Economist</strong> embedded in your
-                  commercial decisions — not a consultant who shows up for a one-off project and
-                  disappears. I operate the same kind of company I advise, so the retainer is built
-                  for founders who need someone thinking about monetization, metrics, and growth
-                  economics continuously — not episodically.
+                  Ongoing advisory keeps commercial context intact across pricing moves, forecast
+                  revisions, and board-facing economics. It is designed for founders who need those
+                  decisions to hold together continuously, not episodically.
                 </p>
                 {/* TODO(Sarah): add named, linkable client testimonials here when available. */}
               </div>
             </div>
           </section>
 
-          {/* How this fits with sprints */}
+          {/* How this fits with the Diagnostic and Builds */}
           <section className="section section-alt">
             <div className="mx-auto w-full max-w-container px-4 sm:px-6 lg:px-8">
               <div className="mx-auto max-w-3xl text-center">
                 <span className="kicker">How it fits together</span>
                 <h2 className="mt-3 font-serif-playfair">
-                  Sprints set the foundation. The retainer keeps it running.
+                  The Diagnostic and Builds set the foundation. Ongoing advisory keeps it running.
                 </h2>
                 <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-[1.7] text-text-muted sm:text-[17px]">
-                  Many founders start with a free diagnostic note or a sprint, then move into the
-                  retainer once they know the work is ongoing.
+                  Many founders start with a free diagnostic note, then the Commercial Architecture
+                  Diagnostic, then a Build when structural work is needed before ongoing advisory.
                 </p>
               </div>
-              <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
+              <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-4">
                 {[
                   {
-                    label: 'Pricing & Monetization Sprint',
+                    label: 'Commercial Architecture Diagnostic',
+                    desc: 'Sets the commercial direction before a deeper engagement.',
+                    href: '/consulting#commercial-architecture-diagnostic',
+                  },
+                  {
+                    label: 'Pricing & Monetization Build',
                     desc: 'Sets the pricing structure, value metric, packaging, and rollout plan.',
                     href: '/consulting/services/pricing-monetization-sprint',
                   },
                   {
-                    label: 'Growth Economics Sprint',
+                    label: 'Growth Economics Build',
                     desc: 'Installs the KPI system, unit economics model, and forecasting logic.',
                     href: '/consulting/services/metrics-experimentation-sprint',
                   },
                   {
-                    label: 'Retainer',
+                    label: 'Ongoing advisory',
                     desc: 'Keeps the machine honest: iterate pricing, run experiments, maintain forward models, stay investor-ready.',
                     href: '/consulting/services/on-call-economist-retainer',
                   },
                 ].map((item, idx) => (
                   <div
                     key={item.label}
-                    className={idx === 2 ? 'card-dark' : 'card border-border-soft'}
+                    className={idx === 3 ? 'card-dark' : 'card border-border-soft'}
                   >
                     <p
                       className={`text-[11px] font-semibold uppercase tracking-[0.2em] ${
-                        idx === 2 ? 'text-brand-soft' : 'text-text-subtle'
+                        idx === 3 ? 'text-brand-soft' : 'text-text-subtle'
                       }`}
                     >
-                      {idx === 0 ? 'Sprint 1' : idx === 1 ? 'Sprint 2' : 'Retainer'}
+                      {idx === 0 ? 'Diagnostic' : idx === 1 ? 'Build 1' : idx === 2 ? 'Build 2' : 'Ongoing'}
                     </p>
                     <h3
                       className={`mt-3 font-serif-playfair text-[20px] font-semibold leading-[1.25] ${
-                        idx === 2 ? 'text-white' : 'text-ink'
+                        idx === 3 ? 'text-white' : 'text-ink'
                       }`}
                     >
                       {item.label}
                     </h3>
                     <p
                       className={`mt-3 text-[14px] leading-[1.65] ${
-                        idx === 2 ? 'text-white/75' : 'text-text-muted'
+                        idx === 3 ? 'text-white/75' : 'text-text-muted'
                       }`}
                     >
                       {item.desc}
@@ -568,7 +487,7 @@ export default function FractionalChiefEconomistRetainer() {
                     <Link
                       href={item.href}
                       className={`mt-5 inline-flex items-center gap-1 text-[13px] font-semibold underline underline-offset-4 transition-colors ${
-                        idx === 2
+                        idx === 3
                           ? 'text-brand-soft decoration-brand-soft/40 hover:text-white'
                           : 'text-brand-ink decoration-brand/40 hover:text-brand-dark'
                       }`}
@@ -631,18 +550,18 @@ export default function FractionalChiefEconomistRetainer() {
             mainEntity: [
               {
                 '@type': 'Question',
-                name: 'Do I need to complete a sprint before starting the retainer?',
+                name: 'Do I need to complete a Build before starting ongoing advisory?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Not required, but many founders start with the Pricing or Growth Economics Sprint, then move into the retainer to keep the machine running. If you skip the sprint, the first month includes an onboarding baseline that covers similar ground.',
+                  text: 'Not required, but many founders start with the Commercial Architecture Diagnostic and a Build, then move into ongoing advisory to keep the work current.',
                 },
               },
               {
                 '@type': 'Question',
-                name: "What's the difference between Starter, Growth, and Scale?",
+                name: 'What determines whether ongoing advisory is the right format?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Time, attention, and depth. Starter (~0.5 d/wk, $4k/mo) provides guidance and cadence. Growth (~1 d/wk, $8k/mo) runs active pricing experiments. Scale (~2 d/wk, $15k/mo) handles complex monetization, multi-segment modeling, and active fundraise prep.',
+                  text: 'Cadence. If the commercial decisions are episodic, a Build is the better structure. If they arrive weekly — pricing exceptions, packaging questions, investor follow-ups, forecast revisions — ongoing advisory is cheaper than rebuilding context every quarter.',
                 },
               },
               {

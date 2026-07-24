@@ -2,8 +2,10 @@
 title: "SaaS Benchmark Data Sources Guide | Stage-Smart Metrics for 2024-25"
 date: 2025-06-23
 author: Dr. Sarah Zou
+status: retired
 description: "Cut through SaaS benchmark noise with stage-specific data sources. Learn which benchmark sources VCs trust for Seed to Pre-IPO, with actionable tips for investor presentations."
-image: "/assets/images/newsletter/benchmark-data-sources.webp"
+image: "/images/newsletter/saas-benchmark-data-sources-field.webp"
+imageAlt: "Open research-archive drawers with distinct specimen cohorts, suggesting curated SaaS benchmarks for different stages."
 canonical: "https://sarahzou.com/newsletter/saas-benchmark-data-sources-guide"
 tags:
   - SaaS
@@ -103,4 +105,4 @@ The right benchmarks help you:
 
 I help SaaS founders craft stage-smart, investor-aligned metrics narratives that close the gap between data and valuation. [Book a free consultation](https://calendly.com/sarahxzou/free-consult-15-min) to discuss your benchmark strategy.
 
-*Want more insights on SaaS metrics and investor communications? [Subscribe to my newsletter](/newsletter) for weekly strategic advice.* 
+*Want more insights on SaaS metrics and investor communications? [Subscribe to my newsletter](/newsletter) for weekly strategic advice.*
